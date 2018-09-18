@@ -4,7 +4,7 @@
 
 ## ClassicLink {#section_xs1_jp3_y2b .section}
 
-为了解决这个问题，阿里云推出了[ClassLink方案](https://help.aliyun.com/document_detail/58095.html)。
+为了解决这个问题，阿里云推出了[ClassLink方案](https://help.aliyun.com/document_detail/65412.html?spm=a2c4g.11186623.6.564.46a727d72WFsmn)。
 
 大致步骤如下，详细的请参考上面的ClassLink文档：
 
