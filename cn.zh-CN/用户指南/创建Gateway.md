@@ -33,15 +33,15 @@ Gateway是与EMR集群处于同一个内网中的ECS服务器，用户可以使�
 
 ## 手动搭建Gateway { .section}
 
--   **网络环境**
+-   网络环境
 
     首先要保证Gateway节点在EMR对应集群的安全组中，Gateway节点可以顺利的访问EMR集群。设置节点的安全组请参考[创建安全组](https://help.aliyun.com/document_detail/25468.html)。
 
--   **软件环境**
+-   软件环境
     -   系统环境：推荐使用CentOS 7.2及以上版本。
     -   Java环境：安装JDK 1.7及以上版本，推荐使用OpenJDK version 1.8.0版本。
--   **搭建步骤**
-    -   **EMR 2.7及以上版本，3.2及以上版本**
+-   搭建步骤
+    -   EMR 2.7及以上版本，3.2及以上版本
 
         这些版本推荐直接使用EMR控制台来创建Gateway。
 
@@ -114,7 +114,7 @@ Gateway是与EMR集群处于同一个内网中的ECS服务器，用户可以使�
         fi
         ```
 
-    -   **EMR 2.7以下版本，3.2以下版本**
+    -   EMR 2.7以下版本，3.2以下版本
 
         创建一个脚本，脚本内容如下所示，然后在Gataway节点上执行。执行命令为：sh deploy.sh <masteri\_ip\> master\_password\_file。
 
@@ -181,7 +181,7 @@ Gateway是与EMR集群处于同一个内网中的ECS服务器，用户可以使�
         fi
         ```
 
--   **测试**
+-   测试
     -   Hive
 
         ```
