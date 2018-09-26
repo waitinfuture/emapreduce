@@ -65,7 +65,7 @@
 
 在 Windows 下你可以有多种方式来使用 SSH 免密码登录 master 机器。
 
--   **方式一：使用 PuTTY**
+-   方式一：使用 PuTTY
     1.  [下载 PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)。
     2.  在同样的位置下载 PuTTYgen。
     3.  打开 PuTTYgen，并 Load 您的私钥。
@@ -78,7 +78,7 @@
     7.  在配置页面，选择**Connetion** \> **SSH** \> **Auth**。
     8.  选择之前生成好的 ppk 文件。
     9.  最后单击 **Open**，就会自动登录到 master 节点了。
--   **方式二：使用 Cygwin | MinGW**
+-   方式二：使用 Cygwin | MinGW
 
     这是在 Windows 上模拟 Linux 的非常方便的工具，使用起来也非常简单。
 
@@ -95,7 +95,7 @@
 
 **说明：** 下面的操作是在您本地机器上完成的，不是集群内部机器。
 
--   **方式一：端口动态转发**
+-   方式一：端口动态转发
 
     创建一个 SSH 隧道，该隧道可打通您本地机器跟 E-MapReduce 集群的 master 机器的某个动态端口的连接。
 
@@ -156,7 +156,7 @@
         6.  在 **Import FoxyProxy Setting** 对话框中，单击 **Add**。
         7.  点击浏览器中的 **Foxyproxy** 按钮，选择 **Use Proxy aliyun-emr-socks-proxy for all URLs**。
         8.  在浏览器中输入 localhost:8088，就可以打开远端的 Hadoop 界面了。
--   **方式二：本地端口转发**
+-   方式二：本地端口转发
 
     **说明：** 这个方式的缺陷是只能看到最外层的界面，一旦要看详细的作业信息，就会出错。
 
