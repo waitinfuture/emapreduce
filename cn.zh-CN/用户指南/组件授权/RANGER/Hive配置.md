@@ -41,20 +41,20 @@
 
 -   Enable Hive Plugin
 
-    1.  在集群配置页面，在你想操作的集群后的操作栏中点击**管理**
-    2.  在Ranger配置页面，单击右上角的**操作**下拉菜单，选择**Enable Hive PLUGIN**，然后单击**确定**。
+    1.  在集群配置页面，在你想操作的集群后的操作栏中单击**管理**。
+    2.  在服务列表中单击**Hive**进入Hive配置界面。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17950/153690787211501_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17950/153803772211501_zh-CN.png)
 
-    3.  在Ranger配置页面，单击右上角的**操作**下拉菜单，选择**Enable Hive PLUGIN**，然后单击**确定**。
+    3.  在Ranger配置页面，单击右侧的**操作**下拉菜单，选择**Enable Hive PLUGIN**，然后单击**确定**。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17950/153690787211501_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17950/153803772211501_zh-CN.png)
 
-    4.  在弹出框输入备注信息，然后点击**确定**。
+    4.  在弹出框输入备注信息，然后单击**确定**。
 
         单击右上角**查看操作历史**查看任务进度，等待任务完成。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17950/153690787211502_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17950/153803772211502_zh-CN.png)
 
     **说明：** Enable Hive Plugin并重启Hive后，则HiveServer2场景/HiveClient场景\(Storage Based Authorization\)的都进行了相关的配置，HDFS的权限可参见[HDFS配置](https://help.aliyun.com/document_detail/66411.html?spm=a2c4g.11186623.2.10.63f75952TKxSqc)进行开启。
 
@@ -63,7 +63,7 @@
     上述任务完成后，需要重启Hive才生效。
 
     1.  在Ranger配置页面中，单击左上角Ranger后的倒三角，从Ranger切换到Hive。
-    2.  单击右上角**Actions**，从下拉菜单中选择**RESTART All Components**，然后单击**确定**。
+    2.  单击右上角**操作**，从下拉菜单中选择**RESTART All Components**，然后单击**确定**。
     3.  单击右上角的**查看操作历史**查看任务进度，等待重启任务完成。
 -   Ranger UI添加Hive service
 
@@ -71,9 +71,9 @@
 
     在Ranger UI页面添加Hive Service:
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17950/153690787211506_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17950/153803772211506_zh-CN.png)
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17950/153690787211507_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17950/153803772211507_zh-CN.png)
 
     -   填写说明
 
@@ -98,11 +98,11 @@
 
 上面一节中已经将Ranger集成到Hive，现在可以进行相关的权限设置。例如给用户foo授予表testdb.test的a列Select权限：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17950/153690787211509_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17950/153803772311509_zh-CN.png)
 
 单击上图中的**emr-hive**进入配置页面，配置相关权限。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17950/153690787311510_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17950/153803772311510_zh-CN.png)
 
 按照上述步骤设置添加一个Policy后，就实现了对foo的授权，然后用户foo就可以对testdb.test的表进行访问了。
 
