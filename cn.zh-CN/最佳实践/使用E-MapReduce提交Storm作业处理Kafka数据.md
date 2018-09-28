@@ -13,11 +13,11 @@
 
 -   创建Hadoop集群
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/153795228812655_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/153811639012655_zh-CN.png)
 
 -   创建Kafka集群
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/153795228812657_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/153811639112657_zh-CN.png)
 
     **说明：** 
 
@@ -43,15 +43,15 @@
     -   [protobuf-java](http://central.maven.org/maven2/com/google/protobuf/protobuf-java/2.5.0/protobuf-java-2.5.0.jar)
     以上版本依赖包经过测试可用，如果你再测试过程中引入了其他依赖，也一同添加在Storm lib中，具体操作如下：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/153795228812659_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/153811639112659_zh-CN.png)
 
     上述操作需要在Kafka集群的每台机器执行一遍。执行完在E-MapReduce控制台重启Storm服务，如下：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/153795228812660_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/153811639212660_zh-CN.png)
 
     查看操作历史，待Storm重启完毕：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/153795228812661_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/153811639212661_zh-CN.png)
 
 
 ## 开发Storm和Kafka作业 {#section_x4k_k4j_gfb .section}
@@ -94,7 +94,7 @@
         -   SSH隧道，参考文档[SSH 登录集群](https://help.aliyun.com/document_detail/28187.html?spm=a2c4g.11186623.6.640.24b454c4CAFUqC)
         本文选择使用SSH隧道方式，访问地址：http://localhost:9999/index.html。可以看到我们刚刚提交的Topology。点进去可以看到执行详情：
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/153795228812663_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/153811639312663_zh-CN.png)
 
     -   查看HDFS输出
         -   查看HDFS文件输出
