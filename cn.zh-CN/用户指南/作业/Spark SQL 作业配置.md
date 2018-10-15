@@ -1,5 +1,7 @@
 # Spark SQL 作业配置 {#concept_vck_cjp_y2b .concept}
 
+Spark SQL 作业配置
+
 **说明：** Spark SQL 提交作业的模式默认是 yarn-client 模式。
 
 ## 操作步骤 {#section_ws2_gjp_y2b .section}
