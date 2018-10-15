@@ -1,5 +1,7 @@
 # Kafka 常见问题 {#concept_u2m_rgd_z2b .concept}
 
+Kafka 常见问题
+
 -   `Error while executing topic command : Replication factor: 1 larger than available brokers: 0.`
 
     常见原因：
