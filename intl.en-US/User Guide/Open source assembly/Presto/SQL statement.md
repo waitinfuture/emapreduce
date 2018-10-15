@@ -1,29 +1,29 @@
-# SQL语句 {#concept_k1k_mhl_z2b .concept}
+# SQL statement {#concept_k1k_mhl_z2b .concept}
 
-SQL语句
+SQL statement
 
 ## ALTER SCHEMA {#section_fk2_2cf_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     ALTER SCHEMA name RENAME TO new_name
     ```
 
--   描述
+-   **Description**
 
-    重命名SCHEMA。
+    Renames SCHEMA.
 
--   示例
+-   **Examples**
 
     ```
-    ALTER SCHEMA web RENAME TO traffic -- 将Schema 'web'重命名为'traffic'
+    ALTER SCHEMA web RENAME TO traffic -- Renames Schema 'web' as 'traffic'
     ```
 
 
 ## ALTER TABLE {#section_sjf_ncf_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     ALTER TABLE name RENAME TO new_name
@@ -32,54 +32,54 @@ SQL语句
     ALTER TABLE name RENAME COLUMN column_name TO new_column_name
     ```
 
--   描述
+-   **Description**
 
-    更新表格定义。
+    Changes the definition of an existing table
 
--   示例
+-   **Examples**
 
     ```
-    ALTER TABLE users RENAME TO people; --- 重命名
-    ALTER TABLE users ADD COLUMN zip varchar; --- 添加列
-    ALTER TABLE users DROP COLUMN zip; --- 删除列
-    ALTER TABLE users RENAME COLUMN id TO user_id; --- 重命名列
+    ALTER TABLE users RENAME TO people; --- Rename
+    ALTER TABLE users ADD COLUMN zip varchar; --- Add column
+    ALTER TABLE users DROP COLUMN zip; --- Drop column
+    ALTER TABLE users RENAME COLUMN id TO user_id; --- Rename column
     ```
 
 
 ## CALL {#section_ph3_ncf_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     CALL procedure_name ( [ name => ] expression [, ...] )
     ```
 
--   描述
+-   **Description**
 
-    调用存储过程。存储过程可以由连接器提供，用于数据操作或管理任务。如果底层存储系统具有自己的存储过程框架，如PostgreSQL，则需要通过连接器提供的存储过程来访问这些存储系统自己的存储过程,而不能使用**CALL**直接访问。
+    Calls a stored procedure. Stored procedures can be provided by connectors to perform data manipulation or administrative tasks. Some connectors such as the PostgreSQL Connector, are for systems that have their own stored procedures. These systems must use the stored procedures provided by the connectors to access their own stored procedures, which are not directly callable via **CALL**.
 
--   示例
+-   **Examples**
 
     ```
-    CALL test(123, 'apple'); --- 调用存储过程并传参（参数位置）
-    CALL test(name => 'apple', id => 123); --- 调用存储过程并传参（命名参数）
-    CALL catalog.schema.test(); --- 调用权限定名称的存储过程
+    CALL test(123, 'apple'); --- Call a stored procedure using positional arguments
+    CALL test(name => 'apple', id => 123); --- Call a stored procedure using named arguments
+    CALL catalog.schema.test(); --- Call a stored procedure using a fully qualified name
     ```
 
 
 ## COMMIT {#section_bq5_ddf_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     COMMIT [WORK]
     ```
 
--   描述
+-   **Description**
 
-    提交当前事务。
+    Commits the current transaction.
 
--   示例
+-   **Examples**
 
     ```
     COMMIT;
@@ -89,25 +89,25 @@ SQL语句
 
 ## CREATE SCHEMA {#section_pkx_ddf_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     CREATE SCHEMA [ IF NOT EXISTS ] schema_name
     [ WITH ( property_name = expression [, ...] ) ]
     ```
 
--   描述
+-   **Description**
 
-    创建新的SCHEMA。Schema是管理数据库表、视图和其他数据库对象的容器。
+    Creates a new SCHEMA. Schema is a container that holds tables, views, and other database objects.
 
-    -   如果SCHEMA已经存在，使用 `IF NOT EXISTS` 子句可以避免抛错。
-    -   使用 `WITH` 子句可以在创建时为SCHEMA设置属性。可以通过下列查询语句获取所有支持的属性列表：
+    -   The optional `IF NOT EXISTS` clause causes the error to be suppressed if the schema already exists;
+    -   The optional `WITH` clause can be used to set properties on the newly created schema. To list all available schema properties, run the following query:
 
         ```
         SELECT * FROM system.metadata.schema_properties;
         ```
 
--   示例
+-   **Examples**
 
     ```
     CREATE SCHEMA web;
@@ -118,7 +118,7 @@ SQL语句
 
 ## CREATE TABLE {#section_sgd_rdf_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     CREATE TABLE [ IF NOT EXISTS ]
@@ -131,23 +131,23 @@ SQL语句
     [ WITH ( property_name = expression [, ...] ) ]
     ```
 
--   描述
+-   **Description**
 
-    创建空表。可以使用`CREATE TABLE AS`从已有数据集中创建表。
+    Creates an empty table. Use the `CREATE TABLE AS` to create a table from an existing data set.
 
-    -   使用`IF NOT EXISTS`子句可以避免在表存在时抛出异常。
-    -   使用`WITH`子句可以在创建表格时，为表格设置属性。支持的属性列表可以通过下列语句获取：
+    -   The optional `IF NOT EXISTS` clause causes the error to be suppressed if the table already exists.
+    -   The optional `WITH` clause can be used to set properties on the newly created table. To list all available table properties, run the following query:
 
 ```
 SELECT * FROM system.metadata.table_properties;
 ```
 
-    -   使用`LIKE`子句可以引用已经存在的表的列定义。支持使用多个`LIKE`子句。
-    -   使用`INCLUDING PROPERTIES`可以在创建表时，引用已有表的属性。如果同时还使用了`WITH`子句，`WITH`子句中指定的属性会覆盖`INCLUDING PROPERTIES`引入的同名属性。默认为`EXCLUDING PROPERTIES`。
--   示例
+    -   The `LIKE` clause can be used to include all the column definitions from an existing table in the new table. Multiple `LIKE` clauses may be specified.
+    -   If `INCLUDING PROPERTIES` is specified, all of the table properties are copied to a new table. If the `WITH` clause specifies the same property name as one of the copied properties using `INCLUDING PROPERTIES`, the value from the `WITH` clause is used. The default behavior is `EXCLUDING PROPERTIES`.
+-   **Examples**
 
     ```
-    --- 创建表orders
+    --- Create a new table orders:
     CREATE TABLE orders (
       orderkey bigint,
       orderstatus varchar,
@@ -155,7 +155,7 @@ SELECT * FROM system.metadata.table_properties;
       orderdate date
     )
     WITH (format = 'ORC')
-    --- 创建表orders，带备注信息
+    --- Create the table orders if it does not already exist, adding a table comment and a column comment:
     CREATE TABLE IF NOT EXISTS orders (
       orderkey bigint,
       orderstatus varchar,
@@ -163,7 +163,7 @@ SELECT * FROM system.metadata.table_properties;
       orderdate date
     )
     COMMENT 'A table to keep track of orders.'
-    --- 创建表bigger_orders， 其中部分列的定义引用自表orders
+    Create the table bigger_orders, using some column definitions from orders:
     CREATE TABLE bigger_orders (
       another_orderkey bigint,
       LIKE orders,
@@ -174,7 +174,7 @@ SELECT * FROM system.metadata.table_properties;
 
 ## CREATE TABLE AS {#section_csn_22f_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     CREATE TABLE [ IF NOT EXISTS ] table_name [ ( column_alias, ... ) ]
@@ -184,26 +184,26 @@ SELECT * FROM system.metadata.table_properties;
     [ WITH [ NO ] DATA ]
     ```
 
--   描述
+-   **Description**
 
-    创建新表，表中的数据来自 `SELECT` 子句。
+    Creates a new table containing the result of a `SELECT` query.
 
-    -   使用 `IF NOT EXISTS` 子句可以避免在表存在时抛出异常；
-    -   使用 `WITH` 子句可以在创建表格时，为表格设置属性。支持的属性列表可以通过下列语句获取：
+    -   The optional `IF NOT EXISTS` clause causes the error to be suppressed if the table already exists.
+    -   The optional `WITH` clause can be used to set properties on the newly created table. To list all available table properties, run the following query:
 
         ```
         SELECT * FROM system.metadata.table_properties;
         ```
 
--   示例
+-   **Examples**
 
     ```
-    --- 从表orders中选择两个列来创建新的表
+    --- Select two columns from orders to create a new table
     CREATE TABLE orders_column_aliased (order_date, total_price)
     AS
     SELECT orderdate, totalprice
     FROM orders
-    --- 创建新表，使用聚合函数
+    --- Create a new table using the aggregate function
     CREATE TABLE orders_by_date
     COMMENT 'Summary of orders by date'
     WITH (format = 'ORC')
@@ -211,13 +211,13 @@ SELECT * FROM system.metadata.table_properties;
     SELECT orderdate, sum(totalprice) AS price
     FROM orders
     GROUP BY orderdate
-    --- 创建新表，使用**IF NOT EXISTS**子句
+    --- Create a new table, using the **IF NOT EXISTS** clause
     CREATE TABLE IF NOT EXISTS orders_by_date AS
     SELECT orderdate, sum(totalprice) AS price
     FROM orders
     GROUP BY orderdate
-    --- 创建新表，schema和表nation一样，但是没有数据
-    CREATE TABLE empty_nation AS
+    --- Create a new table with the same schema as nation and no data
+    Create Table maid
     SELECT *
     FROM nation
     WITH NO DATA
@@ -226,31 +226,31 @@ SELECT * FROM system.metadata.table_properties;
 
 ## CREATE VIEW {#section_ipq_22f_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     CREATE [ OR REPLACE ] VIEW view_name AS query
     ```
 
--   描述
+-   **Description**
 
-    创建视图。视图是一个逻辑表，不包含实际数据，可以在查询中被引用。每次查询引用视图时，定义视图的查询语句都会被执行一次。
+    Creates a view. The view is a logic table that does not contain any data. It can be referenced by future queries. The query stored by the view is run every time the view is referenced by another query.
 
-    创建视图时使用 `OR REPLACE` 可以避免在视图存在时抛出异常。
+    The optional `OR REPLAE` clause causes the view to be replaced if it already exists rather than raising an error.
 
--   示例
+-   **Examples**
 
     ```
-    --- 创建一个简单的视图
+    --- Create a simple view
     CREATE VIEW test AS
     SELECT orderkey, orderstatus, totalprice / 2 AS half
     FROM orders
-    --- 创建视图，使用聚合函数
+    --- Create view using the aggregate function
     CREATE VIEW orders_by_date AS
     SELECT orderdate, sum(totalprice) AS price
     FROM orders
     GROUP BY orderdate
-    --- 创建视图，如果视图已经存在，就替换它
+    --- Create a view that replaces an existing view
     CREATE OR REPLACE VIEW test AS
     SELECT orderkey, orderstatus, totalprice / 4 AS quarter
     FROM orders
@@ -259,66 +259,66 @@ SELECT * FROM system.metadata.table_properties;
 
 ## DEALLOCATE PREPARE {#section_i1p_s2f_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     DEALLOCATE PREPARE statement_name
     ```
 
--   描述
+-   **Synopsis**
 
-    从会话中删除一个命名Statement。
+    Removes a statement with the name statement\_name from the list of prepared statements in a session.
 
--   示例
+-   **Examples**
 
     ```
-    --- 释放名为my_query的查询
+    --- Deallocate a statement named my_query
     DEALLOCATE PREPARE my_query;
     ```
 
 
 ## DELETE {#section_dqp_s2f_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     DELETE FROM table_name [ WHERE condition ]
     ```
 
--   描述
+-   **Description**
 
-    删除表中与 `WHERE` 子句匹配的行，如果没有指定 `WHERE` 子句，将删除所有行。
+    If the `WHERE` clause is specified, delete the matching rows from the table. If the `WHERE` is not specified, all rows from the table are deleted.
 
--   示例
+-   **Examples**
 
     ```
-    --- 删除匹配行
+    --- Delete the matching row
     DELETE FROM lineitem WHERE shipmode = 'AIR';
-    --- 删除匹配行
+    --- Delete the matching row
     DELETE FROM lineitem
     WHERE orderkey IN (SELECT orderkey FROM orders WHERE priority = 'LOW');
-    --- 清空表
+    --- Clear the table
     DELETE FROM orders;
     ```
 
--   局限
+-   **Limitations**
 
-    部分连接器没有可能不支持 `DELETE`。
+    Some connectors have limits or no support for `DELETE`.
 
 
 ## DESCRIBE {#section_tjq_bff_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     DESCRIBE table_name
     ```
 
--   描述
+-   **Description**
 
-    获取表格定义信息，等同与[SHOW COLUMNS](#)。
+    Retrieves the table definitions, and is an alias for [SHOW COLUMNS](#).
 
--   示例
+-   **Examples**
 
     ```
     DESCRIBE orders;
@@ -327,27 +327,27 @@ SELECT * FROM system.metadata.table_properties;
 
 ## DESCRIBE INPUT {#section_sxs_bff_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     DESCRIBE INPUT statement_name
     ```
 
--   描述
+-   **Description**
 
-    列出一个预编译查询中各个参数的位置及其类型。
+    Lists the input parameters of a prepared statement along with the position and type of each parameter.
 
--   示例
+-   **Examples**
 
     ```
-    --- 创建一个预编译查询'my_select1'
+    --- Create a pre-compiled query 'my_ select1'
     PREPARE my_select1 FROM
-    SELECT ? FROM nation WHERE regionkey = ? AND name < ?;
-    --- 获取该预编译查询的描述信息
+    SELECT ? From nation where regionkey =? AND name < ? ;
+    --- Get the descriptive information of this prepared statement
     DESCRIBE INPUT my_select1;
     ```
 
-    查询结果：
+    DESCRIBE INPUT my\_select1;
 
     ```
     Position | Type
@@ -361,27 +361,27 @@ SELECT * FROM system.metadata.table_properties;
 
 ## DESCRIBE OUTPUT {#section_t2v_bff_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     DESCRIBE OUTPUT statement_name
     ```
 
--   描述
+-   **Description**
 
-    列出输出结果的所有列信息，包括列名（或别名）、Catalog、Schema、表名、类型、类型大小（单位字节）和一个标识位，说明该列是否为别名。
+    Lists the output columns of a prepared statement, including the column name \(or alias\), catalog, schema, table name, type, type size in bytes, and a boolean indicating if the column is aliased.
 
--   示例
-    -   示例1
+-   **Examples**
+    -   Example one
 
-        准备一个预编译查询：
+        Prepare a prepared statement:
 
         ```
         PREPARE my_select1 FROM
         SELECT * FROM nation;
         ```
 
-        执行 `DESCRIBE OUTPUT`，输出：
+        Execute `DESCRIBE OUTPUT`, which outputs:
 
         ```
         DESCRIBE OUTPUT my_select1;
@@ -394,14 +394,14 @@ SELECT * FROM system.metadata.table_properties;
         (4 rows)
         ```
 
-    -   示例2
+    -   Example two
 
         ```
         PREPARE my_select2 FROM
         SELECT count(*) as my_count, 1+2 FROM nation
         ```
 
-        执行 `DESCRIBE OUTPUT`，输出：
+        Execute `DESCRIBE OUTPUT`, which outputs:
 
         ```
         DESCRIBE OUTPUT my_select2;
@@ -412,14 +412,14 @@ SELECT * FROM system.metadata.table_properties;
         (2 rows)
         ```
 
-    -   示例3
+    -   Example three:
 
         ```
         PREPARE my_create FROM
         CREATE TABLE foo AS SELECT * FROM nation;
         ```
 
-        执行 `DESCRIBE OUTPUT`，输出：
+        Execute `DESCRIBE OUTPUT`, which outputs:
 
         ```
         DESCRIBE OUTPUT my_create;
@@ -432,19 +432,19 @@ SELECT * FROM system.metadata.table_properties;
 
 ## DROP SCHEMA {#section_twp_n4f_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     DROP SCHEMA [ IF EXISTS ] schema_name
     ```
 
--   描述
+-   **Description**
 
-    删除Schema。
+    Drops an existing Schema.
 
-    -   Schema必须为空。
-    -   使用 `IF EXISTS` 来避免删除不存在的Schema时报错。
--   示例
+    -   The schema must be empty.
+    -   The optional `IF EXISTS` clause causes the error to be suppressed if the schema does not exist.
+-   **Examples**
 
     ```
     DROP SCHEMA web;
@@ -454,17 +454,17 @@ SELECT * FROM system.metadata.table_properties;
 
 ## DROP TABLE {#section_brs_n4f_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     DROP TABLE [ IF EXISTS ] table_name
     ```
 
--   描述
+-   **Description**
 
-    删除数据表。使用**IF EXISTS**来避免删除不存在的表时报错。
+    Drops an existing table. The optional **IF EXISTS** clause causes the error to be suppressed if the table does not exist.
 
--   示例
+-   **Examples**
 
     ```
     DROP TABLE orders_by_date;
@@ -474,17 +474,17 @@ SELECT * FROM system.metadata.table_properties;
 
 ## DROP VIEW {#section_wdt_n4f_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     DROP VIEW [ IF EXISTS ] view_name
     ```
 
--   描述
+-   **Description**
 
-    删除视图。使用**IF EXISTS**来避免删除不存在的视图时报错。
+    Drops an existing view. The optional **IF EXISTS** clause causes the error to be suppressed if the view does not exist.
 
--   示例
+-   **Examples**
 
     ```
     DROP VIEW orders_by_date;
@@ -494,74 +494,74 @@ SELECT * FROM system.metadata.table_properties;
 
 ## EXECUTE {#section_zkg_v4f_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     EXECUTE statement_name [ USING parameter1 [ , parameter2, ... ] ]
     ```
 
--   描述
+-   **Description**
 
-    执行预编译查询， 使用**USING**子句按位置传参。
+    Executes a prepared statement. Parameter values are defined in the **USING** clause.
 
--   示例
-    -   示例1
+-   **Examples**
+    -   Example one
 
         ```
         PREPARE my_select1 FROM
         SELECT name FROM nation;
-        --- 执行预编译查询
+        --- Execute a prepared statement
         EXECUTE my_select1;
         ```
 
-    -   示例2
+    -   Example two
 
         ```
         PREPARE my_select2 FROM
-        SELECT name FROM nation WHERE regionkey = ? and nationkey < ?;
-        --- 执行预编译查询
+        SELECT name FROM nation WHERE regionkey = ? and nationkey < ? ;
+        --- Execute a prepared statement
         EXECUTE my_select2 USING 1, 3; 
-        --- 上述语句等价与执行如下查询：
+        --- The preceding statement is equivalent to executing the following statement:
         SELECT name FROM nation WHERE regionkey = 1 AND nationkey < 3;
         ```
 
 
 ## EXPLAIN {#section_apj_v4f_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     EXPLAIN [ ( option [, ...] ) ] statement
-    这里Option可是时如下几个:
+    where option can be one of:
         FORMAT { TEXT | GRAPHVIZ }
         TYPE { LOGICAL | DISTRIBUTED | VALIDATE }
     ```
 
--   描述
+-   **Description**
 
-    根据选项不同，可以实现如下几个功能：
+    Achieves one of the following functions based on the option used:
 
-    -   显示查询语句的逻辑计划。
-    -   显示查询语句的分布式执行计划。
-    -   验证一个查询语句的合法性。
-    使用 `TYPE DISTRIBUTED` 选项来显示计划分片。每个计划分片都在单个或多个Presto节点上执行。分片之间的间隔表示Presto节点间的数据交换。分片类型说明分片是如何被Presto节点执行的，以及数据是如何在分片间分布的。 分片类型如下：
+    -   Shows the logical plan of a query statement
+    -   Shows the distributed execution plan of a query statement
+    -   Validates a query statement
+    Use `TYPE DISTRIBUTED` option to display fragmented plan. Each plan fragment is executed by a single or multiple Presto nodes. Fragments separation represent the data exchange between Presto nodes. Fragment type specifies how the fragment is executed by Presto nodes and how the data is distributed between fragments. Fragment types are as follows:
 
-    -   SINGLE：分片在单个节点上执行。
-    -   HASH：分片在固定个数的节点上执行，输入数据在这些节点上通过hash函数分布。
-    -   ROUND\_ROBIN：分片在固定个数的节点上执行，输入数据在这些节点上通过ROUND\_ROBIN的模式分布。
-    -   BROADCAST：分片在固定个数的节点上执行，处理数据通过广播的方式分发到所有节点。
-    -   SOURCE：分片在存储数据的节点上执行。
--   示例
-    -   示例1
+    -   SINGLE: Fragment is executed on a single node.
+    -   HASH: Fragment is executed on a fixed number of nodes with the input data distributed using a hash function.
+    -   ROUND\_ROBIN: Fragment is executed on a fixed number of nodes with the input data distributed in a ROUND-ROBIN fashion.
+    -   BROADCAST: Fragment is executed on a fixed number of nodes with the input data broadcasted to all nodes.
+    -   SOURCE: Fragment is executed on nodes where input splits are accessed.
+-   **Examples**
+    -   Example one
 
-        逻辑计划：
+        Logical plan:
 
         ```
         presto:tiny> EXPLAIN SELECT regionkey, count(*) FROM nation GROUP BY 1;
                                                         Query Plan
         ----------------------------------------------------------------------------------------------------------
          - Output[regionkey, _col1] => [regionkey:bigint, count:bigint]
-                 _col1 := count
+                 _ Col1: = count?
              - RemoteExchange[GATHER] => regionkey:bigint, count:bigint
                  - Aggregate(FINAL)[regionkey] => [regionkey:bigint, count:bigint]
                         count := "count"("count_8")
@@ -575,9 +575,9 @@ SELECT * FROM system.metadata.table_properties;
                                              regionkey := tpch:regionkey
         ```
 
-    -   示例2
+    -   Example two
 
-        分布式计划：
+        Distributed plan:
 
         ```
         presto:tiny> EXPLAIN (TYPE DISTRIBUTED) SELECT regionkey, count(*) FROM nation GROUP BY 1;
@@ -607,9 +607,9 @@ SELECT * FROM system.metadata.table_properties;
                              regionkey := tpch:regionkey
         ```
 
-    -   示例3
+    -   Example three:
 
-        验证：
+        Validation:
 
         ```
         presto:tiny> EXPLAIN (TYPE VALIDATE) SELECT regionkey, count(*) FROM nation GROUP BY 1;
@@ -621,19 +621,19 @@ SELECT * FROM system.metadata.table_properties;
 
 ## EXPLAIN ANALYZE {#section_lrl_v4f_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     EXPLAIN ANALYZE [VERBOSE] statement
     ```
 
--   描述
+-   **Description**
 
-    执行Statement，并且显示该次查询实际的分布式执行计划以及每个执行过程的成本。启用 `VERBOSE` 选项可以获取更多详细信息和底层的统计量。
+    Executes the statement and shows the distributed execution plan of the statement along with the cost of each operation. The `VERBOSE` option gives more detailed information and low-level statistics.
 
--   示例
+-   **Examples**
 
-    在下面的示例中，你可以看到每个Stage消耗的CPU时间和该Stage中每个计划节点的相对成本。需要注意的是，相对成本使用实际时间来计量，因此，无法显示其与CPU时间的相关性。对于每个计划节点，还会显示一些附加的统计信息，这些统计信息有助于发现一次查询中的数据异常情况（如倾斜，hash冲突等）。
+    In the following example, you can see the CPU time spent in each stage, as well as the relative cost of each plan node in the stage. Note that the relative cost of the plan nodes is based on wall time, which may or may not be correlated to CPU time. For each plan node you can see some additional statistics, which are useful if you want to detect data anomalies for a query \(skewness, abnormal hash collisions\).
 
     ```
     presto:sf1> EXPLAIN ANALYZE SELECT count(*), clerk FROM orders WHERE orderdate > date '1995-01-01' GROUP BY clerk;
@@ -673,7 +673,7 @@ SELECT * FROM system.metadata.table_properties;
                     clerk := tpch:clerk
     ```
 
-    如果开启了 `VERBOSE` 选项，运行操作符会返回更多信息：
+    When the `VERBOSE` option is used, some operators may report additional information.
 
     ```
     EXPLAIN ANALYZE VERBOSE SELECT count(clerk) OVER() FROM orders WHERE orderdate > date '1995-01-01';
@@ -687,7 +687,7 @@ SELECT * FROM system.metadata.table_properties;
                      Active Drivers: [ 1 / 1 ]
                      Index size: std.dev.: 0.00 bytes , 0.00 rows
                      Index count per driver: std.dev.: 0.00
-                     Rows per driver: std.dev.: 0.00
+                     Rows per driver: STD. Dev.: 0.00
                      Size of partition: std.dev.: 0.00
                      count := count("clerk")
      ...
@@ -696,7 +696,7 @@ SELECT * FROM system.metadata.table_properties;
 
 ## GRANT {#section_z3r_2qf_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     GRANT ( privilege [, ...] | ( ALL PRIVILEGES ) )
@@ -704,71 +704,71 @@ SELECT * FROM system.metadata.table_properties;
     [ WITH GRANT OPTION ]
     ```
 
--   描述
+-   **Description**
 
-    授予指定的权限指定的受让对象。
+    Grants the specified privileges to the specified grantee.
 
-    -   `ALL PRIVILEGES` 包括 DELETE, INSERT 和 SELECT 权限。
-    -   `PUBLIC`表示所有用户。
-    -   使用`WITH GRANT OPTION`允许权限受让对象给其他用户赋予相同的权限。
--   示例
+    -   Specifying `ALL PRIVILEGES` grants DELETE, INSERT and SELECT privileges.
+    -   Specifying `PUBLIC`grants privileges to the PUBLIC role and hence to all users.
+    -   The optional `WITH GRANT OPTION` clause allows the grantee to grant these same privileges to others.
+-   **Examples**
 
     ```
-    GRANT INSERT, SELECT ON orders TO alice; --- 给用户alice赋权
-    GRANT SELECT ON nation TO alice WITH GRANT OPTION; --- 给用户alice赋权，同时，alice还具有赋予其他用户**SELECT**权限的权限，
-    GRANT SELECT ON orders TO PUBLIC; --- 开放表order的**SELECT**权限给所有人
+    GRANT INSERT, SELECT ON orders TO alice; --- Grant privileges to user alice
+    GRANT SELECT ON nation TO alice WITH GRANT OPTION; --- Grant SELECT privilege to user alice, additionally allowing alice to grant **SELECT** privilege to others
+    GRANT SELECT ON orders TO PUBLIC; --- Grant **SELECT** privilege on the table order to everyone
     ```
 
--   局限
+-   **Limitations**
 
-    某些连接器可能不支持 `GRANT`。
+    Some connectors have no support for `GRANT`.
 
 
 ## INSERT {#section_c25_2qf_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     INSERT INTO table_name [ ( column [, ... ] ) ] query
     ```
 
--   描述
+-   **Description**
 
-    插入数据。如果指定了列名列表,该列表必须精确匹配 `query` 的结果集。没有出现在列名列表中的列将使用`null`进行填充。
+    Inserts new rows into a table. If the list of column names is specified, they must exactly match the list of columns produced by the `query`. Each column in the table not present in the column list is filled with a `null` value.
 
--   示例
+-   **Examples**
 
     ```
-    INSERT INTO orders SELECT * FROM new_orders; --- 将select结果插入表orders中
-    INSERT INTO cities VALUES (1, 'San Francisco'); --- 插入一行数据
-    INSERT INTO cities VALUES (2, 'San Jose'), (3, 'Oakland'); --- 插入多行数据
-    INSERT INTO nation (nationkey, name, regionkey, comment) VALUES (26, 'POLAND', 3, 'no comment'); --- 插入一行数据
-    INSERT INTO nation (nationkey, name, regionkey) VALUES (26, 'POLAND', 3); --- 插入一行数据（只包括部分列）
+    INSERT INTO orders SELECT * FROM new_orders; --- Insert the SELECT results into the orders table.
+    INSERT INTO cities VALUES (1, 'San Francisco'); --- Insert a single row
+    INSERT INTO cities VALUES (2, 'San Jose'), (3, 'Oakland'); --- Insert multiple rows
+    INSERT INTO nation (nationkey, name, regionkey, comment) VALUES (26, 'POLAND', 3, 'no comment'); --- Insert a single row
+    INSERT INTO nation (nationkey, name, regionkey) VALUES (26, 'POLAND', 3); --- Inserts a single row (only includes some columns)
     ```
 
 
 ## PREPARE {#section_tlw_2qf_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     PREPARE statement_name FROM statement
     ```
 
--   描述
+-   **Description**
 
-    创建一个预处理语句，以备后续使用。预处理语句就是一组保存在会话中的命名查询语句集合，可以在这些语句中定义参数，在实际执行时填充实际的值。定义的参数使用?占位。
+    Prepares a statement for execution at a later time. Prepared statements are queries saved in a session with a given name. The statement can include parameters in place of literals to be replaced at execution time. Parameters are represented by ?.
 
--   示例
+-   **Examples**
 
     ```
-    --- 不带参数的预处理查询语句
+    --- Prepare a query that does not include parameters
     PREPARE my_select1 FROM
     SELECT * FROM nation;
-    --- 带参数的预处理查询语句
+    --- Prepare a query that includes parameters
     PREPARE my_select2 FROM
-    SELECT name FROM nation WHERE regionkey = ? AND nationkey < ?;
-    --- 不带参数的预处理插入语句
+    SELECT name FROM nation WHERE regionkey = ? AND nationkey < ? ;
+    --- Prepare an insert statement that does not include parameters
     PREPARE my_insert FROM
     INSERT INTO cities VALUES (1, 'San Francisco');
     ```
@@ -776,18 +776,18 @@ SELECT * FROM system.metadata.table_properties;
 
 ## RESET SESSION {#section_rky_2qf_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     RESET SESSION name
     RESET SESSION catalog.name
     ```
 
--   描述
+-   **Description**
 
-    重置会话，使用默认属性。
+    Reset a session property value to the default value.
 
--   示例
+-   **Examples**
 
     ```
     RESET SESSION optimize_hash_generation;
@@ -797,52 +797,52 @@ SELECT * FROM system.metadata.table_properties;
 
 ## REVOKE {#section_nsv_fqf_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     REVOKE [ GRANT OPTION FOR ]
-    ( privilege [, ...] | ALL PRIVILEGES )
+    (Privilege [,...] | ALL PRIVILEGES )
     ON [ TABLE ] table_name FROM ( grantee | PUBLIC )
     ```
 
--   描述
+-   **Description**
 
-    撤回指定用户的指定权限。
+    Revokes the specified privileges from the specified grantee.
 
-    -   使用`ALL PRIVILEGE`可以撤销`SELECT`，`INSERT`和`DELETE`权限。
-    -   使用`PUBLIC`表示撤销对象为`PUBLIC`角色，用户通过其他角色获得的权限不会被收回。
-    -   使用`GRANT OPTION FOR`将进一步收回用户使用`GRANT`进行赋权的权限。
-    -   语句中`grantee`既可以是单个用户也可以是角色。
--   示例
+    -   Specifying `ALL PRIVILEGE` revokes `SELECT`, `INSERT` and `DELETE` privileges.
+    -   Specifying `PUBLIC` revokes privileges from the `PUBLIC` role. Users will retain privileges assigned to them directly or via other roles.
+    -   The optional `GRANT OPTION FOR` clause also revokes the privileges to `GRANT` the specified privileges.
+    -   Usage of the term `grantee` denotes both users and roles.
+-   **Examples**
 
     ```
-    --- 撤回用户alice对表orders进行INSET和SELECT的权限
+    --- Revoke INSERT and SELECT privileges on the table orders from user alice
     REVOKE INSERT, SELECT ON orders FROM alice;
-    --- 撤回所有人对表nation进行SELECT的权限，
-    --- 同时，撤回所有人赋予其他人对该表进行SELECT操作权限的权限
+    --- Revoke SELECT privilege on the table nation from everyone,
+    --- additionally revoking the privilege to grant SELECT privilege to others
     REVOKE GRANT OPTION FOR SELECT ON nation FROM PUBLIC;
-    --- 撤回用户alice在表test上的所有权限
+    --- Revoke all privileges on the table test from user alice
     REVOKE ALL PRIVILEGES ON test FROM alice;
     ```
 
--   局限
+-   **Limitations**
 
-    有些连接器不支持`REVOKE`语句。
+    Some connectors have no support for `REVOKE`.
 
 
 ## ROLLBACK {#section_jsl_lrf_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     ROLLBACK [ WORK ] 
     ```
 
--   描述
+-   **Description**
 
-    回滚当前事物。
+    Rollback the current transaction.
 
--   示例
+-   **Examples**
 
     ```
     ROLLBACK;
@@ -852,7 +852,7 @@ SELECT * FROM system.metadata.table_properties;
 
 ## SELECT {#section_a2s_qrf_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     [ WITH with_query [, ...] ]
@@ -866,66 +866,66 @@ SELECT * FROM system.metadata.table_properties;
     [ LIMIT [ count | ALL ] ]
     ```
 
-    其中，`from_item`有如下两种形式：
+    where `from_item` is one of:
 
     ```
-    table_name [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
+    Table_name [[as] alias [(column_alias [,...] ) ] ]
     ```
 
     ```
-    from_item join_type from_item [ ON join_condition | USING ( join_column [, ...] ) ]
+    From_item join_type from_item [ON join_condition | using (join_column [,...] ) ]
     ```
 
-    这里的 `join_type` 可以是如下之一：
+    and `join_type` is one of:
 
     -   \[ INNER \] JOIN
     -   LEFT \[ OUTER \] JOIN
     -   RIGHT \[ OUTER \] JOIN
     -   FULL \[ OUTER \] JOIN
     -   CROSS JOIN
-    而 `grouping_element` 可以是如下之一：
+    and `grouping_element` is one of:
 
     -   \(\)
     -   expression
     -   GROUPING SETS \( \( column \[, …\] \) \[, …\] \)
     -   CUBE \( column \[, …\] \)
     -   ROLLUP \( column \[, …\] \)
--   描述
+-   **Description**
 
-    检索0到多张数据表，获取结果集。
+    Retrieve rows from zero or more tables to get data sets.
 
--   WITH子句
-    -   基本功能
+-   **WITH clause**
+    -   **Basic functions**
 
-        WITH子句可以定义一组命名关系，这些关系可以在查询中被使用，从而扁平化嵌套查询或简化子查询。如下两个查询语句是等价的：
+        The WITH clause defines named relations for use within a query. It allows flattening nested queries or simplifying subqueries. For example, the following queries are equivalent:
 
         ```
-        --- 不使用WITH子句
+        --- The WITH clause is not used
         SELECT a, b
         FROM (
           SELECT a, MAX(b) AS b FROM t GROUP BY a
         ) AS x;
-        --- 使用WITH子句，查询语句看起来更加明了
+        --- The WITH clause is used, and the query statement looks to be much clearer
         WITH x AS (SELECT a, MAX(b) AS b FROM t GROUP BY a)
         SELECT a, b FROM x;
         ```
 
-    -   定义多个子查询
+    -   **Define multiple subqueries**
 
-        WITH 子句中可以定义多个子查询：
+        The WITH clause can be used to define multiple subqueries:
 
         ```
         WITH
           t1 AS (SELECT a, MAX(b) AS b FROM x GROUP BY a),
           t2 AS (SELECT a, AVG(d) AS d FROM y GROUP BY a)
-        SELECT t1.*, t2.*
+        SELECT t1.*, t2. *
         FROM t1
         JOIN t2 ON t1.a = t2.a;
         ```
 
-    -   组成链式结构
+    -   **Form a chain structure**
 
-        WITH 子句中的关系还可以组成链式结构：
+        Additionally, the relations within a WITH clause can chain:
 
         ```
         WITH
@@ -935,25 +935,25 @@ SELECT * FROM system.metadata.table_properties;
         SELECT c FROM z;
         ```
 
--   GROUP BY子句
-    -   基本功能
+-   **GROUP BY clause**
+    -   **Basic functions**
 
-        使用 `GROUP BY` 子句可以对 `SELECT` 结果进行分组。`GROUP BY`子句支持任意的表达式，既可以使用列名，也可以使用序号（从1开始）。
+        The `GROUP BY` clause divides the output of a `SELECT` statement into groups of rows containing matching values. A simple `GROUP BY` clause may contain any expression composed of input columns or it may be an ordinal number selecting an output column by position \(starting at one\).
 
-        下列示例中的查询语句是等价的（列 `nationkey` 的位置为2）。
+        The following queries are equivalent \(position for the `nationkey` column is two\).
 
         ```
-        --- 使用列序号
+        --- Using the ordinal number
         SELECT count(*), nationkey FROM customer GROUP BY 2;
-        --- 使用列名
+        --- Using the input column name
         SELECT count(*), nationkey FROM customer GROUP BY nationkey;
         ```
 
-        没有在输出列表中指定的列也可以用于 `GROUP BY` 子句，如下所示：
+        `GROUP BY` clauses can group output by input column names not appearing in the output of a select statement, for example:
 
         ```
-        --- 列mktsegment没有在SELECT列表中指定，
-        --- 结果集中不包括mktsegment列的内容。
+        --- The mktsegment column has not been specified in the SELECT list.
+        --- The result set does not contain content of the mktsegment column.
         SELECT count(*) FROM customer GROUP BY mktsegment;
          _col0
         -------
@@ -965,17 +965,17 @@ SELECT * FROM system.metadata.table_properties;
         (5 rows)
         ```
 
-        **说明：** 在`SELECT`语句中使用`GROUP BY`子句时，其输出表达式只能是聚合函数或者是`GROUP BY`子句中使用的列。
+        **Note:** When a `GROUP BY` BY clause is used in a `SELECT` statement, all output expressions must be either aggregate functions or columns present in the `GROUP BY` BY clause.
 
-    -   复杂分组操作
+    -   **Complex grouping operations**
 
-        Presto支持如下3中复杂的聚合语法，可以在一个查询中实现多个列集合的聚合分析：
+        Presto supports the following three complex aggregation syntaxes, which allows users to perform analysis that requires aggregation on multiple sets of columns in a single query:
 
-        -   GROUPING SETS（分组集）
+        -   **GROUPING SETS**
 
-            `GROUPING SETS`可以在一条查询语句中完成多个列的分组聚合。没有在分组列表中的列使用`NULL`进行填充。
+            `CUBE` `ROLLUP`
 
-            表shipping是一个包含5个列的数据表，如下所示：
+            The shipping table is a data table with five columns, which are shown as follows:
 
             ```
             SELECT * FROM shipping;
@@ -990,12 +990,12 @@ SELECT * FROM system.metadata.table_properties;
             (6 rows)
             ```
 
-            现在希望在一个查询中获取如下几个分组结果：
+            Now we want to retrieve the following grouping results using a single query statement:
 
-            -   按origin\_state进行分组，获取package\_weight的总和。
-            -   按origin\_state和origin\_zip分组，获取package\_weight的总和。
-            -   按destination\_state分组，获取package\_weight的总和。
-            使用`GROUPING SETS`可以在一条语句中获取上述3个分组的结果集，如下所示：
+            -   Group by origin\_state, and get the total package\_weight.
+            -   Group by origin\_state and origin\_zip, and get the total package\_weight.
+            -   Group by destination\_state, and get the total package\_weight.
+            `GROUPING SETS` allows users to retrieve the result set of the above three groups with a single query statement, as shown below:
 
             ```
             SELECT origin_state, origin_zip, destination_state, sum(package_weight)
@@ -1019,7 +1019,7 @@ SELECT * FROM system.metadata.table_properties;
             (10 rows)
             ```
 
-            上述查询逻辑也可以通过`UNION ALL`多个`GROUP BY`查询实现：
+            The preceding query may be considered logically equivalent to a `UNION ALL` of multiple `GROUP BY` queries:
 
             ```
             SELECT origin_state, NULL, NULL, sum(package_weight)
@@ -1032,16 +1032,16 @@ SELECT * FROM system.metadata.table_properties;
             FROM shipping GROUP BY destination_state;
             ```
 
-            但是，使用`GROUPING SETS`语法往往能获得更好的性能，因为，该语法在执行时，只会读取一次基表数据，而使用上述`UNION ALL`方式，会读取3次，因此，如果在查询期间基表数据有变化，使用`UNION ALL`的方式容易出现不一致的结果。
+            However, the query with the complex grouping syntax \(such as `GROUPING SETS`\) only reads from the underlying data source once, while the query with the `UNION ALL` reads the underlying data three times. This is why queries with a `UNION ALL` may produce inconsistent results when the data source is not deterministic.
 
-        -   CUBE（多维立方）
+        -   **CUBE**
 
-            使用CUBE可以获得给定列列表所有可能的分组结果。如下所示：
+            The **CUBE** operator generates all possible grouping sets for a given set of columns. For example, the query:
 
             ```
             SELECT origin_state, destination_state, sum(package_weight)
             FROM shipping
-            GROUP BY CUBE (origin_state, destination_state);
+            Group by cube (glas_state, destiny _ State );
              origin_state | destination_state | _col0
             --------------+-------------------+-------
              California   | New Jersey        |    55
@@ -1059,7 +1059,7 @@ SELECT * FROM system.metadata.table_properties;
             (12 rows)
             ```
 
-            该查询等价于如下语句：
+            is equivalent to:
 
             ```
             SELECT origin_state, destination_state, sum(package_weight)
@@ -1071,9 +1071,9 @@ SELECT * FROM system.metadata.table_properties;
                 ());
             ```
 
-        -   ROLLUP（汇总）
+        -   **ROLLUP**
 
-            使用ROLLUP可以获得给定列集和的小记结果。如下所示：
+            The **ROLLUP** operator generates all possible subtotals for a given set of columns. For example, the query:
 
             ```
             SELECT origin_state, origin_zip, sum(package_weight)
@@ -1092,7 +1092,7 @@ SELECT * FROM system.metadata.table_properties;
             (8 rows)
             ```
 
-            上述示例等价与如下语句：
+            is equivalent to:
 
             ```
             SELECT origin_state, origin_zip, sum(package_weight)
@@ -1100,9 +1100,9 @@ SELECT * FROM system.metadata.table_properties;
             GROUP BY GROUPING SETS ((origin_state, origin_zip), (origin_state), ());
             ```
 
-        -   综合使用
+        -   **Combining multiple grouping expressions**
 
-            下列3个语句是等价的：
+            The following three statements are equivalent:
 
             ```
             SELECT origin_state, destination_state, origin_zip, sum(package_weight)
@@ -1128,7 +1128,7 @@ SELECT * FROM system.metadata.table_properties;
                 (origin_state, destination_state));
             ```
 
-            输出结果如下：
+            Output results are as follows:
 
             ```
             origin_state | destination_state | origin_zip | _col3
@@ -1146,7 +1146,7 @@ SELECT * FROM system.metadata.table_properties;
             (10 rows)
             ```
 
-            在`GROUP BY`子句中，可以使用`ALL`和`DISTINCT`修饰符，用来说明是否可以生成重复的统计维度。如下所示：
+            In a `GROUP BY` clause, the `ALL` and `DISTINCT` quantifiers determine whether duplicate grouping sets each produce distinct output rows. For example, the query:
 
             ```
             SELECT origin_state, destination_state, origin_zip, sum(package_weight)
@@ -1156,7 +1156,7 @@ SELECT * FROM system.metadata.table_properties;
                 ROLLUP (origin_state, origin_zip);
             ```
 
-            等价于：
+            is equivalent to
 
             ```
             SELECT origin_state, destination_state, origin_zip, sum(package_weight)
@@ -1176,7 +1176,7 @@ SELECT * FROM system.metadata.table_properties;
                 ());
             ```
 
-            其中有多个维度是重复的。如果使用`DISTINCT`，则只会输出不重复的维度。
+            Multiple duplicate grouping sets are available. However, if the query uses the `DISTINCT` quantifier, only unique grouping sets are generated.
 
             ```
             SELECT origin_state, destination_state, origin_zip, sum(package_weight)
@@ -1186,7 +1186,7 @@ SELECT * FROM system.metadata.table_properties;
                 ROLLUP (origin_state, origin_zip);
             ```
 
-            等价于：
+            is equivalent to
 
             ```
             SELECT origin_state, destination_state, origin_zip, sum(package_weight)
@@ -1200,17 +1200,17 @@ SELECT * FROM system.metadata.table_properties;
                 ());
             ```
 
-            **说明：** `GROUP BY`默认使用的修饰符为`ALL`。
+            **Note:** The default set quantifier for `GROUP BY` BY is `ALL`.
 
-    -   GROUPING函数
+    -   **GROUPING operation**
 
-        Presto提供了一个`grouping`函数，用于生成一个标记数，该数中的每一个比特位表示对应的列是否出现在该分组条件中。语法如下：
+        Presto provides a `grouping` operation that returns a bit set converted to decimal, indicating which columns are present in a grouping. The semantics is demonstrated as follows:
 
         ```
         grouping(col1, ..., colN) -> bigint
         ```
 
-        `grouping`通常与`GROUPING SETS`，`ROLLUP`，`CUBE`或`GROUP BY`一起使用。`grouping`中的列必须与`GROUPING SETS`，`ROLLUP`，`CUBE`或`GROUP BY`中指定的列一一对应。
+        `grouping` is used in conjunction with `GROUPING SETS`, `ROLLUP`, `CUBE` or `GROUP BY`. `grouping` columns must match exactly the columns referenced in the corresponding `GROUPING SETS`, `ROLLUP`, `CUBE` or `GROUP BY` clause.
 
         ```
         SELECT origin_state, origin_zip, destination_state, sum(package_weight),
@@ -1235,13 +1235,13 @@ SELECT * FROM system.metadata.table_properties;
         (10 rows)
         ```
 
-        如上所示，`grouping`函数返回的是右对齐的比特标记数，0 表示列存在，1 表示列不存在。
+        As shown in the preceding table, bits are assigned to the argument columns with the rightmost column being the least significant bit. For a given `grouping`, a bit is set to 0 if the corresponding column is included in the grouping and to 1 otherwise.
 
--   HAVING子句
+-   **HAVING clause**
 
-    `HAVING`子句用来控制查询中分组的选择，与聚合函数和`GROUP BY`子句一起使用。`HAVING`子句的功能会在分组和聚合计算完成后进行，过滤掉不满足条件的分组。
+    The `HAVING` clause is used in conjunction with aggregate functions and the `GROUP BY` clause to control which groups are selected. A `HAVING` clause will be executed after completion of grouping and aggregation, to eliminate groups that do not satisfy the given conditions.
 
-    下面的示例将账户结余大于5700000的用户选出来。
+    The following example selects user groups with an account balance greater than 5700000:
 
     ```
     SELECT count(*), mktsegment, nationkey,
@@ -1252,7 +1252,7 @@ SELECT * FROM system.metadata.table_properties;
     ORDER BY totalbal DESC;
     ```
 
-    输出如下：
+    The output is as follows:
 
     ```
     _col0 | mktsegment | nationkey | totalbal
@@ -1267,9 +1267,9 @@ SELECT * FROM system.metadata.table_properties;
     (7 rows)
     ```
 
--   集合运算
+-   **Set operations**
 
-    Presto支持`UNION`、`INTERSECT`和`EXCEPT`3种集合运算。这些子句用来将多个查询语句的结果合并成一个总的结果集。使用方法如下所示：
+    Presto supports three set operations, namely `UNION`, `INTERSECT`, and `EXCEPT`. These clauses are used to combine the results of more than one query statement into a single result set. The usage is as follows:
 
     ```
     query UNION [ALL | DISTINCT] query
@@ -1277,24 +1277,24 @@ SELECT * FROM system.metadata.table_properties;
     query EXCEPT [DISTINCT] query
     ```
 
-    参数ALL和DISTINCT来控制最终哪些行会出现在结果集中，默认设为DISTINCT。
+    The argument ALL or DISTINCT controls which rows are included in the final result set, and the default is DISTINCT.
 
-    -   ALL， 有可能返回重复的行。
-    -   DISTINCT，对结果集进行去重。
-    `INTERSECT`和`EXCEPT`不支持ALL选项。
+    -   ALL: may return duplicated rows;
+    -   parmnamepar DISTINCTparmname : eliminates duplicated rows.
+    The ALL argument is not supported for `INTERSECT` or `EXCEPT`.
 
-    上述3个集合运算可以组合使用，运算从左到右进行，`INTERSECT`的优先级最高，因此，组合运算`A UNION B INTERSECT C EXCEPT D`实际的顺序是`A UNION (B INTERSECT C) EXCEPT D`。
+    The above three set operations are processed left to right, and `INTERSECT` has the highest priority. That means `A UNION B INTERSECT C EXCEPT D` is the same as `A UNION (B INTERSECT C) EXCEPT D`.
 
--   UNION
+-   **UNION**
 
-    `UNION`对两个查询的结果集做并集运算，通过ALL和DISTINCT来控制是否剔除重复项。
+    `UNION` combines two query result sets, and uses the ALL and DISTINCT arguments to control whether or not to remove duplicates.
 
-    -   示例1
+    -   Example one
 
         ```
         SELECT 13
         UNION
-        SELECT 42;
+        Select 42;
          _col0
         -------
             13
@@ -1302,7 +1302,7 @@ SELECT * FROM system.metadata.table_properties;
         (2 rows)
         ```
 
-    -   示例2
+    -   Example two
 
         ```
         SELECT 13
@@ -1315,7 +1315,7 @@ SELECT * FROM system.metadata.table_properties;
         (2 rows)
         ```
 
-    -   示例3
+    -   Example three:
 
         ```
         SELECT 13
@@ -1331,9 +1331,9 @@ SELECT * FROM system.metadata.table_properties;
 
 -   **INTERSECT**
 
-    `INTERSECT`对两个查询的结果集做交集运算。
+    `INTERSECT` returns only the rows that are in both query result sets.
 
-    示例：
+    Examples
 
     ```
     SELECT * FROM (VALUES 13, 42)
@@ -1342,12 +1342,12 @@ SELECT * FROM system.metadata.table_properties;
      _col0
     -------
        13
-    (1 rows)
+    (1 row)
     ```
 
--   EXCEPT
+-   **EXCEPT**
 
-    `EXCEPT`求两个查询结果集的补集。
+    `EXCEPT` returns the rows that are in the result set of the first query, but not the second.
 
     ```
     SELECT * FROM (VALUES 13, 42)
@@ -1356,30 +1356,30 @@ SELECT * FROM system.metadata.table_properties;
      _col0
     -------
        42
-    (1 rows)
+    (1 row)
     ```
 
--   ORDER BY子句
+-   **ORDER BY clause**
 
-    在查询中可以使用`ORDER BY`子句对查询结果进行排序。语法如下：
+    The `ORDER BY` clause is used to sort a result set. The semantics is demonstrated as follows:
 
     ```
     ORDER BY expression [ ASC | DESC ] [ NULLS { FIRST | LAST } ] [, ...]
     ```
 
-    其中：
+    Where:
 
-    -   expression由列名或列位置序号（从1开始）组成。
-    -   `ORDER BY`在`GROUP BY`和`HAVING`之后执行。
-    -   NULLS \{ FIRST | LAST \}可以控制NULL值的排序方式（与ASC/DESC无关），默认为LAST。
--   LIMIT子句
+    -   Each expression may be composed of output columns or it may be an ordinal number selecting an output column by position \(starting at one\).
+    -   The `ORDER BY` clause is the last step of a query after any `GROUP BY` or `HAVING` clause;
+    -   NULLS \{ FIRST | LAST \} is used to control the sorting method of the NULL value \(regardless of ASC or DESC\), and the default null ordering is LAST.
+-   **LIMIT clause**
 
-    `LIMIT`子句用来控制结果集的规模（即行数）。使用`LIMIT ALL`等价于不使用`LIMIT`子句。
+    The `LIMIT` clause restricts the number of rows in the result set. `LIMIT ALL` is the same as omitting the `LIMIT` clause.
 
-    示例：
+    Examples
 
     ```
-    --- 本例中，因为没有使用ORDER BY子句，返回结果是随机的
+    In this example, because the query lacks an ORDER BY, exactly which rows are returned is arbitrary.
     SELECT orderdate FROM orders LIMIT 5;
      orderdate
     -------------
@@ -1391,56 +1391,56 @@ SELECT * FROM system.metadata.table_properties;
     (5 rows)
     ```
 
--   TABLESAMPLE
+-   **TABLESAMPLE**
 
-    Presto提供了两种采样方式，BERNOULLI和SYSTEM，但是无论哪种采样方式， 都无法确定的给出采样结果集的行数。
+    Presto provides two sampling methods, namely BERNOULLI and SYSTEM. However, neither of the two methods allow deterministic bounds on the number of rows returned.
 
-    -   BERNOULLI：
+    -   BERNOULLI:
 
-        本方法基于样本百分比概率进行采样。当使用Bernoulli方法对表格进行采样时，执行器会扫描表格的所有物理块，并且基于样本百分比与运行时计算的随机值之间的比较结果跳过某些行。
+        Each row is selected to be in the table sample with a probability of the sample percentage. When a table is sampled using the Bernoulli method, all physical blocks of the table are scanned and certain rows are skipped based on a comparison between the sample percentage and a random value calculated at runtime.
 
-        每一行被选中对概率是独立对，与其他行无关，但是，这不会减少从磁盘读取采样表所需的时间。如果还需对采样结果做进一步处理，可能会对总查询时间产生影响。
+        The probability of a row being included in the result is independent from any other row. This does not reduce the time required to read the sampled table from disk. It may have an impact on the total query time if the sampled output is processed further.
 
-    -   SYSTEM：
+    -   SYSTEM
 
-        本方法将表格分成数据的逻辑段，并以此粒度对表格进行采样。这种抽样方法要么从一个特定的数据段中选择所有的行，要么跳过它（根据样本百分比和在运行时计算的一个随机值之间的比较）。
+        This sampling method divides the table into logical segments of data and samples the table at this granularity. This sampling method either selects all the rows from a particular segment of data or skips it \(based on a comparison between the sample percentage and a random value calculated at runtime\).
 
-        采样结果与使用哪种连接器有关。例如，与Hive一起使用时，取决于数据在HDFS上的分布。这种方法不保证独立的抽样概率。
+        The rows selected in a system sampling is dependent on which connector is used. For example, when used with Hive, it is dependent on how the data is laid out on HDFS. This method does not guarantee independent sampling probabilities.
 
-    示例：
+    Examples
 
     ```
-    --- 使用BERNOULLI采样
+    --- Using BERNOULLI sampling
     SELECT *
     FROM users TABLESAMPLE BERNOULLI (50);
-    --- 使用SYSTEM采样
+    --- Using system sampling
     SELECT *
     FROM users TABLESAMPLE SYSTEM (75);
     Using sampling with joins:
-    --- 采样过程中使用JOIN
-    SELECT o.*, i.*
+    --- Using sampling with JOIN
+    SELECT o.*, i. *
     FROM orders o TABLESAMPLE SYSTEM (10)
     JOIN lineitem i TABLESAMPLE BERNOULLI (40)
       ON o.orderkey = i.orderkey;
     ```
 
--   UNNEST
+-   **UNNEST**
 
-    `UNNEST`可以将 ARRAY 和 MAP 类型的变量展开成表。其中 ARRAY 展开为单列的表， MAP 展开为双列的表（键，值）。`UNNEST`可以一次展开多个 ARRAY 和 MAP 类型的变量，在这种情况下，它们被扩展为多个列，行数等于输入参数列表中最大展开行数（其他列用空值填充）。`UNNEST`可以有一个`WITH ORDINALITY`子句，此时，查询结果中会附加一个序数列。`UNNEST`通常与`JOIN`一起使用，并可以引用join左侧的关系的列。
+    `UNNEST` can be used to expand an ARRAY or MAP into a relation. Arrays are expanded into a single column, and maps are expanded into two columns \(key, value\). `UNNEST` can also be used with multiple arrays and maps, in which case they are expanded into multiple columns, with as many rows as the highest cardinality argument \(the other columns are padded with nulls\). `UNNEST` can optionally have a `WITH ORDINALITY`clause, in which case an additional ordinal column is added to the end. `UNNEST` is normally used with a `JOIN` and can reference columns from relations on the left side of the join.
 
-    -   示例1
+    -   Example one
 
         ```
-        --- 使用一个列
+        --- Using a single column
         SELECT student, score
         FROM tests
         CROSS JOIN UNNEST(scores) AS t (score);
         ```
 
-    -   示例2
+    -   Example two
 
         ```
-        --- 使用多个列
+        --- Using multiple columns
         SELECT numbers, animals, n, a
         FROM (
           VALUES
@@ -1459,10 +1459,10 @@ SELECT * FROM system.metadata.table_properties;
         (6 rows)
         ```
 
-    -   示例3
+    -   Example three:
 
         ```
-        --- 使用 WITH ORDINALITY 子句
+        --- Using a WITH ORDINALITY clause
         SELECT numbers, n, a
         FROM (
           VALUES
@@ -1482,23 +1482,23 @@ SELECT * FROM system.metadata.table_properties;
 
     -   **Joins**
 
-        Joins可以将多个关系的数据合并到一起。`CROSS JOIN` 返回两个关系到[笛卡尔积](https://en.wikipedia.org/wiki/Cartesian_product)（所有排列组合的集合）。`CROSS JOIN`可以通过如下两种方式来指定：
+        Joins allow you to combine data from multiple relations. A `CROSS JOIN` returns the [Cartesian product](https://en.wikipedia.org/wiki/Cartesian_product) of two relations \(all combinations\). `CROSS JOIN` can either be specified using
 
-        -   显式的使用`CROSS JOIN`语法。
-        -   在`FROM`子句中指定多个关系。
-        下列两个SQL语句是等价的：
+        -   the explicit `CROSS JOIN` syntax, or
+        -   by specifying multiple relations in the `FROM` clause.
+        Both of the following queries are equivalent:
 
         ```
-        --- 显式的使用**CROSS JOIN**语法
+        --- using the explicit **CROSS JOIN** syntax
         SELECT *
         FROM nation
         CROSS JOIN region;
-        --- 在**FROM**子句中指定多个关系
-        SELECT *
+        --- specifying multiple relations in the **FROM** clause
+        VALUES
         FROM nation, region;
         ```
 
-        示例：表nation包括25行记录，表region包括5行，对这两个表执行cross join操作，其结果集为125行记录。
+        Examples: The nation table contains 25 rows and the region table contains 5 rows, so a cross join between the two tables produces 125 rows:
 
         ```
         SELECT n.name AS nation, r.name AS region
@@ -1518,36 +1518,36 @@ SELECT * FROM system.metadata.table_properties;
         (125 rows)
         ```
 
-        如果参与join的表中包含相同名称的列，则需要用表名（或别名）加以修饰，示例如下：
+        When two relations in a join have columns with the same name, the column references must be qualified using the relation name \(or alias\).
 
         ```
-        --- 正确
+        --- Correct
         SELECT nation.name, region.name
         FROM nation
         CROSS JOIN region;
-        --- 正确
+        --- Correct
         SELECT n.name, r.name
         FROM nation AS n
         CROSS JOIN region AS r;
-        --- 正确
+        --- Correct
         SELECT n.name, r.name
         FROM nation n
         CROSS JOIN region r;
-        --- 错误，会抛出"Column 'name' is ambiguous"
+        --- Wrong, it will raise the "Column 'name' is ambiguous" error
         SELECT name
         FROM nation
         CROSS JOIN region;
         ```
 
-    -   子查询
+    -   **Subquery**
 
-        子查询是由一个查询组成的表达式。当子查询引用了子查询之外的列时，子查询与外部查询是相关的。Presto对相关子查询的支持比较有限。
+        A subquery is an expression which is composed of a query. The subquery is correlated when it refers to columns outside of the subquery. Presto has limited support for correlated subqueries.
 
-        -   EXISTS
+        -   **EXISTS**
 
-            谓语`EXISTS`用于确定子查询是否返回所有行，如果子查询有返回值，WHERE表达式为TRUE，否则为FALSE。
+            The `EXISTS` predicate determines if a subquery returns any rows. If subquery returns any rows, the WHERE expression is TRUE, and FALSE if otherwise.
 
-            示例：
+            Examples
 
             ```
             SELECT name
@@ -1555,11 +1555,11 @@ SELECT * FROM system.metadata.table_properties;
             WHERE EXISTS (SELECT * FROM region WHERE region.regionkey = nation.regionkey);
             ```
 
-        -   IN
+        -   **IN**
 
-            如果`WHERE`指定的列在子查询结果集中存在，则返回结果，否则不返回。子查询只能返回一个列。
+            The IN predicate determines if any columns specified by `WHERE` are included in the result set produced by the subquery. If yes, it returns results, and does not return results if otherwise. The subquery must produce exactly one column.
 
-            示例：
+            Examples
 
             ```
             SELECT name
@@ -1567,11 +1567,11 @@ SELECT * FROM system.metadata.table_properties;
             WHERE regionkey IN (SELECT regionkey FROM region);
             ```
 
-        -   标量子查询
+        -   **Scalar subquery**
 
-            标量子查询是一个非相关子查询，返回0～1行结果。该类子查询最多只能返回一行数据，如果子查询结果集为空，则返回 null。
+            A scalar subquery is a non-correlated subquery that returns zero or one row. The subquery cannot produce more than one row. The returned value is NULL if the subquery produces no rows.
 
-            示例：
+            Examples
 
             ```
             SELECT name
@@ -1582,18 +1582,18 @@ SELECT * FROM system.metadata.table_properties;
 
 ## SET SESSION {#section_cqh_l4g_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     SET SESSION name = expression
     SET SESSION catalog.name = expression
     ```
 
--   描述
+-   **Description**
 
-    设置会话属性。
+    Sets a session property value.
 
--   示例
+-   **Examples**
 
     ```
     SET SESSION optimize_hash_generation = true;
@@ -1603,17 +1603,17 @@ SELECT * FROM system.metadata.table_properties;
 
 ## SHOW CATALOGS {#section_c3y_l4g_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     SHOW CATALOGS [ LIKE pattern ]
     ```
 
--   描述
+-   **Description**
 
-    获取可用的Catalog清单。可以使用`LIKE`子句过滤catalog名称。
+    Lists the available catalogs. The `LIKE` clause can be used to filter the catalog names.
 
--   示例
+-   **Examples**
 
     ```
     SHOW CATALOGS;
@@ -1622,17 +1622,17 @@ SELECT * FROM system.metadata.table_properties;
 
 ## SHOW COLUMNS {#section_bq1_m4g_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     SHOW COLUMNS FROM table
     ```
 
--   描述
+-   **Description**
 
-    获取给定表格所有的列及其属性。
+    Lists the columns in a given table along with their data type and other attributes.
 
--   示例
+-   **Examples**
 
     ```
     SHOW COLUMNS FROM orders;
@@ -1641,17 +1641,17 @@ SELECT * FROM system.metadata.table_properties;
 
 ## SHOW CREATE TABLE {#section_nnc_m4g_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     SHOW CREATE TABLE table_name
     ```
 
--   描述
+-   **Description**
 
-    显示定义给定表格的SQL语句。
+    Shows the SQL statement that creates the specified table.
 
--   示例
+-   **Examples**
 
     ```
     SHOW CREATE TABLE sf1.orders;
@@ -1672,17 +1672,17 @@ SELECT * FROM system.metadata.table_properties;
 
 ## SHOW CREATE VIEW {#section_yn2_m4g_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     SHOW CREATE VIEW view_name
     ```
 
--   描述
+-   **Description**
 
-    显示定义给定视图的SQL语句。
+    Shows the SQL statement that creates the specified view.
 
--   示例
+-   **Examples**
 
     ```
     SHOW CREATE VIEW view1;
@@ -1691,17 +1691,17 @@ SELECT * FROM system.metadata.table_properties;
 
 ## SHOW FUNCTIONS {#section_a2f_tpg_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     SHOW FUNCTIONS
     ```
 
--   描述
+-   **Description**
 
-    列出所有可用于用于查询的函数。
+    List all the functions available for use in queries.
 
--   示例
+-   **Examples**
 
     ```
     SHOW FUNCTIONS
@@ -1710,43 +1710,43 @@ SELECT * FROM system.metadata.table_properties;
 
 ## SHOW GRANTS {#section_xk3_tpg_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     SHOW GRANTS [ ON [ TABLE ] table_name ]
     ```
 
--   描述
+-   **Description**
 
-    显示权限列表。
+    Lists the grants for the current user on the specified table in the current catalog.
 
--   示例
+-   **Examples**
 
     ```
-    --- 获取当前用户在表orders上的权限
+    --- List the grants for the current user on table orders
     SHOW GRANTS ON TABLE orders;
-    --- 获取当前用户在当前catalog中的权限
+    --- List the grants for the current user on all the tables in all schemas of the current catalog
     SHOW GRANTS;
     ```
 
--   局限
+-   **Limitations**
 
-    有些连接器不支持`SHOW GRANTS`操作。
+    Some connectors have no support for `SHOW GRANTS`.
 
 
 ## SHOW SCHEMAS {#section_tny_dqg_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     SHOW SCHEMAS [ FROM catalog ] [ LIKE pattern ]
     ```
 
--   描述
+-   **Description**
 
-    列出给定catalog下的所有schema，catalog不指定则表示当前catalog。使用`LIKE`子句可以过滤schema名称。
+    Lists all schemas in the specified catalog, or in the current catalog if no catalog has been specified. The `LIKE` clause can be used to filter the schema names.
 
--   示例
+-   **Examples**
 
     ```
     SHOW SCHEMAS;
@@ -1755,36 +1755,36 @@ SELECT * FROM system.metadata.table_properties;
 
 ## SHOW SESSION {#section_slk_lqg_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     SHOW SESSION
     ```
 
--   描述
+-   **Description**
 
-    显示当前回话的属性列表。
+    Lists the current session properties.
 
--   示例
+-   **Examples**
 
     ```
     SHOW SESSION
     ```
 
 
-## SHOW TABLES {#section_zlv_hsg_1fb .section}
+## SHOW TABLES; {#section_zlv_hsg_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     SHOW TABLES [ FROM schema ] [ LIKE pattern ]
     ```
 
--   描述
+-   **Description**
 
-    列出给定Schema下的所有表格，schema不指定则表示当前schema。使用`LIKE`子句可以过滤表名。
+    Lists all tables in the specified schema, or in the current schema if no schema has been specified. The `LIKE` clause can be used to filter the table name.
 
--   示例
+-   **Examples**
 
     ```
     SHOW TABLES;
@@ -1793,20 +1793,20 @@ SELECT * FROM system.metadata.table_properties;
 
 ## START TRANSACTION {#section_nbw_lsg_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     START TRANSACTION [ mode [, ...] ]
-    其中**mode**可以从如下几个选项中选择：
+    where **mode** is one of:
     ISOLATION LEVEL { READ UNCOMMITTED | READ COMMITTED | REPEATABLE READ | SERIALIZABLE }
     READ { ONLY | WRITE }
     ```
 
--   描述
+-   **Description**
 
-    在当前会话中启动一个新的事务。
+    Starts a new transaction for the current session.
 
--   示例
+-   **Examples**
 
     ```
     START TRANSACTION;
@@ -1819,18 +1819,18 @@ SELECT * FROM system.metadata.table_properties;
 
 ## USE {#section_kqx_4sg_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     USE catalog.schema
     USE schema
     ```
 
--   描述
+-   **Description**
 
-    更新当前回话，使用指定的Catalog和Schema。如果Catalog没有指定，则使用当前Catalog下的Schema。
+    Updates the session to use the specified catalog and schema. If a catalog is not specified, the schema is resolved relative to the current catalog.
 
--   示例
+-   **Examples**
 
     ```
     USE hive.finance;
@@ -1840,38 +1840,38 @@ SELECT * FROM system.metadata.table_properties;
 
 ## VALUES {#section_q5b_rsg_1fb .section}
 
--   概要
+-   **Synopsis**
 
     ```
     VALUES row [, ...]
-    其中， **row**是一个表达式，或者如下形式的表达式列表：
+    where **row** is a single expression or
     ( column_expression [, ...] )
     ```
 
--   描述
+-   **Description**
 
-    定义一张字面内联表。
+    Defines a literal inline table.
 
-    -   任何可以使用查询语句的地方都可以使用`VALUE`， 如放在`SELECT`语句的`FROM`后面，放在`INSERT`里，甚至放在最顶层。
-    -   `VALUE`默认创建一张匿名表，并且没有列名。表名和列名可以通过`AS`进行命名。
--   示例
+    -   `VALUE` can be used anywhere a query can be used. For example, behind the `FROM` clause of a `SELECT`, in an `INSERT`, or even at the top level.
+    -   `VALUE` creates an anonymous table without column names by default. The table and columns can be named using an `AS` clause.
+-   **Examples**
 
     ```
-    --- 返回一个表对象，包含1列，3行数据
+    --- Return a table with one column and three rows
     VALUES 1, 2, 3
-    --- 返回一个表对象，包含2列，3行数据
+    --- Return a table with two columns and three rows
     VALUES
         (1, 'a'),
         (2, 'b'),
         (3, 'c')
-    --- 在查询语句中使用
+    --- Using in a query statement:
     SELECT * FROM (
         VALUES
             (1, 'a'),
             (2, 'b'),
             (3, 'c')
     ) AS t (id, name)
-    --- 创建一个表
+    --- Create a table
     CREATE TABLE example AS
     SELECT * FROM (
         VALUES
