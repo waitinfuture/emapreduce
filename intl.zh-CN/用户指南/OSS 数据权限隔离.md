@@ -1,5 +1,7 @@
 # OSS 数据权限隔离 {#concept_jrw_vnl_z2b .concept}
 
+OSS 数据权限隔离
+
 ## 操作步骤 {#section_nbm_14l_z2b .section}
 
 E-MapReduce 支持使用 RAM 来隔离不同子账号的数据。操作步骤如下所示：
