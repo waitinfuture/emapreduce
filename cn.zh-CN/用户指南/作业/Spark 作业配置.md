@@ -4,16 +4,22 @@ Spark 作业配置
 
 ## 操作步骤 {#section_p4m_rhp_y2b .section}
 
-1.  进入[阿里云 E-MapReduce 控制台作业列表](https://emr.console.aliyun.com/?spm=5176.doc28084.2.1.gxpx8G#/job/region/cn-hangzhou)。
-2.  单击该页右上角的**创建作业**，进入创建作业页面。
-3.  填写作业名称。
-4.  选择 Spark 作业类型，表示创建的作业是一个 Spark 作业。Spark 作业在 E-MapReduce 后台使用以下的方式提交：
+1.  通过主账号登录[阿里云 E-MapReduce 控制台](https://emr.console.aliyun.com/)，进入集群列表页面。
+2.  单击上方的数据开发页签，进入项目列表页面。
+3.  单击对应项目右侧的**工作流设计**，进入作业编辑页面。
+4.  在页面左侧，在需要操作的文件夹上单击右键，选择**新建作业**。
+5.  填写作业名称，作业描述。
+6.  选择 Spark 作业类型，表示创建的作业是一个 Spark 作业。Spark 作业在 E-MapReduce 后台使用以下的方式提交：
 
     ```
     spark-submit [options] --class [MainClass] xxx.jar args
     ```
 
-5.  在**应用参数**选项框中填写提交该 Spark 作业需要的命令行参数。请注意，应用参数框中只需要填写spark-submit之后的参数即可。以下分别示例如何填写创建 Spark 作业和 pyspark 作业的参数。
+7.  单击**确定**。
+
+    **说明：** 您还可以通过在文件夹上单击右键，进行创建子文件夹、重命名文件夹和删除文件夹操作。
+
+8.  在**作业内容**输入框中填写提交该 Spark 作业需要的命令行参数。请注意，应用参数框中只需要填写spark-submit之后的参数即可。以下分别示例如何填写创建 Spark 作业和 pyspark 作业的参数。
     -   创建 Spark 作业
 
         新建一个 Spark WordCount 作业。
@@ -50,6 +56,5 @@ Spark 作业配置
 
         -   支持 Python 脚本资源的引用，同样使用 ossref 协议。
         -   pyspark 目前不支持在线安装 Python 工具包。
-6.  选择执行失败后策略。
-7.  单击**确定**，Spark 作业即定义完成。
+9.  单击**保存**，Spark 作业即定义完成。
 

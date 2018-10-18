@@ -4,16 +4,25 @@ Spark job configuration
 
 ## Procedure {#section_p4m_rhp_y2b .section}
 
-1.  Log on to the [Alibaba Cloud E-MapReduce Console Job List](https://emr.console.aliyun.com/?spm=5176.doc28084.2.1.gxpx8G#/job/region/cn-hangzhou).
-2.  Click **Create a job** in the upper right corner to enter the job creation page.
-3.  Enter the job name.
-4.  Select the Spark job type to create a Spark job. This type of job is submitted in the background by using the following process:
+1.  Log on to the [Alibaba Cloud E-MapReduce Console](https://emr.console.aliyun.com/?spm=5176.8250060.103.1.48466f55SEaqMe#/cn-hangzhou) to enter the Cluster List page with primary account.
+2.  Click the **Data Platform** tab on the top to enter the **Project List** page.
+3.  Click **Design Workflow** of the specified project in the **Operation** column.
+4.  On the left side of the Job Editing page, right-click on the folder you want to operate and select **New Job**.
+5.  In the **New Job** dialog box, enter the job name, job description.
+
+    Once the job type is selected, it cannot be modified.
+
+6.  Click **OK**.
+
+    **Note:** You can also create subfolder, rename folder, and delete folder by right-clicking on the folder.
+
+7.  Select the Spark job type to create a Spark job. This type of job is submitted in the background by using the following process:
 
     ```
     spark-submit [options] --class [MainClass] xxx.jar args
     ```
 
-5.  Enter the **Parameters** in the option box with command line parameters required to submit this Spark job. Only the parameters after spark-submit can be entered. The following example shows how to enter the parameters for creating Spark jobs and Pyspark jobs.
+8.  Enter the parameters in the **Content**box with command line parameters required to submit this Spark job. Only the parameters after spark-submit can be entered. The following example shows how to enter the parameters for creating Spark jobs and Pyspark jobs.
     -   Create a Spark job
 
         Create a Spark WordCount job:
@@ -50,6 +59,5 @@ Spark job configuration
 
         -   References of Python script resource are supported, and ossref protocol is used.
         -   For Pyspark, online Python installation kit is not supported.
-6.  Select the policy for failed operations.
-7.  Click **OK** to complete the Spark job configuration.
+9.  Click **Save** to complete the Spark job configuration.
 
