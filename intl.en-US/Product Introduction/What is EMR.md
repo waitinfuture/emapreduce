@@ -27,5 +27,5 @@ The core component directly oriented to an E-MapReduce user is the cluster. An E
 
 For example, the following figure shows an E-MapReduce cluster consisting of one master node and three slave nodes:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17824/15398514049988_en-US.jpg)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17824/15404606909988_en-US.jpg)
 
