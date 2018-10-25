@@ -29,25 +29,26 @@ The storage price is estimated roughly as follows:
 
 ## Type selection of E-MapReduce {#section_yvz_zjp_y2b .section}
 
-**Type selection of master nodes**
+-   Type selection of master nodes
 
-Master nodes are used to deploy the master processes of Hadoop, such as NameNode and ResourceManager.
+    Master nodes are used to deploy the master processes of Hadoop, such as NameNode and ResourceManager.
 
-We recommend that you enable HA on the production cluster. HA is available for components such as E-MapReduce HDFS, YARN, Hive, and HBase. We recommend that you enable **High Availability** in the “Hardware Configuration” step when you create the production cluster. If **High Availability** is not enabled when you purchase the product, it cannot be enabled later.
+    We recommend that you enable HA on the production cluster. HA is available for components such as E-MapReduce HDFS, YARN, Hive, and HBase. We recommend that you enable **High Availability** in the “Hardware Configuration” step when you create the production cluster. If **High Availability** is not enabled when you purchase the product, it cannot be enabled later.
 
-The master node is primarily used to store HDFS metadata and component log files. It is compute-intensive without high requirement for disk IO. HDFS metadata is stored in memory, and it is recommended that the memory should be 16 GB or above based on the number of files.
+    The master node is primarily used to store HDFS metadata and component log files. It is compute-intensive without high requirement for disk IO. HDFS metadata is stored in memory, and it is recommended that the memory should be 16 GB or above based on the number of files.
 
-**Type selection of core nodes**
+-   Type selection of core nodes
 
-The core node is primarily used to store data, perform calculations, and run DataNode and Nodemanager.
+    The core node is primarily used to store data, perform calculations, and run DataNode and Nodemanager.
 
-If the data volume of HDFS \(3 backups\) is greater than 60 TB, we recommend that you use local disk instance \(ECS.D1，ECS.D1NE\). The disk capacity is \(number of CPU cores/2\)\*5.5TB\*number of instances. For example, if you purchase four 8-core D1 instances, the disk capacity is 8/2\*5.5\*4=88 TB. Because HDFS uses 3 backups, you can buy at least 3 local disk instances. Considering data reliability and disk damage, we recommend that you purchase at least 4 instances.
+    If the data volume of HDFS \(3 backups\) is greater than 60 TB, we recommend that you use local disk instance \(ECS.D1，ECS.D1NE\). The disk capacity is \(number of CPU cores/2\)\*5.5TB\*number of instances. For example, if you purchase four 8-core D1 instances, the disk capacity is 8/2\*5.5\*4=88 TB. Because HDFS uses 3 backups, you can buy at least 3 local disk instances. Considering data reliability and disk damage, we recommend that you purchase at least 4 instances.
 
-If the data volume of HDFS is less than 60TB, you can consider ultra disks and SSD disks.
+    If the data volume of HDFS is less than 60TB, you can consider ultra disks and SSD disks.
 
-**Type selection of task nodes**
+-   Type selection of task nodes
 
-Task nodes are mainly used to supplement the CPU and memory, which can enhance the computing capability of Core nodes. The nodes do not store data or run DataNode. You can estimate the number of instances based on CPU and memory requirements.
+    Task nodes are mainly used to supplement the CPU and memory, which can enhance the computing capability of Core nodes. The nodes do not store data or run DataNode. You can estimate the number of instances based on CPU and memory requirements.
+
 
 ## E-MapReduce lifecycle {#section_bwz_zjp_y2b .section}
 
