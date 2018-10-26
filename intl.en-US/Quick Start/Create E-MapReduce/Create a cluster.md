@@ -36,7 +36,7 @@ To create a cluster, follow the below steps:
         -   **Billing method**: Pay-As-You-Go is used in testing scenarios. Subscription production clusters can be created after all tests are verified.
     -   Network configuration
         -   **Zone**: Generally use the default zone.
-        -   **Network type**: VPC is selected by default. If you haven't created a network, go to the [VPC console](https://vpc.console.aliyun.com/) to create them.
+        -   **Network type**: By default, the Virtual Private Cloud \(VPC\) network is selected which requires you to enter a VPC and a VSwitch. If you haven't created a network, go to the [VPC console](https://vpc.console.aliyun.com/) to create them.
         -   **VPC**: Select the region of the VPC network.
         -   **VSwitch**: Select a zone for VSwitch under the corresponding VPC. If no VSwitch is available in this zone, then you must create a new one.
         -   **Security group name**: Generally, no security group exists when you create a cluster for the first time. Enter a name to create a new security group. If you already have a security group in use, you can choose to use it directly here.
