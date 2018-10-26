@@ -33,7 +33,7 @@ The storage price is estimated roughly as follows:
 
     Master nodes are used to deploy the master processes of Hadoop, such as NameNode and ResourceManager.
 
-    We recommend that you enable HA on the production cluster. HA is available for components such as E-MapReduce HDFS, YARN, Hive, and HBase. We recommend that you enable **High Availability** in the “Hardware Configuration” step when you create the production cluster. If **High Availability** is not enabled when you purchase the product, it cannot be enabled later.
+    We recommend that you enable HA on the production cluster. HA is available for components such as E-MapReduce HDFS, YARN, Hive, and HBase. We recommend that you enable **High Availability** in the **Hardware configuration** step when you create the production cluster. If **High Availability** is not enabled when you purchase the product, it cannot be enabled later.
 
     The master node is primarily used to store HDFS metadata and component log files. It is compute-intensive without high requirement for disk IO. HDFS metadata is stored in memory, and it is recommended that the memory should be 16 GB or above based on the number of files.
 
