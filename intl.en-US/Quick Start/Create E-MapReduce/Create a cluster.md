@@ -41,7 +41,7 @@ To create a cluster, follow the below steps:
         -   **VSwitch**: Select a zone for VSwitch under the corresponding VPC. If no VSwitch is available in this zone, then you must create a new one.
         -   **Security group name**: Generally, no security group exists when you create a cluster for the first time. Enter a name to create a new security group. If you already have a security group in use, you can choose to use it directly here.
     -   Cluster configuration
-        -   **High availability**: When enabled, two master instances in the Hadoop cluster are used to ensure the availability of the Resource Manager and Name Node. HBase clusters supports high availability by default. When enabled, a master instance is used to ensure high availability.
+        -   **High availability**: When enabled, two master instances in the Hadoop cluster are used to ensure the availability of the Resource Manager and Name Node. HBase clusters support high availability by default. When enabled, a master instance is used to ensure high availability.
         -   Master node
             -   **Master instance type**: Select an instance type as required. For information about instance types, see [Instance type families](../../../../intl.en-US/Product Introduction/Instance type families.md#).
             -   **System disk type**: Select a disk as required.
@@ -56,7 +56,7 @@ To create a cluster, follow the below steps:
             -   **Data disk type**: Select a disk as required.
             -   **Data disk size**: We recommend that you select 80G at least.
             -   **Core instances**: It is set 2 instances by default. You can adjust as required.
-        -   **Task instance group**: It is turned off by default.
+        -   Task instance group: It is turned off by default.
 3.  Basic configuration
 
     Configuration description
@@ -67,8 +67,8 @@ To create a cluster, follow the below steps:
         -   **Running logs**: The function for saving running logs is turned on by default. In the default state, you can select the OSS directory location to save running logs. You must activate OSS before using this function. Cost depends on the number of uploaded files. We recommend that you open the OSS log saving function, which helps in debugging and error screening.
         -   **Log path**: OSS path for saving the log.
         -   **Uniform Meta Database**: We recommend you disable this feature for the moment.
-    -   **Permission settings**: Use default settings.
-    -   **Logon settings**
+    -   Permission settings: Use default settings.
+    -   Logon settings
         -   **Remote logon**: It is turned on by default to enable security group port 22.
         -   **Logon password**: Set the logon password at the master node. The logon password must contain English letters \(both uppercase and lowercase letters\), numbers, and special characters \(!@\#$%^&\*\) with a length limit between 8-30 characters.
 
@@ -82,7 +82,7 @@ After all configurations are set, the **Create** button is highlighted. Verify t
 
 **Note:** 
 
--   If it is a Pay-As-You-Go cluster, the cluster is created immediately, and you are taken back to the **Cluster List** page where you can see a cluster in **Cluster Creation** status. It takes several minutes to create the cluster. After creation, the cluster is switched to the **Idle** status.
+-   If it is a Pay-As-You-Go cluster, the cluster is created immediately, and you are taken back to the **Overview** page where you can see a cluster in **Initializing** status. It takes several minutes to create the cluster. After creation, the cluster is switched to the **Idle** status.
 -   For subscribed clusters, the cluster is not created until the order is generated and paid.
 
 ## Creation failure {#section_jtk_gz4_y2b .section}
