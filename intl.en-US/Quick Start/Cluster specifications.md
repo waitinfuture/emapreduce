@@ -14,7 +14,7 @@ At present, E-MapReduce product primarily meets the following requirements of bi
 
 ## E-MapReduce node {#section_wvz_zjp_y2b .section}
 
-E-MapReduce has three [Instance types](../../../../intl.en-US/User Guide/Configure clusters/Instance types.md#): Master, Core, and Task.
+E-MapReduce has three [Instance types](../../../../reseller.en-US/User Guide/Configure clusters/Instance types.md#): Master, Core, and Task.
 
 E-MapReduce storage can use ultra disks, SSD disks, and local disks. Disk performance comparison is as follows: SSD disks \> local disks \> ultra disks.
 
@@ -52,7 +52,7 @@ The storage price is estimated roughly as follows:
 
 ## E-MapReduce lifecycle {#section_bwz_zjp_y2b .section}
 
-E-MapReduce supports auto-scaling, which can quickly [Expand a cluster](../../../../intl.en-US/User Guide/Cluster/Expand a cluster.md#). It can flexibly adjust the configuration of cluster nodes or [upgrade or downgrade instance configurations](https://www.alibabacloud.com/help/doc-detail/25437.htm).
+E-MapReduce supports auto-scaling, which can quickly [Expand a cluster](../../../../reseller.en-US/User Guide/Cluster/Expand a cluster.md#). It can flexibly adjust the configuration of cluster nodes or [upgrade or downgrade instance configurations](https://partners-intl.com/help/doc-detail/25437.htm).
 
 ## Available zones {#section_cwz_zjp_y2b .section}
 
