@@ -14,12 +14,12 @@ Before creating E-MapReduce, you need to complete the following prerequisites:
 
     1.  Log on to the [official Alibaba Cloud website](https://www.alibabacloud.com/).
 
-    2.  Log on to the Alibaba Cloud console.
+    2.  Log on to the [Alibaba Cloud console](https://account.alibabacloud.com/login/login.htm).
     3.  Click **AccessKeys**.
 
         **Note:** If a security prompt dialog box appears, click **Continue to manage AccessKey**.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17837/154052321310452_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17837/154089365710452_en-US.png)
 
     4.  Click **Create AccessKey**.
     5.  Enter the SMS verification code and click **Confirm**.
