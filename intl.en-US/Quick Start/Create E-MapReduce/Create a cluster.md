@@ -24,7 +24,7 @@ To create a cluster, follow the below steps:
             -   Oozie and Pig.
         -   Druid clusters, provide semi-managed, real-time interactive analysis services, query large amount of data in millisecond latency, and support for multiple data intake methods. Used with services such as EMR Hadoop, EMR Spark, OSS, and RDS, Druid clusters offer real-time query solutions.
         -   Data Science clusters, are mainly for big data and AI scenarios, providing Hive and Spark offline big data, and TensorFlow model training.
-        -   Kafka clusters, are taken as a semi-managed message system of high throughput and high scalability, providing a complete service monitoring system that can keep a stable running environment.
+        -   Kafka clusters, are taken as a semi-managed distributed message system of high throughput and high scalability, providing a complete service monitoring system that can keep a stable running environment.
     -   **Include configurations**: Use the default configuration. You can add, start and stop services in the management interface later.
     -   **High security mode**: In this mode, you can set the Kerberos authentication of the cluster. This feature is unnecessary for clusters used by individual users. It is turned off by default.
     -   **Enable custom setting**: You can specify a JSON file to change software configuration before you start a cluster.
