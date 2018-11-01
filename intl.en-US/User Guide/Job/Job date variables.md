@@ -1,6 +1,6 @@
 # Job date variables {#concept_dhr_xkp_y2b .concept}
 
-During creation, time variable wildcard settings in job parameter are supported.
+During the creation of a job, time variable wildcard settings in job parameter are supported.
 
 ## Variable wildcard format {#section_gfy_zkp_y2b .section}
 
@@ -16,9 +16,11 @@ The dateexpr represents the expression of standard time format, and correspondin
 
 ## Example {#section_jfy_zkp_y2b .section}
 
-When being executed practically, the **Parameter** in the job on the figure below will be replaced with:
+When being executed practically, the **Parameter** in the following figure will be replaced with:
 
 ```
 jar ossref://emr/jar/hadoop/hadoop_wc.jar com.aliyun.emr.WordCount oss://emr/output/pt=20160426
 ```
+
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17875/154106143010541_en-US.png)
 
