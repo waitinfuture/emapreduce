@@ -1,42 +1,38 @@
 # Cluster renewal {#concept_ums_15n_y2b .concept}
 
-When your Subscription cluster service renewal is due to expire, you must renew the cluster to continue E-MapReduce cluster services. The cluster renewal includes the renewal of the E-MapReduce service charge and ECS fees.
+When your subscription cluster service renewal is about to expire, you must renew the cluster to continue E-MapReduce cluster services. The cluster renewal includes E-MapReduce services and ECS instances.
 
 ## Renewal entrance {#section_jlq_nxn_y2b .section}
 
-1.  Log on to [Alibaba Cloud E-MapReduce Cluster List Page](https://emr.console.aliyun.com/?spm=5176.doc35223.2.1.GOk4g8#/cluster/region/cn-hangzhou).
-2.  Specify the cluster to be renewed.
-3.  Click **Renewal** under the corresponding cluster to enter the cluster renewal page.
+1.  Log on to the[Alibaba Cloud E-MapReduce console](https://emr.console.aliyun.com/).
+2.  At the top of the page, click Cluster Management.
+3.  In the cluster list, target the cluster that you want to renew.
+4.  On the right side of the corresponding cluster, click **Renew** to enter the cluster renewal page.
 
 ## Renewal page {#section_mvf_mxn_y2b .section}
 
--   **Renewal**: Select the machine to be renewed.
+The figure is shown as follows:
 
--   **ECS instance ID**: The machine ECS instance ID in the cluster.
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17860/154106096510451_en-US.png)
 
--   **Current ECS expiration time**: The ECS expiration date.
+-   **ECS Expiration Date**: The expiration date of an ECS instance.
+-   **EMR Expiration Date**: The expiration date of E-MapReduce services.
+-   **Quantity**: The number of machines for instance groups.
+-   **ECS List**: The ECS instance ID of the machine in the cluster.
+-   **ECS Subscription Duration**: The renewal duration for ECS \(one-nine months and one-three years are supported\).
+-   **EMR Subscription Duration**: The renewal duration for E-MapReduce. We recommend that you keep it consistent with ECS.
+-   **Price**: The renewal price of E-MapReduce services and ECS instances.
 
--   **Current E-MapReduce expiration time**: The E-MapReduce product expiration date.
+## Pay for orders {#section_qvf_mxn_y2b .section}
 
--   **ECS renewal time**: The renewal duration for ECS \(1-9 months and 1-3 years are supported\).
+**Note:** The fees are the sum of ECS renewal price and E-MapReduce service product price. If there are unpaid orders in the cluster list, you cannot expand or renew any clusters.
 
--   **E-MapReduce renewal time**: The renewal duration of the E-MapReduce service at the node. We recommend that you keep it consistent with ECS.
+1.  Click **OK** to view the prompt box for successful order placement.
+2.  Click **Go to the payment page**. The payment page displays the total amount and order details of E-MapReduce services ECS intances.
+3.  Click **Confirm payment**.
+4.  After you make the payment, click **Payment completed** to return to the cluster list page.
 
--   **ECS renewal price**: Corresponding renewal price of the ECS nodes.
+The expiration time of successfully renewed clusters displayed on the cluster list page is updated to the time after renewal. For the corresponding ECS instance, the expiration time after the renewal is usually updated after about three to five minutes.
 
--   **E-MapReduce renewal price**: The renewal price of corresponding nodes of the E-MapReduce service.
-
-
-## Pay for the order {#section_qvf_mxn_y2b .section}
-
-**Note:** The fees for cluster renewal is the sum of ECS renewal price and E-MapReduce service product price. If there are unpaid orders in the cluster list, you cannot expand or renew any clusters.
-
-1.  Click **Confirm** to view the prompt box for successful order placement \(be patient, as the prompt information may be delayed for a while\).
-2.  Click **Pay for the order** to go to the order payment page. The payment page displays the total amount payable and order details. One is the order of E-MapReduce product fees, and others are the ECS orders of cluster renewal.
-3.  Click **Confirm payment**to complete the payment.
-4.  After you make the payment, click **Completed** to return to the cluster list page.
-
-The expiration time of successfully renewed clusters displayed on the cluster list page is updated to the time after renewal. For corresponding ECS, the expiration time after the renewal is usually updated after about three to five minutes.
-
-If you confirm the renewal order, but don’t pay for it, you can find the cluster entry on the cluster list page. **Pay** and **Cancel** are displayed in the operation column on the right side. You can click **Pay**to complete the corresponding order payment and cluster expansion processes, or click **Cancel** to cancel the renewal.
+If you confirm the renewal order, but don’t pay for it, **Cancel order** and **Make the payment** are displayed on the right side of the cluster. Click **Make the payment**to complete the corresponding order payment , or click **Cancel** to cancel the renewal.
 
