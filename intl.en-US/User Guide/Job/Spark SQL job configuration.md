@@ -1,21 +1,27 @@
 # Spark SQL job configuration {#concept_vck_cjp_y2b .concept}
 
-Spark SQL job configuration
+In this tutorial, you will learn how to configure a Spark SQL job.
 
 **Note:** By default, the Spark SQL mode to submit a job is Yarn mode.
 
 ## Procedure {#section_ws2_gjp_y2b .section}
 
-1.  Log on to the [Alibaba Cloud E-MapReduce Console Job List](https://emr.console.aliyun.com/?spm=5176.doc28084.2.1.gxpx8G#/job/region/cn-hangzhou).
-2.  Click **Create a job** in the upper right corner to enter the job creation page.
-3.  Enter the job name.
-4.  Select the Spark SQL job type to create a Spark SQL job. This type of job is submitted in the background by using the following process:
+1.  Log on to the [Alibaba Cloud E-MapReduce Console](https://emr.console.aliyun.com/?spm=5176.8250060.103.1.48466f55SEaqMe#/cn-hangzhou).
+2.  At the top of the navigation bar, click **Data Platform**.
+3.  In the **Actions** column, click **Design Workflow** of the specified project.
+4.  On the left side of the Job Editing page, right-click on the folder you want to operate and select **New Job**.
+5.  In the **New Job** dialog box, enter the job name and description.
+6.  Click **OK**.
+
+    **Note:** You can also create subfolder, rename folder, and delete folder by right-clicking on the folder.
+
+7.  Select the Spark SQL job type to create a Spark SQL job. This type of job is submitted in the background by using the following method:
 
     ```
     spark-sql [options] [cli option]
     ```
 
-5.  Enter the **Parameters** in the option box with parameters subsequent to Spark SQL commands.
+8.  Enter the parameters in the **Content**box with parameters subsequent to Spark SQL commands.
     -   -e option
 
         Directly write running SQL for -e options by inputting it into the **Parameters** box of the job, for example:
@@ -32,6 +38,5 @@ Spark SQL job configuration
         -f ossref://your-bucket/your-spark-sql-script.sql
         ```
 
-6.  Select the policy for failed operations.
-7.  Click **OK** to complete Spark SQL job configuration.
+9.  Click **Save** to complete Spark SQL job configuration.
 
