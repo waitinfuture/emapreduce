@@ -1,22 +1,19 @@
 # Spark job configuration {#concept_g1f_4hp_y2b .concept}
 
-Spark job configuration
+In this tutorial, you will learn how to configure a Spark job.
 
 ## Procedure {#section_p4m_rhp_y2b .section}
 
-1.  Log on to the [Alibaba Cloud E-MapReduce Console](https://emr.console.aliyun.com/?spm=5176.8250060.103.1.48466f55SEaqMe#/cn-hangzhou) to enter the Cluster List page with primary account.
-2.  Click the **Data Platform** tab on the top to enter the **Project List** page.
-3.  Click **Design Workflow** of the specified project in the **Operation** column.
+1.  Log on to the [Alibaba Cloud E-MapReduce Console](https://emr.console.aliyun.com/?spm=5176.8250060.103.1.48466f55SEaqMe#/cn-hangzhou).
+2.  At the top of the navigation bar, click **Data Platform**.
+3.  In the **Actions** column, click **Design Workflow** of the specified project.
 4.  On the left side of the Job Editing page, right-click on the folder you want to operate and select **New Job**.
-5.  In the **New Job** dialog box, enter the job name, job description.
-
-    Once the job type is selected, it cannot be modified.
-
+5.  In the **New Job** dialog box, enter the job name and description.
 6.  Click **OK**.
 
     **Note:** You can also create subfolder, rename folder, and delete folder by right-clicking on the folder.
 
-7.  Select the Spark job type to create a Spark job. This type of job is submitted in the background by using the following process:
+7.  Select the Spark job type to create a Spark job. This type of job is submitted in the background by using the following method:
 
     ```
     spark-submit [options] --class [MainClass] xxx.jar args
