@@ -1,18 +1,13 @@
 # Hadoop MapReduce Job Configuration {#concept_rtn_r1p_y2b .concept}
 
-Hadoop MapReduce Job Configuration
-
 ## Procedure {#section_kjy_pgp_y2b .section}
 
-1.  Log on to the [Alibaba Cloud E-MapReduce Console](https://emr.console.aliyun.com/?spm=5176.8250060.103.1.48466f55SEaqMe#/cn-hangzhou) to enter the Cluster List page with primary account.
-2.  Click the **Data Platform** tab on the top to enter the **Project List** page.
-3.  Click **Design Workflow** of the specified project in the **Operation** column.
+1.  Log on to the [Alibaba Cloud E-MapReduce Console](https://emr.console.aliyun.com/?spm=5176.8250060.103.1.48466f55SEaqMe#/cn-hangzhou).
+2.  At the top of the navigation bar, click **Data Platform**.
+3.  In the **Actions** column, click **Design Workflow** of the specified project.
 4.  On the left side of the Job Editing page, right-click on the folder you want to operate and select **New Job**.
-5.  In the **New Job** dialog box, enter the job name, job description.
-
-    Once the job type is selected, it cannot be modified.
-
-6.  Select a Hadoop job type to create a Hadoop Mapreduce job. This type of job is Hadoop job submitted in the background via the following process.
+5.  In the **New Job** dialog box, enter the job name and job description.
+6.  Select a Hadoop job type to create a Hadoop MapReduce job. This type of job is Hadoop job submitted in the background via the following process.
 
     ```
     hadoop jar xxx.jar [MainClass] -Dxxx ....
@@ -38,12 +33,12 @@ Hadoop MapReduce Job Configuration
 
     **Note:** 
 
-    The jar package path used here is an absolute path on the e-mapreduce host. There is a problem that the user may put these jar packages anywhere, and as the cluster is created and released, these jar packages become unavailable as they are released. Therefore, upload the jar package using the following methods:
+    The jar package path used here is an absolute path on the E-MapReduce host. There is a problem that the user may put these jar packages anywhere, and as the cluster is created and released, these jar packages become unavailable as they are released. Therefore, upload the jar package using the following methods:
 
-    1.  Users send their own jar packages to the bucket of the OSS for storage. When you configure the parameters for hadoop, click **select the OSS path** to select and execute the jar package you want from the OSS directory. System will then auto-complete the OSS address for jar packages. Be sure to switch the prefix of the jar for your code to ossref \(click **switch resource type**\), to ensure that the jar package is downloaded correctly by MapReduce.
+    1.  Users send their own jar packages to the bucket of the OSS for storage. When you configure the parameters for hadoop, click **Select OSS path** to select and execute the jar package you want from the OSS directory. System will then auto-complete the OSS address for jar packages. Be sure to switch the prefix of the jar for your code to ossref \(click **switch resource type**\), to ensure that the jar package is downloaded correctly by MapReduce.
     2.  1. Click **OK**, the OSS path for this package will be auto completed in the **Content** field. When a job is submitted, the system will find the corresponding jar packages automatically as per this path.
     3.  Behind the jar package path for this OSS, other command line parameters for running a job will be further filled in.
-9.  Click **Save** to The job is configured successfully.
+9.  Click **Save**.
 
 In above example, sleep job has no data input/output. If the job needs to read data and process input results \(e.g. wordcount\), the data input and output paths shall be specified. You can read/write data on HDFS of E-MapReduce cluster as well as data on OSS. To read/write data on OSS, it can be done only by writing the data path as the OSS path when filling input and output paths. For instance:
 
