@@ -1,8 +1,12 @@
 # Service list {#concept_w2h_5tn_y2b .concept}
 
-The Service list page has been added to the tab list of the cluster information page to show the running status of HDFS, YARN, and other services.
+The **Clusters and Services** tab has been added to the tab list of the cluster management page to show the running status of HDFS, YARN, and other services.
 
-The running status of services are only showed for clusters that are in Idle or Running status. When creating a cluster, if the service you click is unchecked \(such as Storm\), you are prompted that no record is found.
+The service list shows the information as follows.
 
-The list includes status and the intranet IP. The status is divided into Running and Idle. If the status of a service on some node is Idle, you can use the master node to jump to the corresponding node, and check the service process.
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17858/154106093210445_en-US.jpg)
+
+Running statuses of services are only showed for clusters that are in Idle or Running status. When creating a cluster, if the service you click is unchecked \(such as Storm\), it will not be listed.
+
+Click a service to view the corresponding tabs including **Status**, **Component Topology**, **Configuration**, and **Configuration Change History**. The status is divided into **Normal**and **Error**. If the status of a service on a node is **Error**, you can use the master node to jump to the corresponding node, and check the service process.
 
