@@ -15,11 +15,11 @@ We strongly recommend that you test the bootstrap action with a Pay-As-You-Go cl
 
 ## How to use {#section_kw3_dt5_y2b .section}
 
-1.  Log on to [Alibaba Cloud E-MapReduce Console Cluster List](https://emr.console.aliyun.com/).
+1.  Log on to the [Alibaba Cloud E-MapReduce console](https://emr.console.aliyun.com/).
 2.  Select the region where the created cluster associated with the region is listed.
-3.  Click **Create cluster** to enter the cluster creation page.
-4.  Click **Add bootstrap operation** to enter the operation page.
-5.  Enter the configuration item and click Complete after adding.
+3.  Click **Create Cluster** to enter the cluster creation page.
+4.  At the end of the basic configuration page, click **Add** to enter the operation page.
+5.  Enter the configuration items.
 
 You can add up to 16 bootstrap actions to be performed during cluster initialization in the designated sequence. By default, your designated script is run with the root account. You can switch to a Hadoop account with su hadoop in the script.
 
