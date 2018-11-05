@@ -8,9 +8,9 @@ The function can only be performed once during the startup of a cluster.
 
 ## Procedure {#section_tsc_2s5_y2b .section}
 
-1.  Log on to [Alibaba Cloud E-MapReduce console cluster list](https://emr.console.aliyun.com/).
+1.  Log on to the [Alibaba Cloud E-MapReduce console](https://emr.console.aliyun.com/).
 2.  Select the region and the created cluster associated with the region is listed.
-3.  Click **Create cluster** to enter the cluster creation page.
+3.  Click **Create Cluster** to enter the cluster creation page.
 4.  All contained software and corresponding versions can be seen in the software configuration of cluster creation. Change the configuration of the cluster by selecting a corresponding json format configuration file in the \(optional\) software configuration box. Then, override or add to the defaulted cluster parameters. The sample of a .json file is as follows:
 
     ```
@@ -165,11 +165,11 @@ The function can only be performed once during the startup of a cluster.
     ```
 
 
-The classification parameter designates the configuration file to change. The properties parameter stores the key-value pair that requires changes. When the default configuration file has a corresponding key, override the value, otherwise, add the corresponding key-value pair.
+The classification parameter designates the configuration file to change. The parameter properties stores the key-value pair that requires changes. When the default configuration file has a corresponding key, override the value, otherwise, add the corresponding key-value pair.
 
 The correspondence between configuration file and classification is shown in the following table.
 
--   **Hadoop**
+-   Hadoop
 
     |Filename|Classification|
     |:-------|:-------------|
@@ -185,14 +185,14 @@ The correspondence between configuration file and classification is shown in the
     |mapred-env.sh|mapred-env|
     |yarn-env.sh|yarn-env|
 
--   **Pig**
+-   Pig
 
     |Filename|classification|
     |:-------|:-------------|
     |pig.properties|pig|
     |log4j.properties|pig-log4j|
 
--   **Hive**
+-   Hive
 
     |Filename|classification|
     |:-------|:-------------|
