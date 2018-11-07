@@ -46,7 +46,7 @@
     -   **使用自有LDAP服务的情况**
         1.  在集群配置管理中找到KNOX的配置管理，在cluster-topo配置中设置两个属性：main.ldapRealm.userDnTemplate与main.ldapRealm.contextFactory.url。main.ldapRealm.userDnTemplate设置为自己的用户DN模板，main.ldapRealm.contextFactory.url设置为自己的LDAP服务器域名和端口。设置完成后保存并重启Knox。
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17921/153829618511122_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17921/154157377211122_zh-CN.png)
 
         2.  一般自己的LDAP服务不在集群上运行，所以需要开启Knox访问公网LDAP服务的端口，如：10389。参考8443端口的开启步骤，选择**公网出方向**。
 
