@@ -47,6 +47,6 @@ E-MapReduce cluster communication in different VPCs \(Hive visits HBase\)
 
         The abnormality of java.net.SocketTimeoutException is reported here because the security group where the ECS of HBase cluster is located limits the E-MapReduce visit at relevant ports. Port 22 is only opened by default in the security group created by E-MapReduce. Therefore, the security group rules need to be added into the security group of HBase cluster to open a port for Hive cluster, as shown in the following figure.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17888/154138490610585_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17888/154157893410585_en-US.png)
 
 
