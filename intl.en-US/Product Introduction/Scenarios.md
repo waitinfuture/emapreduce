@@ -4,18 +4,18 @@ E-MapReduce clusters apply to a wide variety of application scenarios. E-MapRedu
 
 -   Offline data processing
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17827/154046157610336_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17827/154158028810336_en-US.png)
 
 -   **Ad-hoc data analysis queries**
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17827/154046157710337_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17827/154158028810337_en-US.png)
 
 -   **Online massive data services**
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17827/154046157710338_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17827/154158028810338_en-US.png)
 
 -   **Stream data processing**
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17827/154046157710339_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17827/154158028810339_en-US.png)
 
 
