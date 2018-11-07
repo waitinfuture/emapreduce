@@ -30,7 +30,7 @@ Oozie 使用说明
     vim ~/.ssh/authorized_keys
     ```
 
-5.  然后将[步骤 2](#) 中看到的内容粘贴进来，现在应该可以直接使用 `ssh root@xx.xx.xx.xx` 免密登录 master 节点了。
+5.  然后将[步骤 2](#step2) 中看到的内容粘贴进来，现在应该可以直接使用 `ssh root@xx.xx.xx.xx` 免密登录 master 节点了。
 6.  在本机执行以下命令进行端口转发。
 
     ```
@@ -71,7 +71,7 @@ Oozie 使用说明
     ```
 
 
-下面操作示例中，已经针对是否是 HA 集群配置好了，即样例代码不需要任何修改即可以直接运行。关于 workflow 文件的具体格式，请参考 Oozie 官方文档：[https://oozie.apache.org/docs/4.2.0/。](https://oozie.apache.org/docs/4.2.0/%E3%80%82)
+下面操作示例中，已经针对是否是 HA 集群配置好了，即样例代码不需要任何修改即可以直接运行。关于 workflow 文件的具体格式，请参考 Oozie 官方文档：[https://oozie.apache.org/docs/4.2.0/](https://oozie.apache.org/docs/4.2.0/%E3%80%82).
 
 -   **在非 HA 集群上提交 workflow 作业**
     1.  登录集群的主 master 节点。
