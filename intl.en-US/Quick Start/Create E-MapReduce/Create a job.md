@@ -9,7 +9,7 @@ To run a computing task, you need to define a job first according to the followi
 3.  At the top of the page, click **Old EMR Scheduling**.
 4.  In the upper right corner of the page, click **Create Job**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17841/154157013210493_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17841/154157065810493_en-US.png)
 
 5.  Enter the job **Name**.
 6.  Select a job **Type**.
@@ -17,7 +17,7 @@ To run a computing task, you need to define a job first according to the followi
 8.  **Actual execution**: The actual executed command for the job on ECS will be displayed. If you copy the displayed command, the command can be run directly in the command line environment of the E-MapReduce cluster.
 9.  **Fail retry**: If you select **Yes**, you can set the number of retries and each retry interval. It is set **No** by default.
 10. **Failure policy**: Pausing the current execution plan will pause the entire execution plan after this job fails and will wait for your handling. Continuing to execute the next job will ignore this error and continue to execute the next job after this job fails.
-11. Click **OK**to complete the creation.
+11. Click **OK** to complete the creation.
 
 ## Job Example {#section_pjr_cx4_y2b .section}
 
@@ -25,7 +25,7 @@ This is a Spark job, where relevant parameters, input and output paths, are set 
 
 **Note:** This example is only for reference.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17841/154157013210494_en-US.jpg)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17841/154157065810494_en-US.jpg)
 
 ## OSS and ossref {#section_rjr_cx4_y2b .section}
 
