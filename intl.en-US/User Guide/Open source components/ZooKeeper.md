@@ -8,7 +8,7 @@ The [ZooKeeper](https://zookeeper.apache.org/) service is currently enabled in E
 
 Select the Zookeeper service in the software configuration page when you create a cluster.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17895/154148583210761_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17895/154157912810761_en-US.png)
 
 ## Node information {#section_vs2_mbx_y2b .section}
 
