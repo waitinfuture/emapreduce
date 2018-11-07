@@ -4,16 +4,16 @@ In this tutorial, you will learn how jobs are created in E-MapReduce.
 
 To run a computing task, you need to define a job first according to the following steps:
 
-1.  Log on to [Alibaba Cloud E-MapReduce Console Job Page](https://partners-intl.console.aliyun.com/#/emr).
+1.  Log on to [Alibaba Cloud E-MapReduce Console Job Page](https://emr.console.aliyun.com/console/#/job/region/ap-southeast-1).
 2.  Select the region where the job is created.
 3.  At the top of the page, click **Old EMR Scheduling**.
 4.  In the upper right corner of the page, click **Create Job**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17841/154089388810493_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17841/154157013210493_en-US.png)
 
 5.  Enter the job **Name**.
 6.  Select a job **Type**.
-7.  Enter **Parameters** of the job. Parameters must include full information of the jar package used by the job, data input and output addresses of the job, and some command line parameters, that is, all your parameters in the command line must be completed in this field. You can click **Select OSS path** to select an OSS resource path. For parameter configurations of all job types, see the **Job** chapter in User Guide.
+7.  Enter **Parameters** of the job. Parameters must include full information of the jar package used by the job, data input and output addresses of the job, and some command line parameters, that is, all your parameters in the command line must be completed in this field. You can click **Select OSS path** to select an OSS resource path. For parameter configurations of all job types, see the Job chapter in User Guide.
 8.  **Actual execution**: The actual executed command for the job on ECS will be displayed. If you copy the displayed command, the command can be run directly in the command line environment of the E-MapReduce cluster.
 9.  **Fail retry**: If you select **Yes**, you can set the number of retries and each retry interval. It is set **No** by default.
 10. **Failure policy**: Pausing the current execution plan will pause the entire execution plan after this job fails and will wait for your handling. Continuing to execute the next job will ignore this error and continue to execute the next job after this job fails.
@@ -25,9 +25,9 @@ This is a Spark job, where relevant parameters, input and output paths, are set 
 
 **Note:** This example is only for reference.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17841/154089388810494_en-US.jpg)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17841/154157013210494_en-US.jpg)
 
-## oss and ossref {#section_rjr_cx4_y2b .section}
+## OSS and ossref {#section_rjr_cx4_y2b .section}
 
 The **oss://** prefix indicates that the data path is directed to an OSS path, which specifies the operation path similar to **hdfs://** when reading/writing the data.
 
