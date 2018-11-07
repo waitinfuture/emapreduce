@@ -40,7 +40,7 @@ In this tutorial, you will learn how to configure a Spark job.
                 --master yarn-client --driver-memory 7G --executor-memory 5G --executor-cores 1 --num-executors 32 --class com.aliyun.emr.checklist.benchmark.SparkWordCount ossref://emr/checklist/jars/emr-checklist_2.10-0.1.0.jar oss://emr/checklist/data/wc oss://emr/checklist/data/wc-counts 32
                 ```
 
-            **Note:** Job jar packages are saved in OSS. The way to reference this Jar package is: ossref://emr/checklist/jars/emr-checklist\_2.10-0.1.0.jar. Click **Select OSS path** to view and select from OSS, the system will automatically complete the absolute path of Spark script on OSS. Switch the default oss protocol to ossref protocol.
+            **Note:** Job jar packages are saved in OSS. The way to reference this Jar package is: ossref://emr/checklist/jars/emr-checklist\_2.10-0.1.0.jar. Click **Select OSS path** to view and select from OSS, the system will automatically complete the absolute path of Spark script on OSS. Switch the default OSS protocol to ossref protocol.
 
     -   Create a pyspark job
 
