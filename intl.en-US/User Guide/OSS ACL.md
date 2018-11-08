@@ -5,12 +5,12 @@
 E-MapReduce supports using RAM to isolate the data of different sub-accounts. The procedures are shown as follows:
 
 1.  Log on to the [Alibaba Cloud RAM Management console](https://ram.console.aliyun.com/).
-2.  Create the sub-account in RAM with the process in [How to create the sub-account in RAM](https://www.alibabacloud.com/help/zh/doc-detail/28637.html).
-3.  Click **Authorization Policy Management** at the left of [Alibaba Cloud RAM Management console](https://ram.console.aliyun.com/) to enter the page of authorization policy management.
-4.  Click **Customized Authorization Policy**.
-5.  Click **New Authorization Policy** at the upper right of the page to enter the authorization policy creation page. Create the policy according to the prompted steps. You can create as many policies as the sets of authorization control you need.
+2.  Create the sub-account in RAM with the process in [How to create the sub-account in RAM](../../../../intl.en-US/Quick Start/Create a RAM user.md#).
+3.  In the left-side navigation pane, click **policies** to enter the page of policy management.
+4.  Click **Custom Policy**.
+5.  In the upper-right corner, click **Create Authorization Policy** enter the authorization policy creation page. Create the policy according to the prompted steps. You can create as many policies as the sets of authorization control you need.
 
-    It is assumed that you need the following 2 sets of data control policies:
+    It is assumed that you need the following two sets of data control policies:
 
     -   Testing environment, bucketname: test-bucket. The corresponding complete policy is as follows.
 
@@ -75,14 +75,14 @@ E-MapReduce supports using RAM to isolate the data of different sub-accounts. Th
         }
         ```
 
-6.  Click **User Management** at the left of [Alibaba Cloud RAM Management console](https://ram.console.aliyun.com/?spm=5176.6660585.774526198.1.2yNQJH#/policy/list/system).
-7.  Find out the sub-account item which the policy is given to and click the right **Management** button to enter the user management page.
-8.  Click **User Authorization Policy** at the left of page.
-9.  Click **Edit Authorization Policy** at the upper right to enter the authorization policy page.
-10. Select and add authorization policy.
-11. Click **Confirm** to complete the policy authorization of sub-account.
-12. Click **User Details** at the left of user management page to enter the user details page of sub-account.
-13. Click **Start Console Logon** in the Web console logon management bar to start up the authorization of sub-account logon console.
+6.  Click **Users**.
+7.  Find out the sub-account item which the policy is given to and click the **Manage** button.
+8.  In the left-side navigation pane, click **User Authorization Policy**.
+9.  In the upper-right corner, click **Edit Authorization Policy**.
+10. Select and add authorization policies.
+11. Click **OK** to complete the policy authorization of the sub-account.
+12. In the upper-right corner, click **User Details** to enter the user details page of the sub-account.
+13. Click **Start Console Logon** in the Web console logon management bar to start up the authorization of the sub-account logon console.
 
 ## Complete and use {#section_dcf_jpl_z2b .section}
 
