@@ -4,7 +4,7 @@
 
 |Model|Number of cores|Memory \(GB\)|Price of E-MapReduce subscription \(excluding the ECS price, unit: dollar/hour\)|Price of Pay-As-You-Go E-MapReduce \(excluding the ECS price, unit: dollar/hour\)|
 |:----|:--------------|:------------|:-------------------------------------------------------------------------------|:--------------------------------------------------------------------------------|
-|ecs.s2.large|2|4.|11.8|0.0564|
+|ecs.s2.large|2|4|11.8|0.0564|
 |ecs.s3.large|4|8|24.84|0.1144|
 |ecs.m1.medium|4|16|38.04|0.1984|
 |ecs.m1.xlarge|8|32|77.32|0.3992|
@@ -25,7 +25,7 @@
 
 |Model|Number of cores|Memory \(GB\)|Price of E-MapReduce subscription \(excluding the ECS price, unit: dollar/hour\)|Price of Pay-As-You-Go E-MapReduce \(excluding the ECS price, unit: dollar/hour\)|
 |:----|:--------------|:------------|:-------------------------------------------------------------------------------|:--------------------------------------------------------------------------------|
-|ecs.s2.large|2|4.|18.68|0.0364|
+|ecs.s2.large|2|4|18.68|0.0364|
 |ecs.s3.large|4|8|22.96|0.0728|
 |ecs.m1.medium|4|16|54.92|0.1068|
 |ecs.m1.xlarge|8|32|109.84|0.2136|
@@ -46,14 +46,14 @@
 
 |Model|Number of cores|Memory \(GB\)|Price of E-MapReduce subscription \(excluding the ECS price, unit: dollar/hour\)|Price of Pay-As-You-Go E-MapReduce \(excluding the ECS price, unit: dollar/hour\)|
 |:----|:--------------|:------------|:-------------------------------------------------------------------------------|:--------------------------------------------------------------------------------|
-|ecs.s2.large|2|4.|22|0.0428|
+|ecs.s2.large|2|4|22|0.0428|
 |ecs.s3.large|4|8|43.96|0.0856|
 |ecs.m1.medium|4|16|61.52|0.1196|
 |ecs.m1.xlarge|8|32|123.04|0.2388|
 |ecs.c1.large|8|16|87.88|0.1708|
 |ecs.c2.large|16|32|175.76|0.3412|
 |ecs.c2.xlarge|16|64|N/A|N/A|
-|ecs.n1.medium|2|4.|24.44|0.0476|
+|ecs.n1.medium|2|4|24.44|0.0476|
 |ecs.n1.large|4|8|48.84|0.0948|
 |ecs.n1.xlarge|8|16|97.64|0.1896|
 |ecs.n1.3xlarge|16|32|195.28|0.3792|
