@@ -109,7 +109,7 @@ For safety, the webui monitoring system ports of Hadoop, Spark, Ganglia, and oth
 
     -   Recommended methods
 
-        We recommend that you use the Chrome browser. Visit web UIs in the following methods:
+        We recommend that you use the Chrome browser. Visit Web UI in the following methods:
 
         ```
         chrome --proxy-server="socks5://localhost:8157" --host-resolver-rules="MAP * 0.0.0.0 , EXCLUDE localhost" --user-data-dir=/tmp/
@@ -125,15 +125,15 @@ For safety, the webui monitoring system ports of Hadoop, Spark, Ganglia, and oth
         |Linux|/usr/bin/google-chrome|
         |Windows|C:\\Program Files \(x86\)\\Google\\Chrome\\Application\\chrome.exe|
 
-    -   插件方式
+    -   Plug-in method
 
-        此时，您本地机器跟 E-MapReduce 集群的 master 主机的 SSH 通道已经打通，要在浏览器中查看 Hadoop、Spark、Ganglia 的 webui，您还需要配置一个本地代理。 操作步骤如下：
+        SSH tunnel between local machine and master machine in the E-MapReduce cluster has been broken through. You need to configure a local agent in order to view webUI of Hadoop, Spark and Ganglia in the browser. The procedure is as follows:
 
-        1.  假设您使用的是 Chrome 或者 Firefox 浏览器，请点击[下载 FoxyProxy Standard 代理软件](http://foxyproxy.mozdev.org/downloads.html)。
-        2.  安装完成并重启浏览器后，打开一个文本编辑器，编辑如下内容：
+        1.  For Chrome or Firefox browser, please click [\[Download FoxyProxy Standard agent software\]](http://foxyproxy.mozdev.org/downloads.html).
+        2.  After installation and restart of browser, open a text editor and edit the following content:
 
             ```
-            <? xml version="1.0" encoding="UTF-8"? >
+            <?<!--?--> xml version="1.0" encoding="UTF-8"? >
             <foxyproxy>
             <proxies>
             <proxy name="aliyun-emr-socks-proxy" id="2322596116" notes="" fromSubscription="false" enabled="true" mode="manual" selectedTabIndex="2" lastresort="false" animatedIcons="true" includeInCycle="true" color="#0055E5" proxyDNS="true" noInternalIPs="false" autoconfMode="pac" clearCacheBeforeUse="false" disableCache="false" clearCookiesBeforeUse="false" rejectCookies="false">
@@ -146,17 +146,17 @@ For safety, the webui monitoring system ports of Hadoop, Spark, Ganglia, and oth
             </foxyproxy>
             ```
 
-            其中：
+            Specifically:
 
-            -   `Port 8157` 是您本地用来建立与集群 master 机器 SSH 连接的端口，这个需要跟您之前执行的在终端中执行的 SSH 命令中使用的端口匹配。
-            -   `120.*` 这个匹配是用来匹配 master 主机的 IP 地址，请根据 master 的 IP 地址的情况来定。
-        3.  在浏览器中单击**Foxyproxy**按钮，选择 **Options**。
-        4.  选择 **Import/Export**。
-        5.  选择刚才您编辑的 xml 文件，单击 **Open**。
-        6.  在 **Import FoxyProxy Setting** 对话框中，单击 **Add**。
-        7.  点击浏览器中的 **Foxyproxy** 按钮，选择 **Use Proxy aliyun-emr-socks-proxy for all URLs**。
-        8.  在浏览器中输入 localhost:8088，就可以打开远端的 Hadoop 界面了。
--   **Method II: Local port forwarding**
+            -   `Port 8157` is a port which your local machine uses to build SSH connection with cluster master machine. It will match with the port used in SSH command executed in the terminal.
+            -   `120.*` is used to match with IP address in the master machine. Please confirm it based on master IP address.
+        3.  In a browser, click the **Foxyproxy** button and then select **Options**.
+        4.  Select **Import/Export**.
+        5.  Select the xml file you edited just now and click **Open**。
+        6.  In the **Import FoxyProxy Setting** dialogue box, click **Add**.
+        7.  In a browser, click the **Foxyproxy** button and select **Use Proxy aliyun-emr-socks-proxy for all URLs**.
+        8.  nter localhost:8088 in the browser to open the Hadoop interface at the far end.
+-   Method II: Local port forwarding
 
     **Note:** A local port forwarding disadvantage is that only the interface in the outermost layer can be seen. The viewing of detailed job information results in an error.
 
