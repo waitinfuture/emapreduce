@@ -1,6 +1,6 @@
 # SQL语句 {#concept_k1k_mhl_z2b .concept}
 
-SQL语句
+本文介绍Presto使用中一些常见的SQL语句以及相关示例。
 
 ## ALTER SCHEMA {#section_fk2_2cf_1fb .section}
 
