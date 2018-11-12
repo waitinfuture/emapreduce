@@ -4,9 +4,9 @@ The Kerberos server in the EMR cluster supports not only the authentication meth
 
 ## RAM ID authentication {#section_hrr_mc5_1fb .section}
 
-[RAM](https://www.aliyun.com/product/ram) product supports creating/managing subaccounts and using subaccounts to implement access control for various resources on the cloud.
+[RAM](https://www.alibabacloud.com/product/ram) product supports creating/managing subaccounts and using subaccounts to implement access control for various resources on the cloud.
 
-Administrator of the master account may create a subaccount on the RAM user management page \(subaccount name must comply with Linux username specifications\) and download the subaccount AccessKey for the corresponding developer. The developer can then configure the AccessKey to pass Kerberos authentication and access the cluster service.
+Administrator of the master account can create a subaccount on the RAM user management page \(subaccount name must comply with Linux username specifications\) and download the subaccount AccessKey for the corresponding developer. The developer can then configure the AccessKey to pass Kerberos authentication and access the cluster service.
 
 Unlike using the first type MIT Kerberos authentication, RAM identity authentication does not require adding principle to the Kerberos server in advance.
 
@@ -42,13 +42,13 @@ The following example uses subaccount test that has already been created to acce
     done
     ```
 
--   The Gateway administrator adds the test user account on the Gateway machine
+-   The gateway administrator adds the test user account on the Gateway machine
 
     ```
     useradd test
     ```
 
--   The Gateway administrator configures the basic Kerberos environment
+-   The gateway administrator configures the basic Kerberos environment
 
     ```
     sudo su root
@@ -81,7 +81,7 @@ The following example uses subaccount test that has already been created to acce
      sed -i 's/EMR/RAM/g' /etc/has/has-client.conf
     ```
 
--   test user logs on to Gateway and configures AccessKey
+-   Test user logs on to Gateway and configures AccessKey
 
     ```
     Log on the test account of Gateway
