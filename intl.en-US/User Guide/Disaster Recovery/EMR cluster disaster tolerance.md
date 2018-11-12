@@ -10,5 +10,5 @@ HDFS is a file storage system that has stood the test of time and has high relia
 
 ## Service disaster tolerance {#section_czh_y4j_z2b .section}
 
-The core components of HDFS will deploy the HA, that is, there are at least two nodes be the backups for each other, such as, YARN, HDFS, Hive Server, Hive Meta. In this way, whenever there’s a node with issues, the nodes will exchange and recover data to ensure the services has no impact.
+The core components of HDFS will deploy the HA, that is, there are at least two nodes be the backups for each other, such as, YARN, HDFS, Hive Server, Hive Meta. In this way, whenever there’s a node with issues, the nodes will exchange and recover data to ensure that the services has no impact.
 
