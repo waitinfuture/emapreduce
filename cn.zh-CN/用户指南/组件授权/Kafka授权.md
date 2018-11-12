@@ -1,14 +1,12 @@
 # Kafka授权 {#concept_zys_5hc_bfb .concept}
 
-## Kafka授权 {#section_wnf_33c_bfb .section}
-
-如果没有开启Kafka认证\(如Kerberos认证或者简单的用户名密码\)，即使开启了Kafka授权，用户也可以伪造身份访问服务。所以建议创建高安全模式\(即支持Kerberos\)的Kafka集群，详见[Kerberos安全文档](https://help.aliyun.com/document_detail/57730.html?spm=5176.product28066.6.623.a91nzk)。
+如果没有开启Kafka认证\(如Kerberos认证或者简单的用户名密码\)，即使开启了Kafka授权，用户也可以伪造身份访问服务。所以建议创建高安全模式\(即支持Kerberos\)的Kafka集群，详见[Kerberos安全文档](intl.zh-CN/用户指南/Kerberos认证/Kerberos简介.md#)。
 
 **说明：** 本文的权限配置只针对E-MapReduce的高安全模式集群，即Kafka以Kerberos的方式启动。
 
 ## 添加配置 {#section_nj3_djc_bfb .section}
 
-1.  在**集群列表**页面，在需要添加配置的Kafka集群后单击**详情**。
+1.  在**集群管理**页面，在需要添加配置的Kafka集群后单击**详情**。
 2.  在左侧导航栏中单击**集群与服务管理**页签，然后单击服务列表中的**Kafka**。
 3.  在上方单击**配置**页签。
 4.  在**服务配置**列表的右上角单击自定义配置，添加如下几个参数:
@@ -22,7 +20,7 @@
 
 ## 重启Kafka集群 {#section_vf1_m4c_bfb .section}
 
-1.  在**集群列表**页面，在需要添加配置的Kafka集群后单击**详情**。
+1.  在**集群管理**页面，在需要添加配置的Kafka集群后单击**详情**。
 2.  在左侧导航栏中单击**集群与服务管理**页签，然后单击服务列表中的Kafka右侧的操作。
 3.  在下拉菜单中选择**RESTART All Components**，输入记录信息后单击**确定**。
 
