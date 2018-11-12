@@ -24,7 +24,7 @@ Currently E-MapReduce supports [Apache Knox](https://knox.apache.org/). If you s
 
         Method Two
 
-        1.  Log on to the cluster over SSH. See [SSH Logon to Clusters](intl.en-US/User Guide/Connect to the cluster using SSH.md#) for detailed steps.
+        1.  Log on to the cluster over SSH. See [SSH Logon to Clusters](intl.en-US/User Guide/Connect to clusters using SSH.md#) for detailed steps.
         2.  Prepare your user data, for example, user Tom. In the file, replace all emr-guest with Tom, and cn:EMR GUEST with cn:Tom, and set userPassword to your password.
 
             ```
@@ -46,7 +46,7 @@ Currently E-MapReduce supports [Apache Knox](https://knox.apache.org/). If you s
     -   Use your LDAP service
         1.  In the cluster configuration management, find the Knox configuration management. In the cluster-topo configuration, set main.ldapRealm.userDnTemplate to your user DN template and main.ldapRealm.contextFactory.url to your LDAP server domain name and port. Then, save the settings and restart Knox.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17921/154157102611122_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17921/154200999211122_en-US.png)
 
         2.  Generally, your LDAP service is not running in the cluster. You must enable the Knox port for accessing the LDAP service in the public network, for example, Port 10389. For more information, see the preceding steps for enabling Port 8443. Select **Internet outbound**.
 

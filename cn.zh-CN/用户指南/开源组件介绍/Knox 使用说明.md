@@ -4,27 +4,27 @@
 
 ## 准备工作 {#section_m1v_wkl_z2b .section}
 
--   **开启Knox公网IP访问**
+-   开启Knox公网IP访问
 
     1.  在E-MapReduce上Knox的服务端口是8443，在集群详情中找到集群所在的ECS安全组。
-    2.  在ECS控制台修改对应的安全组，在**公网入方向**添加一条规则，打开8443端口。
+    2.  在ECS控制台修改对应的安全组，在**入方向**添加一条规则，打开8443端口。
     **说明：** 
 
     -   为了安全原因，这里设置的授权对象必须是您的一个有限的ip段范围，禁止使用 0.0.0.0/0。
     -   打开安全组的8443端口之后，该安全组内的所有机器均会打开公网入方向的 8443 端口，包括非E-MapReduce的ecs机器。
--   **设置Knox用户**
+-   设置Knox用户
 
     访问Knox时需要对身份进行验证，会要求您输入用户名和密码。Knox的用户身份验证基于LDAP，您可以使用自有LDAP服务，也可以使用集群中的Apache Directory Server的LDAP服务。
 
-    -   **使用集群中的LDAP服务**
+    -   使用集群中的LDAP服务
 
         方式一（推荐）
 
-        在[用户管理](https://help.aliyun.com/document_detail/88134.html)中直接添加Knox访问账号。
+        在[用户管理](intl.zh-CN/用户指南/集群/用户管理.md#)中直接添加Knox访问账号。
 
         方式二
 
-        1.  ssh登录到集群上，详细步骤请参考[SSH登录集群](https://help.aliyun.com/document_detail/28187.html)。
+        1.  ssh登录到集群上，详细步骤请参考[SSH登录集群](intl.zh-CN/用户指南/SSH 登录集群.md#)。
         2.  准备您的用户数据，如：Tom。将文件中所有的emr-guest替换为 Tom，将 cn:EMR GUEST 替换为 cn:Tom，设置 userPassword 的值为您自己的密码。
 
             ```
@@ -43,23 +43,25 @@
             sh ldap-sample-users.sh
             ```
 
-    -   **使用自有LDAP服务的情况**
+    -   使用自有LDAP服务的情况
         1.  在集群配置管理中找到KNOX的配置管理，在cluster-topo配置中设置两个属性：main.ldapRealm.userDnTemplate与main.ldapRealm.contextFactory.url。main.ldapRealm.userDnTemplate设置为自己的用户DN模板，main.ldapRealm.contextFactory.url设置为自己的LDAP服务器域名和端口。设置完成后保存并重启Knox。
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17921/153690911211122_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17921/154200998911122_zh-CN.png)
 
-        2.  一般自己的LDAP服务不在集群上运行，所以需要开启Knox访问公网LDAP服务的端口，如：10389。参考8443端口的开启步骤，选择**公网出方向**。
+        2.  一般自己的LDAP服务不在集群上运行，所以需要开启Knox访问公网LDAP服务的端口，如：10389。参考8443端口的开启步骤，选择**出方向**。
 
             **说明：** 为了安全原因，这里设置的授权对象必须是您的Knox所在集群的公网ip，禁止使用0.0.0.0/0。
 
 
 ## 开始访问Knox { .section}
 
--   **使用E-MapReduce快捷链接访问**
-    1.  登录到E-MapReduce管理控制台。
-    2.  在“集群与服务管理”页面点击相应的服务，如：HDFS，Yarn等。
-    3.  单击右上角的**快捷链接**。
--   **使用集群公网ip地址访问**
+-   使用E-MapReduce快捷链接访问
+    1.  登录[阿里云 E-MapReduce 控制台](https://emr.console.aliyun.com/)。
+    2.  单击对应的集群ID
+    3.  在左侧导航栏中单击**集群与服务管理**。
+    4.  单击相应的服务，如：HDFS，Yarn等。
+    5.  单击右上角的**快捷链接**。
+-   使用集群公网ip地址访问
     1.  通过集群详情查看公网ip。
     2.  在浏览器中访问相应服务的URL。
         -   HDFS UI：[https://\{集群公网ip\}:8443/gateway/cluster-topo/hdfs/](https://xn--%7Bip%7D-ch6m5309ab0an44r:8443/gateway/cluster-topo/hdfs/?spm=a2c4g.11186623.2.8.459af364CUTH7M)
