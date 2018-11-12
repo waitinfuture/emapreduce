@@ -8,13 +8,17 @@ Superset默认安装在emr-header-1节点，目前还不支持HA。在使用该�
 
     在浏览器地址栏中输入 http://emr-header-1:18088 后回车，打开Superset登录界面，默认用户名/密码为 admin/admin，请您登录后及时修改密码。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17910/153829596510869_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17910/154200956710869_zh-CN.png)
 
 2.  添加 Druid 集群。
 
     登录后默认为英文界面，可点击右上角的国旗图标选择合适的语言。接下来在上方菜单栏中依次选择**数据源** \> **Druid 集群**来添加一个 Druid 集群。
 
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17910/154200956710870_zh-CN.png)
+
     配置好协调机（Coordinator）和代理机（Broker）的地址，注意 E-MapReduce 中默认端口均为相应的开源端口前加数字1，例如开源 Broker 端口为 8082，E-MapReduce 中为 18082。
+
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17910/154200956710871_zh-CN.png)
 
 3.  刷新或者添加新数据源。
 
@@ -22,26 +26,34 @@ Superset默认安装在emr-header-1节点，目前还不支持HA。在使用该�
 
     您也可以在界面上单击**数据源** \> **Druid 数据源**自定义新的数据源（其操作等同于写一个 data source ingestion 的 json 文件），步骤如下：
 
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17910/154200956810872_zh-CN.png)
+
     自定义数据源时需要填写必要的信息，然后保存。
 
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17910/154200956810873_zh-CN.png)
+
     保存之后点击左侧三个小图标中的第二个，编辑该数据源，填写相应的维度列与指标列等信息。
+
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17910/154200956810874_zh-CN.png)
 
 4.  查询 Druid。
 
     数据源添加成功后，单击数据源名称，进入查询页面进行查询。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17910/153829596510875_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17910/154200956810875_zh-CN.png)
 
 5.  （可选）将 Druid 作为 数据库使用。
 
     Superset 提供了 SQLAlchemy 以多种方言支持各种各样的数据库，其支持的数据库类型如下表所示。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17910/153829596510876_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17910/154200956810876_zh-CN.png)
 
     Superset 亦支持该方式访问 Druid，Druid 对应的 SQLAlchemy URI 为 “druid://emr-header-1:18082/druid/v2/sql”，如下图所示，将 Druid 作为一个数据库添加：
 
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17910/154200956810877_zh-CN.png)
+
     接下来就可以在 SQL 工具箱里用 SQL 进行查询了：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17910/153829596610878_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17910/154200956810878_zh-CN.png)
 
 
