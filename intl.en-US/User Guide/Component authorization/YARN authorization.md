@@ -14,7 +14,7 @@ For more information, see [Hadoop official documentation](https://hadoop.apache.
 
 ## Queue-level authorization {#section_mzq_dcw_1fb .section}
 
-YARN supports permission control over resources through queues, and it provides two queue scheduling methods, namely Capacity Scheduler and Fair Scheduler.We will take the Capacity Scheduler as an example here.
+YARN supports permission control over resources through queues, and it provides two queue scheduling methods, namely Capacity Scheduler and Fair Scheduler. We will take the Capacity Scheduler as an example here.
 
 -   Add a configuration
 
