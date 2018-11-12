@@ -36,7 +36,7 @@ E-MapReduce环境下提供MetaService服务。基于此服务，您可以在E-Ma
 
 ## 访问MetaService {#section_djk_npt_1fb .section}
 
-MetaService是一个HTTP服务，您可以直接访问这个HTTP服务来获取相关Meta信息：例如 “ curl http://localhost:10011/cluster-region” 可以获得当前集群所在Region。
+MetaService是一个HTTP服务，您可以直接访问这个HTTP服务来获取相关Meta信息：例如 curl http://localhost:10011/cluster-region可以获得当前集群所在Region。
 
 当前MetaService支持以下几类信息：
 

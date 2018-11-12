@@ -32,11 +32,11 @@ E-MapReduce环境下提供MetaService服务。基于此服务，您可以在E-Ma
 
 ## 自定义应用角色 {#section_nwz_mpt_1fb .section}
 
-大多数情况下，您只需要使用默认应用角色或者修改默认应用角色即可。E-MapReduce同时支持您使用自定义的应用角色。在创建集群时，您既可以使用默认应用角色，也可以选择自定义应用角色。如何创建角色并授权给服务，请参考[RAM的相关文档](https://help.aliyun.com/product/28625.html)。
+大多数情况下，您只需要使用默认应用角色或者修改默认应用角色即可。E-MapReduce同时支持您使用自定义的应用角色。在创建集群时，您既可以使用默认应用角色，也可以选择自定义应用角色。如何创建角色并授权给服务，请参考[RAM的相关文档](https://www.alibabacloud.com/help/product/28625.html)。
 
 ## 访问MetaService {#section_djk_npt_1fb .section}
 
-MetaService是一个HTTP服务，您可以直接访问这个HTTP服务来获取相关Meta信息：例如 “ curl http://localhost:10011/cluster-region” 可以获得当前集群所在Region。
+MetaService是一个HTTP服务，您可以直接访问这个HTTP服务来获取相关Meta信息：例如 curl http://localhost:10011/cluster-region可以获得当前集群所在Region。
 
 当前MetaService支持以下几类信息：
 
@@ -75,25 +75,4 @@ III. Spark
     旧方式： val data = sc.textFile("oss://ZaH******As1s:Ba23N**************sdaBj2@bucket.oss-cn-hangzhou-internal.aliyuncs.com/a/b/c")
     新方式： val data = sc.textFile("oss://bucket/a/b/c")
 ```
-
-## 支持MetaService的数据源 {#section_efh_grt_1fb .section}
-
-目前在E-MapReduce上支持MetaService的有OSS，LogService和MNS。您可以在E-MapReduce集群上使用E-MapReduce SDK的接口免AK来读写上述数据源。需要强调的是，MetaService默认只有OSS的读写权限，如果您希望MetaService支持LogService或者MNS，请前往RAM控制台修改AliyunEmrEcsDefaultRole，增加LogService和MNS的权限。具体如何配置角色的权限，参考RAM的相关文档说明。下面将举例说明如何在给AliyunEmrEcsDefaultRole添加访问LogService的权限：
-
--   在RAM的角色管理中找到AliyunEmrEcsDefaultRole，并单击**授权**。
-
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17925/153690916111310_zh-CN.png)
-
--   搜索找到AliyunLogFullAccess权限，并添加。
-
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17925/153690916111311_zh-CN.png)
-
--   添加完之后，我们就可以在AliyunEmrEcsDefaultRole的角色权限策略中看到已经添加的AliyunLogFullAccess权限策略。
-
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17925/153690916111312_zh-CN.png)
-
-
-这样，我们就可以在E-MapReduce集群中免AK访问LogService数据了。
-
-**说明：** 这里演示了添加AliyunLogFullAccess权限策略，权限比较大，建议根据自己的实际需求，自定义一个权限策略，然后再授权给AliyunEmrEcsDefaultRole。
 
