@@ -5,10 +5,9 @@ In this tutorial, you will learn how to create a cluster.
 ## Enter the cluster creation page {#section_gnx_wq3_y2b .section}
 
 1.  Log on to the [Alibaba Cloud E-MapReduce console](https://emr.console.aliyun.com).
-2.  In the left-side navigation bar, click **Cluster** to go to the **Cluster list** page.
-3.  Complete RAM authorization. For procedure, see [Role authorization](intl.en-US/User Guide/Role authorization.md#).
-4.  Select a region for the cluster. The region cannot be changed once the cluster is created.
-5.  In the upper right corner, click **Create cluster**.
+2.  Complete RAM authorization. For procedure, see [Role authorization](intl.en-US/User Guide/Role authorization.md#).
+3.  Select a region for a cluster. The region cannot be changed once the cluster is created.
+4.  Click **Create Cluster** to create a cluster.
 
 ## Cluster creation process {#section_eps_wjn_y2b .section}
 
@@ -29,7 +28,7 @@ To create a cluster, complete the following three steps:
             -   Oozie and Pig.
         -   Druid clusters, provide semi-managed, real-time interactive analysis services, query large amount of data in millisecond latency, and support for multiple data intake methods. Used with services such as EMR Hadoop, EMR Spark, OSS, and RDS, Druid clusters offer real-time query solutions.
         -   Data Science clusters, are mainly for big data and AI scenarios, providing Hive and Spark offline big data, and TensorFlow model training.
-        -   Kafka clusters, are taken as a semi-managed message system of high throughput and high scalability, providing a complete service monitoring system that can keep a stable running environment.
+        -   Kafka clusters, are taken as a semi-managed distributed message system of high throughput and high scalability, providing a complete service monitoring system that can keep a stable running environment.
     -   **Inclusion configurations**: Displays a list of all software components under the selected cluster type, including the name and version number. You can select different components as required. The selected components start relevant service processes by default.
 
         **Note:** The more components you select, the higher requirements are for your computer configuration. Otherwise, there may be insufficient resources to run these services.
