@@ -1,10 +1,10 @@
 # HBase authorization {#concept_e5l_2mb_bfb .concept}
 
-Without authorization, any account can perform any operations on the HBase cluster that includes disable table/drop table/major compact and so on.
+Without authorization, any account can perform any operations on the HBase cluster that includes disable table, drop table, major compact, and others.
 
 **Note:** 
 
-For clusters without Kerberos authentication, users can forge identities to access to the cluster service even when HBase authorization is enabled. Therefore, we recommend that you create a cluster with high security mode \(i.e. supporting Kerberos\) as detailed in [Kerberos Security Document](https://help.aliyun.com/document_detail/57730.html?spm=5176.product28066.6.623.a91nzk).
+For clusters without Kerberos authentication, users can forge identities to access to the cluster service even when HBase authorization is enabled. Therefore, we recommend that you create a cluster with high security mode \(i.e. supporting Kerberos\) as detailed in [Kerberos Security Document](intl.en-US/User Guide/Kerberos authentication/Introduction to Kerberos.md#).
 
 ## Add configuration {#section_q4z_qmb_bfb .section}
 
@@ -27,7 +27,7 @@ Add the following parameters:
 </property>
 <property>
   <name>hbase.coprocessor.regionserver.classes</name>
-  <value>org.apache.hadoop.hbase.security.access.AccessController</value>
+  <value>org.apache.hadoop.hbase.security.access.AccessController,org.apache.hadoop.hbase.security.token.TokenProvider</value>
 </property>
 ```
 
@@ -107,7 +107,7 @@ In the HBase cluster Configuration Management page, click **HBase** \> **Operati
 
         **Note:** 
 
-        -   The authorization methods for user/group are the same, and a prefix @ needs to be added for group.
+        -   The authorization methods for users or groups are the same. A prefix @ needs to be added for group.
 
             ```
             grant 'test','R','tbl1'   #grant the read permission of the table tb11 to the user test.
