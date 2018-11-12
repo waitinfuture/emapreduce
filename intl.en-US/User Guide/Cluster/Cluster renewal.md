@@ -13,7 +13,7 @@ When your subscription cluster service renewal is about to expire, you must rene
 
 The figure is shown as follows:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17860/154106096510451_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17860/154201631010451_en-US.png)
 
 -   **ECS Expiration Date**: The expiration date of an ECS instance.
 -   **EMR Expiration Date**: The expiration date of E-MapReduce services.
