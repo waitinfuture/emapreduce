@@ -4,17 +4,19 @@ Gateway是与EMR集群处于同一个内网中的ECS服务器，用户可以使�
 
 您可以通过以下两种方式创建Gateway：
 
--   （推荐）通过[EMR控制台](https://emr.console.aliyun.com/console#/cn-hangzhou/cluster/gateway/create)创建。
+-   （推荐）通过[阿里云 E-MapReduce 控制台](https://emr.console.aliyun.com/)创建。
 -   手动搭建。
 
 ## 通过E-MapReduce控制台创建Gateway {#section_jlz_nxn_1fb .section}
 
-在创建Gateway前，请确保您已经创建了E-MapReduce集群。创建Gateway，请按照如下步骤进行操作：
+当前E-MapReduce Gateway仅支持E-MapReduce Hadoop类型的集群。在创建Gateway前，请确保您已经创建了E-MapReduce Hadoop类型集群。创建Gateway，请按照如下步骤进行操作：
 
-1.  登录[阿里云E-MapReduce控制台](https://emr.console.aliyun.com/#/cluster/region/cn-hangzhou/)，进入**集群列表**页面。
-2.  单击页面右上角的**创建Gateway**按钮。
+1.  登录[阿里云 E-MapReduce 控制台](https://emr.console.aliyun.com/)。
+2.  单击**创建Gateway**按钮。
 3.  在**创建Gateway**页面中进行配置。
-    -   **付费类型**：包年包月是一次性支付一段时间的费用，价格相对来说会比较便宜，特别是包三年的时候折扣会比较大。按量付费是根据实际使用的小时数来支付费用，每个小时计一次费用。
+    -   **付费类型**
+        -   **包年包月**：一次性支付一段时间的费用，价格相对来说会比较便宜，特别是包三年的时候折扣会比较大。
+        -   **按量付费**：根据实际使用的小时数来支付费用，每个小时计一次费用。
     -   **我的集群**：为该集群创建Gateway，即创建的Gateway可以向哪个集群提交作业。Gateway将会自动配置与该集群一致的Hadoop环境。
     -   **配置**：该区域内可选择的ECS实例规格。
     -   **系统盘配置**：Gateway节点使用的系统盘类型。系统盘有2种类型：SSD云盘和高效云盘，根据不同机型和不同的Region，系统盘显示类型会有不同。系统盘默认随着集群的释放而释放。
@@ -24,8 +26,8 @@ Gateway是与EMR集群处于同一个内网中的ECS服务器，用户可以使�
     -   **数量**：数据盘的数量，最小设置为1台，最大设置为10台。
     -   **集群名称**：创建的Gateway的名称，长度限制为1~64个字符，只允许包含中文、字母、数字、连接号（-）、下划线（\_）。
     -   **密码/密钥对**：
-        -   **密码模式**：在文本框中输入登录Gateway的密码。
-        -   **密钥对模式**：在下拉菜单中选择登录Gateway的密钥对名称。如果还未创建过密钥对，单击右侧的**创建密钥对**链接，进入ECS控制台创建。请妥善保管好密钥对所对应的私钥文件（.pem文件）。在Gateway创建成功后，该密钥对的公钥部分会自动绑定到Gateway所在的云服务器ECS上。在您通过SSH登录Gateway时，请输入该私钥文件中的私钥。
+        -   **密码**：在文本框中输入登录Gateway的密码。
+        -   **密钥对**：在下拉菜单中选择登录Gateway的密钥对名称。如果还未创建过密钥对，单击右侧的**创建密钥对**链接，进入ECS控制台创建。请妥善保管好密钥对所对应的私钥文件（.pem文件）。在Gateway创建成功后，该密钥对的公钥部分会自动绑定到Gateway所在的云服务器ECS上。在您通过SSH登录Gateway时，请输入该私钥文件中的私钥。
 4.  单击**创建**完成Gateway的创建。
 
     新创建的Gateway会显示在集群列表中，创建完成后，**状态**列会变为**空闲**状态。
@@ -35,7 +37,7 @@ Gateway是与EMR集群处于同一个内网中的ECS服务器，用户可以使�
 
 -   网络环境
 
-    首先要保证Gateway节点在EMR对应集群的安全组中，Gateway节点可以顺利的访问EMR集群。设置节点的安全组请参考[创建安全组](https://help.aliyun.com/document_detail/25468.html)。
+    首先要保证Gateway节点在EMR对应集群的安全组中，Gateway节点可以顺利的访问EMR集群。设置节点的安全组请参考[创建安全组](../../../../intl.zh-CN/用户指南/安全组/创建安全组.md#)。
 
 -   软件环境
     -   系统环境：推荐使用CentOS 7.2及以上版本。
