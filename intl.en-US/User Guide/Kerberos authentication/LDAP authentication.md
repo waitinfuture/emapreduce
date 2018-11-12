@@ -18,7 +18,7 @@ Here’s an example of an LDAP service \(ApacheDS\) that has been started by def
 
 -   Configure LDAP manager user/password to Kerberos server end \(Has\) in the EMR console.
 
-    Enter the EMR Console Cluster Configuration Management - HAS software, configure the LDAP manager user name and password to the corresponding bind\_dn and bind\_password fields and restart the HAS service.
+    Enter the EMR console Cluster Management - HAS software, configure the LDAP manager user name and password to the corresponding bind\_dn and bind\_password fields and restart the HAS service.
 
     In this example, the LDAP service is the ApacheDS in the EMR cluster, and related fields can be obtained from ApacheDS.
 
