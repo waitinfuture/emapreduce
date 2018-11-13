@@ -5,7 +5,7 @@
 1.  Log on to [Alibaba Cloud E-MapReduce Console](https://emr.console.aliyun.com/#/ap-southeast-1).
 2.  Complete RAM authorization. For procedure, see [Role authorization](../../../../intl.en-US/User Guide/Role authorization.md#).
 3.  Select a region for a cluster. The region cannot be changed once the cluster is created.
-4.  In the **Cluster Management**panel, click **Create Cluster**.
+4.  Click **Create Cluster** to create a cluster.
 
 ## Cluster creation process {#section_rsk_gz4_y2b .section}
 
