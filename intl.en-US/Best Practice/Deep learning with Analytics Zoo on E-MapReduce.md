@@ -93,7 +93,9 @@ spark-submit --master yarn \
 /usr/lib/analytics_zoo/lib/analytics-zoo-bigdl_0.6.0-spark_2.1.0-0.2.0-jar-with-dependencies.jar --baseDir /news
 ```
 
-    -   You can log on to the instance of the Spark cluster through [ssh proxy](https://help.aliyun.com/document_detail/28187.html?spm=a2c4g.11186623.2.4.3edb630eEBr4On) to view the status of the jobs.
+    -   You can log on to the instance of the Spark cluster through [ssh proxy](../DNemapreduce1876943/EN-US_TP_17923.dita#concept_sns_sww_y2b) to view the status of the jobs.
+
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/154210009413534_en-US.png)
 
         You can also view the accuracy of each epoch through logs.
 
@@ -117,9 +119,23 @@ spark-submit --master yarn \
         jupyter-with-zoo.sh
         ```
 
-    -   We recommend that you use the pre-defined Wide And Deep Learning models provided by Analytics Zoo. For more information, see [GitHub](https://yq.aliyun.com/articles/alytics/analytics-zoo/tree/master/apps/recommendation-wide-n-deep).
+    -   We recommend that you use the pre-defined Wide And Deep Learning models provided by Analytics Zoo.
         1.  Import data.
+
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/154210009413535_en-US.png)
+
         2.  Build a model and create an optimizer.
+
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/154210009413536_en-US.png)
+
         3.  Start the training process.
+
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/154210009513537_en-US.png)
+
         4.  View training results.
+
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/154210009513538_en-US.png)
+
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/154210009513539_en-US.png)
+
 
