@@ -93,7 +93,7 @@ spark-submit --master yarn \
 /usr/lib/analytics_zoo/lib/analytics-zoo-bigdl_0.6.0-spark_2.1.0-0.2.0-jar-with-dependencies.jar --baseDir /news
 ```
 
-    -   通过[ssh proxy](https://help.aliyun.com/document_detail/28187.html?spm=a2c4g.11186623.2.4.3edb630eEBr4On)来查看Spark运行详情页面。
+    -   通过[ssh proxy](../../../../intl.zh-CN/用户指南/SSH 登录集群.md#)来查看Spark运行详情页面。
 
         同时查看日志，能够看到每个epoch的accuracy信息等。
 
