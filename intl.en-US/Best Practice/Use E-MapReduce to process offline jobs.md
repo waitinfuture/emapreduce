@@ -31,7 +31,7 @@ This process includes two steps:
     -   Software: HDFS2.7.2, YARN2.7.2, Hive2.3.3, Ganglia3.7.2, Spark2.3.1, HUE4.1.0, Zeppelin0.8.0, Tez0.9.1, Sqoop1.4.7, Pig0.14.0, ApacheDS2.0.0, and Knox0.13.0
     -   The network type of this Hadoop cluster is VPC in the China \(Hangzhou\) region. The master instance group is configured with a public IP and an internal network IP. The high availability mode is set to No \(a non-HA mode\). The following figure shows the details.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21330/154209380711874_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21330/154209836611874_en-US.png)
 
 
 ## Procedures {#section_f2w_y31_dfb .section}
@@ -61,10 +61,12 @@ This process includes two steps:
 
     For more information, see [Edit jobs](../DNemapreduce1876943/EN-US_TP_17962.dita#concept_iny_t1f_z2b). Take a MapReduce job as an example.
 
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21330/154209836611891_en-US.jpg)
+
 6.  After you configure a job, click **Run**. The following figure shows the details.
 
     -   For more information about how to use OSS, see [OSS usage instructions](https://www.alibabacloud.com/help/zh/doc-detail/42799.html?spm=a2c5t.11065259.1996646101.searchclickresult.63fc71f3FgiO9g).
-    -   For more information about how to configure jobs, see the [Hadoop MapReduce job configuration](https://help.aliyun.com/document_detail/28095.html) section of the E-MapReduce User Guide.
+    -   For more information about how to configure jobs, see the job section of the E-MapReduce User Guide.
     **Note:** 
 
     -   If the OSS output URI already exists, an error occurs when you execute a job.
@@ -73,5 +75,5 @@ This process includes two steps:
 
 ## View logs {#section_drj_5k1_dfb .section}
 
-For more information about how to view logs of an execution plan, see [Connect to a cluster using SSH](https://help.aliyun.com/document_detail/28187.html?spm=a2c4g.11186623.6.640.24b454c4CAFUqC).
+For more information about how to view logs of an execution plan, see [Connect to a cluster using SSH](../DNemapreduce1876943/EN-US_TP_17923.dita#concept_sns_sww_y2b).
 
