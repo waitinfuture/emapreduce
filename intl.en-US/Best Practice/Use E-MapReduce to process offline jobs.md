@@ -20,7 +20,7 @@ OSS -\> EMR -\> Hadoop MapReduce
 This process includes two steps:
 
 1.  Store data to OSS.
-2.  Read data from OSS and analyzes the data by using E-MapReduce.
+2.  Read data from OSS and analyze the data by using E-MapReduce.
 
 ## Prerequisites {#section_krn_vh1_dfb .section}
 
@@ -30,6 +30,9 @@ This process includes two steps:
     -   Cluster Type: HADOOP
     -   Software: HDFS2.7.2, YARN2.7.2, Hive2.3.3, Ganglia3.7.2, Spark2.3.1, HUE4.1.0, Zeppelin0.8.0, Tez0.9.1, Sqoop1.4.7, Pig0.14.0, ApacheDS2.0.0, and Knox0.13.0
     -   The network type of this Hadoop cluster is VPC in the China \(Hangzhou\) region. The master instance group is configured with a public IP and an internal network IP. The high availability mode is set to No \(a non-HA mode\). The following figure shows the details.
+
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21330/154209380711874_en-US.png)
+
 
 ## Procedures {#section_f2w_y31_dfb .section}
 
@@ -43,20 +46,20 @@ This process includes two steps:
 
     Execute the `mvn install` command to compile the code.
 
-2.  For more information about how to create a bucket, see [Create a bucket](https://help.aliyun.com/document_detail/31885.html?spm=a2c4g.11186623.6.562.ebe065d3fktE5s).
+2.  For more information about how to create a bucket, see [Create a bucket](../../../../intl.en-US/Quick Start/Create a bucket.md#).
 
     **Note:** You must create a bucket and an E-MapReduce cluster in the same region.
 
 3.  Upload jar packages and resource files
-    1.  Log on to the [OSS Console](https://oss.console.aliyun.com/?spm=a2c4g.11186623.2.1.3bd46ab3PloX1H) and click the **Files** tab.
+    1.  Log on to the [OSS console](https://oss.console.aliyun.com) and click the **Files** tab.
     2.  Click **Upload** to upload resources files in the aliyun-emapreduce-demo/resources directory and jar packages in the aliyun-emapreduce-demo/target directory.
 4.  Create a workflow project
 
-    For more information, see [Workflow project management](https://help.aliyun.com/document_detail/85392.html?spm=a2c4g.11186623.6.586.17f5400cQ1U2Tw).
+    For more information, see [Workflow project management](../DNemapreduce1876943/EN-US_TP_17961.dita#concept_rqw_qz2_z2b).
 
 5.  Create a job
 
-    For more information, see [Edit jobs](https://help.aliyun.com/document_detail/85446.html?spm=a2c4g.11186623.6.587.627668cdngyU2m). Take a MapReduce job as an example.
+    For more information, see [Edit jobs](../DNemapreduce1876943/EN-US_TP_17962.dita#concept_iny_t1f_z2b). Take a MapReduce job as an example.
 
 6.  After you configure a job, click **Run**. The following figure shows the details.
 
