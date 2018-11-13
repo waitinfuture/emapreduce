@@ -103,6 +103,8 @@ RDS -\> SLS -\> Spark Streaming -\> Spark HDFS
 
     3.  等待约2分钟，通过SLS控制台查看日志数据是否上传成功，具体如图所示。
 
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17964/154208012711863_zh-CN.png)
+
         如果日志数据没有采集成功，请根据SLS的提示，查看SLS的采集日志进行排查。
 
 4.  准备代码，将代码编译成jar包，然后上传到OSS。
@@ -189,11 +191,13 @@ RDS -\> SLS -\> Spark Streaming -\> Spark HDFS
 
         请先在OSS上建立bucket为qiaozhou-EMR/jar的目录，然后通过OSS控制台或OSS的SDK将/target/shaded目录下的examples-1.1-shaded.jar上传到oss的这个目录下。上传后的jar包地址为oss://qiaozhou-EMR/jar/examples-1.1-shaded.jar，这个地址在后面会用上，如下图所示：
 
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17964/154208012711865_zh-CN.png)
+
 5.  搭建EMR集群，创建任务并运行执行计划。
     1.  通过EMR控制台创建一个EMR集群，大约需要10分钟左右，请耐心等待。
     2.  创建一个类型为Spark的作业。
 
-        请根据您具体的配置将SLS\_endpoint $SLS\_access\_id $SLS\_secret\_key替换成真实值。请注意参数的顺序，否则可能会报错。
+        请根据您具体的配置将`SLS_endpoint` `$SLS_access_id` `$SLS_secret_key`替换成真实值。请注意参数的顺序，否则可能会报错。
 
         ```
         --master yarn --deploy-mode client --driver-memory 4g --executor-memory 2g --executor-cores 2 --class com.aliyun.EMR.example.LoghubSample ossref://EMR-test/jar/examples-1.1-shaded.jar canaltest canal sparkstreaming $SLS_endpoint $SLS_access_id $SLS_secret_key 1
@@ -201,6 +205,8 @@ RDS -\> SLS -\> Spark Streaming -\> Spark HDFS
 
     3.  创建执行计划，将作业和EMR集群绑定后，开始运行。
     4.  查询Master节点的IP，如图所示：
+
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17964/154208012711867_zh-CN.png)
 
         通过SSH登录后，执行以下命令：
 
@@ -214,12 +220,14 @@ RDS -\> SLS -\> Spark Streaming -\> Spark HDFS
         hadoop fs -ls /mysqlbinlog
         ```
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17964/153915571811868_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17964/154208012711868_zh-CN.png)
 
         还可以通过`hadoop fs -cat /mysqlbinlog/part-00000`命令查看文件内容。
 
 6.  错误排查。
 
     如果没有看到正常的结果，可以通过EMR的运行记录，来进行问题排查，如图所示：
+
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17964/154208012711869_zh-CN.png)
 
 
