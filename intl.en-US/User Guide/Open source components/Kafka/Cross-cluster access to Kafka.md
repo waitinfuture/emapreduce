@@ -28,14 +28,15 @@ Different solutions are prepared for different E-MapReduce versions.
     1.  Interconnect Kafka clusters with the public network.
         -   If Kafka clusters are deployed in a VPC environment, there are two ways:
             -   Deploy Express Connect to interconnect the VPC with the public network. For details, see [Express Connect](../../../../intl.en-US/Product Introduction/What is Express Connect?.md#) document.
-            -   Bind EIPs to cluster Core nodes. For details, see [EIP documents](../../../../intl.en-US/Product Introduction/What is Elastic IP Address?.md#)\). Perform the following steps to bind the EIP to the ECS:
+            -   Bind EIPs to cluster core nodes. For details, see [EIP documents](../../../../intl.en-US/Product Introduction/What is Elastic IP Address?.md#)\). Perform the following steps to bind the EIP to the ECS:
         -   If Kafka is deployed in a classic network, there are two ways:
             -   To create a Pay-As-You-Go cluster, use ECS APIs. For details, see [API documents](../../../../intl.en-US/API Reference/Networks/AllocatePublicIpAddress.md#).
             -   To create a cluster through the Subscription method, you can directly assign a public IP address to relevant host in the ECS console.
-    2.  Configure security group rules for the Kafka cluster to control public network access to the IP addresses of the Kafka cluster. The objective is to improve the security of the Kafka cluster exposed in the public network. You can view the security group to which the cluster belongs in the EMR console, and configure security group rules based on security group IDs. For more information, see [here](../../../../intl.en-US/User Guide/Security groups/Typical applications of security group rules.md#).
-    3.  On the **Cluster Management** page of the E-MapReduce console, click **Manage** after the specified cluster, select **Cluster Overview** on the left side of the page, and then click the **Sync Cluster Host Info** button in the upper right corner.
-    4.  Restart the cluster Kafka service.
-    5.  Use the EIP of the Kafka cluster node to access Kafka service in the public network. Use port 9093 to access Kafka service from the public network.
+    2.  Create an EIP in the [VPC console](https://vpcnext.console.aliyun.com/eip), and purchase relevant EIPs based on the number of Core nodes in the Kafka cluster.
+    3.  Configure security group rules for the Kafka cluster to control public network access to the IP addresses of the Kafka cluster. The objective is to improve the security of the Kafka cluster exposed in the public network. You can view the security group to which the cluster belongs in the EMR console, and configure security group rules based on security group IDs. For more information, see [here](../../../../intl.en-US/User Guide/Security groups/Typical applications of security group rules.md#).
+    4.  On the **Cluster Management** page of the E-MapReduce console, click **Manage** after the specified cluster, select **Cluster Overview** on the left side of the page, and then click the **Sync Cluster Host Info** button in the upper right corner.
+    5.  Restart the cluster Kafka service.
+    6.  Use the EIP of the Kafka cluster node to access Kafka service in the public network. Use port 9093 to access Kafka service from the public network.
 
 ## Versions earlier than EMR-3.11.x {#section_lnz_hdx_y2b .section}
 
