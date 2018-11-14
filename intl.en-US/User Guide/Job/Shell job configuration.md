@@ -16,7 +16,7 @@ In this tutorial, you will learn how to configure a Shell job.
 
     **Note:** You can also create subfolder, rename folder, and delete folder by right-clicking on the folder.
 
-8.  Enter the parameters in the**Content** box with parameters subsequent to Shell commands.
+8.  Enter the parameters in the **Content** box with parameters subsequent to Shell commands.
     -   -c option
 
         -c option can be used to set Shell scripts to run by inputting it into the **Content** box of the job, for example:
@@ -33,5 +33,5 @@ In this tutorial, you will learn how to configure a Shell job.
         -f ossref://mxbucket/sample/sample-shell-job.sh
         ```
 
-9.  Click **Save** to complete Shell job configuration.
+9.  Click **Save** to complete Shell job configurations.
 
