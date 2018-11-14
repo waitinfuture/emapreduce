@@ -19,7 +19,7 @@ When users are applying for a cluster in E-MapReduce, they are provided with a H
     ```
 
 2.  Save this script into a script file, such as uservisits\_aggre\_hdfs.hive, and then upload it to an OSS directory \(for example, oss://path/to/uservisits\_aggre\_hdfs.hive\).
-3.  Log on to the [Alibaba Cloud E-MapReduce Console](https://emr.console.aliyun.com/?spm=5176.8250060.103.1.48466f55SEaqMe#/cn-hangzhou).
+3.  Log on to the [Alibaba Cloud E-MapReduce console](https://emr.console.aliyun.com/?spm=5176.8250060.103.1.48466f55SEaqMe#/cn-hangzhou).
 4.  At the top of the navigation bar, click **Data Platform**.
 5.  In the **Actions** column, click **Design Workflow** of the specified project.
 6.  On the left side of the Job Editing page, right-click on the folder you want to operate and select **New Job**.
