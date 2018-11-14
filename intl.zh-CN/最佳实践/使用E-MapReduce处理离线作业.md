@@ -31,6 +31,9 @@ OSS -\> EMR -\> Hadoop MapReduce
     -   软件信息: HDFS2.7.2 / YARN2.7.2 / Hive2.3.3 / Ganglia3.7.2 / Spark2.3.1 / HUE4.1.0 / Zeppelin0.8.0 / Tez0.9.1 / Sqoop1.4.7 / Pig0.14.0 / ApacheDS2.0.0 / Knox0.13.0
     -   Hadoop集群使用专有网络，区域为华东1（杭州），主实例组ECS计算资源配置公网及内网IP，高可用选择为否（非HA模式），具体配置如下所示。
 
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21330/154216138411874_zh-CN.png)
+
+
 ## 操作步骤 {#section_f2w_y31_dfb .section}
 
 1.  下载示例代码到本地
@@ -58,7 +61,11 @@ OSS -\> EMR -\> Hadoop MapReduce
 
     详细过程请参考[作业编辑](../../../../intl.zh-CN/用户指南/数据开发/作业编辑.md#)，这里我们以MapReduce为例。
 
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21330/154216138411891_zh-CN.jpg)
+
 6.  配置作业内容，点击**运行**。如图所示：
+
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21330/154216138411892_zh-CN.png)
 
     -   关于OSS使用，请参考[OSS 参考使用说明](../../../../intl.zh-CN/开发指南/准备/OSS 参考使用说明.md#)
     -   关于各类作业的具体开发，请参见EMR用户指南作业部分。
