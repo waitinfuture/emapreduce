@@ -4,12 +4,12 @@ In this tutorial, you will learn how jobs are created in E-MapReduce.
 
 To run a computing task, you need to define a job first according to the following steps:
 
-1.  Log on to [Alibaba Cloud E-MapReduce Console Job Page](https://emr.console.aliyun.com/console/#/job/region/ap-southeast-1).
+1.  Log on to [Alibaba Cloud E-MapReduce console](https://emr.console.aliyun.com/console/#/job/region/ap-southeast-1).
 2.  Select the region where the job is created.
 3.  At the top of the page, click **Old EMR Scheduling**.
 4.  In the upper right corner of the page, click **Create Job**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17841/154157065810493_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17841/154218774110493_en-US.png)
 
 5.  Enter the job **Name**.
 6.  Select a job **Type**.
@@ -25,7 +25,7 @@ This is a Spark job, where relevant parameters, input and output paths, are set 
 
 **Note:** This example is only for reference.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17841/154157065810494_en-US.jpg)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17841/154218774110494_en-US.jpg)
 
 ## OSS and ossref {#section_rjr_cx4_y2b .section}
 
