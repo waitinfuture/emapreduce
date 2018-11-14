@@ -4,9 +4,7 @@ Currently, Alibaba Cloud provides two types of cloud networks: classic network a
 
 ## ClassicLink {#section_xs1_jp3_y2b .section}
 
-To solve this problem, Alibaba Cloud launches the [ClassicLink Solution](https://www.alibabacloud.com/help/doc-detail/65412.htm).
-
-To solve this problem, Alibaba Cloud launches the ClassLink Solution.
+To solve this problem, Alibaba Cloud launches the [ClassicLink Solution](https://www.alibabacloud.com/help/doc-detail/65412.htm). Follow these steps:
 
 1.  Create a vSwitch according to the CIDR block specified in the ClassLink Solution.
 2.  When creating a cluster, use the vSwitch for the CIDR block to deploy the cluster.
