@@ -27,7 +27,7 @@ User management allows you to manage accounts which are required to create the r
 
 -   Different clusters cannot share the same Knox account. For example, the Knox account A you added in cluster-1 cannot be used in cluster-2. If you want to use the Knox account A in cluster-2, you must re-add the account A in cluster-2. Knox accounts are created in clusters, so the Knox accounts of each cluster are not interoperable.
 
--   If the message An **error occurred** while synchronizing the status appears when you add a Knox account, click **Retry** to add it again.
+-   If the message **An error occurred** while synchronizing the status appears when you add a Knox account, click **Retry** to add it again.
 
 -   If you **retry** adding an account multiple times but it continues to fail, on the left side of the page, click **Clusters and Services** to check if ApacheDS is stopped. If yes, start ApacheDS and go back to **User Management** then try again.
 
