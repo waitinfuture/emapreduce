@@ -9,10 +9,15 @@
 -   Kafka：2.11\_1.0.0
 -   Storm: 1.0.1
 
-本文使用阿里云EMR服务自动化搭建Kafka集群，详细过程请参考[创建集群](https://help.aliyun.com/document_detail/35223.html?spm=a2c4e.11153940.blogcont637482.18.3e1625a1TUjLXZ)。
+本文使用阿里云EMR服务自动化搭建Kafka集群，详细过程请参考[创建集群](../../../../intl.zh-CN/快速入门/创建 E-MapReduce/创建集群.md#)。
 
 -   创建Hadoop集群
+
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154216142512655_zh-CN.png)
+
 -   创建Kafka集群
+
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154216142512657_zh-CN.png)
 
     **说明：** 
 
@@ -44,9 +49,15 @@
     -   [storm-kafka](http://central.maven.org/maven2/org/apache/storm/storm-kafka/1.1.2/storm-kafka-1.1.2.jar)
     以上版本依赖包经过测试可用，如果你再测试过程中引入了其他依赖，也一同添加在Storm lib中，具体操作如下：
 
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154216142512659_zh-CN.png)
+
     上述操作需要在Hadoop集群的每台机器执行一遍。执行完在E-MapReduce控制台重启Storm服务，如下：
 
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154216142512660_zh-CN.png)
+
     查看操作历史，待Storm重启完毕：
+
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154216142512661_zh-CN.png)
 
 
 ## 开发Storm和Kafka作业 {#section_x4k_k4j_gfb .section}
@@ -85,11 +96,11 @@
 
         查看集群上服务的WebUI有2种方式:
 
-        -   通过Knox方式，参考文档[Knox 使用说明](https://help.aliyun.com/document_detail/62675.html)
-        -   SSH隧道，参考文档[SSH 登录集群](https://help.aliyun.com/document_detail/28187.html?spm=a2c4g.11186623.6.640.24b454c4CAFUqC)
+        -   通过Knox方式，参考文档[Knox 使用说明](../../../../intl.zh-CN/用户指南/开源组件介绍/Knox 使用说明.md#)
+        -   SSH隧道，参考文档[SSH 登录集群](../../../../intl.zh-CN/用户指南/SSH 登录集群.md#)
         本文选择使用SSH隧道方式，访问地址：http://localhost:9999/index.html。可以看到我们刚刚提交的Topology。点进去可以看到执行详情：
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/153958647212663_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154216142512663_zh-CN.png)
 
     -   查看HDFS输出
         -   查看HDFS文件输出
