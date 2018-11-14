@@ -6,7 +6,7 @@ In this tutorial, you will learn how to configure a Spark SQL job.
 
 ## Procedure {#section_ws2_gjp_y2b .section}
 
-1.  Log on to the [Alibaba Cloud E-MapReduce Console](https://emr.console.aliyun.com/?spm=5176.8250060.103.1.48466f55SEaqMe#/cn-hangzhou).
+1.  Log on to the [Alibaba Cloud E-MapReduce console](https://emr.console.aliyun.com/?spm=5176.8250060.103.1.48466f55SEaqMe#/cn-hangzhou).
 2.  At the top of the navigation bar, click **Data Platform**.
 3.  In the **Actions** column, click **Design Workflow** of the specified project.
 4.  On the left side of the Job Editing page, right-click on the folder you want to operate and select **New Job**.
