@@ -4,7 +4,7 @@ E-MapReduce 2.4.0 and later versions support central metadata management. In the
 
 ## Introduction {#section_fkz_hyk_z2b .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/154201008911067_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/154216215411067_en-US.png)
 
 You can enable the central metadatabase function when creating a cluster to use the external metadatabase.
 
@@ -84,7 +84,7 @@ Before E-MapReduce clusters support metadata management, you have to log on to t
     javax.jdo.option.ConnectionURL //Address and name of the database ;
     ```
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/154201009011097_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/154216215411097_en-US.png)
 
     Log on to the Hive metadatabase on the master node of the cluster:
 
@@ -95,6 +95,6 @@ Before E-MapReduce clusters support metadata management, you have to log on to t
 
     After logging on to the Hive metadatabase, change its location to an existing OSS path in the region:
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/154201009011102_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/154216215511102_en-US.png)
 
 
