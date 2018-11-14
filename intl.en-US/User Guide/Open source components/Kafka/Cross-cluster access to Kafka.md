@@ -67,5 +67,5 @@ Different solutions are prepared for different E-MapReduce versions.
     2.  Create an EIP in the [VPC console](https://vpcnext.console.aliyun.com/eip), and purchase relevant EIPs based on the number of Core nodes in the Kafka cluster.
     3.  Configure security group rules for the Kafka cluster to control public network access to the IP addresses of the Kafka cluster. The objective is to improve the security of the Kafka cluster exposed in the public network. You can view the security group to which the cluster belongs in the EMR console, and configure security group rules based on security group IDs. For more information, see [here](../../../../intl.en-US/User Guide/Security groups/Typical applications of security group rules.md#).
     4.  Modify the software configuration of the Kafka cluster listeners.address.principal to HOST, and restart the Kafka cluster.
-    5.  Configure the hosts file on the local client host in accordance with the preceding step five.
+    5.  Configure the hosts file on the local client host.
 
