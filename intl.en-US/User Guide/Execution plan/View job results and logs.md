@@ -10,12 +10,12 @@ View job results and logs
 4.  In the left-side navigation panel, click Execution plan.
 5.  On the right side of the execution plan, click **More** \> **Running log**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17880/154157865810574_en-US.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17880/154218060410574_en-US.jpg)
 
     -   **Execution order ID**: The sequence of execution for the corresponding record, indicating the ordinal position in the whole execution queue. For example, 1 stands for the first position of execution while n stands for the n-th position.
-    -   **Running Status**: The running status of each execution record.
-    -   **Start Time** The time when the execution plan starts to run.
-    -   **Running Time**: The total running time until the page is viewed.
+    -   **Running status**: The running status of each execution record.
+    -   **Start time** The time when the execution plan starts to run.
+    -   **Running time**: The total running time until the page is viewed.
     -   **Execute cluster**: The cluster run by the execution plan, can be either a cluster on demand or an existing associated cluster. Click to view the cluster details page.
     -   **Operation**
 
@@ -26,7 +26,7 @@ View job results and logs
 
 On the**Job list** page, you can view the job list in execution records of a single execution plan and details of each job.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17880/154157865810575_en-US.jpg)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17880/154218060410575_en-US.jpg)
 
 -   **Job execution order ID**: A corresponding ID will be created after a job is executed, and this ID is different from the job ID. The job execution ID is the unique record identifier to view the logs on OSS.
 
