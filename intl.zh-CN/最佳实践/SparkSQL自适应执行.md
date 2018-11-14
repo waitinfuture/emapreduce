@@ -80,9 +80,18 @@ SparkSQL自适应执行解决以下问题:
 
         原生Spark:
 
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23347/154216146713542_zh-CN.png)
+
     -   自适应调整reduce个数:
+
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23347/154216146713543_zh-CN.png)
+
 -   Runtime执行计划优化\(SortMergeJoin转BroadcastJoin\)
 
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23347/154216146713544_zh-CN.png)
+
     自适应转换为BroadcastJoin
+
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23347/154216146813545_zh-CN.png)
 
 
