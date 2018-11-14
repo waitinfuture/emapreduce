@@ -115,8 +115,8 @@ Select the Druid cluster type when you create a cluster. You can check HDFS and 
     1.  Ensure the communication between the two clusters. \(Each cluster is associated with a different security group,and access rules are configured for the two security groups.\)
     2.  Put core-site.xml, hdfs-site.xml, yarn-site.xml, mapred-site.xml of /etc/ecm/hadoop-conf of the Hadoop cluster in the /etc/ecm/duird-conf/druid/\_common directory on each node of the Druid cluster. \(If you select the built-in Hadoop when creating a cluster, several soft links in this directory will point to the configuration with Hadoop. Remove these soft links first.\) Modify hadoop.security.authentication.use.has in core-site.xml to false. \(This configuration is completed on the client to enable AccessKey authentication for users. If Kerberos authentication is used, disable AccessKey authentication.\)
     3.  Write the hosts of the Hadoop cluster to the hosts list of each node on the Druid cluster. Note that the hostname of the Hadoop cluster should be in the form of a long name, such as emr-header-1.cluster-xxxxxxxx. You are advised to put the hosts of Hadoop behind the hosts of the Druid cluster.
-    4.  Set Kerberos cross-domain mutual trust between the two clusters. \(For more details, see [Cross-region access](intl.en-US/User Guide/Kerberos authentication/Cross-region access.md#)here.
-    5.  Create a local Druid account \(useradd-m-g hadoop\) on all nodes of the Hadoop cluster, or set druid.auth.authenticator.kerberos.authtomate to create a mapping rule for the Kerberos account to the local account. \(For specific pre-release rules, see [here](http://druid.io/docs/0.11.0/development/extensions-core/druid-kerberos.html).\) This method is recommended because it is easy to operate without errors.
+    4.  Set Kerberos cross-domain mutual trust between the two clusters. \(For more details, see [Cross-region access](intl.en-US/User Guide/Kerberos authentication/Cross-region access.md#) here.
+    5.  Create a local Druid account \(useradd-m-g hadoop\) on all nodes of the Hadoop cluster, or set druid.auth.authenticator.kerberos.authtomate to create a mapping rule for the Kerberos account to the local account. For specific pre-release rules, see [here](http://druid.io/docs/0.11.0/development/extensions-core/druid-kerberos.html). This method is recommended because it is easy to operate without errors.
 
         **Note:** In Hadoop cluster of the high-security mode , all Hadoop commands must be run from a local account. By default, this local account needs to have the same name as the principal. Yarn also supports mapping a principal to a local account.
 
@@ -279,7 +279,7 @@ Select the Druid cluster type when you create a cluster. You can check HDFS and 
 
     4.  View the running state of the jobs.
 
-        Access http://emr-header-1.cluster-1234:18090/console.html in the browser to view how the jobs run. To access the page properly, you need to open an SSH tunnel in advance \(see [Connect to clusters using SSH](intl.en-US/User Guide/Connect to clusters using SSH.md#)View WebUI of system such as Hadoop, Spark, Ganglia section in SSH tunnel\), and start an agent chrome. If the high-security mode is enabled for the Druid cluster, you have to configure your browser to support the Kerberos authentication process. For more information, see [here](http://druid.io/docs/0.11.0/development/extensions-core/druid-kerberos.html).
+        Access http://emr-header-1.cluster-1234:18090/console.html in the browser to view how the jobs run. To access the page properly, you need to open an SSH tunnel in advance \(see [Connect to clusters using SSH](intl.en-US/User Guide/Connect to clusters using SSH.md#) View WebUI of system such as Hadoop, Spark, Ganglia section in SSH tunnel\), and start an agent chrome. If the high-security mode is enabled for the Druid cluster, you have to configure your browser to support the Kerberos authentication process. For more information, see [here](http://druid.io/docs/0.11.0/development/extensions-core/druid-kerberos.html).
 
     5.  Query the data based on Druid syntax.
 
@@ -315,9 +315,9 @@ Select the Druid cluster type when you create a cluster. You can check HDFS and 
 
 -   Real-time index
 
-    We recommend that you use [Tranquility client](https://github.com/druid-io/tranquility) to send real-time data to Druid. Tranquility supports sending data to Druid in a variety of ways, such as Kafka, Flink, Storm, Spark Streaming. For the information about Kafka method, see the [Tranquility](intl.en-US/User Guide/Open source components/Druid/Tranquility.md#)Druid uses Tranquility Kafka section in Tranquility. For more information about how to use Tranquility and SDK, see [Tranquility Help Document](https://github.com/druid-io/tranquility/tree/master/docs).
+    We recommend that you use [Tranquility client](https://github.com/druid-io/tranquility) to send real-time data to Druid. Tranquility supports sending data to Druid in a variety of ways, such as Kafka, Flink, Storm, Spark Streaming. For the information about Kafka method, see [Tranquility](intl.en-US/User Guide/Open source components/Druid/Tranquility.md#). Druid uses Tranquility Kafka section in Tranquility. For more information about how to use Tranquility and SDK, see [Tranquility Help Document](https://github.com/druid-io/tranquility/tree/master/docs).
 
-    For Kafka, you can also use the kafka-indexing-service extension. For details, see [Kafka indexing service](intl.en-US/User Guide/Open source components/Druid/Kafka indexing service.md#)Kafka Indexing Service.
+    For Kafka, you can also use the kafka-indexing-service extension. For details, see [Kafka indexing service](intl.en-US/User Guide/Open source components/Druid/Kafka indexing service.md#).
 
 -   Troubleshoot index failures
 
