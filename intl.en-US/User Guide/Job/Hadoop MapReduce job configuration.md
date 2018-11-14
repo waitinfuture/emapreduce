@@ -40,7 +40,7 @@
     3.  Behind the jar package path for this OSS, other command line parameters for running a job will be further filled in.
 9.  Click **Save**.
 
-In above example, sleep job has no data input/output. If the job needs to read data and process input results \(e.g. wordcount\), the data input and output paths shall be specified. You can read/write data on HDFS of E-MapReduce cluster as well as data on OSS. To read/write data on OSS, it can be done only by writing the data path as the OSS path when filling input and output paths. For instance:
+In above example, sleep job has no data input/output. If the job needs to read data and process input results \(e.g. wordcount\), the data input and output paths shall be specified. You can read/write data on HDFS of E-MapReduce cluster as well as data on OSS. To read/write data on OSS, it can be done only by writing the data path as the OSS path when filling input and output paths, for instance:
 
 ```
 jar ossref://emr/checklist/jars/chengtao/hadoop/hadoop-mapreduce-examples-2.6.0.jar randomtextwriter -D mapreduce.randomtextwriter.totalbytes=320000 oss://emr/checklist/data/chengtao/hadoop/Wordcount/Input
