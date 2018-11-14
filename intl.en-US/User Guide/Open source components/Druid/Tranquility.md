@@ -13,7 +13,7 @@ For high-security mode Kafka clusters, you need to perform the following operati
 
 1.  Ensure the communication between the two clusters \(The two clusters are in the same security group. Or each cluster is associated with a different security group, and access rules are configured for the two security groups\).
 2.  Write the hosts of the Kafka cluster to the hosts list of each node on the Druid cluster. Note that the hostname of the Kafka cluster should be in the form of a long name, such as emr-header-1.cluster-xxxxxxxx.
-3.  Set Kerberos cross-domain mutual trust between the two clusters. \(For details, see [Cross-region access](intl.en-US/User Guide/Kerberos authentication/Cross-region access.md#)here. The bidirectional mutual trust is preferred.
+3.  Set Kerberos cross-domain mutual trust between the two clusters. \(For details, see [Cross-region access](intl.en-US/User Guide/Kerberos authentication/Cross-region access.md#) here. The bidirectional mutual trust is preferred.
 4.  Prepare a client security configuration file:
 
     ```
