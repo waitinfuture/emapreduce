@@ -16,5 +16,3 @@ presto -server localhost:9090 -catalog hive -schema default -user hadoop -execut
 
 **Note:** There is a delay of several seconds when Hive tables are synchronized.
 
-Note that
-
