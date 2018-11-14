@@ -55,7 +55,7 @@ If you forget the password corresponding to your Hue account, you can recreate a
     **Note:** 
 
     -   $real\_key is the actual key to be added, such as hive\_server\_host.
-    -   You can view $section\_pathbefore $real\_key, in hue.ini file. For example,
+    -   You can view $section\_pathbefore $real\_key, in hue.ini file, for example,
 
         You can see hive\_server\_host belongs to the \[beeswax\] section in [hue.ini](https://github.com/cloudera/hue/blob/release-4.1.0/desktop/conf.dist/hue.ini) file. That is, $section\_path is beeswax.
 
