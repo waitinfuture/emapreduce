@@ -14,5 +14,5 @@ Alibaba Cloud E-MapReduce can access Zeppelin through Apache Knox.
 Access links can be viewed as follows:
 
 1.  On the right-side of the cluster list page, click **Manage**.
-2.  On the left side of the page, click **Access Links and Ports**.
+2.  In the left-side pane, click **Access Links and Ports**.
 
