@@ -1,10 +1,10 @@
-# Pig job configuration {#concept_abt_sgp_y2b .concept}
+# Pig 作业配置 {#concept_abt_sgp_y2b .concept}
 
-When you are applying for clusters in E-MapReduce, a Pig environment is provided by default. You can create and operate tables and data by using Pig.
+E-MapReduce 中，用户申请集群的时候，默认为用户提供了 Pig 环境，用户可以直接使用 Pig 来创建和操作自己的表和数据。
 
-## The procedure is as follows. {#section_tvg_1hp_y2b .section}
+## 操作步骤 {#section_tvg_1hp_y2b .section}
 
-1.  Prepare the Pig script in advance, for example:
+1.  用户需要提前准备好 Pig 的脚本，例如：
 
     ```
     ```shell
@@ -66,29 +66,29 @@ When you are applying for clusters in E-MapReduce, a Pig environment is provided
      ```
     ```
 
-2.  Save this script into a script file, such as script1-hadoop-oss.pig, and then upload it to an OSS directory\(for example, oss://path/to/script1-hadoop-oss.pig\).
-3.  Log on to the [Alibaba Cloud E-MapReduce Console](https://emr.console.aliyun.com/?spm=5176.8250060.103.1.48466f55SEaqMe#/cn-hangzhou).
-4.  At the top of the navigation bar, click **Data Platform**.
-5.  In the **Actions** column, click **Design Workflow** of the specified project.
-6.  On the left side of the Job Editing page, right-click on the folder you want to operate and select **New Job**.
-7.  In the **New Job** dialog box, enter the job name and description.
-8.  Select the Pig job type to create a Pig job. This type of job is submitted in the background by using the following method:
+2.  将该脚本保存到一个脚本文件中，例如叫 script1-hadoop-oss.pig，然后将该脚本上传到 OSS 的某个目录中（例如：oss://path/to/script1-hadoop-oss.pig）。
+3.  通过主账号登录[阿里云 E-MapReduce 控制台](https://emr.console.aliyun.com/)。
+4.  单击上方的数据开发页签，进入项目列表页面。
+5.  单击对应项目右侧的**工作流设计**，进入作业编辑页面。
+6.  在页面左侧，在需要操作的文件夹上单击右键，选择**新建作业**。
+7.  填写作业名称，作业描述。
+8.  选择 Pig 作业类型，表示创建的作业是一个 Pig 作业。这种类型的作业，其后台实际上是通过以下的方式提交。
 
     ```
     pig [user provided parameters]
     ```
 
-9.  Click **OK**.
+9.  单击**确定**。
 
-    **Note:** You can also create subfolder, rename folder, and delete folder by right-clicking on the folder.
+    **说明：** 您还可以通过在文件夹上单击右键，进行创建子文件夹、重命名文件夹和删除文件夹操作。
 
-10. Enter the parameters in the **Content** field with parameters subsequent to Pig commands. For example, if it is necessary to use a Pig script uploaded to OSS, the following must be entered:
+10. 在**作业内容**输入框中填入 Pig 命令后续的参数。例如，如果需要使用刚刚上传到 OSS 的 Pig 脚本，则填写如下：
 
     ```
     -x mapreduce ossref://emr/checklist/jars/chengtao/pig/script1-hadoop-oss.pig
     ```
 
-    You can click **Select OSS path** to view and select from OSS. The system will automatically complete the path of Pig script on OSS. Switch the Pig script prefix to ossref \(click **Switch resource type**\) to guarantee this file is properly downloaded by E-MapReduce.
+    您也可以单击**选择 OSS 路径**，从 OSS 中进行浏览和选择，系统会自动补齐 OSS 上 Pig 脚本的绝对路径。请务必将 Pig 脚本的前缀修改为 ossref（单击**切换资源类型**），以保证 E-MapReduce 可以正确下载该文件。
 
-11. Click **Save** to complete the Pig job configuration.
+11. 单击**保存**，Shell 作业即定义完成。
 
