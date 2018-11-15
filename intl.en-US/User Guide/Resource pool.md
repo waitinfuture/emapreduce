@@ -41,7 +41,7 @@ When you select the scheduler policy, click the drop-down list of **More setting
     |Resource pool limit-limit on the proportion of individual users|yarn.scheduler.capacity.<queue-path\>.user-limit-factor|
     |Resource pool limit-maximum memory|yarn.scheduler.capacity.<queue-path\>.maximum-allocation-mb|
     |Resource pool limit-maximum number of cores|yarn.scheduler.capacity.<queue-path\>.maximum-allocation-vcores|
-    |Resource pool limit-maximum number of applications|优先级高于全局变量yarn.scheduler.capacity.maximum-applications / yarn.scheduler.capacity.<queue-path\>.maximum-applications|
+    |Resource pool limit-maximum number of applications|The priority of the parameter is higher than the global variable yarn.scheduler.capacity.maximum-applications / yarn.scheduler.capacity.<queue-path\>.maximum-applications|
     |Resource pool limit-maximum AM resource percentage|The priority of the parameter is higher than the global variable yarn.scheduler.capacity.maximum-am-resource-percent or yarn.scheduler.capacity.<queue-path\>.maximum-am-resource-percent|
     |Submit permission control|The priority of the parameter is higher than the global variable yarn.scheduler.capacity.root.<queue-path\>.acl\_submit\_applications|
     |Manage access control policies|The priority of the parameter is higher than the global variable yarn.scheduler.capacity.root.<queue-path\>.acl\_administer\_queue|
