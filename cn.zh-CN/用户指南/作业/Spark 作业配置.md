@@ -1,6 +1,6 @@
 # Spark 作业配置 {#concept_g1f_4hp_y2b .concept}
 
-Spark 作业配置
+本文将介绍Spark 作业配置的操作步骤。
 
 ## 操作步骤 {#section_p4m_rhp_y2b .section}
 
@@ -34,7 +34,7 @@ Spark 作业配置
                 spark-submit --master yarn-client --driver-memory 7G --executor-memory 5G --executor-cores 1 --num-executors 32 --class com.aliyun.emr.checklist.benchmark.SparkWordCount emr-checklist_2.10-0.1.0.jar oss://emr/checklist/data/wc oss://emr/checklist/data/wc-counts 32
                 ```
 
-            -   在 E-MapReduce 作业的应用参数框中只需要填写：
+            -   在 E-MapReduce 作业的**作业内容**输入框中只需要填写：
 
                 ```
                 --master yarn-client --driver-memory 7G --executor-memory 5G --executor-cores 1 --num-executors 32 --class com.aliyun.emr.checklist.benchmark.SparkWordCount ossref://emr/checklist/jars/emr-checklist_2.10-0.1.0.jar oss://emr/checklist/data/wc oss://emr/checklist/data/wc-counts 32

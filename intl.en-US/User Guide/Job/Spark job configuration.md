@@ -19,7 +19,7 @@ In this tutorial, you will learn how to configure a Spark job.
     spark-submit [options] --class [MainClass] xxx.jar args
     ```
 
-8.  Enter the parameters in the **Content**box with command line parameters required to submit this Spark job. Only the parameters after spark-submit can be entered. The following example shows how to enter the parameters for creating Spark jobs and Pyspark jobs.
+8.  Enter the parameters in the **Content** field with command line parameters required to submit this Spark job. Only the parameters after spark-submit can be entered. The following example shows how to enter the parameters for creating Spark jobs and Pyspark jobs.
     -   Create a Spark job
 
         Create a Spark WordCount job:
@@ -34,7 +34,7 @@ In this tutorial, you will learn how to configure a Spark job.
                 spark-submit --master yarn-client --driver-memory 7G --executor-memory 5G --executor-cores 1 --num-executors 32 --class com.aliyun.emr.checklist.benchmark.SparkWordCount emr-checklist_2.10-0.1.0.jar oss://emr/checklist/data/wc oss://emr/checklist/data/wc-counts 32
                 ```
 
-            -   In the E-MapReduce job parameter box enter the following:
+            -   In the E-MapReduce job **Content** field enter the following:
 
                 ```
                 --master yarn-client --driver-memory 7G --executor-memory 5G --executor-cores 1 --num-executors 32 --class com.aliyun.emr.checklist.benchmark.SparkWordCount ossref://emr/checklist/jars/emr-checklist_2.10-0.1.0.jar oss://emr/checklist/data/wc oss://emr/checklist/data/wc-counts 32
