@@ -21,10 +21,10 @@ In this tutorial, you will learn how to configure a Spark SQL job.
     spark-sql [options] [cli option]
     ```
 
-8.  Enter the parameters in the **Content**box with parameters subsequent to Spark SQL commands.
+8.  Enter the parameters in the **Content** field with parameters subsequent to Spark SQL commands.
     -   -e option
 
-        Directly write running SQL for -e options by inputting it into the **Parameters** box of the job, for example:
+        Directly write running SQL for -e options by inputting it into the **Content** field of the job, for example:
 
         ```
         -e "show databases;"
