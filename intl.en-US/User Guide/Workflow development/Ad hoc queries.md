@@ -57,5 +57,5 @@ After you develop and configure a job, in the top-right corner, you can click th
 
 ## View logs {#section_ajt_2bf_z2b .section}
 
-After you execute a job, you can view run logs on theLog tab at the bottom of the query page.
+After you execute a job, you can view run logs on the Log tab at the bottom of the query page.
 
