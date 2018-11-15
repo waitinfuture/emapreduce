@@ -1,10 +1,10 @@
 # Hadoop MapReduce 作业配置 {#concept_rtn_r1p_y2b .concept}
 
-Hadoop MapReduce 作业配置
+本文将介绍Hadoop MapReduce 作业配置的操作步骤。
 
 操作步骤
 
-1.  通过主账号登录[阿里云 E-MapReduce 控制台](https://emr.console.aliyun.com/)，进入集群列表页面。
+1.  通过主账号登录[阿里云 E-MapReduce 控制台](https://emr.console.aliyun.com/)。
 2.  单击上方的数据开发页签，进入项目列表页面。
 3.  单击对应项目右侧的**工作流设计**，进入作业编辑页面。
 4.  在页面左侧，在需要操作的文件夹上单击右键，选择**新建作业**。
@@ -19,9 +19,9 @@ Hadoop MapReduce 作业配置
 
     **说明：** 您还可以通过在文件夹上单击右键，进行创建子文件夹、重命名文件夹和删除文件夹操作。
 
-8.  在**作业内容**输入框中填写提交该 job 需要提供的命令行参数。这里需要说明的是，这个选项框中需要填写的内容从 hadoop jar 后面的第一个参数开始填写。也就是说，选项框中第一个要填写的是运行该作业需要提供的 jar 包所在地址，然后后面紧跟 \[MainClass\] 以及其他用户可以自行提供的命令行参数。
+8.  在**作业内容**输入框中填写提交该 job 需要提供的命令行参数。这里需要说明的是，这个输入框中需要填写的内容从 hadoop jar 后面的第一个参数开始填写。也就是说，输入框中第一个要填写的是运行该作业需要提供的 jar 包所在地址，然后后面紧跟 \[MainClass\] 以及其他用户可以自行提供的命令行参数。
 
-    举个例子，假设用户想要提交一个 Hadoop 的 sleep job，该 jo b不读写任何数据，只是提交一些 mapper 和 reducer task 到集群中，每个 task sleep 一段时间，然后 job 成功。在 Hadoop 中（hadoop-2.6.0 为例）以，该 job 被打包在 Hadoop 发行版的 hadoop-mapreduce-client-jobclient-2.6.0-tests.jar 中。那么，若是在命令行中提交该 job，则命令如下：
+    举个例子，假设用户想要提交一个 Hadoop 的 sleep job，该 job不读写任何数据，只是提交一些 mapper 和 reducer task 到集群中，每个 task sleep 一段时间，然后 job 成功。在 Hadoop 中（hadoop-2.6.0 为例）以，该 job 被打包在 Hadoop 发行版的 hadoop-mapreduce-client-jobclient-2.6.0-tests.jar 中。那么，若是在命令行中提交该 job，则命令如下：
 
     ```
     hadoop jar /path/to/hadoop-mapreduce-client-jobclient-2.6.0-tests.jar sleep -m 3 -r 3 -mt 100 -rt 100

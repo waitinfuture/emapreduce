@@ -17,7 +17,7 @@
 
     **Note:** You can also create subfolder, rename folder, and delete folder by right-clicking on the folder.
 
-8.  Fill in the **Content**box with command line parameters to be provided to submit this job. Please note that content to be filled in this option box shall be started with the first parameter after hadoop jar. That is to say, in the option box, the address for jar to be provided to run this job shall be first followed by \[MainClass\], and you can provide other command line parameters themselves.
+8.  Fill in the **Content** field with command line parameters to be provided to submit this job. Please note that content to be filled in this **Content** field shall be started with the first parameter after hadoop jar. That is to say, in the content box, the address for jar to be provided to run this job shall be first followed by \[MainClass\], and you can provide other command line parameters themselves.
 
     For instance, you want to submit a Hadoop sleep job which doesn't write/read any date, then this job will succeed only by submitting mapper reducer tasks to the cluster and waiting for each task to sleep for a while. In Hadoop \(e.g. hadoop-2.6.0\), this job is packaged in hadoop-mapreduce-client-jobclient-2.6.0-tests.jar of the Hadoop release version. If this job is submitted from the command line, the command will be:
 
@@ -36,7 +36,7 @@
     The jar package path used here is an absolute path on the E-MapReduce host. There is a problem that the user may put these jar packages anywhere, and as the cluster is created and released, these jar packages become unavailable as they are released. Therefore, upload the jar package using the following methods:
 
     1.  Users send their own jar packages to the bucket of the OSS for storage. When you configure the parameters for hadoop, click **Select OSS path** to select and execute the jar package you want from the OSS directory. System will then auto-complete the OSS address for jar packages. Be sure to switch the prefix of the jar for your code to ossref \(click **switch resource type**\), to ensure that the jar package is downloaded correctly by MapReduce.
-    2.  1. Click **OK**, the OSS path for this package will be auto completed in the **Content** field. When a job is submitted, the system will find the corresponding jar packages automatically as per this path.
+    2.  Click **OK**, the OSS path for this package will be auto completed in the **Content** field. When a job is submitted, the system will find the corresponding jar packages automatically as per this path.
     3.  Behind the jar package path for this OSS, other command line parameters for running a job will be further filled in.
 9.  Click **Save**.
 
