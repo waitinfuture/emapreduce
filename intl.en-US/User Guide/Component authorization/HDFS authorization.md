@@ -73,7 +73,7 @@ For non-Kerberos security clusters, a configuration must be added and the servic
 -   When permissions are enabled for HDFS, the services must be set up \(such as /spark-history for spark, and /tmp/$user/ for yarn\).
 -   Sticky bit:
 
-    Sticky bit can be set for a folder to prevent users other than superuser/file owner/dir owner from deleting files/folders in the folder \(even if other users have rwx permissions on the folder\). For example:
+    Sticky bit can be set for a folder to prevent users other than superuser/file owner/dir owner from deleting files/folders in the folder \(even if other users have rwx permissions on the folder\), for example:
 
     ```
     #That is, adding numeral 1 as the first digit
