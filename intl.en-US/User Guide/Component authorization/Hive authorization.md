@@ -1,21 +1,16 @@
 # Hive authorization {#concept_ssg_l1b_bfb .concept}
 
-Two authorization features are built in Hive:
-
--   Storage Based Authorization
--   SQL Standards Based Authorization
-
-For more information, see [Hive official documentation](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Authorization).
+Hive has two authorization modes, storage based authorization and SQL standard based authorization. For more information, see [official Hive documentation](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Authorization).
 
 **Note:** The two authorization features can be configured at the same time without conflict.
 
-Storage Based Authorization \(for HiveMetaStore\)
+Storage based authorization is for HiveMetaStore.
 
 Scenario:
 
 If a user in the cluster has a direct access to data in Hive through HDFS/Hive Client, a permission control must be performed on Hive data in HDFS. Through HDFS permission control, operation permissions related to Hive SQL can be controlled.
 
-For more information, see [Hive document](https://cwiki.apache.org/confluence/display/Hive/Storage+Based+Authorization+in+the+Metastore+Server).
+For more information, see [Hive documents](https://cwiki.apache.org/confluence/display/Hive/Storage+Based+Authorization+in+the+Metastore+Server).
 
 ## Add configuration {#section_qpw_vcb_bfb .section}
 
@@ -217,7 +212,7 @@ With the HDFS authorization, related users/user groups can normally create/read/
             Time taken: 1.094 seconds
         ```
 
-    -   Foo could not select data for testtbl
+    -   Foo could not select data for testtbl.
 
         ```
         User foo cannot select data from table testtbl.
