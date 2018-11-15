@@ -41,7 +41,7 @@ YARN supports permission control over resources through queues, and it provides 
 
     -   yarn.scheduler.capacity.$\{queue-name\}.acl\_submit\_applications
         -   Set user/group that can submit jobs to this queue
-        -   where $\{queue-name\} is the queue name. Multi-level queues are supported. Note that ACL is inherited in multi-level queues. For example:
+        -   where $\{queue-name\} is the queue name. Multi-level queues are supported. Note that ACL is inherited in multi-level queues, for example:
 
             ```
             #queue-name=root
@@ -190,7 +190,7 @@ YARN supports permission control over resources through queues, and it provides 
         <property>
             <name>yarn.scheduler.capacity.root.q2.acl_submit_applications</name>
             <value>foo</value>
-            <! -- q2只允许foo用户提交作业-->
+            <! -- q2 only allows the foo user to submit jobs-->
         </property>
         <property>
             <name>yarn.scheduler.capacity.root.q1.maximum-capacity</name>
