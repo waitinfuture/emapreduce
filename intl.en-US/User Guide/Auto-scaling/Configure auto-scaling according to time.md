@@ -6,8 +6,8 @@ The expansion nodes are billed in Pay-As-You-Go mode, and the price of the same 
 
 ## Configure scaling instance number {#section_j3f_t3j_z2b .section}
 
--   Maximum number of nodes: The maximum number of the nodes that can be expanded. Once it is reached, even if the auto-scaling rule is matched, the expansion and contraction will not continue. Currently, this item that can be set is 1,000 at most.
--   Minimum number of nodes: The minimum number of the nodes that can be expanded. If the expansion or contraction number of Task nodes set in the auto-scaling rule is less than the minimum number of nodes here, the cluster will scale with the minimum number of nodes at the first execution.
+-   Maximum number of nodes: The maximum number of the nodes that can be expanded. Once it is reached, even if the auto-scaling rule is matched, the expansion and contraction will not continue. Currently, you can set up to 1,000 task nodes.
+-   Minimum number of nodes: The minimum number of the nodes that can be expanded. If the expansion or contraction number of task nodes set in the auto-scaling rule is less than the minimum number of nodes here, the cluster will scale with the minimum number of nodes at the first execution.
 
     For example, the auto-scaling rule is set to expand 1 node at 00:00:00 of every day, but the minimum number of nodes is 3. Then the system will expand 3 nodes at the 00:00:00 of the first day.
 
@@ -16,7 +16,7 @@ The expansion nodes are billed in Pay-As-You-Go mode, and the price of the same 
 
 The auto-scaling rules include expansion rules and contraction rules. When the auto-scaling function is disabled, all rules are cleared. If auto-scaling function is enabled again, the scaling rules need to be reconfigured.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17958/154201620110971_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17958/154227410810971_en-US.png)
 
 -   **Rule Name**: In a cluster, the scaling rule names \(including expansion rules and contraction rules\) are not allowed to be repeated.
 -   Execution cycle:
