@@ -244,24 +244,24 @@ Here we describe how to run a Spark program locally to visit Alibaba Cloud's dat
     -   Development process
         1.  Double-click to enter SparkWordCount.scala.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154217689013087_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154259706213087_en-US.jpg)
 
         2.  Enter the job configuration page from the arrow as shown in the following figure.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154217689013088_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154259706213088_en-US.jpg)
 
         3.  Select SparkWordCount and enter the required job parameters in the job parameter box.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154217689013089_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154259706213089_en-US.jpg)
 
         4.  Click **OK**.
         5.  Click Run to run the job.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154217689113090_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154259706213090_en-US.jpg)
 
         6.  View job logs
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154217689113091_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154259706213091_en-US.jpg)
 
 -   Scala IDE for Eclipse
     -   Preparations
@@ -271,21 +271,21 @@ Here we describe how to run a Spark program locally to visit Alibaba Cloud's dat
     -   Development process
         1.  Import a project as described in the figure below:
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154217689113093_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154259706213093_en-US.jpg)
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154217689113094_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154259706213094_en-US.jpg)
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154217689113095_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154259706213095_en-US.jpg)
 
         2.  The shortcut for Run as Maven build is Alt + Shift + X, M. You can also right-click the project name and choose **Run As** \> **Maven build**.
         3.  Right-click on the job to run after it has been compiled, select **Run Configuration** to enter the configuration page.
         4.  In the configuration page, select Scala Application and configure the Main Class and parameters of the job, As shown in the following figure:
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154217689113097_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154259706213097_en-US.jpg)
 
         5.  Click **Run**.
         6.  View the output log of the console, as shown in the following figure:
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154217689113098_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154259706213098_en-US.jpg)
 
 
