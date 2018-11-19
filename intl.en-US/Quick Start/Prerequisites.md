@@ -12,18 +12,18 @@ Before creating E-MapReduce, you need to complete the following prerequisites:
 
     You must create at least one AccessKey according to the following steps:
 
-    1.  Log on to the [official Alibaba Cloud website](https://www.alibabacloud.com/).
+    1.  Log on to the [Alibaba Cloud console](https://partners-intl.console.aliyun.com/).
     2.  Click **AccessKeys**.
 
         **Note:** If a security prompt dialog box appears, click **Continue to manage AccessKey**.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17837/154260917610452_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17837/154261299910452_en-US.png)
 
     3.  Click **Create AccessKey**.
     4.  AccessKey is created successfully.
 3.  Activate Alibaba Cloud OSS.
 
-    E-MapReduce will store your job logs and run logs in the Alibaba Cloud OSS storage space, so you need to [Sign up for OSS](https://www.alibabacloud.com/help/doc-detail/31884.htm). And create a bucket in the same area where you expect to create the cluster, see [Create a bucket](https://www.alibabacloud.com/help/doc-detail/31885.htm).
+    E-MapReduce will store your job logs and run logs in the Alibaba Cloud OSS storage space, so you need to [Sign up for OSS](../../../../reseller.en-US/Quick Start/Sign up for OSS.md#). And create a bucket in the same area where you expect to create the cluster, see [Create a bucket](../../../../reseller.en-US/Quick Start/Create a bucket.md#).
 
 4.  Enable high-end models \(optional\)
 
