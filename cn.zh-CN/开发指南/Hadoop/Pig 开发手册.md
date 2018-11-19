@@ -1,37 +1,37 @@
-# Create and run a Pig job {#concept_h3g_qsm_hfb .concept}
+# Pig 开发手册 {#concept_h3g_qsm_hfb .concept}
 
-This topic describes how to create and run a Pig job.
+本文将介绍如何创建一个Pig作业并运行 。
 
-## Use OSS in Pig {#section_r4m_35m_hfb .section}
+## 在 Pig 中使用 OSS {#section_r4m_35m_hfb .section}
 
-Use the following format for OSS paths:
+在使用 OSS 路径的时候，请使用类似如下的形式:
 
 ```
 oss://${AccessKeyId}:${AccessKeySecret}@${bucket}.${endpoint}/${path}
 ```
 
-Parameter descriptions:
+参数说明：
 
--   $\{accessKeyId\}: The AccessKey ID of your account.
+-   $\{accessKeyId\}：您账号的 AccessKeyId。
 
--   $\{accessKeySecret\}: The AccessKey Secret corresponding to the AccessKey ID.
+-   $\{accessKeySecret\}：该 AccessKeyId 对应的密钥。
 
--   $\{bucket\}: The bucket corresponding to the AccessKey ID.
+-   $\{bucket\}： 该 AccessKeyId 对应的 bucket。
 
--   $\{endpoint\}: The network used for accessing OSS. It depends on the region in which your cluster exists, and the corresponding OSS should also be in the region in which your cluster exists.
+-   $\{endpoint\}：访问 OSS 使用的网络，由您集群所在的 region 决定，对应的 OSS 也需要是在集群对应的 region。
 
-    For more information about specific values, see [OSS endpoint](../../SP_21/DNOSS11827291/EN-US_TP_4350.dita#concept_zt4_cvy_5db).
+    具体的值请参考 [OSS Endpoint](../../../../intl.zh-CN/开发指南/访问域名和数据中心.md#)
 
--   $\{path\}: Path in the bucket.
+-   $\{path\}：bucket 中的路径。
 
 
-Take script1-hadoop.pig in Pig as an example. Upload [tutorial.jar](http://emr-agent-pack.oss-cn-hangzhou.aliyuncs.com/pig/0.14.0/tutorial.jar) and [excite.log.bz2](http://emr-agent-pack.oss-cn-hangzhou.aliyuncs.com/pig/0.14.0/excite.log.bz2) in Pig to OSS. Suppose that the URLs for uploading files are oss://emr/jars/tutorial.jar and oss://emr/data/excite.log.bz2 respectively.
+以 Pig 中带的 script1-hadoop.pig 为例进行说明，将 Pig 中的 [tutorial.jar](http://emr-agent-pack.oss-cn-hangzhou.aliyuncs.com/pig/0.14.0/tutorial.jar) 和 [excite.log.bz2](http://emr-agent-pack.oss-cn-hangzhou.aliyuncs.com/pig/0.14.0/excite.log.bz2) 上传到 OSS 中，假设上传路径分别为oss://emr/jars/tutorial.jar和oss://emr/data/excite.log.bz2。
 
-Follow these steps:
+请参见如下操作步骤：
 
-1.  Create scripts
+1.  编写脚本
 
-    Edit the path of the JAR file and the input and output paths in the script, as shown below: Note that the format of the OSS path is oss://$\{accesskeyId\}:$\{accessKeySecret\}@$\{bucket\}.$\{endpoint\}/object/path.
+    将脚本中的 jar 文件路径和输入输出路径做了修改，如下所示。注意 OSS 路径设置形式为 oss://$\{accesskeyId\}:$\{accessKeySecret\}@$\{bucket\}.$\{endpoint\}/object/path。
 
     ```
     /*
@@ -91,14 +91,14 @@ Follow these steps:
     STORE ordered_uniq_frequency INTO 'oss://${AccessKeyId}:${AccessKeySecret}@${bucket}.${endpoint}/data/script1-hadoop-results' USING PigStorage();
     ```
 
-2.  Create a job
+2.  创建作业
 
-    Store the script created in step 1 to OSS. For example, if the storage path is oss://emr/jars/script1-hadoop.pig, follow these steps to create a job in E-MapReduce:
+    将步骤 1 中编写的脚本存放到 OSS 上，假设存储路径为oss://emr/jars/script1-hadoop.pig，在 E-MapReduce 作业中创建如下作业：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17986/154259742513205_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17986/154259742313205_zh-CN.png)
 
-3.  Create and run an execution plan.
+3.  创建执行计划并运行
 
-    Create the execution plan in E-MapReduce and add the created Pig job to the execution plan. Select **Run Now** as the policy so that the script1-hadoop job can run in the selected cluster.
+    在 E-MapReduce 执行计划中创建执行计划，将上一步创建好的 Pig 作业添加到执行计划中，策略请选择**立即执行**，这样 script1-hadoop 作业就会在选定集群中运行起来了。
 
 
