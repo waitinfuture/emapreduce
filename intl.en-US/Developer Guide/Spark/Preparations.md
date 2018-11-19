@@ -98,6 +98,10 @@ To allow E-MapReduce to access Alibaba Cloud data sources \(such as OSS and MaxC
 
 See the [pom](https://github.com/aliyun/aliyun-emapreduce-demo/blob/master/pom.xml) file to add or delete required third-party dependencies.
 
+## OSS output directory settings {#section_axv_scv_vfb .section}
+
+Configure the parameter fs.oss.buffer.dirs to the local hadoop configuration file. The parameter value is a local directory path. If the parameter value is not set, a null pointer exception will occur when OSS data is written during the process of running Spark.
+
 ## Clean up data {#section_rdp_yyg_hfb .section}
 
 When a Spark job fails, the data generated is not deleted automatically. If a job fails, check the OSS output directory to see if any file exists. You must also check OSS fragment management for any fragments that have not been submitted. Remove fragments that are found.
