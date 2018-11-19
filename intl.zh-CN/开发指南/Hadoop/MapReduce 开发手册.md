@@ -1,10 +1,10 @@
-# Create and run MapReduce jobs {#concept_mpt_zgm_hfb .concept}
+# MapReduce 开发手册 {#concept_mpt_zgm_hfb .concept}
 
-This topic describes how to create and run a MapReduce job.
+本文将介绍如何创建一个MapReduce作业并运行。
 
-## Use OSS in MapReduce {#section_ahh_mhm_hfb .section}
+## 在 MapReduce 中使用 OSS {#section_ahh_mhm_hfb .section}
 
-To read and write data to OSS in MapReduce, configure the following parameters:
+要在 MapReduce 中读写 OSS，需要配置如下的参数：
 
 ```
 conf.set("fs.oss.accessKeyId", "${accessKeyId}");
@@ -12,24 +12,24 @@ conf.set("fs.oss.accessKeyId", "${accessKeyId}");
     conf.set("fs.oss.endpoint","${endpoint}");
 ```
 
-Parameter descriptions:
+参数说明：
 
--   $\{accessKeyId\}: The AccessKey ID of your account.
+-   $\{accessKeyId\}：您账号的 AccessKeyId。
 
--   $\{accessKeySecret\}: The AccessKey Secret corresponding to the AccessKey ID.
+-   $\{accessKeySecret\}：该 AccessKeyId 对应的密钥。
 
--   $\{endpoint\}: The network used for accessing OSS. It depends on the region in which your cluster exists, and the corresponding OSS must also be in the region in which your cluster exists.
+-   $\{endpoint\}：访问 OSS 使用的网络，由您集群所在的 region 决定，对应的 OSS 也需要是在集群对应的 region。
 
-    For more information about specific values, see [OSS endpoints](../../SP_21/DNOSS11827291/EN-US_TP_4350.dita#concept_zt4_cvy_5db).
+    具体的值请参考 [OSS Endpoint](../../../../intl.zh-CN/开发指南/访问域名和数据中心.md#)
 
 
-## Word count {#section_jvz_phm_hfb .section}
+## Word Count {#section_jvz_phm_hfb .section}
 
-The following example describes how to read text from OSS and calculate the word count. The procedure is as follows:
+以下示例介绍了如何从 OSS 中读取文本，然后统计其中单词的数量。其操作步骤如下：
 
-1.  Write the program
+1.  程序编写
 
-    Take the Java code as an example. Modify the WordCount sample on the official website of Hadoop as follows: Modify the instance by adding the configuration of the AccessKey ID and AccessKey Secret in the code so that the job has the permission to access OSS files.
+    以 JAVA 代码为例，将 Hadoop 官网 WordCount 例子做如下修改。对该实例的修改只是在代码中添加了 AccessKey ID 和 AccessKey Secret 的配置，以便作业有权限访问 OSS 文件。
 
     ```
     package org.apache.hadoop.examples;
@@ -100,9 +100,9 @@ The following example describes how to read text from OSS and calculate the word
      }
     ```
 
-2.  Compile the program
+2.  编译程序
 
-    First, you need to configure the JDK and Hadoop environments and then perform the following operations:
+    首先要将 jdk 和 Hadoop 环境配置好，然后进行如下操作：
 
     ```
     mkdir wordcount_classes
@@ -110,38 +110,38 @@ The following example describes how to read text from OSS and calculate the word
      jar cvf wordcount.jar -C wordcount_classes .
     ```
 
-3.  Create a job
-    -   Upload the JAR file prepared in the previous step to OSS. Log on to the OSS website for detailed operations. Assume that the path of the JAR file on OSS is oss://emr/jars/wordcount.jar and the input and output paths are oss://emr/data/WordCount/Input and oss://emr/data/WordCount/Output.
-    -   Create [E-MapReduce jobs](http://emr.console.aliyun.com/#/job/region/cn-hangzhou) as follows:
+3.  创建作业
+    -   将上一步打好的 jar 文件上传到 OSS，具体可登录 OSS 官网进行操作。假设 jar 文件在 OSS 上的路径为oss://emr/jars/wordcount.jar, 输入输出路径分别为 oss://emr/data/WordCount/Input和 oss://emr/data/WordCount/Output。
+    -   在 E-MapReduce中创建如下作业，具体步骤请参考[创建作业](../../../../intl.zh-CN/快速入门/创建 E-MapReduce/创建作业.md#)：
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17984/154259739313188_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17984/154259739113188_zh-CN.png)
 
-4.  Create an execution plan
+4.  创建执行计划
 
-    Create an execution plan in E-MapReduce and add the created job to the execution plan. Select **Run Now** as the policy so that the WordCount job runs in the selected cluster.
+    在 E-MapReduce 执行计划中创建执行计划，将上一步创建好的作业添加到执行计划中，策略选择**立即执行**，这样 wordcount 作业就会在选定集群中运行起来了。
 
 
-## Manage MR jobs using Maven {#section_ymj_v3m_hfb .section}
+## 使用 Maven 工程来管理 MR 作业 {#section_ymj_v3m_hfb .section}
 
-When your project grows larger in size, it becomes considerably complicated to manage. We recommend that you use Maven or similar software management tools to manage projects. The procedure is as follows:
+当您的工程规模越来越大时，会变得非常复杂，不易管理。我们推荐你采用类似 Maven 这样的软件项目管理工具来进行管理。其操作步骤如下：
 
-1.  Install Maven
+1.  安装 Maven
 
-    First, make sure that you have installed [Maven](http://maven.apache.org/index.html?spm=a2c4g.11186623.2.18.4c3d19d6YlAWbs).
+    首先确保您已经安装了 [Maven](http://maven.apache.org/index.html?spm=a2c4g.11186623.2.18.4c3d19d6YlAWbs)。
 
-2.  Generate the project framework.
+2.  生成工程框架
 
-    At the root directory of your project \(suppose the root directory of your project is D:/workspace\), execute the following commands:
+    在您的工程根目录处（假设您的工程开发根目录位置是 D:/workspace）执行如下命令：
 
     ```
     mvn archetype:generate -DgroupId=com.aliyun.emr.hadoop.examples -DartifactId=wordcountv2 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
     ```
 
-    Maven automatically generates an empty sample project at D:/workspace/wordcountv2 \(same with the artifactId you specified\) containing a basic pom.xml file and an App class \(the class package path is the same as the groupId you specified\).
+    mvn 会自动生成一个空的 Sample 工程位于 D:/workspace/wordcountv2（和您指定的 artifactId 一致），里面包含一个简单的 pom.xml 和 App 类（类的包路径和您指定的 groupId 一致）。
 
-3.  Add Hadoop dependencies
+3.  加入 Hadoop 依赖
 
-    Open the project with your favorite IDE and edit the pom.xml file. Add the following content to the dependencies:
+    使用任意 IDE 打开这个工程，编辑 pom.xml 文件。在 dependencies 内添加如下内容：
 
     ```
     <dependency>
@@ -156,9 +156,9 @@ When your project grows larger in size, it becomes considerably complicated to m
          </dependency>
     ```
 
-4.  Write the program
+4.  编写代码
 
-    Add a new class named WordCount2.java at the same directory level as that of the App class under the com.aliyun.emr.hadoop.examples package. The content is as follows:
+    在 com.aliyun.emr.hadoop.examples包下和 App 类平行的位置添加新类 WordCount2.java。内容如下：
 
     ```
     package com.aliyun.emr.hadoop.examples;
@@ -211,7 +211,7 @@ When your project grows larger in size, it becomes considerably complicated to m
                  try {
                      fis = new BufferedReader(new FileReader(fileName));
                      String pattern = null;
-                     while ((pattern = fis.readLine()) ! = null) {
+                     while ((pattern = fis.readLine()) != null) {
                          patternsToSkip.add(pattern);
                      }
                  } catch (IOException ioe) {
@@ -258,7 +258,7 @@ When your project grows larger in size, it becomes considerably complicated to m
              conf.set("fs.oss.endpoint","${endpoint}");
              GenericOptionsParser optionParser = new GenericOptionsParser(conf, args);
              String[] remainingArgs = optionParser.getRemainingArgs();
-             if (!( remainingArgs.length ! = 2 || remainingArgs.length ! = 4)) {
+             if (!(remainingArgs.length != 2 || remainingArgs.length != 4)) {
                  System.err.println("Usage: wordcount <in> <out> [-skip skipPatternFile]");
                  System.exit(2);
              }
@@ -285,7 +285,7 @@ When your project grows larger in size, it becomes considerably complicated to m
      }
     ```
 
-    See the following sample code for the EMapReduceOSSUtil class, which is located in the same directory of WordCount2:
+    其中的 EMapReduceOSSUtil 类代码请参见如下示例，放在和 WordCount2 相同目录：
 
     ```
     package com.aliyun.emr.hadoop.examples;
@@ -317,7 +317,7 @@ When your project grows larger in size, it becomes considerably complicated to m
                  return oriUri;
              }
              int index = oriUri.indexOf(SCHEMA);
-             if (index == -1 || index ! = 0) {
+             if (index == -1 || index != 0) {
                  return oriUri;
              }
              int bucketIndex = index + SCHEMA.length();
@@ -354,30 +354,30 @@ When your project grows larger in size, it becomes considerably complicated to m
      }
     ```
 
-5.  Compile, package, and upload the code
+5.  编译并打包上传
 
-    In the project directory, run the following commands:
+    在工程的目录下，执行如下命令：
 
     ```
     mvn clean package -DskipTests
     ```
 
-    You can see the wordcountv2-1.0-SNAPSHOT.jar file in the target directory of your project directory, which is the JAR package of the job. Upload the JAR package to OSS.
+    您即可在工程目录的 target 目录下看到一个 wordcountv2-1.0-SNAPSHOT.jar，这个就是作业 jar 包了。请您将这个 jar 包上传到 OSS 中。
 
-6.  Create a job
+6.  创建作业
 
-    Create a new job in E-MapReduce with the following parameters:
+    在 E-MapReduce 中新建一个作业，请使用类似如下的参数配置：
 
     ```
     jar ossref://yourBucket/yourPath/wordcountv2-1.0-SNAPSHOT.jar com.aliyun.emr.hadoop.examples.WordCount2 -Dwordcount.case.sensitive=true oss://yourBucket/yourPath/The_Sorrows_of_Young_Werther.txt oss://yourBucket/yourPath/output -skip oss://yourBucket/yourPath/patterns.txt
     ```
 
-    Here, yourBucket represents your OSS bucket, and yourPath represents a path in the bucket. Configure the settings as needed. You need to download the files for processing related resources, which are oss://yourBucket/yourPath/The\_Sorrows\_of\_Young\_Werther.txt and oss://yourBucket/yourPath/patterns.txt, and then store them in OSS. You can download the resources needed for the jobs and store these resources in the corresponding directories in OSS.
+    这里的 yourBucket 是您的一个 OSS bucket，yourPath 是这个 bucket 上的一个路径，需要您按照实际情况填写。请您将oss://yourBucket/yourPath/The\_Sorrows\_of\_Young\_Werther.txt和oss://yourBucket/yourPath/patterns.txt这两个用来处理相关资源的文件下载下来并放到您的 OSS 上。作业需要资源可以从下面下载，然后放到您的 OSS 对应目录下。
 
-    Download: [The\_Sorrows\_of\_Young\_Werther.txt](https://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/cn/emr/1.3.7/assets/res/The_Sorrows_of_Young_Werther.txt?spm=a2c4g.11186623.2.19.4c3d19d6YlAWbs&file=The_Sorrows_of_Young_Werther.txt)[patterns.txt](https://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/cn/emr/1.3.7/assets/res/patterns.txt?spm=a2c4g.11186623.2.20.4c3d19d6YlAWbs&file=patterns.txt)
+    资源下载：[The\_Sorrows\_of\_Young\_Werther.txt](https://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/cn/emr/1.3.7/assets/res/The_Sorrows_of_Young_Werther.txt?spm=a2c4g.11186623.2.19.4c3d19d6YlAWbs&file=The_Sorrows_of_Young_Werther.txt)[patterns.txt](https://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/cn/emr/1.3.7/assets/res/patterns.txt?spm=a2c4g.11186623.2.20.4c3d19d6YlAWbs&file=patterns.txt)
 
-7.  Create and run the execution plan
+7.  创建执行计划并运行
 
-    Create the execution plan in E-MapReduce, associate it with the job, and then run the execution plan.
+    在 E-MapReduce 中创建执行计划，关联这个作业并运行。
 
 
