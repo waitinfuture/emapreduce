@@ -6,26 +6,26 @@ Alibaba Cloud Elastic MapReduce \(E-MapReduce\) is a system solution for big dat
 
 In general, to use distributed processing systems, such as Hadoop and Spark, the following actions are recommended:
 
-1.  Evaluate the business characteristics.
-2.  Select the machine type.
-3.  Purchase the machine.
-4.  Prepare the hardware environment.
-5.  Install the operating system.
+1.  Evaluate business characteristics.
+2.  Select a machine type.
+3.  Purchase a machine.
+4.  Prepare hardware environment.
+5.  Install an operating system.
 6.  Deploy the applications \(such as Hadoop and Spark\).
-7.  Start the cluster.
-8.  Write the applications.
+7.  Start a cluster.
+8.  Write applications.
 9.  Run a job.
-10. Obtain the data and so on.
+10. Obtain data and so on.
 
-Steps 8-10 relate to the application logic of the user. Steps 1-7 are early preparations and tend to be difficult and cumbersome. E-MapReduce provides an integrated solution of cluster management tools, such as host selection, environment deployment, cluster building, cluster configuration, cluster running, job configuration, job running, cluster management, and performance monitoring.
+Steps 8-10 relate to the application logic of users. Steps 1-7 are early preparations and tend to be difficult and cumbersome. E-MapReduce provides an integrated solution of cluster management tools, such as host selection, environment deployment, cluster building, cluster configuration, cluster running, job configuration, job running, cluster management, and performance monitoring.
 
-With E-MapReduce, processes such as procurement, preparation, operation, and maintenance are managed, allowing you to focus on the processing logics of your applications. E-MapReduce also provides flexible combination modes, allowing you to select different cluster services according to your needs. For example, if you want to implement daily statistics and simple batch operations, you can choose to run only Hadoop services in E-MapReduce; if you still want to implement stream-oriented computation and real-time computation, you can add Spark services on the basis of Hadoop services.
+With E-MapReduce, processes such as procurement, preparation, operation, and maintenance are managed, allowing you to focus on the processing logics of your applications. E-MapReduce also provides flexible combination modes, allowing you to select different cluster services according to your needs. For example, if you want to implement daily statistics and simple batch operations, you can choose to run only Hadoop services in E-MapReduce; if you still want to implement stream-oriented and real-time computing, you can add Spark services on the basis of Hadoop services.
 
 ## Composition of E-MapReduce {#section_xgt_23y_w2b .section}
 
-The core component directly oriented to an E-MapReduce user is the cluster. An E-MapReduce cluster is a Spark and Hadoop cluster consisting of multiple ECS Alibaba Cloud instances. For example, in Hadoop, generally some daemon processes run on each ECS instance \(such as namenode, datanode, resourcemanager, and nodemanager\), which make up the Hadoop cluster. The nodes running namenode and resourcemanager are known as master nodes, while those running datanode and nodemanager are called slave nodes.
+The core component directly oriented to an E-MapReduce user is the cluster. An E-MapReduce cluster is a Spark and Hadoop cluster consisting of multiple ECS Alibaba Cloud instances. For example, in Hadoop, generally some daemon processes running on each ECS instance \(such as namenode, datanode, resourcemanager, and nodemanager\) make up a Hadoop cluster. The nodes running namenode and resourcemanager are known as master nodes, while those running datanode and nodemanager are called slave nodes.
 
 For example, the following figure shows an E-MapReduce cluster consisting of one master node and three slave nodes:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17824/15404606909988_en-US.jpg)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17824/15425962649988_en-US.jpg)
 
