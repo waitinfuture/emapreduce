@@ -8,9 +8,9 @@ The expiration of subscribed clusters is divided into two categories:
 
 If any ECS instance in the cluster expires, a notification of their expiration is displayed. Expired ECS instances in the cluster will run for extra 15 days. After 15 days, if your subscription is not renewed, the expired ECS instances will stop, and data will be retained for additional 15 days. If your subscription is not renewed at the end of 30 days, the instances are released and data is permanently deleted.
 
-When E-MapReduce services expire, you are unable to implement any operations to the cluster from the console or call the API, and the automatic operation and maintenance \(monitoring, alarm, and other related tasks\) are also stopped.
+When E-MapReduce services expire, you are unable to implement any operations to the cluster from the console or call APIs, and automatic operations and maintenance \(monitoring, alarm, and other related tasks\) are also stopped.
 
-If you want to continue using E-MapReduce services and ECS instances, you must renew your subscription. The E-MapReduce service and ECS instances can be renewed simultaneously through the E-MapReduce Product console. After renewal, both data and services are restored automatically.
+If you want to continue using E-MapReduce services and ECS instances, you must renew your subscription. The E-MapReduce service and ECS instances can be renewed simultaneously through the E-MapReduce product console. After renewal, both data and services are restored automatically.
 
 If you want to release a cluster, you can wait for the cluster to stop, and ECS instances are released automatically, without the need for renewal.
 
