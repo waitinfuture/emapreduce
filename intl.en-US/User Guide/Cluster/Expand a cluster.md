@@ -8,7 +8,7 @@ Select the cluster to be expanded on the cluster list page, click **More**, and 
 
 ## Expansion interface {#section_zjf_h4n_y2b .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17854/154080520610431_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17854/154270133710431_en-US.png)
 
 **Note:** Only expansion is supported. Reduction is not supported.
 
@@ -22,7 +22,36 @@ Select the cluster to be expanded on the cluster list page, click **More**, and 
 
 The figure of cluster expansion statuses is shown as follows:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17854/154080520610432_en-US.jpg)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17854/154270133710432_en-US.jpg)
 
 To view the expansion status of a cluster, in the **Cluster Overview** panel, go to the **Core Instance Group \(CORE\)** area. The node that is being expanded is displayed as **Scaling Up/Out**. When the status of an ECS instance changes to **Normal**, the ECS has been added into the cluster and can provide services normally.
+
+## Change password {#section_kzc_yw5_vfb .section}
+
+After a cluster is expanded successfully, you can log on to the expanded node with SSH and change your root password. Follow these steps:
+
+1.  Log on the master host using the following command with SHH and obtain the public IP of the master cluster in the [Cluster Overview](intl.en-US/User Guide/Cluster/Cluster details.md#) panel.
+
+    ```
+    ssh root@ip.of.master
+    ```
+
+2.  Switch to the hadoop user.
+
+    ```
+    su hadoop
+    ```
+
+3.  Log on to the expanded node and obtain the intranet IP of the expanded node in the [Cluster Overview](intl.en-US/User Guide/Cluster/Cluster details.md#) panel.
+
+    ```
+    ssh ip.of.worker
+    ```
+
+4.  Change your root password using the following command.
+
+    ```
+    sudo passwd root
+    ```
+
 
