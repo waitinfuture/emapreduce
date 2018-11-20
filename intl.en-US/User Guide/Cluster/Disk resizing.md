@@ -1,12 +1,12 @@
 # Disk resizing {#concept_f3v_bw4_y2b .concept}
 
-Currently, direct disk resizing on the product is not supported for EMR. In case of insufficient data storage space, you can directly resize the disk in the ECS console.
+In case of insufficient data storage space, you can directly resize the disk in the ECS console.
 
 The procedure is as follows.
 
 ## Node data disk resize {#section_rws_wx4_y2b .section}
 
-1.  Log on to the EMR console to enter the details page of the cluster to be resized.
+1.  Log on to the EMR console to enter the details page of the cluster to be resized by clicking **View Details**.
 2.  View the ECS ID of the core node in the cluster to be resized, for example, i-bp1bsithym5hh9h93xxx. All the node disks in the cluster are uniformly resized by default to make sure the disk spaces of all nodes in the cluster are consistent.
 3.  Copy the ECS ID and go to the ECS console. Select **Instance** on the left, then select the instance ID and enter the ECS ID in the search box. Note that the same region must be selected.
 4.  When the corresponding ECS node is found, click **Management**, enter the instance details page, and click **This Instance Disk** on the left.
