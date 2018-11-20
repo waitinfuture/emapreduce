@@ -29,7 +29,7 @@ You can quote these variables in the script, however, we recommend that you do n
 
 ## Connect to the Master { .section}
 
-1.  SSH logs on to the master with the following commands. Obtain the public network IP of the cluster master in the hardware information column on the [Cluster details](intl.en-US/User Guide/Cluster/Cluster details.md#).
+1.  SSH logs on to the master with the following commands. Obtain the public network IP of the cluster master in the host information column on the [Cluster details](intl.en-US/User Guide/Cluster/Cluster details.md#).
 
     ```
     ssh root@ip.of.master

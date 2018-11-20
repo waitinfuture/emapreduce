@@ -29,7 +29,7 @@
 
 ## 登录 master 主机步骤 { .section}
 
-1.  使用如下命令 SSH 登录到 master 主机。请在[集群详情页](intl.zh-CN/用户指南/集群/集群详情页.md#)的硬件信息栏中获取集群 master 机器的公网 IP。
+1.  使用如下命令 SSH 登录到 master 主机。请在[集群详情页](intl.zh-CN/用户指南/集群/集群详情.md#)的主机信息栏中获取集群 master 机器的公网 IP。
 
     ```
     ssh root@ip.of.master
