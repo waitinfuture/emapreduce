@@ -45,18 +45,18 @@ This project provides some test data. You can simply upload it to OSS to use it.
 
 -   \(Optional\) Enable Log Service. See the [User Guide for Log Service](../../SP_7/DNSLS11878107/EN-US_TP_13018.dita#concept_gpw_x2w_ydb).
 
--   \(Optional\) Create MaxCompute projects and tables. See [Create a MaxCompute project](../../../../intl.en-US/Prepare/Create a project.md#) and [Quick Start for MaxCompute](../../../../intl.en-US/Quick Start/Create__View__Delete a table.md#).
+-   \(Optional\) Create MaxCompute projects and tables. See [Create a MaxCompute project](../../../../reseller.en-US/Prepare/Create a project.md#) and [Quick Start for MaxCompute](../../../../reseller.en-US/Quick Start/Create__View__Delete a table.md#).
 
--   \(Optional\) Use ONS. See [Quick Start for Message Queue](https://www.alibabacloud.com/help/zh/doc-detail/34411.htm).
+-   \(Optional\) Use ONS. See [Quick Start for Message Queue](https://partners-intl.aliyun.com/help/doc-detail/34411.htm).
 
--   \(Optional\) Use MNS. See [topics for using the Message Service console](https://www.alibabacloud.com/help/doc-detail/34063.htm).
+-   \(Optional\) Use MNS. See [topics for using the Message Service console](https://partners-intl.aliyun.com/help/doc-detail/34063.htm).
 
 
 ## Concepts {#section_wyf_mpg_hfb .section}
 
 -   OSSURI: oss://accessKeyId:accessKeySecret@bucket.endpoint/a/b/c.txt. Specify the input and output data sources. OSSURI is similar to URLs like hdfs://.
 
--   The combination of AccessKey ID and AccessKey Secret is the key for you to access an Alibaba Cloud API. Click [here](https://ak-console.aliyun.com/#/accesskey) to obtain it.
+-   The combination of AccessKey ID and AccessKey Secret is the key for you to access an Alibaba Cloud API. Click [here](https://partners-intl.aliyun.com/login-required#/accesskey) to obtain it.
 
 
 ## Run jobs in clusters {#section_vyy_4pg_hfb .section}
@@ -106,11 +106,11 @@ spark-submit --class ONSSample examples-1.0-SNAPSHOT-shaded.jar <accessKeyId>
 
         -   accessKeySecret: Alibaba Cloud AccessKey Secret.
 
-        -   consumerId: See [Consumer ID description](https://www.alibabacloud.com/help/zh/doc-detail/29533.htm).
+        -   consumerId: See [Consumer ID description](https://partners-intl.aliyun.com/help/doc-detail/29533.htm).
 
         -   topic: Each message queue has a topic.
 
-        -   subExpression: See [Message filtering](https://www.alibabacloud.com/help/zh/doc-detail/29543.htm).
+        -   subExpression: See [Message filtering](https://partners-intl.aliyun.com/help/doc-detail/29543.htm).
 
         -   parallelism: Specifies the number of receivers to consume messages in the queue.
 
@@ -142,7 +142,7 @@ spark-submit --class MNSSample examples-1.0-SNAPSHOT-shaded.jar <queueName>
 
         Parameters are described as follows:
 
-        -   queueName: Queue name. See [MNS glossary](https://www.alibabacloud.com/help/zh/doc-detail/34061.htm).
+        -   queueName: Queue name. See [MNS glossary](https://partners-intl.aliyun.com/help/doc-detail/34061.htm).
 
         -   accessKeyId: Alibaba Cloud AccessKey ID.
 
@@ -244,24 +244,24 @@ Here we describe how to run a Spark program locally to visit Alibaba Cloud's dat
     -   Development process
         1.  Double-click to enter SparkWordCount.scala.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154259706213087_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154286677213087_en-US.jpg)
 
         2.  Enter the job configuration page from the arrow as shown in the following figure.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154259706213088_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154286677213088_en-US.jpg)
 
         3.  Select SparkWordCount and enter the required job parameters in the job parameter box.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154259706213089_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154286677213089_en-US.jpg)
 
         4.  Click **OK**.
         5.  Click Run to run the job.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154259706213090_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154286677213090_en-US.jpg)
 
         6.  View job logs
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154259706213091_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154286677213091_en-US.jpg)
 
 -   Scala IDE for Eclipse
     -   Preparations
@@ -271,21 +271,21 @@ Here we describe how to run a Spark program locally to visit Alibaba Cloud's dat
     -   Development process
         1.  Import a project as described in the figure below:
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154259706213093_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154286677213093_en-US.jpg)
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154259706213094_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154286677313094_en-US.jpg)
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154259706213095_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154286677313095_en-US.jpg)
 
         2.  The shortcut for Run as Maven build is Alt + Shift + X, M. You can also right-click the project name and choose **Run As** \> **Maven build**.
         3.  Right-click on the job to run after it has been compiled, select **Run Configuration** to enter the configuration page.
         4.  In the configuration page, select Scala Application and configure the Main Class and parameters of the job, As shown in the following figure:
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154259706213097_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154286677313097_en-US.jpg)
 
         5.  Click **Run**.
         6.  View the output log of the console, as shown in the following figure:
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154259706213098_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154286677313098_en-US.jpg)
 
 
