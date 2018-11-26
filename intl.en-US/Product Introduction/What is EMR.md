@@ -19,7 +19,7 @@ In general, to use distributed processing systems, such as Hadoop and Spark, the
 
 Steps 8-10 relate to the application logic of users. Steps 1-7 are early preparations and tend to be difficult and cumbersome. E-MapReduce provides an integrated solution of cluster management tools, such as host selection, environment deployment, cluster building, cluster configuration, cluster running, job configuration, job running, cluster management, and performance monitoring.
 
-With E-MapReduce, processes such as procurement, preparation, operation, and maintenance are managed, allowing you to focus on the processing logics of your applications. E-MapReduce also provides flexible combination modes, allowing you to select different cluster services according to your needs. For example, if you want to implement daily statistics and simple batch operations, you can choose to run only Hadoop services in E-MapReduce; if you still want to implement stream-oriented and real-time computing, you can add Spark services on the basis of Hadoop services.
+With E-MapReduce, processes such as procurement, preparation, operation, and maintenance are managed, allowing you to focus on the processing logics of your applications. E-MapReduce also provides flexible combination modes, allowing you to select different cluster services according to your needs. For example, if you want to implement daily statistics and simple batch operations, you can choose to run only Hadoop services in E-MapReduce; if you still want to implement stream-oriented and real-time computing, you can add Spark on the basis of the Hadoop service.
 
 ## Composition of E-MapReduce {#section_xgt_23y_w2b .section}
 
@@ -27,5 +27,5 @@ The core component directly oriented to an E-MapReduce user is the cluster. An E
 
 For example, the following figure shows an E-MapReduce cluster consisting of one master node and three slave nodes:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17824/15432188119988_en-US.jpg)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17824/15432191089988_en-US.jpg)
 
