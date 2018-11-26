@@ -16,7 +16,7 @@ The expansion nodes are billed in Pay-As-You-Go mode, and the price of the same 
 
 The auto-scaling rules include expansion rules and contraction rules. When the auto-scaling function is disabled, all rules are cleared. If auto-scaling function is enabled again, the scaling rules need to be reconfigured.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17958/154227410810971_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17958/154322361810971_en-US.png)
 
 -   **Rule Name**: In a cluster, the scaling rule names \(including expansion rules and contraction rules\) are not allowed to be repeated.
 -   Execution cycle:
@@ -31,7 +31,7 @@ The auto-scaling rules include expansion rules and contraction rules. When the a
 
 ## Configure scaling instance specification {#section_drs_s3j_z2b .section}
 
-You can specify the hardware specifications of the scaling nodes. It can only be configured when the auto-scaling function is enabled, and can not be modified after the configution is saved. If it needs to be modified for a special case, you can disable the auto-scaling function and enable it again.
+You can specify the hardware specifications of the scaling nodes. It can only be configured when the auto-scaling function is enabled, and can not be modified after the configuration is saved. If it needs to be modified for a special case, you can disable the auto-scaling function and enable it again.
 
 -   When you select specifications for vCPU and memory, the system automatically matches the instances that meet the criteria based on your selection and displays them in the instance list below. You need to add an optional instance to the list on the right so that the cluster can scale according to the selected instance specification.
 -   To avoid scaling failures due to insufficient ECS stock, you can choose up to 3 ECS instance types.
