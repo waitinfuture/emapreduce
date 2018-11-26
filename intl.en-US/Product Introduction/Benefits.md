@@ -14,7 +14,7 @@ E-MapReduce has some practical strength over self-built clusters. For example, i
 
 -   Deep integration
 
-    E-MapReduce can be subject to deep integration with other Alibaba Cloud products, so that they can be used as the input source or output destination of Hadoop/Spark calculation engine in the E-MapReduce product.
+    E-MapReduce can be subject to deep integration with other Alibaba Cloud products, so that they can be used as the input source or output destination of Hadoop or Spark computing engine in E-MapReduce.
 
 -   Security
 
