@@ -11,7 +11,7 @@ In general, to use distributed processing systems, such as Hadoop and Spark, the
 3.  Purchase a machine.
 4.  Prepare hardware environment.
 5.  Install an operating system.
-6.  Deploy the applications \(such as Hadoop and Spark\).
+6.  Deploy applications \(such as Hadoop and Spark\).
 7.  Start a cluster.
 8.  Write applications.
 9.  Run a job.
@@ -27,5 +27,5 @@ The core component directly oriented to an E-MapReduce user is the cluster. An E
 
 For example, the following figure shows an E-MapReduce cluster consisting of one master node and three slave nodes:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17824/15425962649988_en-US.jpg)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17824/15432188119988_en-US.jpg)
 
