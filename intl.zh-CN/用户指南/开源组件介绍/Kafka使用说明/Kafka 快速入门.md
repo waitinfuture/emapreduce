@@ -8,7 +8,7 @@
 
 ## 本地盘Kafka集群 {#section_x3z_vbx_y2b .section}
 
-为了更好地降低单位成本以及应对更大的存储需求，E-MapReduce将在EMR-3.5.1版本开始支持基于本地盘（D1类簇机型，详情参考[ECS机型](https://www.alibabacloud.com/help/doc-detail/25378.html)介绍文档）的Kafka集群。相比较云盘，本地盘Kafka集群有如下特点：
+为了更好地降低单位成本以及应对更大的存储需求，E-MapReduce将在EMR-3.5.1版本开始支持基于本地盘（D1类簇机型，详情参考[ECS机型](../../../../intl.zh-CN/产品简介/实例规格族.md#)介绍文档）的Kafka集群。相比较云盘，本地盘Kafka集群有如下特点：
 
 -   实例配备大容量、高吞吐SATA HDD本地盘，单磁盘 190 MB/s 顺序读写性能，单实例最大 5 GB/s 存储吞吐能力。
 -   本地存储价格比 SSD 云盘降低 97%。

@@ -4,7 +4,7 @@ Kafka Indexing Service是Druid推出的利用Druid的Indexing Service服务实�
 
 ## 与Kafka集群交互 {#section_kmb_4td_z2b .section}
 
-请参考[Druid 使用 Tranquility Kafka](cn.zh-CN/用户指南/开源组件介绍/Druid使用说明/Tranquility.md#)一节的介绍。
+请参考[Druid 使用 Tranquility Kafka](intl.zh-CN/用户指南/开源组件介绍/Druid使用说明/Tranquility.md#)一节的介绍。
 
 ## 使用Druid Kafka Indexing Service实时消费Kafka数据 {#section_fdk_4td_z2b .section}
 

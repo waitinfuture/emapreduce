@@ -27,5 +27,5 @@ E-MapReduce 最核心也是用户直接面对的组件是集群。一个 E-MapRe
 
 例如，下图表示了一个包含1个 master 节点和3个 slave 节点的 E-MapReduce 集群：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17824/15369080589988_zh-CN.jpg)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17824/15404606889988_zh-CN.jpg)
 

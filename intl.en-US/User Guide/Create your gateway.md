@@ -47,7 +47,7 @@ E-MapReduce gateways only support Hadoop clusters. You must create a Hadoop clus
 
         To create Gateway in these versions, we recommend that you use the EMR console.
 
-        If you want to set up a Gateway manually, copy the following script to the Gateway host and run it. The command is sh deploy.sh <masteri\_ip\> master\_password\_file.
+        If you want to set up a Gateway manually, copy the following script to the gateway host and run it. The command is sh deploy.sh <masteri\_ip\> master\_password\_file.
 
         -   deploy.sh is the script name, and the content is as follows.
         -   masteri\_ip is the IP address of the master node in the cluster, which needs to be accessible.

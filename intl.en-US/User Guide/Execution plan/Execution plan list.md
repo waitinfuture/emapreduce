@@ -2,7 +2,7 @@
 
 Displays basic information of all your execution plans.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17879/154138478110569_en-US.jpg)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17879/154157863610569_en-US.jpg)
 
 -   **ID/Name**: The ID and corresponding name of the execution plan.
 -   **Last run cluster**: The last cluster to execute this execution plan. It is a cluster created on demand or an existing associated cluster. If a cluster is created automatically on demand, \(Automatically created\) will be displayed below the cluster, indicating that the cluster is created automatically by E-MapReduce on demand and will be released automatically after running.

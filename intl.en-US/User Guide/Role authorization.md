@@ -6,13 +6,13 @@ When a user activates the E-MapReduce service, a system default role named Aliyu
 
 1.  When you create a cluster or an on-demand execution plan, if no default role is authorized correctly to the E-MapReduce service account, the following prompt is displayed. Click **Go to RAM for authorization** to perform role authorization.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17844/154115231010342_en-US.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17844/154140528810342_en-US.jpg)
 
 2.  You are directed to RAM’s authorization page. Click **Confirm Authorization Policy** to authorize the default role AliyunE-MapReduceDefaultRole to E-MapReduce service account.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17844/154115231010343_en-US.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17844/154140528810343_en-US.jpg)
 
-3.  Refresh the E-MapReduce console, and then perform relevant operations. If you want to view relevant detailed policy information of AliyunE-MapReduceDefaultRole, you can log on to the RAM console, or click [View Link](https://ram.console.aliyun.com/?spm=a2c4g.11186623.2.6.77bd72fe3PD5pf#/policy/detail/system/AliyunEMRRolePolicy/info).
+3.  Refresh the E-MapReduce console, and then perform relevant operations. If you want to view relevant detailed policy information of AliyunE-MapReduceDefaultRole, you can log on to the RAM console, or click [View Link](https://partners-intl.console.aliyun.com/#/ram/AliyunEMRRolePolicy/info).
 
 ## Default role permissions {#section_vpj_th3_y2b .section}
 

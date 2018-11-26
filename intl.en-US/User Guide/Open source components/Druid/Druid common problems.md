@@ -16,7 +16,7 @@ When indexing fails, the following troubleshooting steps are typically followed:
 
     Check the Tranquility logs to see if the message is received or dropped.
 
-    The remaining troubleshooting steps are the same as 2~5 of batch data index.
+    The remaining troubleshooting steps are the same as 2-5 of batch data index.
 
     Most of the errors are cluster configuration issues and job problems. Cluster configuration errors are about memory parameters, cross-cluster connection, access to clusters in high-security mode, and principals. Job errors are about the format of the job description files, input data parsing, and other job-related configuration issues \(such as ioConfig\).
 
@@ -53,13 +53,13 @@ When indexing fails, the following troubleshooting steps are typically followed:
 
     -   Check the settings for deep storage, including type and directory. When the type is local, pay attention to the permission settings of directory. When the type is HDFS, directory should be written as the full HDFS path, such as hdfs://:9000/. For hdfs\_master, IP is preferred. If you want to use a domain name, then use the full domain name, such as emr-header-1.cluster-xxxxxxxx rather than emr-header-1.
     -   When you use Hadroop for batch index, you must set the deep storage of segments as “hdfs”. The “local” type may cause the MR job to be in an unidentified state, because the remote Yarn cluster cannot create the segments directory in the reduce task.\( This is for standalone Druid clusters.\)
--   Failed to create directory within 10000 attempts…
+-   Failed to create directory within 10000 attempts.
 
     This issue occurs typically because the path set by java.io.tmp in the JVM configuration file doesn’t exist. Set the path and make sure that the Druid account has the permission to access it.
 
 -   com.twitter.finagle.NoBrokersAvailableException: No hosts are available for disco! firehose:druid:overlord
 
-    This issue is typically due to ZooKeeper connection issues. Make sure that Druid and Tranquility have the same connection string for ZooKeeper. Because the default ZooKeeper path for Druid is /druid, make sure that zookeeper.connect in Tranquility settings includes /druid. \( Two ZooKeeper settings exist in the Tranquility Kafka settings. One is zookeeper.connect used to connect the ZooKeeper of the Druid cluster, and the other is kafka.zookeeper.connect used to connect the ZooKeeper of the Kafka cluster. These two ZooKeepers may not belong to the same ZooKeeper cluster\).
+    This issue is typically due to ZooKeeper connection issues. Make sure that Druid and Tranquility have the same connection string for ZooKeeper. Because the default ZooKeeper path for Druid is /druid, make sure that zookeeper.connect in Tranquility settings includes /druid. \(Two ZooKeeper settings exist in the Tranquility Kafka settings. One is zookeeper.connect used to connect the ZooKeeper of the Druid cluster, and the other is kafka.zookeeper.connect used to connect the ZooKeeper of the Kafka cluster. These two ZooKeepers may not belong to the same ZooKeeper cluster\).
 
 -   The MiddleManager reports that the com.hadoop.compression.lzo.LzoCodec class cannot be found during the indexing process.
 

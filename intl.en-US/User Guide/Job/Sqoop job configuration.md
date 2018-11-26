@@ -21,6 +21,6 @@ In this tutorial, you will learn how to configure a Sqoop job.
 
     **Note:** You can also create subfolder, rename folder, and delete folder by right-clicking on the folder.
 
-8.  Complete the **Content** box with parameters subsequent to Sqoop commands.
+8.  Complete the **Content** field with parameters subsequent to Sqoop commands.
 9.  Click **Save** to complete Sqoop job definition.
 

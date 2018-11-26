@@ -4,8 +4,8 @@
 
 E-MapReduce supports using RAM to isolate the data of different sub-accounts. The procedures are shown as follows:
 
-1.  Log on to the [Alibaba Cloud RAM Management console](https://ram.console.aliyun.com/).
-2.  Create the sub-account in RAM with the process in [How to create the sub-account in RAM](../../../../intl.en-US/Quick Start/Create a RAM user.md#).
+1.  Log on to the [Alibaba Cloud RAM console](https://ram.console.aliyun.com/).
+2.  Create the sub-account in RAM with the process in [How to create a sub-account in RAM](../../../../intl.en-US/Quick Start/Create a RAM user.md#).
 3.  In the left-side navigation pane, click **policies** to enter the page of policy management.
 4.  Click **Custom Policy**.
 5.  In the upper-right corner, click **Create Authorization Policy** enter the authorization policy creation page. Create the policy according to the prompted steps. You can create as many policies as the sets of authorization control you need.

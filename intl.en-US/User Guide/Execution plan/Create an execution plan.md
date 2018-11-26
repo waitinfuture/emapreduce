@@ -32,7 +32,7 @@ An execution plan is a set of jobs that can be executed once or periodically thr
 
 -   Example for periodic scheduling
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17877/154138475010565_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17877/154157859310565_en-US.png)
 
     These configurations indicates that the scheduling is initially started on 11/03/2016, 12:15 and then conducted every other day. The second scheduling is conducted on 11/04/2016, 12:15.
 

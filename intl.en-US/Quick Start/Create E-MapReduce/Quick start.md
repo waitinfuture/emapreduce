@@ -2,10 +2,10 @@
 
 In this tutorial, you will learn how clusters, jobs, and execution plans are used in E-MapReduce. You will also learn how to create a Spark Pi job, run it successfully in the cluster, and check the results.
 
-**Note:** Make sure you have completed the necessary [prerequisites](intl.en-US/Quick Start/Prerequisites.md#).
+**Note:** Make sure you have completed the necessary [prerequisites](reseller.en-US/Quick Start/Prerequisites.md#).
 
 1.  Create a cluster.
-    1.  At the top of the [EMR console](https://emr.console.aliyun.com/), click **Cluster Management** \> **Create Cluster**.
+    1.  At the top of the [EMR console](https://partners-intl.console.aliyun.com/#/emr), click **Cluster Management** \> **Create Cluster**.
     2.  Software configurations.
         1.  Use the latest EMR product version, such as **EMR-3.13.0**.
         2.  Use default software configurations.
@@ -17,7 +17,7 @@ In this tutorial, you will learn how clusters, jobs, and execution plans are use
         5.  Keep others in the default status.
     4.  Basic configurations.
         1.  Enter the name of the cluster.
-        2.  Select a log path to save job logs and make sure that the **Running Logs** button is turned on. In the cluster related region, [create an OSS bucket](../../../../intl.en-US/Quick Start/Create a bucket.md#).
+        2.  Select a log path to save job logs and make sure that the **Running Logs** button is turned on. In the cluster related region, [create an OSS bucket](../../../../reseller.en-US/Quick Start/Create a bucket.md#).
         3.  Enter the password.
         4.  Click **Next**.
     5.  Click **Create** to create a cluster.

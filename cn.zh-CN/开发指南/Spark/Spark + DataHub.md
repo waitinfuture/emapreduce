@@ -1,8 +1,8 @@
 # Spark + DataHub {#concept_iwd_43h_hfb .concept}
 
-## Spark 接入 DataHub {#section_h4b_q3h_hfb .section}
-
 本文介绍在E-MapReduce的Hadoop集群运行Spark Streaming作业消费DataHub数据，统计数据个数并打印出来。
+
+## Spark 接入 DataHub {#section_h4b_q3h_hfb .section}
 
 -   准备工作
 

@@ -1,5 +1,7 @@
 # Create a cluster {#concept_nrp_154_y2b .concept}
 
+In this tutorial, you will learn how to create a cluster.
+
 ## Enter the cluster creation page {#section_w2j_2z4_y2b .section}
 
 1.  Log on to the [Alibaba Cloud E-MapReduce console](https://emr.console.aliyun.com/#/ap-southeast-1).

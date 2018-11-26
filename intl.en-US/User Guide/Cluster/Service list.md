@@ -4,7 +4,7 @@ The **Clusters and Services** tab has been added to the tab list of the cluster 
 
 The service list shows the information as follows.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17858/154106093210445_en-US.jpg)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17858/154140495910445_en-US.jpg)
 
 Running statuses of services are only showed for clusters that are in Idle or Running status. When creating a cluster, if the service you click is unchecked \(such as Storm\), it will not be listed.
 

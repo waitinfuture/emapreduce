@@ -709,7 +709,7 @@ SELECT * FROM system.metadata.table_properties;
     Grants the specified privileges to the specified grantee.
 
     -   Specifying `ALL PRIVILEGES` grants DELETE, INSERT and SELECT privileges.
-    -   Specifying `PUBLIC`grants privileges to the PUBLIC role and hence to all users.
+    -   Specifying `PUBLIC` grants privileges to the PUBLIC role and hence to all users.
     -   The optional `WITH GRANT OPTION` clause allows the grantee to grant these same privileges to others.
 -   Examples
 
@@ -1210,7 +1210,7 @@ SELECT * FROM system.metadata.table_properties;
         grouping(col1, ..., colN) -> bigint
         ```
 
-        `grouping` is used in conjunction with `GROUPING SETS`, `ROLLUP`, `CUBE` or `GROUP BY`. `grouping` columns must match exactly the columns referenced in the corresponding `GROUPING SETS`, `ROLLUP`, `CUBE` or `GROUP BY` clause.
+        `grouping` is used in conjunction with `GROUPING SETS`, `ROLLUP`, `CUBE`, or `GROUP BY`. `grouping` columns must match exactly the columns referenced in the corresponding `GROUPING SETS`, `ROLLUP`, `CUBE`, or `GROUP BY` clause.
 
         ```
         SELECT origin_state, origin_zip, destination_state, sum(package_weight),

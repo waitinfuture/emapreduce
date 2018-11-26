@@ -16,10 +16,10 @@ In this tutorial, you will learn how to configure a Shell job.
 
     **Note:** You can also create subfolder, rename folder, and delete folder by right-clicking on the folder.
 
-8.  Enter the parameters in the **Content** box with parameters subsequent to Shell commands.
+8.  Enter the parameters in the **Content** field with parameters subsequent to Shell commands.
     -   -c option
 
-        -c option can be used to set Shell scripts to run by inputting it into the **Content** box of the job, for example:
+        -c option can be used to set Shell scripts to run by inputting it into the **Content** field of the job, for example:
 
         ```
         -c "echo 1; sleep 2; echo 2; sleep 4; echo 3; sleep 8; echo 4; sleep 16; echo 5; sleep 32; echo 6; sleep 64; echo 8; sleep 128; echo finished"

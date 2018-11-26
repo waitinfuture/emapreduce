@@ -4,7 +4,7 @@ EMR集群中的Kerberos服务端除了可以支持第一种MIT Kerberos兼容的
 
 ## RAM身份认证 {#section_hrr_mc5_1fb .section}
 
-[RAM](https://www.aliyun.com/product/ram)产品可以创建/管理子账号，通过子账号实现对云上各个资源的访问控制。
+[RAM](https://www.alibabacloud.com/product/ram)产品可以创建/管理子账号，通过子账号实现对云上各个资源的访问控制。
 
 主账号的管理员可以在RAM的用户管理界面创建一个子账号\(子账户名称必须符合linux用户的规范\)，然后将子账号的AccessKey下载下来提供给该子账号对应的开发人员，后续开发人员可以通过配置AccessKey，从而通过Kerberos认证访问集群服务。
 

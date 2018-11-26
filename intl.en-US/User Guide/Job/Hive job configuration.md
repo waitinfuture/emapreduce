@@ -34,7 +34,7 @@ When users are applying for a cluster in E-MapReduce, they are provided with a H
 
     **Note:** You can also create subfolder, rename folder, and delete folder by right-clicking on the folder.
 
-10. Enter the parameters in the **Content**box with parameters subsequent to Hive commands. For example, if it is necessary to use a Hive script uploaded to OSS, the following must be entered:
+10. Enter the parameters in the **Content** field with parameters subsequent to Hive commands. For example, if it is necessary to use a Hive script uploaded to OSS, the following must be entered:
 
     ```
     -f ossref://path/to/uservisits_aggre_hdfs.hive

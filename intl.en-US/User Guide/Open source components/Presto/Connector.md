@@ -55,7 +55,7 @@
 
     JMX information for all nodes in the Presto cluster can be queried through the JMX connector. The connector is generally used for system monitoring and debugging. Regular dump of JMX information can be implemented through modifying the configuration of the connector.
 
--   **Configuration**
+-   Configuration
 
     Create a file etc/catalog/jmx.properties, add the following content, and enable JMX connector.
 
@@ -88,7 +88,7 @@
 
 -   Data tables
 
-    JMX connector provides 2 schemas, **current** and **history**, respectively. Where:
+    JMX connector provides 2 schemas, **current** and **history**. Where:
 
     **current** contains the current MBean in each node, the name of which is the table name in **current** \(if the bean name contains non-standard characters, the table name must be in quotation marks for the query\), which can be obtained through the following statement:
 
