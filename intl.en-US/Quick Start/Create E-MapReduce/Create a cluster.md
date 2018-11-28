@@ -43,7 +43,7 @@ To create a cluster, follow the below steps:
         -   **VSwitch**: Select a zone for VSwitch under the corresponding VPC. If no VSwitch is available in this zone, then you must create a new one.
         -   **Security group name**: Generally, no security group exists when you create a cluster for the first time. Enter a name to create a new security group. If you already have a security group in use, you can choose to use it directly here.
     -   Cluster configuration
-        -   **High availability**: When enabled, two master instances in the Hadoop cluster are used to ensure the availability of the Resource Manager and Name Node. HBase clusters support high availability by default. When enabled, a master instance is used to ensure high availability.
+        -   **High availability**: When enabled, two master instances in the Hadoop cluster are used to ensure the availability of the resource manager and name node. HBase clusters support high availability by default. When enabled, a master instance is used to ensure high availability.
         -   Master node
             -   **Master instance type**: Select an instance type as required. For information about instance types, see [Instance type families](../../../../intl.en-US/Product Introduction/Instance type families.md#).
             -   **System disk type**: Select a disk as required.
