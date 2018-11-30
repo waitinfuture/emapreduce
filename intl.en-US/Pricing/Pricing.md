@@ -1,9 +1,9 @@
 # Pricing {#concept_zzf_rpn_y2b .concept}
 
-## Region: North China 2 / East China 1 / East China 2 / South China 1 {#section_uj2_2rn_y2b .section}
+## Region: China North 2 / China East 1 / China East 2 / China South 1 {#section_uj2_2rn_y2b .section}
 
-|Model|Number of cores|Memory \(GB\)|Price of E-MapReduce subscription \(excluding the ECS price, unit: dollar/hour\)|Price of Pay-As-You-Go E-MapReduce \(excluding the ECS price, unit: dollar/hour\)|
-|:----|:--------------|:------------|:-------------------------------------------------------------------------------|:--------------------------------------------------------------------------------|
+|Model|Number of cores|Memory \(GB\)|Price of Subscription E-MapReduce, not including ECS \(dollar/hour\)|Price of Pay-As-You-Go E-MapReduce, not including ECS \(dollar/hour\)|
+|:----|:--------------|:------------|:-------------------------------------------------------------------|:--------------------------------------------------------------------|
 |ecs.s2.large|2|4|11.8|0.0564|
 |ecs.s3.large|4|8|24.84|0.1144|
 |ecs.m1.medium|4|16|38.04|0.1984|
@@ -21,10 +21,10 @@
 |ecs.n2.3xlarge|16|64|156|0.6532|
 |ecs.n2.7xlarge|32|128|313.16|1.3084|
 
-## Region: American West 1 \(Silicon Valley\) {#section_vj2_2rn_y2b .section}
+## Region: US West 1 \(Silicon Valley\) {#section_vj2_2rn_y2b .section}
 
-|Model|Number of cores|Memory \(GB\)|Price of E-MapReduce subscription \(excluding the ECS price, unit: dollar/hour\)|Price of Pay-As-You-Go E-MapReduce \(excluding the ECS price, unit: dollar/hour\)|
-|:----|:--------------|:------------|:-------------------------------------------------------------------------------|:--------------------------------------------------------------------------------|
+|Model|Number of cores|Memory \(GB\)|Price of Subscription E-MapReduce, not including ECS \(dollar/hour\)|Price of Pay-As-You-Go E-MapReduce, not including ECS \(dollar/hour\)|
+|:----|:--------------|:------------|:-------------------------------------------------------------------|:--------------------------------------------------------------------|
 |ecs.s2.large|2|4|18.68|0.0364|
 |ecs.s3.large|4|8|22.96|0.0728|
 |ecs.m1.medium|4|16|54.92|0.1068|
@@ -42,10 +42,10 @@
 |ecs.n2.3xlarge|16|64|244.08|0.474|
 |ecs.n2.7xlarge|32|128|488.16|0.9476|
 
-## Region: Asia Pacific \(Singapore\) {#section_smp_grn_y2b .section}
+## Region: Asia Pacific SE 1 \(Singapore\) {#section_smp_grn_y2b .section}
 
-|Model|Number of cores|Memory \(GB\)|Price of E-MapReduce subscription \(excluding the ECS price, unit: dollar/hour\)|Price of Pay-As-You-Go E-MapReduce \(excluding the ECS price, unit: dollar/hour\)|
-|:----|:--------------|:------------|:-------------------------------------------------------------------------------|:--------------------------------------------------------------------------------|
+|Model|Number of cores|Memory \(GB\)|Price of Subscription E-MapReduce, not including ECS \(dollar/hour\)|Price of Pay-As-You-Go E-MapReduce, not including ECS \(dollar/hour\)|
+|:----|:--------------|:------------|:-------------------------------------------------------------------|:--------------------------------------------------------------------|
 |ecs.s2.large|2|4|22|0.0428|
 |ecs.s3.large|4|8|43.96|0.0856|
 |ecs.m1.medium|4|16|61.52|0.1196|
