@@ -29,7 +29,8 @@ To create a cluster, complete the following three steps:
         -   Druid clusters, provide semi-managed, real-time interactive analysis services, query large amount of data in millisecond latency, and support for multiple data intake methods. Used with services such as EMR Hadoop, EMR Spark, OSS, and RDS, Druid clusters offer real-time query solutions.
         -   Data Science clusters, are mainly for big data and AI scenarios, providing Hive and Spark offline big data, and TensorFlow model training.
         -   Kafka clusters, are taken as a semi-managed distributed message system of high throughput and high scalability, providing a complete service monitoring system that can keep a stable running environment.
-    -   **Inclusion configurations**: Displays a list of all software components under the selected cluster type, including the name and version number. You can select different components as required. The selected components start relevant service processes by default.
+    -   Required Services: Displays a list of all software components under the selected cluster type, including the name and version number.
+    -   Optional Services:You can select different components as required. The selected components start relevant service processes by default.
 
         **Note:** The more components you select, the higher requirements are for your computer configuration. Otherwise, there may be insufficient resources to run these services.
 
