@@ -52,9 +52,9 @@
 
     参数说明：
 
-    -   hdfs://oldclusterip:8020 填写旧集群nameode ip，多个namenode情况填写当前状态为active的。
+    -   hdfs://oldclusterip:8020 填写旧集群namenode ip，多个namenode情况填写当前状态为active的。
     -   默认副本数为3，如想保留原有副本数，-p后加r如-prbugpcax。如果不同步权限和acl，-p后去掉p和a。
-    -   -m指定map数，和集群规模，数据量有关。比如集群有2000核cpu，就可以指定2000个map。
+    -   -m指定map数，和集群规模，数据量有关。比如集群有2000核CPU，就可以指定2000个map。
     -   -bandwidth指定单个map的同步速度，是靠控制副本复制速度实现的，是大概值。
     -   -update，校验源和目标文件的checksum和文件大小，如果不一致源文件会更新掉目标集群数据，新旧集群同步期间还有数据写入，可以通过-update做增量数据同步。
     -   -delete，如果源集群数据不存在，新集群的数据也会被删掉。
@@ -66,7 +66,7 @@
 
     HDFS有权限设置，确定旧集群是否有acl规则，是否要同步，检查dfs.permissions.enabled 和dfs.namenode.acls.enabled的配置新旧集群是否一致，按照实际需要修改。
 
-    如果有acl规则要同步，distcp参数要加-p同步权限参数。如果distcp操作提示xx集群不支持acl，说明对应集群没配置acl规则。新集群没配置acl规则可以修改配置并重启NM。旧集群不支持，说明旧集群根本就没有acl方面的设置，也不需要同步。
+    如果有acl规则要同步，distcp参数后要加-p同步权限参数。如果distcp操作提示xx集群不支持acl，说明对应集群没配置acl规则。新集群没配置acl规则可以修改配置并重启namenode。旧集群不支持，说明旧集群根本就没有acl方面的设置，也不需要同步。
 
 
 ## Hive元数据同步 {#section_kgw_v3y_wfb .section}
@@ -105,7 +105,7 @@
     5.  登陆新的元数据库，create database创建数据库；
     6.  在新的元数据库中，导入替换location字段之后的老元数据库导出来的所有数据；
     7.  版本对齐，EMR的hive版本一般是当前社区最新的稳定版，自建集群hive版本可能会更老，所以导入的旧版本数据可能不能直接使用。需要执行hive的升级脚本（期间会有表、字段已存在的问题可以忽略），可以参见[hive升级脚本](https://github.com/apache/hive/tree/master/metastore/scripts/upgrade/mysql)。例如hive从1.2升级到2.3.0，需要依次执行upgrade-1.2.0-to-2.0.0.mysql.sql，upgrade-2.0.0-to-2.1.0.mysql.sql，upgrade-2.1.0-to-2.2.0.mysql.sql，upgrade-2.2.0-to-2.3.0.mysql.sql。脚本主要是建表，加字段，改内容，如有表已存在，字段已存在的异常可以忽略。
-    8.  meta数据全部订正后，就可以重启metaserver了。命令行输入hive，查询库和表，查询数据，验证正确性。
+    8.  meta数据全部订正后，就可以重启metaserver了。命令行输入hive，查询库和表，查询数据，验证数据的正确性。
 
 ## Flume数据迁移 {#section_dfr_fly_wfb .section}
 
