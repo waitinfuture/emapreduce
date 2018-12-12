@@ -59,11 +59,11 @@ E-MapReduce从3.16.0版本开始支持Apache Flume。本文介绍使用Flume将�
 
     在Kafka集群使用kafka-console-producer.sh输入测试数据abc
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/154442413833579_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/154459367833579_zh-CN.png)
 
     Flume会在HDFS中以当前时间的\(毫秒\)时间戳生成文件FlumeData.xxxx，查看文件内容，会看到在Kafka中输入的数据
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/154442413833580_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/154459367833580_zh-CN.png)
 
 
 ## Kafka-\>Hive {#section_xmd_bjr_zfb .section}
@@ -131,7 +131,7 @@ E-MapReduce从3.16.0版本开始支持Apache Flume。本文介绍使用Flume将�
     hive.txn.manager – org.apache.hadoop.hive.ql.lockmgr.DbTxnManager
     ```
 
-    配置好后查询flume\_test表中的数据![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/154442413833581_en-US.png)
+    配置好后查询flume\_test表中的数据![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/154459367833581_en-US.png)
 
 
 ## Kafka-\>HBase {#section_alr_zjr_zfb .section}
@@ -140,7 +140,7 @@ E-MapReduce从3.16.0版本开始支持Apache Flume。本文介绍使用Flume将�
 
     创建HBase表flume\_test及列簇column
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/154442413833582_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/154459367833582_zh-CN.png)
 
 -   配置Flume
 
@@ -182,7 +182,7 @@ E-MapReduce从3.16.0版本开始支持Apache Flume。本文介绍使用Flume将�
 
     在Kafka集群使用kafka-console-producer.sh生成数据后，就可以在HBase查到数据
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/154442413833583_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/154459367833583_zh-CN.png)
 
 
 ## Kafka-\>OSS {#section_cys_5kr_zfb .section}
@@ -297,7 +297,7 @@ E-MapReduce从3.16.0版本开始支持Apache Flume。本文介绍使用Flume将�
 
     将Kafka集群各节点的长域名和IP的绑定信息添加到Hadoop集群的/etc/hosts。长域名的形式例如emr-header-1.cluster-123456
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/154442413833590_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/154459367833590_zh-CN.png)
 
 
 ## 跨域互信使用Flume {#section_oft_fjs_zfb .section}
