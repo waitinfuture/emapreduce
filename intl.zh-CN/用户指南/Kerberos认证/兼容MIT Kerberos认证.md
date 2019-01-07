@@ -46,7 +46,7 @@ EMR集群中Kerberos服务端启动在master节点，涉及一些管理操作需
 
         -   安装MITKerberos 客户端工具。
 
-            可以使用MITKerberos tools进行相关操作\(如kinit/klist等\)，详细使用方式参考MITKerberos文档
+            可以使用MITKerberos tools进行相关操作\(如kinit/klist等\)，详细使用方式参考[MITKerberos](https://web.mit.edu/kerberos/krb5-1.12/doc/user/user_commands/kinit.html)文档
 
             `yum install krb5-libs krb5-workstation -y`
 
@@ -65,7 +65,7 @@ EMR集群中Kerberos服务端启动在master节点，涉及一些管理操作需
 
             **说明：** MITKerberos工具使用实例
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17935/154201092611126_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17935/154683211911126_zh-CN.png)
 
     -   执行hdfs命令
 
@@ -81,7 +81,7 @@ EMR集群中Kerberos服务端启动在master节点，涉及一些管理操作需
              drwxr-x--t      - hadoop hadoop          0 2017-11-13 16:12 /user
         ```
 
-        **说明：** 跑yarn作业，需要提前在集群中所有节点添加对应的linux账号\(详见下文中\[EMR集群添加test账号\]。
+        **说明：** 跑yarn作业，需要提前在集群中所有节点添加对应的linux账号\(详见下文中\[[EMR集群添加test账号](intl.zh-CN/用户指南/Kerberos认证/RAM认证.md#ul_myx_vc5_1fb)\]。
 
 -   java代码访问HDFS
     -   使用本地ticket cache
