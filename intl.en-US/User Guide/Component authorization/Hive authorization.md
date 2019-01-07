@@ -1,20 +1,18 @@
 # Hive authorization {#concept_ssg_l1b_bfb .concept}
 
-Hive has two authorization modes, storage based authorization and SQL standard based authorization. For more information, see [official Hive documentation](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Authorization).
+Hive has two authorization modes: one based on storage and the other based on SQL standards. For more information, see Hive's [Authorization guide](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Authorization).
 
-**Note:** The two authorization features can be configured at the same time without conflict.
+**Note:** Both means of authorization can be configured at the same time without conflict.
 
-Storage based authorization is for HiveMetaStore.
+Storage based authorization \(for Hive metastore\)
 
-Scenario:
+If a user in a cluster has direct access to data in Hive through an HDFS or Hive client, a permission control must be performed on Hive data in HDFS. By doing so, operation permissions related to Hive SQL can be controlled.
 
-If a user in the cluster has a direct access to data in Hive through HDFS/Hive Client, a permission control must be performed on Hive data in HDFS. Through HDFS permission control, operation permissions related to Hive SQL can be controlled.
-
-For more information, see [Hive documents](https://cwiki.apache.org/confluence/display/Hive/Storage+Based+Authorization+in+the+Metastore+Server).
+For more information, see Hive's [Storage Based Authorization](https://cwiki.apache.org/confluence/display/Hive/Storage+Based+Authorization+in+the+Metastore+Server) guide.
 
 ## Add configuration {#section_qpw_vcb_bfb .section}
 
-In the cluster Configuration Management page, **Hive** \> **Configuration** \> **hive-site.xml** \> **Add Custom Configuration**.
+In the cluster Configuration Management page, click **Hive** \> **Configuration** \> **hive-site.xml** \> **Add Custom Configuration**.
 
 ```
 <property>
@@ -31,18 +29,18 @@ In the cluster Configuration Management page, **Hive** \> **Configuration** \> *
 </property>
 ```
 
-## Restart HiveMetaStore {#section_wv5_pfb_bfb .section}
+## Restart Hive metastore {#section_wv5_pfb_bfb .section}
 
-Restart HiveMetaStore in the cluster Configuration Management page.
+Restart the Hive metastore in the cluster's Configuration Management page.
 
 ## HDFS permission control {#section_ibr_qfb_bfb .section}
 
-HDFS related permissions of warehouse in Hive has been set for Kerberos security cluster in the EMR.
+For Kerberos security clusters in E-MapReduce, HDFS permissions for the Hive warehouse are set.
 
-For non-Kerberos security cluster, users must set basic HDFS permission through the following steps:
+For non-Kerberos security clusters, you must complete the following steps to set the basic HDFS permission:
 
--   EnableHDFS permissions
--   Configure permissions of warehouse in Hive
+-   Enable HDFS permissions
+-   Configure permissions for the Hive warehouse
 
     ```
     hadoop fs -chmod 1771 /user/hive/warehouse
@@ -51,7 +49,7 @@ For non-Kerberos security cluster, users must set basic HDFS permission through 
     ```
 
 
-With the basic permission set \(mentioned earlier\), related users/user groups can normally create/read/write tables through authorizing the folder warehouse.
+With the basic permission set, users and user groups can create, read, and write tables as usual by authorizing the folder warehouse.
 
 ```
 sudo su has
@@ -61,11 +59,11 @@ sudo su has
       hadoo fs -setfacl -m group:hivegrp:rwx /user/hive/warehouse
 ```
 
-With the HDFS authorization, related users/user groups can normally create/read/write tables, and data in Hive tables created by different users in HDFS can only be accessed by the users themselves.
+With HDFS authorized, users and user groups can create, read, and write tables as usual. Data in Hive tables that is created by different users in HDFS can only be accessed by the users themselves.
 
 ## Verification {#section_abz_ggb_bfb .section}
 
--   User test creates a table testtbl.
+-   The test user creates a table testtbl.
 
     ```
     hive> create table testtbl(a string);
@@ -74,7 +72,7 @@ With the HDFS authorization, related users/user groups can normally create/read/
     at org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.check(FSPermissionChecker.java:292)
     ```
 
-    An error occurs due to no permissions. Permissions should be granted to the user test.
+    An error occurs due to the lack of permissions. Permissions should be granted to the test user.
 
     ```
     #Switch from root account to has account
@@ -83,7 +81,7 @@ With the HDFS authorization, related users/user groups can normally create/read/
      hadoop fs -setfacl -m user:test:rwx /user/hive/warehouse
     ```
 
-    The account test recreates the database successfully.
+    The test account recreates the database successfully.
 
     ```
     hive> create table testtbl(a string);
@@ -96,7 +94,7 @@ With the HDFS authorization, related users/user groups can normally create/read/
     hive>insert into table testtbl select "hz"
     ```
 
--   User foo accesses to table testtbl.
+-   User foo accesses the table testtbl.
 
     ```
     #drop table
@@ -119,7 +117,7 @@ With the HDFS authorization, related users/user groups can normally create/read/
         at org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.checkPermission(FSPermissionChecker.java:219)
     ```
 
-    It can be seen that the user foo cannot perform any operations on the table created by the user test. HDFS authorization is needed to grant permissions to foo.
+    Foo cannot perform operations on the table created by the test user. HDFS authorization is needed to grant permissions to foo.
 
     ```
     su has
@@ -133,22 +131,22 @@ With the HDFS authorization, related users/user groups can normally create/read/
     Time taken: 2.134 seconds, Fetched: 1 row(s)
     ```
 
-    **Note:** In general, a Hive user group can be created and authorized, then add new users the group.
+    **Note:** You can create a Hive user group, authorize it, and then add new users it.
 
 
-## SQL Standards Based Authorization {#section_z3c_g3b_bfb .section}
+## SQL Standard Based Authorization {#section_z3c_g3b_bfb .section}
 
 -   Scenario
 
-    If a cluster user can’t access through a HDFS/Hive client, and the only way is to run Hive related commands through `HiveServer (beeline, jdbc, and so on)`. SQL Standards Based Authorization can be used.
+    If a cluster user cannot access data in Hive through an HDFS or Hive client, and the only way is to run Hive related commands through `HiveServer (beeline, jdbc, and so on)`, SQL standard based authorization can be used.
 
-    If you are able to use methods such as Hive shell, as long as no related configuration has been made to the hive-site.xml in the user’s client, Hive can still be normally accessed even if the following settings are implemented.
+    If users can use the Hive shell or similar methods and as long as hive-site.xml in the user's client has not been configured, Hive can still be accessed as usual, even if the following settings are implemented.
 
-    For more information, see [Hive documentation](https://cwiki.apache.org/confluence/display/Hive/SQL+Standard+Based+Hive+Authorization).
+    For more information, see Hive's [SQL Standard Based Authorization](https://cwiki.apache.org/confluence/display/Hive/SQL+Standard+Based+Hive+Authorization) guide.
 
 -   Add configuration
     -   The configuration is provided to HiveServer.
-    -   In the cluster Configuration Management page, click **Hive** \> **Configuration** \> **hive-site.xml** \> **Add Custom Configuration**
+    -   In the cluster Configuration Management page, click **Hive** \> **Configuration** \> **hive-site.xml** \> **Add Custom Configuration**.
 
         ```
         <property>
@@ -171,10 +169,10 @@ With the HDFS authorization, related users/user groups can normally create/read/
 
 -   Permission operation commands
 
-    For detailed command operations, click [here](https://cwiki.apache.org/confluence/display/Hive/SQL+Standard+Based+Hive+Authorization).
+    For more information on command operations, click [here](https://cwiki.apache.org/confluence/display/Hive/SQL+Standard+Based+Hive+Authorization).
 
 -   Verification
-    -   User foo access to user test’s table testtbl through beeline.
+    -   User foo accesses the test user's table, testtbl, through beeline.
 
         ```
         2: jdbc:hive2://emr-header-1.cluster-xxx:10> select * from testtbl;
@@ -190,7 +188,7 @@ With the HDFS authorization, related users/user groups can normally create/read/
          Time taken: 1.205 seconds
         ```
 
-    -   User foo can normally select.
+    -   Foo can select as usual.
 
         ```
         0: jdbc:hive2://emr-header-1.cluster-xxxxx:10> select * from testtbl;
@@ -203,7 +201,7 @@ With the HDFS authorization, related users/user groups can normally create/read/
         1 row selected (0.787 seconds)
         ```
 
-    -   Revoke permission.
+    -   Revoke permissions.
 
         ```
         Switch to account test, and revoke the select permission from user foo
@@ -212,7 +210,7 @@ With the HDFS authorization, related users/user groups can normally create/read/
             Time taken: 1.094 seconds
         ```
 
-    -   Foo could not select data for testtbl.
+    -   Foo cannot select testtbl data.
 
         ```
         User foo cannot select data from table testtbl.
