@@ -9,7 +9,7 @@ E-MapReduce version 3.16.0 and later support Apache Flume. This topic describes 
 
 **Note:** 
 
--   If you have created a high security mode Hadoop cluster to consume standard Kafka cluster data, and you need to configure Kerberos authentication on the Hadoop cluster, see [Authentication method compatible with MIT Kerberos](intl.en-US/User Guide/Kerberos authentication/Authentication method compatible with MIT Kerberos.md#).
+-   If you have created a high security mode Hadoop cluster to consume standard Kafka cluster data, and you need to configure Kerberos authentication on the Hadoop cluster, see [Authentication method compatible with MIT Kerberos](intl.en-US/User Guide/Kerberos authentication/Authentication compatible with MIT Kerberos.md#).
 -   If you have created a high security mode Kafka cluster and you need to write data to a standard Hadoop cluster using Flume, see [Kerberos Kafka Source in this topic](#section_l1j_3fs_zfb).
 -   If you have created a high security mode Hadoop cluster and a high security mode Kafka cluster, and you need to configure Kerberos, see [Cross-region access](intl.en-US/User Guide/Kerberos authentication/Cross-region access.md#) and [Cross-region access using Flume](#section_oft_fjs_zfb).
 
@@ -59,11 +59,11 @@ E-MapReduce version 3.16.0 and later support Apache Flume. This topic describes 
 
     Use the kafka-console-producer.sh command and input the test data abc in your Kafka cluster.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/154459368133579_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/154684598533579_en-US.png)
 
     Flume generates a file FlumeData.xxx with a timestamp \(in milliseconds\) suffix based on the current time. When you view the file content, you can see the data that you input in Kafka.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/154459368133580_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/154684598533580_en-US.png)
 
 
 ## Kafka-\>Hive {#section_xmd_bjr_zfb .section}
@@ -131,7 +131,7 @@ E-MapReduce version 3.16.0 and later support Apache Flume. This topic describes 
     hive.txn.manager – org.apache.hadoop.hive.ql.lockmgr.DbTxnManager
     ```
 
-    After the preceding configurations are set, you can query data in the flume\_test table.![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/154459368133581_en-US.png)
+    After the preceding configurations are set, you can query data in the flume\_test table.![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/154684598533581_en-US.png)
 
 
 ## Kafka-\>HBase {#section_alr_zjr_zfb .section}
@@ -140,7 +140,7 @@ E-MapReduce version 3.16.0 and later support Apache Flume. This topic describes 
 
     Create a HBase table flume\_test and a column family column.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/154459368133582_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/154684598533582_en-US.png)
 
 -   Configure Flume
 
@@ -182,7 +182,7 @@ E-MapReduce version 3.16.0 and later support Apache Flume. This topic describes 
 
     After data is generated using kafka-console-producer.sh in your Kafka cluster, you can query data in HBase.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/154459368133583_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/154684598533583_en-US.png)
 
 
 ## Kafka-\>OSS {#section_cys_5kr_zfb .section}
@@ -257,7 +257,7 @@ E-MapReduce version 3.16.0 and later support Apache Flume. This topic describes 
 
 If high security Kafka cluster data is consumed, you must configure the following variables:
 
--   In your Kafka cluster, configure Kerberos authentication and copy the generated keytab file test.keytab to the Hadoop cluster path /etc/ecm/flume-conf, and copy the Kafka cluster file /etc/ecm/has-conf/krb5.conf to the Hadoop cluster path /etc/ecm/flume-conf. For more information, see [Authentication method compatible with MIT Kerberos](intl.en-US/User Guide/Kerberos authentication/Authentication method compatible with MIT Kerberos.md#).
+-   In your Kafka cluster, configure Kerberos authentication and copy the generated keytab file test.keytab to the Hadoop cluster path /etc/ecm/flume-conf, and copy the Kafka cluster file /etc/ecm/has-conf/krb5.conf to the Hadoop cluster path /etc/ecm/flume-conf. For more information, see [Authentication method compatible with MIT Kerberos](intl.en-US/User Guide/Kerberos authentication/Authentication compatible with MIT Kerberos.md#).
 -   Configure flume.properties
 
     In the flume.properties file, add the following configurations:
@@ -297,14 +297,14 @@ If high security Kafka cluster data is consumed, you must configure the followin
 
     Add domain names and IP binding information of each Kafka cluster node to /etc/hosts of the Hadoop cluster. The form of the long domain name is emr-header-1.cluster-123456.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/154459368133590_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/154684598533590_en-US.png)
 
 
 ## Cross-region access using Flume {#section_oft_fjs_zfb .section}
 
 After cross-region access is configured, you need to set other configurations as follows:
 
--   In your Kafka cluster, configure Kerberos authentication and copy the generated keytab file test.keytab to the Hadoop cluster path /etc/ecm/flume-conf. For more information, see [Authentication method compatible with MIT Kerberos](intl.en-US/User Guide/Kerberos authentication/Authentication method compatible with MIT Kerberos.md#).
+-   In your Kafka cluster, configure Kerberos authentication and copy the generated keytab file test.keytab to the Hadoop cluster path /etc/ecm/flume-conf. For more information, see [Authentication method compatible with MIT Kerberos](intl.en-US/User Guide/Kerberos authentication/Authentication compatible with MIT Kerberos.md#).
 -   Configure flume.properties
 
     In the flume.properties file, add the following configurations:
