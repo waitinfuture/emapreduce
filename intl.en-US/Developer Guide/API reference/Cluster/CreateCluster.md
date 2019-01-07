@@ -19,15 +19,15 @@ You can this operation to create a cluster.
 |HighAvailabilityEnable|Boolean|No|false|Specifies whether to enable or disable high availability. If high availability is enabled, a minimum of two master nodes is required.|
 |MasterPwdEnable|Boolean|No|None|Indicates whether to set the root passwords for master nodes.|
 |MasterPwd|String|No. It is required if MasterPwdEnable==true.|None|The password must meet the following requirements. Length constraints: Minimum length of 8 characters. Maximum length of 30 characters. It must contain three types \(uppercase letters, lowercase letters, numbers, and special symbols\) of characters.|
-|EcsOrder|String|Yes|None|The machine information of ESC instances contained by clusters. It is in JSON format. For example，”\[\{‘NodeCount’:1, ‘NodeType’:’MASTER’,’InstanceType’:’ecs.n1.large’,’DiskType’:’CLOUD\_EFFICIENCY’,’DiskCapacity’:80,’DiskCount’:1,’Index’:1\},\{‘NodeCount’:2, ‘NodeType’:’CORE’,’InstanceType’:’ecs.n1.large’,’DiskType’:’CLOUD\_EFFICIENCY’,’DiskCapacity’:40,’DiskCount’:4,’Index’:2\}\]“ [EcsOrder](EN-US_TP_18030.dita#concept_x1c_csb_kfb)|
+|EcsOrder|String|Yes|None|The machine information of ESC instances contained by clusters. It is in JSON format. For example,”\[\{‘NodeCount’:1, ‘NodeType’:’MASTER’,’InstanceType’:’ecs.n1.large’,’DiskType’:’CLOUD\_EFFICIENCY’,’DiskCapacity’:80,’DiskCount’:1,’Index’:1\},\{‘NodeCount’:2, ‘NodeType’:’CORE’,’InstanceType’:’ecs.n1.large’,’DiskType’:’CLOUD\_EFFICIENCY’,’DiskCapacity’:40,’DiskCount’:4,’Index’:2\}\]“ [EcsOrder](EN-US_TP_18030.dita#concept_x1c_csb_kfb)|
 |ChargeType|String|Yes|None|The billing method. PostPaid: Pay-As-You-Go. PrePaid: Subscription.|
-|Period|Integer|Only required when ChargeType==PrePaid|None|The length of the subscription. Unit: months. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, and 36.|
+|Period|Integer|Only required when ChargeType==Subscription|None|The length of the subscription. Unit: months. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, and 36.|
 |BootstrapActions|List [BootstrapAction](EN-US_TP_18031.dita#concept_v4l_ksb_kfb)|No|None|The lists of bootstrap actions. The maximum number is 16. If the maximum is exceeded, only the first 16 lists are retained.|
 |Configurations|String|No|None|Provides the path of an OSS file. See the user guide for the file content.|
 |VpcId|String|No|None|VPC ID|
 |VSwitchId|String|No|None|The ID of VSwitch|
 |NetType|String|No|classic|Valid values: classic and vpc. Default value: classic.|
-|IoOptimized|Boolean|No|true|Specifies whether to enable or disable IO optimization. Default value: true.|
+|IoOptimized|Boolean|No|true|Specifies whether to enable or disable I/O optimization. Default value: true.|
 |instanceGeneration|String|No|None|The generation of the ECS instance. Set the value to ecs-1 or ecs-2.|
 
 ## Response parameters {#section_xxl_hz1_kfb .section}
