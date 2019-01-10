@@ -1,6 +1,6 @@
 # 通过Gateway访问 {#concept_umc_k3l_z2b .concept}
 
-Gateway是与EMR集群处于同一个内网中的ECS服务器，可以使用Gateway实现负载均衡和安全隔离。您可以选择**控制台页面** \> **配置管理** \> **概览** \> **创建Gateway**，来创建对应集群的Gateway节点。本节介绍使用HAProxy反向代理实现通过Gateway节点访问Presto服务的方法。该方法也很容扩展到其他组件，如Impala等。
+Gateway是与EMR集群处于同一个内网中的ECS服务器，可以使用Gateway实现负载均衡和安全隔离。您可以选择**控制台页面** \> **概览** \> **创建Gateway**，也可以选择**控制台页面** \> **集群管理** \> **创建Gateway**来创建对应集群的Gateway节点。本节介绍使用HAProxy反向代理实现通过Gateway节点访问Presto服务的方法。该方法也很容扩展到其他组件，如Impala等。
 
 **说明：** Gateway节点默认已经安装了HAProxy服务，但没有启动。
 
@@ -8,7 +8,7 @@ Gateway是与EMR集群处于同一个内网中的ECS服务器，可以使用Gate
 
 普通集群配置Gateway代理比较简单，只需要配置HAProxy反向代理，对EMR集群上Header节点的Presto Coodrinator的9090端口实现反向代理即可。配置步骤如下：
 
--   **配置HAProxy**
+-   配置HAProxy
 
     通过ssh登入Gateway节点，修改HAProxy的配置文件/etc/haproxy/haproxy.cfg。添加如下内容：
 
@@ -33,7 +33,7 @@ Gateway是与EMR集群处于同一个内网中的ECS服务器，可以使用Gate
     $> service haproxy restart
     ```
 
--   **配置安全组**
+-   配置安全组
 
     需要配置的规则如下：
 
@@ -50,7 +50,7 @@ Gateway是与EMR集群处于同一个内网中的ECS服务器，可以使用Gate
 
 EMR高安全集群中的Presto服务使用Kerberos服务进行认证，其中Kerberos KDC服务位于emr-header-1上，端口为88，同时支持TCP/UDP协议。 使用Gateway访问高安全集群中的Presto服务，需要同时对Presto Coodinator服务端口和Kerberos KDC实现代理。另外，EMR Presto Coodinator集群默认使用keystore配置的CN为emr-header-1,只能内网使用，因此需要重新生成CN=emr-header-1.cluster-xxx的keystore。
 
--   **HTTPs认证相关**
+-   HTTPs认证相关
 
     创建服务端CN=emr-header-1.cluster-xxx的keystore：
 
@@ -112,7 +112,7 @@ EMR高安全集群中的Presto服务使用Kerberos服务进行认证，其中Ker
     $> scp root@xxx.xxx.xxx.xxx:/etc/ecm/presto-conf/client.keystore ./
     ```
 
--   **Kerberos认证相关**
+-   Kerberos认证相关
 
     添加客户端用户principal：
 
@@ -165,7 +165,7 @@ EMR高安全集群中的Presto服务使用Kerberos服务进行认证，其中Ker
     xxx.xxx.xxx.xxx emr-header-1.cluster-xxx
     ```
 
--   **配置Gateway HAProxy**
+-   配置Gateway HAProxy
 
     通过SSH登入到Gateway节点，修改/etc/haproxy/haproxy.cfg。添加如下内容：
 
@@ -193,7 +193,7 @@ EMR高安全集群中的Presto服务使用Kerberos服务进行认证，其中Ker
     $> service haproxy restart
     ```
 
--   **配置安全组规则**
+-   配置安全组规则
 
     需要配置的规则如下：
 
@@ -205,7 +205,7 @@ EMR高安全集群中的Presto服务使用Kerberos服务进行认证，其中Ker
 
     现在就可以通过ECS控制台删除Header节点的公网IP，在自己的客户机上通过Gateway访问Presto服务了。
 
--   **使用JDBC访问Presto示例**
+-   使用JDBC访问Presto示例
 
     代码如下：
 
