@@ -2,6 +2,8 @@
 
 This section describes how to quickly create clusters, jobs, and execution plans by using Java SDKs.
 
+**Note:** We recommend that you use [OpenAPI Explorer](https://api.aliyun.com) to call and generate SDK sample codes. OpenAPI Explorer allows you to call APIs of cloud services, dynamically generate SDK sample codes, and quickly retrieve interfaces.
+
 ## Prerequisites {#section_cx3_lmh_kfb .section}
 
 You can create a Maven project and then add Maven dependencies as follows:
@@ -102,8 +104,8 @@ All operations on the E-MapReduce in SDK can be performed using this client.
         ```
 
         -   When you create a cluster, you must specify a security group that hosts this cluster. If you did not specify the ID of a security group, then you must specify the name of this security group. You need to create a security group when you create a cluster.
-        -   For more information, see [Enumeration](reseller.en-US/Developer Guide/API reference/Enumerations.md#).
-        -   The preceding code snippet creates a cluster in a classic network. If you want to create a cluster in a [VPC network](../../../../reseller.en-US/User Guide/VPC.md#), you need to specify vpc in the request method and specify vpcid and vswitchid as follows:
+        -   For more information, see [Enumeration](intl.en-US/Developer Guide/API reference/Enumerations.md#).
+        -   The preceding code snippet creates a cluster in a classic network. If you want to create a cluster in a [VPC network](../../../../../intl.en-US/User Guide/VPC.md#), you need to specify vpc in the request method and specify vpcid and vswitchid as follows:
 
             ```
             request.setNetType("vpc"); // You can specify vpc as a network type.
@@ -117,7 +119,7 @@ All operations on the E-MapReduce in SDK can be performed using this client.
             request.setHighAvailabilityEnable(true);
             ```
 
-        -   You can specify available software components. For more information about available software components, see the software configuration section of [Create a cluster](../../../../reseller.en-US/User Guide/Cluster/Create a cluster.md#).
+        -   You can specify available software components. For more information about available software components, see the software configuration section of [Create a cluster](../../../../../intl.en-US/User Guide/Clusters/Create a cluster.md#).
 
             ```
             List<String> soft = new ArrayList<String>();
@@ -126,13 +128,13 @@ All operations on the E-MapReduce in SDK can be performed using this client.
             request.setOptionSoftWareLists(soft);
             ```
 
-        -   You can specify a configuration item. For more information, click [here](../../../../reseller.en-US/User Guide/Software configuration.md#).
+        -   You can specify a configuration item. For more information, click [here](../../../../../intl.en-US/User Guide/Software configuration.md#).
 
             ```
             Request. setconfigurations ("Oss: // your-bucket/your-conf.json ");
             ```
 
-        -   You can specify a bootstrap operation. For more information, click [here](../../../../reseller.en-US/User Guide/Bootstrap action.md#).
+        -   You can specify a bootstrap operation. For more information, click [here](../../../../../intl.en-US/User Guide/Bootstrap actions.md#).
 
             ```
             List<CreateClusterRequest.BootstrapAction> bootstrapActionLists = new ArrayList<CreateClusterRequest.BootstrapAction>();
@@ -344,7 +346,7 @@ All operations on the E-MapReduce in SDK can be performed using this client.
 
         For an execution plan that will be executed periodically \(as the following figure shows\), you can suspend this execution plan by calling a method provided by the SDK as follows:
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18044/154286839913444_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18044/154711247013444_en-US.png)
 
         ```
         public static void main(String[] args) {
@@ -364,7 +366,7 @@ All operations on the E-MapReduce in SDK can be performed using this client.
 
         For an execution plan that will be executed periodically \(as the following figure shows\), you can resume this execution plan by calling a method provided by the SDK as follows:
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18044/154286839913446_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18044/154711247013446_en-US.png)
 
         ```
         public static void main(String[] args) {
