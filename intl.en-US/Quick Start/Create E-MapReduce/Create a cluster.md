@@ -1,95 +1,104 @@
 # Create a cluster {#concept_nrp_154_y2b .concept}
 
-In this tutorial, you will learn how to create a cluster.
+This section describes how to create and configure a E-MapReduce cluster.
 
-## Enter the cluster creation page {#section_w2j_2z4_y2b .section}
+## Go to the cluster creation page {#section_w2j_2z4_y2b .section}
 
-1.  Log on to the [Alibaba Cloud E-MapReduce console](https://emr.console.aliyun.com/#/ap-southeast-1).
-2.  Complete RAM authorization. For procedure, see [Role authorization](../../../../intl.en-US/User Guide/Role authorization.md#).
-3.  Select a region for a cluster. The region cannot be changed once the cluster is created.
-4.  Click **Create Cluster** to create a cluster.
+1.  Log on to the [Alibaba Cloud E-MapReduce console](https://partners-intl.console.aliyun.com/#/emr).
+2.  Complete RAM authorization. For more information, see [Role authorization](../../../../../reseller.en-US/User Guide/Role authorization.md#)Role authorization.
+3.  Select a region where you want to create the cluster. The region cannot be changed after the cluster has been created.
+4.  Click **Create Cluster** in the upper-right corner.
 
-## Cluster creation process {#section_rsk_gz4_y2b .section}
+## Create a cluster {#section_rsk_gz4_y2b .section}
 
-To create a cluster, follow the below steps:
+To create a cluster, follow these steps:
 
-1.  Step one: Software configuration
+-   Software configuration
+-   Hardware configuration
+-   Basic configuration
 
-    Configuration description
+Step 1: Software configuration
 
-    -   **EMR version**: Select the latest version by default.
-    -   **Cluster type**: Currently E-MapReduce provides the following cluster types:
-        -   Hadoop clusters, provide semi-managed ecosystem components:
-            -   Hadoop, Hive, and Spark that offline store and compute distributed data at scale.
-            -   SparkStreaming, Flink, and Storm that are stream processing systems.
-            -   Presto and Impala, for running interactive analytics queries.
-            -   Oozie and Pig.
-        -   Druid clusters, provide semi-managed, real-time interactive analysis services, query large amount of data in millisecond latency, and support for multiple data intake methods. Used with services such as EMR Hadoop, EMR Spark, OSS, and RDS, Druid clusters offer real-time query solutions.
-        -   Data Science clusters, are mainly for big data and AI scenarios, providing Hive and Spark offline big data, and TensorFlow model training.
-        -   Kafka clusters, are taken as a semi-managed distributed message system of high throughput and high scalability, providing a complete service monitoring system that can keep a stable running environment.
-    -   **Include configurations**: Use the default configuration. You can add, start and stop services in the management interface later.
-    -   **High security mode**: In this mode, you can set the Kerberos authentication of the cluster. This feature is unnecessary for clusters used by individual users. It is turned off by default.
-    -   **Enable custom setting**: You can specify a JSON file to change software configuration before you start a cluster.
-2.  Hardware configuration
+Description
 
-    Configuration description
+-   **EMR Version**: By default, the latest version is selected.
+-   **Cluster Type**: Currently, E-MapReduce \(EMR\) provides the following cluster types:
+    -   Hadoop clusters. These clusters provide multiple ecosystem components, such as Hadoop, Hive, Spark, Spark Streaming, Flink, Storm, Presto, Impala, Oozie, and Pig. Hadoop, Hive, and Spark are semi-hosted services and are used for distributed large-scale data storage and computing. Spark Streaming, Flink, and Storm can provide stream computing. Presto and Impala are used to achieve interactive queries. For more information about the components, see Services List displayed on the cluster and service management page.
+    -   Kafka clusters. These clusters serve as a semi-hosted distributed message system with high throughput and high scalability. Kafka clusters provide a comprehensive service monitoring system that keeps the clusters running stably. Kafka clusters are more professional, reliable, and secure. You do not need to deploy or maintain these clusters. These clusters are commonly used in scenarios such as log collection and monitoring data aggregation. Offline data processing and stream computing, and real-time data analysis are also supported.
+    -   Druid clusters. These clusters provide semi-hosted and real-time interactive analysis services. Druid clusters also support querying large amounts of data in milliseconds and writing data through multiple methods. Druid clusters offer flexible and stable real-time queries together with other services such as EMR Hadoop, EMR Spark, OSS, and RDS.
+    -   Data Science clusters. These clusters are commonly applied in big data and AI scenarios. Data Science clusters provide Hive and Spark offline big data ETL, and TensorFlow model training. You can choose the CPU plus GPU heterogeneous computing framework and the deep learning algorithm supported by NVIDIA CPUs to run computing tasks efficiently.
+-   **Required Services**: Select the default configuration. You can add, enable, or disable services on the management page later.
+-   **High Security Mode**: Indicates whether to enable the Kerberos authentication feature for the cluster. This mode is disabled by default because typically this mode is not required by clusters created for general users.
+-   **Enable Custom Setting**: You can specify a JSON file to modify software configuration. For more information about the procedure, see [Software configuration](../../../../../reseller.en-US/User Guide/Software configuration.md#).
 
-    -   Billing configuration
-        -   **Billing method**: Pay-As-You-Go is used in testing scenarios. Subscription production clusters can be created after all tests are verified.
-    -   Network configuration
-        -   **Zone**: Generally use the default zone.
-        -   **Network type**: By default, the Virtual Private Cloud \(VPC\) network is selected which requires you to enter a VPC and a VSwitch. If you haven't created a network, go to the [VPC console](https://vpc.console.aliyun.com/) to create them.
-        -   **VPC**: Select the region of the VPC network.
-        -   **VSwitch**: Select a zone for VSwitch under the corresponding VPC. If no VSwitch is available in this zone, then you must create a new one.
-        -   **Security group name**: Generally, no security group exists when you create a cluster for the first time. Enter a name to create a new security group. If you already have a security group in use, you can choose to use it directly here.
-    -   Cluster configuration
-        -   **High availability**: When enabled, two master instances in the Hadoop cluster are used to ensure the availability of the resource manager and name node. HBase clusters support high availability by default. When enabled, a master instance is used to ensure high availability.
-        -   Master node
-            -   **Master instance type**: Select an instance type as required. For information about instance types, see [Instance type families](../../../../intl.en-US/Product Introduction/Instance type families.md#).
-            -   **System disk type**: Select a disk as required.
-            -   **System disk size**: We recommend that you select 120G at least.
-            -   **Data disk type**: Select a disk as required.
-            -   **Data disk size**: We recommend that you select 80G at least.
-            -   **Master instances**: It is set 1 master instance by default.
-        -   Core node
-            -   **Core instance type**: Select an instance type as required. For information about instance types, see [Instance type families](../../../../intl.en-US/Product Introduction/Instance type families.md#).
-            -   **System disk type**: Select a disk as required.
-            -   **System disk size**: We recommend that you select 80G at least.
-            -   **Data disk type**: Select a disk as required.
-            -   **Data disk size**: We recommend that you select 80G at least.
-            -   **Core instances**: It is set 2 instances by default. You can adjust as required.
-        -   Task instance group: It is turned off by default.
-3.  Basic configuration
+Step 2: Hardware configuration
 
-    Configuration description
+Description
 
-    -   Basic information
-        -   **Cluster name**: The cluster name can contain Chinese characters, English letters \(uppercase and lowercase\), numbers, hyphens \(-\), and underscores \(\_\), with a length limit between 1-64 characters.
-    -   Running logs
-        -   **Running logs**: The function for saving running logs is turned on by default. In the default state, you can select the OSS directory location to save running logs. You must activate OSS before using this function. Cost depends on the number of uploaded files. We recommend that you open the OSS log saving function, which helps in debugging and error screening.
-        -   **Log path**: OSS path for saving the log.
-        -   **Uniform Meta Database**: We recommend you disable this feature for the moment.
-    -   Permission settings: Use default settings.
-    -   Logon settings
-        -   **Remote logon**: It is turned on by default to enable security group port 22.
-        -   **Logon password**: Set the logon password at the master node. The logon password must contain English letters \(both uppercase and lowercase letters\), numbers, and special characters \(!@\#$%^&\*\) with a length limit between 8-30 characters.
+-   Billing Configuration
 
-## Purchase list and cluster cost {#section_gtk_gz4_y2b .section}
+    -   **Billing Method**: You can select Pay-As-You-Go when testing the cluster. After all tests have been passed, you can create and use a Subscription-based cluster.
+-   Network configuration
+    -   **Zone**: Typically, the default zone is used.
+    -   **Network Type**: VPC is selected by default. If you have not created a VPC, go to the [VPC console](https://partners-intl.console.aliyun.com/#/vpc) to create one.
+    -   **Zone**: Geographical areas that are located in the same region. These zones are interconnected through VPCs.
+    -   **VPC**: Select a VPC that has been created in the specified region. If no VPC is available, click **Create VPC/VSwitch** to create one in the current zone.
+    -   **VSwitch**: Select a VSwitch for the specified VPC in the current zone. If no VSwitch is available, go to the VPC console and create one in the current zone.
+    -   **Security Group Name**: By default, no security group is available if this is the first time that you have created a cluster. You need to enter a name and then create a security group. If you have already created security groups, select a security group.
+-   Cluster configuration
+    -   **High Availability**: After this feature has been enabled, two master nodes will be provided to guarantee the high availability of Resource Manager and Name Node. HBase clusters support high availability by default. An HBase cluster has to use a core node as one of the two master nodes. When the high availability feature is enabled, the HBase cluster only needs one mater node to support high availability, which is more secure and reliable. If you need to create clusters that support high availability, enable high availability during testing.
+    -   Master node: Deploys processes, such as Resource Manager and Name node.
+        -   **Master Instance Type**: Select instance specifications based on your needs. For more information, see [Instance type families](../../../../../reseller.en-US/Product Introduction/Instance type families.md#).
+        -   **System Disk Type**: Select Ultra Disk or SSD Disk based on your needs.
+        -   **System Disk Size**: You can resize the disk based on your needs. The recommended minimum disk size is 120 GB.
+        -   **Data Disk Type**: Select Ultra Disk or SSD Disk based on your needs.
+        -   **Data Disk Size**: You can resize the disk. The recommended minimum disk size is 80 GB.
+        -   **Master Instances**: The default number of master instances is one.
+    -   Core instance: Stores all cluster data. You can scale up the instance based on your needs.
+        -   **Core Instance Type**: Select instance specifications based on your needs. For more information, see [Instance type families](../../../../../reseller.en-US/Product Introduction/Instance type families.md#).
+        -   **System Disk Type**: Select Ultra Disk or SSD Disk based on your needs.
+        -   **System Disk Size**: You can resize the disk based on your needs. The recommended minimum disk size is 80 GB.
+        -   **Data Disk Type**: Select Ultra Disk or SSD Disk based on your needs.
+        -   **Data Disk Size**: You can resize the disk based on your needs. The recommended minimum disk size is 80 GB.
+        -   **Core Instances**: The default number of core instances is two. You can adjust the number of core instances based on your needs.
+    -   **Task Instance Group**: No data is stored on task instance groups. Task instance groups are used to adjust the computing capability of clusters. This feature is disabled by default. You can enable it based on your needs.
 
-Confirm the configured items and the billing in the configuration list.
+Step 3: Basic configuration
 
-## Confirm creation {#section_htk_gz4_y2b .section}
+Description
 
-After all configurations are set, the **Create** button is highlighted. Verify the information, and click **Create** to create clusters.
+-   **Basic Information**
+
+    -   **Cluster Name**: Enter the name of the cluster. It must be 1-64 characters in length and can contain Chinese characters, uppercase English letters, lowercase English letters, numbers, hyphens \(-\), and underscores \(\_\).
+-   **Running Logs**
+
+    -   **Running Logs**: You can enable or disable this feature. This feature is enabled by default. After you enable this feature, you must specify an OSS path to save the logs. All running logs are stored in the specified OSS directory. To enable this feature, you must first activate OSS. The uploaded data is billed based on the space usage. We recommend that you enable this feature, which helps in debugging and troubleshooting.
+    -   **Log Path**: Specify an OSS path to store the log.
+    -   **Uniform Meta Database**: Hive uses a unified metadatabase, which is independent of the cluster. The meta information will not be deleted after the cluster is released. We recommend that you disable this feature.
+-   **Permission Settings**: Typically, the default setting is used.
+-   **Logon Settings**
+    -   **Remote Logon**: Indicates whether to open port 22 of the security group. This feature is enabled by default.
+    -   **Password**: Set the password used to log on to the master instance. The logon password must be 8 to 30 characters in length and can contain uppercase letters, lowercase letters, numbers , and special characters including exclamation marks \(!\), at signs \(@\), number signs \(\#\), dollar signs \($\), percent signs \(%\), ampersands \(&\), and asterisks \(\*\).
+-   **Bootstrap Operation** \(optional\): You can set the cluster to run your custom script before it starts Hadoop. For more information, see Bootstrap action.
+
+## Configuration List {#section_gtk_gz4_y2b .section}
+
+Confirm the configured items and fees in the configuration list.
+
+## Confirm the creation {#section_htk_gz4_y2b .section}
+
+After you configure the settings and make sure that all settings are valid, the **Create** button is highlighted. Confirm the information, and click **Create** to create a cluster.
 
 **Note:** 
 
--   If it is a Pay-As-You-Go cluster, the cluster is created immediately, and you are taken back to the **Overview** page where you can see a cluster in **Initializing** status. It takes several minutes to create the cluster. After creation, the cluster is switched to the **Idle** status.
--   For subscribed clusters, the cluster is not created until the order is generated and paid.
+-   The cluster is created immediately if the billing method is Pay-As-You-Go. You are the directed to the cluster list page. You can find an **initializing** cluster in the **Clusters** list. It may take several minutes to complete the cluster creation. After the cluster has been created, it changes its status to **Idle**.
+-   An order is generated if the billing method is Subscription. The cluster will be created after you complete the payment.
 
-## Creation failure {#section_jtk_gz4_y2b .section}
+## Creation failed {#section_jtk_gz4_y2b .section}
 
-If cluster creation failed, the message **Cluster creation failed** appears on the cluster list page. The reason for the failure can be seen when the pointer is placed on the red exclamation point.
+If the creation fails, **CREATE\_FAILED** is displayed on the clusters list. Hover your mouse cursor over the red exclamation mark \(!\) to view the cause, as shown in the following figure:
 
-No handling is required because the corresponding computing resources are not created. The cluster is automatically hidden after three days.
+![](images/10549_en-US.png)
+
+You do not to handle clusters that are failed to be created because no computing resources have been created for these clusters. These clusters will be automatically hidden after three days.
 
