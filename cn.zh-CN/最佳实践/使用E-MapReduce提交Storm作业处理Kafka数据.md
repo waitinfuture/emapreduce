@@ -13,11 +13,11 @@
 
 -   创建Hadoop集群
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154708874512655_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154743236612655_zh-CN.png)
 
 -   创建Kafka集群
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154708874512657_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154743236612657_zh-CN.png)
 
     **说明：** 
 
@@ -49,15 +49,15 @@
     -   [storm-kafka](http://central.maven.org/maven2/org/apache/storm/storm-kafka/1.1.2/storm-kafka-1.1.2.jar)
     以上版本依赖包经过测试可用，如果你再测试过程中引入了其他依赖，也一同添加在Storm lib中，具体操作如下：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154708874512659_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154743236612659_zh-CN.png)
 
     上述操作需要在Hadoop集群的每台机器执行一遍。执行完在E-MapReduce控制台重启Storm服务，如下：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154708874512660_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154743236612660_zh-CN.png)
 
     查看操作历史，待Storm重启完毕：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154708874512661_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154743236612661_zh-CN.png)
 
 
 ## 开发Storm和Kafka作业 {#section_x4k_k4j_gfb .section}
@@ -85,7 +85,7 @@
 
 -   运行Storm作业
 
-    登录到Hadoop集群，将第二步中编译得到的examples-1.1-shaded.jar拷贝到集群emr-header-1上，这里我放在root根目录下面。提交作业：
+    登录到Hadoop集群，将编译得到的/target/shaded目录下的examples-1.1-shaded.jar拷贝到集群emr-header-1上，这里我放在root根目录下面。提交作业：
 
     ```
     /usr/lib/storm-current/bin/storm jar examples-1.1-shaded.jar com.aliyun.emr.example.storm.StormKafkaSample test aaa.bbb.ccc.ddd hdfs://emr-header-1:9000 sample
@@ -100,7 +100,7 @@
         -   SSH隧道，参考文档[SSH 登录集群](../../../../../intl.zh-CN/用户指南/SSH 登录集群.md#)
         本文选择使用SSH隧道方式，访问地址：http://localhost:9999/index.html。可以看到我们刚刚提交的Topology。点进去可以看到执行详情：
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154708874512663_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154743236712663_zh-CN.png)
 
     -   查看HDFS输出
         -   查看HDFS文件输出

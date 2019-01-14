@@ -13,11 +13,11 @@ In this topic, we use Alibaba Cloud E-MapReduce to create a Kafka cluster automa
 
 -   Create a Hadoop cluster
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154708875012655_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154743237912655_en-US.png)
 
 -   Create a Kafka cluster
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154708875012657_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154743237912657_en-US.png)
 
     **Note:** 
 
@@ -49,15 +49,15 @@ In this topic, we use Alibaba Cloud E-MapReduce to create a Kafka cluster automa
     -   [storm-kafka](http://central.maven.org/maven2/org/apache/storm/storm-kafka/1.1.2/storm-kafka-1.1.2.jar)
     These dependencies have been tested. If you need additional dependencies, perform the following operations to add them to the lib folder of Storm.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154708875012659_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154743237912659_en-US.png)
 
     You need to perform the preceding operations on each node in the Hadoop cluster. After the operations are complete, restart Storm in the E-MapReduce console as shown in the following figure.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154708875012660_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154743238012660_en-US.png)
 
     You can view operation logs to check the status of Storm:
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154708875112661_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154743238012661_en-US.png)
 
 
 ## Create Storm topologies and Kafka topics {#section_x4k_k4j_gfb .section}
@@ -85,7 +85,7 @@ In this topic, we use Alibaba Cloud E-MapReduce to create a Kafka cluster automa
 
 -   Run a Storm topology.
 
-    Log on to the Hadoop cluster, copy the examples-1.1-shaded.jar file \(the test topic data is compiled to this file in step 2\) to the emr-header-1 node. In this example, the file is stored in the HDFS root directory. Run the following command to submit the topology:
+    Log on to the Hadoop cluster, compile the project and copy the examples-1.1-shaded.jar file that under/target/shaded directory to the emr-header-1 node. In this example, the file is stored in the HDFS root directory. Run the following command to submit the topology:
 
     ```
     /usr/lib/storm-current/bin/storm jar examples-1.1-shaded.jar com.aliyun.emr.example.storm.StormKafkaSample test aaa.bbb.ccc.ddd hdfs://emr-header-1:9000 sample
@@ -100,7 +100,7 @@ In this topic, we use Alibaba Cloud E-MapReduce to create a Kafka cluster automa
         -   Use SSH. For more information, see [Use SSH to log on to a cluster](../DNemapreduce1876943/EN-US_TP_17923.dita#concept_sns_sww_y2b).
         In this topic, we use SSH to access the Web UI. The endpoint is http://localhost:9999/index.html. You can see the topology that we have submitted. Click the topology to view the running logs:
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154708875112663_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21765/154743238012663_en-US.png)
 
     -   View the output files in HDFS
         -   View the output files in HDFS.
