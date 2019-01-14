@@ -45,7 +45,7 @@ This project provides some test data. You can simply upload it to OSS to use it.
 
 -   \(Optional\) Enable Log Service. See the [User Guide for Log Service](../../SP_7/DNSLS11878107/EN-US_TP_13018.dita#concept_gpw_x2w_ydb).
 
--   \(Optional\) Create MaxCompute projects and tables. See [Create a MaxCompute project](../../../../reseller.en-US/Prepare/Create a project.md#) and [Quick Start for MaxCompute](../../../../reseller.en-US/Quick Start/Create__View__Delete a table.md#).
+-   \(Optional\) Create MaxCompute projects and tables. See [Create a MaxCompute project](../../../../../reseller.en-US/Prepare/Create a project.md#) and [Quick Start for MaxCompute](../../../../../reseller.en-US/Quick Start/Create and view a table.md#).
 
 -   \(Optional\) Use ONS. See [Quick Start for Message Queue](https://partners-intl.aliyun.com/help/doc-detail/34411.htm).
 
@@ -244,24 +244,24 @@ Here we describe how to run a Spark program locally to visit Alibaba Cloud's dat
     -   Development process
         1.  Double-click to enter SparkWordCount.scala.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154286677213087_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154745428313087_en-US.jpg)
 
         2.  Enter the job configuration page from the arrow as shown in the following figure.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154286677213088_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154745428313088_en-US.jpg)
 
         3.  Select SparkWordCount and enter the required job parameters in the job parameter box.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154286677213089_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154745428313089_en-US.jpg)
 
         4.  Click **OK**.
         5.  Click Run to run the job.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154286677213090_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154745428413090_en-US.jpg)
 
         6.  View job logs
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154286677213091_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154745428413091_en-US.jpg)
 
 -   Scala IDE for Eclipse
     -   Preparations
@@ -271,21 +271,21 @@ Here we describe how to run a Spark program locally to visit Alibaba Cloud's dat
     -   Development process
         1.  Import a project as described in the figure below:
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154286677213093_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154745428413093_en-US.jpg)
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154286677313094_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154745428413094_en-US.jpg)
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154286677313095_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154745428413095_en-US.jpg)
 
         2.  The shortcut for Run as Maven build is Alt + Shift + X, M. You can also right-click the project name and choose **Run As** \> **Maven build**.
         3.  Right-click on the job to run after it has been compiled, select **Run Configuration** to enter the configuration page.
         4.  In the configuration page, select Scala Application and configure the Main Class and parameters of the job, As shown in the following figure:
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154286677313097_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154745428413097_en-US.jpg)
 
         5.  Click **Run**.
         6.  View the output log of the console, as shown in the following figure:
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154286677313098_en-US.jpg)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17968/154745428413098_en-US.jpg)
 
 
