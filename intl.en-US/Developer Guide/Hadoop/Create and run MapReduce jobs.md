@@ -114,7 +114,7 @@ The following example describes how to read text from OSS and calculate the word
     -   Upload the JAR file prepared in the previous step to OSS. Log on to the OSS website for detailed operations. Assume that the path of the JAR file on OSS is oss://emr/jars/wordcount.jar and the input and output paths are oss://emr/data/WordCount/Input and oss://emr/data/WordCount/Output.
     -   Create [E-MapReduce jobs](http://emr.console.aliyun.com/#/job/region/cn-hangzhou) as follows:
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17984/154286698613188_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17984/154752323813188_en-US.png)
 
 4.  Create an execution plan
 
