@@ -80,18 +80,18 @@ Take some TPC-DS queries as test samples.
 
         Native Spark:
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23347/154209823013542_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23347/154752783313542_en-US.png)
 
     -   Adjusts the number of reduce tasks adaptively.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23347/154209823013543_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23347/154752783313543_en-US.png)
 
 -   Execution plan optimization at runtime \(SortMergeJoin to BroadcastJoin\).
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23347/154209823013544_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23347/154752783313544_en-US.png)
 
     Uses BroadcastJoin adaptively.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23347/154209823113545_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23347/154752783313545_en-US.png)
 
 
