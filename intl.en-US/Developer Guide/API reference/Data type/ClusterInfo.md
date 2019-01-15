@@ -11,7 +11,7 @@
 |StopTime|Long|The stop time of the cluster in TIMESTAMP format. For example, 1459236255438.|
 |LogEnable|Boolean|Specifies whether to enable storing the logs.|
 |LogPath|String |The path of the stored log.|
-|Status|String |[The status of the cluster.](../DNemapreduce1851503/ZH-CN_TP_18065.dita#concept_zkb_3cc_pfb)|
+|Status|String |[The status of the cluster.](../DNemapreduce1851503/EN-US_TP_18065.dita#concept_zkb_3cc_pfb)|
 |HighAvailabilityEnable|Boolean|Enables or disables high availability.|
 |RunningTime|Integer|Running time. Unit: seconds.|
 |MasterNodeTotal|Integer|The total number of master nodes.|
