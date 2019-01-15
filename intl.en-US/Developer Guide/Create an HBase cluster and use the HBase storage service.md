@@ -58,7 +58,7 @@ After you have created an HBase cluster in the E-MapReduce console, you can use 
 
 1.  Get the master IP address and the address of the ZooKeeper cluster. On the Cluster Overview page in the E-MapReduce console, you can view the IP addresses of the master nodes and ZooKeeper access addresses \(intranet IP addresses\), as shown in the following figure.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17990/154286668113234_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17990/154752347813234_en-US.png)
 
     For more information about master nodes with public IP addresses enabled, see [How to log on to a master node](../DNemapreduce1876943/EN-US_TP_17923.dita#concept_sns_sww_y2b) and browse the HMaster WEB UI \(localhost:16010\).
 
