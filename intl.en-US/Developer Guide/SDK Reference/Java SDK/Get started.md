@@ -346,7 +346,7 @@ All operations on the E-MapReduce in SDK can be performed using this client.
 
         For an execution plan that will be executed periodically \(as the following figure shows\), you can suspend this execution plan by calling a method provided by the SDK as follows:
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18044/154711247013444_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18044/154752442713444_en-US.png)
 
         ```
         public static void main(String[] args) {
@@ -366,7 +366,7 @@ All operations on the E-MapReduce in SDK can be performed using this client.
 
         For an execution plan that will be executed periodically \(as the following figure shows\), you can resume this execution plan by calling a method provided by the SDK as follows:
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18044/154711247013446_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18044/154752442713446_en-US.png)
 
         ```
         public static void main(String[] args) {
