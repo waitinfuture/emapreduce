@@ -33,7 +33,7 @@ This topic describes how to configure spark-submit parameters in E-MapReduce.
 
 After a cluster has been created, you can submit a job. First, you need to create a job in E-MapReduce with the following configuration:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17980/154286694713107_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17980/154752320113107_en-US.png)
 
 The job in the preceding figure directly uses the official Spark example package, so you do not need to upload your own JAR package.
 
