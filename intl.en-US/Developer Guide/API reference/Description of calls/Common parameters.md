@@ -13,7 +13,7 @@ Parameters
 |Format|String|No|The format of the returned value. Valid values: JSON and XML. Default value: XML.|
 |Version|String|Yes|The version of the API. Format: YYYY-MM-DD. The current version is 2016-04-08.|
 |AccessKeyId|String|Yes|The Key ID provided by Alibaba Cloud for you to access services.|
-|Signature|String|Yes|The result string of the signature. For more information about how to calculate a signature, see Sign signatures.|
+|Signature|String|Yes|The result string of the signature. For more information about how to calculate a signature, see [Sign signatures](intl.en-US/Developer Guide/API reference/Description of calls/Sign signatures.md#).|
 |SignatureMethod|String|Yse|The mode of the signature. HMAC-SHA1 is supported currently.|
 |Timestamp|String|Yes|The timestamp to request. The format of the date follows the ISO8601 standard and uses UTC time. Format: YYYY-MM-DDThh:mm:ssZ. For example, 2013-08-15T12:00:00Z indicates 20:00:00, Aug 15, 2013, Beijing time.|
 |SignatureVersion|String|Yes|The algorithm version of the signature. The current version is 1.0.|
