@@ -29,3 +29,20 @@ The following parameters can be configured in Spark code:
 |spark.mns.pollingWait.seconds|30|The polling wait time if the MNS queue is empty.|
 |spark.hadoop.io.compression.codec.snappy.native|false|Whether the Snappy files are in the standard Snappy format. By default, Hadoop recognizes Snappy files edited in Hadoop.|
 
+## Smart Shuffle optimized configurations {#section_ofg_cbr_bgb .section}
+
+Smart Shuffle is a shuffle implementation provided by Spark SQL in EMR version 3.16.0. It processes queries that have a large amount of shuffle data to improve the execution efficiency of Spark SQL. After Smart Shuffle is started, shuffle output data is not stored on ephemeral disks. Instead, data is transmitted to a remote node through a network in advance. Data in the same partition is transmitted to the same node and stored in the same file. Currently, Smart Shuffle has the following limitations:
+
+-   Smart Shuffle cannot guarantee the atomictiy of task execution. When the execution of a task fails, you need to restart all the Spark jobs.
+-   Smart Shuffle currently does not provide the External Smart Shuffle implementation, nor support Dynamic Resource Allocation.
+-   Speculative tasks are not supported.
+-   Smart Shuffle is incompatible with Adaptive Execution.
+
+Smart Shuffle related configurations are as follows. You can enable Smart Shuffle by using Spark configuration files or the spark-submit parameters.
+
+|Parameter|Default|Description|
+|---------|-------|-----------|
+|spark.shuffle.manager|sort|A shuffle method that allows you to enable the Smart Shuffle feature with Spark Session by configurating spark.shuffle.manager=org.apache.spark.shuffle.sort.SmartShuffleManager or spark.shuffle.manager=smart.|
+|spark.shuffle.smart.spill.memorySizeForceSpillThreshold|128m|When Smart Shuffle is enabled, the memory used for each shuffle task has a threshold. When the threshold is reached, shuffle data is sent to the corresponding remote node through the network according to partitions.|
+|spark.shuffle.smart.transfer.blockSize|1m|The size of the cache used for network transfers when Smart Shuffle is enabled.|
+
