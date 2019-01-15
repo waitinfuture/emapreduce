@@ -114,7 +114,7 @@ set hive.execution.engine=tez
 
         Store the script created in step 1 to OSS. For example, if the storage path is oss://emr/jars/scan.hive, follow these steps to create a job in E-MapReduce:
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17985/154286700113195_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17985/154752332513195_en-US.png)
 
     4.  Create and run an execution plan.
 
