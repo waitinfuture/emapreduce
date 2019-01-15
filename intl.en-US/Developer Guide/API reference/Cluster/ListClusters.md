@@ -6,7 +6,7 @@ You can call this operation to query a list of clusters.
 
 |Field|Type|Required|Default value|Description|
 |-----|----|--------|-------------|-----------|
-|StatusList|Array<String\>|No|None|Filter the clusters by status. For more information about cluster status, see [Status of a cluster](../DNemapreduce1851503/ZH-CN_TP_18065.dita#concept_zkb_3cc_pfb). Use a string array in the following format: \[“CREATING”, “RUNNING”, “IDLE”\]|
+|StatusList|Array<String\>|No|None|Filter the clusters by status. For more information about cluster status, see [Status of a cluster](../DNemapreduce1851503/EN-US_TP_18065.dita#concept_zkb_3cc_pfb). Use a string array in the following format: \[“CREATING”, “RUNNING”, “IDLE”\]|
 |RegionId|String|Yes|None| |
 |PageNumber|Integer|No|1|The page number to query.|
 |PageSize|Integer|No|10|The number of rows to display per page.|
@@ -31,7 +31,7 @@ ClusterInfoSimple
 |Type|String|The type of the cluster. Valid values: HADOOP and HBASE.|
 |CreateTime|Long|The creation time of the cluster. The data type is TIMESTAMP. For example, 1459236255438.|
 |RunningTime|Integer|The running time of the cluster. Unit: seconds.|
-|Status|String|The status of the cluster. For more information about cluster status, see [Status of a cluster](../DNemapreduce1851503/ZH-CN_TP_18065.dita#concept_zkb_3cc_pfb).|
+|Status|String|The status of the cluster. For more information about cluster status, see [Status of a cluster](../DNemapreduce1851503/EN-US_TP_18065.dita#concept_zkb_3cc_pfb).|
 |FailReason|[FailReason](EN-US_TP_18038.dita#concept_gct_ttb_kfb)|The cause of cluster creation failure.|
 |CreateType|String|ON-DEMAND: Clusters that are created dynamically using execution plans. MANUAL: Clusters that are created manually.|
 
