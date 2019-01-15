@@ -151,7 +151,7 @@ A: You can use the following `OSS URL: oss://[accessKeyId:accessKeySecret@]bucke
 This URI is used for specifying input/output data sources in the job, and is similar to `hdfs://`. Follow this procedure when you perform operations on OSS data:
 
 -   \(Recommended\) EMR provides MetaService, which allows you to access OSS data without AssessKey, and directly write to the OSS path: // bucket/Object/path.
--   \(Not recommended\) You can configure AccessKeyId, AccessKeySecret, and endpoint to Configuration \(SparkConf in Spark jobs, Configuration in MR jobs\), or you can directly specify AccessKeyId, AccessKeySecret, and endpoint in the URL. For more information, see the [Development preparation](../../../../intl.en-US/Developer Guide/Preparations/Configure the OSS URI to use E-MapReduce.md#) section.
+-   \(Not recommended\) You can configure AccessKeyId, AccessKeySecret, and endpoint to Configuration \(SparkConf in Spark jobs, Configuration in MR jobs\), or you can directly specify AccessKeyId, AccessKeySecret, and endpoint in the URL. For more information, see the [Development preparation](../../../../../intl.en-US/Developer Guide/Preparations/Configure the OSS URI to use E-MapReduce.md#) section.
 
 ## Q: Why does Spark SQL return an error message "Exception in thread "main" java.sql.SQLException: No suitable driver has been found for jdbc:mysql:xxx"? {#section_sy1_ww1_pfb .section}
 
