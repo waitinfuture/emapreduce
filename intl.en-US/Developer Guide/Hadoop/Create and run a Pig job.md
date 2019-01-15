@@ -95,7 +95,7 @@ Follow these steps:
 
     Store the script created in step 1 to OSS. For example, if the storage path is oss://emr/jars/script1-hadoop.pig, follow these steps to create a job in E-MapReduce:
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17986/154286701213205_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17986/154752341713205_en-US.png)
 
 3.  Create and run an execution plan.
 
