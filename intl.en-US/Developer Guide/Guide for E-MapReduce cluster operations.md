@@ -40,7 +40,7 @@ You can use the Web UI of the E-MapReduce service to start, stop, and restart th
 3.  Click the Component Topology tab to see the list of components that run on all instances in the cluster.
 4.  Click **Start** in the **Actions** column for the DataNode component that runs on the emr-worker-1 instance. Enter the commit record in the dialog box and click **OK**. Refresh the page after 10 seconds. The value in the **Components Status** column for DataNode switches from **STOPPED** to **STARTED**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17993/154286713513238_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17993/154752350813238_en-US.png)
 
 5.  After the component is started, click **Restart** in the **Actions** column. Enter the commit record in the dialog box and click **OK**.
 
@@ -63,7 +63,7 @@ You can perform bulk operations on components for multiple ECS instances instead
 
     **Note:** Console reports an error if you restart nodes manually after performing a rolling restart of the cluster.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17993/154286713513240_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17993/154752350813240_en-US.png)
 
 
 ## Start and stop a component using CLI {#section_aps_pr4_hfb .section}
