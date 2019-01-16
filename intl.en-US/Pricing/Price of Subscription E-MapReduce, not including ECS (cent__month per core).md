@@ -66,7 +66,7 @@
 |emr.t5-c1m4|234.13|194.18|-|194.18|
 |emr.t5-lc1m4|196.43|-|-|171.53|
 
-## Region: US {#section_vj2_2rn_y2b .section}
+## Region: United States {#section_vj2_2rn_y2b .section}
 
 |Type|us-east-1|us-west-1|
 |:---|:--------|:--------|
