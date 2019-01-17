@@ -1,12 +1,12 @@
 # LDAP认证 {#concept_bbf_bg5_1fb .concept}
 
-EMR集群还支持基于LDAP的身份认证，通过LDAP来管理账号体系，Kerberos客户端使用LDAP中的账号信息作为身份信息进行身份认证。
+E-MapReduce集群还支持基于LDAP的身份认证，通过LDAP来管理账号体系，Kerberos客户端使用LDAP中的账号信息作为身份信息进行身份认证。
 
 ## LDAP身份认证 {#section_vth_by5_1fb .section}
 
 LDAP账号可以是和其它服务共用，比如Hue等，只需要在Kerberos服务端进行相关配置即可。用户可以使用EMR集群中已经配置好的LDAP服务\(ApacheDS\)，也可以使用已经存在的LDAP服务，只需要在Kerberos服务端进行相关配置即可。
 
-下面以集群中已经默认启动的LDAP服务\(ApacheDS\)为例:
+下面以集群中已经默认启动的LDAP服务\(ApacheDS\)为例：
 
 -   Gateway管理对基础环境进行配置\(跟第二部分RAM中的一致，如果已经配置可以跳过\)
 
