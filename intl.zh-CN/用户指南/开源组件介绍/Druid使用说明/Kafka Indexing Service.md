@@ -1,5 +1,7 @@
 # Kafka Indexing Service {#concept_qzt_cqd_z2b .concept}
 
+本文将介绍在E-MapReduce中如何使用Druid Kafka Indexing Service实时消费Kafka数据。
+
 Kafka Indexing Service是Druid推出的利用Druid的Indexing Service服务实时消费Kafka数据的插件。该插件会在Overlord中启动一个supervisor，supervisor启动之后会在 Middlemanager中启动一些indexing tasks，这些tasks会连接到Kafka集群消费topic数据，并完成索引创建。您需要做的，就是准备一个数据消费格式文件，之后通过REST API手动启动supervisor。
 
 ## 与Kafka集群交互 {#section_kmb_4td_z2b .section}

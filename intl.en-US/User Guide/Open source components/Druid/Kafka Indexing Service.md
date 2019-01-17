@@ -1,27 +1,27 @@
 # Kafka Indexing Service {#concept_qzt_cqd_z2b .concept}
 
-本文将介绍在E-MapReduce中如何使用Druid Kafka Indexing Service实时消费Kafka数据。
+This section describes how to use Druid Kafka Indexing Service in E-MapReduce to ingest Kafka data in real time.
 
-Kafka Indexing Service是Druid推出的利用Druid的Indexing Service服务实时消费Kafka数据的插件。该插件会在Overlord中启动一个supervisor，supervisor启动之后会在 Middlemanager中启动一些indexing tasks，这些tasks会连接到Kafka集群消费topic数据，并完成索引创建。您需要做的，就是准备一个数据消费格式文件，之后通过REST API手动启动supervisor。
+The Kafka Indexing Service is an extension launched by Druid to ingest Kafka data in real time using Druid's indexing service. The extension enables supervisors in Overlord which start some indexing tasks in Middlemanager. These tasks connect to the Kafka cluster to ingest the topic data and complete the index creation. You need to prepare a data ingestion format file and manually start the supervisor through the RESTful API.
 
-## 与Kafka集群交互 {#section_kmb_4td_z2b .section}
+## Interaction with the Kafka cluster {#section_kmb_4td_z2b .section}
 
-请参考[Druid 使用 Tranquility Kafka](intl.zh-CN/用户指南/开源组件介绍/Druid使用说明/Tranquility.md#)一节的介绍。
+See the introduction in [Tranquility](reseller.en-US/User Guide/Open source components/Druid/Tranquility.md#).
 
-## 使用Druid Kafka Indexing Service实时消费Kafka数据 {#section_fdk_4td_z2b .section}
+## Use Druid's Kafka Indexing Service to ingest Kafka data in real time {#section_fdk_4td_z2b .section}
 
-1.  在Kafka集群上（或者gateway上）执行下述命令创建一个名为“metrics” 的topic。
+1.  Run the following command on the Kafka cluster \(or gateway\) to create a topic named metrics.
 
     ```
-    -- 如果开启了Kafka 高安全：
+    --If the Kafka high-security mode is enabled:
      export KAFKA_OPTS="-Djava.security.auth.login.config=/etc/ecm/kafka-conf/kafka_client_jaas.conf"
      --
      kafka-topics.sh --create --zookeeper emr-header-1:2181,emr-header-2,emr-header-3/kafka-1.0.0 --partitions 1 --replication-factor 1 --topic metrics
     ```
 
-    其中各个参数可根据需要进行调整。—zookeeper 参数中 /kafka-1.0.0 部分为path，其具体值您可以登录EMR控制台，在Kafka集群的Kafka服务配置页面查看 zookeeper.connect配置项的值。如果是您自己搭建的Kafka集群，—zookeeper 参数可根据您的实际配置进行改变。
+    You can adjust the parameters based on your needs. The /kafka-1.0.0 section of the - -zookeeper parameter is path, and you can see the value of the zookeeper.connect on the Kafka service Configuration page of the Kafka cluster. If you build your own Kafka cluster, the parmname —zookeeper parameter can be changed according to your actual configuration.
 
-2.  定义数据源的数据格式描述文件，我们将其命名为 metrics-kafka.json，并置于当前目录下面（或者放置于其他您指定的目录）。
+2.  Define the data format description file for the data source. Name it metrics-kafka.json and place it in the current directory \(or another directory that you have specified\).
 
     ```
     {
@@ -60,13 +60,13 @@ Kafka Indexing Service是Druid推出的利用Druid的Indexing Service服务实�
          "ioConfig": {
              "topic": "metrics",
              "consumerProperties": {
-                 "bootstrap.servers": "emr-worker-1.cluster-xxxxxxxx:9092(您 Kafka 集群的 bootstrap.servers)",
+                 "bootstrap.servers": "emr-worker-1.cluster-xxxxxxxx:9092 (the bootstrap.servers of your Kafka clusters)",
                  "group.id": "kafka-indexing-service",
                  "security.protocol": "SASL_PLAINTEXT",
                  "sasl.mechanism": "GSSAPI"
              },
              "taskCount": 1,
-             "replicas": 1,
+             replicas: 1
              "taskDuration": "PT1H"
          },
          "tuningConfig": {
@@ -76,20 +76,20 @@ Kafka Indexing Service是Druid推出的利用Druid的Indexing Service服务实�
      }
     ```
 
-    **说明：** ioConfig.consumerProperties.security.protocol 和 ioConfig.consumerProperties.sasl.mechanism 为安全相关选项（非安全 Kafka 集群不需要）。
+    **Note:** ioConfig.consumerProperties.security.protocol and ioConfig.consumerProperties.sasl.mechanism are security-related options and are not required for standard mode Kafka clusters.
 
-3.  执行下述命令添加Kafka supervisor。
+3.  Run the following command to add a Kafka supervisor.
 
     ```
     curl --negotiate -u:druid -b ~/cookies -c ~/cookies -XPOST -H 'Content-Type: application/json' -d @metrics-kafka.json http://emr-header-1.cluster-1234:18090/druid/indexer/v1/supervisor
     ```
 
-    其中`—negotiate`、`-u`、`-b`、`-c` 等选项是针对安全Druid集群。
+    The `—negotiate`, `-u`, `-b`, and `-c` options are for high-security mode Druid clusters.
 
-4.  在Kafka集群上开启一个console producer。
+4.  Enable a console producer on the Kafka cluster.
 
     ```
-    -- 如果开启了Kafka高安全：
+    --If the high-security mode of Kafka is enabled:
      export KAFKA_OPTS="-Djava.security.auth.login.config=/etc/ecm/kafka-conf/kafka_client_jaas.conf"
      echo -e "security.protocol=SASL_PLAINTEXT\nsasl.mechanism=GSSAPI" > /tmp/Kafka/producer.conf
      --
@@ -97,9 +97,9 @@ Kafka Indexing Service是Druid推出的利用Druid的Indexing Service服务实�
      >
     ```
 
-    其中 —producer.config /tmp/Kafka/producer.conf 是针对安全 Kafka 集群的选项。
+    The —producer.config /tmp/Kafka/producer.conf option is for high-security mode Kafka clusters.
 
-5.  在 kafka\_console\_producer 的命令提示符下输入一些数据。
+5.  Enter data at the command prompt of kafka\_console\_producer.
 
     ```
     {"time": "2018-03-06T09:57:58Z", "url": "/foo/bar", "user": "alice", "latencyMs": 32}
@@ -107,13 +107,13 @@ Kafka Indexing Service是Druid推出的利用Druid的Indexing Service服务实�
      {"time": "2018-03-06T09:58:00Z", "url": "/foo/bar", "user": "bob", "latencyMs": 45}
     ```
 
-    其中时间戳可用如下 python 命令生成：
+    The timestamp can be generated with the following Python command:
 
     ```
     python -c 'import datetime; print(datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"))'
     ```
 
-6.  准备一个查询文件，命名为 metrics-search.json。
+6.  Prepare a query file named metrics-search.json.
 
     ```
     {
@@ -132,23 +132,23 @@ Kafka Indexing Service是Druid推出的利用Druid的Indexing Service服务实�
      }
     ```
 
-7.  在 Druid 集群 master 上执行查询。
+7.  Execute the query on the master node of the Druid cluster.
 
     ```
     curl --negotiate -u:Druid -b ~/cookies -c ~/cookies -XPOST -H 'Content-Type: application/json' -d @metrics-search.json http://emr-header-1.cluster-1234:8082/druid/v2/?pretty
     ```
 
-    其中`—negotiate`、`-u`、`-b`、`-c` 等选项是针对安全 druid 集群。
+    The `—negotiate`, `-u`, `-b`, and `-c` options are for high-security mode Druid clusters.
 
-8.  如果一切正常，您将看到类似如下的查询结果。
+8.  You will see a query result similar to the following:
 
     ```
     [ {
        "timestamp" : "2018-03-06T09:00:00.000Z",
-       "result" : [ {
+       "result": {
          "dimension" : "user",
          "value" : "bob",
-         "count" : 2
+         "count": 2,
        } ]
      } ]
     ```
