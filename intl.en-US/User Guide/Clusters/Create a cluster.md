@@ -4,8 +4,8 @@ In this tutorial, you will learn how to create an Alibaba Cloud E-MapReduce \(EM
 
 ## Go to the EMR cluster creation page {#section_gnx_wq3_y2b .section}
 
-1.  Log on to the [Alibaba Cloud E-MapReduce console](https://emr.console.aliyun.com).
-2.  Complete RAM authorization. For details, see [Role authorization](intl.en-US/User Guide/Role authorization.md#).
+1.  Log on to the [Alibaba Cloud E-MapReduce console](https://partners-intl.console.aliyun.com/#/emr).
+2.  Complete RAM authorization. For details, see [Role authorization](reseller.en-US/User Guide/Role authorization.md#).
 3.  Select a region for the cluster. The region cannot be changed once the cluster is created.
 4.  Click **Create Cluster** to go to the cluster creation page.
 
@@ -38,7 +38,7 @@ To create a cluster, follow these three steps:
         -   Like with ECS, both Subscription and Pay-As-You-Go modes are supported. If you select Subscription mode, you must also select the duration. You can select 1, 2, 3, 6, or 9 months, or 1, 2, or 3 years. This mode is applicable to short-term testing or flexible dynamic tasks, but is relatively expensive.
     -   Cluster network configuration
         -   **Zone**: Select the zone where the cluster is to be located. If better network connectivity is required, we recommend selecting the same availability zone. However, this increases the risk of failure when creating a cluster, as the availability zone's storage may be insufficient. If you need a large number of nodes, please submit a ticket.
-        -   **Network type**: The Virtual Private Cloud \(VPC\) network is selected by default, which requires you to enter a VPC and a VSwitch. If you have not created a network, go to the [VPC console](https://vpc.console.aliyun.com/) to create one. For more information about E-MapReduce VPC, see [VPC](intl.en-US/User Guide/VPC.md#).
+        -   **Network type**: The Virtual Private Cloud \(VPC\) network is selected by default, which requires you to enter a VPC and a VSwitch. If you have not created a network, go to the [VPC console](https://partners-intl.console.aliyun.com/vpc) to create one. For more information about E-MapReduce VPC, see [VPC](reseller.en-US/User Guide/VPC.md#).
         -   **VPC**: Select the region of the VPC network.
         -   **VSwitch**: Select a zone for VSwitch under the corresponding VPC. If no VSwitch is available in this zone, you must create a new one.
         -   **Security group name**: A security group does not typically exist when you first create a cluster. To create a new security group, enter a name. If you already have a security group, you can select it here.
@@ -48,10 +48,10 @@ To create a cluster, follow these three steps:
             -   Master, which is mainly responsible for the deployment of control processes such as Resource Manager and Name Node.
             -   Core, which is mainly responsible for the storage of all data in the cluster, and can be scaled up as required.
             -   Task, which is the node used for computing. It does not store data and is used to adjust the computing capacity of the cluster.
-        -   **Node configuration**: Select different node types. Different types of nodes have different application scenarios. You can select a type based on your requirements.
+        -   **Node configuration**: Select different node types. Different types of nodes have different application scenarios.
         -   **Data disk type**: The data disks used by a cluster node are either standard cloud disks, high-efficiency cloud disks, or SSD cloud disks. This varies between machine type and region. When the user selects different regions, disks that are supported by those regions are displayed in the drop-down list. By default, data disks are released when the cluster is released. The ephemeral disk type is set by default and cannot be changed.
         -   **Data disk volume**: The recommended minimum cluster volume for a single machine is 40 G, and the maximum is 8000 G. The capacity of the ephemeral disk is set by default and cannot be changed.
-        -   **Instance quantity**: This indicates the number of instances of all required nodes. A cluster requires at least three instances. However, high availability clusters require at least four, and therefore add one master node. The maximum is 50. If more than 50 instances are required, please submit a ticket. A monthly subscribed cluster can provide 100 at most. If you need more than 50 nodes, please submit a ticket.
+        -   **Instance quantity**: This indicates the number of instances of all required nodes. A cluster requires at least three instances. However, high availability clusters require at least four, and therefore add one master node.
 3.  Configure the basic information.
     -   Basic information
 
@@ -66,7 +66,7 @@ To create a cluster, follow these three steps:
     -   Logon settings
         -   **Remote logon**: It is turned on by default to enable security group port 22.
         -   **Logon password**: Set the logon password at the master node. The logon password must contain English letters \(both uppercase and lowercase letters\), numbers, and special characters \(!@\#$%^&\*\) with a length of between 8-30 characters.
-    -   \(Optional\) Bootstrap operation: Before Hadoop is enabled in the cluster, you can run the customized script. For more information, see [Bootstrap action](intl.en-US/User Guide/Bootstrap actions.md#).
+    -   \(Optional\) Bootstrap actions: Before Hadoop is enabled in the cluster, you can run the customized script. For more information, see [Bootstrap actions](reseller.en-US/User Guide/Bootstrap actions.md#).
 
 ## Purchase lists and cluster costs {#section_mgt_mmn_y2b .section}
 
@@ -85,7 +85,7 @@ Once you have entered all the necessary information, the **Create** button is hi
 
 To log on to the core node, perform the following steps:
 
-1.  Switch to the Hadoop account on the Master node.
+1.  Switch to the Hadoop account on the master node.
 
     ```
     su hadoop
