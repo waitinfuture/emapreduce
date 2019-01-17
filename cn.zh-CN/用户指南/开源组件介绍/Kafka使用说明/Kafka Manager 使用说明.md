@@ -10,14 +10,14 @@
 -   访问 http://localhost:8085。
 -   输入用户名密码，请参考Kafka Manager的配置信息。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17903/153959404610849_zh-CN.png)
+    ![Kafka Manager的配置信息](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17903/154770955210849_zh-CN.png)
 
 -   添加一个创建好的Kafka集群，需要注意配置正确Kafka集群的Zookeeper地址，不清楚的可以看Kakfa的配置信息。选择对应的Kafka版本，另外建议打开JMX功能。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17903/153959404610850_zh-CN.png)
+    ![添加Kafka集群](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17903/154770955210850_zh-CN.png)
 
 -   创建好之后即可使用一些常见的Kakfa功能。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17903/153959404610851_zh-CN.png)
+    ![常见Kakfa功能。](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17903/154770955210851_zh-CN.png)
 
 
