@@ -29,7 +29,7 @@ Druid拥有优秀的架构设计，多个组件协同工作，共同完成数据
 
 下图是Druid工作层（数据索引以及查询）包含的组件。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17905/153829585110852_zh-CN.png)
+![Druid工作层](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17905/154770958210852_zh-CN.png)
 
 -   Realtime 组件负责数据的实时摄入。
 -   Broker 阶段负责查询任务的分发以及查询结果的汇总，并将结果返回给用户。
@@ -40,7 +40,7 @@ Druid拥有优秀的架构设计，多个组件协同工作，共同完成数据
 
 下图是 Druid segments（Druid 索引文件）管理层所涉及的组件。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17905/153829585110853_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17905/154770958210853_zh-CN.png)
 
 -   Zookeeper 负责存储集群的状态以及作为服务发现组件，例如集群的拓扑信息，overlord leader 的选举，indexing task 的管理等等。
 -   Coordinator 负责 segments 的管理，如 segments 下载、删除以及如何在 historical 之间做均衡等等。
