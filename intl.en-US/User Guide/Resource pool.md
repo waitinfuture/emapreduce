@@ -4,7 +4,7 @@ Dynamic resource pools are used by YARN. E-MapReduce YARN uses the Capacity Sche
 
 ## Enable Resource Pool {#section_u1h_xlj_z2b .section}
 
-1.  Log on to the [Alibaba Cloud E-MapReduce console](https://emr.console.aliyun.com/console) and enter the cluster list page.
+1.  Log on to the [Alibaba Cloud E-MapReduce console](https://partners-intl.console.aliyun.com/#/emr) and enter the cluster list page.
 2.  Click **Manage** next to the cluster you want to configure.
 3.  In the service list, click **YARN** to go to the YARN configuration page.
 4.  At the top of the page, click the **Resource Pool** tab to go to the resource pool configuration page.
