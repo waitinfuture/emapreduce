@@ -1,17 +1,17 @@
 # Preemptible instances in Auto Scaling {#concept_g5t_wgn_qfb .concept}
 
-E-MapReduce [preemptible instances](../../../../../intl.en-US/Product Introduction/Instances/Preemptible instance.md#) are suitable for scenarios where there is no requirement for the successful execution of big data jobs and where the cost of computing resources plays an important role. By using Auto Scaling, you can purchase preemptible instances to increase the computing resources of your clusters.
+E-MapReduce [preemptible instances](../../../../../reseller.en-US/Product Introduction/Instances/Preemptible instance.md#) are suitable for scenarios where there is no requirement for the successful execution of big data jobs and where the cost of computing resources plays an important role. By using Auto Scaling, you can purchase preemptible instances to increase the computing resources of your clusters.
 
 ## Enable Auto Scaling {#section_snw_gjn_qfb .section}
 
 To enable Auto Scaling and set scaling rules, complete the following steps:
 
-1.  Log on to the [Alibaba Cloud E-MapReduce console](https://emr.console.aliyun.com/).
+1.  Log on to the [Alibaba Cloud E-MapReduce console](https://partners-intl.console.aliyun.com/#/emr).
 2.  Click Cluster Management.
 3.  Find the cluster you want to add a preemptible instance to and click **Manage**.
 4.  In the navigation pane on the left, click **Scaling**.
 5.  Click **Enable Auto Scaling**.
-6.  Configure scaling rules. For more information, see [Configure Auto Scaling by time](intl.en-US/User Guide/Auto Scaling/Configure Auto Scaling by time.md#).
+6.  Configure scaling rules. For more information, see [Configure Auto Scaling by time](reseller.en-US/User Guide/Auto Scaling/Configure Auto Scaling by time.md#).
 7.  In the scaling configuration area, select **Preemptible instance**.
 
 ## Configure a preemptible instance {#section_wsz_r3s_qfb .section}
@@ -26,5 +26,5 @@ To configure your preemptible instance, complete the following steps:
 4.  The system disk is used for deploying basic services such as the OS and EMR, which are set by default. You can set the data disk type and size according to your requirements.
 5.  The final configuration price includes the maximum bid price, system disk price, and data disk price. Click **Save**.
 
-For more information about preemptible instances, see [FAQs](https://www.alibabacloud.com/help/faq-detail/48269.htm).
+For more information about preemptible instances, see [FAQs](https://partners-intl.aliyun.com/help/faq-detail/48269.htm).
 
