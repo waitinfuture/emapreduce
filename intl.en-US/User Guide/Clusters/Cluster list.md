@@ -4,7 +4,7 @@ The **Cluster Management** page, displays basic information about all of your cl
 
 On the **Cluster Management** page, information of clusters are displayed as follows:
 
-![Cluster list](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17856/154770855110433_en-US.jpg)
+![Cluster list](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17856/154770898510433_en-US.jpg)
 
 The items in the cluster list are as follows:
 
