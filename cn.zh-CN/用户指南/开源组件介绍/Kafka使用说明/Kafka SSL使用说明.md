@@ -10,7 +10,7 @@
 
 默认Kafka集群没有开启SSL功能，您可以在Kafka服务的配置页面开启SSL。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17900/153829571710846_zh-CN.png)
+![开启SSL](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17900/154770949710846_zh-CN.png)
 
 如图，修改配置项kafka.ssl.enable为true，部署配置并重启组件。
 

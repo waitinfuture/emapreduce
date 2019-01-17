@@ -1,22 +1,22 @@
 # Kafka SSL {#concept_t33_3gx_y2b .concept}
 
-E-MapReduce Kafka supports the SSL function in EMR-3.12.0 and later versions.
+E-MapReduce Kafka supports the SSL function in E-MapReduce 3.12.0 and later.
 
 ## Create a cluster {#section_akj_trc_z2b .section}
 
-For details about how to create a cluster, see [Create a cluster](intl.en-US/User Guide/Cluster/Create a cluster.md#)Create a cluster.
+For details about how to create a cluster, see [Create a cluster](reseller.en-US/User Guide/Clusters/Create a cluster.md#).
 
 ## Enable the SSL service {#section_bkj_trc_z2b .section}
 
-The SSL function is not enabled for the Kafka cluster by default. You can enable SSL on the configuration page of the Kafka service.
+By default, the SSL function is not enabled for the Kafka cluster. You can enable it on the configuration page of the Kafka service.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17900/154148571210846_en-US.png)
+![Enable the SSL service](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17900/154770950710846_en-US.png)
 
 As shown in the preceding figure, change kafka.ssl.enable to true and then restart the component.
 
 ## Access Kafka from the client {#section_bh5_vrc_z2b .section}
 
-You need to configure security.protocol, truststore, and keystore when you access Kafka through SSL. Use a standard mode cluster as an example. To run a job in a Kafka cluster, you can configure the cluster as follows:
+You need to configure security.protocol, truststore, and keystore when you access Kafka through SSL. Take a standard mode cluster as an example. To run a job in a Kafka cluster, you can configure the cluster as follows:
 
 ```
 security.protocol=SSL
@@ -28,9 +28,9 @@ ssl.keystore.password=${password}
 
 If you are running a job in an environment other than a Kafka cluster, copy the truststore and keystore files \(in the /etc/ecm/kafka-conf/ directory on any node of the cluster\) in the Kafka cluster to the running environment and add configurations accordingly.
 
-Use the producer and consumer programs in the Kafka as an example.
+Take the producer and consumer programs in Kafka as an example.
 
-1.  Create the configuration file ssl.properties, and add configuration items.
+1.  Create the configuration file ssl.properties and add configuration items.
 
     ```
     security.protocol=SSL
