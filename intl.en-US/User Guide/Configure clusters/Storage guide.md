@@ -1,58 +1,58 @@
 # Storage guide {#concept_ift_2n3_y2b .concept}
 
-There are two types of disks on a node: one is the system disk which is used to install operating systems, the other is the data disk which is used for data storage. A node generally has one system disk by default which must be a cloud disk. However, you can have more than one data disk \(currently, up to sixteen on a single node\). Each piece of data disk can have different configurations, including different disk types and capacities. SSD cloud disks are defaulted in EMR as the cluster’s system disks. Four cloud disks are used in EMR by default. Considering current intranet bandwidth, the default configuration is reasonable.
+There are two types of disks on a node: the system disk, which is used to install operating systems, and the data disk, which is used to store data.
+
+A node typically has one system disk by default, which must be a cloud disk. However, you can have more than one data disk \(currently, up to sixteen on a single node\). Each data disk can have different configurations, including having a different type or capacity. In E-MapReduce, a cluster's system disks are SSD cloud disks by default, and four are used by default. Considering current intranet bandwidth, this default configuration of four cloud disks is sufficient.
 
 ## Cloud and ephemeral disks {#section_flt_fn3_y2b .section}
 
-Two types of disks are available for data storage.
+Two types of disk are available for data storage.
 
 -   Cloud disks
 
-    Include SSD, ultra, and basic cloud disks.
+    Includes SSD, ultra, and basic cloud disks.
 
-    Rather than being directly attached to a local computing node, cloud disks have access to a remote storage node by the network. Each piece of data has two real-time backups in the backend, thus three identical copies in total. When one of the copies is corrupted \(due to disk damage, rather than damages arising from business\), your backup data is automatically used for recovery.
+    Cloud disks are not attached directly to the local computing node. Instead, they access a remote storage node through the network. Each piece of data has two real-time backups at the backend, meaning that there are three identical copies in total. When one is corrupted \(due to disk damage\), a backup is used automatically for recovery.
 
 -   Ephemeral disks
 
-    Include ephemeral SATA disks in the big data type and ephemeral SSD disks used in the ephemeral SSD type.
+    Includes ephemeral SATA disks in the big data type and ephemeral SSD disks used in the ephemeral SSD type.
 
-    Ephemeral disks are attached directly to the computing node and have better performance than cloud disks. You cannot select the number of ephemeral disks and must keep the default configurations. Similar to offline physical hosts, no data backup is in the backend, and upper-level software to guarantee data reliability is required.
+    Ephemeral disks are attached directly to the computing node and have a better performance than cloud disks. You cannot change the number of ephemeral disks. As with offline physical hosts, there is no data backup at the backend, meaning that upper-layer software is required to guarantee data reliability.
 
 
-## Applicable use cases {#section_srg_3n3_y2b .section}
+## Usage scenarios {#section_srg_3n3_y2b .section}
 
-In EMR, when the hosting node is released, data in all cloud and ephemeral disks is cleared. The disks cannot be kept independently or re-used. Hadoop HDFS uses all data disks for data storage. Hadoop YARN also uses all data disks as on-demand data storage for computing.
+In E-MapReduce, when the hosting node is released, all of the data in the cloud and ephemeral disks is cleared. The disks can also not be kept independently and used again. Hadoop HDFS uses all data disks for data storage. Hadoop YARN uses all data disks as on-demand data storage for computing.
 
-When your business does not involve large data volume \(below TB level\), cloud disks can be used as the IOPS and throughput are smaller than local disks. In case of large data volumes, we recommend that you use local disks whose data reliability is guaranteed by EMR. If you encounter apparently insufficient throughput, you can switch to ephemeral disks.
+If you do not have massive amounts of data \(below TB-level\), you can use cloud disks, as the IOPS and throughput are smaller than local disks. In the event that you have large amounts of data, it is recommend that you use local disks whose data reliability is guaranteed by E-MapReduce. If you find the throughput to be insufficient, switch to ephemeral disks.
 
 ## OSS {#section_dpg_jn3_y2b .section}
 
-OSS can be used as HDFS in EMR. You can have easy read and write access to OSS. All codes using HDFS can also be simply edited to access data on OSS.
+OSS can be used as HDFS in E-MapReduce, and you can have easy read and write access to OSS. All code that uses HDFS can also be easily modified to access data on OSS. Below you can find a number of examples:
 
-For example:
-
-Reading data from spark
+Reading data from Spark
 
 ```
 sc.Textfile("hdfs://user/path")
 ```
 
-Replace storage type HDFS-\> OSS
+Changing the storage type from HDFS to OSS
 
 ```
 sc.Textfile("oss://user/path")
 ```
 
-The same is true for Mr or hive jobs.
+This is the same for Map Reduce and Hive jobs.
 
-HDFS commands directly handle OSS data
+HDFS commands process OSS data directly:
 
 ```
 hadoop fs -ls oss://bucket/path
 hadoop fs -cp hdfs://user/path  oss://bucket/path
 ```
 
-In this process, you do not need to enter AK and endpoint, EMR will automatically complete the user's information using the current cluster owner.
+In this process, you do not need to enter the AK or endpoint. E-MapReduce automatically completes your information using the current cluster owner.
 
-However, as OSS does not have high IOPS, it is not suitable for use cases that require high IOPS, such as Spark Streaming or HBase.
+However, as OSS does not have high IOPS, it is not suitable for usage scenarios that require high IOPS, such as Spark Streaming or HBase.
 
