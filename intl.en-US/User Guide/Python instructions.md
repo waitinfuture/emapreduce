@@ -1,19 +1,17 @@
 # Python instructions {#concept_y55_psw_y2b .concept}
 
-Python instructions
+This section provides an overview of different Python instructions.
 
 ## Python 2.7 {#section_jz1_rsw_y2b .section}
 
-Supported Python 2.7 in E-MapReduce 2.0.0 and later versions.
-
-Python files location: usr/local/Python-2.7.11/ included Numpy.
+Python 2.7 is supported in E-MapReduce 2.0.0 and later. The files are located at usr/local/Python-2.7.11/. Numpy is included.
 
 ## Python 3.6 {#section_kz1_rsw_y2b .section}
 
-EMR 2.10.0, 3.10.0 and later versions support Python 3.6.4 and the installation directory of Python is /usr/bin/python3. The earlier versions do not support Python 3 by default, and you have to download and install the package through the following link:
+Python 3.6.4 is supported in EMR 2.10.0, 3.10.0 and later. The files are located at /usr/bin/python3. Earlier versions do not support Python 3 by default. If you want to install it, complete the following steps:
 
--   [Download Python 3 package](https://www.python.org/ftp/python/3.6.4/Python-3.6.4.tgz)
--   Unzip the downloaded file by using the following commands:
+-   [Download the Python 3 package](https://www.python.org/ftp/python/3.6.4/Python-3.6.4.tgz).
+-   Unzip the downloaded file using the following commands:
 
     ```
     tar zxvf Python-3.6.4.tgz
@@ -43,6 +41,6 @@ EMR 2.10.0, 3.10.0 and later versions support Python 3.6.4 and the installation 
     pip 9.0.1 from /usr/local/Python-3.6.4/lib/python3.6/site-packages (python 3.6)
     ```
 
-    Install successfully if you see these messages.
+    If the preceding command information is displayed, you have successfully installed Python 3.
 
 

@@ -1,6 +1,6 @@
 # Python 使用说明 {#concept_y55_psw_y2b .concept}
 
-Python 使用说明
+E-MapReduce从2.0.0版本开始，支持Python的使用。本文将介绍Python安装使用说明。
 
 ## Python 2.7支持 {#section_jz1_rsw_y2b .section}
 
