@@ -1,6 +1,8 @@
 # 通过Gateway访问 {#concept_umc_k3l_z2b .concept}
 
-Gateway是与EMR集群处于同一个内网中的ECS服务器，可以使用Gateway实现负载均衡和安全隔离。您可以选择**控制台页面** \> **概览** \> **创建Gateway**，也可以选择**控制台页面** \> **集群管理** \> **创建Gateway**来创建对应集群的Gateway节点。本节介绍使用HAProxy反向代理实现通过Gateway节点访问Presto服务的方法。该方法也很容扩展到其他组件，如Impala等。
+本节介绍使用HAProxy反向代理实现通过Gateway节点访问Presto服务的方法。该方法也很容扩展到其他组件，如Impala等。
+
+Gateway是与EMR集群处于同一个内网中的ECS服务器，可以使用Gateway实现负载均衡和安全隔离。您可以选择**控制台页面** \> **概览** \> **创建Gateway**，也可以选择**控制台页面** \> **集群管理** \> **创建Gateway**来创建对应集群的Gateway节点。
 
 **说明：** Gateway节点默认已经安装了HAProxy服务，但没有启动。
 
