@@ -4,7 +4,7 @@ In addition to supporting an authentication method compatible with MIT Kerberos,
 
 ## RAM ID authentication {#section_hrr_mc5_1fb .section}
 
-[RAM](https://www.alibabacloud.com/product/ram) supports creating and managing RAM user accounts, as well as using these accounts to control access to various resources on the cloud.
+[RAM](https://partners-intl.aliyun.com/login-required#/ram) supports creating and managing RAM user accounts, as well as using these accounts to control access to various resources on the cloud.
 
 The administrator of the master account can create RAM users on the RAM user management page \(the user name must comply with Linux user name specifications\) and download their AccessKey for the corresponding developer. The developer can then configure the AccessKey to pass Kerberos authentication and access the cluster service.
 

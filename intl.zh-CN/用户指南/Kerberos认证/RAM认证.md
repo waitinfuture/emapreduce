@@ -1,6 +1,6 @@
 # RAM认证 {#concept_nsg_mb5_1fb .concept}
 
-EMR集群中的Kerberos服务端除了可以支持第一种MIT Kerberos兼容的使用方式，也可以支持Kerberos客户端使用RAM作为身份信息进行身份认证。
+E-Map集educe群中的Kerberos服务端除了可以支持第一种MIT Kerberos兼容的使用方式，也可以支持Kerberos客户端使用RAM作为身份信息进行身份认证。
 
 ## RAM身份认证 {#section_hrr_mc5_1fb .section}
 
