@@ -1,6 +1,6 @@
 # ECS实例说明 {#concept_axl_5m3_y2b .concept}
 
-ECS实例说明
+本节将介绍ECS实例类型以及实例类型适用的场景。
 
 ## EMR目前支持的ECS实例类型 {#section_zds_wm3_y2b .section}
 
