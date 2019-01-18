@@ -8,21 +8,21 @@ Select the cluster you want to expand from the list of clusters, click **More**,
 
 ## Expansion interface {#section_zjf_h4n_y2b .section}
 
-![Expansion interface](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17854/154770893910431_en-US.png)
+![Expansion interface](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17854/154777733610431_en-US.png)
 
 **Note:** Although expansion is supported, reduction is not.
 
 -   **Configuration**: Displays the configurations of the current instance.
 -   **Billing Method**: Displays the payment method of the current cluster.
 -   **Current Core Instances**: Displays the total number of your current core nodes.
--   **New Instances**: Enter the quantity of instances that you want to add. We recommend increasing your cluster gradually by one or two instances at a time.
+-   **New Instances**: Enter the quantity of instances that you want to add.
 -   VSwitch: Displays the VSwitch of the current cluster.
 
 ## Expansion status {#section_ckf_h4n_y2b .section}
 
 In the following figure, the statuses of the cluster expansions are shown.
 
-![Expansion status](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17854/154770893910432_en-US.jpg)
+![Expansion status](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17854/154777733610432_en-US.jpg)
 
 To view the expansion status of a cluster, click **Core Instance Group \(CORE\)** in the **Cluster Overview** panel. Nodes that are being expanded are displayed as **Scaling Up/Out**. When the status of an ECS instance changes to **Normal**, ECS has been added to the cluster and can now provide services.
 
