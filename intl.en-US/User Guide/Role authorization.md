@@ -6,11 +6,11 @@ When a user activates the E-MapReduce service, a default system role named Aliyu
 
 1.  When you create a cluster or an on-demand execution plan, if a default role is not authorized to the E-MapReduce service account, the following prompt is displayed. Click **Go to RAM for authorization** to authorize the role.
 
-    ![RAM authorization](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17844/154754567410342_en-US.jpg)
+    ![RAM authorization](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17844/154777627710342_en-US.jpg)
 
 2.  On the RAM authorization page, click **Confirm Authorization Policy** to authorize the default role AliyunEMRDefaultRole to the E-MapReduce service account.
 
-    ![Confirm Authorization Policy](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17844/154754567410343_en-US.jpg)
+    ![Confirm Authorization Policy](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17844/154777627810343_en-US.jpg)
 
 3.  Refresh the E-MapReduce console and perform the relevant operations. If you want to view detailed policy information about AliyunEMRDefaultRole, log on to the RAM console, or click [View Link](https://ram.console.aliyun.com/?spm=a2c4g.11186623.2.6.77bd72fe3PD5pf#/policy/detail/system/AliyunEMRRolePolicy/info).
 
@@ -52,7 +52,7 @@ The default role AliyunEMRDefaultRole has the following permissions:
 
 To ensure that sub-accounts can use the E-MapReduce feature, in addition to granting the E-MapReduce access permission, you must grant the PassRole permission to sub-accounts.
 
-If the primary account user does not grant the PassRole permission to a sub-account, the sub-account user is prompted by the following message after logging on to the E-MapReduce console:![prompted message](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17844/154754567433938_en-US.png)
+If the primary account user does not grant the PassRole permission to a sub-account, the sub-account user is prompted by the following message after logging on to the E-MapReduce console:![prompted message](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17844/154777627833938_en-US.png)
 
 The following example shows how to grant the PassRole permission:
 
