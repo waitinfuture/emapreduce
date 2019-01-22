@@ -4,8 +4,8 @@ This section describes how to create and configure a E-MapReduce cluster.
 
 ## Go to the cluster creation page {#section_w2j_2z4_y2b .section}
 
-1.  Log on to the [Alibaba Cloud E-MapReduce console](https://partners-intl.console.aliyun.com/#/emr).
-2.  Complete RAM authorization. For more information, see [Role authorization](../../../../../reseller.en-US/User Guide/Role authorization.md#)Role authorization.
+1.  Log on to the [Alibaba Cloud E-MapReduce console](https://emr.console.aliyun.com/).
+2.  Complete RAM authorization. For more information, see [Role authorization](../../../../../intl.en-US/User Guide/Role authorization.md#)Role authorization.
 3.  Select a region where you want to create the cluster. The region cannot be changed after the cluster has been created.
 4.  Click **Create Cluster** in the upper-right corner.
 
@@ -29,7 +29,7 @@ Description
     -   Data Science clusters. These clusters are commonly applied in big data and AI scenarios. Data Science clusters provide Hive and Spark offline big data ETL, and TensorFlow model training. You can choose the CPU plus GPU heterogeneous computing framework and the deep learning algorithm supported by NVIDIA CPUs to run computing tasks efficiently.
 -   **Required Services**: Select the default configuration. You can add, enable, or disable services on the management page later.
 -   **High Security Mode**: Indicates whether to enable the Kerberos authentication feature for the cluster. This mode is disabled by default because typically this mode is not required by clusters created for general users.
--   **Enable Custom Setting**: You can specify a JSON file to modify software configuration. For more information about the procedure, see [Software configuration](../../../../../reseller.en-US/User Guide/Software configuration.md#).
+-   **Enable Custom Setting**: You can specify a JSON file to modify software configuration. For more information about the procedure, see [Software configuration](../../../../../intl.en-US/User Guide/Software configuration.md#).
 
 Step 2: Hardware configuration
 
@@ -40,7 +40,7 @@ Description
     -   **Billing Method**: You can select Pay-As-You-Go when testing the cluster. After all tests have been passed, you can create and use a Subscription-based cluster.
 -   Network configuration
     -   **Zone**: Typically, the default zone is used.
-    -   **Network Type**: VPC is selected by default. If you have not created a VPC, go to the [VPC console](https://partners-intl.console.aliyun.com/#/vpc) to create one.
+    -   **Network Type**: VPC is selected by default. If you have not created a VPC, go to the [VPC console](https://vpc.console.aliyun.com/) to create one.
     -   **Zone**: Geographical areas that are located in the same region. These zones are interconnected through VPCs.
     -   **VPC**: Select a VPC that has been created in the specified region. If no VPC is available, click **Create VPC/VSwitch** to create one in the current zone.
     -   **VSwitch**: Select a VSwitch for the specified VPC in the current zone. If no VSwitch is available, go to the VPC console and create one in the current zone.
@@ -48,14 +48,14 @@ Description
 -   Cluster configuration
     -   **High Availability**: After this feature has been enabled, two master nodes will be provided to guarantee the high availability of Resource Manager and Name Node. HBase clusters support high availability by default. An HBase cluster has to use a core node as one of the two master nodes. When the high availability feature is enabled, the HBase cluster only needs one mater node to support high availability, which is more secure and reliable. If you need to create clusters that support high availability, enable high availability during testing.
     -   Master node: Deploys processes, such as Resource Manager and Name node.
-        -   **Master Instance Type**: Select instance specifications based on your needs. For more information, see [Instance type families](../../../../../reseller.en-US/Product Introduction/Instance type families.md#).
+        -   **Master Instance Type**: Select instance specifications based on your needs. For more information, see [Instance type families](../../../../../intl.en-US/Product Introduction/Instance type families.md#).
         -   **System Disk Type**: Select Ultra Disk or SSD Disk based on your needs.
         -   **System Disk Size**: You can resize the disk based on your needs. The recommended minimum disk size is 120 GB.
         -   **Data Disk Type**: Select Ultra Disk or SSD Disk based on your needs.
         -   **Data Disk Size**: You can resize the disk. The recommended minimum disk size is 80 GB.
         -   **Master Instances**: The default number of master instances is one.
     -   Core instance: Stores all cluster data. You can scale up the instance based on your needs.
-        -   **Core Instance Type**: Select instance specifications based on your needs. For more information, see [Instance type families](../../../../../reseller.en-US/Product Introduction/Instance type families.md#).
+        -   **Core Instance Type**: Select instance specifications based on your needs. For more information, see [Instance type families](../../../../../intl.en-US/Product Introduction/Instance type families.md#).
         -   **System Disk Type**: Select Ultra Disk or SSD Disk based on your needs.
         -   **System Disk Size**: You can resize the disk based on your needs. The recommended minimum disk size is 80 GB.
         -   **Data Disk Type**: Select Ultra Disk or SSD Disk based on your needs.
@@ -96,9 +96,7 @@ After you configure the settings and make sure that all settings are valid, the 
 
 ## Creation failed {#section_jtk_gz4_y2b .section}
 
-If the creation fails, **CREATE\_FAILED** is displayed on the clusters list. Hover your mouse cursor over the red exclamation mark \(!\) to view the cause, as shown in the following figure:
-
-![](images/10549_en-US.png)
+If the creation fails, **CREATE\_FAILED** is displayed on the clusters list. Hover your mouse cursor over the red exclamation mark \(!\) to view the cause.
 
 You do not to handle clusters that are failed to be created because no computing resources have been created for these clusters. These clusters will be automatically hidden after three days.
 
