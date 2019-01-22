@@ -1,11 +1,11 @@
 # Create a cluster {#concept_nrp_154_y2b .concept}
 
-This section describes how to create and configure a E-MapReduce cluster.
+This section describes how to create and configure an E-MapReduce cluster.
 
 ## Go to the cluster creation page {#section_w2j_2z4_y2b .section}
 
 1.  Log on to the [Alibaba Cloud E-MapReduce console](https://emr.console.aliyun.com/).
-2.  Complete RAM authorization. For more information, see [Role authorization](../../../../../intl.en-US/User Guide/Role authorization.md#)Role authorization.
+2.  Complete RAM authorization. For more information, see [Role authorization](../../../../../intl.en-US/User Guide/Role authorization.md#).
 3.  Select a region where you want to create the cluster. The region cannot be changed after the cluster has been created.
 4.  Click **Create Cluster** in the upper-right corner.
 
