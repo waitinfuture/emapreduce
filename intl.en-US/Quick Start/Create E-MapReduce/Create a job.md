@@ -4,12 +4,12 @@ This section describes how to create a job for scheduling in an early E-MapReduc
 
 To run a computing task, you need to follow these steps to define a job:
 
-1.  Log on to the [Alibaba Cloud E-MapReduce console](https://partners-intl.console.aliyun.com/#/emr).
+1.  Log on to the [Alibaba Cloud E-MapReduce console](https://emr.console.aliyun.com/).
 2.  Select a region where you want to create the job.
 3.  Click the Old EMR Scheduling tab to go to the jobs list page.
 4.  Click **Create job** in the upper-right corner to go to the job creation page, as shown in the following figure:
 
-    ![Create job](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17841/154743692810493_en-US.png)
+    ![Create job](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17841/154814109510493_en-US.png)
 
 5.  Enter the **job name**.
 6.  Select a **job type**.
@@ -17,7 +17,7 @@ To run a computing task, you need to follow these steps to define a job:
 8.  **Actual execution**. The job command that has been executed on ECS will be displayed in this field. You can copy the displayed command and directly run it in the command line environment on an E-MapReduce cluster.
 9.  **Fail Retry**. You can set the number of retries and their intervals. This feature is disabled by default.
 10. Select a **failure policy**. Pause the current execution plan: Indicates that the current execution plan will be paused if this job fails and will wait for you to process. Continue execution of the next job: Indicates that errors will be ignored and the next job will be executed after this job fails.
-11. Click **OK**to complete the creation.
+11. Click **OK** to complete the creation.
 
 ## Example {#section_pjr_cx4_y2b .section}
 
@@ -25,7 +25,7 @@ This is a Spark job, which sets parameters such as the input and output paths in
 
 **Note:** This example is for reference only.
 
-![Spark job example](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17841/154743692810494_en-US.jpg)
+![Spark job example](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17841/154814109510494_en-US.jpg)
 
 ## oss and ossref {#section_rjr_cx4_y2b .section}
 
