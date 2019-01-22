@@ -96,7 +96,7 @@ After you configure the settings and make sure that all settings are valid, the 
 
 ## Creation failed {#section_jtk_gz4_y2b .section}
 
-If the creation fails, **CREATE\_FAILED** is displayed on the clusters list. Hover your mouse over the red exclamation mark \(!\) to view the cause.
+If the creation fails, **CREATE\_FAILED** is displayed on the clusters list. Hover your pointer over the red exclamation mark \(!\) to view the cause.
 
 You do not to handle clusters that are failed to be created because no computing resources have been created for these clusters. These clusters will be automatically hidden after three days.
 
