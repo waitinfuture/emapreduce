@@ -24,7 +24,7 @@ This section describes clusters and jobs in E-MapReduce \(EMR\) and how to use t
     1.  Click the Data Platform tab to go to the project list page. Click **New Project** in the upper-right corner.
     2.  In the New Project dialog box, enter the project name and description, and then click **Create**.
     3.  Click **Design Workflow** to the right of the specified project and to go to the **Edit Jobs** page.
-    4.  On the left side of the Edit Jobs page, right-click the folder that you want to operate and select**New Job**.
+    4.  On the left side of the Edit Jobs page, right-click the folder that you want to operate and select **New Job**.
     5.  Enter the job name and description.
     6.  Select Spark as the job type.
     7.  Click **OK**.
