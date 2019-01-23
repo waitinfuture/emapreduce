@@ -72,7 +72,7 @@ set hive.execution.engine=tez
 
         Download resources: [Public testing data](https://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/cn/emr/1.3.7/assets/res/u.data).
 
-    3.  Create a job
+    3.  Create a job.
 
         Create a new job in E-MapReduce using the following configuration:
 
@@ -114,7 +114,7 @@ set hive.execution.engine=tez
 
         Store the script created in step 1 to OSS. For example, if the storage path is oss://emr/jars/scan.hive, follow these steps to create a job in E-MapReduce:
 
-        ![Create job](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17985/154820800313195_en-US.png)
+        ![Create job](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17985/154820818113195_en-US.png)
 
     4.  Create and run an execution plan.
 
