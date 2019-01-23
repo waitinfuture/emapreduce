@@ -4,7 +4,7 @@ To operate the E-MapReduce service by using APIs or the SDK, you must have an Ac
 
 **Note:** You must keep your AccessKey.
 
-1.  Log on to the Alibaba Cloud official site: [https://www.aliyun.com/](https://www.alibabacloud.com/).
+1.  Log on to the [Alibaba Cloud official site](https://www.alibabacloud.com/).
 2.  Click **Console**.
 3.  Click **AccessKeys**.
 4.  Create and manage your AccessKey.
