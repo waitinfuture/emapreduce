@@ -2,15 +2,15 @@
 
 ES-Hadoop 是 Elasticsearch\(ES\) 推出的专门用于对接 Hadoop 生态的工具，使得用户可以使用 Mapreduce\(MR\)、Spark、Hive 等工具处理 ES 上的数据（ES-Hadoop 还包含另外一部分：将 ES 的索引 snapshot 到 HDFS，对于该内容本文暂不讨论）。
 
-## 背景 {#section_zd3_35z_jfb .section}
+## 背景信息 {#section_zd3_35z_jfb .section}
 
-众所周知，Hadoop 生态的长处是处理大规模数据集，但是其缺点也很明显，就是当用于交互式分析时，查询时延会比较长。而 ES 是这方面的好手，对于很多查询类型，特别是 ad-hoc 查询，基本可以做到秒级。ES-Hadoop 的推出提供了一种组合两者优势的可能性。使用 ES-Hadoop，用户只需要对自己代码做出很小的改动，即可以快速处理存储在 ES 中的数据，并且能够享受到 ES 带来的加速效果。
+Hadoop 生态的长处是处理大规模数据集，但是其缺点也很明显，就是当用于交互式分析时，查询时延会比较长。而 ES 是这方面的好手，对于很多查询类型，特别是 ad-hoc 查询，基本可以做到秒级。ES-Hadoop 的推出提供了一种组合两者优势的可能性。使用 ES-Hadoop，用户只需要对自己代码做出很小的改动，即可以快速处理存储在 ES 中的数据，并且能够享受到 ES 带来的加速效果。
 
 ES-Hadoop 的逻辑是将 ES 作为 MR/Spark/Hive 等数据处理引擎的“数据源”，在计算存储分离的架构中扮演存储的角色。这和 MR/Spark/Hive 的其他数据源并无差异。但相对于其他数据源， ES 具有更快的数据选择过滤能力。这种能力正是分析引擎最为关键的能力之一。
 
 EMR 中已经添加了对 ES-Hadoop 的支持，用户不需要做任何配置即可使用 ES-Hadoop。下面我们通过几个例子，介绍如何在 EMR 中使用 ES-Hadoop。
 
-## 准备 {#section_vst_2zz_jfb .section}
+## 准备工作 {#section_vst_2zz_jfb .section}
 
 ES 有自动创建索引的功能，能够根据输入数据自动推测数据类型。这个功能在某些情况下很方便，避免了用户很多额外的操作，但是也产生了一些问题。最重要的问题是 ES 推测的类型和我们预期的类型不一致。比如我们定义了一个字段叫 age，INT 型，在 ES 索引中可能被索引成了 LONG 型。在执行一些操作的时候会带来类型转换问题。为此，我们建议手动创建索引。
 
@@ -77,7 +77,7 @@ PUT company
 
 ## Mapreduce {#section_wwl_q11_kfb .section}
 
-在下面这个例子中，我们读取hdfs 上 /es-hadoop目录下的 json 文件，并将这些 json 文件中的每一行作为一个 document 写入 es。写入过程由 EsOutputFormat 在 map 阶段完成。
+在下面这个例子中，我们读取 HDFS上 /es-hadoop 目录下的 json 文件，并将这些 json 文件中的每一行作为一个 document 写入 es。写入过程由 EsOutputFormat 在 map 阶段完成。
 
 这里对 ES 的设置主要是如下几个选项:
 
@@ -188,7 +188,7 @@ GET
 
 ## Spark {#section_wsl_nb1_kfb .section}
 
-本示例同 mapreduce 一样，也是向 ES 的一个索引写入数据，只不过是通过 spark 来执行。这里 spark 借助 JavaEsSpark 类将一份 RDD 持久化到 es。同上述 mapreduce 程序一样，用户也需要注意上述几个选项的设置。
+本示例同 Mapreduce 一样，也是向 ES 的一个索引写入数据，只不过是通过 spark 来执行。这里 spark 借助 JavaEsSpark 类将一份 RDD 持久化到 es。同上述 Mapreduce 程序一样，用户也需要注意上述几个选项的设置。
 
 ```
 package com.aliyun.emr;
