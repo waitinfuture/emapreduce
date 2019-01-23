@@ -16,7 +16,7 @@ Kafka provides a collection of metrics that are used to measure the performance 
 
     You can customize Kafka metrics. In addition, you need a data store to keep these metrics for later use and analysis. You can store metrics to Kafka without using a third-party data store as Kafka itself is a data store. In addition, Kafka can be easily integrated with other services. You can collect metrics from a client as the following figure shows:
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21764/154824025412649_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21764/154824422312649_en-US.png)
 
     E-MapReduce provides a sample emr-kafka-client-metrics. You can download the source code from the link: [source code](https://github.com/aliyun/aliyun-emapreduce-sdk/tree/master-2.x/external/emr-kafka).
 
@@ -37,7 +37,7 @@ Kafka provides a collection of metrics that are used to measure the performance 
     -   Software: Kafka-Manager \(1.3.3.16\), Kafka \(2.11-1.0.1\), ZooKeeper \(3.4.12\), and Ganglia \(3.7.2\)
     -   The network type of this Kafka cluster is VPC in the China \(Hangzhou\) region. The master instance group is configured with a public IP and an internal network IP. The following figure shows the details.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21764/154824025412651_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21764/154824422312651_en-US.png)
 
 -   Configure metrics
 
