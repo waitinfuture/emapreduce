@@ -66,6 +66,6 @@ Each time you make a call to an API, the system returns a unique identification 
 
 -   Common error codes
 
-    For more information, see [ECS common error codes](../../SP_2/DNA0011860945/EN-US_TP_9850.dita#EcsApiResponse)
+    For more information, see [ECS common error codes](../../SP_2/DNA0011860945/EN-US_TP_9850.dita#EcsApiResponse).
 
 
