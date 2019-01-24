@@ -19,7 +19,7 @@ In a project, you can create jobs such as Shell, Hive, Spark, SparkSQL, MapReduc
 
 ## Develop a job {#section_zgm_x1f_z2b .section}
 
-For more information about the various types of jobs, see [Jobs](intl.en-US/User Guide/Workflow development/Jobs/Configure a Hadoop MapReduce job.md#).
+For more information about the various types of jobs, see [Jobs](reseller.en-US/User Guide/Workflow development/Jobs/Configure a Hadoop MapReduce job.md#).
 
 **Note:** When you insert an OSS path, if you select the OSSREF file prefix, the OSS file is downloaded to the cluster and added to the classpath.
 
