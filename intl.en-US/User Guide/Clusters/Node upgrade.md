@@ -6,18 +6,18 @@ In real scenarios, the CPU or memory of a cluster node, especially master nodes,
 
 ## Procedure {#section_uhx_qw4_y2b .section}
 
-1.  In the Cluster Management panel, select a cluster, and click **View Details**.
+1.  In the Cluster Management panel, select a cluster, and click **View Details** to go to the **Cluster Overview** pane.
 2.  In the upper-right corner, click **Renew & Upgrade** \> **Upgrade**.
 3.  Configure the nodes that you want to upgrade.
 4.  Click **OK**.
 5.  Pay for your order.
-6.  Return to the Cluster Overview page, refresh the page to make sure that the node configuration has become the target specification. The following figure displays the upgraded node information.
+6.  Return to the Cluster Management page, refresh the page to make sure that the node configuration has become the target specification. The following figure displays the upgraded node information.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17863/154831718337798_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17863/154832609037798_en-US.png)
 
-7.  Click **升级配置已完成，重启机器组生效** to go to the following figure:
+7.  Click **The specification upgrades are complete. Restart the server for the upgrades to take effect** to view to the following figure.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17863/154831718337818_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17863/154832609037818_en-US.png)
 
 8.  Click **OK**.
 
@@ -31,17 +31,23 @@ In real scenarios, the CPU or memory of a cluster node, especially master nodes,
         -   Configuration-updated nodes are nodes whose disks or configurations have been expanded or upgraded.
         -   If selected, only configuration-updated nodes are restarted. For example, if you expanded a core group node, but did not expand a master group node's disk or upgrade its configurations, only the ECS instance in the core group is restarted, and the ECS instance in the master group will not be restarted.
         -   If not selected, all nodes \(all instances in the cluster\) are restarted.
-9.  Modify cluster configurations so that YARN can use new resources.
-    1.  Modify the yarn-site.xml file.
-    2.  Change the value of yarn.nodemanager.resource.memory-mb to machine memory \* 0.8 and change the value of yarn.scheduler.maximum-allocation-mb to machine memory \* 0.8. The unit is MB. For example, in this new configuration, the memory is 32 GB:
+9.  During the restart process, the prompt **Restarting Servers** in the following figure is displayed for the corresponding node group \(such as a core group\).
+
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17863/154832609137825_en-US.png)
+
+10. Log on to the EMR cluster to check upgrades. After the prompt in step 9 is not displayed, all upgraded configurations take effect.
+11. If you just upgraded the CPU and did not upgrade the memory, ignore this step. If you upgraded the **memory**, you need to modify cluster configurations so that YARN can use new resources.
+    1.  On the Clusters and Services pane, click **YARN**.
+    2.  Click the **Configuration** tab, locate yarn.nodemanager.resource.memory-mb and yarn.scheduler.maximum-allocation-mb two configuration items, and change the value of the two configuration items to machine memory \* 0.8. The unit is MB. For example, in this new configurations, the memory is 32 GB, configure the following value 26214 \(32\*1024\*0.8\).
 
         ```
         yarn.nodemanager.resource.memory-mb=26214
         yarn.scheduler.maximum-allocation-mb=26214
         ```
 
-        If your cluster does not support page modification, you must log on to the node, and modify the corresponding configuration values in the /etc/emr/hadoop-conf/yarn-site.xml file for each node.
-
-    3.  Restart YARN. Generally, you only need to restart the worker node. However, after the restart, the Node Manager port is changed. Therefore, we recommend that you restart the Resource Manager.
-10. Submit a ticket to us providing information about the new node configuration. We will then synchronize the configuration.
+    3.  In the upper right corner, click **Save**.
+    4.  In the upper right corner, click **Actions** \> **CONFIGURE All Components**.
+    5.  In the upper right corner, click **View Operation Logs** and wait for the status of the CONFIGURE YARN operation type to **Successful**.
+    6.  In the upper right corner, click **Actions** \> **RESTART All Components**.
+    7.  Click**View Operation Logs**, wait for the status of the RESTART YARN operation type to **Successful**, and new resources can be used by YARN.
 
