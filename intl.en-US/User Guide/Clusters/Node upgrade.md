@@ -13,11 +13,11 @@ In real scenarios, the CPU or memory of a cluster node, especially master nodes,
 5.  Pay for your order.
 6.  Return to the Cluster Management page, refresh the page to make sure that the node configuration has become the target specification. The following figure displays the upgraded node information.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17863/154832609037798_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17863/154832624737798_en-US.png)
 
 7.  Click **The specification upgrades are complete. Restart the server for the upgrades to take effect** to view to the following figure.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17863/154832609037818_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17863/154832624737818_en-US.png)
 
 8.  Click **OK**.
 
@@ -33,7 +33,7 @@ In real scenarios, the CPU or memory of a cluster node, especially master nodes,
         -   If not selected, all nodes \(all instances in the cluster\) are restarted.
 9.  During the restart process, the prompt **Restarting Servers** in the following figure is displayed for the corresponding node group \(such as a core group\).
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17863/154832609137825_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17863/154832624737825_en-US.png)
 
 10. Log on to the EMR cluster to check upgrades. After the prompt in step 9 is not displayed, all upgraded configurations take effect.
 11. If you just upgraded the CPU and did not upgrade the memory, ignore this step. If you upgraded the **memory**, you need to modify cluster configurations so that YARN can use new resources.
