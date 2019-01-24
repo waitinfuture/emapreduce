@@ -14,13 +14,12 @@ The format of the variable wildcards supported by E-MapReduce is either $\{datee
 
 **Note:** E-MapReduce currently supports the addition and deduction of hours and days only.
 
-## Example {#section_jfy_zkp_y2b .section}
+## Example {#section_jdv_tkz_ngb .section}
 
-When executed, the **Parameter** in the following figure will be replaced with:
+1.  Click **Job Settings** on the top right of the **Edit Jobs** page.
+2.  Click the add icon to add new parameters on the **Parameter Configuration** part，and fill in the parameter according to the Variable wildcard format that mentioned above.
 
-```
-jar ossref://emr/jar/hadoop/hadoop_wc.jar com.aliyun.emr.WordCount oss://emr/output/pt=20160426
-```
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17875/154829923437971_en-US.png)
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17875/154684730510541_en-US.png)
+3.  You can now use the reference of the parameter key in the job editing. 
 
