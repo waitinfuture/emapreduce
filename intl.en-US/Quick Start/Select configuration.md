@@ -14,11 +14,11 @@ EMR has been applied in the following enterprise big data scenarios:
 
 ## EMR instances {#section_wvz_zjp_y2b .section}
 
-An EMR cluster consists of [three types of instances](../../../../../intl.en-US/User Guide/Configure clusters/Instance types.md#): master instances, core instances, and task instances.
+An EMR cluster consists of [three types of instances](../../../../../reseller.en-US/User Guide/Configure clusters/Instance types.md#): master instances, core instances, and task instances.
 
 You can select ultra disks, SSD disks, and local disks for EMR storage. Performance of different disks is: SSD disks \> local disks \> ultra disks.
 
-EMR underlying storage supports OSS \(standard OSS only\) and HDFS. OSS has a higher data availability than HDFS. The data availability of OSS is 99.99999999%, while HDFS is 99.99999%.
+EMR underlying storage supports OSS \(standard OSS only\) and HDFS. OSS has a higher data availability than HDFS. The data availability of OSS is 99.99999999%, while the data availability of HDFS depends on the reliability of cloud disk or local disk storage.
 
 Storage prices are as follows:
 
@@ -52,9 +52,9 @@ Storage prices are as follows:
 
 ## EMR lifecycle {#section_bwz_zjp_y2b .section}
 
-EMR supports auto-scaling, which allows you to quickly [scale up a cluster](../../../../../intl.en-US/User Guide/Clusters/Expand a cluster.md#). You can flexibly adjust the configuration of cluster nodes, or [upgrade or downgrade ECS instance configuration](https://www.alibabacloud.com/help/doc-detail/25437.htm).
+EMR supports auto-scaling, which allows you to quickly [scale up a cluster](../../../../../reseller.en-US/User Guide/Clusters/Expand a cluster.md#). You can flexibly adjust the configuration of cluster nodes, or [upgrade or downgrade ECS instance configuration](https://partners-intl.aliyun.com/help/doc-detail/25437.htm).
 
 ## Select a zone {#section_cwz_zjp_y2b .section}
 
-We recommend that you deploy EMR and your business system in [the same zone and region](https://www.alibabacloud.com/help/doc-detail/40654.htm).
+We recommend that you deploy EMR and your business system in [the same zone and region](https://partners-intl.aliyun.com/help/doc-detail/40654.htm).
 
