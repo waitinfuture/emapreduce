@@ -25,13 +25,13 @@ This process includes two steps:
 ## Prerequisites {#section_krn_vh1_dfb .section}
 
 -   The following steps are performed in a Windows system. You need to ensure that Maven and Java have been installed and configured properly into your system.
--   You can use E-MapReduce to automatically create a Hadoop cluster. For more information, see [Create a cluster](../../../../../reseller.en-US/Quick Start/Create E-MapReduce/Create a cluster.md#).
+-   You can use E-MapReduce to automatically create a Hadoop cluster. For more information, see [Create a cluster](../../../../../intl.en-US/Quick Start/Create E-MapReduce/Create a cluster.md#).
     -   EMR Version: EMR-3.12.1
     -   Cluster Type: HADOOP
     -   Software: HDFS2.7.2, YARN2.7.2, Hive2.3.3, Ganglia3.7.2, Spark2.3.1, HUE4.1.0, Zeppelin0.8.0, Tez0.9.1, Sqoop1.4.7, Pig0.14.0, ApacheDS2.0.0, and Knox0.13.0
     -   The network type of this Hadoop cluster is VPC in the China \(Hangzhou\) region. The master instance group is configured with a public IP and an internal network IP. The high availability mode is set to No \(a non-HA mode\). The following figure shows the details.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21330/154823419411874_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21330/154840884111874_en-US.png)
 
 
 ## Procedures {#section_f2w_y31_dfb .section}
@@ -46,12 +46,12 @@ This process includes two steps:
 
     Execute the `mvn install` command to compile the code.
 
-2.  For more information about how to create a bucket, see [Create a bucket](../../../../../reseller.en-US/Quick Start/Create a bucket.md#).
+2.  For more information about how to create a bucket, see [Create a bucket](../../../../../intl.en-US/Quick Start/Create a bucket.md#).
 
     **Note:** You must create a bucket and an E-MapReduce cluster in the same region.
 
 3.  Upload jar packages and resource files
-    1.  Log on to the [OSS console](https://partners-intl.aliyun.com/login-required#/oss) and click the **Files** tab.
+    1.  Log on to the [OSS console](https://oss.console.aliyun.com) and click the **Files** tab.
     2.  Click **Upload** to upload resources files in the aliyun-emapreduce-demo/resources directory and jar packages in the aliyun-emapreduce-demo/target directory.
 4.  Create a workflow project
 
@@ -61,7 +61,7 @@ This process includes two steps:
 
     For more information, see [Edit jobs](../DNemapreduce1876943/EN-US_TP_17962.dita#concept_iny_t1f_z2b). Take a MapReduce job as an example.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21330/154823419411891_en-US.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21330/154840884111891_en-US.jpg)
 
 6.  After you configure a job, click **Run**. The following figure shows the details.
 

@@ -8,7 +8,7 @@ E-MapReduce 集群适用场景很多。简单说来，Hadoop ecosystem 以及 Sp
 
 大数据处理目前比较流行的有两种方法，一种是离线处理，一种是在线处理。
 
--   离线处理：只是希望得到数据的分析结果，对处理的时间要求不严格，例如批量数据处理，用户将数据传输到 OSS 服务，OSS 服务作为EMR产品的输入输出，利用MapReduce,Hive,Pig,Spark 处理离线数据。
+-   离线处理：只是希望得到数据的分析结果，对处理的时间要求不严格，例如批量数据处理，用户将数据传输到 OSS 服务，OSS 服务作为 EMR 产品的输入输出，利用MapReduce,Hive,Pig,Spark 处理离线数据。
 -   在线处理：对于数据的分析结果在时间上有比较严格的要求，例如实时流式数据处理，使用 Spark Streaming 对消息数据进行处理，与 Spark mllib/GrapX/SQL 深度整合。
 
 本文将介绍使用 E-MapReduce 产品运行一个 "word count" 离线作业。
@@ -31,7 +31,7 @@ OSS -\> EMR -\> Hadoop MapReduce
     -   软件信息: HDFS2.7.2/YARN2.7.2/Hive2.3.3/Ganglia3.7.2/Spark2.3.1/HUE4.1.0/Zeppelin0.8.0/Tez0.9.1/Sqoop1.4.7/Pig0.14.0/ApacheDS2.0.0/Knox0.13.0
     -   Hadoop集群使用专有网络，区域为华东1（杭州），主实例组 ECS 计算资源配置公网及内网 IP，高可用选择为否（非 HA 模式），具体配置如下所示。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21330/154823418611874_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21330/154840883611874_zh-CN.png)
 
 
 ## 操作步骤 {#section_f2w_y31_dfb .section}
@@ -61,21 +61,25 @@ OSS -\> EMR -\> Hadoop MapReduce
 
     详细过程请参考[作业编辑](../../../../../intl.zh-CN/用户指南/数据开发/作业编辑.md#)，这里我们以 MapReduce 为例。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21330/154823418611891_zh-CN.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21330/154840883611891_zh-CN.jpg)
 
 6.  配置作业内容，单击**运行**。如图所示：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21330/154823418611892_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21330/154840883711892_zh-CN.png)
 
     -   关于 OSS 使用，请参考 [OSS 参考使用说明](../../../../../intl.zh-CN/开发指南/准备/OSS 参考使用说明.md#)
     -   关于各类作业的具体开发，请参见 EMR 用户指南作业部分。
     **说明：** 
 
     -   OSS 输出路径如果已经存在，在执行作业时会报错。
-    -   插入 OSS 路径时，如果选择OSSREF文件前缀，系统会把 OSS 文件下载到集群本地，并添加到 classpath 中。
+    -   插入 OSS 路径时，如果选择 OSSREF 文件前缀，系统会把 OSS 文件下载到集群本地，并添加到 classpath 中。
     -   当前所有操作都只支持标准存储类型的 OSS。 
 
 ## 查看日志 {#section_drj_5k1_dfb .section}
 
 关于查看执行计划日志的详细步骤，请参考 [SSH 登录集群](../../../../../intl.zh-CN/用户指南/SSH 登录集群.md#)。
+
+## 总结 {#section_bxc_lqj_gfb .section}
+
+至此，我们成功在 E-MapReduce 上部署一套 HADOOP 集群，将 OSS 服务作为数据源输入，并运行 MapReduce 作业消费 OSS 上数据。E-MapReduce 支持多种类型作业的开发，例如 Storm 作业消费 Kafka 数据， Spark Streaming 和 Flink 组件，同样可以方便地在 Hadoop 集群上运行，处理 Kafka 数据。
 
