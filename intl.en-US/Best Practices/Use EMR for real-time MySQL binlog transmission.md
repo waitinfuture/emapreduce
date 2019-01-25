@@ -214,7 +214,7 @@ The preceding links contain three processes:
         hadoop fs -ls /mysqlbinlog
         ```
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17964/154815067611868_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17964/154840887611868_en-US.png)
 
         You can also run `hadoop fs -cat /mysqlbinlog/part-00000` command to view the file content.
 

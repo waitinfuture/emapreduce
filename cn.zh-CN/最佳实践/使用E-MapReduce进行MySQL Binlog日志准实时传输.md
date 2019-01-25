@@ -1,6 +1,6 @@
 # 使用E-MapReduce进行MySQL Binlog日志准实时传输 {#concept_mzl_txz_cfb .concept}
 
-本文介绍如何利用阿里云的SLS插件功能和EMR集群进行MySQL binlog的准实时传输。
+本文介绍如何利用阿里云的SLS插件功能和E-MapReduce集群进行MySQL binlog的准实时传输。
 
 ## 基本架构 {#section_wyp_5xz_cfb .section}
 
@@ -103,12 +103,12 @@ RDS -\> SLS -\> Spark Streaming -\> Spark HDFS
 
     3.  等待约2分钟，通过SLS控制台查看日志数据是否上传成功，具体如图所示。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17964/154208012711863_zh-CN.png)
+        ![查看日志数据](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17964/154840886511863_zh-CN.png)
 
         如果日志数据没有采集成功，请根据SLS的提示，查看SLS的采集日志进行排查。
 
 4.  准备代码，将代码编译成jar包，然后上传到OSS。
-    1.  将EMR的example代码通过git复制下来，然后进行修改，具体命令为：`git clone https://github.com/aliyun/aliyun-emapreduce-demo.git`。example代码中已经有LoghubSample类，该类主要用于从SLS采集数据并打印。以下是修改后的代码，供参考：
+    1.  将EMR的示例代码通过git复制下来，然后进行修改，具体命令为：`git clone https://github.com/aliyun/aliyun-emapreduce-demo.git`。示例代码中已经有LoghubSample类，该类主要用于从SLS采集数据并打印。以下是修改后的代码，供参考：
 
         ```
         package com.aliyun.emr.example
@@ -160,7 +160,7 @@ RDS -\> SLS -\> Spark Streaming -\> Spark HDFS
         **说明：** 
 
         -   由于如果要在本地运行，请在本地环境提前搭建Hadoop集群。
-        -   由于EMR的Spark SDK做了升级，其example code比较旧，不能直接在参数中传递OSS的AccessKeyId、AccessKeySecret， 而是需要通过SparkConf进行设置，如下所示。
+        -   由于EMR的Spark SDK做了升级，其示例代码比较旧，不能直接在参数中传递OSS的AccessKeyId、AccessKeySecret， 而是需要通过SparkConf进行设置，如下所示。
 
             ```
             trait RunLocally {
@@ -191,7 +191,7 @@ RDS -\> SLS -\> Spark Streaming -\> Spark HDFS
 
         请先在OSS上建立bucket为qiaozhou-EMR/jar的目录，然后通过OSS控制台或OSS的SDK将/target/shaded目录下的examples-1.1-shaded.jar上传到oss的这个目录下。上传后的jar包地址为oss://qiaozhou-EMR/jar/examples-1.1-shaded.jar，这个地址在后面会用上，如下图所示：
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17964/154208012711865_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17964/154840886511865_zh-CN.png)
 
 5.  搭建EMR集群，创建任务并运行执行计划。
     1.  通过EMR控制台创建一个EMR集群，大约需要10分钟左右，请耐心等待。
@@ -206,7 +206,7 @@ RDS -\> SLS -\> Spark Streaming -\> Spark HDFS
     3.  创建执行计划，将作业和EMR集群绑定后，开始运行。
     4.  查询Master节点的IP，如图所示：
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17964/154208012711867_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17964/154840886511867_zh-CN.png)
 
         通过SSH登录后，执行以下命令：
 
@@ -220,7 +220,7 @@ RDS -\> SLS -\> Spark Streaming -\> Spark HDFS
         hadoop fs -ls /mysqlbinlog
         ```
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17964/154208012711868_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17964/154840886511868_zh-CN.png)
 
         还可以通过`hadoop fs -cat /mysqlbinlog/part-00000`命令查看文件内容。
 
@@ -228,6 +228,6 @@ RDS -\> SLS -\> Spark Streaming -\> Spark HDFS
 
     如果没有看到正常的结果，可以通过EMR的运行记录，来进行问题排查，如图所示：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17964/154208012711869_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17964/154840886611869_zh-CN.png)
 
 
