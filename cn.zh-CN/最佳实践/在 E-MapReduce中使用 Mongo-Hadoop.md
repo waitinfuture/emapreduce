@@ -1,6 +1,6 @@
 # 在 E-MapReduce中使用 Mongo-Hadoop {#concept_l1r_pd1_kfb .concept}
 
-Mongo-Hadoop 是 MongoDB 推出的用于 Hadoop 系列组件连接 MongoDB 的组件。其原理跟我们上一篇文章介绍的 ES-Hadoop 类似。EMR 中已经集成了 Mongo-Hadoop，用户不用做任何部署配置，即可使用 Mongo-Hadoop。本文通过几个例子来展示一下 Mongo-Hadoop 的用法。
+Mongo-Hadoop 是 MongoDB 推出的用于 Hadoop 系列组件连接 MongoDB 的组件。其原理跟我们上一篇文章介绍的 ES-Hadoop 类似。E-MapReduce 中已经集成了 Mongo-Hadoop，用户不用做任何部署配置，即可使用 Mongo-Hadoop。本文通过几个例子来展示一下 Mongo-Hadoop 的用法。
 
 ## 准备 {#section_ujt_b21_kfb .section}
 
@@ -15,13 +15,13 @@ Mongo-Hadoop 是 MongoDB 推出的用于 Hadoop 系列组件连接 MongoDB 的�
 }
 ```
 
-由于我们是要通过 Mongo-Hadoop 向 MongoDB 的特定 collection （可以理解成数据库中的表）写数据，因此需要首先确保 MongoDB 上存在这个 collection。为此，首先需要在一台能够连接到 MongoDB 的客户机上运行 mongo client（你可能需要安装一下客户端程序，客户端程序可在 mongo 官网下载）。我们以连接阿里云数据库 MongoDB 版为例：
+由于我们是要通过 Mongo-Hadoop 向 MongoDB 的特定 collection （可以理解成数据库中的表）写数据，因此需要首先确保 MongoDB 上存在这个 collection。为此，首先需要在一台能够连接到 MongoDB 的客户机上运行 Mongo client（你可能需要安装一下客户端程序，客户端程序可在 Mongo 官网下载）。我们以连接阿里云数据库 MongoDB 版为例：
 
 ```
 mongo --host dds-xxxxxxxxxxxxxxxxxxxxx.mongodb.rds.aliyuncs.com:3717 --authenticationDatabase admin -u root -p 123456
 ```
 
-其中 dds-xxxxxxxxxxxxxxxxxxxxx.mongodb.rds.aliyuncs.com 为 MongoDB 的主机名，3717 为端口号（该端口号根据您的 MongoDB 集群而定，对于自建集群，默认为 27017），-p 为密码（这里假设密码为 123456）。进入交互式页面，运行如下命令，在 company 数据库下创建名为 employees 的 collection：
+其中dds-xxxxxxxxxxxxxxxxxxxxx.mongodb.rds.aliyuncs.com 为 MongoDB 的主机名，3717 为端口号（该端口号根据您的 MongoDB 集群而定，对于自建集群，默认为 27017），-p 为密码（这里假设密码为 123456）。进入交互式页面，运行如下命令，在 company 数据库下创建名为 employees 的 collection：
 
 ```
 > use company;
@@ -40,7 +40,7 @@ mongo --host dds-xxxxxxxxxxxxxxxxxxxxx.mongodb.rds.aliyuncs.com:3717 --authentic
 
 ## Mapreduce {#section_xlq_1f1_kfb .section}
 
-在下面这个例子中，我们读取 HDFS 上/mongo-hadoop目录下的 json 文件，并将这些 json 文件中的每一行作为一个 document 写入 MongoDB。
+在下面这个例子中，我们读取 HDFS 上 /mongo-hadoop目录下的 json 文件，并将这些 json 文件中的每一行作为一个 document 写入 MongoDB。
 
 ```
 package com.aliyun.emr;
@@ -202,7 +202,7 @@ spark-submit --master yarn --class com.aliyun.emr.Test spark-test.jar
 CREATE DATABASE IF NOT EXISTS company;
 ```
 
-之后创建一个外部表，表存储在 MongoDB 上。但是创建外部表之前，注意像第一小节中介绍的，需要首先创建 MongoDB Collection —— employees。
+之后创建一个外部表，表存储在 MongoDB 上。但是创建外部表之前，注意像第一小节中介绍的，需要首先创建 MongoDB Collection — employees。
 
 下面回到 Hive 交互式控制台，运行如下 SQL 创建一个外部表，MongoDB 连接通过 TBLPROPERTIES 来设置：
 
