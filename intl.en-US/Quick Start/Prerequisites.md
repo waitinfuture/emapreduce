@@ -19,7 +19,7 @@ Make sure that the following prerequisites are met before you create an E-MapRed
 
         **Note:** If the following dialog box appears, click **Continue to manage AccessKey**.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17837/154890652010452_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17837/154890654710452_en-US.png)
 
     4.  Click **Create AccessKey**.
     5.  The AccessKey has been created.
@@ -29,6 +29,6 @@ Make sure that the following prerequisites are met before you create an E-MapRed
 
 4.  Create high-configuration instances \(optional\)
 
-    If you need to create instances with eight or more cores for a Pay-As-You-Go-based cluster, log on to your Alibaba Cloud account and submit a ticket for application. For more information, see [Support and Services](https://workorder.console.aliyun.com/console.htm)
+    If you need to create instances with eight or more cores for a Pay-As-You-Go-based cluster, log on to your Alibaba Cloud account and submit a ticket for application. For more information, see [Support and Services](https://workorder.console.aliyun.com/console.htm).
 
 
