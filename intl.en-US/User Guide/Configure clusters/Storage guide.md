@@ -34,13 +34,13 @@ OSS can be used as HDFS in E-MapReduce, and you can have easy read and write acc
 Reading data from Spark
 
 ```
-sc.Textfile("hdfs://user/path")
+sc.textfile("hdfs://user/path")
 ```
 
 Changing the storage type from HDFS to OSS
 
 ```
-sc.Textfile("oss://user/path")
+sc.textfile("oss://user/path")
 ```
 
 This is the same for Map Reduce and Hive jobs.
