@@ -1,32 +1,34 @@
 # Prerequisites {#concept_cms_hxn_y2b .concept}
 
-Before creating E-MapReduce, you need to complete the following prerequisites:
+Make sure that the following prerequisites are met before you create an E-MapReduce cluster:
 
-1.  Apply for an Alibaba Cloud account.
+1.  Create an Alibaba Cloud account
 
-    Before applying for an E-MapReduce cluster, you need to have an Alibaba Cloud account to identify yourself through the entire Alibaba Cloud ecosystem. This account can be used not only for E-MapReduce clusters, but also to activate Alibaba Cloud services, such as [Object Storage Service \(OSS\)](http://www.alibabacloud.com/product/oss) and [ApsaraDB for RDS \(RDS\)](http://www.alibabacloud.com/product/rds).
+    To create an E-MapReduce cluster, you must have an Alibaba Cloud account, which is used to uniquely identify you in the Alibaba Cloud ecosystem. You can use this account to create E-MapReduce clusters and activate other Alibaba Cloud services, including [Object Storage Service \(OSS\)](https://www.alibabacloud.com/product/oss) and [ApsaraDB for RDS \(RDS\)](https://www.alibabacloud.com/product/rds).
 
-    If you do not have any Alibaba Cloud account, see [Register Cloud Account](https://partners-intl.aliyun.com/help/doc-detail/50482.htm).
+    For more information about creating an Alibaba Cloud account, see [Sign up with Alibaba Cloud](https://www.alibabacloud.com/help/doc-detail/50482.htm).
 
-2.  Create an AccessKey \(optional\).
+2.  Create an AccessKey \(optional\)
 
-    You must create at least one AccessKey according to the following steps:
+    To use E-MapReduce, you must create a minimum of one AccessKey. Follow these steps to create an AccessKey:
 
-    1.  Log on to the [Alibaba Cloud console](https://partners-intl.console.aliyun.com/).
-    2.  Click **AccessKeys**.
+    1.  Log on to the [Alibaba Cloud website](https://www.alibabacloud.com/).
 
-        **Note:** If a security prompt dialog box appears, click **Continue to manage AccessKey**.
+    2.  Go to the Alibaba Cloud console.
+    3.  Hover over your profile picture and then click **AccessKeys**.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17837/154261299910452_en-US.png)
+        **Note:** If the following dialog box appears, click **Continue to manage AccessKey**.
 
-    3.  Click **Create AccessKey**.
-    4.  AccessKey is created successfully.
-3.  Activate Alibaba Cloud OSS.
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17837/154890613710452_en-US.png)
 
-    E-MapReduce will store your job logs and run logs in the Alibaba Cloud OSS storage space, so you need to [Sign up for OSS](../../../../reseller.en-US/Quick Start/Sign up for OSS.md#). And create a bucket in the same area where you expect to create the cluster, see [Create a bucket](../../../../reseller.en-US/Quick Start/Create a bucket.md#).
+    4.  Click **Create AccessKey**.
+    5.  The AccessKey has been created.
+3.  Activate Alibaba Cloud OSS
 
-4.  Enable high-end models \(optional\)
+    E-MapReduce stores the job and execution logs on Alibaba Cloud OSS. Therefore, you must activate Alibaba Cloud OSS. For more information, see [Sign up for OSS](https://www.alibabacloud.com/help/doc-detail/31884.htm). Create OSS buckets in the same region as the EMR cluster that you need to create. For more information, see [Create a bucket](https://www.alibabacloud.com/help/doc-detail/31885.htm).
 
-    If you want to use models with 8 cores or more in clusters charged by the Pay-As-You-Go billing method, apply for opening it in ECS first. [Apply for high-end models](https://workorder.console.aliyun.com/console.htm).
+4.  Create high-configuration instances \(optional\)
+
+    If you need to create instances with eight or more cores for a Pay-As-You-Go-based cluster, log on to your Alibaba Cloud account and submit a ticket for application. [Support and Services](https://workorder.console.aliyun.com/console.htm)
 
 
