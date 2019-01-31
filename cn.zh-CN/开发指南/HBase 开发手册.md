@@ -1,6 +1,6 @@
 # HBase 开发手册 {#concept_iyr_gyn_hfb .concept}
 
-本文将介绍如何配置一个HBase集群以及HBase 存储服务使用流程。
+本文介绍如何配置一个 HBase 集群以及 HBase 存储服务使用流程。
 
 为了更好地使用 HBase，在创建集群过程中，推荐您使用如下配置:
 
@@ -21,7 +21,7 @@
 
 ## HBase 配置 {#section_qy1_hzn_hfb .section}
 
-创建 HBase 集群的时候，在创建页面可以利用[软件配置](../../../../intl.zh-CN/用户指南/软件配置.md#)功能，结合使用场景，对 HBase 的默认参数配置做一些优化修改，如下所示：
+创建 HBase 集群的时候，在创建页面可以利用[软件配置](../../../../../intl.zh-CN/用户指南/软件配置.md#)功能，结合使用场景，对 HBase 的默认参数配置做一些优化修改，如下所示：
 
 ```
 {
@@ -58,9 +58,9 @@ HBase 集群一些默认的配置如下所示：
 
 1.  获取 Master IP 和集群 ZK 地址。通过 E-MapReduce 控制台集群详情页面，用户可以查看集群的 Master 节点 IP 和 ZK 访问地址（内网IP），如下图所示：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17990/154286667713234_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17990/154889975113234_zh-CN.png)
 
-    对于开通了公网 IP 的 Master 节点，用户可以参考[如何登录 master 节点](../../../../intl.zh-CN/用户指南/SSH 登录集群.md#)，浏览 HMaster 的 WEB UI\(localhost:16010\)。
+    对于开通了公网 IP 的 Master 节点，用户可以参考[如何登录 master 节点](../../../../../intl.zh-CN/用户指南/SSH 登录集群.md#)，浏览 HMaster 的 WEB UI\(localhost:16010\)。
 
 2.  SSH 连接到集群主节点，使用 HBase Shell。用户可以直接通过 SSH 连接到集群的 Master 节点，切换到 HDFS 用户，通过 HBase Shell 访问集群（关于 HBase Shell 的更多介绍，请参考[Apache HBase 官网](http://hbase.apache.org/book.html?spm=a2c4g.11186623.2.17.1877a3baxItNfG#shell)）。
 
@@ -125,7 +125,7 @@ HBase 集群一些默认的配置如下所示：
 
 -   前提条件
 
-    访问 Hbase 集群的 ECS 必须和 HBase 集群处于同一个安全组内。
+    访问 HBase 集群的 ECS 必须和 HBase 集群处于同一个安全组内。
 
 -   Spark 访问 Hbase
 
@@ -135,7 +135,7 @@ HBase 集群一些默认的配置如下所示：
 
     请参照 [HBase MapReduce Examples](http://hbase.apache.org/0.94/book/mapreduce.example.html#mapreduce.example.read)。
 
--   Hive 访问 Hbase
+-   Hive 访问 HBase
 
     EMR 1.2.0 及以上主版本的集群中的 Hive 才能访问 Hbase 集群。其步骤如下：
 
