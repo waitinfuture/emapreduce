@@ -10,7 +10,7 @@ On the Cluster Management page, find the target cluster. Click **View Details**,
 
 The following figure shows the disk expansion interface displayed.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/154831616232531_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/154892036632531_en-US.png)
 
 -   Configuration: Data disk configurations of the current instance group.
 -   Expand to: Data disk size after the disk is expanded.
@@ -24,11 +24,11 @@ The following figure shows the disk expansion interface displayed.
 
 1.  After completing the disk expansion, the corresponding core instance group displays **The disk capacity expansion is complete. Restart the servers for the changes to take effect**, as shown in the following figure.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/154831616234253_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/154892036634253_en-US.png)
 
-2.  Click **The disk capacity expansion is complete. Restart the servers for the changes to take effect.**, as shown in the following figure.
+2.  Click **The disk capacity expansion is complete. Restart the servers for the changes to take effect**, as shown in the following figure.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/154831616234254_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/154892036634254_en-US.png)
 
     **Note:** If you restart a cluster, you also restart ECS instances. ECS instance data is unavailable during restarting. 
 
@@ -41,7 +41,7 @@ The following figure shows the disk expansion interface displayed.
         -   If not selected, all nodes \(all instances in the cluster\) are restarted.
 3.  During the restart process, the prompt in the following figure is displayed for the corresponding node group \(such as a core group\).  
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/154831616234255_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/154892036634255_en-US.png)
 
 4.  After the prompt in step 3 is no longer displayed, all data disks are expanded and available to use.
 
