@@ -71,7 +71,7 @@ Clusters with HA enabled use different methods to access NameNode and ResourceMa
     ```
 
 
-In the following examples, configurations are made for both non-HA and HA clusters. For operations that do not require modification, the sample code can be used directly. For the specific format of a workflow file, see the relevant documentation on the official Oozie website: [https://oozie.apache.org/docs/4.2.0/](https://oozie.apache.org/docs/4.2.0/).
+In the following examples, configurations are made for both non-HA and HA clusters. For operations that do not require modification, the sample code can be used directly. For the specific format of a workflow file, see the relevant documentation on the [official Oozie website](https://oozie.apache.org/docs/4.2.0/).
 
 -   **Submit a workflow job on a non-HA cluster**
     1.  Log on to the main master node of the cluster.
