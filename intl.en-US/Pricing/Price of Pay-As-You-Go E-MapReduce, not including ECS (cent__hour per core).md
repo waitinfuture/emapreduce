@@ -1,6 +1,6 @@
 # Price of Pay-As-You-Go E-MapReduce, not including ECS \(cent/hour per core\) {#concept_ibs_yxy_lgb .concept}
 
-**Note:** "-" : the region does not support the corresponding machine type, so there is no corresponding price.
+**Note:** "-" indicates that the region does not support the corresponding machine type, so there is no corresponding price.
 
 ## Region: China {#section_s3d_1zy_lgb .section}
 
