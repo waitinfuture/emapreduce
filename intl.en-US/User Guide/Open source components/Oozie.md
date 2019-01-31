@@ -6,7 +6,7 @@ The following section provides an overview of how to use Oozie in a E-MapReduce 
 
 ## Preparations {#section_wgp_pww_y2b .section}
 
-Before you create a cluster, you must first open an SSH tunnel. For more information, see [Connect to clusters using SSH](reseller.en-US/User Guide/Connect to clusters using SSH.md#).
+Before you create a cluster, you must first open an SSH tunnel. For more information, see [Connect to clusters using SSH](intl.en-US/User Guide/Connect to clusters using SSH.md#).
 
 In the following, which uses a MAC environment as an example, the IP address of the public network for the cluster's master node is assumed to be **xx.xx.xx.xx**:
 
@@ -50,7 +50,7 @@ Access the following in Chrome to perform port forwarding: xx.xx.xx.xx:11000/ooz
 
 ## Submit a workflow job {#section_pnw_qyw_y2b .section}
 
-Before you run Oozie, you first have to install Oozie's ShareLib: [https://oozie.apache.org/docs/4.2.0/WorkflowFunctionalSpec.html\#ShareLib](https://oozie.apache.org/docs/4.2.0/WorkflowFunctionalSpec.html#ShareLib).
+Before you run Oozie, you first have to install [Oozie's ShareLib](https://oozie.apache.org/docs/4.2.0/WorkflowFunctionalSpec.html#ShareLib).
 
 In E-MapReduce clusters, ShareLib is installed by default for Oozie users. If you are using Oozie to submit a workflow job, you do not need to install ShareLib again.
 
