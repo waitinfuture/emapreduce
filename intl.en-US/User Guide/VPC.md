@@ -2,7 +2,7 @@
 
 Virtual Private Cloud \(VPC\) helps you build an isolated network environment, including customizing the IP address range, network segment, routing table, and gateway.
 
-For more information, see [What is VPC?](../../../../../intl.en-US/Product Introduction/What is VPC?.md#). VPC can be interconnected with physical IDC equipment rooms using [Express Connect](https://www.alibabacloud.com/product/express-connect).
+For more information, see [What is VPC](../../../../../intl.en-US/Product Introduction/What is VPC?.md#). VPC can be interconnected with physical IDC equipment rooms using [Express Connect](https://www.alibabacloud.com/product/express-connect).
 
 ## Create a VPC cluster {#section_z2j_5t5_y2b .section}
 
@@ -46,6 +46,6 @@ The following example shows how to enable Hive to access HBase clusters in E-Map
 
         At this point, the java.net.SocketTimeoutException exception is reported. This is because the security group where the HBase cluster's ECS is located limits access to E-MapReduce at the related port. By default, security groups created by E-MapReduce only open port 22. Therefore, a security group rule must be added to the HBase cluster's security group so as to open a port for the Hive cluster, as shown in the following figure.
 
-        ![Authorization policy list](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17888/154770931910585_en-US.png)
+        ![Authorization policy list](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17888/154892404210585_en-US.png)
 
 
