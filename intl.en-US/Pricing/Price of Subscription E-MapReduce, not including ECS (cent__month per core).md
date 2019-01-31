@@ -1,6 +1,6 @@
 # Price of Subscription E-MapReduce, not including ECS \(cent/month per core\) {#concept_zzf_rpn_y2b .concept}
 
-**Note:** "-" : the region does not support the corresponding machine type, so there is no corresponding price.
+**Note:** "-" indicates that the region does not support the corresponding machine type, so there is no corresponding price.
 
 ## Region: China {#section_p1h_z55_lgb .section}
 
