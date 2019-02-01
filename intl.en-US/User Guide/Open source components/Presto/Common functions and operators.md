@@ -1,6 +1,6 @@
 # Common functions and operators {#concept_gdq_tm2_z2b .concept}
 
-This article describes common Presto functions and operators.
+This section describes common Presto functions and operators.
 
 ## Logical operators {#section_hhk_c5j_z2b .section}
 
@@ -27,13 +27,13 @@ A complete truth table is shown as follows:
 |NULL|FALSE|FALSE|NULL|
 |NULL|FALSE|NULL|NULL|
 
-Additionally, the result of NOT FALSE is TRUE, the result of NOT TRUE is FALSE, and the result of NOT NULL is NULL. For more information about the NOT operator, see [NOT operator](http://www.veryhuo.com/a/manual/vbscript/html/vsoprNot.htm).
+The result of NOT FALSE is TRUE, the result of NOT TRUE is FALSE, and the result of NOT NULL is NULL. For more information about the NOT operator, see [NOT operator](http://www.veryhuo.com/a/manual/vbscript/html/vsoprNot.htm).
 
-Comparison functions and operators
+This section details the comparison functions and operators.
 
--   Comparison operators:
+-   Comparison operators
 
-    Comparison operations supported by Presto are as follows:
+    Presto provides the following comparison operations:
 
     |Operator|Description|
     |:-------|:----------|
@@ -43,9 +43,9 @@ Comparison functions and operators
     |\>=|Greater than or equal to|
     |=|Equal to|
     |<\>/**! =**|Not equal to|
-    |\[NOT\] BETWEEN|Value X is \[not\] between the min and the max values|
-    |IS \[NOT\] NULL|Tests whether a value is NULL|
-    |IS \[NOT\] DISTINCT FROM|Determines if two values are identical. Generally, NULL signifies an unknown value, so any comparison involving a NULL will produce NULL. However, the IS \[NOT\] DISTINCT FROM operator treats NULL as a known value, and returns a TRUE or FALSE result.|
+    |\[NOT\] BETWEEN|Value X is \[not\] between the minimum and the maximum values.|
+    |IS \[NOT\] NULL|Tests whether a value is NULL.|
+    |IS \[NOT\] DISTINCT FROM|Determines whether two values are identical. NULL typically signifies an unknown value, which means that any comparison involving a NULL will produce NULL. However, the IS \[NOT\] DISTINCT FROM operator treats NULL as a known value, and consequently returns a TRUE or FALSE result.|
 
 -   Comparison functions
 
@@ -55,17 +55,17 @@ Comparison functions and operators
 
         Returns the largest of the provided values.
 
-        Example:`GREATEST(1, 2)`
+        For example, `GREATEST(1, 2)`.
 
     -   LEAST
 
         Returns the smallest of the provided values.
 
-        Example: `LEAST(1, 2)`
+        For example, `LEAST(1, 2)`.
 
 -   Quantified comparison predicates
 
-    Presto also provides several quantified comparison predicates to enhance the comparison expressions. The usage is as follows:
+    Presto also provides several quantified comparison predicates to enhance the comparison expressions. These are used as follows:
 
     ```
     <EXPRESSION> <OPERATOR> <QUANTIFIER> (<SUBQUERY>)
@@ -80,12 +80,12 @@ Comparison functions and operators
 
     ALL, ANY and SOME are quantified comparison predicates.
 
-    -   `A = ALL (…)`: Evaluates to true when A is equal to all values. Example: `SELECT 21 = ALL (VALUES 20, 20, 20);` , return TRUE.
-    -   `A <> ALL (…)`: Evaluates to true when A doesn’t match any value. Example: `SELECT 21 <> ALL (VALUES 19, 20, 22);` , return TRUE.
-    -   `A < ALL (…)`: Evaluates to true when A is smaller than the smallest value. Example: `SELECT 18 < ALL (VALUES 19, 20, 22);` , return TRUE.
-    -   `A = ANY (…)`: Evaluates to true when A is equal to any of the values. This form is equivalent to `A IN (…)`. Example: `SELECT ‘hello’ = ANY (VALUES ‘hello’, ‘world’);` , return TRUE.
-    -   `A <> ANY (…)`: Evaluates to true when A doesn’t match one or more values. This form is equivalent to `A IN (…)`. Example: `SELECT 21 &lt;&gt; ALL (VALUES 19, 20, 21);`, return TRUE.
-    -   `A < ANY (…)`: Evaluates to true when A is smaller than the biggest value. Example: `SELECT 21 < ALL (VALUES 19, 20, 22);`, return TRUE.
+    -   `A = ALL (…)`: If A is equal to all values, TRUE is returned. For example, if `SELECT 21 = ALL (VALUES 20, 20, 20);`, TRUE is returned.
+    -   `A <> ALL (…)`: If A does not match any values, TRUE is returned. For example, if `SELECT 21 <> ALL (VALUES 19, 20, 22);`, TRUE is returned.
+    -   `A < ALL (…)`: If A is smaller than the smallest value, TRUE is returned. For example, if `SELECT 18 < ALL (VALUES 19, 20, 22);`, TRUE is returned.
+    -   `A = ANY (…)`: If A is equal to any of the values, TRUE is returned. This form is equivalent to `A IN (…)`. For example, if `SELECT ‘hello’ = ANY (VALUES ‘hello’, ‘world’);`, TRUE is returned.
+    -   `A <> ANY (…)`: If A does not match one or more values, TRUE is returned. This form is equivalent to `A IN (…)`. For example, if `SELECT 21 &lt;&gt; ALL (VALUES 19, 20, 21);`, TRUE is returned.
+    -   `A < ANY (…)`: If A is smaller than the biggest value, true is returned. For example, if `SELECT 21 < ALL (VALUES 19, 20, 22);`, TRUE is returned.
     ANY and SOME have the same meaning and can be used interchangeably.
 
 
@@ -105,9 +105,9 @@ Conditional expressions are mainly used to express branch logic. Presto supports
     END
     ```
 
-    The expression statement compares the expression and the value/condition in value|condition. It returns a result if the same value is found or the condition is met.
+    The expression statement compares the expression and the value and condition in value|condition. If the same value is found or the condition is met, a result is returned.
 
-    Example:
+    For example:
 
     ```
     --- Compare value
@@ -131,17 +131,17 @@ Conditional expressions are mainly used to express branch logic. Presto supports
 
 -   IF function
 
-    The IF function is a simple comparison function used to simplify the writing method for comparison logic of two values. Its expression forms are as follows:
+    The IF function is a simple comparison function used to simplify the writing method for the comparison logic of two values. Its expression form is as follows:
 
     ```
     IF(condition, true_value, [false_value])
     ```
 
-    Evaluates and returns true\_value if condition is true, otherwise false\_value is returned. false\_value is optional. If it is not specified, NULL will be returned if condition is not true.
+    If condition is true, true\_value is returned. Otherwise, false\_value is returned. false\_value is optional. If it is not specified and if condition is not true, NULL is returned.
 
 -   COALESCE
 
-    The COALESCE function returns the first non-null value in the argument list. Its expression forms are as follows:
+    The COALESCE function returns the first non-null value in the argument list. Its expression form is as follows:
 
     ```
     COALESCE(value1, value2[, ...])
@@ -149,7 +149,7 @@ Conditional expressions are mainly used to express branch logic. Presto supports
 
 -   NULLIF
 
-    The NULLIF function returns null if value1 equals value2, otherwise returns value1. Usage of the function is as follows:
+    The NULLIF function returns null if value1 equals value2. Otherwise, value1 is returned. Its expression form is as follows:
 
     ```
     NULLIF(value1, value2)
@@ -157,18 +157,18 @@ Conditional expressions are mainly used to express branch logic. Presto supports
 
 -   TRY
 
-    The TRY function evaluates an expression and handle certain types of errors by returning NULL. The following errors are handled by TRY:
+    The TRY function evaluates an expression and handles certain types of errors by returning NULL. The following errors are handled by TRY:
 
-    -   Division by zero, e.g. x/0
+    -   Division by zero
     -   Invalid cast or function argument
     -   Numeric value out of range
-    Generally used in conjunction with COALESCE to return the default value in case of errors. The usage is as follows:
+    In the event of errors, it is typically used in conjunction with COALESCE to return the default value. Its expression form is as follows:
 
     ```
     TRY(expression)
     ```
 
-    Example:
+    For example:
 
     ```
     --- When COALESCE and TRY are used in conjunction, if packages=0, and a "division by zero" error is thrown, the default value (0) will be returned.
@@ -189,7 +189,7 @@ Presto provides the following explicit conversion functions:
 
 -   CAST
 
-    Explicitly casts a value as a type, and raises an error if the cast fails. The usage is as follows:
+    Explicitly casts a value as a type, and raises an error if the cast fails. Use it is as follows:
 
     ```
     CAST(value AS type) -> value1:type
@@ -197,7 +197,7 @@ Presto provides the following explicit conversion functions:
 
 -   TRY\_CAST
 
-    Like cast, but returns null if the cast fails. The usage is as follows:
+    Similar to cast, but returns null if the cast fails. Use it as follows:
 
     ```
     TRY_CAST(value AS TYPE) -> value1:TYPE | NULL
@@ -205,13 +205,13 @@ Presto provides the following explicit conversion functions:
 
 -   TYPEOF
 
-    Returns the name of the type of the provided parameter or expression value. The usage is as follows:
+    Returns the type of the provided parameter or expression value. Use it as follows:
 
     ```
     TYPEOF(expression) -> type:VARCHAR
     ```
 
-    Example:
+    For example:
 
     ```
     SELECT TYPEOF(123); -- integer
@@ -229,7 +229,7 @@ Presto provides the following explicit conversion functions:
     |+|Addition|
     |-|Subtraction|
     |\*|Multiplication|
-    |/|Division \(integer division performs truncation\)|
+    |/|Division \(dividing integers results in truncation\)|
     |%|Modulus \(remainder\)|
 
 -   Mathematical functions
@@ -244,17 +244,17 @@ Presto provides the following explicit conversion functions:
     |ceiling|ceiling\(x\)|Returns x rounded up to the nearest integer.|
     |cosine\_similarity|cosine\_similarity\(x, y\) → double|Returns the cosine similarity between the sparse vectors x and y.|
     |degrees|degress\(x\) -\> double|Converts angle x in radians to degrees.|
-    |e|e\(\)-\>double|Returns the constant Euler’s number.|
-    |exp|exp\(x\)-\>double|Returns Euler’s number raised to the power of x.|
+    |e|e\(\)-\>double|Returns the constant Euler's number.|
+    |exp|exp\(x\)-\>double|Returns Euler's number raised to the power of x.|
     |floor|floor\(x\)|Returns x rounded down to the nearest integer.|
     |from\_base|from\_base\(string, radix\) → bigint|Returns the value of string interpreted as a base-radix number.|
-    |inverse\_normal\_cdf|inverse\_normal\_cdf\(mean,sd,p\)-\>double|Computes the inverse of the Normal cdf with given mean and standard deviation \(sd\) for the cumulative probability.|
+    |inverse\_normal\_cdf|inverse\_normal\_cdf\(mean,sd,p\)-\>double|Computes the inverse of the Normal cdf with a given mean and standard deviation \(sd\) for the cumulative probability.|
     |ln|ln\(x\)-\>double|Returns the natural logarithm of x.|
     |log2|log2\(x\)-\>double|Returns the base 2 logarithm of x.|
     |log10|log10\(x\)-\>double|Returns the base 10 logarithm of x.|
     |log|log\(x,b\) -\> double|Returns the base b logarithm of x.|
     |mod|mod\(n,m\)|Returns the modulus \(remainder\) of n divided by m.|
-    |pi|pi\(\)-\>double|Returns the constant Pi.|
+    |pi|pi\(\)-\>double|Returns the constant pi.|
     |pow|pow\(x,p\)-\>double|Returns x raised to the power of p. This is an alias for **power**.|
     |power|power\(x,p\)-\>double|Returns x raised to the power of p.|
     |radians|radians\(x\)-\>double|Converts angle x in degrees to radians.|
@@ -263,10 +263,10 @@ Presto provides the following explicit conversion functions:
     |random|random\(n\)|Returns a pseudo-random number between 0 and n \(exclusive\).|
     |round|round\(x\)|Returns x rounded to the nearest integer.|
     |round|round\(x, d\)|Returns x rounded to d decimal places.|
-    |sign|sign\(x\)|Returns the signum function of x, that is: 0 if the argument is 0; if the argument is greater than 0; -1 if the argument is less than 0. For double arguments, the function additionally returns: NaN if the argument is NaN; 1 if the argument is +Infinity; -1 if the argument is -Infinity.|
+    |sign|sign\(x\)|Returns the signum function of x. In other words, if the argument is 0, 0 is returned. If the argument is greater than 0, 1 is returned. If the argument is less than 0, -1 is returned. For double arguments, the function also returns NaN if the argument is NaN, 1 if the argument is +Infinity, and -1 if the argument is -Infinity.|
     |sqrt|sqrt\(x\)-\>double|Returns the square root of x.|
-    |to\_base|to\_base\(x, radix\)-\>varchar|Returns the base-radix representation of x.|
-    |truncate|truncate\(x\) → double|Returns x rounded to integer by dropping digits after decimal point.|
+    |to\_base|to\_base\(x, radix\)-\>varchar|Returns the radix representation of x.|
+    |truncate|truncate\(x\) → double|Returns x rounded to an integer by dropping digits after the decimal point.|
     |width\_bucket|width\_bucket\(x, bound1, bound2, n\) → bigint|Returns the bin number of x in an equi-width histogram with the specified bound1 and bound2 bounds and n number of buckets.|
     |width\_bucket|width\_bucket\(x, bins\)|Returns the bin number of x according to the bins specified by the array bins.|
     |acos|acos\(x\)-\>double|Returns the arc cosine of x, which is a radian.|
@@ -287,19 +287,19 @@ Presto provides the following explicit conversion functions:
 
 ## Bitwise functions {#section_el2_cvk_z2b .section}
 
-Presto provides following bitwise functions:
+Presto provides the following bitwise functions:
 
 |Function|Syntax|Description|
 |:-------|:-----|:----------|
-|bit\_count|bit\_count\(x, bits\) → bigint|Returns the number of bits set in x at position 1 in 2’s complement representation.|
+|bit\_count|bit\_count\(x, bits\) → bigint|Returns the number of bits set in x at position 1 in two's complement representation.|
 |bitwise\_and|bitwise\_and\(x, y\) → bigint|The bitwise AND function|
 |bitwise\_not|bitwise\_not\(x\) → bigint|The bitwise NOT function|
 |bitwise\_or|bitwise\_or\(x, y\) → bigint|The bitwise OR function|
 |bitwise\_xor|bitwise\_xor\(x, y\) → bigint|The bitwise XOR function|
-|bitwise\_and\_agg|bitwise\_and\_agg\(x\) → bigint|Returns the bitwise AND of all input values in 2’s complement representation, and x is an array.|
-|bitwise\_or\_agg|bitwise\_or\_agg\(x\) → bigint|Returns the bitwise OR of all input values in 2’s complement representation, and x is an array.|
+|bitwise\_and\_agg|bitwise\_and\_agg\(x\) → bigint|Returns the bitwise AND of all input values in two's complement representation. x is an array.|
+|bitwise\_or\_agg|bitwise\_or\_agg\(x\) → bigint|Returns the bitwise OR of all input values in two's complement representation. x is an array.|
 
-Examples
+For example:
 
 ```
 SELECT bit_count(9, 64); -- 2
@@ -312,13 +312,13 @@ SELECT bit_count(-7, 8); -- 6
 
 -   Decimal literals
 
-    Use the following syntax to define literal of DECIMAL type:
+    Use the following syntax to define the literal of the DECIMAL type:
 
     ```
     DECIMAL 'xxxx.yyyyy'
     ```
 
-    The precision of DECIMAL type for literal will be equal to number of digits in literal \(including trailing and leading zeros\). The scale will be equal to number of digits in fractional part \(including trailing zeros\). For example:
+    The precision of the DECIMAL type is equal to the number of digits in the literal \(including trailing and leading zeros\). The scale is equal to the number of digits in the fractional part \(including trailing zeros\). For example:
 
     |Example literal|Data type|
     |:--------------|:--------|
@@ -330,11 +330,11 @@ SELECT bit_count(-7, 8); -- 6
 
     Arithmetic operators
 
-    Assuming x is of type DECIMAL\(xp, xs\) and y is of type DECIMAL\(yp, ys\),
+    Assuming that x is of the DECIMAL\(xp, xs\) type and y is of the DECIMAL\(yp, ys\) type,
 
     -   x: DECIMAL\(xp,xs\)
     -   y: DECIMAL\(yp,ps\)
-    and they observe the following rules when used in arithmetic operation:
+    and they observe the following rules when used in arithmetic operations:
 
     -   x + y or x - y
         -   precision = min\(38, 1 + min\(xs, ys\) + min\(xp-xs, yp-ys\)\)
@@ -350,11 +350,11 @@ SELECT bit_count(-7, 8); -- 6
         -   scale = max\(xs, ys\)
     -   Comparison operators
 
-        All standard comparison operators and BETWEEN operator work for DECIMAL type.
+        All standard comparison operators and BETWEEN operator can be used for the DECIMAL type.
 
     -   Unary decimal operators
 
-        The - operator performs negation for DECIMAL type.
+        The - operator performs negation for the DECIMAL type.
 
 
 ## String functions and operators { .section}
@@ -365,68 +365,68 @@ SELECT bit_count(-7, 8); -- 6
 
 -   String functions
 
-    String functions supported by Presto are listed in the following table:
+    The string functions supported by Presto are listed in the following table:
 
-    |Function Name|Syntax|Description|
+    |Function name|Syntax|Description|
     |:------------|:-----|:----------|
     |chr|chr\(n\) → varchar|Returns the Unicode code point n as a single character string.|
     |codepoint|codepoint\(string\) → integer|Returns the Unicode code point of the only character of string.|
     |concat|concat\(string1, …, stringN\) → varchar|Returns the concatenation of string1, string2, …, stringN. This function provides the same functionality as the SQL-standard concatenation operator.|
-    |hamming\_distance|hamming\_distance\(string1, string2\) → bigint|Returns the [Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance) of string1 and string2, i.e. the number of positions at which the corresponding characters are different. Note that the two strings must have the same length.|
-    |length|length\(string\) → bigint|Returns the length of string in characters.|
-    |levenshtein\_distance|levenshtein\_distance\(string1, string2\) → bigint|Returns the [Levenshtein edit distance](https://en.wikipedia.org/wiki/Levenshtein_distance) of string1 and string2.|
-    |lower|lower\(string\) → varchar|Converts string to lowercase.|
-    |upper|upper\(string\) → varchar|Converts string to uppercase.|
+    |hamming\_distance|hamming\_distance\(string1, string2\) → bigint|Returns the [Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance) of string1 and string2, in other words the number of positions at which the corresponding characters are different. Note that the two strings must have the same length.|
+    |length|length\(string\) → bigint|Returns the length of **string** in characters.|
+    |levenshtein\_distance|levenshtein\_distance\(string1, string2\) → bigint|Returns the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) of string1 and string2.|
+    |lower|lower\(string\) → varchar|Converts **string** to lowercase.|
+    |upper|upper\(string\) → varchar|Converts **string** to uppercase.|
     |replace|replace\(string, search\) → varchar|Removes all instances of search from string.|
     |replace|replace\(string, search, replace\) → varchar|Replaces all instances of search with replace in string.|
-    |reverse|reverse\(string\) → varchar|Returns string with the characters in reverse order.|
-    |lpad|lpad\(string, size, padstring\) → varchar|Left pads string to size characters with padstring.If size is less than the length of string, the result is truncated to size characters. size must not be negative and padstring must be non-empty.|
-    |rpad|rpad\(string, size, padstring\) → varchar|Right pads string to size characters with padstring.If size is less than the length of string, the result is truncated to size characters. size must not be negative and padstring must be non-empty.|
-    |ltrim|ltrim\(string\) → varchar|Removes leading whitespace from string.|
-    |rtrim|rtrim\(string\) → varchar|Removes trailing whitespace from string.|
-    |split|split\(string, delimiter\) → array|Splits string on delimiter and returns an array.|
-    |split|split\(string, delimiter, limit\) → array|Splits string on delimiter and returns an array of size at the maximum of limit.|
-    |split\_part|split\_part\(string, delimiter, index\) → varchar|Splits string on delimiter and returns the field index. Field indexes start with 1.|
-    |split\_to\_map|split\_to\_map\(string, entryDelimiter, keyValueDelimiter\) → map|Splits string by entryDelimiter and keyValueDelimiter and returns a map.|
-    |strpos|strpos\(string, substring\) → bigint|Returns the starting position of the first instance of substring in string. Positions start with 1. If not found, 0 is returned.|
-    |position|position\(substring IN string\) → bigint|Returns the starting position of the first instance of substring in string.|
-    |substr|substr\(string, start, \[length\]\) → varchar|Returns a substring from string of \[length\] length from the starting position start. Positions start with 1. The length parameter is optional.|
+    |reverse|reverse\(string\) → varchar|Returns **string** with the characters in reverse order.|
+    |lpad|lpad\(string, size, padstring\) → varchar|Left pads **string** to **size** characters with padstring. If **size** is less than the length of string, the result is truncated to size characters. size must not be negative and padstring cannot be empty.|
+    |rpad|rpad\(string, size, padstring\) → varchar|Right pads **string** to **size** characters with padstring. If **size** is less than the length of string, the result is truncated to size characters. size must not be negative and padstring cannot be empty.|
+    |ltrim|ltrim\(string\) → varchar|Removes leading whitespace from **string**.|
+    |rtrim|rtrim\(string\) → varchar|Removes trailing whitespace from **string**.|
+    |split|split\(string, delimiter\) → array|Splits **string** on delimiter and returns an array.|
+    |split|split\(string, delimiter, limit\) → array|Splits **string** on delimiter and returns an array of **size** at the maximum limit.|
+    |split\_part|split\_part\(string, delimiter, index\) → varchar|Splits **string** on delimiter and returns the field index. Field indexes start with 1.|
+    |split\_to\_map|split\_to\_map\(string, entryDelimiter, keyValueDelimiter\) → map|Splits **string** by entryDelimiter and keyValueDelimiter and returns a map.|
+    |strpos|strpos\(string, substring\) → bigint|Returns the starting position of the first instance of **substring** in **string**. Positions start with 1. If it cannot be found, 0 is returned.|
+    |position|position\(substring IN string\) → bigint|Returns the starting position of the first instance of **substring** in **string**.|
+    |substr|substr\(string, start, \[length\]\) → varchar|Returns a **substring** from **string** of \[length\] length from the starting position start. Positions start with 1. The length parameter is optional.|
 
 -   Unicode functions
     -   normalize\(string\) → varchar
 
-        Transforms string with [NFC normalization form](https://en.wikipedia.org/wiki/Unicode_equivalence#Normalization).
+        Transforms **string** with the [NFC normalization form](https://en.wikipedia.org/wiki/Unicode_equivalence#Normalization).
 
     -   normalize\(string, form\) → varchar
 
-        Transforms string with the specified normalization form. form must be one of the following keywords:
+        Transforms **string** with the specified normalization form. form must be one of the following keywords:
 
-        -   NFD Canonical Decomposition
-        -   NFC Canonical Decomposition, followed by Canonical Composition
-        -   NFKD Compatibility Decomposition
-        -   NFKC Compatibility Decomposition, followed by Canonical Composition
+        -   NFD canonical decomposition
+        -   NFC canonical decomposition, followed by canonical composition
+        -   NFKD compatibility decomposition
+        -   NFKC compatibility decomposition, followed by canonical composition
     -   to\_utf8\(string\) → varbinary
 
-        Encodes string into a UTF-8 varbinary representation.
+        Encodes **string** into a UTF-8 varbinary representation.
 
     -   from\_utf8\(binary, \[replace\]\) → varchar
 
-        Decodes a UTF-8 encoded string from binary. Invalid UTF-8 sequences are replaced with replace, which is Unicode replacement character U+FFFD by default. Note that the replacement string replace must either be a single character or empty.
+        Decodes a UTF-8 encoded string from binary. Invalid UTF-8 sequences are replaced with replace, which is the Unicode replacement character U+FFFD by default. Note that the replacement string replace must either be a single character or empty.
 
 
 ## Regular expression functions { .section}
 
-Presto supports all of the regular expression functions use the [Java Pattern](http://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html) syntax, with a few notable exceptions:
+Presto supports all of the regular expression functions that use the [Java Pattern](http://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html) syntax, with a few notable exceptions:
 
--   When using multi-line mode
-    -   enabled via the `? m` flag.
-    -   `\n` is recognized as a line terminator
-    -   the `? d` flag is not supported
--   Case-sensitive matching
-    -   enabled via the `?i` flag
-    -   the `?u` flag is not supported
-    -   context-sensitive matching is not supported
-    -   local-sensitive matching is not supported
+-   When in multi-line mode:
+    -   Enabled through the `? m` flag.
+    -   `\n` is recognized as a line terminator.
+    -   The `? d` flag is not supported.
+-   Case-sensitive matching:
+    -   Enabled through the `?i` flag.
+    -   The `?u` flag is not supported.
+    -   Context-sensitive matching is not supported.
+    -   Local-sensitive matching is not supported.
 -   Surrogate pairs are not supported
 
     For example, `\uD800\uDC00` is not treated as `U+10000` and must be specified as `\x{10000}`.
@@ -435,18 +435,18 @@ Presto supports all of the regular expression functions use the [Java Pattern](h
 -   `\Q` and `\E` are not supported in character classes \(such as `[A-Z123]`\) and are instead treated as literals.
 -   Unicode character classes \(`\p{prop}`\) are supported with the following differences:
     -   All underscores in names must be removed. For example, use `OldItalic` instead of `Old_Italic`.
-    -   Scripts must be specified directly, without the `Is`, `script=` or `sc=` prefixes. Example:`\p{Hiragana}` instead of `\p{script=Hiragana}`.
-    -   Blocks must be specified with the `In` prefix. The `block=` and `blk=` prefixes are not supported. Example: `\p{InMongolia}`.
-    -   Categories must be specified directly, without the `Is`, `general_category=` or `gc=` prefixes. Example: `\p{L}`.
-    -   Binary properties must be specified directly, without the Is. Example: use `\p{NoncharacterCodePoint}` instead of `\p{IsNoncharacterCodePoint}`.
+    -   Scripts must be specified directly, without the `Is`, `script=`, or `sc=` prefixes. For example, use `\p{Hiragana}` instead of `\p{script=Hiragana}`.
+    -   Blocks must be specified with the `In` prefix. The `block=` and `blk=` prefixes are not supported. For example, `\p{InMongolia}`.
+    -   Categories must be specified directly, without the `Is`, `general_category=` or `gc=` prefixes. For example, `\p{L}`.
+    -   Binary properties must be specified directly, without the `Is` prefix. For example, use `\p{NoncharacterCodePoint}` instead of `\p{IsNoncharacterCodePoint}`.
 
-Regular expression functions provided by Presto are as follows:
+The regular expression functions provided by Presto are as follows:
 
 -   regexp\_extract\_all\(string, pattern, \[group\]\) → array
 
     Returns the substring\(s\) matched by the regular expression pattern in string. If the pattern expression uses the grouping function, then the group parameter can be set to specify the [capturing group](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#gnumber%C3%9F).
 
-    Examples
+    For example:
 
     ```
     SELECT regexp_extract_all('1a 2b 14m', '\d+'); -- [1, 2, 14]
@@ -457,7 +457,7 @@ Regular expression functions provided by Presto are as follows:
 
     The function and usage is similar to those of `regexp_extract_all`. The difference is that this function only returns the first substring matched by the regular expression.
 
-    Examples
+    For example:
 
     ```
     SELECT regexp_extract_all('1a 2b 14m', '\d+'); -- [1, 2, 14]
@@ -466,9 +466,9 @@ Regular expression functions provided by Presto are as follows:
 
 -   regexp\_extract\_all\(string, pattern, \[group\]\) → array
 
-    Returns the substring\(s\) matched by the regular expression pattern in string: If the pattern expression uses the grouping function, then the group parameter can be set to specify the [capturing group](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#gnumber%C3%9F) to be matched by the regular expression.
+    Returns the substring\(s\) matched by the regular expression pattern in string. If the pattern expression uses the grouping function, then the group parameter can be set to specify the [capturing group](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#gnumber%C3%9F) to be matched by the regular expression.
 
-    Examples
+    For example:
 
     ```
     SELECT regexp_extract('1a 2b 14m', '\d+'); -- 1
@@ -477,9 +477,9 @@ Regular expression functions provided by Presto are as follows:
 
 -   regexp\_like\(string, pattern\) → boolean
 
-    Evaluates the regular expression pattern and determines if it is contained within string. It returns TRUE if yes, and False if otherwise. This function is similar to the LIKE operator, expect that the pattern only needs to be contained within string, rather than needing to match all of string.
+    Evaluates the regular expression pattern and determines if it is contained within string. If it is, TRUE is returned. If not, False is returned. This function is similar to the LIKE operator, expect that the pattern only needs to be contained within **string**, rather than needing to match all of **string**.
 
-    Examples
+    For example:
 
     ```
     SELECT regexp_like('1a 2b 14m', '\d+b'); -- true
@@ -487,11 +487,11 @@ Regular expression functions provided by Presto are as follows:
 
 -   regexp\_replace\(string, pattern, \[replacement\]\) → varchar
 
-    Replaces every instance of the substring matched by the regular expression pattern in string with replacement. replacement is optional, and will be replaced by **‘’**\(deleting the matched substrings\) if it is not specified.
+    Replaces every instance of the substring matched by the regular expression pattern in string with replacement. replacement is optional and is replaced by **‘’** \(deleting the matched substrings\) if it is not specified.
 
-    Capturing groups can be referenced in replacement using $g \(g is the ordinal number, starting at one\) for a numbered group or $\{name\} for a named group. A dollar sign $ may be included in the replacement by escaping it with a backslash `\$`.
+    Capturing groups can be referenced in replacement using $g \(g is the ordinal number, starting at one\) for a numbered group or $\{name\} for a named group. A dollar sign \($\) may be included in the replacement by escaping it with a backslash `\$`.
 
-    Examples
+    For example:
 
     ```
     SELECT regexp_replace('1a 2b 14m', '\d+[ab] '); -- '14m'
@@ -500,9 +500,9 @@ Regular expression functions provided by Presto are as follows:
 
 -   regexp\_split\(string, pattern\) → array
 
-    Splits string using the regular expression pattern and returns an array. Trailing empty strings are preserved.
+    Splits **string** using the regular expression pattern and returns an array. Trailing empty strings are preserved.
 
-    Examples
+    For example:
 
     ```
     SELECT regexp_split('1a 2b 14m', '\s*[a-z]+\s*'); -- ['1', '2', '14', ''] 4 elements
@@ -528,8 +528,8 @@ Regular expression functions provided by Presto are as follows:
     |from\_base64url|from\_base64url\(string\) → varbinary|Decodes binary data from the base64 encoded string using the URL safe alphabet.|
     |to\_hex|to\_hex\(binary\) → varchar|Encodes binary into a hex string representation.|
     |from\_hex|from\_hex\(string\) → varbinary|Decodes binary data from the hex encoded string.|
-    |to\_big\_endian\_64|to\_big\_endian\_64\(bigint\) → varbinary|Encodes bigint in a 64-bit 2’s complement big endian format.|
-    |from\_big\_endian\_64|from\_big\_endian\_64\(binary\) → bigint|Decodes bigint value from a 64-bit 2’s complement big endian binary.|
+    |to\_big\_endian\_64|to\_big\_endian\_64\(bigint\) → varbinary|Encodes bigint in a 64-bit two's complement big endian format.|
+    |from\_big\_endian\_64|from\_big\_endian\_64\(binary\) → bigint|Decodes bigint value from a 64-bit two's complement big endian binary.|
     |to\_ieee754\_32|to\_ieee754\_32\(real\) → varbinary|Encodes real in a 32-bit big-endian binary according to [IEEE 754](http://grouper.ieee.org/groups/754/) single-precision floating-point format.|
     |to\_ieee754\_64|to\_ieee754\_64\(double\) → varbinary|Encodes double in a 64-bit big-endian binary according to [IEEE 754](http://grouper.ieee.org/groups/754/) double-precision floating-point format.|
     |crc32|crc32\(binary\) → bigint|Computes the CRC-32 of binary.|
@@ -546,7 +546,7 @@ Regular expression functions provided by Presto are as follows:
 
     Presto supports two date and time operators: `+` and `-`.
 
-    Examples
+    For example:
 
     ```
     --- +
@@ -569,7 +569,7 @@ Regular expression functions provided by Presto are as follows:
 
     The `AT TIME ZONE` operator sets the time zone of a timestamp.
 
-    Examples
+    For example:
 
     ```
     SELECT timestamp '2012-10-31 01:00 UTC'; 
@@ -587,19 +587,19 @@ Regular expression functions provided by Presto are as follows:
         |current\_time|current\_time -\> time with time zone|Returns the current time as of the start of the query.|
         |current\_timestamp|current\_timestamp -\> timestamp with time zone|Returns the current timestamp as of the start of the query.|
         |current\_timezone|current\_timezone\(\) → varchar|Returns the current time zone.|
-        |date|date\(x\) → date|Parses a date literal into a date|
+        |date|date\(x\) → date|Parses a date literal into a date.|
         |from\_iso8601\_timestamp|from\_iso8601\_timestamp\(string\) → timestamp with time zone|Parses the ISO 8601 formatted string into a timestamp with time zone.|
         |from\_iso8601\_date|from\_iso8601\_date\(string\) → date|Parses the ISO 8601 formatted string into a date.|
-        |from\_unixtime|from\_unixtime\(unixtime, \[timezone\_str\]\) → timestamp|Returns the UNIX timestamp as a timestamp. Timestamp option is allowed.|
-        |from\_unixtime|from\_unixtime\(unixtime, hours, minutes\) → timestamp with time zone|Returns the UNIX timestamp as a timestamp with time zone using hours and minutes for the time zone offset.|
+        |from\_unixtime|from\_unixtime\(unixtime, \[timezone\_str\]\) → timestamp|Returns the UNIX timestamp as a timestamp. The timestamp option is allowed.|
+        |from\_unixtime|from\_unixtime\(unixtime, hours, minutes\) → timestamp with time zone|Returns the UNIX timestamp as a timestamp with a time zone using hours and minutes for the time zone offset.|
         |localtime|localtime -\> time|Returns the current time as of the start of the query.|
         |localtimestamp|localtimestamp -\> timestamp|Returns the current timestamp as of the start of the query.|
         |now|now\(\) → timestamp with time zone|Returns the current time. This is an alias for current\_time.|
-        |to\_iso8601|to\_iso8601\(x\) → varchar|Formats x as an ISO 8601 string. x can be DATE, or TIMESTAMP \[with time zone\].|
+        |to\_iso8601|to\_iso8601\(x\) → varchar|Formats x as an ISO 8601 string. x can either be DATE or TIMESTAMP \[with time zone\].|
         |to\_milliseconds|to\_milliseconds\(interval\) → bigint|Returns the day-to-second interval as milliseconds.|
-        |to\_unixtime|to\_unixtime\(timestamp\) → double|Returns timestamp as a UNIX timestamp.|
+        |to\_unixtime|to\_unixtime\(timestamp\) → double|Returns the timestamp as a UNIX timestamp.|
 
-        **Note:** The following SQL-standard functions do not use parenthesis:
+        **Note:** The following SQL-standard functions do not use parentheses:
 
         -   current\_data
         -   current\_time
@@ -608,68 +608,66 @@ Regular expression functions provided by Presto are as follows:
         -   localtimestamp
     -   Truncation function
 
-        The truncation function truncates date and time value by the specified unit, and returns the date and time value of this unit. The usage is as follows:
+        The truncation function truncates the date and time value by a specified unit, and returns the date and time value of this unit. Use it as follows:
 
         ```
         date_trunc(unit, x) -> [same as x]
         ```
 
-        where unit is one of:
+        where unit is one of the following:
 
-        -   second: Seconds
-        -   minute: Minutes
-        -   hour: Hours
-        -   day: Days
-        -   week: Weeks
-        -   month: Months
-        -   quarter: Months
-        -   year: Years
+        -   second
+        -   minute
+        -   hour
+        -   day
+        -   week
+        -   month
+        -   quarter
+        -   year
     -   Interval functions
 
-        Presto provides two functions for interval calculation, which are:
+        Presto provides the following two functions for interval calculation:
 
         -   date\_add\(unit, value, timestamp\) → \[same as input\]
 
-            Adds an interval value of type unit to timestamp. Subtraction can be performed by using a negative value with a unit.
+            Adds an interval value of **unit** to timestamp. Subtraction can be performed by using a negative value with a unit.
 
         -   date\_diff\(unit, timestamp1, timestamp2\) → bigint
 
-            Returns interval between two timestamps expressed in terms of unit.
+            Returns interval between two timestamps expressed in terms of **unit**, where **unit** is one of the following:
 
-            Where unit is one of:
-
-            -   ns: Nanoseconds
-            -   us: Microseconds
-            -   ms: Milliseconds
-            -   s: Seconds
-            -   m: Minutes
-            -   h: Hours
-            -   d: Days
+            -   ns: nanoseconds
+            -   us: microseconds
+            -   ms: milliseconds
+            -   s: seconds
+            -   m: minutes
+            -   h: hours
+            -   d: days
     -   Date and time extraction functions
 
-        Presto provides a function `extract` to extract the specified fields from a date and time value, which is:
+        Presto provides an `extract` function to extract the specified fields from a date and time value. The function is as follows:
 
         extract\(field FROM x\) → bigint
 
-        where, x is the date and time value, field is field to be extracted, which can be one of the following values:
+        where x is the date and time value and field is the field to be extracted, which can be one of the following values:
 
-        -   YEAR: Year
-        -   QUARTER: Quarter of a year
-        -   MONTH: Month
-        -   WEEK: Week
-        -   DAY: Day
-        -   DAY\_OF\_MONTH: Day of a month
-        -   DAY\_OF\_WEEK: Day of a week
-        -   DOW: This is an alias for DAY\_OF\_WEEK
-        -   DAY\_OF\_YEAR: Day of a year
-        -   DOY: This is an alias for DAY\_OF\_YEAR
+        -   YEAR
+        -   QUARTER: Quarter of a year.
+        -   MONTH
+        -   WEEK
+        -   DAY
+        -   DAY\_OF\_MONTH
+        -   DAY\_OF\_WEEK
+        -   DOW: This is an alias for DAY\_OF\_WEEK.
+        -   DAY\_OF\_YEAR
+        -   DOY: This is an alias for DAY\_OF\_YEAR.
         -   YEAR\_OF\_WEEK: Year of an [ISO Week](https://en.wikipedia.org/wiki/ISO_week_date)
-        -   YOW: This is an alias for YEAR\_OF\_WEEK
-        -   HOUR: Hour
-        -   MINUTE: Minute
-        -   SECOND: Second
-        -   TIMEZONE\_HOUR: Hour with timezone
-        -   TIMEZONE\_MINUTE: Minute with timezone
+        -   YOW: This is an alias for YEAR\_OF\_WEEK.
+        -   HOUR
+        -   MINUTE
+        -   SECOND
+        -   TIMEZONE\_HOUR: Hour, with a time zone
+        -   TIMEZONE\_MINUTE: Minute, with a time zone
         For the sake of convenience, Presto provides the following helper functions:
 
         |Function|Syntax|Description|
@@ -690,12 +688,12 @@ Regular expression functions provided by Presto are as follows:
         |week|week\(x\) → bigint|Returns the ISO week of the year from x. The value ranges from 1 to 53.|
         |week\_of\_year|week\_of\_year\(x\) → bigint|This is an alias for `week`.|
         |year|year\(x\) → bigint|Returns the year from x.|
-        |year\_of\_week|year\_of\_week\(x\) → bigint|Returns the year of a week from x\([ISO Week](https://en.wikipedia.org/wiki/ISO_week_date)\).|
+        |year\_of\_week|year\_of\_week\(x\) → bigint|Returns the year of a week from x. \(For more information, see [ISO Week](https://en.wikipedia.org/wiki/ISO_week_date).\)|
         |yow|yow\(x\) → bigint|This is an alias for `year_of_week`.|
 
     -   MySQL date functions
 
-        Presto uses a format string that is compatible with MySQL `date_parse` and `str_to_date` functions, which are:
+        Presto uses format strings that are compatible with MySQL `date_parse` and `str_to_date` functions. The format strings are as follows:
 
         -   date\_format\(timestamp, format\) → varchar
 
@@ -703,56 +701,56 @@ Regular expression functions provided by Presto are as follows:
 
         -   date\_parse\(string, format\) → timestamp
 
-            Parses string into a timestamp using format.
+            Parses strings into a timestamp using format.
 
         MySQL format specifiers supported by Presto are shown in the following table:
 
         |Specifier|Description|
         |:--------|:----------|
-        |%a|Abbreviated weekday name \(Sun .. Sat\).|
-        |%b|Abbreviated month name \(Jan .. Dec\).|
-        |%c|Month, numeric \(1 .. 12\), cannot be zero|
-        |%d|Day of the month, numeric \(01 .. 31\), cannot be zero|
-        |%e|Day of the month, numeric \(1 .. 31\), cannot be zero|
-        |%f|Fraction of second \(6 digits for printing: 000000 .. 999000; 1 - 9 digits for parsing: 0 .. 999999999\).|
-        |%H|Hour \(00 .. 23\).|
-        |%h|Hour \(01 .. 12\).|
-        |%I|Hour \(01 .. 12\).|
-        |%i|Minutes, numeric \(00 .. 59\).|
-        |%j|Day of year \(001 .. 366\).|
-        |%k|Hour \(0 .. 23\).|
-        |%l|Hour \(1 .. 12\).|
-        |%M|Month name \(January .. December\).|
-        |%m|Month, numeric \(01 .. 12\) \[4\].|
-        |%p|AM ／ PM|
-        |%r|Time, 12-hour \(hh:mm:ss AM/PM\)|
-        |%S|Seconds \(00 .. 59\).|
-        |%s|Seconds \(00 .. 59\).|
-        |%T|Time, 24-hour \(hh:mm:ss\)|
-        |%v|Week \(01 .. 53\), where Monday is the first day of the week; used with `%X`|
-        |%W|Weekday name \(Sunday .. Saturday\)|
-        |%x|Year for the week, where Monday is the first day of the week, numeric, four digits|
-        |%Y|Year, numeric, four digits|
-        |%y|Year, numeric \(two digits\). When parsing, two-digit year format assumes range \[1970 .. 2069\]|
-        |%%|A literal **‘%’** character|
+        |%a|Abbreviated weekday name \(Mon, Tue, …, Sun\).|
+        |%b|Abbreviated month name \(Jan, Feb, …, Dec\).|
+        |%c|Month, numeric \(1, 2, …, 12\). This cannot be zero.|
+        |%d|Day of the month, numeric \(01, 02, …, 31\). This cannot be zero.|
+        |%e|Day of the month, numeric \(1, 2, …, 31\). This cannot be zero.|
+        |%f|Fraction of second \(6 digits for printing: 000000 … 999000; 1 to 9 digits for parsing: 0 … 999999999\).|
+        |%H|Hour \(00, 01, …, 23\).|
+        |%h|Hour \(01, 02, …, 12\).|
+        |%I|Hour \(01, 02, …, 12\).|
+        |%i|Minutes, numeric \(00, 01, …, 59\).|
+        |%j|Day of year \(001, 002, …, 365\).|
+        |%k|Hour \(0, 1, …, 23\).|
+        |%l|Hour \(1, 2, …, 12\).|
+        |%M|Month name \(January, February, …, December\).|
+        |%m|Month, numeric \(01, 02, …, 12\) \[4\].|
+        |%p|AM/PM|
+        |%r|Time, 12-hour \(hh:mm:ss AM/PM\).|
+        |%S|Seconds \(00, 01, …, 59\).|
+        |%s|Seconds \(00, 01, …, 59\).|
+        |%T|Time, 24-hour \(hh:mm:ss\).|
+        |%v|Week \(01, 02, …, 53\), where Monday is the first day of the week. Used with `%X`.|
+        |%W|Weekday name \(Monday, Tuesday, …, Sunday\).|
+        |%x|Year of the week, where Monday is the first day of the week, numeric, four digits.|
+        |%Y|Year, numeric, four digits.|
+        |%y|Year, numeric \(two digits\). When parsing, the two-digit year format assumes the range \[1970 … 2069\].|
+        |%%|A literal **‘%’** character.|
 
-        **Note:** The following specifiers are not currently supported: %D %U %u %V %w %X
+        **Note:** The following specifiers are not currently supported: %D, %U, %u, %V, %w, and %X.
 
     -   Java date functions
 
-        The functions in this section use a format string that is compatible with [JodaTime’s DateTimeFormat pattern](http://joda-time.sourceforge.net/apidocs/org/joda/time/format/DateTimeFormat.html) format.
+        The functions in this section use a format string that is compatible with [Joda-Time's DateTimeFormatter pattern](http://joda-time.sourceforge.net/apidocs/org/joda/time/format/DateTimeFormat.html).
 
-        -   format\_datetime\(timestamp, format\) → varchar: Formats timestamp
-        -   parse\_datetime\(string, format\) → timestamp with time zone: Parses string into a timestamp
+        -   format\_datetime\(timestamp, format\) → varchar: Formats timestamps.
+        -   parse\_datetime\(string, format\) → timestamp with time zone: Parses strings into a timestamp.
 
 ## Aggregate functions {#section_e2k_32l_z2b .section}
 
 Aggregate functions have the following features:
 
--   Input a data set
--   Output a single computation result.
+-   Input data sets
+-   Output single computation results.
 
-Almost all of these aggregate functions ignore `null` values and return `null` for no input rows or when all values are `null`, with a few notable exceptions:
+Almost all of these aggregate functions ignore `null` values and return `null` for rows with no input or when all values are `null`. However, there are a few notable exceptions:
 
 -   count
 -   count\_if
@@ -766,7 +764,7 @@ Almost all of these aggregate functions ignore `null` values and return `null` f
     |:-------|:-----|:----------|
     |arbitrary|arbitrary\(x\) → \[same as input\]|Returns an arbitrary non-null value of x.|
     |array\_agg|array\_agg\(x\) → array<\[same as input\]\>|Returns an array created from the input x elements.|
-    |avg|avg\(x\) → double|Returns the average \(arithmetic mean\) of all input values.|
+    |avg|avg\(x\) → double|Returns the mean of all input values.|
     |avg|avg\(time interval type\) → time interval type|Returns the average interval length of all input values.|
     |bool\_and|bool\_and\(boolean\) → boolean|Returns TRUE if every input value is TRUE, otherwise FALSE.|
     |bool\_or|bool\_or\(boolean\) → boolean|Returns TRUE if any input value is TRUE, otherwise FALSE.|
@@ -788,22 +786,22 @@ Almost all of these aggregate functions ignore `null` values and return `null` f
 
 -   Bitwise aggregate functions
 
-    For bitwise aggregate functions, refer to`bitwise_and_agg` and `bitwise_or_agg` functions as described in [General aggregate functions](https://help.aliyun.com/document_detail/c3-2-2-6).
+    For bitwise aggregate functions, refer to the `bitwise_and_agg` and `bitwise_or_agg` functions described in [General aggregate functions](https://help.aliyun.com/document_detail/c3-2-2-6).
 
 -   Map aggregate functions
 
     |Function|Syntax|Description|
     |:-------|:-----|:----------|
     |histogram|histogram\(x\) → map|Returns a map containing the count of the number of times each input value occurs.|
-    |map\_agg|map\_agg\(key, value\) → map|Returns a MAP created from the input key/value pairs.|
-    |map\_union|map\_union\(x\) → map|Returns the union of all the input maps. If a key is found in multiple input maps, that key’s value in the resulting map comes from an arbitrary input map.|
+    |map\_agg|map\_agg\(key, value\) → map|Returns a map created from the input key/value pairs.|
+    |map\_union|map\_union\(x\) → map|Returns the union of all the input maps. If a key is found in multiple input maps, that key's value in the resulting map comes from an arbitrary input map.|
     |multimap\_agg|multimap\_agg\(key, value\) → map\>|Returns a multimap created from the input key/value pairs.|
 
 -   Close aggregate function
 
     |Function|Syntax|Description|
     |:-------|:-----|:----------|
-    |approx\_distinct|approx\_distinct\(x, \[e\]\) → bigint|Returns the approximate number of distinct input values. This function provides an approximation of `count(DISTINCT x)`. Zero is returned if all input values are null. This function should produce a standard error of no more than e, which is the standard deviation of the \(approximately normal\) error distribution over all possible sets. It is optional, and is 2.3% by default. The current implementation of this function requires that e be in the range of \[0.01150, 0.26000\]. It does not guarantee an upper bound on the error for any specific input set.|
+    |approx\_distinct|approx\_distinct\(x, \[e\]\) → bigint|Returns the approximate number of distinct input values. This function provides an approximation of `count(DISTINCT x)`. Zero is returned if all input values are null. This function should produce a standard error of no more than e, which is the standard deviation of the \(approximately normal\) error distribution over all possible sets. It is optional, and is 2.3% by default. The current implementation of this function requires that e be in the range of \[0.01150, 0.26000\]. It does not guarantee an upper bound of the error for any specific input set.|
     |approx\_percentile|approx\_percentile\(x, percentage\) → \[same as x\]|Returns the approximate percentile for all input values of x at the given percentage.|
     |approx\_percentile|approx\_percentile\(x, percentages\) → array<\[same as x\]\>|Similar to the preceding function, percentages is an array, and returns constant values for all input rows.|
     |approx\_percentile|approx\_percentile\(x, w, percentage\) → \[same as x\]|Similar to the preceding function, w is the weighted value of x.|
@@ -815,12 +813,12 @@ Almost all of these aggregate functions ignore `null` values and return `null` f
 
     |Function|Syntax|Description|
     |:-------|:-----|:----------|
-    |corr|corr\(y, x\) → double|Returns correlation coefficient of input values.|
+    |corr|corr\(y, x\) → double|Returns the correlation coefficient of input values.|
     |covar\_pop|covar\_pop\(y, x\) → double|Returns the population covariance of input values.|
     |covar\_samp|covar\_samp\(y, x\) → double|Returns the sample covariance of input values.|
     |kurtosis|kurtosis\(x\) → double|Returns the excess kurtosis of all input values. Unbiased estimate using the following expression: kurtosis\(x\) = n\(n+1\)/\(\(n-1\)\(n-2\)\(n-3\)\)sum\[\(x\_i-mean\)^4\]/sttdev\(x\)^4-3\(n-1\)^2/\(\(n-2\)\(n-3\)\)|
-    |regr\_intercept|regr\_intercept\(y, x\) → double|Returns linear regression intercept of input values. y is the dependent value. x is the independent value.|
-    |regr\_slope|regr\_slope\(y, x\) → double|Returns linear regression slope of input values. y is the dependent value. x is the independent value.|
+    |regr\_intercept|regr\_intercept\(y, x\) → double|Returns the linear regression intercept of input values. y is the dependent value, whereas x is the independent value.|
+    |regr\_slope|regr\_slope\(y, x\) → double|Returns the linear regression slope of input values. y is the dependent value, whereas x is the independent value.|
     |skewness|skewness\(x\) → double|Returns the skewness of all input values.|
     |sttdev\_pop|sttdev\_pop\(x\) → double|Returns the population standard deviation of all input values.|
     |sttdev\_samp|sttdev\_samp\(x\) → double|Returns the sample standard deviation of all input values.|
