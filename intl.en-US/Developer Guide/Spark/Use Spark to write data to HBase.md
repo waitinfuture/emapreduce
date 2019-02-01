@@ -1,6 +1,8 @@
 # Use Spark to write data to HBase {#concept_n5q_vfh_hfb .concept}
 
-This topic describes how Spark writes data to HBase. Note that computing clusters must be in the same security group as HBase clusters. Otherwise, the network cannot be connected. When you create a cluster in E-MapReduce, make sure that you select the security group where the HBase cluster is located.
+This topic describes how Spark writes data to HBase. Note that
+
+**Note:** computing clusters must be in the same security group as HBase clusters. Otherwise, the network cannot be connected. When you create a cluster in E-MapReduce, make sure that you select the security group where the HBase cluster is located.
 
 ## Allow Spark to access HBase {#section_qs1_xfh_hfb .section}
 
