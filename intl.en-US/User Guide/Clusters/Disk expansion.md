@@ -1,16 +1,20 @@
 # Disk expansion {#concept_f3v_bw4_y2b .concept}
 
-In the event that you do not have enough storage space, cluster disks of E-MapReduce 3.11.0 or later can be expanded on the cluster overview page.
+In the event that you do not have enough data storage space, cluster disks of E-MapReduce 3.11.0 or later can be expanded on the cluster overview page.
 
 ## Enter the expansion interface {#section_bp2_hjc_wfb .section}
 
 On the Cluster Management page, find the target cluster. Click **View Details**, and in the upper-right corner, click **Disk Capacity Expansion**.
 
+Select the instance group that needs to be expanded.
+
+**Note:** Make sure your account balance is sufficient. The fee of expanding a data disk is deducted automatically. When your account balance is insufficient the, the process of expanding a data disk will be interrupted.
+
 ## Expansion interface {#section_zjf_h4n_y2b .section}
 
 The following figure shows the disk expansion interface displayed.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/154892036632531_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/155011389532531_en-US.png)
 
 -   Configuration: Data disk configurations of the current instance group.
 -   Expand to: Data disk size after the disk is expanded.
@@ -24,11 +28,11 @@ The following figure shows the disk expansion interface displayed.
 
 1.  After completing the disk expansion, the corresponding core instance group displays **The disk capacity expansion is complete. Restart the servers for the changes to take effect**, as shown in the following figure.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/154892036634253_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/155011389634253_en-US.png)
 
 2.  Click **The disk capacity expansion is complete. Restart the servers for the changes to take effect**, as shown in the following figure.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/154892036634254_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/155011389634254_en-US.png)
 
     **Note:** If you restart a cluster, you also restart ECS instances. ECS instance data is unavailable during restarting. 
 
@@ -41,7 +45,7 @@ The following figure shows the disk expansion interface displayed.
         -   If not selected, all nodes \(all instances in the cluster\) are restarted.
 3.  During the restart process, the prompt in the following figure is displayed for the corresponding node group \(such as a core group\).  
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/154892036634255_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/155011389634255_en-US.png)
 
 4.  After the prompt in step 3 is no longer displayed, all data disks are expanded and available to use.
 
