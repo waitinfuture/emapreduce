@@ -1,8 +1,12 @@
 # Node upgrade {#concept_pkz_l24_y2b .concept}
 
-In real scenarios, the CPU or memory of a cluster node, especially master nodes, may be insufficient. We recommend that you upgrade nodes in the following way.
+In real scenarios, the CPU or memory of a cluster node, especially master nodes, may be insufficient.
 
-**Note:** Only Subscription clusters can be upgraded.
+**Note:** 
+
+-   Only E-MapReduce Subscription clusters can be upgraded.
+-   Ephemeral disk instances \(such as instance types of D1 and I2\) do not support upgrade configurations. You can only add nodes.
+-   Non-ephemeral disk instances only support upgrade configurations, and do not support downgrade configurations.
 
 ## Procedure {#section_uhx_qw4_y2b .section}
 
@@ -13,11 +17,11 @@ In real scenarios, the CPU or memory of a cluster node, especially master nodes,
 5.  Pay for your order.
 6.  Return to the Cluster Management page, refresh the page to make sure that the node configuration has become the target specification. The following figure displays the upgraded node information.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17863/154891957837798_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17863/155011561237798_en-US.png)
 
 7.  Click **The specification upgrades are complete. Restart the server for the upgrades to take effect** to view to the following figure.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17863/154891957937818_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17863/155011561237818_en-US.png)
 
 8.  Click **OK**.
 
@@ -33,7 +37,7 @@ In real scenarios, the CPU or memory of a cluster node, especially master nodes,
         -   If not selected, all nodes \(all instances in the cluster\) are restarted.
 9.  During the restart process, the prompt **Restarting Servers** in the following figure is displayed for the corresponding node group \(such as a core group\).
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17863/154891957937825_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17863/155011561237825_en-US.png)
 
 10. Log on to the EMR cluster to check upgrades. After the prompt in step 9 is not displayed, all upgraded configurations take effect.
 11. If you just upgraded the CPU and did not upgrade the memory, ignore this step. If you upgraded the **memory**, you need to modify cluster configurations so that YARN can use new resources.
