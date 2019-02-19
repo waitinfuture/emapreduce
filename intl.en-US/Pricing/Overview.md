@@ -14,6 +14,6 @@ The overall cost of E-MapReduce consists of the following:
 
 -   Cost of the external network traffic of master nodes
 
-    In created clusters, 8 Mbps of public network bandwidth is available for master nodes \(for an HA cluster, each of the two master nodes has 8 Mbps of bandwidth\). Traffic is Pay-As-You-Go and is not included in the cost of the clusters. You are charged on an hourly basis for outbound traffic, but inbound traffic is free. For example, if in an hour you use 10 GB of outbound traffic on a public network, the charge is 10 x price per GB \(in USD\). Traffic fees may vary between regions. For more information, please see [ECS network prices](../../../../../reseller.en-US/Pricing/Billing of Internet bandwidth.md#).
+    In created clusters, 8 Mbps of public network bandwidth is available for master nodes \(for an HA cluster, each of the two master nodes has 8 Mbps of bandwidth\). Traffic is Pay-As-You-Go and is not included in the cost of the clusters. You are charged on an hourly basis for outbound traffic, but inbound traffic is free. For example, if in an hour you use 10 GB of outbound traffic on a public network, the charge is 10 x price per GB \(in USD\). Traffic fees may vary between regions. For more information, please see [ECS network prices](https://www.alibabacloud.com/zh/product/ecs).
 
 
