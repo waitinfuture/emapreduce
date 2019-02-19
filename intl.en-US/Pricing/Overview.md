@@ -10,7 +10,7 @@ The overall cost of E-MapReduce consists of the following:
 
 -   Cost of E-MapReduce products
 
-    E-MapReduce provides multi-dimensional management services for clusters, including page display and control, API and SDK support, monitoring and alarms, O&M tools, and automatic back-end O&M..
+    E-MapReduce provides multi-dimensional management services for clusters, including page display and control, API and SDK support, monitoring and alarms, O&M tools, and automatic back-end O&M.For detailed pricing information, please see [Price of Subscription](reseller.en-US/Pricing/Price of Subscription E-MapReduce, not including ECS (cent__month per core).md#), [Price of Pay-As-You-Go](reseller.en-US/Pricing/Price of Pay-As-You-Go E-MapReduce, not including ECS (cent__hour per core).md#).
 
 -   Cost of the external network traffic of master nodes
 
