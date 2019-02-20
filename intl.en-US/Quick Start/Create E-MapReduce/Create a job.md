@@ -9,7 +9,7 @@ To run a computing task, you need to follow these steps to define a job:
 3.  Click the Old EMR Scheduling tab to go to the jobs list page.
 4.  Click **Create job** in the upper-right corner to go to the job creation page, as shown in the following figure:
 
-    ![Create job](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17841/154814109510493_en-US.png)
+    ![Create job](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17841/155063292710493_en-US.png)
 
 5.  Enter the **job name**.
 6.  Select a **job type**.
@@ -25,9 +25,9 @@ This is a Spark job, which sets parameters such as the input and output paths in
 
 **Note:** This example is for reference only.
 
-![Spark job example](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17841/154814109510494_en-US.jpg)
+![Spark job example](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17841/155063292710494_en-US.jpg)
 
-## oss and ossref {#section_rjr_cx4_y2b .section}
+## OSS and ossref {#section_rjr_cx4_y2b .section}
 
 The **oss://** prefix indicates that the data path points to an OSS path, which specifies the operation path when reading/writing the data. This is similar to **hdfs://**.
 
