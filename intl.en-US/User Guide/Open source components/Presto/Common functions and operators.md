@@ -27,7 +27,7 @@ A complete truth table is shown as follows:
 |NULL|FALSE|FALSE|NULL|
 |NULL|FALSE|NULL|NULL|
 
-The result of NOT FALSE is TRUE, the result of NOT TRUE is FALSE, and the result of NOT NULL is NULL. For more information about the NOT operator, see [NOT operator](http://www.veryhuo.com/a/manual/vbscript/html/vsoprNot.htm).
+The result of NOT FALSE is TRUE, the result of NOT TRUE is FALSE, and the result of NOT NULL is NULL.
 
 This section details the comparison functions and operators.
 
