@@ -146,9 +146,9 @@ Add the library file as needed and you can use the local shared library.
 
 ## Q: How can I specify the OSS data source file path in the MR or Spark job? {#section_zrk_qw1_pfb .section}
 
-A: You can use the following `OSS URL: oss://[accessKeyId:accessKeySecret@]bucket[.endpoint]/object/path`.
+A: You can use the following OSS URL: `oss://[accessKeyId:accessKeySecret@]bucket[.endpoint]/object/path`.
 
-This URI is used for specifying input/output data sources in the job, and is similar to `hdfs://`. Follow this procedure when you perform operations on OSS data:
+This URL is used for specifying input/output data sources in the job, and is similar to `hdfs://`. Follow this procedure when you perform operations on OSS data:
 
 -   \(Recommended\) EMR provides MetaService, which allows you to access OSS data without AssessKey, and directly write to the OSS path: // bucket/Object/path.
 -   \(Not recommended\) You can configure AccessKeyId, AccessKeySecret, and endpoint to Configuration \(SparkConf in Spark jobs, Configuration in MR jobs\), or you can directly specify AccessKeyId, AccessKeySecret, and endpoint in the URL. For more information, see the [Development preparation](../../../../../intl.en-US/Developer Guide/Preparations/Configure the OSS URI to use E-MapReduce.md#) section.
