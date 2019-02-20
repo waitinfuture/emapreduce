@@ -74,7 +74,7 @@ Description
 
     -   **Running Logs**: You can enable or disable this feature. This feature is enabled by default. After you enable this feature, you must specify an OSS path to save the logs. All running logs are stored in the specified OSS directory. To enable this feature, you must first activate OSS. The uploaded data is billed based on the space usage. We recommend that you enable this feature, which helps in debugging and troubleshooting.
     -   **Log Path**: Specify an OSS path to store the log.
-    -   **Uniform Meta Database**: Hive uses a unified metadatabase, which is independent of the cluster. The meta information will not be deleted after the cluster is released. We recommend that you disable this feature.
+    -   **Uniform Meta Database**: Hive uses a unified metadatabase, which is independent of the cluster. The meta information will not be deleted after the cluster is released. We recommend that you disable this feature if you are an E-MapReduce beginner.
 -   **Permission Settings**: Typically, the default setting is used.
 -   **Logon Settings**
     -   **Remote Logon**: Indicates whether to open port 22 of the security group. This feature is enabled by default.
