@@ -113,7 +113,7 @@ All operations on the E-MapReduce in SDK can be performed using this client.
             request.setVSwitchId("your-switchId");
             ```
 
-        -   You can specify high availability parameters. For more information about high availability parameters, see the hardware configuration section of [Create a cluster](https://help.aliyun.com/document_detail/28088.html).
+        -   You can specify high availability parameters. For more information about high availability parameters, see the hardware configuration section of [Create a cluster](../DNemapreduce1876943/EN-US_TP_17853.dita#concept_olg_vq3_y2b).
 
             ```
             request.setHighAvailabilityEnable(true);
@@ -346,7 +346,7 @@ All operations on the E-MapReduce in SDK can be performed using this client.
 
         For an execution plan that will be executed periodically \(as the following figure shows\), you can suspend this execution plan by calling a method provided by the SDK as follows:
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18044/154752442713444_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18044/155065344813444_en-US.png)
 
         ```
         public static void main(String[] args) {
@@ -366,7 +366,7 @@ All operations on the E-MapReduce in SDK can be performed using this client.
 
         For an execution plan that will be executed periodically \(as the following figure shows\), you can resume this execution plan by calling a method provided by the SDK as follows:
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18044/154752442713446_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/18044/155065344813446_en-US.png)
 
         ```
         public static void main(String[] args) {
