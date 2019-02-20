@@ -12,7 +12,7 @@ This section describes the step-by-step process for integrating Ranger into Hive
         -   Mode: Use the Beeline client or the JDBC code to run the related Hive script through HiveServer2.
         -   Permission settings:
 
-            Hive's [SQL Standard Based Authorization](reseller.en-US/User Guide/Component authorization/Hive authorization.md#) is used to control the permissions of HiveServer2.
+            Hive's [SQL Standard Based Authorization](intl.en-US/User Guide/Component authorization/Hive authorization.md#) is used to control the permissions of HiveServer2.
 
             Hive's table- and column-level permission control in Ranger is also used for HiveServer2. However, if you are still able to access Hive data though a Hive client or HDFS, table- or column-level permission control is insufficient and further control is required.
 
@@ -22,7 +22,7 @@ This section describes the step-by-step process for integrating Ranger into Hive
 
             The Hive client requests the metastore to perform DDL operations, such as altering tables, adding columns, and reading and processing data in HDFS, by submitting MapReduce jobs.
 
-            Hive's [Storage Based Authorization](reseller.en-US/User Guide/Component authorization/Hive authorization.md#) is used to control the permissions of Hive clients. It determines whether a user can perform DDL and DML operations based on the read and write permissions of the HDFS path where the table involved in SQL is located, such as `ALTER TABLE test ADD COLUMNS(b STRING)`.
+            Hive's [Storage Based Authorization](intl.en-US/User Guide/Component authorization/Hive authorization.md#) is used to control the permissions of Hive clients. It determines whether a user can perform DDL and DML operations based on the read and write permissions of the HDFS path where the table involved in SQL is located, such as `ALTER TABLE test ADD COLUMNS(b STRING)`.
 
             In Ranger, you can control the permissions of the HDFS path in Hive tables. This, in combination with the Hive metastore which is configured with storage-based authorization, enables you to implement permission control over the access of the Hive client.
 
@@ -42,15 +42,15 @@ This section describes the step-by-step process for integrating Ranger into Hive
     2.  Click **Ranger** in the service list to enter the Ranger Management page.
     3.  On the Ranger Configuration page, click the **Actions** drop-down menu in the upper-right corner, select **Enable Hive PLUGIN**, and click **OK**.
 
-        ![Enable Hive PLUGIN](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17950/154771027611501_en-US.png)
+        ![Enable Hive PLUGIN](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17950/155065538711501_en-US.png)
 
     4.  Enter the record information in the prompt box and click**OK**.
 
         You can check the progress by clicking **View Operation Logs** in the upper-right corner of the page.
 
-        ![View Operation Logs](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17950/154771027611502_en-US.png)
+        ![View Operation Logs](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17950/155065538711502_en-US.png)
 
-    **Note:** After you enable the Hive plug-in and restart Hive, HiveServer2 and Hive client scenarios are configured accordingly. For more information about HDFS permissions, see [Integrate Ranger into HDFS](reseller.en-US/User Guide/Component authorization/Ranger/Integrate Ranger into HDFS.md#).
+    **Note:** After you enable the Hive plug-in and restart Hive, HiveServer2 and Hive client scenarios are configured accordingly. For more information about HDFS permissions, see [Integrate Ranger into HDFS](intl.en-US/User Guide/Component authorization/Ranger/Integrate Ranger into HDFS.md#).
 
 -   Restart Hive
 
@@ -61,13 +61,13 @@ This section describes the step-by-step process for integrating Ranger into Hive
     3.  You can check the progress by clicking **View Operation Logs** in the upper-right corner of the page.
 -   Add the Hive service to the Ranger UI
 
-    For more information about how to access the Ranger UI page, see [Introduction to Ranger](https://help.aliyun.com/document_detail/66410.html?spm=a2c4g.11186623.2.11.63f75952TKxSqc).
+    For more information about how to access the Ranger UI page, see [Introduction to Ranger](EN-US_TP_17948.dita#concept_gpl_jrc_z2b).
 
     Add the Hive service.
 
-    ![Ranger UI](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17950/154771027611506_en-US.png)
+    ![Ranger UI](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17950/155065538711506_en-US.png)
 
-    ![Add the Hive service](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17950/154771027711507_en-US.png)
+    ![Add the Hive service](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17950/155065538711507_en-US.png)
 
     -   Instructions
 
@@ -92,11 +92,11 @@ This section describes the step-by-step process for integrating Ranger into Hive
 
 After integrating Ranger into Hive, you can set permissions, such as granting user foo the Select permission for column A in the testdb.test table.
 
-![Permission configuration](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17950/154771027711509_en-US.png)
+![Permission configuration](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17950/155065538811509_en-US.png)
 
 In the preceding figure, click **emr-hive** to enter the policy configuration page.
 
-![Policy configuration](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17950/154771027711510_en-US.png)
+![Policy configuration](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17950/155065538811510_en-US.png)
 
 Permissions are granted to user foo. They can now access the testdb.test table.
 
