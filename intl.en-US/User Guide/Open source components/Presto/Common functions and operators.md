@@ -530,8 +530,8 @@ The regular expression functions provided by Presto are as follows:
     |from\_hex|from\_hex\(string\) → varbinary|Decodes binary data from the hex encoded string.|
     |to\_big\_endian\_64|to\_big\_endian\_64\(bigint\) → varbinary|Encodes bigint in a 64-bit two's complement big endian format.|
     |from\_big\_endian\_64|from\_big\_endian\_64\(binary\) → bigint|Decodes bigint value from a 64-bit two's complement big endian binary.|
-    |to\_ieee754\_32|to\_ieee754\_32\(real\) → varbinary|Encodes real in a 32-bit big-endian binary according to [IEEE 754](http://grouper.ieee.org/groups/754/) single-precision floating-point format.|
-    |to\_ieee754\_64|to\_ieee754\_64\(double\) → varbinary|Encodes double in a 64-bit big-endian binary according to [IEEE 754](http://grouper.ieee.org/groups/754/) double-precision floating-point format.|
+    |to\_ieee754\_32|to\_ieee754\_32\(real\) → varbinary|Encodes real in a 32-bit big-endian binary according to [IEEE 754](https://standards.ieee.org/standard/754-2008.html) single-precision floating-point format.|
+    |to\_ieee754\_64|to\_ieee754\_64\(double\) → varbinary|Encodes double in a 64-bit big-endian binary according to [IEEE 754](https://standards.ieee.org/standard/754-1985.html) double-precision floating-point format.|
     |crc32|crc32\(binary\) → bigint|Computes the CRC-32 of binary.|
     |md5|md5\(binary\) → varbinary|Computes the md5 hash of binary.|
     |sha1|sha1\(binary\) → varbinary|Computes the sha1 hash of binary.|
