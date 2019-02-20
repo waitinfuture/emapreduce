@@ -26,7 +26,7 @@ Create a security cluster
 
 In the software configuration tab on the cluster creation page, you can turn on **High Security Mode**, as shown in the following figure:
 
-![Create a security cluster](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20194/154770999030950_en-US.png)
+![Create a security cluster](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20194/155065475330950_en-US.png)
 
 ## Kerberos authentication {#section_gf3_xkl_z2b .section}
 
@@ -34,7 +34,7 @@ Kerberos is an identity authentication protocol based on symmetric key cryptogra
 
 The Kerberos protocol process is mainly divided into two stages: the KDC authenticates the client ID, and the service authenticates the client ID.
 
-![Kerberos authentication](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17934/154770999011118_en-US.png)
+![Kerberos authentication](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17934/155065475311118_en-US.png)
 
 -   KDC
 
@@ -65,7 +65,7 @@ The Kerberos protocol process is mainly divided into two stages: the KDC authent
 When you create a cluster, services in the E-MapReduce Kerberos security cluster start in the Kerberos security mode.
 
 -   The Kerberos server is a HasServer
-    -   Log on to the [Alibaba Cloud E-MapReduce console](https://partners-intl.console.aliyun.com/#/emr),choose **Cluster** \> ** ** \> **Configuration Management** \> **HAS**, and conduct operations such as view, modify configuration, and restart.
+    -   Log on to the [Alibaba Cloud E-MapReduce console](https://emr.console.aliyun.com), choose **Cluster** \> ** ** \> **Configuration Management** \> **HAS**, and conduct operations such as view, modify configuration, and restart.
     -   Non-HA clusters are deployed on the emr-header-1 node, whereas HA clusters are deployed on both the emr-header-1 and emr-header-2 nodes.
 -   Supports four ID authentication methods
 
@@ -82,7 +82,7 @@ When you create a cluster, services in the E-MapReduce Kerberos security cluster
         export HADOOP_CONF_DIR=/etc/has/hadoop-conf Export a temporary environment variable. The hadoop.security.authentication.use.has value under this path has already been set to false.
         ```
 
-        Access method: You can use open source clients to access the service, such as an HDFS client. For more information, [click here](https://help.aliyun.com/document_detail/62966.html?spm=a2c4g.11186623.2.6.10266ca0NDVY35).
+        Access method: You can use open source clients to access the service, such as an HDFS client. For more information, [click here](EN-US_TP_17935.dita#concept_qk1_5pl_z2b).
 
     -   RAM ID authentication
 
@@ -95,7 +95,7 @@ When you create a cluster, services in the E-MapReduce Kerberos security cluster
         export HADOOP_CONF_DIR=/etc/has/hadoop-conf; export HAS_CONF_DIR=/path/to/has-client.conf Export a temporary environment variable, and then set the auth_type in the has-client.conf file of the HAS_CONF_DIR folder to RAM.
         ```
 
-        Access method: The client must use a software package of the cluster, such as Hadoop or HBase. For more information, [click here](EN-US_TP_17935.dita#concept_qk1_5pl_z2b).
+        Access method: The client must use a software package of the cluster, such as Hadoop or HBase. For more information, [click here](EN-US_TP_17936.dita#concept_nsg_mb5_1fb).
 
     -   LDAP ID authentication
 
