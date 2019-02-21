@@ -97,11 +97,19 @@
 
 -   方式一：端口动态转发
 
-    创建一个 SSH 隧道，该隧道可打通您本地机器跟 E-MapReduce 集群的 master 机器的某个动态端口的连接。
+    -   密钥的方式
 
-    ```
-    ssh -i /path/id_xxx -ND 8157 hadoop@masterNodeIP
-    ```
+        创建一个 SSH 隧道，该隧道可打通您本地机器跟 E-MapReduce 集群的 master 机器的某个动态端口的连接：
+
+        ```
+        ssh -i /path/id_xxx -ND 8157 hadoop@masterNodeIP
+        ```
+
+    -   用户名密码的方式，需要输入密码：
+
+        ```
+        ssh -ND 8157 hadoop@masterNodeIP
+        ```
 
     8157 是您本地机器没有被使用过的任何一个端口，用户可以自定定义。
 
@@ -127,42 +135,87 @@
 
     -   插件方式
 
-        此时，您本地机器跟 E-MapReduce 集群的 master 主机的 SSH 通道已经打通，要在浏览器中查看 Hadoop、Spark、Ganglia 的 webui，您还需要配置一个本地代理。操作步骤如下：
+        -   使用Chome 插件查看Web UI:
+            1.  首先安装 Chrome 的插件，[SwitchyOmega](https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif?hl)。
+            2.  安装完成以后，单击插件，在弹出框中选择**选项**开始进行配置。
+            3.  单击**新建情景模式**，命名为 SSH tunnel，类型选择 PAC情景模式。
+            4.  配置以下内容到 PAC 脚本中：
 
-        1.  假设您使用的是 Chrome 或者 Firefox 浏览器，请点击[下载 FoxyProxy Standard 代理软件](http://foxyproxy.mozdev.org/downloads.html)。
-        2.  安装完成并重启浏览器后，打开一个文本编辑器，编辑如下内容：
+                ```
+                function regExpMatch(url, pattern) {    
+                  try { return new RegExp(pattern).test(url); } catch(ex) { return false; }    
+                }
+                  
+                function FindProxyForURL(url, host) {
+                    // Important: replace 172.31 below with the proper prefix for your VPC subnet
+                
+                    if (shExpMatch(url, "*localhost*")) return "SOCKS5 localhost:8157";
+                    if (shExpMatch(url, "*emr-header*")) return "SOCKS5 localhost:8157";
+                    if (shExpMatch(url, "*emr-worker*")) return "SOCKS5 localhost:8157";
+                
+                    return 'DIRECT';
+                }
+                ```
 
-            ```
-            <?xml version="1.0" encoding="UTF-8"?>
-            <foxyproxy>
-            <proxies>
-            <proxy name="aliyun-emr-socks-proxy" id="2322596116" notes="" fromSubscription="false" enabled="true" mode="manual" selectedTabIndex="2" lastresort="false" animatedIcons="true" includeInCycle="true" color="#0055E5" proxyDNS="true" noInternalIPs="false" autoconfMode="pac" clearCacheBeforeUse="false" disableCache="false" clearCookiesBeforeUse="false" rejectCookies="false">
-            <matches>
-            <match enabled="true" name="120.*" pattern="http://120.*" isRegEx="false" isBlackList="false" isMultiLine="false" caseSensitive="false" fromSubscription="false" ></match>
-            </matches>
-            <manualconf host="localhost" port="8157" socksversion="5" isSocks="true" username="" password="" domain="" ></manualconf>
-            </proxy>
-            </proxies>
-            </foxyproxy>
-            ```
+            5.  在左侧单击**应用选项**完成配置。
+            6.  运行一个命令行，在命令行选择一种方式运行以下的命令：
 
-            其中：
+                ```
+                // 方式1，密钥的方式
+                ssh -i /path/id_xxx -ND 8157 hadoop@masterNodeIP
+                ```
 
-            -   `Port 8157` 是您本地用来建立与集群 master 机器 SSH 连接的端口，这个需要跟您之前执行的在终端中执行的 SSH 命令中使用的端口匹配。
-            -   `120.*` 这个匹配是用来匹配 master 主机的 IP 地址，请根据 master 的 IP 地址的情况来定。
-        3.  在浏览器中单击**Foxyproxy**按钮，选择 **Options**。
-        4.  选择 **Import/Export**。
-        5.  选择刚才您编辑的 xml 文件，单击 **Open**。
-        6.  在 **Import FoxyProxy Setting** 对话框中，单击 **Add**。
-        7.  点击浏览器中的 **Foxyproxy** 按钮，选择 **Use Proxy aliyun-emr-socks-proxy for all URLs**。
-        8.  在浏览器中输入 localhost:8088，就可以打开远端的 Hadoop 界面了。
+                ```
+                // 方式2，用户名密码的方式，需要输入密码
+                ssh -ND 8157 hadoop@masterNodeIP
+                ```
+
+            7.  命令行跑起来以后，在 Chrome 上单击插件，切换到之前创建的 SSH tunnel 情景模式下。
+            8.  在浏览器地址栏输入机器 IP 地址 + 端口  即可访问。这个 IP 就是 SSH 命令行去连接的机器IP，一般是 Master 节点 ，例如 YARN :8088，HDFS 是：50070，等等。
+        -   此时，您本地机器跟 E-MapReduce 集群的 master 主机的 SSH 通道已经打通，要在浏览器中查看 Hadoop、Spark、Ganglia 的 WebUI，您还需要配置一个本地代理。操作步骤如下：
+
+1.  假设您使用的是 Chrome 或者 Firefox 浏览器，请点击[下载 FoxyProxy Standard 代理软件](http://foxyproxy.mozdev.org/downloads.html)。
+2.  安装完成并重启浏览器后，打开一个文本编辑器，编辑如下内容：
+
+    ```
+    <?xml version="1.0" encoding="UTF-8"?>
+    <foxyproxy>
+    <proxies>
+    <proxy name="aliyun-emr-socks-proxy" id="2322596116" notes="" fromSubscription="false" enabled="true" mode="manual" selectedTabIndex="2" lastresort="false" animatedIcons="true" includeInCycle="true" color="#0055E5" proxyDNS="true" noInternalIPs="false" autoconfMode="pac" clearCacheBeforeUse="false" disableCache="false" clearCookiesBeforeUse="false" rejectCookies="false">
+    <matches>
+    <match enabled="true" name="120.*" pattern="http://120.*" isRegEx="false" isBlackList="false" isMultiLine="false" caseSensitive="false" fromSubscription="false" ></match>
+    </matches>
+    <manualconf host="localhost" port="8157" socksversion="5" isSocks="true" username="" password="" domain="" ></manualconf>
+    </proxy>
+    </proxies>
+    </foxyproxy>
+    ```
+
+    其中：
+
+    -   `Port 8157` 是您本地用来建立与集群 master 机器 SSH 连接的端口，这个需要跟您之前执行的在终端中执行的 SSH 命令中使用的端口匹配。
+    -   `120.*` 这个匹配是用来匹配 master 主机的 IP 地址，请根据 master 的 IP 地址的情况来定。
+3.  在浏览器中单击**Foxyproxy**按钮，选择 **Options**。
+4.  选择 **Import/Export**。
+5.  选择刚才您编辑的 xml 文件，单击 **Open**。
+6.  在 **Import FoxyProxy Setting** 对话框中，单击 **Add**。
+7.  点击浏览器中的 **Foxyproxy** 按钮，选择 **Use Proxy aliyun-emr-socks-proxy for all URLs**。
+8.  在浏览器中输入 localhost:8088，就可以打开远端的 Hadoop 界面了。
 -   方式二：本地端口转发
 
     **说明：** 这个方式的缺陷是只能看到最外层的界面，一旦要看详细的作业信息，就会出错。
 
-    ```
-    ssh -i /path/id_rsa -N -L 8157:masterNodeIP:8088 hadoop@masterNodeIP
-    ```
+    -   密钥的方式：
+
+        ```
+        ssh -i /path/id_rsa -N -L 8157:masterNodeIP:8088 hadoop@masterNodeIP
+        ```
+
+    -   用户名密码的方式，需要输入密码：
+
+        ```
+        ssh -N -L 8157:masterNodeIP:8088 hadoop@masterNodeIP 
+        ```
 
     参数说明：
 
