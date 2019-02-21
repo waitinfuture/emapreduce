@@ -175,7 +175,7 @@
             8.  在浏览器地址栏输入机器 IP 地址 + 端口  即可访问。这个 IP 就是 SSH 命令行去连接的机器IP，一般是 Master 节点 ，例如 YARN :8088，HDFS 是：50070，等等。
             这个方式下，正常网页浏览和集群 WebUI 访问互不干扰，可以同时使用。
 
-        -   此时，您本地机器跟 E-MapReduce 集群的 master 主机的 SSH 通道已经打通，要在浏览器中查看 Hadoop、Spark、Ganglia 的 WebUI，您还需要配置一个本地代理。操作步骤如下：
+        -   您本地机器跟 E-MapReduce 集群的 Master 主机的 SSH 通道打通后，要在浏览器中查看 Hadoop、Spark、Ganglia 的 WebUI，您还需要配置一个本地代理。操作步骤如下：
 
 1.  假设您使用的是 Chrome 或者 Firefox 浏览器，请点击[下载 FoxyProxy Standard 代理软件](http://foxyproxy.mozdev.org/downloads.html)。
 2.  安装完成并重启浏览器后，打开一个文本编辑器，编辑如下内容：
