@@ -10,10 +10,10 @@
 2.  在服务列表中单击**Ranger**进入Ranger配置页面
 3.  在Ranger配置页面，单击右侧的**操作**下拉菜单，选择**Enable HBase PLUGIN**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17951/154293946911513_zh-CN.png)
+    ![Enable HBase PLUGIN](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17951/155081653611513_zh-CN.png)
 
 4.  在弹出框输入执行Commit记录，然后单击**确定**
-5.  单击右上角**查看任务进度**，等待任务完成。![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17951/154293946911514_zh-CN.png)
+5.  单击右上角**查看任务进度**，等待任务完成。![查看任务进度](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17951/155081653611514_zh-CN.png)
 
 ## Ranger UI添加HBase service {#section_elq_cpj_bfb .section}
 
@@ -21,9 +21,9 @@
 
 在Ranger的UI页面添加Hase Service：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17951/154293947011521_zh-CN.png)
+![添加Hase Service](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17951/155081653611521_zh-CN.png)
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17951/154293947011522_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17951/155081653611522_zh-CN.png)
 
 **说明：** $\{id\}： 可登录机器执行`host`命令，hostname中的数字即为$\{id\}的值。
 
@@ -40,11 +40,11 @@
 
 用户需要设置管理员账号的权限\(admin权限\)，用于执行一些管理命令，如`balance/compaction/flush/split`等等。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17951/154293947011523_zh-CN.png)
+![设置管理员账号](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17951/155081653711523_zh-CN.png)
 
 上图中已经存在权限策略，您只需要单击右侧的编辑按钮，将user改成自己想要设置的账号即可，另外也可以修改其中的权限\(如只保留Admin权限\)。hbase账号必须要默认设置为管理员账号。
 
-若使用Phoenix，则还需在ranger的HBase中新增如下policy：
+若使用Phoenix，则还需在ranger的HBase中新增如下策略：
 
 |Table|SYSTEM.\*|
 |-----|---------|
@@ -53,17 +53,17 @@
 |Groups|`public`|
 |Permissions|`Read` `Write`, `Create`, `Admin`|
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17951/154293947032580_zh-CN.png)
+![新增策略](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17951/155081653732580_zh-CN.png)
 
 ## 权限配置示例 {#section_rcd_2rj_bfb .section}
 
 上面一节中已经将Ranger集成到HBase，可以进行相关的权限设置。例如给用户test授予表foo\_ns:test的`Create/Write/Read`权限。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17951/154293947011524_zh-CN.png)
+![权限配置示例](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17951/155081653711524_zh-CN.png)
 
 单击上图中的**emr-hbase**进入配置页面，配置相关权限。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17951/154293947011525_zh-CN.png)
+![配置相关权限](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17951/155081653711525_zh-CN.png)
 
 User/Group 会自动从集群中同步过来，大约需要一分钟，用户可以事先将它们添加到集群。
 
