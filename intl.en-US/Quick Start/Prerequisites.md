@@ -19,7 +19,7 @@ Make sure that the following prerequisites are met before you create an E-MapRed
 
         **Note:** If the following dialog box appears, click **Continue to manage AccessKey**.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17837/154890654710452_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17837/155108751410452_en-US.png)
 
     4.  Click **Create AccessKey**.
     5.  The AccessKey has been created.
