@@ -2,21 +2,22 @@
 
 In this tutorial, you will learn how to configure a Shell job.
 
-**Note:** By default, Shell scripts are currently run by Hadoop. If you need to use the root user, sudo can be used. Use Shell script jobs with caution.
+**Note:** By default, Shell scripts are currently run by Hadoop. If you need to use the root user, the sudo command can be used. Use Shell script jobs with caution.
 
 ## Procedure {#section_eww_tjp_y2b .section}
 
 1.  Log on to the [Alibaba Cloud E-MapReduce console](https://emr.console.aliyun.com/?spm=5176.8250060.103.1.48466f55SEaqMe#/cn-hangzhou).
 2.  At the top of the navigation bar, click **Data Platform**.
-3.  In the **Actions** column, click **Design Workflow** next to the specified project.
-4.  On the left of the Job Editing page, right-click the folder you want to operate and select **New Job**.
-5.  In the **New Job** dialog box, enter the job name and description.
-6.  Select the Shell job type to create a Bash Shell job.
-7.  Click **OK**.
+3.  In the **Projects** area, select a target project ID to go to the Project Management tab page.
+4.  In the left-side navigation bar, click **Edit Jobs** next to the specified project.
+5.  On the left of the **Edit Jobs** tab page, right-click the folder you want to operate and select **New Job**.
+6.  In the **New Job** dialog box, enter the job name and description.
+7.  Select the Shell job type to create a Bash Shell job.
+8.  Click **OK**.
 
     **Note:** You can also create subfolders, rename folders, and delete folders by right-clicking on them.
 
-8.  Enter the parameters in the **Content** field after the Shell commands.
+9.  Enter the parameters in the **Content** field after the Shell commands.
     -   -c option
 
         -c options can be used to set Shell scripts to run by inputting them into the **Content** field of the job. For example:
@@ -33,5 +34,5 @@ In this tutorial, you will learn how to configure a Shell job.
         -f ossref://mxbucket/sample/sample-shell-job.sh
         ```
 
-9.  Click **Save** to complete Shell job configurations.
+10. Click **Save** to complete Shell job configurations.
 
