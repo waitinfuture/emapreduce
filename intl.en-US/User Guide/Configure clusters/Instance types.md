@@ -1,20 +1,24 @@
 # Instance types {#concept_dfm_yk3_y2b .concept}
 
-The EMR cluster consists of multiple different node instance types, namely the master, core, and task instances. Completely different service processes are available for different tasks when each of these instances is deployed. For example, we deploy Hadoop HDFS’s Name Node service and Hadoop YARN’s Resource Manager service on master instances, and Data Node service and Hadoop YARN’s Node Manager service on core instances. Task instances are only used for computing. Therefore, we deploy Hadoop YARN’s Node Manager service, rather than HDFS-related services for task instances.
+There are three types of node instances in an E-MapReduce cluster: master, core, and task.
 
-When creating a cluster, you must determine ECS specifications for these three instance types. The ECS instances with the same instance type must be in the same instance group. The cluster can scale up at a later stage to accommodate the number of hosts in the appropriate instance groups \(except master instance group\).
+Different service processes are deployed on each instance type. For example, with Hadoop, the HDFS NameNode and YARN ResourceManager services are deployed on master instances, while the HDFS DataNode and YARN NodeManager services are deployed on core instances. For task instances, because they are only used in computing tasks, only YARN NodeManager is deployed, and not HDFS-related services.
 
-**Note:** The task instance is supported in version 3.2.0 or later.
+When you create a cluster, you must determine the ECS specifications for each instance type. ECS instances of the same type must be in the same instance group. If you increase the number of hosts in a core or task instance group, you can scale the cluster up at a later date. This does not apply to master instance groups.
+
+**Note:** Task instances are supported in version 3.2.0 or later.
 
 ## Master instance {#section_xwh_1l3_y2b .section}
 
-The master instance is the node where the cluster service’s management and control components are deployed. For example, the Hadoop YARN’s Resource Manager is deployed on the master instance node. You can connect to the master instance using SSH, and check the service status in the cluster by the Web UI of the software. At the same time, when you want to quickly test or run a job, you can log on to the master instance and submit jobs directly by command lines. When the high availability feature is turned on for the cluster, two master instance nodes are used \(by default, only one\).
+The master instance is where the management and control components of the cluster service are deployed. You can connect to the master instance using SSH and check service statuses in the cluster through the software's Web UI.
+
+If you want to perform a test or run a job, log on to the master instance and submit jobs directly at the command line. By default, only one master instance is used. However, if the cluster's high availability feature is enabled, two are used.
 
 ## Core instance {#section_ywh_1l3_y2b .section}
 
-The core instance is the instance node managed by the master instance. It runs the Hadoop HDFS’s Data Node service and stores all the data. It also deploys computing services, such as Hadoop YARN’s Node Manager service, to perform computing tasks. To meet the needs for more data storage or heavier computing workload, the core instance can scale up at any time without affecting the normal operations of the active cluster. It can use a variety of different storage media to store data. You can refer to the discussions about disks for details.
+Core instances, which are managed by master instances, store all of the data in the cluster. They also deploy computing services to perform computing tasks. If you need more data storage or are experiencing heavier workloads, you can scale core instances up at any time without impacting the operations of the cluster. For more information, please refer to [Local disks](../../../../../reseller.en-US/Block storage/Block storage/Local disks.md#) and [Block storage?](../../../../../reseller.en-US/Block storage/Block storage/What is block storage?.md#).
 
 ## Task instance {#section_zwh_1l3_y2b .section}
 
-The task instance is an optional instance type that is specifically responsible for computing. If the core instance has sufficient computing power, task instance may not be used. The task instance can quickly add computing power to the cluster, such as Hadoop’s MapReduce tasks, and Spark executors. As HDFS data is not stored on the task instance, Hadoop HDFS’s Data Node service does not run on it. The task instance can scale up and down at any time without affecting the normal operations of the active cluster. Depending on the fault tolerance \(or retries\) of the computing service, fewer task instance nodes may cause MapReduce and Spark jobs to fail.
+Task instances are responsible for computing and can quickly add computing power to a cluster. They can also scale up and down at any time without impacting the operations of the cluster. However, this instance type is optional, and if the core instance has enough computing power, task instances are not necessary. Depending on the fault tolerance \(or retries\) of the computing service, a reduction in the number of task instance nodes may cause MapReduce and Spark jobs to fail.
 
