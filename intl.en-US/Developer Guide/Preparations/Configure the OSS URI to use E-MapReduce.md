@@ -12,7 +12,7 @@ When using E-MapReduce, you can use two types of OSS URIs:
 
 -   ref URI: ossref://bucket/object/path
 
-    It is only valid in the configuration of an E-MapReduce job and is used to specify the resources needed for running the job. In the following job configuration example:
+    It is only valid in the configuration of an E-MapReduce job and is used to specify the resources needed for running the job.
 
 
 We call prefixes, such as oss and ossref, as schemes. Pay special attention to the scheme difference in URI.
