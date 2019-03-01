@@ -1,6 +1,6 @@
 # CreateCluster {#concept_ahy_wy1_kfb .concept}
 
-You can this operation to create a cluster.
+You can call this operation to create a cluster.
 
 ## Request parameters {#section_wbp_dz1_kfb .section}
 
@@ -9,7 +9,7 @@ You can this operation to create a cluster.
 |Name|String|Yes|None|The name of the cluster. Length constraints: Minimum length of 1 character. Maximum length of 64 characters. Only Chinese characters, letters, numbers, hyphens \(-\), and underscores \(\_\) are allowed.|
 |RegionId|String|Yes|None|Currently, the available regions are China East 1 \(Hangzhou\), China East 2 \(Shanghai\), China South 1 \(Shenzhen\), China North 2 \(Beijing\), China North 3 \(Zhangjiakou\), US West 1 \(Silicon Valley\), Asia Pacific SE 1 \(Singapore\), and Germany \(Frankfurt\).|
 |ZoneId|String|No|None|The zone location ID of the supported available zone in the China East 1 \(Hangzhou\) region: cn-hangzhou-b. The zone location IDs of the supported available zones in the China East 2 \(Shanghai\) region: cn-beijing-a, cn-beijing-b, and cn-beijing-c.|
-|LogEnable|Boolean|Yes|None|Specifies whether to enable or disable storing logs. Make sure you have activated [OSS](https://www.aliyun.com/product/oss/) to use this function.|
+|LogEnable|Boolean|Yes|None|Specifies whether to enable or disable storing logs. Make sure you have activated [OSS](https://www.alibabacloud.com/product/oss) to use this function.|
 |LogPath|String|No. It is required if LogEnable==true.|None|The location of the log that is stored in OSS. The format is: oss://bucketname/dir|
 |SecurityGroupId|String|No|None|The ID of a security group. You can create a security group in the ECS console and use it. Note: If you are using an existing security group, the default security group policy is applied to this security group. Only port 22 is open at the inbound and all ports are open at the outbound.|
 |SecurityGroupName|String|No|None|If the ID of the security group is not specified, this name is used to create a new security group. After the cluster has been created, you can see the ID of the created security group in the detailed information of the cluster. The default security group policy is applied to this security group. Only port 22 is open at the inbound and all ports are open at the outbound.|
