@@ -6,7 +6,7 @@ E-MapReduce的HBase集群，可以通过HBase内置的快照\(snapshot\)功能�
 
 1.  创建HBase集群
 
-    详见[集群创建文档](../../../../intl.zh-CN/用户指南/集群/创建集群.md#)
+    详见[集群创建文档](../../../../../intl.zh-CN/用户指南/集群/创建集群.md#)
 
 2.  创建table
 
@@ -46,7 +46,7 @@ E-MapReduce的HBase集群，可以通过HBase内置的快照\(snapshot\)功能�
     hbase org.apache.hadoop.hbase.snapshot.ExportSnapshot -snapshot test_snapshot -copy-to oss://$accessKeyId:$accessKeySecret@$bucket.oss-cn-hangzhou-internal.aliyuncs.com/hbase/snapshot/test
     ```
 
-    **说明：** OSS使用[内网Endpoint](../../../../intl.zh-CN/开发指南/访问与控制/OSS访问域名使用规则.md#)
+    **说明：** OSS使用[内网Endpoint](../../../../../intl.zh-CN/开发指南/访问域名（Endpoint）/OSS访问域名使用规则.md#)
 
 6.  创建另一个HBase集群
 7.  OSS导出快照
