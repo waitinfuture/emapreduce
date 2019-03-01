@@ -20,7 +20,7 @@ oss://${AccessKeyId}:${AccessKeySecret}@${bucket}.${endpoint}/${path}
 
 -   $\{endpoint\}：访问 OSS 使用的网络，由您集群所在的 region 决定，对应的 OSS 也需要是在集群对应的 region。
 
-    具体的值请参考 [OSS Endpoint](../../../../intl.zh-CN/开发指南/访问域名和数据中心.md#)
+    具体的值请参考 [OSS Endpoint](../../../../../intl.zh-CN/开发指南/访问域名（Endpoint）/访问域名和数据中心.md#)
 
 -   $\{path\}：bucket 中的路径。
 
@@ -95,7 +95,7 @@ oss://${AccessKeyId}:${AccessKeySecret}@${bucket}.${endpoint}/${path}
 
     将步骤 1 中编写的脚本存放到 OSS 上，假设存储路径为oss://emr/jars/script1-hadoop.pig，在 E-MapReduce 作业中创建如下作业：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17986/154259742313205_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17986/155142987013205_zh-CN.png)
 
 3.  创建执行计划并运行
 

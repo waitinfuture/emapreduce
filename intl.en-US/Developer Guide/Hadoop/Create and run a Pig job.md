@@ -1,6 +1,6 @@
 # Create and run a Pig job {#concept_h3g_qsm_hfb .concept}
 
-This topic describes how to create and run a Pig job.
+This topic describes how to create and run a Pig job on E-MapReduce cluster.
 
 ## Use OSS in Pig {#section_r4m_35m_hfb .section}
 
@@ -95,7 +95,7 @@ Follow these steps:
 
     Store the script created in step 1 to OSS. For example, if the storage path is oss://emr/jars/script1-hadoop.pig, follow these steps to create a job in E-MapReduce:
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17986/154752341713205_en-US.png)
+    ![Create job](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17986/155142987413205_en-US.png)
 
 3.  Create and run an execution plan.
 
