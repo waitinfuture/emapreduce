@@ -9,7 +9,7 @@
 -   当前E-MapReduce环境支持MetaService服务，可以支持在E-MapReduce环境免AccessKey访问OSS数据。旧的显式输入AccessKey的方式依旧支持，请注意在操作OSS的时候优先使用内网的Endpoint。
 -   当您需要在本地进行测试的时候，才要用到OSS的外网的Endpoint，这样才能从本地访问到OSS的数据。
 
-所有的Endpint可以参考[OSS Endpoint](../../../../intl.zh-CN/开发指南/访问域名和数据中心.md#)。
+所有的Endpint可以参考[OSS Endpoint](../../../../../intl.zh-CN/开发指南/访问域名（Endpoint）/访问域名和数据中心.md#)。
 
 ## 推荐做法（以免AccessKey方式为例） {#section_ugz_j1h_hfb .section}
 
