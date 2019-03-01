@@ -58,7 +58,7 @@ HBase 集群一些默认的配置如下所示：
 
 1.  获取 Master IP 和集群 ZK 地址。通过 E-MapReduce 控制台集群详情页面，用户可以查看集群的 Master 节点 IP 和 ZK 访问地址（内网IP），如下图所示：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17990/154889975113234_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17990/155143000313234_zh-CN.png)
 
     对于开通了公网 IP 的 Master 节点，用户可以参考[如何登录 master 节点](../../../../../intl.zh-CN/用户指南/SSH 登录集群.md#)，浏览 HMaster 的 WEB UI\(localhost:16010\)。
 
