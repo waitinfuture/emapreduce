@@ -11,7 +11,7 @@
 |StopTime|Long|集群停止的时间，时间戳格式。类似：1459236255438|
 |LogEnable|Boolean|是否开启了日志保存|
 |LogPath|String|日志保存的路径|
-|Status|String|[集群状态](../../../../intl.zh-CN/常见问题/附录/状态表.md#)|
+|Status|String|[集群状态](../../../../../intl.zh-CN/常见问题/附录/状态表.md#)|
 |HighAvailabilityEnable|Boolean|是否为高可用集群|
 |RunningTime|Integer|运行时间，单位：秒|
 |MasterNodeTotal|Integer|master节点总数|
