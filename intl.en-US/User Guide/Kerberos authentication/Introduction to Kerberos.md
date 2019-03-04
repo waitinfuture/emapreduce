@@ -26,7 +26,7 @@ Create a security cluster
 
 In the software configuration tab on the cluster creation page, you can turn on **High Security Mode**, as shown in the following figure:
 
-![Create a security cluster](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20194/155166603330950_en-US.png)
+![Create a security cluster](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20194/155166722430950_en-US.png)
 
 ## Kerberos authentication {#section_gf3_xkl_z2b .section}
 
@@ -34,7 +34,7 @@ Kerberos is an identity authentication protocol based on symmetric key cryptogra
 
 The Kerberos protocol process is mainly divided into two stages: the KDC authenticates the client ID, and the service authenticates the client ID.
 
-![Kerberos authentication](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17934/155166603311118_en-US.png)
+![Kerberos authentication](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17934/155166722411118_en-US.png)
 
 -   KDC
 
@@ -65,7 +65,7 @@ The Kerberos protocol process is mainly divided into two stages: the KDC authent
 When you create a cluster, services in the E-MapReduce Kerberos security cluster start in the Kerberos security mode.
 
 -   The Kerberos server is a HasServer
-    -   Log on to the [Alibaba Cloud E-MapReduce console](https://partners-intl.console.aliyun.com/#/emr),choose **Cluster** \> ** ** \> **Configuration Management** \> **HAS**, and conduct operations such as view, modify configuration, and restart.
+    -   Log on to the [Alibaba Cloud E-MapReduce console](https://partners-intl.console.aliyun.com/#/emr), choose **Cluster** \> ** ** \> **Configuration Management** \> **HAS**, and conduct operations such as view, modify configuration, and restart.
     -   Non-HA clusters are deployed on the emr-header-1 node, whereas HA clusters are deployed on both the emr-header-1 and emr-header-2 nodes.
 -   Supports four ID authentication methods
 
