@@ -20,6 +20,8 @@ This section contains information on the different ECS instance types.
 
     This type uses local SATA disks as storage, which is highly cost-effective. If you want to store massive amounts of data \(TB-level\), it is recommended that you use this type.
 
+    **Note:** Currently only core nodes supported by Hadoop, Data Science, and Druid clusters support big data instances. Zookeeper and Kafka clusters do not support core nodes.
+
 -   Ephemeral SSD
 
     This type uses ephemeral SSDs as storage, which provides high local IOPS and throughput.
