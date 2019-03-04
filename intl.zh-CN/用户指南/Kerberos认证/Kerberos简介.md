@@ -26,7 +26,7 @@ E-MapReduce从2.7.x/3.5.x版本开始支持创建安全类型的集群，即集�
 
 在集群创建页面的软件配置下打开**安全**按钮即可，如下所示:
 
-![创建安全集群](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20194/154770997930950_zh-CN.png)
+![创建安全集群](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20194/155166602930950_zh-CN.png)
 
 ## Kerberos身份认证原理 {#section_gf3_xkl_z2b .section}
 
@@ -34,7 +34,7 @@ Kerberos是一种基于对称密钥技术的身份认证协议，它作为一个
 
 Kerberos协议过程主要有两个阶段，第一个阶段是KDC对Client身份认证，第二个阶段是Service对Client身份认证。
 
-![Kerberos身份认证原理](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17934/154770997911118_zh-CN.png)
+![Kerberos身份认证原理](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17934/155166602911118_zh-CN.png)
 
 -   KDC
 
