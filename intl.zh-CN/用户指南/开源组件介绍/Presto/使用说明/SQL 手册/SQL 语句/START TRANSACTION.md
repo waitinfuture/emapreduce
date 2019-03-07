@@ -1,0 +1,27 @@
+# START TRANSACTION {#concept_v2l_vhm_zgb .concept}
+
+## 概要 {#section_p5k_ll3_ygb .section}
+
+```
+START TRANSACTION [ mode [, ...] ]
+
+其中`mode`可以从如下几个选项中选择：
+
+ISOLATION LEVEL { READ UNCOMMITTED | READ COMMITTED | REPEATABLE READ | SERIALIZABLE }
+READ { ONLY | WRITE }
+```
+
+## 描述 {#section_fym_ml3_ygb .section}
+
+在当前会话中启动一个新的事务。
+
+## 示例 {#section_phk_nl3_ygb .section}
+
+```
+START TRANSACTION;
+START TRANSACTION ISOLATION LEVEL REPEATABLE READ;
+START TRANSACTION READ WRITE;
+START TRANSACTION ISOLATION LEVEL READ COMMITTED, READ ONLY;
+START TRANSACTION READ WRITE, ISOLATION LEVEL SERIALIZABLE;
+```
+
