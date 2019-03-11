@@ -1,29 +1,29 @@
 # RAM认证 {#concept_nsg_mb5_1fb .concept}
 
-E-Map集educe群中的Kerberos服务端除了可以支持第一种MIT Kerberos兼容的使用方式，也可以支持Kerberos客户端使用RAM作为身份信息进行身份认证。
+E-MapReduce（以下简称 EMR）集群中的 Kerberos 服务端除了可以支持第一种 MIT Kerberos 兼容的使用方式，也可以支持 Kerberos 客户端使用 RAM 作为身份信息进行身份认证。
 
 ## RAM身份认证 {#section_hrr_mc5_1fb .section}
 
 [RAM](https://www.alibabacloud.com/product/ram)产品可以创建/管理子账号，通过子账号实现对云上各个资源的访问控制。
 
-主账号的管理员可以在RAM的用户管理界面创建一个子账号\(子账户名称必须符合linux用户的规范\)，然后将子账号的AccessKey下载下来提供给该子账号对应的开发人员，后续开发人员可以通过配置AccessKey，从而通过Kerberos认证访问集群服务。
+主账号的管理员可以在 RAM 的用户管理界面创建一个子账号\(子账户名称必须符合linux用户的规范\)，然后将子账号的 AccessKey 下载下来提供给该子账号对应的开发人员，后续开发人员可以通过配置AccessKey，从而通过Kerberos认证访问集群服务。
 
-使用RAM身份认证不需要像第一部分MIT Kerberos使用方式一样，提前在Kerberos服务端添加principle等操作
+使用 RAM 身份认证不需要像第一部分MIT Kerberos使用方式一样，提前在 Kerberos 服务端添加 principle 等操作
 
-下面以已经创建的子账号test在Gateway访问为例:
+下面以已经创建的子账号 test 在 Gateway 访问为例:
 
--   EMR集群添加test账号
+-   EMR 集群添加 test 账号
 
-    EMR的安全集群的yarn使用了LinuxContainerExecutor，在集群上跑yarn作业必须要在集群所有节点上面添加跑作业的用户账号，LinuxContainerExecutor执行程序过程中会根据用户账号进行相关的权限校验。
+    EMR 的安全集群的 yarn 使用了 LinuxContainerExecutor，在集群上跑 yarn 作业必须要在集群所有节点上面添加跑作业的用户账号，LinuxContainerExecutor 执行程序过程中会根据用户账号进行相关的权限校验。
 
-    EMR集群管理员在EMR集群的master节点上执行:
+    EMR 集群管理员在 EMR 集群的master节点上执行:
 
     ```
     sudo su hadoop
     sh adduser.sh test 1 2
     ```
 
-    附:adduser.sh代码
+    附:adduser.sh 代码
 
     ```
     #添加的账户名称
@@ -42,13 +42,13 @@ E-Map集educe群中的Kerberos服务端除了可以支持第一种MIT Kerberos�
     done
     ```
 
--   Gateway管理员在Gateway机器上添加test用户
+-   Gateway 管理员在 Gateway 机器上添加test用户
 
     ```
     useradd test
     ```
 
--   Gateway管理员配置Kerberos基础环境
+-   Gateway 管理员配置 Kerberos 基础环境
 
     ```
     sudo su root
@@ -60,7 +60,7 @@ E-Map集educe群中的Kerberos服务端除了可以支持第一种MIT Kerberos�
      </property>
     ```
 
-    附: config\_gateway\_kerberos.sh脚本代码
+    附: config\_gateway\_kerberos.sh 脚本代码
 
     ```
     #EMR集群的emr-header-1的ip
@@ -81,7 +81,7 @@ E-Map集educe群中的Kerberos服务端除了可以支持第一种MIT Kerberos�
      sed -i 's/EMR/RAM/g' /etc/has/has-client.conf
     ```
 
--   test用户登录Gateway配置AccessKey
+-   test 用户登录 Gateway 配置 AccessKey
 
     ```
     登录Gateway的test账号
@@ -89,7 +89,7 @@ E-Map集educe群中的Kerberos服务端除了可以支持第一种MIT Kerberos�
      sh add_accesskey.sh test
     ```
 
-    附: add\_accesskey.sh脚本\(修改一下AccessKey\)
+    附: add\_accesskey.sh 脚本\(修改一下AccessKey\)
 
     ```
     user=$1
@@ -104,11 +104,11 @@ E-Map集educe群中的Kerberos服务端除了可以支持第一种MIT Kerberos�
      fi
     ```
 
--   test用户执行命令
+-   test 用户执行命令
 
-    经过以上步骤，test用户可以执行相关命令访问集群服务了。
+    经过以上步骤，test 用户可以执行相关命令访问集群服务了。
 
-    执行hdfs命令
+    执行 hdfs 命令
 
     ```
     [test@gateway ~]$ hadoop fs -ls /
@@ -120,13 +120,13 @@ E-Map集educe群中的Kerberos服务端除了可以支持第一种MIT Kerberos�
       drwxrwxrwt   - hadoop hadoop          0 2017-11-18 21:16 /user
     ```
 
-    跑hadoop作业
+    运行 hadoop 作业
 
     ```
     [test@gateway ~]$ hadoop jar /usr/lib/hadoop-current/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.2.jar pi 10 1
     ```
 
-    跑spark作业
+    运行 spark 作业
 
     ```
     [test@gateway ~]$ spark-submit --conf spark.ui.view.acls=* --class org.apache.spark.examples.SparkPi --master yarn-client --driver-memory 512m --num-executors 1 --executor-memory 1g --executor-cores 2 /usr/lib/spark-current/examples/jars/spark-examples_2.11-2.1.1.jar 10
