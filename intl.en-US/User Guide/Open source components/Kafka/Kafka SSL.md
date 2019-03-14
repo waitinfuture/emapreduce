@@ -10,7 +10,7 @@ For details about how to create a cluster, see [Create a cluster](reseller.en-US
 
 By default, the SSL function is not enabled for the Kafka cluster. You can enable it on the configuration page of the Kafka service.
 
-![Enable the SSL service](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17900/154770950710846_en-US.png)
+![Enable the SSL service](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17900/155255167110846_en-US.png)
 
 As shown in the preceding figure, change kafka.ssl.enable to true and then restart the component.
 

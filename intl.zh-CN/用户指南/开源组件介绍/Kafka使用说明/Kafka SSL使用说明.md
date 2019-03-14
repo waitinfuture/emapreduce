@@ -4,13 +4,13 @@
 
 ## 创建集群 {#section_akj_trc_z2b .section}
 
-具体的创建集群操作，请参见[创建集群](intl.zh-CN/用户指南/集群/创建集群.md#)。
+具体的创建集群操作，请参见[创建集群](intl.zh-CN/用户指南/集群配置/创建集群.md#)。
 
 ## 开启SSL服务 {#section_bkj_trc_z2b .section}
 
 默认Kafka集群没有开启SSL功能，您可以在Kafka服务的配置页面开启SSL。
 
-![开启SSL](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17900/154770949710846_zh-CN.png)
+![开启SSL](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17900/155255166410846_zh-CN.png)
 
 如图，修改配置项kafka.ssl.enable为true，部署配置并重启组件。
 
