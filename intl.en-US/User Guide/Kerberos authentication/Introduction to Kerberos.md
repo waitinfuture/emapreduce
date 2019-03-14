@@ -26,7 +26,7 @@ Create a security cluster
 
 In the software configuration tab on the cluster creation page, you can turn on **High Security Mode**, as shown in the following figure:
 
-![Create a security cluster](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20194/155166722430950_en-US.png)
+![Create a security cluster](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/20194/155255222930950_en-US.png)
 
 ## Kerberos authentication {#section_gf3_xkl_z2b .section}
 
@@ -34,7 +34,7 @@ Kerberos is an identity authentication protocol based on symmetric key cryptogra
 
 The Kerberos protocol process is mainly divided into two stages: the KDC authenticates the client ID, and the service authenticates the client ID.
 
-![Kerberos authentication](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17934/155166722411118_en-US.png)
+![Kerberos authentication](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17934/155255222911118_en-US.png)
 
 -   KDC
 
