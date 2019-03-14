@@ -1,14 +1,14 @@
 # HBase authorization {#concept_e5l_2mb_bfb .concept}
 
-Without authorization, any account can perform any operations on the HBase cluster that includes disable table, drop table, major compact, and others.
+Any account can perform any operation on an HBase cluster without being authorized, including disabling and dropping tables and performing major compaction.
 
 **Note:** 
 
-For clusters without Kerberos authentication, users can forge identities to access to the cluster service even when HBase authorization is enabled. Therefore, we recommend that you create a cluster with high security mode \(i.e. supporting Kerberos\) as detailed in [Kerberos Security Document](intl.en-US/User Guide/Kerberos authentication/Introduction to Kerberos.md#).
+For clusters that do not have Kerberos authentication, users can forge identities to access the cluster service, even when HBase authorization is enabled. Therefore, we recommend that you create a high-security cluster \(for example, supporting Kerberos\) as detailed in the [Introduction to Kerberos](reseller.en-US/User Guide/Kerberos authentication/Introduction to Kerberos.md#).
 
 ## Add configuration {#section_q4z_qmb_bfb .section}
 
-In Configuration Management, choose **HBase** \> **Configuration** \> **hbase-site** \> **Custom Configuration** in the HBase cluster.
+In the Configuration Management page, choose **HBase** \> **Configuration** \> **hbase-site** \> **Custom Configuration** in the HBase cluster.
 
 Add the following parameters:
 
@@ -33,70 +33,68 @@ Add the following parameters:
 
 ## Restart the HBase cluster {#section_qvn_knb_bfb .section}
 
-In the HBase cluster Configuration Management page, click **HBase** \> **Operations** \> **RESTART All Components**.
+In the HBase cluster's Configuration Management page, click **HBase** \> **Operations** \> **RESTART All Components**.
 
 ## Authorization \(ACL\) {#section_gmy_pnb_bfb .section}
 
 -   Basic concepts
 
-    Authorization is for grant \[operation permissions\] of \[resources in a certain scope\] to \[a certain entity\].
-
-    In HBase, the preceding three concepts are:
+    In HBase, authorization consists of three elements: the granting of **operational permissions** for a certain **scope of resources** to a certain **entity**.
 
     -   Resources in a certain scope
         -   Superuser
 
-            A Superuser can perform any operations, and the account running HBase service is the Superuser by default. You can also add Superusers through configuring the value of hbase.superuser in hbase-site.xml.
+            A superuser can perform any operations. The account that runs the HBase service is the superuser by default. You can also add superusers by configuring the value of hbase.superuser in hbase-site.xml.
 
         -   Global
 
-            Global Scope has Admin permissions of all tables in the cluster.
+            Global Scope has administrator permissions for all tables in the cluster.
 
         -   Namespace
 
-            It has permission control in Namespace Scope.
+            This has permission control in Namespace Scope.
 
         -   Table
 
-            It has permission control in Table Scope.
+            This has permission control in Table Scope.
 
         -   ColumnFamily
 
-            It has permission control in ColumnFamily Scope.
+            This has permission control in ColumnFamily Scope.
 
         -   Cell
 
-            It has permission control in Cell Scope.
+            This has permission control in Cell Scope.
 
-    -   Operation permission
+    -   Operational permissions
         -   Read \(R\)
 
-            Read data from resources in a certain Scope.
+            Read data from resources in a certain scope.
 
         -   Write \(W\)
 
-            Write data to resources in a certain Scope.
+            Write data to resources in a certain scope.
 
         -   Execute \(X\)
 
-            Execute co-processor in a certain Scope.
+            Execute co-processor in a certain scope.
 
         -   Create \(C\)
 
-            Create/delete a table in a certain Scope.
+            Create or delete a table in a certain scope.
 
         -   Admin \(A\)
 
-            Perform cluster related operations in a certain Scope, such as balance/assign.
+            Perform cluster-related operations in a certain scope, such as balance or assign.
 
-    -   A certain entity
+    -   Entity
         -   User
 
-            Authorize a user
+            Authorize a user.
 
         -   Group
 
-            Authorize a user group
+            Authorize a user group.
 
 -   Authorization command
     -   grant
@@ -107,14 +105,14 @@ In the HBase cluster Configuration Management page, click **HBase** \> **Operati
 
         **Note:** 
 
-        -   The authorization methods for users or groups are the same. A prefix @ needs to be added for group.
+        -   The authorization methods for users and groups are the same. The prefix @ needs to be added for groups.
 
             ```
             grant 'test','R','tbl1'   #grant the read permission of the table tb11 to the user test.
               grant '@test','R','tbl1'   #grant the read permission of the table tb11 to the user group test.
             ```
 
-        -   A prefix @ needs to be added for namespace.
+        -   The prefix @ needs to be added for namespace.
 
             ```
             grant 'test 'C','@ns_1'  #grant the create permission of the namespace @ns_1 to the user test.
