@@ -11,13 +11,13 @@
     2.  在服务列表中单击**Ranger**进入Ranger配置页面
     3.  在**集群配置管理**页面的Ranger服务下，单击右侧的**操作**下拉菜单，选择**Enable Kafka PLUGIN**。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17952/154294520711548_zh-CN.png)
+        ![Enable Kafka PLUGIN](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17952/155255263011548_zh-CN.png)
 
     4.  在弹出框输入执行Commit记录，然后单击**确定**。
 
         单击右上角的**查看操作历史**查看任务进度，等待任务完成100%。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17952/154294520711549_zh-CN.png)
+        ![查看操作历史](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17952/155255263011549_zh-CN.png)
 
 -   重启Kafka broker
 
@@ -27,7 +27,7 @@
     2.  单击右上角**操作**下拉菜单，选择**RESTART Broker**。
     3.  在弹出框输入执行Commit记录，然后单击**确定**。
     4.  单击右上角**查看操作历史**查看任务进度，等待重启任务完成。
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17952/154294520711556_zh-CN.png)
+    ![查看操作历史](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17952/155255263111556_zh-CN.png)
 
 -   Ranger UI页面添加Kafka Service
 
@@ -35,11 +35,11 @@
 
     在Ranger的UI页面添加Kafka Service:
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17952/154294520711560_zh-CN.png)
+    ![Ranger UI](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17952/155255263111560_zh-CN.png)
 
     配置Kafka Service:
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17952/154294520811561_zh-CN.png)
+    ![配置Kafka Service:](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17952/155255263111561_zh-CN.png)
 
 
 ## 权限配置示例 {#section_mgr_yxj_bfb .section}
@@ -50,7 +50,7 @@
 
 以test用户为例，添加Publish权限：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17952/154294520811563_zh-CN.png)
+![添加Publish权限](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17952/155255263111563_zh-CN.png)
 
 按照上述步骤设置添加一个Policy后，就实现了对test的授权，然后用户test就可以对test的topic进行写入操作。
 
