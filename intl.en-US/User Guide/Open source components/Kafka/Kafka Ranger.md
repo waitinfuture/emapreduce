@@ -9,11 +9,11 @@ To integrate Ranger into Kafka, complete the following steps:
 -   Enable Kakfa Plugin
     1.  On the **Cluster Management** page, click **Ranger** in the service list to enter the Ranger Management page. Click **Operation** in the upper-right corner and select **Enable Kafka PLUGIN**.
 
-        ![Cluster Management page](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17899/154770945110838_en-US.png)
+        ![Cluster Management page](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17899/155255164610838_en-US.png)
 
     2.  You can check the progress by clicking **View Operation History** in the upper-right corner of the page.
 
-        ![View Operation History](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17899/154770945110839_en-US.png)
+        ![View Operation History](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17899/155255164610839_en-US.png)
 
 -   Restart Kafka broker****
 
@@ -23,7 +23,7 @@ To integrate Ranger into Kafka, complete the following steps:
     2.  Click **Actions** in the upper-right corner of the page and select **RESTART Broker**.
     3.  You can check the progress by clicking **View Operation History** in the upper-right corner of the page.
 
-        ![View Operation History](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17899/154770945110840_en-US.png)
+        ![View Operation History](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17899/155255164610840_en-US.png)
 
 -   Add Kafka service on the Ranger WebUI
 
@@ -31,11 +31,11 @@ To integrate Ranger into Kafka, complete the following steps:
 
     Add the Kafka service on the WebUI:
 
-    ![Ranger WebUI](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17899/154770945110841_en-US.png)
+    ![Ranger WebUI](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17899/155255164610841_en-US.png)
 
     Configure the Kafka service:
 
-    ![Configure the Kafka service](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17899/154770945210842_en-US.png)
+    ![Configure the Kafka service](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17899/155255164610842_en-US.png)
 
 
 ## Configure permissions {#section_nkp_hyb_z2b .section}
@@ -46,7 +46,7 @@ After integrating Ranger into Kafka, you can set the relevant permissions.
 
 Here, user\_test is used as an example to add the Publish permission:
 
-![add the Publish permission](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17899/154770945210843_en-US.png)
+![add the Publish permission](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17899/155255164610843_en-US.png)
 
 After you add a policy, the permissions are granted to the test user. This user can then perform the write operation for test.
 

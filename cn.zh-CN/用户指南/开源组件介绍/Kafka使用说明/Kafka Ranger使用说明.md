@@ -9,11 +9,11 @@
 -   Enable Kakfa Plugin
     1.  在**集群与服务管理**页面的 **Ranger** 服务下，单击右侧的**操作**下拉菜单，选择 **Enable Kafka PLUGIN**。
 
-        ![集群与服务管理](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17899/154770943610838_zh-CN.png)
+        ![集群与服务管理](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17899/155255163610838_zh-CN.png)
 
     2.  单击右上角的**查看操作历史**查看任务进度，等待任务完成100%。
 
-        ![操作历史](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17899/154770943710839_zh-CN.png)
+        ![操作历史](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17899/155255163710839_zh-CN.png)
 
 -   重启Kafka broker
 
@@ -23,7 +23,7 @@
     2.  点击右上角 **操作** 中的 **RESTART Kafka Broker**。
     3.  点击右上角**查看操作历史**查看任务进度，等待重启任务完成。
 
-        ![查看操作历史](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17899/154770943710840_zh-CN.png)
+        ![查看操作历史](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17899/155255163710840_zh-CN.png)
 
 -   Ranger UI页面添加Kafka Service
 
@@ -31,11 +31,11 @@
 
     在 **Ranger** 的UI页面添加Kafka Service：
 
-    ![Ranger WebUI](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17899/154770943710841_zh-CN.png)
+    ![Ranger WebUI](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17899/155255163710841_zh-CN.png)
 
     配置Kafka Service：
 
-    ![配置Kafka Service](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17899/154770943710842_zh-CN.png)
+    ![配置Kafka Service](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17899/155255163710842_zh-CN.png)
 
 
 ## 权限配置示例 {#section_nkp_hyb_z2b .section}
@@ -46,7 +46,7 @@
 
 以test用户为例，添加Publish权限：
 
-![添加Publish权限](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17899/154770943710843_zh-CN.png)
+![添加Publish权限](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17899/155255163710843_zh-CN.png)
 
 按照上述步骤设置添加一个Policy后，就实现了对 test 的授权，然后用户 test 就可以对 test 的topic进行写入操作。
 
