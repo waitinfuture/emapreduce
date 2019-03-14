@@ -60,7 +60,7 @@ In the following example, the test user accesses the HDFS service to introduce r
 
             **Note:** Application of MIT Kerberos tools
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17935/154684627211126_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17935/155255226311126_en-US.png)
 
     -   Execute HDFS commands.
 
@@ -76,7 +76,7 @@ In the following example, the test user accesses the HDFS service to introduce r
              drwxr-x--t      - hadoop hadoop          0 2017-11-13 16:12 /user
         ```
 
-        **Note:** To run a YARN job, you need to add the corresponding Linux accounts to all of the nodes in the cluster in advance. For more information, see [Add test account to the E-MapReduce cluster](intl.en-US/User Guide/Kerberos authentication/RAM authentication.md#).
+        **Note:** To run a YARN job, you need to add the corresponding Linux accounts to all of the nodes in the cluster in advance. For more information, see [Add test account to the E-MapReduce cluster](reseller.en-US/User Guide/Kerberos authentication/RAM authentication.md#).
 
 -   Use Java to access HDFS.
     -   Use a local ticket cache.
