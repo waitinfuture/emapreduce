@@ -29,7 +29,7 @@ Druid has an excellent architectural design with multiple components working tog
 
 The following figure shows the components contained in the Druid working-layer \(for data indexing and data querying\).
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17905/154770959210852_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17905/155255175710852_en-US.png)
 
 -   The real-time component is responsible for the real-time data collection.
 -   In the broker phase, query tasks are distributed, and the results are collected and returned to you.
@@ -40,7 +40,7 @@ The following figure shows the components contained in the Druid working-layer \
 
 The following figure shows the components involved in the management layer of Druid segments \(Druid index file\).
 
-![Druid segments](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17905/154770959210853_en-US.png)
+![Druid segments](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17905/155255175710853_en-US.png)
 
 -   The ZooKeeper component is responsible for storing the status of the cluster and discovering components, such as the topology information of the cluster, election of the Overlord leader, and management of the indexing task.
 -   The Coordinator component is responsible for managing segments, such as the downloading and deletion of the segments and balancing them with historical components.
