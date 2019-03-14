@@ -8,7 +8,7 @@ When creating a cluster on E-MapReduce, set the cluster type to Kafka. A cluster
 
 ## Ephemeral disk Kafka clusters {#section_x3z_vbx_y2b .section}
 
-To better reduce unit costs and respond to larger storage needs, E-MapReduce 3.5.1 supports Kafka clusters on local disks \(D1 cluster models\). For more information, see [ECS models](../../../../../reseller.en-US/Product Introduction/Instance type families.md#). Compared to cloud disks, local disk Kafka clusters have the following features:
+To better reduce unit costs and respond to larger storage needs, E-MapReduce 3.5.1 supports Kafka clusters on local disks \(D1 cluster models\). For more information, see [ECS models](../../../../../reseller.en-US/Instances/Instance type families/Instance type families.md#). Compared to cloud disks, local disk Kafka clusters have the following features:
 
 -   High-volume local SATA HDD disks with high I/O throughput, sequential read and write performance on a single disk of 190 MB/s, and up to 5 GB/s of storage I/O capability.
 -   Cost of local storage is 97% lower than that of SSD cloud disks.
