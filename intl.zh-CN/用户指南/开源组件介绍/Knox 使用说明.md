@@ -20,11 +20,11 @@
 
         方式一（推荐）
 
-        在[用户管理](intl.zh-CN/用户指南/集群/用户管理.md#)中直接添加Knox访问账号。
+        在[用户管理](intl.zh-CN/用户指南/集群规划/用户管理.md#)中直接添加Knox访问账号。
 
         方式二
 
-        1.  ssh登录到集群上，详细步骤请参考[SSH登录集群](intl.zh-CN/用户指南/SSH 登录集群.md#)。
+        1.  ssh登录到集群上，详细步骤请参考[SSH登录集群](intl.zh-CN/快速入门/步骤三：SSH 登录集群.md#)。
         2.  准备您的用户数据，如：Tom。将文件中所有的emr-guest替换为 Tom，将 cn:EMR GUEST 替换为 cn:Tom，设置 userPassword 的值为您自己的密码。
 
             ```
@@ -46,7 +46,7 @@
     -   使用自有LDAP服务的情况
         1.  在集群配置管理中找到KNOX的配置管理，在cluster-topo配置中设置两个属性：main.ldapRealm.userDnTemplate与main.ldapRealm.contextFactory.url。main.ldapRealm.userDnTemplate设置为自己的用户DN模板，main.ldapRealm.contextFactory.url设置为自己的LDAP服务器域名和端口。设置完成后保存并重启Knox。
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17921/154200998911122_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17921/155255219211122_zh-CN.png)
 
         2.  一般自己的LDAP服务不在集群上运行，所以需要开启Knox访问公网LDAP服务的端口，如：10389。参考8443端口的开启步骤，选择**出方向**。
 
