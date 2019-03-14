@@ -6,7 +6,7 @@ The following section provides an overview of how to use Oozie in a E-MapReduce 
 
 ## Preparations {#section_wgp_pww_y2b .section}
 
-Before you create a cluster, you must first open an SSH tunnel. For more information, see [Connect to clusters using SSH](intl.en-US/User Guide/Connect to clusters using SSH.md#).
+Before you create a cluster, you must first open an SSH tunnel. For more information, see [Connect to clusters using SSH](reseller.en-US/Quick Start/Connect to clusters using SSH.md#).
 
 In the following, which uses a MAC environment as an example, the IP address of the public network for the cluster's master node is assumed to be **xx.xx.xx.xx**:
 

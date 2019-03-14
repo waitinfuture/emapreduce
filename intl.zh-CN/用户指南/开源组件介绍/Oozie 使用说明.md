@@ -6,7 +6,7 @@
 
 ## 准备工作 {#section_wgp_pww_y2b .section}
 
-在集群建立出来之后，需要打通 ssh 隧道，详细步骤请参考[SSH 登录集群](intl.zh-CN/用户指南/SSH 登录集群.md#)。
+在集群建立出来之后，需要打通 ssh 隧道，详细步骤请参考[ZH-CN\_TP\_17923\_V1.md\#](intl.zh-CN/快速入门/步骤三：SSH 登录集群.md#)。
 
 这里以 MAC 环境为例，使用 Chrome 浏览器实现端口转发（假设集群 master 节点公网 IP 为 **xx.xx.xx.xx**）：
 
