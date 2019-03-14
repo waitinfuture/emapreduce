@@ -8,7 +8,7 @@
 
 E-MapReduce 创建集群的软件配置页面，可选择ZooKeeper服务 。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17895/154157912610761_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17895/155255155210761_zh-CN.png)
 
 ## 节点信息 {#section_vs2_mbx_y2b .section}
 
