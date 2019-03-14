@@ -6,13 +6,13 @@ Apache Ranger 提供集中式的权限管理框架，可以对 Hadoop 生态中�
 
 在 E-MapReduce 控制台创建 EMR-2.9.2/EMR-3.9.0 及以上的集群，勾选 Ranger 组件即可, 如下图所示:
 
-![创建集群](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17948/155054543711486_zh-CN.png)
+![创建集群](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17948/155255250611486_zh-CN.png)
 
 如果已经创建 EMR-2.9.2/EMR-3.9.0 及以上的集群，可以在集群的集群与服务管理页面添加 Ranger 服务：
 
-![添加Ranger服务](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17948/155054543711487_zh-CN.png)
+![添加Ranger服务](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17948/155255250611487_zh-CN.png)
 
-![添加Ranger服务](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17948/155054543711488_zh-CN.png)
+![添加Ranger服务](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17948/155255250711488_zh-CN.png)
 
 **说明：** 
 
@@ -23,21 +23,21 @@ Apache Ranger 提供集中式的权限管理框架，可以对 Hadoop 生态中�
 
 在安装了 Ranger 的集群后，单击**管理**，然后在左侧导航栏中选择**访问链接与端口**，可以通过快捷链接访问 Ranger UI，如下图所示:
 
-![访问链接与端口](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17948/155054543711489_zh-CN.png)
+![访问链接与端口](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17948/155255250711489_zh-CN.png)
 
 单击链接后会进入Ranger UI登录界面，默认的用户名/密码是admin/admin，如下图：
 
-![Ranger UI](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17948/155054543711490_zh-CN.png)
+![Ranger UI](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17948/155255250711490_zh-CN.png)
 
-![Service Manager](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17948/155054543711491_zh-CN.png)
+![Service Manager](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17948/155255250711491_zh-CN.png)
 
 ## 修改密码 {#section_igf_ll3_bfb .section}
 
 管理员首次登录后，需要修改 admin 的密码，如下图：
 
-![修改密码](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17948/155054543711492_zh-CN.png)
+![修改密码](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17948/155255250711492_zh-CN.png)
 
-![修改密码](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17948/155054543811493_zh-CN.png)
+![修改密码](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17948/155255250711493_zh-CN.png)
 
 改完admin密码后，单击右上角**admin**下拉菜单的**Log Out**，然后使用新的密码登录即可。
 
