@@ -10,13 +10,13 @@ If you are activating E-MapReduce for the first time, you must authorize roles b
 
 1.  When you create a cluster or an on-demand execution plan, if a default role is not authorized to the E-MapReduce service account, the following prompt is displayed. Click **Go to RAM for authorization** to authorize the role.
 
-    ![EMR role authorization](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17844/155246593710342_en-US.jpg)
+    ![EMR role authorization](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17844/155255063210342_en-US.jpg)
 
 2.  On the RAM authorization page, click **Confirm Authorization Policy** to authorize the default role AliyunEMRDefaultRole to the E-MapReduce service account.
 
-    ![Confirm Authorization Policy](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17844/155246593710343_en-US.jpg)
+    ![Confirm Authorization Policy](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17844/155255063210343_en-US.jpg)
 
-3.  Refresh the E-MapReduce console, and then perform relevant operations. If you want to view relevant detailed policy information of AliyunE-MapReduceDefaultRole, log on to the RAM console, or click [View Link](https://partners-intl.console.aliyun.com/#/ram/AliyunEMRRolePolicy/info).
+3.  Refresh the E-MapReduce console, and then perform relevant operations. If you want to view relevant detailed policy information of AliyunE-MapReduceDefaultRole, log on to the RAM console, or click [View Link](https://ram.console.aliyun.com/?spm=a2c4g.11186623.2.6.77bd72fe3PD5pf#/policy/detail/system/AliyunEMRRolePolicy/info).
 
 ## Default role permissions {#section_vpj_th3_y2b .section}
 
@@ -61,6 +61,6 @@ To ensure that user accounts can access the E-MapReduce service, you need to log
 -   The AliyunEMRFullAccess policy grants user accounts with full access permissions to E-MapReduce and E-MapReduce resources.
 -   The AliyunEMRDevelopAccess policy grants user accounts the E-MapReduce Developer permission, but, unlike AliyunEMRFullAccess, it does not grant users with other access permissions, such as the permissions for creating or releasing E-MapReduce clusters.
 
-    For information about RAM user accounts, policies, and roles, see [RAM](../../../../../reseller.en-US/API Reference/Introduction/RAM introduction.md#).
+    For information about RAM user accounts, policies, and roles, see [RAM](../../../../../intl.en-US/API Reference/Introduction/RAM introduction.md#).
 
 
