@@ -6,7 +6,7 @@ This section provides an overview of Presto and describes to use it to develop a
 
 The following figure shows the architecture of Presto:
 
-![architecture of Presto](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17915/154770981110899_en-US.png)
+![architecture of Presto](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17915/155263550210899_en-US.png)
 
 Presto has a typical mobile/server architecture comprising a coordinator node and multiple worker nodes. Coordinator is responsible for the following:
 
@@ -38,7 +38,7 @@ The basic concepts of Presto are as follows:
 
     The relationships between catalogs, schemas, and tables are shown in the following figure.
 
-    ![The relationships between catalogs, schemas, and tables](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17915/154770981110900_en-US.png)
+    ![The relationships between catalogs, schemas, and tables](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17915/155263550210900_en-US.png)
 
 -   Connector
 
@@ -55,7 +55,7 @@ The basic concepts of Presto are as follows:
 
         Query refers to the execution process of a query. When Presto receives an SQL statement, the coordinator parses this statement, generates an execution plan, and sends this plan to a worker for execution. A query is logically made up of several components, namely stages, tasks, drivers, splits, operators, and data sources, which are shown in the following figure.
 
-        ![Components of query](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17915/154770981110901_en-US.png)
+        ![Components of query](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17915/155263550210901_en-US.png)
 
     -   Stage
 
@@ -80,7 +80,7 @@ The basic concepts of Presto are as follows:
 
 ## Command line tool {#section_u2b_fg2_z2b .section}
 
-The command line tool uses [SSH to log on to an EMR cluster](reseller.en-US/User Guide/Connect to clusters using SSH.md#) and executes the following command to enter the Presto console:
+The command line tool uses [SSH to log on to an EMR cluster](intl.en-US/Quick Start/Connect to clusters using SSH.md#) and executes the following command to enter the Presto console:
 
 ```
 $ presto --server emr-header-1:9090 --catalog hive --schema default --user hadoop
