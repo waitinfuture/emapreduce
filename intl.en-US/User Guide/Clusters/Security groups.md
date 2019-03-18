@@ -1,29 +1,35 @@
 # Security groups {#concept_ass_5yn_y2b .concept}
 
-Security groups created in E-MapReduce can be used during the creation of clusters.
+Currently, security groups created in the EMR console are required for creating an EMR cluster.
 
-Only port 22 is accessible in clusters created by E-MapReduce. We recommend that you divide ECS instances by function, and put them into different user security groups. For example, name the security group of E-MapReduce **E-MapReduce security group**, and name the security group that you create **User security group**. Each security group is provided with unique access control as required.
+When creating an E-MapReduce cluster, you can open port 22 of the security group where the cluster resides \(It is closed by default, open in **Create Cluster** \> **Basic Configuration** \> **Remote Logon** \).We recommend that you add ECS instances to security groups based on their functions. For example, the security group for an EMR cluster is **EMR security group**. **user security group** is an existing security group that you have created. Instances of each security group are configured to open different ports based on the IP addresses allowed to access the instances.
 
-If you need to link a security group with a cluster that has already been created, follow these steps.
+\[DO NOT TRANSLATE\]
 
-## Add an E-MapReduce cluster to an existing security group {#section_g1h_bzn_y2b .section}
+## Add an EMR cluster to an existing security group {#section_g1h_bzn_y2b .section}
 
-1.  Log on to the [Alibaba Cloud E-MapReduce console](https://emr.console.aliyun.com/).
-2.  At the top of the page, click **Cluster Management**.
-3.  Click **View Details**.
-4.  In the **Network** tab, find **Security Group ID** and click the ID link.
-5.  In the menu on the left, click **Instances in Security Group** to view the security group names of all ECS instances.
-6.  Log on to the [Alibaba Cloud ECS console](https://ecs.console.aliyun.com/#/home) and click **Security Group** in the navigation panel on the left to find the security group as viewed in the preceding step.
-7.  Click **Manage Instances** in a security group and view ECS instance names that start with emr-xxx. These are the ECS instances in an E-MapReduce cluster.
-8.  Select all of these instances, click **Move to security group**, and then select a security group to move the E-MapReduce cluster to.
+**Note:** 
 
-## Add an existing cluster to an E-MapReduce security group {#section_rsc_wyn_y2b .section}
+-   You need to add instances in a classic network to a classic network security group of the same region.
+-   You need to add instances in a VPC to a VPC security group of the same region.
 
-1.  Find the security group where the existing cluster is located.
-2.  Repeat the preceding operations, and move to the E-MapReduce security group.
-3.  Select scattered machines in the ECS console directly and move the clusters to the **E-MapReduce security group** in batches.
+1.  Log on to the Alibaba Cloud [E-MapReduce console](https://emr.console.aliyun.com/).
+2.  Click the Cluster Management tab.
+3.  In the cluster list, locate the cluster that you want to add to the security group. Click **View Details** in the Actions column for the cluster to go to the Cluster Overview page.
+4.  On the Cluster Overview page, click the **security group ID** in the **Network** area.
+5.  In the left-side navigation pane, click **Instances in Security Group** to view the IDs and names of all instances.
+6.  Go to the [Alibaba Cloud ECS console](https://ecs.console.aliyun.com/#/home). In the left-side navigation pane, click **Instances**.
+7.  The ECS instances listed on the Instances page, whose names start with emr-xxx, are instances in an EMR cluster. Locate the instance that you want to add to a security group, click **Manage** in the **Actions** column for the instance.
+8.  Click **Security Groups**.
+9.  Click **Add to Security Group**.
+10. Select the security group to which you want to add the instance. Click **Join multiple security groups**. From the Security Group drop-down list, select the security groups as needed. The security groups are displayed in the dotted box below.
+11. Click **OK**.
+
+## Add an existing cluster to an EMR security group {#section_rsc_wyn_y2b .section}
+
+You can refer to the operations described in the Add an EMR cluster to an existing security group section. The full process starts with locating the security group of the existing cluster and ends with adding the instances to the EMR security group. For instances that do not belong to any security groups, select the instances and choose More \> Network and security \> Add to Security Group to add multiple instances to the EMR security group at a time.
 
 ## Security group rules {#section_ssc_wyn_y2b .section}
 
-When an ECS instance is in several different security groups, the security group rules are subject to the OR relationship. For example, only port 22 of the E-MapReduce security group is accessible, whereas all ports of the **User security group** are accessible. After the E-MapReduce cluster is added to the **User security group**, all ports of the machine in E-MapReduce are open.
+If an ECS instance belongs to multiple security groups, the instance follows the union of all security group rules. For example, the security group rule of the EMR security group is configured to open port 22 and the security group rules of the **user security group** are configured to open all ports. After you add the EMR cluster to the **user security group**, the instances of the EMR cluster open all ports. We recommend that you use security groups carefully.
 
