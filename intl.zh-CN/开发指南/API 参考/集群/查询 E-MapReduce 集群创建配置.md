@@ -1,0 +1,510 @@
+# 查询 E-MapReduce 集群创建配置 {#concept_azg_zlx_dgb .concept}
+
+获取可用的EMR集群创建配置。
+
+## 请求参数 {#section_pdw_lv4_dgb .section}
+
+|参数|类型|是否必选|示例值|描述|
+|--|--|----|---|--|
+|AccessKeyId|String|否|LTAxxxxxxxxxxxxx|AccessKeyId|
+|RegionId|String|是|cn-hangzhou|区域|
+
+## 返回参数 {#section_vdw_lv4_dgb .section}
+
+|字段|类型|示例值|描述|
+|--|--|---|--|
+|RequestId|String|BF4FBAC6-B03E-4BFB-B6DB-EB53C34F2E22|请求 ID|
+|EmrMainVersionList| | |EMR版本列表|
+|RegionId|String|cn-hangzhou|区域|
+|MainVersionName|String|EMR-3.15.1|主版本|
+|EcmVersion|Boolean|true|保留字段|
+|ClusterTypeInfoList| | |集群类型列表|
+|ClusterType|String|HADOOP|集群类型|
+|ClusterServiceInfoList| | |集群服务列表|
+|ServiceName|String|HIVE|服务名|
+|ServiceDisplayName|String|HIVE|服务显示名|
+|ServiceVersion|String|2.3.3|服务版本|
+|Mandatory|Boolean|true|是否必选|
+|SecurityGroupList| | |安全组列表|
+|SecurityGroupId|String|sg-bp1j1n0xcwfs19y98b7n|安全组 ID|
+|Description|String|sgdesc|安全组描述|
+|SecurityGroupName|String|ziguansg|安全组名|
+|VpcId|String|vpc-bp1d618azoa9go6wowjl2|VPC ID|
+|CreationTime|String|2018-12-03T10:11:55Z|创建时间|
+|AvailableInstanceAmount|Integer|10|可用实例数|
+|EcsCount|Integer|10|ECS 数量|
+|VpcInfoList| | |VPC 列表|
+|VpcId|String|vpc-bp1d618azoa9go6wowjl2|VPC ID|
+|VpcName|String|zgtest|VPC 名字|
+|CidrBlock|String|192.168.0.0/16|CIDR 设置|
+|CreationTime|String|2018-11-22T07:38:44Z|创建时间|
+|VRouterId|String|0|保留字段|
+|Description|String|vpc\_desc|VPC 描述|
+|VswitchInfoList| | |虚拟交换机信息|
+|VswitchId|String|vsw-bp18amcazibt1u0d8qqqa|虚拟交换机 ID|
+|VswitchName|String|hangzhou\_g|虚拟交换机名字|
+|ZoneId|String|cn-hangzhou-g|区域zoneID|
+|CidrBlock|String|192.168.0.0/24|CIDR设置|
+|AvailableIpAddressCount|Long|200|可用 IP 地址数量|
+|Description|String|switch desc|描述|
+|CreationTime|String|2018-11-22T07:38:49Z|创建时间|
+|KeyPairNameList|String|\["key\_pair"\]|密钥对列表|
+
+## 示例 {#section_ydw_lv4_dgb .section}
+
+-   请求示例
+
+    ```
+    /?RegionId=cn-hangzhou
+    &AccessKeyId=LTAxxxxxxxxxxxxx
+    &<公共请求参数>
+    ```
+
+-   正常返回示例
+
+    JSON 格式
+
+    ```
+    {
+    	"code":"200",
+    	"data":{
+    		"EmrMainVersionList":{
+    			"EmrMainVersion":[{
+    				"ClusterTypeInfoList":{
+    					"ClusterTypeInfo":[
+    						{
+    							"ClusterServiceInfoList":{
+    								"ClusterServiceInfo":[
+    									{
+    										"Mandatory":false,
+    										"ServiceDisplayName":"Livy",
+    										"ServiceName":"LIVY",
+    										"ServiceVersion":"0.5.0"
+    									},
+    									{
+    										"Mandatory":false,
+    										"ServiceDisplayName":"Superset",
+    										"ServiceName":"SUPERSET",
+    										"ServiceVersion":"0.27.0"
+    									},
+    									{
+    										"Mandatory":false,
+    										"ServiceDisplayName":"Ranger",
+    										"ServiceName":"RANGER",
+    										"ServiceVersion":"1.0.0"
+    									},
+    									{
+    										"Mandatory":false,
+    										"ServiceDisplayName":"Flink",
+    										"ServiceName":"FLINK",
+    										"ServiceVersion":"1.4.0-1.0.1"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"Knox",
+    										"ServiceName":"KNOX",
+    										"ServiceVersion":"0.13.0-0.0.3"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"ApacheDS",
+    										"ServiceName":"APACHEDS",
+    										"ServiceVersion":"2.0.0"
+    									},
+    									{
+    										"Mandatory":false,
+    										"ServiceDisplayName":"Storm",
+    										"ServiceName":"STORM",
+    										"ServiceVersion":"1.1.2"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"Zeppelin",
+    										"ServiceName":"ZEPPELIN",
+    										"ServiceVersion":"0.8.0"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"Hue",
+    										"ServiceName":"HUE",
+    										"ServiceVersion":"4.1.0"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"Tez",
+    										"ServiceName":"TEZ",
+    										"ServiceVersion":"0.9.1-1.0.2"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"Sqoop",
+    										"ServiceName":"SQOOP",
+    										"ServiceVersion":"1.4.7-1.0.0"
+    									},
+    									{
+    										"Mandatory":false,
+    										"ServiceDisplayName":"Phoenix",
+    										"ServiceName":"PHOENIX",
+    										"ServiceVersion":"4.10.0-1.0.0"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"Pig",
+    										"ServiceName":"PIG",
+    										"ServiceVersion":"0.14.0"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"Spark",
+    										"ServiceName":"SPARK",
+    										"ServiceVersion":"2.3.2-1.0.0"
+    									},
+    									{
+    										"Mandatory":false,
+    										"ServiceDisplayName":"HBase",
+    										"ServiceName":"HBASE",
+    										"ServiceVersion":"1.1.1-1.0.0"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"Hive",
+    										"ServiceName":"HIVE",
+    										"ServiceVersion":"2.3.3-1.0.2"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"YARN",
+    										"ServiceName":"YARN",
+    										"ServiceVersion":"2.7.2-1.3.1"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"HDFS",
+    										"ServiceName":"HDFS",
+    										"ServiceVersion":"2.7.2-1.3.1"
+    									},
+    									{
+    										"Mandatory":false,
+    										"ServiceDisplayName":"ZooKeeper",
+    										"ServiceName":"ZOOKEEPER",
+    										"ServiceVersion":"3.4.13"
+    									},
+    									{
+    										"Mandatory":false,
+    										"ServiceDisplayName":"Oozie",
+    										"ServiceName":"OOZIE",
+    										"ServiceVersion":"4.2.0"
+    									},
+    									{
+    										"Mandatory":false,
+    										"ServiceDisplayName":"Presto",
+    										"ServiceName":"PRESTO",
+    										"ServiceVersion":"0.208"
+    									},
+    									{
+    										"Mandatory":false,
+    										"ServiceDisplayName":"Impala",
+    										"ServiceName":"IMPALA",
+    										"ServiceVersion":"2.10.0-1.0.0"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"Ganglia",
+    										"ServiceName":"GANGLIA",
+    										"ServiceVersion":"3.7.2"
+    									}
+    								]
+    							},
+    							"ClusterType":"HADOOP"
+    						},
+    						{
+    							"ClusterServiceInfoList":{
+    								"ClusterServiceInfo":[
+    									{
+    										"Mandatory":false,
+    										"ServiceDisplayName":"Superset",
+    										"ServiceName":"SUPERSET",
+    										"ServiceVersion":"0.27.0"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"Druid",
+    										"ServiceName":"DRUID",
+    										"ServiceVersion":"0.12.3-1.0.0"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"ApacheDS",
+    										"ServiceName":"APACHEDS",
+    										"ServiceVersion":"2.0.0"
+    									},
+    									{
+    										"Mandatory":false,
+    										"ServiceDisplayName":"YARN",
+    										"ServiceName":"YARN",
+    										"ServiceVersion":"2.7.2-1.3.1"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"HDFS",
+    										"ServiceName":"HDFS",
+    										"ServiceVersion":"2.7.2-1.3.1"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"ZooKeeper",
+    										"ServiceName":"ZOOKEEPER",
+    										"ServiceVersion":"3.4.13"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"Ganglia",
+    										"ServiceName":"GANGLIA",
+    										"ServiceVersion":"3.7.2"
+    									}
+    								]
+    							},
+    							"ClusterType":"DRUID"
+    						},
+    						{
+    							"ClusterServiceInfoList":{
+    								"ClusterServiceInfo":[
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"Jupyter",
+    										"ServiceName":"JUPYTER",
+    										"ServiceVersion":"4.4.0"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"Analytics Zoo",
+    										"ServiceName":"ANALYTICS-ZOO",
+    										"ServiceVersion":"0.2.0"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"ApacheDS",
+    										"ServiceName":"APACHEDS",
+    										"ServiceVersion":"2.0.0"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"Tensorflow on YARN",
+    										"ServiceName":"TENSORFLOW-ON-YARN",
+    										"ServiceVersion":"1.0.0"
+    									},
+    									{
+    										"Mandatory":false,
+    										"ServiceDisplayName":"TensorFlow",
+    										"ServiceName":"TENSORFLOW",
+    										"ServiceVersion":"1.8.0"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"Zeppelin",
+    										"ServiceName":"ZEPPELIN",
+    										"ServiceVersion":"0.8.0"
+    									},
+    									{
+    										"Mandatory":false,
+    										"ServiceDisplayName":"Hue",
+    										"ServiceName":"HUE",
+    										"ServiceVersion":"4.1.0"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"Spark",
+    										"ServiceName":"SPARK",
+    										"ServiceVersion":"2.3.2-1.0.0"
+    									},
+    									{
+    										"Mandatory":false,
+    										"ServiceDisplayName":"Hive",
+    										"ServiceName":"HIVE",
+    										"ServiceVersion":"2.3.3-1.0.2"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"YARN",
+    										"ServiceName":"YARN",
+    										"ServiceVersion":"2.7.2-1.3.1"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"HDFS",
+    										"ServiceName":"HDFS",
+    										"ServiceVersion":"2.7.2-1.3.1"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"ZooKeeper",
+    										"ServiceName":"ZOOKEEPER",
+    										"ServiceVersion":"3.4.13"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"Ganglia",
+    										"ServiceName":"GANGLIA",
+    										"ServiceVersion":"3.7.2"
+    									}
+    								]
+    							},
+    							"ClusterType":"DATA_SCIENCE"
+    						},
+    						{
+    							"ClusterServiceInfoList":{
+    								"ClusterServiceInfo":[
+    									{
+    										"Mandatory":false,
+    										"ServiceDisplayName":"Ranger",
+    										"ServiceName":"RANGER",
+    										"ServiceVersion":"1.0.0"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"Kafka-Manager",
+    										"ServiceName":"KAFKA-MANAGER",
+    										"ServiceVersion":"1.3.3.16-1.1.0"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"Kafka",
+    										"ServiceName":"KAFKA",
+    										"ServiceVersion":"2.11-1.1.0-1.0.0"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"ZooKeeper",
+    										"ServiceName":"ZOOKEEPER",
+    										"ServiceVersion":"3.4.13"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"Ganglia",
+    										"ServiceName":"GANGLIA",
+    										"ServiceVersion":"3.7.2"
+    									}
+    								]
+    							},
+    							"ClusterType":"KAFKA"
+    						},
+    						{
+    							"ClusterServiceInfoList":{
+    								"ClusterServiceInfo":[
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"ZooKeeper",
+    										"ServiceName":"ZOOKEEPER",
+    										"ServiceVersion":"3.4.13"
+    									},
+    									{
+    										"Mandatory":true,
+    										"ServiceDisplayName":"Ganglia",
+    										"ServiceName":"GANGLIA",
+    										"ServiceVersion":"3.7.2"
+    									}
+    								]
+    							},
+    							"ClusterType":"ZOOKEEPER"
+    						}
+    					]
+    				},
+    				"EcmVersion":true,
+    				"MainVersionName":"EMR-3.15.1",
+    				"RegionId":"cn-hangzhou"
+    			}]
+    		},
+    		"KeyPairNameList":{
+    			"KeyPairName":[
+    				"lr_test",
+    				"zx"
+    			]
+    		},
+    		"RequestId":"BFA129D8-2D93-4B20-9883-FBD981483585",
+    		"SecurityGroupList":{
+    			"SecurityGroup":[{
+    				"CreationTime":"2018-12-03T10:11:55Z",
+    				"Description":"",
+    				"SecurityGroupId":"sg-bp1j1n0xcwfs19y98b7n",
+    				"SecurityGroupName":"ziguansg",
+    				"VpcId":"vpc-bp1d618azoa9go6wowjl2"
+    			}]
+    		},
+    		"VpcInfoList":{
+    			"VpcInfo":[
+    				{
+    					"CidrBlock":"192.168.0.0/16",
+    					"CreationTime":"2018-11-22T07:38:44Z",
+    					"Description":"",
+    					"VpcId":"vpc-bp1d618azoa9go6wowjl2",
+    					"VpcName":"zgtest",
+    					"VswitchInfoList":{
+    						"VswitchInfo":[{
+    							"AvailableIpAddressCount":200,
+    							"CidrBlock":"192.168.0.0/24",
+    							"CreationTime":"2018-11-22T07:38:49Z",
+    							"Description":"",
+    							"VpcId":"vpc-bp1d618azoa9go6wowjl2",
+    							"VswitchId":"vsw-bp18amcazibt1u0d8qqqa",
+    							"VswitchName":"hangzhou_g",
+    							"ZoneId":"cn-hangzhou-g"
+    						}]
+    					}
+    				},
+    				{
+    					"CidrBlock":"192.168.0.0/16",
+    					"CreationTime":"2018-04-02T07:46:16Z",
+    					"Description":"ecm-admin-case-专用",
+    					"VpcId":"vpc-bp1t3gj27698ijqq7xqpg",
+    					"VpcName":"ecm-admin-case-专用",
+    					"VswitchInfoList":{
+    						"VswitchInfo":[
+    							{
+    								"AvailableIpAddressCount":234,
+    								"CidrBlock":"192.168.100.0/24",
+    								"CreationTime":"2018-06-04T11:51:48Z",
+    								"Description":"",
+    								"VpcId":"vpc-bp1t3gj27698ijqq7xqpg",
+    								"VswitchId":"vsw-bp1eph7e1p67a4pru99rw",
+    								"VswitchName":"xxx",
+    								"ZoneId":"cn-hangzhou-f"
+    							},
+    							{
+    								"AvailableIpAddressCount":236,
+    								"CidrBlock":"192.168.0.0/24",
+    								"CreationTime":"2018-04-02T07:46:21Z",
+    								"Description":"ecm-admin-case-专用",
+    								"VpcId":"vpc-bp1t3gj27698ijqq7xqpg",
+    								"VswitchId":"vsw-bp1iyxwwoxqlyr6uebo1b",
+    								"VswitchName":"ecm-admin-case-专用",
+    								"ZoneId":"cn-hangzhou-b"
+    							}
+    						]
+    					}
+    				}
+    			]
+    		}
+    	},
+    	"requestId":"BFA129D8-2D93-4B20-9883-FBD981483585",
+    	"successResponse":true
+    }
+    ```
+
+-   异常返回示例
+
+    JSON 格式
+
+    ```
+    {
+    	"code":"RAM.Permission.NotAllow",
+    	"message":"It is not allow to execute this operation,please use RAM to authorize!",
+    	"requestId":"9AEDC439-1F63-491D-B8C6-9737C372BF3A",
+    	"successResponse":false
+    }
+    ```
+
+
+## 错误码 {#section_a2w_lv4_dgb .section}
+
+[查看本产品错误码](https://error-center.alibabacloud.com/status/product/Emr)
+
