@@ -29,7 +29,7 @@
 
 ## 登录 Master 主机步骤 { .section}
 
-1.  使用如下命令 SSH 登录到 master 主机。请在[ZH-CN\_TP\_17857\_V1.md\#](cn.zh-CN/用户指南/集群配置/集群详情（不发布）.md#)的主机信息栏中获取集群 master 机器的公网 IP。
+1.  使用如下命令 SSH 登录到 master 主机。请在[集群详情页](../../../../../intl.zh-CN/用户指南/集群配置/集群列表与详情.md#)的主机信息栏中获取集群 master 机器的公网 IP。
 
     ```
     ssh root@ip.of.master
@@ -89,7 +89,7 @@
 
 ## 查看 Hadoop、Spark、Ganglia 等系统的 Web UI {#section_plk_45g_1fb .section}
 
-**说明：** 在进行本步骤前，请确认您已经完成了上面的 [SSH 无密码登录](#)流程。
+**说明：** 在进行本步骤前，请确认您已经完成了上面的[SSH 无密码](#section_eqh_5tg_1fb)登录流程。
 
 由于安全的缘故，E-MapReduce 集群的 Hadoop、Spark 和 Ganglia 等系统的 Web UI 监控系统的端口都没有对外开放。如果用户想要访问这些Web UI，需要建立一个 SSH 隧道，通过端口转发的方式来达到目的。有如下两种方式：
 

@@ -29,7 +29,7 @@ You can reference the variables in the script. We recommend that you do not modi
 
 ## Connect to the master node { .section}
 
-1.  Run the following command to connect to the master node using SSH. Check the public IP address of the master node in the Host section on the [EN-US\_TP\_17857.md\#](intl.en-US/User Guide/Clusters/Cluster details.md#) page.
+1.  Run the following command to connect to the master node using SSH. Check the public IP address of the master node in the Host section on the [EN-US\_TP\_17857.md\#](reseller.en-US/User Guide/Clusters/Cluster details.md#) page.
 
     ```
     ssh root@ip.of.master
@@ -89,7 +89,7 @@ You have multiple methods to connect to the master node using SSH without a pass
 
 ## View the Web UIs of Hadoop, Spark, and Ganglia {#section_plk_45g_1fb .section}
 
-**Note:** Make sure that you have completed the [SSH password-less logon](intl.en-US/Quick Start/Connect to a cluster using SSH.md#section_xz1_c5g_1fb) procedure.
+**Note:** Make sure that you have completed the [SSH password-less logon](reseller.en-US/Quick Start/Connect to a cluster using SSH.md#section_xz1_c5g_1fb) procedure.
 
 For security reasons, the ports of Web UIs for monitoring Hadoop, Spark, and Ganglia in an EMR cluster are closed. If you want to access these Web UIs, you need to create SSH tunnels and enable port forwarding. The methods are shown as follows:
 
