@@ -203,7 +203,7 @@ For security reasons, the ports of Web UIs for monitoring Hadoop, Spark, and Gan
 5.  Select the XML file you have created. Click **Open**.
 6.  In the **Import FoxyProxy Setting** dialogue box, click **Add**.
 7.  Click the **Foxyproxy** icon. From the drop-down list, select **Use Proxy aliyun-emr-socks-proxy for all URLs**.
-8.  Enter localhost:8088 in the address bar to view the Web UI of Hadoop.
+8.  Enter localhost: 8088 in the address bar to view the Web UI of Hadoop.
 -   Method 2: Local port forwarding
 
     **Note:** If you use this method to view a Web UI, errors will occur when you try to open the subpages.
