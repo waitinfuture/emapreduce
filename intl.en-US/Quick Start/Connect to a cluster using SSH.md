@@ -89,7 +89,7 @@ You have multiple methods to connect to the master node using SSH without a pass
 
 ## View the Web UIs of Hadoop, Spark, and Ganglia {#section_plk_45g_1fb .section}
 
-**Note:** Make sure that you have completed the [SSH password-less logon](#section_xz1_c5g_1fb) procedure.
+**Note:** Make sure that you have completed the [SSH password-less logon](intl.en-US/Quick Start/Connect to a cluster using SSH.md#section_xz1_c5g_1fb) procedure.
 
 For security reasons, the ports of Web UIs for monitoring Hadoop, Spark, and Ganglia in an EMR cluster are closed. If you want to access these Web UIs, you need to create SSH tunnels and enable port forwarding. The methods are shown as follows:
 
