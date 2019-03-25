@@ -1,10 +1,10 @@
 # 在 E-MapReduce 上使用 Intel Analytics Zoo 进行深度学习 {#concept_awn_wmp_kfb .concept}
 
-Analytics Zoo 是由 Intel 开源,基于 Apache Spark 和 Inte BigDL 的大数据分析和 AI 平台，方便用户开发基于大数据、端到端的深度学习应用。本文简单介绍了如何在阿里云 E-MapReduce 使用 Analytics Zoo 来进行深度学习。
+本文简单介绍了如何在阿里云 E-MapReduce 使用 Analytics Zoo 来进行深度学习。
 
 ## 简介 {#section_nfv_bnp_kfb .section}
 
-Analytics Zoo是由 Intel 开源，基于Apache Spark 和 Inte BigDL 的大数据分析和AI平台，方便用户开发基于大数据、端到端的深度学习应用。
+Analytics Zoo 是由 Intel 开源，基于Apache Spark 和 Inte BigDL 的大数据分析和 AI 平台，方便用户开发基于大数据、端到端的深度学习应用。
 
 ## 系统要求 {#section_mkn_2np_kfb .section}
 
@@ -18,7 +18,7 @@ Analytics Zoo是由 Intel 开源，基于Apache Spark 和 Inte BigDL 的大数�
 -   Scala 安装
     -   下载 pre-build 版本
 
-        可以从 github，analytics 主页下载到[pre-build版本](https://analytics-zoo.github.io/master/#release-download/)
+        可以从 github，analytics 主页下载到[pre-build 版本](https://analytics-zoo.github.io/master/#release-download/)
 
     -   通过 script build
 
@@ -93,9 +93,9 @@ spark-submit --master yarn \
 /usr/lib/analytics_zoo/lib/analytics-zoo-bigdl_0.6.0-spark_2.1.0-0.2.0-jar-with-dependencies.jar --baseDir /news
 ```
 
-    -   通过 [ssh proxy](../../../../../intl.zh-CN/用户指南/SSH 登录集群.md#)来查看Spark运行详情页面。
+    -   通过 [ssh proxy](../../../../../intl.zh-CN/快速入门/SSH 登录集群.md#)来查看Spark运行详情页面。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/154874722013534_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/155350392913534_zh-CN.png)
 
         同时查看日志，能够看到每个epoch的accuracy信息等。
 
@@ -122,20 +122,20 @@ spark-submit --master yarn \
     -   使用 Analytics Zoo，推荐采用内置的 Wide And Deep 模型来进行。
         1.  导入数据
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/154874722013535_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/155350392913535_zh-CN.png)
 
         2.  定义模型和优化器
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/154874722013536_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/155350392913536_zh-CN.png)
 
         3.  进行训练
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/154874722013537_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/155350392913537_zh-CN.png)
 
         4.  查看训练结果
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/154874722013538_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/155350392913538_zh-CN.png)
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/154874722013539_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/155350393013539_zh-CN.png)
 
 
