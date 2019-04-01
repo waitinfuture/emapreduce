@@ -25,7 +25,7 @@
 |Config.N.ServiceName|String|否|YARN|自定义配置项服务名（大写）|
 |DepositType|String|否|HALF\_MANAGED|托管类型|
 |EasEnable|Boolean|否|false|是否高安全集群|
-|HighAvailabilityEnable|Boolean|否|true|是否高可用集群，用，若开启高可用，需要 2 台 Master 节点|
+|HighAvailabilityEnable|Boolean|否|false|是否高可用集群，用，若开启高可用，需要 2 台 Master 节点|
 |HostGroup.N.AutoRenew|Boolean|否|false|机器组机器是否自动续费|
 |HostGroup.N.ChargeType|String|是|PostPaid|机器组机器付费类型|
 |HostGroup.N.ClusterId|String|否|0|保留字段，无需填写|
@@ -54,7 +54,7 @@
 |OptionSoftWareList.N|RepeatList|否|\["ZOOKEEPER","LIVY"\]|可选软件列表|
 |SecurityGroupId|String|否|sg-bp1id7ajv83kmqwq2isx|安全组 ID。可以在 ECS 中创建一个然后使用。需要确认的是，若使用已有的安全组，会被增加上默认安全组策略：入只开放 22 端口，出开放所有端口。|
 |SecurityGroupName|String|否|emr-sg|需要新建的安全组名称。如果不指定安全组 ID，那么将使用这个名字创建一个新的安全组。当集群创建完成以后，可以在集群详情中看到创建的安全组 ID。这个安全组将会有带有默认的安全组策略：入只开放 22 端口，出开放所有端口。|
-|SshEnable|Boolean|否|true|是否开启 SSH|
+|SshEnable|Boolean|否|false|是否开启 SSH|
 |UseCustomHiveMetaDB|Boolean|否|false|保留字段，无需填写|
 |UseLocalMetaDb|Boolean|否|true|是否使用本地 Hive 元数据库|
 |UserDefinedEmrEcsRole|String|否|AliyunEmrEcsDefaultRole|用于 ECS 调用的 EMR 权限名|
