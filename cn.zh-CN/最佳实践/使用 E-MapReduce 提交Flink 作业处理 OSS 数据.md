@@ -2,7 +2,7 @@
 
 本文介绍如何在 E-MapReduce 上创建 Hadoop 集群，运行 Flink 作业来消费 OSS 数据。
 
-在开发过程中我们通常会碰到需要需要消费阿里云 OSS数据的场景，本文通过使用阿里云 E-MapReduc e创建一个 Hadoop 集群并运行 Flink 作业来消费OSS上的数据。
+在开发过程中我们通常会碰到需要消费阿里云 OSS数据的场景，本文通过使用阿里云 E-MapReduc e创建一个 Hadoop 集群并运行 Flink 作业来消费OSS上的数据。
 
 1.  环境准备 
 
@@ -39,25 +39,25 @@
 
     5.  查看作业信息 
 
-        通过 Yarn 的 Web UI 可以查看 Flink 作业的信息。访问 Yarn Web UI 有2 种方式: 使用 SSH 隧道， 参考文档 [SSH 登录集群](../../../../../intl.zh-CN/用户指南/SSH 登录集群.md#)；或者通过Knox方式，参考文档[Knox 使用说明](../../../../../intl.zh-CN/用户指南/开源组件介绍/Knox 使用说明.md#)。
+        通过 Yarn 的 Web UI 可以查看 Flink 作业的信息。访问 Yarn Web UI 有2 种方式: 使用 SSH 隧道， 参考文档 [SSH 登录集群](../../../../../intl.zh-CN/快速入门/SSH 登录集群.md#)；或者通过Knox方式，参考文档[Knox 使用说明](../../../../../intl.zh-CN/开源组件介绍/Knox 使用说明.md#)。
 
         -   查看运行中作业信息
 
             本文选择使用SSH隧道方式，访问地址： http://emr-header-1:8088/index.html 。在 Yarn 的 Web U I中，可以看到我们刚刚提交的作业如下图所示：
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155116224634444_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155410386434444_zh-CN.png)
 
             进入作业后，通过作业的 Tracking URL 链接可以跳转至 Flink Dashboard，查看运行中的作业。
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155116224734445_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155410386434445_zh-CN.png)
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155116224734446_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155410386434446_zh-CN.png)
 
         -   查看历史作业信息
 
             在作业运行结束后，通过访问http://emr-header-1:8082，可以查看所有已经完成作业的列表。
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155116224734447_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155410386434447_zh-CN.png)
 
 
 至此，我们成功实现了在 E-MapReduce 集群上运行Flink 作业消费 OSS 数据。
