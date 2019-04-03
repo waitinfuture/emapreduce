@@ -10,8 +10,8 @@
 |EmrVer|String|是|EMR-3.15.0|EMR 版本|
 |Name|String|是|bi\_hadoop|集群的名字。长度限制为 1-64 个字符，只允许包含中文、字母、数字、-、\_|
 |RegionId|String|是|cn-hangzhou|区域。目前支持华东 1，华东 2，华南 1，华北 2，华北 3，美西，新加坡，德国|
-|ZoneId|String|否|cn-hangzhou-e|可用区。华东 1（杭州）支持：cn-hangzhou-b。 华北 2（北京）支持：cn-beijing-a,cn-beijing-b,cn-beijing-c|
-|AccessKeyId|String|否|\*\*\*\*|AccessKeyId|
+|ZoneId|String|是|cn-hangzhou-e|可用区。华东 1（杭州）支持：cn-hangzhou-b。 华北 2（北京）支持：cn-beijing-a,cn-beijing-b,cn-beijing-c|
+|AccessKeyId|String|否|LTAI8ljWyu7y\*\*\*\*|AccessKeyId|
 |AuthorizeContent|String|否|0|暂时无需填写|
 |AutoRenew|Boolean|否|false|包年包月集群是否自动续费|
 |BootstrapAction.N.Arg|String|否|--a=b|引导操作参数|
@@ -35,7 +35,7 @@
 |HostGroup.N.DiskCount|Integer|是|4|机器组的数据盘数量|
 |HostGroup.N.DiskType|String|是|CLOUD\_SSD|机器组的数据盘类型|
 |HostGroup.N.GpuDriver|String|否|cuda9|GPU 驱动|
-|HostGroup.N.HostGroupId|String|否|0|保留字段|
+|HostGroup.N.HostGroupId|String|是|0|保留字段|
 |HostGroup.N.HostGroupName|String|是|主实例组|机器组名字|
 |HostGroup.N.HostGroupType|String|是|MASTER|机器组类型|
 |HostGroup.N.InstanceType|String|是|ecs.mn4.2xlarge|机器组型号|
@@ -43,7 +43,7 @@
 |HostGroup.N.Period|Integer|否|30|包年包月时间（天），HostGroup.n.ChargeType=PrePaid 时，必填。|
 |HostGroup.N.SysDiskCapacity|Integer|是|80|机器组的系统盘容量|
 |HostGroup.N.SysDiskType|String|是|CLOUD\_SSD|机器组的系统盘类型|
-|HostGroup.N.VSwitchId|String|否|vsw-bp10tvjyc77psy0z5h0ni|虚拟交换机 ID|
+|HostGroup.N.VSwitchId|String|否|vsw-bp10tvjyc77psy0z5h0ni|虚拟交换机 ID，NetType=vpc 时，必填。|
 |InitCustomHiveMetaDB|Boolean|否|false|保留字段，无需填写|
 |InstanceGeneration|String|否|ecs-3|ECS 实例分代|
 |IoOptimized|Boolean|否|true|是否开启 IO 优化，默认 true|
@@ -52,34 +52,31 @@
 |LogPath|String|否|oss//bucketname/path无|OSS 日志路径|
 |MachineType|String|否|ECS|机器类型|
 |OptionSoftWareList.N|RepeatList|否|\["ZOOKEEPER","LIVY"\]|可选软件列表|
-|SecurityGroupId|String|否|sg-bp1id7ajv83kmqwq2isx|安全组 ID。可以在 ECS 中创建一个然后使用。需要确认的是，若使用已有的安全组，会被增加上默认安全组策略：入只开放 22 端口，出开放所有端口。|
-|SecurityGroupName|String|否|emr-sg|需要新建的安全组名称。如果不指定安全组 ID，那么将使用这个名字创建一个新的安全组。当集群创建完成以后，可以在集群详情中看到创建的安全组 ID。这个安全组将会有带有默认的安全组策略：入只开放 22 端口，出开放所有端口。|
+|SecurityGroupId|String|是|sg-bp1id7ajv83kmqwq2isx|安全组 ID。可以在 ECS 中创建一个然后使用。需要确认的是，若使用已有的安全组，会被增加上默认安全组策略：入只开放 22 端口，出开放所有端口。|
+|SecurityGroupName|String|是|emr-sg|需要新建的安全组名称。如果不指定安全组 ID，那么将使用这个名字创建一个新的安全组。当集群创建完成以后，可以在集群详情中看到创建的安全组 ID。这个安全组将会有带有默认的安全组策略：入只开放 22 端口，出开放所有端口。|
 |SshEnable|Boolean|否|false|是否开启 SSH|
 |UseCustomHiveMetaDB|Boolean|否|false|保留字段，无需填写|
 |UseLocalMetaDb|Boolean|否|true|是否使用本地 Hive 元数据库|
 |UserDefinedEmrEcsRole|String|否|AliyunEmrEcsDefaultRole|用于 ECS 调用的 EMR 权限名|
 |UserInfo.N.Password|String|否|pwd|集群密码|
-|UserInfo.N.UserId|String|否|12345|knox 账号的aliyun 用户 ID|
+|UserInfo.N.UserId|String|否|12345|knox 账号的 aliyun 用户 ID|
 |UserInfo.N.UserName|String|否|tom|knox 账号用户名|
 |MasterPwd|String|否|pwd|Master 节点 SSH 访问密码。需要满足 ECS 的密码规则：8 - 30 个字符，且同时包含任意三项（大、小写字母，数字和特殊符号）|
-|ChargeType|String|是|无|付费类型，PostPaid：按量付费，PrePaid：包年包月|
+|ChargeType|String|是|PostPaid|付费类型，PostPaid：按量付费，PrePaid：包年包月|
 |Period|Integer|否|30|包年包月时间（天）|
 |RelatedClusterId|String|否|C-D7958B72E59BAB88|当前集群是 gateway 时，其关联的主集群 ID|
 |Configurations|String|否|0|无需填写|
-|VpcId|String|否|vpc-bp1l4urd87xlh7i4bju4h|vpc ID|
-|VSwitchId|String|否|vsw-bp10tvjyc77psy0z5h0ni|交换机 ID|
+|VpcId|String|否|vpc-bp1l4urd87xlh7i4bju4h|Vpc ID，NetType=vpc 时，必填。|
+|VSwitchId|String|否|vsw-bp10tvjyc77psy0z5h0ni|交换机 ID，NetType=vpc 时，必填。|
 |WhiteListType|String|否|""|暂时无需填写|
 |NetType|String|否|vpc|网络类型|
 
 ## 返回参数 {#section_xxl_hz1_kfb .section}
 
-|字段|类型|示例值|描述|
-|--|--|---|--|
-|RequestId|String|BF4FBAC6-B03E-4BFB-B6DB-EB53C34F2E22|请求 ID|
-|ClusterId|String|C-D7958B72E59BAB88|集群 ID|
-|EmrOrderId|String|0|EMR 服务订单 ID|
-|MasterOrderId|String|0|Master 节点 Ecs 订单 ID|
-|CoreOrderId|String|0|Core 节点 Ecs 订单Id|
+|类型|示例值|描述|
+|--|---|--|
+|String|BF4FBAC6-B03E-4BFB-B6DB-EB53C34F2E22|请求 ID|
+|String|C-D7958B72E59BAB88|集群 ID|
 
 ## 示例 {#section_yr3_jz1_kfb .section}
 
@@ -90,7 +87,7 @@
     &EmrVer=EMR-3.15.0
     &Name=bi_hadoop
     &RegionId=cn-hangzhou
-    &AccessKeyId=****
+    &AccessKeyId=LTAI8ljWyu7y****
     &AutoRenew=false
     &ChargeType=PostPaid
     &DepositType=HALF_MANAGED
