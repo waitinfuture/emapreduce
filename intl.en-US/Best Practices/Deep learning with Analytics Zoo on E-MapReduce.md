@@ -95,7 +95,7 @@ spark-submit --master yarn \
 
     -   You can log on to the instance of the Spark cluster through [ssh proxy](../DNemapreduce1876943/EN-US_TP_17923.dita#concept_sns_sww_y2b) to view the status of the jobs.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/155350393513534_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/155469036613534_en-US.png)
 
         You can also view the accuracy of each epoch through logs.
 
@@ -119,23 +119,23 @@ spark-submit --master yarn \
         jupyter-with-zoo.sh
         ```
 
-    -   We recommend that you use the pre-defined Wide And Deep Learning models provided by Analytics Zoo.
+    -   We recommend that you use the pre-defined Wide And Deep Learning models provided by Analytics Zoo, for more information please refer to [GitHub](https://github.com/intel-analytics/analytics-zoo/tree/master/zoo/src/main/scala/com/intel/analytics/zoo/examples/recommendation).
         1.  Import data.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/155350393513535_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/155469036613535_en-US.png)
 
         2.  Build a model and create an optimizer.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/155350393513536_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/155469036613536_en-US.png)
 
         3.  Start the training process.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/155350393513537_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/155469036613537_en-US.png)
 
         4.  View training results.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/155350393513538_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/155469036613538_en-US.png)
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/155350393613539_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/23346/155469036613539_en-US.png)
 
 
