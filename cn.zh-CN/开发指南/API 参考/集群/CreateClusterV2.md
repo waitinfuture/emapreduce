@@ -40,7 +40,7 @@
 |HostGroup.N.HostGroupType|String|是|MASTER|机器组类型|
 |HostGroup.N.InstanceType|String|是|ecs.mn4.2xlarge|机器组型号|
 |HostGroup.N.NodeCount|Integer|是|1|机器组节点数|
-|HostGroup.N.Period|Integer|否|30|包年包月时间（月），HostGroup.n.ChargeType=PrePaid 时，必填。|
+|HostGroup.N.Period|Integer|否|1|包年包月时间（月，1，2，3，4，5，6，7，8，9，12，24，36），HostGroup.n.ChargeType=PrePaid 时，必填。|
 |HostGroup.N.SysDiskCapacity|Integer|是|80|机器组的系统盘容量|
 |HostGroup.N.SysDiskType|String|是|CLOUD\_SSD|机器组的系统盘类型|
 |HostGroup.N.VSwitchId|String|否|vsw-bp10tvjyc77psy0z5\*\*\*\*|虚拟交换机 ID，NetType=vpc 时，必填。|
