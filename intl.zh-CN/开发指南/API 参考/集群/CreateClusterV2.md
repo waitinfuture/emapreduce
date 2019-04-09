@@ -63,7 +63,7 @@
 |UserInfo.N.UserName|String|否|tom|knox 账号用户名|
 |MasterPwd|String|否|pwd|Master 节点 SSH 访问密码。需要满足 ECS 的密码规则：8 - 30 个字符，且同时包含任意三项（大、小写字母，数字和特殊符号）|
 |ChargeType|String|是|PostPaid|付费类型，PostPaid：按量付费，PrePaid：包年包月|
-|Period|Integer|否|30|包年包月时间（天）|
+|Period|Integer|否|1|包年包月时间（月，1，2，3，4，5，6，7，8，9，12，24，36），ChargeType=PrePaid 时，必填。|
 |RelatedClusterId|String|否|C-D7958B72E59B\*\*\*\*|当前集群是 gateway 时，其关联的主集群 ID|
 |Configurations|String|否|0|无需填写|
 |VpcId|String|否|vpc-bp1l4urd87xlh7i4b\*\*\*\*|Vpc ID，NetType=vpc 时，必填。|
