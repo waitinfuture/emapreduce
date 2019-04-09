@@ -37,7 +37,7 @@
 |HostGroup.N.GpuDriver|String|否|cuda9|GPU 驱动|
 |HostGroup.N.HostGroupId|String|否|0|保留字段|
 |HostGroup.N.HostGroupName|String|是|主实例组|机器组名字|
-|HostGroup.N.HostGroupType|String|是|MASTER|机器组类型|
+|HostGroup.N.HostGroupType|String|是|MASTER|机器组类型，枚举值：MASTER、CORE、TASK。目前MASTER 和CORE 均只支持设置一个组。|
 |HostGroup.N.InstanceType|String|是|ecs.mn4.2xlarge|机器组型号|
 |HostGroup.N.NodeCount|Integer|是|1|机器组节点数|
 |HostGroup.N.Period|Integer|否|1|包年包月时间（月，1，2，3，4，5，6，7，8，9，12，24，36），HostGroup.n.ChargeType=PrePaid 时，必填。|
