@@ -1,6 +1,6 @@
 # CreateClusterV2 {#concept_ahy_wy1_kfb .concept}
 
-创建集群参数以及示例代码
+调用 CreateClusterV2 接口创建一个 E-MapReduce 集群
 
 ## 请求参数 {#section_wbp_dz1_kfb .section}
 
@@ -73,10 +73,10 @@
 
 ## 返回参数 {#section_xxl_hz1_kfb .section}
 
-|类型|示例值|描述|
-|--|---|--|
-|String|BF4FBAC6-B03E-4BFB-B6DB-EB53C34F2E22|请求 ID|
-|String|C-D7958B72E59BAB88|集群 ID|
+|字段|类型|示例值|描述|
+|--|--|---|--|
+|RequestId|String|BF4FBAC6-B03E-4BFB-B6DB-EB53C34F2E22|请求 ID|
+|ClusterId|String|C-D7958B72E59BAB88|集群 ID|
 
 ## 示例 {#section_yr3_jz1_kfb .section}
 
