@@ -1,6 +1,10 @@
 # Spark + HBase {#concept_n5q_vfh_hfb .concept}
 
-本章节将介绍 Spark 如何向 Hbase 写数据。需要指出的是，计算集群需要和 Hbase 集群处于一个安全组内，否则网络无法打通。在 E-Mapreduce 创建集群时，请注意选择 Hbase 集群所处的安全组
+本章节将介绍 Spark 如何向 Hbase 写数据。
+
+**说明：** 
+
+计算集群需要和 Hbase 集群处于一个安全组内，否则网络无法打通。在 E-Mapreduce 创建集群时，请注意选择 Hbase 集群所处的安全组
 
 ## Spark 接入 Hbase {#section_qs1_xfh_hfb .section}
 
