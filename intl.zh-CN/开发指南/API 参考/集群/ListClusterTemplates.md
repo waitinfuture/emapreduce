@@ -1,31 +1,31 @@
 # ListClusterTemplates {#concept_lsy_rmw_dgb .concept}
 
-查询集群模版列表参数以及示例。
+调用 ListClusterTemplates 接口查询集群模版列表
 
 ## 请求参数 {#section_pdw_lv4_dgb .section}
 
 |参数|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|PageNumber|Integer|是|1|页数，从1开始|
+|PageNumber|Integer|是|1|页数，从 1 开始|
 |PageSize|Integer|是|10|分页大小|
-|AccessKeyId|String|否|LTAI8ljWyu7y\*\*\*\*|AccessKeyId|
-|BizId|String|否|CT-4A6799A79D73385B|集群模版ID|
-|RegionId|String|否|cn-hangzhou|区域ID|
+|AccessKeyId|String|是|LTAI8ljWyu7y\*\*\*\*|AccessKeyId|
+|BizId|String|否|CT-4A6799A79D73385B|集群模版 ID|
+|RegionId|String|否|cn-hangzhou|区域 ID|
 
 ## 返回参数 {#section_vdw_lv4_dgb .section}
 
 |字段|类型|示例值|描述|
 |--|--|---|--|
-|RequestId|String|BF4FBAC6-B03E-4BFB-B6DB-EB53C34F2E22|请求ID|
+|RequestId|String|BF4FBAC6-B03E-4BFB-B6DB-EB53C34F2E22|请求 ID|
 |TotalCount|Integer|12|集群模版总数|
-|PageNumber|Integer|1|页数，从1开始|
+|PageNumber|Integer|1|页数，从 1 开始|
 |PageSize|Integer|10|分页大小|
 |TemplateInfoList| | |集群模版列表|
-|Id|String|CT-4A6799A79D73385B|集群模版的ID|
+|Id|String|CT-4A6799A79D73385B|集群模版的 ID|
 |TemplateName|String|template\_name\_2|集群模版名|
-|LogEnable|Boolean|true|是否开启OSS 日志|
+|LogEnable|Boolean|true|是否开启 OSS 日志|
 |LogPath|String|oss//bucketname/path|OSS 文件路径|
-|UserId|String|125046002175\*\*\*\*|创建用户ID|
+|UserId|String|125046002175\*\*\*\*|创建用户 ID|
 |UserDefinedEmrEcsRole|String|AliyunEmrEcsDefaultRole|用于 ECS 调用的 EMR 权限名|
 |MasterNodeTotal|Integer|1|Master 节点数量|
 |VpcId|String|vpc-bp1l4urd87xlh7i4bju4h|VPC ID|
@@ -37,7 +37,7 @@
 |EasEnable|Boolean|true|是否高安全|
 |GmtCreate|Long|1543765033000|创建时间|
 |GmtModified|Long|1543765033000|修改时间|
-|ZoneId|String|cn-hangzhou-b|可用区|
+|ZoneId|String|cn-hangzhou-b|可用区 ID|
 |ClusterType|String|HADOOP|集群类型|
 |SecurityGroupId|String|sg-bp1id7ajv83kmqwq2isx|安全组 ID|
 |SecurityGroupName|String|emr\_sg|需要新创建的安全组的名字|
@@ -60,7 +60,7 @@
 |HostGroupName|String|主实例组|机器组名字|
 |HostGroupType|String|MASTER|机器组类型|
 |ChargeType|String|PostPaid|付费方式|
-|Period|String|36|包年包月时间（天）|
+|Period|String|36|包年包月时间（月，1，2，3，4，5，6，7，8，9，12，24，36）|
 |NodeCount|Integer|2|机器组节点数|
 |InstanceType|String|ecs.mn4.2xlarge|机器组型号|
 |DiskType|String|CLOUD\_SSD|机器组的数据盘类型|
