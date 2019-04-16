@@ -1,6 +1,6 @@
 # Hive + TableStore {#concept_sqb_xrn_hfb .concept}
 
-本章节将介绍如何在Hive中处理TableStore中的数据。
+本章节介绍如何在Hive中处理TableStore中的数据。
 
 ## Hive接入TableStore {#section_zzs_fsn_hfb .section}
 
