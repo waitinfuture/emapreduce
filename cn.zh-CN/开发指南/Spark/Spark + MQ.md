@@ -1,6 +1,6 @@
 # Spark + MQ {#concept_jj2_qch_hfb .concept}
 
-本章节将介绍如何使用Spark Streaming 如何使用 MQ 中的数据并计算每个批次中的单词数。
+本章节介绍如何使用Spark Streaming 如何使用 MQ 中的数据并计算每个批次中的单词数。
 
 ## 通过 Spark 访问 MQ {#section_rdt_5dh_hfb .section}
 
