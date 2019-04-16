@@ -1,6 +1,6 @@
 # Hive 开发手册 {#concept_yrq_tmm_hfb .concept}
 
-本文将介绍如何创建一个Hive作业并运行。
+本文介绍在E-MapReduce集群中开发Hive作业流程。
 
 ## 在 Hive 中使用 OSS {#section_vmn_5mm_hfb .section}
 
@@ -28,7 +28,7 @@ CREATE EXTERNAL TABLE eusers (
 
 -   $\{endpoint\}：访问 OSS 使用的网络，由您集群所在的 region 决定，对应的 OSS 也需要是在集群对应的 region。
 
-    具体的值请参考 [OSS Endpoint](../../../../intl.zh-CN/开发指南/访问域名和数据中心.md#)
+    具体的值请参考 [OSS Endpoint](../../../../intl.zh-CN/开发指南/访问域名（Endpoint）/访问域名和数据中心.md#)
 
 
 ## 使用Tez作为计算引擎 {#section_yqc_ynm_hfb .section}
@@ -114,7 +114,7 @@ set hive.execution.engine=tez
 
         将步骤 1 中编写的脚本存储到 OSS 中，假设存储路径为oss://emr/jars/scan.hive，在 E-MapReduce 中创建如下作业：
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17985/154259740813195_zh-CN.png)
+        ![创建作业](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17985/155539397513195_zh-CN.png)
 
     4.  创建执行计划并运行
 
