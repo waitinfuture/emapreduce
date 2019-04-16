@@ -1,6 +1,6 @@
 # Spark + TableStore {#concept_fyq_12h_hfb .concept}
 
-本章节将介绍如何在Spark中消费TableStore中的数据。
+本章节介绍如何在Spark中消费TableStore中的数据。
 
 ## Spark接入TableStore {#section_m5v_b2h_hfb .section}
 
