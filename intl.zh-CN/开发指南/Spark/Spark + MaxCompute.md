@@ -1,6 +1,6 @@
 # Spark + MaxCompute {#concept_tbv_dbh_hfb .concept}
 
-本章节将介绍如何使用E-MapReduce SDK在Spark中完成一次MaxCompute数据的读写操作。
+本章节介绍如何使用E-MapReduce SDK在Spark中完成一次MaxCompute数据的读写操作。
 
 ## Spark 接入 MaxCompute {#section_jrz_pbh_hfb .section}
 
