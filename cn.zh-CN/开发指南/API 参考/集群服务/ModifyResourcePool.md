@@ -1,6 +1,6 @@
 # ModifyResourcePool {#concept_vvk_ynt_2gb .concept}
 
-更新资源池参数及示例
+调用 ModifyResourcePool 接口更新资源池
 
 ## 请求参数 {#section_obj_yxl_2gb .section}
 
@@ -16,8 +16,8 @@
 |Config.N.Id|String|否|10|配置参数 ID|
 |Config.N.Note|String|否|容量权重|配置参数描述|
 |Name|String|否|custompool|资源池名称|
-|Yarnsiteconfig|String|否|Yarnsiteconfig|yarn配置列表|
-|AccessKeyId|String|否|LTAI8ljWyu7y\*\*\*\*|对应的阿里云AccessKey ID信息|
+|Yarnsiteconfig|String|否|Yarnsiteconfig|YARN配置列表|
+|AccessKeyId|String|是|LTAI8ljWyu7y\*\*\*\*|对应的阿里云 AccessKey ID 信息|
 
 ## 返回参数 {#section_vbj_yxl_2gb .section}
 
