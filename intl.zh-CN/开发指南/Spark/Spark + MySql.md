@@ -1,6 +1,6 @@
 # Spark + MySql {#concept_vc2_5jf_hfb .concept}
 
-本章节将介绍在E-MapReduce的Hadoop集群运行Spark作业统计单词个数，将结果写入MySQL。Spark Streaming作业写入MySQL的方法与此类似。
+本章节介绍在E-MapReduce的Hadoop集群运行Spark作业统计单词个数，将结果写入MySQL。Spark Streaming作业写入MySQL的方法与此类似。
 
 ## Spark 接入 MySQL {#section_ky2_t2g_hfb .section}
 
