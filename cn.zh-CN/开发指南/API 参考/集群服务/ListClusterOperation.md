@@ -1,13 +1,13 @@
 # ListClusterOperation {#concept_qrc_12m_2gb .concept}
 
-查询集群的操作历史列表
+调用 ListClusterOperation 接口查询集群的操作历史列表
 
 ## 请求参数 {#section_obj_yxl_2gb .section}
 
 |参数|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
 |ClusterId|String|是|C-EBD62A703A430E23|集群 ID|
-|RegionId|String|是|cn-hangzhou|集群对应的区域 ID|
+|RegionId|String|是|cn-hangzhou|区域 ID|
 |PageNumber|Integer|否|1|分页查询的查询页码|
 |PageSize|Integer|否|100|分页查询的每页记录数|
 |ServiceName|String|否|YARN|服务名称|
