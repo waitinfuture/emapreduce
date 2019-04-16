@@ -1,19 +1,19 @@
 # ModifyClusterServiceConfig {#concept_ods_wds_2gb .concept}
 
-修改集群指定服务的配置信息
+调用 ModifyClusterServiceConfig 接口修改集群指定服务的配置信息
 
 ## 请求参数 {#section_obj_yxl_2gb .section}
 
 |参数|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
 |ClusterId|String|是|C-EBD62A703A430E23|集群 ID|
-|RegionId|String|是|cn-hangzhou|RegionID|
+|RegionId|String|是|cn-hangzhou|区域 ID|
 |ServiceName|String|是|TEZ|服务名称|
 |Comment|String|否|modify tez config|本次修改的备注信息|
 |ConfigParams|String|否|\{"tez-site":\{"tez.am.resource.memory.mb":"640"\}\}|本次修改的具体内容，JSON 格式的字符串|
 |ConfigType|String|否|""|配置项类型|
 |CustomConfigParams|String|否|\{"tez-site":\{"key1":\{"Value":"value1"\}\}\}|自定义配置项的修改内容|
-|GroupId|String|否|G-xxx|主机组ID|
+|GroupId|String|否|G-xxx|主机组 ID|
 |HostInstanceId|String|否|i-xxx|主机实例 ID，一般是 ecsID|
 |AccessKeyId|String|否|LTAI8ljWyu7y\*\*\*\*|对应的阿里云 AccessKey ID 信息|
 
