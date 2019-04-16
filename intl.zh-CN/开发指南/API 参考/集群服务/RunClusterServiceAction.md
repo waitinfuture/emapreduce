@@ -1,6 +1,6 @@
 # RunClusterServiceAction {#concept_mq3_325_2gb .concept}
 
-对集群的指定服务，运行指定的操作。
+调用 RunClusterServiceAction 接口对集群的指定服务，运行指定的操作
 
 ## 请求参数 {#section_obj_yxl_2gb .section}
 
@@ -20,7 +20,7 @@
 |OnlyRestartStaleConfigNodes|Boolean|否|true|为 true 时，只对修改了配置项的主机执行重启命令。|
 |TotlerateFailCount|Integer|否|5|预留字段，可容忍的任务失败上限。|
 |TurnOnMaintenanceMode|Boolean|否|false|开启维护模式|
-|AccessKeyId|String|否|LTAI8ljWyu7y\*\*\*\*|对应的阿里云AccessKey ID信息|
+|AccessKeyId|String|是|LTAI8ljWyu7y\*\*\*\*|对应的阿里云AccessKey ID信息|
 
 ## 返回参数 {#section_vbj_yxl_2gb .section}
 
