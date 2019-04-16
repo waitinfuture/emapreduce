@@ -1,10 +1,10 @@
 # Spark + MNS {#concept_hpw_pfh_hfb .concept}
 
-本章节将介绍Spark Streaming如何消费 MNS 中的数据，统计每个 batch 内的单词个数。
+本章节介绍Spark Streaming如何消费 MNS 中的数据，统计每个 batch 内的单词个数。
 
 ## Spark 接入 MNS {#section_otg_rfh_hfb .section}
 
-下面这个例子演示了 Spark Streaming 如何消费 MNS 中的数据，统计每个 batch 内的单词个数。
+示例代码如下：
 
 ```
 val conf = new SparkConf().setAppName("Test MNS Streaming")
