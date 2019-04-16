@@ -1,6 +1,6 @@
 # ModifyResourceQueue {#concept_inn_nc5_2gb .concept}
 
-修改资源队列类型参数及示例
+调用 ModifyResourceQueue 接口修改资源队列
 
 ## 请求参数 {#section_obj_yxl_2gb .section}
 
@@ -10,7 +10,7 @@
 |Id|String|是|116|资源池队列 ID|
 |RegionId|String|是|cn-hangzhou|区域 ID|
 |ResourcePoolId|Long|是|115|资源池 ID|
-|AccessKeyId|String|否|LTAI8ljWyu7y\*\*\*\*|对应的阿里云 AccessKey ID 信息|
+|AccessKeyId|String|是|LTAI8ljWyu7y\*\*\*\*|对应的阿里云 AccessKey ID 信息|
 |Config.N.Category|String|否|QUEUE\_RESOURCE\_LIMIT|参数类别|
 |Config.N.ConfigKey|String|否|capacity|参数 Key|
 |Config.N.ConfigValue|String|否|100|参数值|
