@@ -1,6 +1,6 @@
 # ListClusterServiceComponentHealthInfo {#concept_gmh_vwm_2gb .concept}
 
-获取集群指定服务对应的组件健康信息列表
+调用 ListClusterServiceComponentHealthInfo 接口获取集群指定服务对应的组件健康信息列表
 
 ## 请求参数 {#section_obj_yxl_2gb .section}
 
@@ -9,7 +9,7 @@
 |ClusterId|String|是|C-F32FB31D82954C64|集群 ID|
 |ServiceName|String|否|TEZ|服务名称|
 |RegionId|String|是|cn-hangzhou|区域 ID|
-|AccessKeyId|String|否|LTAI8ljWyu7y\*\*\*\*|阿里云AccessKey ID信息|
+|AccessKeyId|String|是|LTAI8ljWyu7y\*\*\*\*|阿里云AccessKey ID信息|
 
 ## 返回参数 {#section_vbj_yxl_2gb .section}
 
