@@ -1,6 +1,6 @@
 # MR+TableStore {#concept_hzz_rvn_hfb .concept}
 
-本章节将介绍如何在MR中消费TableStore中的数据。
+本章节介绍如何在MapReduce中消费TableStore中的数据。
 
 ## MR接入TableStore {#section_d42_txn_hfb .section}
 
