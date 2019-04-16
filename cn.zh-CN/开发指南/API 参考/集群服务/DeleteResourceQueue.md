@@ -1,6 +1,6 @@
 # DeleteResourceQueue {#concept_df1_5df_2gb .concept}
 
-删除资源队列参数以及示例
+调用 DeleteResourceQueue 接口删除资源队列
 
 ## 请求参数 {#section_p5v_ffb_kfb .section}
 
@@ -9,7 +9,7 @@
 |ClusterId|String|是|C-0E995C0EE7E5ECB3|集群 ID|
 |RegionId|String|是|cn-hangzhou|区域 ID|
 |ResourceQueueId|Long|是|248|资源队列 ID|
-|AccessKeyId|String|否|LTAI8ljWyu7y\*\*\*\*|AccessKeyId|
+|AccessKeyId|String|是|LTAI8ljWyu7y\*\*\*\*|AccessKeyId|
 
 ## 返回参数 {#section_vdw_lv4_dgb .section}
 
