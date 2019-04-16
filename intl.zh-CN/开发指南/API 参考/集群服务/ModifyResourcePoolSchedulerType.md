@@ -1,6 +1,6 @@
 # ModifyResourcePoolSchedulerType {#concept_hjh_515_2gb .concept}
 
-修改资源池调度类型参数及示例
+调用 ModifyResourcePoolSchedulerType 接口修改资源池调度类型
 
 ## 请求参数 {#section_obj_yxl_2gb .section}
 
@@ -9,7 +9,7 @@
 |ClusterId|String|是|C-EBD62A703A430E23|集群 ID|
 |RegionId|String|是|cn-hangzhou|区域 ID|
 |SchedulerType|String|是|CAPACITY\_SCHEDULER|资源调度类型|
-|AccessKeyId|String|否|LTAI8ljWyu7y\*\*\*\*|对应的阿里云 AccessKey ID 信息|
+|AccessKeyId|String|是|LTAI8ljWyu7y\*\*\*\*|对应的阿里云 AccessKey ID 信息|
 
 ## 返回参数 {#section_vbj_yxl_2gb .section}
 
