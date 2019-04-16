@@ -1,6 +1,6 @@
 # Spark + Log Service {#concept_tnp_s2h_hfb .concept}
 
-本章节将介绍Spark Streaming如何消费Log Service中的日志数据，统计日志条数。
+本章节介绍Spark Streaming如何消费Log Service中的日志数据，统计日志条数。
 
 ## Spark 接入 Log Service {#section_x5b_z2h_hfb .section}
 
