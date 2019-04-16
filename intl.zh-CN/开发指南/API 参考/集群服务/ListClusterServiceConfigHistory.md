@@ -1,6 +1,6 @@
 # ListClusterServiceConfigHistory {#concept_xzv_kxr_2gb .concept}
 
-查询集群指定服务的配置修改历史信息的接口
+调用 ListClusterServiceConfigHistory 接口查询集群指定服务的配置修改历史信息的接口
 
 ## 请求参数 {#section_obj_yxl_2gb .section}
 
@@ -8,11 +8,11 @@
 |--|--|----|---|--|
 |ClusterId|String|是|C-F32FB31D82954C64|集群 ID|
 |ServiceName|String|否|TEZ|服务名称|
-|RegionId|String|是|cn-hangzhou|RegionID|
+|RegionId|String|是|cn-hangzhou|区域 ID|
 |ConfigVersion|String|否|0|配置的版本|
 |PageNumber|Integer|否|1|分页查询的查询页码|
 |PageSize|Integer|否|100|分页查询的每页记录数|
-|AccessKeyId|String|否|LTAI8ljWyu7y\*\*\*\*|阿里云 AccessKey ID 信息|
+|AccessKeyId|String|是|LTAI8ljWyu7y\*\*\*\*|阿里云 AccessKey ID 信息|
 
 ## 返回参数 {#section_vbj_yxl_2gb .section}
 
