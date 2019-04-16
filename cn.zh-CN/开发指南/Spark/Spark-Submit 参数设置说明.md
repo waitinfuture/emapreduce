@@ -1,6 +1,6 @@
 # Spark-Submit 参数设置说明 {#concept_ixr_3gh_hfb .concept}
 
-本章节将介绍如何在 E-MapReduce 场景下设置 spark-submit 的参数。
+本章节介绍如何在 E-MapReduce 集群中设置 spark-submit 的参数。
 
 ## 集群配置 {#section_jy1_kgh_hfb .section}
 
@@ -33,7 +33,7 @@
 
 创建集群后，您可以提交作业。首先，您需要在 E-MapReduce 中创建一个作业，配置如下：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17980/154259734913107_zh-CN.png)
+![作业配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17980/155539393113107_zh-CN.png)
 
 上图所示的作业，直接使用了 Spark 官方的 example 包，所以不需要自己上传 jar 包。
 
@@ -48,7 +48,7 @@
 |参数|参考值|说明|
 |--|---|--|
 |class|org.apache.spark.examples.SparkPi|作业的主类。|
-|master|yarn|因为 E-MapReduce 使用 Yarn 的模式，所以这里只能是 yarn 模式。|
+|master|yarn|因为 E-MapReduce 使用 yarn 的模式，所以这里只能是 yarn 模式。|
 | |yarn-client|等同于 –-master yarn —deploy-mode client， 此时不需要指定deploy-mode。|
 | |yarn-cluster|等同于 –-master yarn —deploy-mode cluster， 此时不需要指定deploy-mode。|
 |deploy-mode|client|client 模式表示作业的 AM 会放在 Master 节点上运行。要注意的是，如果设置这个参数，那么需要同时指定上面 master 为 yarn。|
@@ -62,7 +62,7 @@
 
 在不同模式、不同的设置下运行时，作业使用的资源情况如下表所示：
 
--   **yarn-client 模式的资源计算**
+-   yarn-client 模式的资源计算
 
     |节点|资源类型|资源量（结果使用上面的例子计算得到）|
     |--|----|------------------|
@@ -137,7 +137,7 @@
 
 ## 配置建议 {#section_c42_xhh_hfb .section}
 
--   如果将内存设置的很大，要注意 gc 所产生的消耗。一般我们会推荐一个 executor 的内存 <= 64G。
+-   如果将内存设置的很大，要注意 GC 所产生的消耗。一般我们会推荐每一个 executor 的内存 <= 64G。
 
 -   如果是进行 HDFS 读写的作业，建议是每个 executor 中使用 <= 5个并发来读写。
 
