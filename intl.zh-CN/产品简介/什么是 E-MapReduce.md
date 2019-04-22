@@ -21,7 +21,7 @@ E-MapReduce 构建于阿里云云服务器 ECS 上，基于开源的 Apache Hado
 
 在这些流程中，真正跟用户的应用逻辑相关的是从第 8 步才开始，第 1-7 步的各项工作都是前期的准备工作，通常这个前期工作都非常冗长繁琐。而 E-MapReduce 提供了集群管理工具的集成解决方案，如主机选型、环境部署、集群搭建、集群配置、集群运行、作业配置、作业运行、集群管理、性能监控等。
 
-通过使用 E-MapReduce，您可以从集群构建各种繁琐的采购、准备、运维等工作中解放出来，只关心自己应用程序的处理逻辑即可。此外，E-MapReduce 还给用户提供了灵活的搭配组合方式，可您以根据自己的业务特点选择不同的集群服务。例如，如果用需求您是对数据进行日常统计和简单的批量运算，则可以只选择在 E-MapReduce 中运行 Hadoop 服务；而如果用您需要流式计算和实时计算的需求，则可以在 Hadoop 服务基础上再加入 Spark 服务。
+通过使用 E-MapReduce，您可以从集群构建各种繁琐的采购、准备、运维等工作中解放出来，只关心自己应用程序的处理逻辑即可。此外，E-MapReduce 还给用户提供了灵活的搭配组合方式，您可以根据自己的业务特点选择不同的集群服务。例如，如果您的需求是对数据进行日常统计和简单的批量运算，则可以只选择在 E-MapReduce 中运行 Hadoop 服务；而如果您有流式计算和实时计算的需求，则可以在 Hadoop 服务基础上再加入 Spark 服务。
 
 ## E-MapReduce 的组成 {#section_xgt_23y_w2b .section}
 
@@ -29,5 +29,5 @@ E-MapReduce 最核心也是用户直接面对的组件是集群。E-MapReduce �
 
 例如，下图表示了一个包含 1 个 master 节点和 3 个 slave 节点的 E-MapReduce 集群：
 
-![1个 master 节点和3个 slave 节点的 E-MapReduce 集群架构](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17824/15524648009988_zh-CN.jpg)
+![1个 master 节点和3个 slave 节点的 E-MapReduce 集群架构](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17824/15559147179988_zh-CN.jpg)
 
