@@ -1,0 +1,92 @@
+# CreateFlowForWeb {#concept_zdn_s1p_fgb .concept}
+
+调用 CreateFlowForWeb 接口创建自定义图形工作流
+
+## 请求参数 {#section_obj_yxl_2gb .section}
+
+|参数|类型|是否必选|示例值|描述|
+|--|--|----|---|--|
+|Description|String|是|这是一个创建工作流描述|工作流描述|
+|Name|String|是|my\_flow\_demo|工作流名称|
+|ProjectId|String|是|FP-257A173659F59685|项目 ID|
+|RegionId|String|是|cn-hangzhou|区域 ID|
+|AlertDingDingGroupBizId|String|否|已过期|报警钉钉群信息|
+|AlertUserGroupBizId|String|否|已过期|报警用户组信息|
+|ClusterId|String|否|C-A23BD131A862F184|集群 ID|
+|CreateCluster|Boolean|否|false|是否创建集群 -   为 true 时，ClusterId 为集群模板ID CT-XXXXXX
+-   为 false 时，ClusterId 为现有集群 ID C-XXXXXX
+
+ |
+|CronExpr|String|否|0 0 0-23/1 \* \* ?|时间周期调度的 cron 表达式，请参考 [Cron Expressions](https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm)。|
+|EndSchedule|Long|否|1538018814000|结束调度时间， 长整型时间戳， 例如： System.currentTimeMillis\(\).|
+|Graph|String|否|\{"nodes":\[\{"id":"48d474ea","index":0,"spmAnchorId":"0.0.0.i0.766645eb2cmNtQ","attribute":\{"type":"START"\},"shape":"startControlNode","type":"node","y":250,"size":"80\*34","x":500\},\{"id":"7ba480b3","index":1,"spmAnchorId":"5176.8250060.0.i19.771e28d0IPNQGE","attribute":\{"jobType":"SHELL","jobId":"FJ-7BE1062897B19D25","type":"JOB"\},"config":\{"hostName":""\},"label":"fail\_job","shape":"shellJobNode","type":"node","y":398.5,"size":"170\*34","x":470.5\},\{"id":"33202d60","index":2,"spmAnchorId":"5176.8250060.0.i23.771e28d0IPNQGE","attribute":\{"type":"END"\},"shape":"endControlNode","type":"node","y":562.5,"size":"80\*34","x":430.5\}\],"edges":\[\{"id":"28167ea0","index":3,"source":"48d474ea","sourceAnchor":0,"target":"7ba480b3","targetAnchor":0\},\{"id":"e8d5ff52","index":4,"source":"7ba480b3","sourceAnchor":1,"target":"33202d60","targetAnchor":0\}\]\}|dag 图形信息|
+|HostName|String|否|emr-header-1.cluster-123456|指定运行的机器信息， 格式为 emr-header-1.cluster-123456|
+|ParentCategory|String|否|FC-F2495319DA05CEE5|父目录 ID，空则默认为 root 目录。|
+|ParentFlowList|String|否|\[F-123456\]|依赖的父工作流列表，以逗号分隔。|
+|StartSchedule|Long|否|1538017814000|开始调度时间，长整型时间戳, 例如：System.currentTimeMillis\(\) **说明：** 
+
+-   必须小于EndSchedule
+-   当CronExpr不为空时, 此项必填
+
+ |
+
+## 返回参数 {#section_vbj_yxl_2gb .section}
+
+|字段|类型|示例值|描述|
+|--|--|---|--|
+|RequestId|String|243D5A48-96A5-4C0C-8966-93CBF65635ED|请求 ID|
+|Id|String|F-7A39731FE7196358|创建成功的工作流 ID|
+
+## 示例 {#section_dcj_yxl_2gb .section}
+
+-   请求示例
+
+    ```
+    /?Action=CreateFlowForWeb
+    &Description=这是一个创建工作流描述
+    &Name=my_flow_demo
+    &ProjectId=FP-257A173659F59685
+    &RegionId=cn-hangzhou
+    &AlertDingDingGroupBizId=AUG-c917bbfaf6494bbfacdee69c8284967c
+    &AlertUserGroupBizId=ADG-0a00d00abb7743ff9f812f1a997f3d87
+    &ClusterId=C-A23BD131A862F184
+    &CreateCluster=false
+    &CronExpr=0 0 0-23/1 * * ?
+    &EndSchedule=1538018814000
+    &Graph={"nodes":[{"id":"48d474ea","index":0,"spmAnchorId":"0.0.0.i0.766645eb2cmNtQ","attribute":{"type":"START"},"shape":"startControlNode","type":"node","y":250,"size":"80*34","x":500},{"id":"7ba480b3","index":1,"spmAnchorId":"5176.8250060.0.i19.771e28d0IPNQGE","attribute":{"jobType":"SHELL","jobId":"FJ-7BE1062897B19D25","type":"JOB"},"config":{"hostName":""},"label":"fail_job","shape":"shellJobNode","type":"node","y":398.5,"size":"170*34","x":470.5},{"id":"33202d60","index":2,"spmAnchorId":"5176.8250060.0.i23.771e28d0IPNQGE","attribute":{"type":"END"},"shape":"endControlNode","type":"node","y":562.5,"size":"80*34","x":430.5}],"edges":[{"id":"28167ea0","index":3,"source":"48d474ea","sourceAnchor":0,"target":"7ba480b3","targetAnchor":0},{"id":"e8d5ff52","index":4,"source":"7ba480b3","sourceAnchor":1,"target":"33202d60","targetAnchor":0}]}
+    &HostName=emr-header-1.cluster-123456
+    &ParentCategory=FC-F2495319DA05CEE5
+    &ParentFlowList=[F-123456]
+    &StartSchedule=1538017814000
+    &<公共请求参数>
+    ```
+
+-   正常返回示例
+
+    JSON 格式
+
+    ```
+    {
+    	"Id":"F-7A39731FE7196358",
+    	"RequestId":"2670BCFB-925D-4C3E-9994-8D12F7A9F538"
+    }
+    ```
+
+-   异常返回示例
+
+    JSON 格式
+
+    ```
+    {
+    	"code":"FLOW_API_FAILED",
+    	"message":"Invalid type [INVALID_TYPE]",
+    	"requestId":"11BAFBD8-8509-4177-A26D-407505E73713",
+    	"successResponse":false
+    }
+    ```
+
+
+## 错误码 {#section_fcj_yxl_2gb .section}
+
+[查看本产品错误码](https://error-center.alibabacloud.com/status/product/Emr)
+
