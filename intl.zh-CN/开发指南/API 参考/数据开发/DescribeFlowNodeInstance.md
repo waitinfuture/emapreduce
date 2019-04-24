@@ -1,0 +1,130 @@
+# DescribeFlowNodeInstance {#concept_elc_frw_fgb .concept}
+
+调用 DescribeFlowNodeInstance 接口查询节点实例详情（工作流节点实例, 作业运行节点实例）
+
+## 请求参数 {#section_obj_yxl_2gb .section}
+
+|参数|类型|是否必选|示例值|描述|
+|--|--|----|---|--|
+|Id|String|是|FNI-FE4BD156E939CF1F|节点实例 ID|
+|ProjectId|String|是|FP-7A1018ADE9179EE1|项目 ID|
+|RegionId|String|是|cn-hangzhou|区域 ID|
+
+## 返回参数 {#section_vbj_yxl_2gb .section}
+
+|字段|类型|示例值|描述|
+|--|--|---|--|
+|RequestId|String|1549175a-6d14-4c8a-89f9-5e28300f6d7e|请求 ID|
+|Id|String|FNI-9D14A7CCF2687B84|节点实例 ID|
+|GmtCreate|Long|1540796236000|创建时间|
+|GmtModified|Long|1540796247000|修改时间|
+|Type|String|JOB|节点类型：JOB\(作业\)，CLUSTER\(集群\)，START\(开始\)，END\(结束\)|
+|Status|String|OK|状态：PREP\(等待启动\)，SUBMITTING\(提交中\)，RUNNING\(运行中\)，DONE\(已完成\)，OK\(执行成功\)，FAILED\(执行失败\)，KILLED\(已终止\)，KILL\_FAILED\(终止失败\)，START\_RETRY\(开始重试\)|
+|JobId|String|FJ-A23BD131A862F184|作业 ID|
+|JobName|String|myJob|作业名称|
+|JobType|String|HIVE\_SQL|作业类型|
+|JobParams|String|ls -l|作业内容|
+|FailAct|String|STOP|失败策略：STOP\(终止工作流\)，CONTINUE\(跳过\)|
+|MaxRetry|String|0|最大重试次数|
+|RetryInterval|String|15|重试间隔，单位 s|
+|NodeName|String|节点名称|节点名称|
+|FlowId|String|F-35683D0E45734E34|工作流 ID|
+|FlowInstanceId|String|FI-7CAF9709CD328EBE|工作流实例ID|
+|ClusterId|String|C-A6C9F4F1E9EC88D9|集群 ID|
+|HostName|String|emr-header-1.cluster-12345|节点实例运行所在的机器 hostName，支持 master 和 gateway 机器。 hostname 格式为emr-header-1.cluster-12345，可登陆机器用 hostname 命令查看对应的值。|
+|ProjectId|String|FP-7A1018ADE9179EE1|项目 ID|
+|Pending|Boolean|true|是否结束|
+|StartTime|Long|1540796237000|运行开始时间|
+|EndTime|Long|1540796248000|运行结束时间|
+|Duration|Long|200|运行持续时间|
+|Retries|Integer|0|重试次数|
+|ExternalId|String|application\_1541559535023\_34027|启动器的 application 的 ID|
+|ExternalSubId|String|container\_1541559535023\_34027\_01\_000001|启动器 container 的ID|
+|ExternalChildIds|String|application\_1541559535023\_34028|任务的 application 列表|
+|ExternalStatus|String|SUCCESS|外部状态: SUBMITTED\(已提交\)，RUNNING\(运行中\)，SUCCESS\(执行成功\)，FAIL\(执行失败\)，KILL\_FAIL\(终止失败\)，KILL\_SUCCESS\(终止成功\)|
+|ExternalInfo|String|empty|外部信息, 例如运行作业的错误诊断信息|
+|ParamConf|String|\{"date":"$\{yyyy-MM-dd\}"\}|参数配置|
+|EnvConf|String|\{"key":"value"\}|环境变量|
+|RunConf|String|\{"priority":1,"userName":"hadoop","memory":2048,"cores":1\}|运行配置 priority： 优先级； userName： 用于提交作业 linux 用户； memory：内存 单位为 MB； cores： 核数|
+|Adhoc|Boolean|true|是否临时查询|
+|MonitorConf|String|\{"inputs":\[\{"type":"KAFKA","clusterId":"C-1234567","topics":"kafka\_topic","consumer.group":"kafka\_consumer\_group"\}\],"outputs":\[\{"type":"KAFKA","clusterId":"C-1234567","topics":"kafka\_topic"\}\]\}|监控配置，只有SPARK\_STREAMING 类型作业支持|
+|Mode|String|YARN|模型模式，支持：YARN、LOCAL YARN： 将作业包装成一个 launcher提交至 Yarn 中执行 LOCAL：作业直接在机器上以进程方式运行|
+|ClusterName|String|myCluster|集群名称|
+
+## 示例 {#section_dcj_yxl_2gb .section}
+
+-   请求示例
+
+    ```
+    
+    /?Action=DescribeFlowNodeInstance
+    &Id=节点实例ID
+    &ProjectId=FP-7A1018ADE9179EE1
+    &RegionId=cn-hangzhou
+    &<公共请求参数>
+    ```
+
+-   正常返回示例
+
+    JSON 格式
+
+    ```
+    {
+    	"code":"200",
+    	"data":{
+    		"ClusterId":"C-F32FB31D82954C64",
+    		"ClusterName":"mingbo-v199v1-勿删",
+    		"Duration":74000,
+    		"EndTime":1542884476000,
+    		"ExternalId":"application_1541559535023_34027",
+    		"ExternalInfo":"",
+    		"ExternalStatus":"SUCCESS",
+    		"ExternalSubId":"container_1541559535023_34027_01_000001",
+    		"FailAct":"STOP",
+    		"FlowId":"F-60C9B1257A804624",
+    		"FlowInstanceId":"FI-C112BB938D2C5FBF",
+    		"GmtCreate":1542884401000,
+    		"GmtModified":1542884475000,
+    		"HostName":"emr-header-1.cluster-500159692",
+    		"Id":"FNI-E548777B9DCD2237",
+    		"JobId":"FJ-EE3AF471B2E69785",
+    		"JobName":"success",
+    		"JobParams":"sleep 10;\nexit 0;",
+    		"JobType":"SHELL",
+    		"MaxRetry":"0",
+    		"NodeName":"812589f5",
+    		"ParamConf":{
+    			"cyctime":"2018-11-22 19:00:00"
+    		},
+    		"Pending":false,
+    		"ProjectId":"FP-3535FE0BE5224A47",
+    		"RequestId":"F5540D8F-06E8-4E3C-B47A-D75CED72A795",
+    		"Retries":0,
+    		"RetryInterval":"15",
+    		"StartTime":1542884402000,
+    		"Status":"OK",
+    		"Type":"JOB"
+    	},
+    	"requestId":"F5540D8F-06E8-4E3C-B47A-D75CED72A795",
+    	"successResponse":true
+    }
+    ```
+
+-   异常返回示例
+
+    JSON 格式
+
+    ```
+    {
+    	"code":"FLOW_API_FAILED",
+    	"message":"Project does not exist [FP-3535FE0BE5224A4]",
+    	"requestId":"83B256D4-4E95-454B-AD08-799DF31D5556",
+    	"successResponse":false
+    }
+    ```
+
+
+## 错误码 {#section_fcj_yxl_2gb .section}
+
+[查看本产品错误码](https://error-center.alibabacloud.com/status/product/Emr)
+
