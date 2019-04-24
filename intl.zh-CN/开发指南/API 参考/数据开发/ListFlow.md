@@ -1,6 +1,6 @@
 # ListFlow {#concept_zpy_xnc_ggb .concept}
 
-查询工作流列表参数及示例
+调用 ListFlow 接口查询工作流列表
 
 ## 请求参数 {#section_obj_yxl_2gb .section}
 
@@ -32,7 +32,7 @@
 |Name|String|my\_flow\_demo|工作流名称|
 |Description|String|my flow demo|工作流描述|
 |Type|String|EMR|目前只支持 EMR|
-|Status|String|UNDER\_SCHEDULE|状态, 支持 STOP\_SCHEDULE、UNDER\_SCHEDULE|
+|Status|String|UNDER\_SCHEDULE|状态，支持 STOP\_SCHEDULE、UNDER\_SCHEDULE|
 |Periodic|Boolean|true|是否周期调度|
 |StartSchedule|Long|1541561443000|开始调度时间|
 |EndSchedule|Long|4102416001000|调度结束时间|
