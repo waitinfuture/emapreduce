@@ -21,7 +21,7 @@ Data model indicates to the data organization form. Presto uses a three-level st
 
 The relationships between catalogs, schemas, and tables are shown in the following figure.
 
-![Catalog, Schema, and Table relational diagram](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17915/155315340410900_en-US.png)
+![Catalog, Schema, and Table relational diagram](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17915/155711304810900_en-US.png)
 
 ## Connector {#section_gfd_5wt_xgb .section}
 
