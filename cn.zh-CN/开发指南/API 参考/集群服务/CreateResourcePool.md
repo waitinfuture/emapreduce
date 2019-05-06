@@ -1,6 +1,6 @@
 # CreateResourcePool {#concept_zrl_yx2_2gb .concept}
 
-创建 YARN 资源池参数以及示例
+调用 CreateResourcePool 接口创建 YARN 资源池
 
 ## 请求参数 {#section_p5v_ffb_kfb .section}
 
@@ -9,17 +9,17 @@
 |Active|Boolean|是|true|是否激活|
 |ClusterId|String|是|C-0E995C0EE7E5ECB3|集群 ID|
 |Name|String|是|default|资源池名称|
-|PoolType|String|是|CAPACITY\_SCHEDULER|资源池类型，枚举值：CAPACITY\_SCHEDULER,FAIR\_SCHEDULER|
+|PoolType|String|是|CAPACITY\_SCHEDULER|资源池类型，枚举值：CAPACITY\_SCHEDULER，FAIR\_SCHEDULER|
 |RegionId|String|是|cn-hangzhou|区域 ID|
-|AccessKeyId|String|否|LTAI8ljWyu7y\*\*\*\*|AccessKeyId|
-|Config.N.Category|String|否|DEFAULT\_SETTINGS|配置类别,合法值DEFAULT\_SETTINGS,ACCESS\_CONTROL\_SETTINGS,QUEUE\_RESOURCE\_LIMIT,QUEUE\_SCHEDULING\_POLICY,QUEUE\_PREEMPTION,QUEUE\_SUBMISSION\_ACCESS\_CONTROL,QUEUE\_ADMINISTRATION\_ACCESS\_CONTROL|
+|AccessKeyId|String|是|LTAI8ljWyu7y\*\*\*\*|AccessKeyId|
+|Config.N.Category|String|否|DEFAULT\_SETTINGS|配置类别，合法值DEFAULT\_SETTINGS，ACCESS\_CONTROL\_SETTINGS，QUEUE\_RESOURCE\_LIMIT，QUEUE\_SCHEDULING\_POLICY，QUEUE\_PREEMPTION,QUEUE\_SUBMISSION\_ACCESS\_CONTROL，QUEUE\_ADMINISTRATION\_ACCESS\_CONTROL|
 |Config.N.ConfigKey|String|否|capacity|配置参数 Key|
 |Config.N.ConfigValue|String|否|100|配置参数值|
 |Config.N.Note|String|否|容量权重|参数备注|
 |Config.N.TargetId|String|否|test|该字段废弃，不为空即可|
 |Config.N.configType|String|否|RESOURCE\_POOL\_CONFIG|配置类型，此处填写 RESOURCE\_POOL\_CONFIG|
 |Note|String|否|默认资源池|备注信息|
-|YarnSiteConfig|String|否|configList|Yarn size 配置参数|
+|YarnSiteConfig|String|否|configList|Yarn site 配置参数|
 
 ## 返回参数 {#section_vdw_lv4_dgb .section}
 
