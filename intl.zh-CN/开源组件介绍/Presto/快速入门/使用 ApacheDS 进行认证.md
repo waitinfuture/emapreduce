@@ -65,13 +65,13 @@ Presto 可以对接 LDAP，实现用户密码认证。只需要 Coordinator 节�
     -   DN 设置为：uid=admin,ou=system
     -   密码在此文件中查看：/var/lib/ecm-agent/cache/ecm/service/APACHEDS/2.0.0.1.1/package/files/modifypwd.ldif
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/133788/155315348939736_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/133788/155711312839736_zh-CN.png)
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/133788/155315348939737_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/133788/155711312839737_zh-CN.png)
 
         链接后，打开配置页，启用 LDAPs，将第一步创建的 keystore 设置到相关配置中，保存（ctrl + s）。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/133788/155315348939739_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/133788/155711312839739_zh-CN.png)
 
 3.  重启 ApacheDS 服务
 
@@ -92,7 +92,7 @@ Presto 可以对接 LDAP，实现用户密码认证。只需要 Coordinator 节�
 
 1.  创建 dc=hadoop,dc=apache,dc=org 分区，打开配置页，作如下配置，保存（ctrl+s）。重启 ApacheDS 服务生效。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/133788/155315348939740_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/133788/155711312839740_zh-CN.png)
 
 2.  创建用户
 
@@ -185,7 +185,7 @@ Presto 可以对接 LDAP，实现用户密码认证。只需要 Coordinator 节�
 
     执行完成后，可以在 ApacheDS Studio 上看到相关到用户，如下所示：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/133788/155315348939753_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/133788/155711312839753_zh-CN.png)
 
 
 ## 配置 Presto {#section_dll_zrz_xgb .section}
