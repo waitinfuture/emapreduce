@@ -45,19 +45,19 @@ Consuming data stored in Alibaba Cloud OSS is a common scenario in the developme
 
             The following example uses SSH tunneling. The endpoint is http://emr-header-1:8088/index.html. On the YARN Web UI, you can see the submitted job as the following figure.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155712154734444_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155712184634444_en-US.png)
 
             Click the tracking URL of the job to jump to Flink Dashboard for viewing the running job.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155712154734445_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155712184634445_en-US.png)
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155712154734446_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155712184634446_en-US.png)
 
         -   View history of jobs
 
             You can view a list of all completed jobs by accessing http://emr-header-1:8082.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155712154734447_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155712184634447_en-US.png)
 
 
 We have completed consuming OSS data by running a Flink job on an EMR cluster.
