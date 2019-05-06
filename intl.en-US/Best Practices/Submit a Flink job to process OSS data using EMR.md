@@ -27,27 +27,37 @@ Consuming data stored in Alibaba Cloud OSS is a common scenario in the developme
 
         oss://bucket/path is the OSS path set in the previous step.
 
-    4.  View the information of a Flink job 
+    4.  View job submission 
 
-        You can view the information of a Flink job using the YARN Web UI. You can access the YARN Web UI using the following methods: Using SSH. For more information, see [Connect to a cluster using SSH](../../../../../intl.en-US/User Guide/Connect to clusters using SSH.md#). Using Knox. For more information, see [How to use Knox](../../../../../intl.en-US/User Guide/Open source components/Knox.md#).
+        By default, logs of job submission are stored in the following path according to the Log4j configurations \(see /etc/ecm/flink-conf/log4j-yarn-session.properties\).
+
+        /mnt/disk1/log/flink/flink-\{user\}-client-\{hostname\}.log
+
+        Replace "user" with the username of the user that submits the Flink job. Replace "hostname" with the hostname of the host to which the job is submitted. For example, if the root user submits a Flink job to the emr-header-1 node, the log path is:
+
+        /mnt/disk1/log/flink/flink-root-client-emr-header-1.cluster-500162572.log 
+
+    5.  View the information of a Flink job 
+
+        You can view the information of a Flink job using the YARN Web UI. You can access the YARN Web UI using the following methods: Using SSH. For more information, see [Connect to a cluster using SSH](../../../../reseller.en-US/Quick Start/Connect to a cluster using SSH.md#). Using Knox. For more information, see [How to use Knox](../../../../reseller.en-US/Open Source Components /Knox.md#).
 
         -   View the information of a running job
 
-            The following example uses SSH tunneling. The endpoint is http://emr-header-1:8088/index.html. On YARN Web UI, you can see the submitted job as the following figure.
+            The following example uses SSH tunneling. The endpoint is http://emr-header-1:8088/index.html. On the YARN Web UI, you can see the submitted job as the following figure.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155134815034444_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155712154734444_en-US.png)
 
             Click the tracking URL of the job to jump to Flink Dashboard for viewing the running job.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155134815034445_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155712154734445_en-US.png)
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155134815034446_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155712154734446_en-US.png)
 
         -   View history of jobs
 
             You can view a list of all completed jobs by accessing http://emr-header-1:8082.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155134815034447_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155712154734447_en-US.png)
 
 
 We have completed consuming OSS data by running a Flink job on an EMR cluster.
