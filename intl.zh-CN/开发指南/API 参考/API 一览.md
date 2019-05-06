@@ -94,8 +94,8 @@
 |[DeleteClusterTemplate](intl.zh-CN/开发指南/API 参考/集群/DeleteClusterTemplate.md#)|删除集群模版|
 |[ModifyClusterTemplate](intl.zh-CN/开发指南/API 参考/集群/ModifyClusterTemplate.md#)|修改集群模版 |
 |[CreateClusterV2](intl.zh-CN/开发指南/API 参考/集群/CreateClusterV2.md#)|创建集群|
-|[DescribeCluster](intl.zh-CN/开发指南/API 参考/集群/DescribeCluster.md#)|查询集群详情|
-|[ResizeCluster](intl.zh-CN/开发指南/API 参考/集群/ResizeCluster.md#)|扩容集群|
+|[DescribeClusterV2](intl.zh-CN/开发指南/API 参考/集群/DescribeClusterV2.md#)|查询集群详情|
+|[ResizeClusterV2](intl.zh-CN/开发指南/API 参考/集群/ResizeClusterV2.md#)|扩容集群|
 |[ReleaseCluster ](intl.zh-CN/开发指南/API 参考/集群/ReleaseCluster.md#)|释放集群 |
 |[ListClusterHost](intl.zh-CN/开发指南/API 参考/集群/ListClusterHost.md#)|查询集群主机列表|
 |[ListClusters](intl.zh-CN/开发指南/API 参考/集群/ListClusters.md#)|查询集群列表 |
