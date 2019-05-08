@@ -2,13 +2,9 @@
 
 Hadoop, Hive, and Pig require large amounts of configurations. You can use the software configuration feature to modify the software configurations. Currently, you can only perform software configurations when creating a cluster. For example, you want to increase the number of HDFS server handler threads \(dfs.namenode.handler.count\) from 10 to 50. Or you want to decrease the HDFS block size from 128 MB \(default size\) to 64 MB.
 
-## \[DO NOT TRANSLATE\] {#section_bd3_ds5_y2b .section}
-
-\[DO NOT TRANSLATE\]
-
 ## Procedure {#section_tsc_2s5_y2b .section}
 
-1.  Log on to the [Alibaba Cloud E-MapReduce console](https://partners-intl.console.aliyun.com/#/emr).
+1.  Log on to the [Alibaba Cloud E-MapReduce console](https://emr.console.aliyun.com/).
 2.  In the navigation bar, select a region for creating a cluster.
 3.  Click **Create Cluster** to go to the Custom Purchase page.
 4.  In the Software Configuration step, you can view all services and the corresponding versions. You can turn on **Enable Custom Setting** and enter JSON text in the editor to add configurations or to overwrite the default configurations. A JSON file example is shown as follows.
