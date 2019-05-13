@@ -33,7 +33,7 @@ A: You need to configure the whitelist on the RDS instance when you connect the 
 
 ## Q: Why is "Exception in thread “main” java.lang.RuntimeException: java.lang.ClassNotFoundException: Class com.aliyun.fs.oss.nat.NativeOssFileSystem not found" returned when reading or writing OSS data? {#section_kmy_rzb_pfb .section}
 
-A: When reading or writing OSS data in Spark jobs, you need to package the EMR SDK into the job JAR. For more information, see [Prerequisites](../../../../../intl.en-US/Developer Guide/Spark/Preparations.md#).
+A: When reading or writing OSS data in Spark jobs, you need to package the EMR SDK into the job JAR. For more information, see [Prerequisites](../../../../reseller.en-US/Developer Guide/Spark/Preparations.md#).
 
 ## Q: Why is the available memory of the Spark node exceeded when Spark is connected to Flume? {#section_lmy_rzb_pfb .section}
 
@@ -49,7 +49,7 @@ A: When Spark processes Hive data, you must set the execution mode of Spark to y
 
 ## Q: Why is "java.lang.NoSuchMethodError:org.apache.http.conn.ssl.SSLConnetionSocketFactory.init\(Ljavax/net/ssl/SSLContext;Ljavax/net/ssl/HostnameVerifier\)" returned when using the OSS SDK in Spark? {#section_omy_rzb_pfb .section}
 
-A: The http-core and http-client packages that the OSS SDK is dependent on have version dependency conflicts with the running environments of Spark and Hadoop. We recommend that you do not use the OSS SDK in your code. Otherwise, you must manually resolve this issue. If you need to perform some basic operations to handle OSS files, such as listing objects, click [here](../../../../../intl.en-US/Developer Guide/Spark/Preparations.md#) to view the detailed information about how to handle OSS files.
+A: The http-core and http-client packages that the OSS SDK is dependent on have version dependency conflicts with the running environments of Spark and Hadoop. We recommend that you do not use the OSS SDK in your code. Otherwise, you must manually resolve this issue. If you need to perform some basic operations to handle OSS files, such as listing objects, click [here](../../../../reseller.en-US/Developer Guide/Spark/Preparations.md#) to view the detailed information about how to handle OSS files.
 
 ## Q: Why is "java.lang.IllegalArgumentException: Wrong FS: oss://xxxxx, expected: hdfs://ip:9000" returned when I use OSS? {#section_pmy_rzb_pfb .section}
 
