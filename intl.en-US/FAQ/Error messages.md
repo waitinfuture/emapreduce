@@ -1,5 +1,7 @@
 # Error messages {#concept_h5r_fz1_pfb .concept}
 
+If the creation of an E-MapReduce cluster fails, you can find the corresponding solution based on the error message.
+
 ## Error message: Pay-As-You-Go instances are not available in this region. {#section_nsk_gz1_pfb .section}
 
 The error message returned when you cannot purchase Pay-As-You-Go ECS instances in the region that you want to create clusters. We recommend that you switch to another region to purchase instances.
