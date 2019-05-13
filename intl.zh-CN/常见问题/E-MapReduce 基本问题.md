@@ -72,9 +72,9 @@ A：三种计时策略如下：
 
 A：因为一些安全的原因，EMR 目前的安全组并不能直接选择用户的已有安全组来使用，所以如果你还没有在 EMR 中创建过安全组的话，在执行计划上将无法选择到可用的安全组。我们推荐您先手动创建一个按需集群来进行作业的测试，手动创建集群的时候可以创建一个新的 EMR 安全组，等到测试都通过了以后，再设置您的执行计划来周期调度。这个时候之前创建的安全组也会出现在这里可供选择。
 
-## Q：读写 MaxCompute时，抛出java.lang.RuntimeException.Parse responsed failed: ‘<!DOCTYPE html\>…’ {#section_kdm_dv1_pfb .section}
+## Q：读写 MaxCompute 时，抛出java.lang.RuntimeException.Parse response failed: ‘<!DOCTYPE html\>…’ {#section_kdm_dv1_pfb .section}
 
-A：检查 ODPS tunnel endpoint是否正确，如果写错会出现这个错误。
+A：检查 MaxCompute tunnel endpoint 是否正确，如果写错会出现这个错误。
 
 ## Q：多个 ConsumerID 消费同一个 Topic 时出现 TPS 不一致问题 {#section_az5_2v1_pfb .section}
 
@@ -151,7 +151,7 @@ A： 如下：`OSS URL： oss://[accessKeyId:accessKeySecret@]bucket[.endpoint]/
 用户在作业中指定输入输出数据源时使用这种 URI，可以类比`hdfs://`。 用户操作 OSS 数据时：
 
 -   （建议）EMR 提供了 MetaService 服务，支持免 AK 访问 OSS 数据，直接写oss://bucket/object/path。
--   （不建议）可以将 AccessKeyId，AccessKeySecret 以及 endpoint 配置到Configuration（Spark 作业是 SparkConf，MR 类作业是 Configuration）中，也可以在 URI中直接指定 AccessKeyId，AccessKeySecret 以及 endpoint。具体请参考[开发准备](../../../../../intl.zh-CN/开发指南/准备/OSS 参考使用说明.md#)一节。
+-   （不建议）可以将 AccessKeyId，AccessKeySecret 以及 endpoint 配置到Configuration（Spark 作业是 SparkConf，MR 类作业是 Configuration）中，也可以在 URI中直接指定 AccessKeyId，AccessKeySecret 以及 endpoint。具体请参考[开发准备](../../../../intl.zh-CN/开发指南/准备/OSS 参考使用说明.md#)一节。
 
 ## Q：Spark SQL抛出“Exception in thread “main” java.sql.SQLException: No suitable driver found for jdbc:mysql:xxx”报错 {#section_sy1_ww1_pfb .section}
 
