@@ -39,25 +39,25 @@ Consuming data stored in Alibaba Cloud OSS is a common scenario in the developme
 
     5.  View the information of a Flink job 
 
-        You can view the information of a Flink job using the YARN Web UI. You can access the YARN Web UI using the following methods: Using SSH. For more information, see [Connect to a cluster using SSH](../../../../reseller.en-US/Quick Start/Connect to a cluster using SSH.md#). Using Knox. For more information, see [How to use Knox](../../../../reseller.en-US/Open Source Components /Knox.md#).
+        You can view the information of a Flink job using the YARN Web UI. You can access the YARN Web UI using the following methods: Using SSH. For more information, see [Connect to a cluster using SSH](../../../../reseller.en-US/Cluster Planning and Configurations/Configure clusters/Connect to a cluster using SSH.md#). Using Knox. For more information, see [How to use Knox](../../../../reseller.en-US/Open Source Components /Knox.md#).
 
         -   View the information of a running job
 
             The following example uses SSH tunneling. The endpoint is http://emr-header-1:8088/index.html. On the YARN Web UI, you can see the submitted job as the following figure.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155712184634444_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155773457034444_en-US.png)
 
             Click the tracking URL of the job to jump to Flink Dashboard for viewing the running job.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155712184634445_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155773457134445_en-US.png)
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155712184634446_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155773457134446_en-US.png)
 
         -   View history of jobs
 
             You can view a list of all completed jobs by accessing http://emr-header-1:8082.
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155712184634447_en-US.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80562/155773457134447_en-US.png)
 
 
 We have completed consuming OSS data by running a Flink job on an EMR cluster.
