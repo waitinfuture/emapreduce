@@ -4,7 +4,7 @@ This section describes how to create and configure an E-MapReduce \(EMR\) cluste
 
 ## Prerequisite {#section_pgx_g4v_vgb .section}
 
-Confirm that RAM authorization has been completed. For more information, see [Role authorization](../../../../reseller.en-US/Quick Start/Role authorization.md#).
+Confirm that RAM authorization has been completed. For more information, see [Role authorization](../../../../reseller.en-US/Cluster Planning and Configurations/Cluster planning/Role authorization.md#).
 
 ## Go to the cluster creation page {#section_w2j_2z4_y2b .section}
 
