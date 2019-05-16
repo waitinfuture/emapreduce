@@ -89,13 +89,9 @@ Description
     -   **Permission Settings**: Typically, the default setting is used.
     -   **Bootstrap Actions** \(optional\): You can set the cluster to run your custom script before it starts Hadoop. For more information, see Bootstrap action.
 
-## Configuration List {#section_gtk_gz4_y2b .section}
-
-Confirm the configured items and fees in the configuration list.
-
 ## Confirm the creation {#section_htk_gz4_y2b .section}
 
-After you configure the settings and make sure that all settings are valid, the **Create** button is highlighted. Confirm the information, and click **Create** to create a cluster.
+Confirm the configured items and fees in the configuration list. After you configure the settings and make sure that all settings are valid, the **Create** button is highlighted. Confirm the information, and click **Create** to create a cluster.
 
 **Note:** 
 
