@@ -10,7 +10,7 @@ EMR has supported Apache Flume since V3.16.0 and has supported default monitorin
 
     Running Flume on Gateway nodes avoids the impact on EMR Hadoop clusters. Basic data flows that are streamed through Flume agents installed on Gateway nodes are shown in the following figure.
 
-    ![Basic data flows](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120368/155771819738178_en-US.png)
+    ![Basic data flows](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120368/155807476838178_en-US.png)
 
 
 ## Prepare the environment {#section_mjt_c5n_4gb .section}
@@ -23,7 +23,7 @@ You can use EMR to automatically create a Hadoop cluster. For more information, 
 
 -   Click Create Cluster, click Flume for the cluster type, and select Flume from **Optional Services**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120368/155771819738191_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120368/155807476838191_en-US.png)
 
 -   Create a Gateway node and associate it to the Hadoop cluster created in the previous step.
 
@@ -55,7 +55,7 @@ You can use EMR to automatically create a Hadoop cluster. For more information, 
 
     Monitoring data of Flume agents is displayed in the cluster console by default. On the Clusters and Services page, click **FLUME** to jump to the cluster console as shown in the following figure.
 
-    ![The FLUME service page](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120368/155771819838198_en-US.png)
+    ![The FLUME service page](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120368/155807476838198_en-US.png)
 
     **Note:** 
 
