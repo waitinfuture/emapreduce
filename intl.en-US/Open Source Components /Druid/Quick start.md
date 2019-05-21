@@ -329,7 +329,7 @@ EMR provides three methods to access Druid Web pages:
 
 ## Real-time index {#section_5z3_hci_c8z .section}
 
-For Indexing data from a Kafka cluster to a Druid cluster in real time, we recommend that you use the Kafka Indexing Service extension to ensure high reliability and support exactly-once semantics. See the Use Druid Kafka Indexing Service to consume Kafka data in real time section in [EN-US\_TP\_17909.md\#](reseller.en-US/Open Source Components /Druid/KafkaIndexingService.md#).
+For Indexing data from a Kafka cluster to a Druid cluster in real time, we recommend that you use the Kafka Indexing Service extension to ensure high reliability and support exactly-once semantics. See the Use Druid Kafka Indexing Service to consume Kafka data in real time section in [Kafka Indexing Service](reseller.en-US/Open Source Components /Druid/Kafka Indexing Service.md#).
 
 If your data is real-time accessed by Alibaba Cloud log Service \(SLS\) and you want to use Druid to index the data in real time, we provide the SLS Indexing Service extension. Using SLS Indexing Service avoids the overhead of creating and maintaining a Kafka cluster. SLS Indexing Service provides high-reliability and exactly-once semantics like Kafka Indexing Service. Here, you can use SLS as a Kafka.
 
