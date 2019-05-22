@@ -4,7 +4,7 @@ E-MapReduce has supported unified metadata management since V2.4.0. Before V2.4.
 
 ## Overview {#section_fkz_hyk_z2b .section}
 
-![Hive metadatabases](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/155842824811067_en-US.png)
+![Hive metadatabases](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/155849128211067_en-US.png)
 
 With unified metadata management, the following features are supported.
 
@@ -143,7 +143,7 @@ Before unified metadata management is supported, metadata is stored in the local
     javax.jdo.option.ConnectionURL //the database connection URL and database name;
     ```
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/155842824911097_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/155849128211097_en-US.png)
 
     Connect to the Hive metadatabase on the master node.
 
@@ -154,6 +154,6 @@ Before unified metadata management is supported, metadata is stored in the local
 
     After logging on to the Hive metadatabase, change its location to an existing OSS path in the region:
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/155842824911102_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/155849128211102_en-US.png)
 
 
