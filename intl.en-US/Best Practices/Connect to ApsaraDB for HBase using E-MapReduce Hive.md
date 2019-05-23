@@ -30,7 +30,7 @@ This topic describes how to connect E-MapReduce Hive and ApsaraDB for HBase. The
 
     1.  Start the Hive command-line interface \(CLI\).
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155730575537680_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860457937680_en-US.png)
 
     2.  Use the following statement to create a table in Hive.
 
@@ -46,29 +46,29 @@ This topic describes how to connect E-MapReduce Hive and ApsaraDB for HBase. The
 
     3.  Insert data to the HBase table in Hive.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155730575537681_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860457937681_en-US.png)
 
     4.  Verify that the HBase table has been created and the data has been inserted to the table.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155730575537682_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860457937682_en-US.png)
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155730575537683_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860457937683_en-US.png)
 
     5.  Write data to the HBase table using the put command.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155730575537684_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860457937684_en-US.png)
 
         Select all data from the table in Hive.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155730575537685_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860457937685_en-US.png)
 
     6.  Delete the table in Hive using the drop command. The table in HBase is deleted as well, which is to be verified in the subsequent step.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155730575537686_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860457937686_en-US.png)
 
         View the contents on the table in HBase using the scan command. An error message appears showing the table does not exist.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155730575537687_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860457937687_en-US.png)
 
         **Note:** 
 
@@ -76,17 +76,17 @@ This topic describes how to connect E-MapReduce Hive and ApsaraDB for HBase. The
 
     7.  Create a table in ApsaraDB for HBase and write test data to the table using the put command.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155730575537688_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860457937688_en-US.png)
 
     8.  Create a Hive external table to connect to an HBase table and select all data from the HBase table.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155730575537689_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860457937689_en-US.png)
 
     9.  Verify that deleting the Hive external table does not cause the deletion of the corresponding HBase table.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155730575537690_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860457937690_en-US.png)
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155730575537691_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860457937691_en-US.png)
 
 
 ## Summary {#section_f2n_3qw_mgb .section}

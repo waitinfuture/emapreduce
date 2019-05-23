@@ -10,7 +10,7 @@
 -   将 EMR 所有节点的 IP 加入到云 HBase 白名单。
     -   获取云 HBase 的 Zookeeper 访问地址，可在云 HBase 控制台查看。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860062738367_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860457338367_zh-CN.png)
 
 -   由于云 HBase 的 HDFS 端口默认是不开的，需要联系工作人员开通。
 
@@ -24,7 +24,7 @@
         ```
         <property>
                    <name>hbase.zookeeper.quorum</name>
-                   <value>hb-bp183x4tu8x7qk840-001.hbase.rds.aliyuncs.com,hb-bp1mhyea7754bpigt-002.hbase.rds.aliyuncs.com,hb-bp1mhyea7754bpigt-003.hbase.rds.aliyuncs.com</value>
+                   <value>hb-bp183x4tu8x7q****-001.hbase.rds.aliyuncs.com,hb-bp1mhyea7754b****-002.hbase.rds.aliyuncs.com,hb-bp1mhyea7754b****-003.hbase.rds.aliyuncs.com</value>
               </property>
         ```
 
@@ -48,45 +48,45 @@
         insert into hive_hbase_table values(212,'bab');
         ```
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860062737681_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860457337681_zh-CN.png)
 
     4.  查看云 HBase 表，HBase 表已创建，数据也已经写入
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860062737682_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860457337682_zh-CN.png)
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860062837683_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860457337683_zh-CN.png)
 
     5.  在 HBase 中写入数据，并在 Hive 中查看
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860062837684_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860457337684_zh-CN.png)
 
         在 Hive 中查看：
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860062837685_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860457337685_zh-CN.png)
 
     6.  Hive 删除表，HBase 表也一并删除
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860062837686_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860457337686_zh-CN.png)
 
     查看 HBase 表，报错不存在表：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860062837687_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860457337687_zh-CN.png)
 
     **说明：** 如果 HBase 表已存在，可在 Hive 中 HBase 外表进行关联，外部表在删除时不影响 HBase 已创建表
 
     1.  云 HBase 中创建 HBase 表，并 put 测试数据：
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860062837688_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860457337688_zh-CN.png)
 
     2.  Hive 中创建 HBase 外部关联表，并查看数据
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860062837689_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860457337689_zh-CN.png)
 
     3.  删除 Hive 表不影响 HBase 已存在的表：
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860062937690_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860457337690_zh-CN.png)
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860062937691_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/114385/155860457437691_zh-CN.png)
 
 
 ## 总结 {#section_f2n_3qw_mgb .section}
