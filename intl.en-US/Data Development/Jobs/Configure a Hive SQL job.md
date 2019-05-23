@@ -14,7 +14,7 @@ This topic describes how to configure a Hive SQL job.
 
     SQL CONTENT refers to the SQL statements that you enter in the job editor.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/215990/155831828546634_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/215990/155860199746634_en-US.png)
 
 6.  Click **OK**. 
 
@@ -31,7 +31,7 @@ This topic describes how to configure a Hive SQL job.
     select * from test1;
     ```
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/215990/155831828646635_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/215990/155860199746635_en-US.png)
 
 8.  Click **Save** to complete the configuration.
 
