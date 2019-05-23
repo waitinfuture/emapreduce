@@ -114,7 +114,7 @@ conf.set("fs.oss.accessKeyId", "${accessKeyId}");
     -   将上一步打好的 jar 文件上传到 OSS，具体可登录 OSS 官网进行操作。假设 jar 文件在 OSS 上的路径为oss://emr/jars/wordcount.jar, 输入输出路径分别为 oss://emr/data/WordCount/Input和 oss://emr/data/WordCount/Output。
     -   在 E-MapReduce中创建如下作业，具体步骤请参考[创建作业](../../../../intl.zh-CN/快速入门/步骤三：创建并运行作业.md#)：
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17984/155539395613188_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17984/155860594013188_zh-CN.png)
 
 4.  创建执行计划
 
