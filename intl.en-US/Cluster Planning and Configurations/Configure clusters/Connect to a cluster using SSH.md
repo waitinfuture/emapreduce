@@ -29,7 +29,7 @@ You can reference the variables in the script. We recommend that you do not modi
 
 ## Connect to the master node { .section}
 
-1.  Run the following command to connect to the master node using SSH. Check the public IP address of the master node in the Host section on the [Cluster details](reseller.en-US/Cluster Planning and Configurations/Configure clusters/Cluster details.md#) page.
+1.  Run the following command to connect to the master node using SSH. Check the public IP address of the master node in the Host section on the [Cluster list and details](reseller.en-US/Cluster Planning and Configurations/Configure clusters/Cluster list and details.md#) page.
 
     ```
     ssh root@ip.of.master
@@ -146,7 +146,7 @@ For security reasons, the ports of Web UIs for monitoring Hadoop, Spark, and Gan
                 function regExpMatch(url, pattern) {    
                   try { return new RegExp(pattern).test(url); } catch(ex) { return false; }    
                 }
-                  
+                
                 function FindProxyForURL(url, host) {
                     // Important: replace 172.31 below with the proper prefix for your VPC subnet
                 
