@@ -8,7 +8,7 @@ The Cluster Management page, displays basic information about all of your cluste
 
 On the **Cluster Management** page, information of clusters are displayed as follows:
 
-![Cluster list](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17856/155849112310433_en-US.jpg)
+![Cluster list](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17856/155860552110433_en-US.jpg)
 
 The items in the cluster list are as follows:
 
@@ -35,7 +35,7 @@ Detailed information is provided in the following areas: cluster, software, netw
 
 -   Cluster
 
-    ![Cluster](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17857/155849112310441_en-US.png)
+    ![Cluster](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17857/155860552110441_en-US.png)
 
     -   **Name**: The name of a cluster.
     -   **ID**: The instance ID of a cluster.
@@ -53,14 +53,14 @@ Detailed information is provided in the following areas: cluster, software, netw
     -   **ECS Role**: When your program runs on an E-MapReduce compute node, you can access the related Alibaba Cloud services, such OSS, without an AccessKey. E-MapReduce automatically requests a temporary AccessKey to authorize this access. The permission control of this temporary AccessKey is controlled by this role.
 -   Software
 
-    ![Software](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17857/155849112310443_en-US.jpg)
+    ![Software](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17857/155860552110443_en-US.jpg)
 
     -   **Main Version**: The main version of E-MapReduce.
     -   **Cluster Type**: The selected cluster type.
     -   **Software**: All application programs installed are listed here with their versions, such as HDFS2.7.2, Hive 2.3.3, or Spark 2.3.1.
 -   Network
 
-    ![Network](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17857/155849112310444_en-US.png)
+    ![Network](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17857/155860552110444_en-US.png)
 
     -   **Region ID**: The region where a cluster is located, such as cn-hangzhou-b, which is the same as ECS.
     -   **Network Type**: The network type of a cluster.
@@ -69,7 +69,7 @@ Detailed information is provided in the following areas: cluster, software, netw
 -   Host
     -   **Master Instance Group \(Master\)**: Configurations of all master nodes.
 
-        ![Host](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17857/155849112314299_en-US.png)
+        ![Host](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17857/155860552114299_en-US.png)
 
         -   **Hosts**: The number of current nodes. During the creation process, the number of current nodes is less than the number of nodes you applied for until the creation is complete.
         -   **CPU**: The number of cores in a node's CPU.
@@ -77,7 +77,7 @@ Detailed information is provided in the following areas: cluster, software, netw
         -   **Data Disk Type**: Data disk type and capacity of a node.
         -   **ECS ID**: The ID of the ECS instances purchased.
 
-            ![Master Instance Group](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17857/155849112314297_en-US.png)
+            ![Master Instance Group](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17857/155860552114297_en-US.png)
 
         -   **Status**: Includes Creating, Normal, Expanding, and Released.
         -   **Public IP**: The public IP of master nodes.
@@ -85,7 +85,7 @@ Detailed information is provided in the following areas: cluster, software, netw
         -   **Created At**: The creation time of the ECS instance purchased.
     -   **Core Instance Group \(Core\)**: Configurations of all core nodes.
 
-        ![Core Instance Group](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17857/155849112314300_en-US.png)
+        ![Core Instance Group](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17857/155860552114300_en-US.png)
 
         -   **Hosts**: The number of current nodes. This is the same as the number of the nodes you applied for.
         -   **CPU**: The number of cores in a node's CPU.
@@ -93,7 +93,7 @@ Detailed information is provided in the following areas: cluster, software, netw
         -   **Data Disk Type**: Data disk type and capacity of a node.
         -   **ECS ID**: The ID of the ECS instances purchased.
 
-            ![Core Instance Group List](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17857/155849112314298_en-US.png)
+            ![Core Instance Group List](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17857/155860552114298_en-US.png)
 
         -   **Status**: Includes Creating, Normal, Expanding, and Released.
         -   **Intranet IP**: The internal network IP of the machine that can be accessed by all nodes in the cluster.
