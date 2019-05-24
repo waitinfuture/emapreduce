@@ -51,7 +51,7 @@ object ConnectionUtil extends Serializable {
 
 ## 附录 {#section_tbr_yfh_hfb .section}
 
-完整示例代码请看:
+完整示例代码请参见：
 
 -   [Spark 接入 Hbase](https://github.com/aliyun/aliyun-emapreduce-demo/blob/master/src/main/scala/com/aliyun/emr/example/streaming/HBaseSample.scala)
 
