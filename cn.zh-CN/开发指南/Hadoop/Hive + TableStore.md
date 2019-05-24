@@ -1,12 +1,12 @@
 # Hive + TableStore {#concept_sqb_xrn_hfb .concept}
 
-本章节介绍如何在Hive中处理TableStore中的数据。
+本章节介绍如何在 Hive 中处理 TableStore 中的数据。
 
 ## Hive接入TableStore {#section_zzs_fsn_hfb .section}
 
 -   准备一张数据表
 
-    创建一张表pet，其中name为主键。
+    创建一张表 pet，其中 name 为主键。
 
     |name|owner|species|sex|birth|death|
     |----|-----|-------|---|-----|-----|
@@ -20,7 +20,7 @@
     |Slim|Benny|snake|m|1996-04-29| |
     |Puffball|Diane|hamster|f|1999-03-30| |
 
--   下面这个例子示例了如何在Hive中处理TableStore中的数据。
+-   下面这个例子示例了如何在 Hive 中处理 TableStore 中的数据。
     1.  命令行
 
         ```
@@ -89,7 +89,7 @@
 
 ## 附录 {#section_ezh_dvn_hfb .section}
 
-完整示例代码请参考：
+完整示例代码请参见：
 
 -   [Hive+TableStore](https://github.com/aliyun/aliyun-emapreduce-sdk/blob/master/examples/src/main/java/com/aliyun/openservices/tablestore/pet.sql)
 
