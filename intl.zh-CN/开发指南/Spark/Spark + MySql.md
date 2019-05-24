@@ -1,10 +1,10 @@
 # Spark + MySql {#concept_vc2_5jf_hfb .concept}
 
-本章节介绍在E-MapReduce的Hadoop集群运行Spark作业统计单词个数，将结果写入MySQL。Spark Streaming作业写入MySQL的方法与此类似。
+本章节介绍在 E-MapReduce 的 Hadoop 集群运行 Spark 作业统计单词个数并将结果写入 MySql。Spark Streaming 作业写入 MySql 的方法与此类似。
 
 ## Spark 接入 MySQL {#section_ky2_t2g_hfb .section}
 
-代码如下：
+示例代码如下：
 
 ```
 val input = getSparkContext.textFile(inputPath, numPartitions)
@@ -40,7 +40,7 @@ val input = getSparkContext.textFile(inputPath, numPartitions)
 
 ## 附录 {#section_r1y_qfg_hfb .section}
 
-完整示例代码请看：
+完整示例代码请参见：
 
--   [Spark写入RDS](https://github.com/aliyun/aliyun-emapreduce-demo/blob/master-2/src/main/scala/com/aliyun/emr/example/spark/RDSSample1.scala)
+-   [Spark 写入 RDS](https://github.com/aliyun/aliyun-emapreduce-demo/blob/master-2/src/main/scala/com/aliyun/emr/example/spark/RDSSample1.scala)
 
