@@ -1,6 +1,6 @@
 # MapReduce 开发手册 {#concept_mpt_zgm_hfb .concept}
 
-本文介绍在E-MapReduce集群中开发MapReduce 作业流程。
+本文介绍在 E-MapReduce 集群中开发 MapReduce 作业流程。
 
 ## 在 MapReduce 中使用 OSS {#section_ahh_mhm_hfb .section}
 
@@ -112,9 +112,9 @@ conf.set("fs.oss.accessKeyId", "${accessKeyId}");
 
 3.  创建作业
     -   将上一步打好的 jar 文件上传到 OSS，具体可登录 OSS 官网进行操作。假设 jar 文件在 OSS 上的路径为oss://emr/jars/wordcount.jar, 输入输出路径分别为 oss://emr/data/WordCount/Input和 oss://emr/data/WordCount/Output。
-    -   在 E-MapReduce中创建如下作业，具体步骤请参考[创建作业](../../../../intl.zh-CN/快速入门/步骤三：创建并运行作业.md#)：
+    -   在 E-MapReduce 中创建如下作业，具体步骤请参考[步骤四：创建并运行作业](../../../../intl.zh-CN/快速入门/步骤四：创建并运行作业.md#)：
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17984/155860594013188_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17984/155866631713188_zh-CN.png)
 
 4.  创建执行计划
 
@@ -158,7 +158,7 @@ conf.set("fs.oss.accessKeyId", "${accessKeyId}");
 
 4.  编写代码
 
-    在 com.aliyun.emr.hadoop.examples包下和 App 类平行的位置添加新类 WordCount2.java。内容如下：
+    在 com.aliyun.emr.hadoop.examples 包下和 App 类平行的位置添加新类 WordCount2.java。内容如下：
 
     ```
     package com.aliyun.emr.hadoop.examples;
@@ -372,7 +372,7 @@ conf.set("fs.oss.accessKeyId", "${accessKeyId}");
     jar ossref://yourBucket/yourPath/wordcountv2-1.0-SNAPSHOT.jar com.aliyun.emr.hadoop.examples.WordCount2 -Dwordcount.case.sensitive=true oss://yourBucket/yourPath/The_Sorrows_of_Young_Werther.txt oss://yourBucket/yourPath/output -skip oss://yourBucket/yourPath/patterns.txt
     ```
 
-    这里的 yourBucket 是您的一个 OSS bucket，yourPath 是这个 bucket 上的一个路径，需要您按照实际情况填写。请您将oss://yourBucket/yourPath/The\_Sorrows\_of\_Young\_Werther.txt和oss://yourBucket/yourPath/patterns.txt这两个用来处理相关资源的文件下载下来并放到您的 OSS 上。作业需要资源可以从下面下载，然后放到您的 OSS 对应目录下。
+    这里的 yourBucket 是您的一个 OSS bucket，yourPath 是这个 bucket 上的一个路径，需要您按照实际情况填写。请您将oss://yourBucket/yourPath/The\_Sorrows\_of\_Young\_Werther.txt 和 oss://yourBucket/yourPath/patterns.txt这两个用来处理相关资源的文件下载下来并放到您的 OSS 上。作业需要资源可以从下面下载，然后放到您的 OSS 对应目录下。
 
     资源下载：[The\_Sorrows\_of\_Young\_Werther.txt](https://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/cn/emr/1.3.7/assets/res/The_Sorrows_of_Young_Werther.txt?spm=a2c4g.11186623.2.19.4c3d19d6YlAWbs&file=The_Sorrows_of_Young_Werther.txt)[patterns.txt](https://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/cn/emr/1.3.7/assets/res/patterns.txt?spm=a2c4g.11186623.2.20.4c3d19d6YlAWbs&file=patterns.txt)
 
