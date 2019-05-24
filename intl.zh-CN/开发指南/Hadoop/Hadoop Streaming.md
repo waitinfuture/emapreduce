@@ -1,10 +1,10 @@
 # Hadoop Streaming {#concept_s4c_v4n_hfb .concept}
 
-本章节介绍如何用PythonH写hadoop Streaming作业。
+本章节介绍如何使用 PythonH 写 Hadoop Streaming作业。
 
-## python 写hadoop streaming作业 {#section_oty_x4n_hfb .section}
+## PythonH 写 Hadoop Streaming {#section_oty_x4n_hfb .section}
 
-mapper代码如下：
+mapper 代码如下：
 
 ```
 #!/usr/bin/env python
@@ -16,7 +16,7 @@ for line in sys.stdin:
         print '%s\t%s' % (word, 1)
 ```
 
-reducer代码如下：
+reducer 代码如下：
 
 ```
 #!/usr/bin/env python
@@ -43,7 +43,7 @@ if current_word == word:
     print '%s\t%s' % (current_word, current_count)
 ```
 
-假设mapper代码保存在/home/hadoop/mapper.py， reducer代码保存在/home/hadoop/reducer.py ， 输入路径为hdfs文件系统的/tmp/input，输出路径为hdfs文件系统的/tmp/output。则在E-MapReduce集群上提交下面的hadoop命令。
+假设 mapper 代码保存在/home/hadoop/mapper.py， reducer 代码保存在/home/hadoop/reducer.py ， 输入路径为 hdfs 文件系统的/tmp/input，输出路径为 hdfs 文件系统的 /tmp/output。则在 E-MapReduce 集群上提交下面的 hadoop 命令。
 
 ```
 hadoop jar /usr/lib/hadoop-current/share/hadoop/tools/lib/hadoop-streaming-*.jar -file /home/hadoop/mapper.py -mapper mapper.py -file /home/hadoop/reducer.py -reducer reducer.py -input /tmp/hosts -output /tmp/output
