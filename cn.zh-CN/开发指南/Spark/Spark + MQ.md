@@ -1,10 +1,10 @@
 # Spark + MQ {#concept_jj2_qch_hfb .concept}
 
-本章节介绍如何使用Spark Streaming 如何使用 MQ 中的数据并计算每个批次中的单词数。
+本章节介绍如何使用 Spark Streaming 如何使用 MQ 中的数据并计算每个批次中的单词数。
 
 ## 通过 Spark 访问 MQ {#section_rdt_5dh_hfb .section}
 
-下面的示例演示 Spark Streaming 如何使用 MQ 中的数据并计算每个批次中的单词数。
+下面的示例演示 Spark Streaming 如何使用 MQ 中的数据并计算每个批次中的单词数：
 
 ```
 val Array(cId, topic, subExpression, parallelism, interval) = args
@@ -39,7 +39,7 @@ val Array(cId, topic, subExpression, parallelism, interval) = args
 
 ## 附录 {#section_ht1_ydh_hfb .section}
 
-有关完整示例代码，请参阅：
+完整示例代码请参见：
 
 -   [通过 Spark 访问 ONS](https://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/cn/emr/1.3.7/assets/sample/TestAliyunONS.scala)
 
