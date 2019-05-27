@@ -40,7 +40,7 @@ A：按照如下步骤：
     ```
 
 
-## Q：直接在OSS上查看日志 {#section_nvk_xt1_pfb .section}
+## Q：直接在 OSS 上查看日志 {#section_nvk_xt1_pfb .section}
 
 A：用户也可以直接从 OSS 上查找所有的日志文件，并下载。但是因为 OSS 不能直接查看日志，使用起来会比较麻烦一些。如果用户创建集群时打开了运行日志功能，并且指定了一个 OSS 的日志位置，那么作业的日志要如何找到呢？例如对下面这个保存位置OSS://mybucket/emr/spark：
 
@@ -160,7 +160,7 @@ A：
 -   低版本 mysql-connector-java 有可能出现类似问题，更新到最新版本。
 -   作业参数中使用 —driver-class-path ossref://bucket/…/mysql-connector-java-\[version\].jar 来加载 mysql-connector-java 包，直接将 mysql-connector-java 打进作业 jar 包也会出现上述问题。
 
-## Q：Spark SQL连RDS出现“Invalid authorization specification, message from server: ip not in whitelist” {#section_uw3_zw1_pfb .section}
+## Q：Spark SQL 连 RDS 出现“Invalid authorization specification, message from server: ip not in whitelist” {#section_uw3_zw1_pfb .section}
 
 A：检查 RDS 的白名单设置，将集群机器的内网地址加到 RDS 的白名单中。
 
@@ -175,18 +175,18 @@ A ：
 
 A ： 由于 Hive 和 SparkSQL 在 Decimal 类型上使用了不同的转换方式写入 Parquet，导致 Hive 无法正确读取 SparkSQL 所导入的数据。对于已有的使用 SparkSQL 导入的数据，如果有被 Hive/Impala 使用的需求，建议加上 spark.sql.parquet.writeLegacyFormat=true，重新导入数据。
 
-## Q:beeline 如何访问Kerberos 安全集群 {#section_y2c_2gp_wfb .section}
+## Q:beeline 如何访问 Kerberos 安全集群 {#section_y2c_2gp_wfb .section}
 
 A：
 
--   HA 集群\(Discovery 模式\)
+-   HA 集群（Discovery 模式）\)
 
     ```
     
     !connect jdbc:hive2://emr-header-1:2181,emr-header-2:2181,emr-header-3:2181/;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2;principal=hive/_HOST@EMR.${clusterId).COM
     ```
 
--   HA 集群\(直连某台机器\)
+-   HA 集群（直连某台机器）
 
     连 emr-header-1
 
@@ -207,7 +207,7 @@ A：
     ```
 
 
-## Q：ThriftServer 进程正常，但链接出现异常，报错Connection refused telnet emr-header-1 10001 无法连接 {#section_o55_2yd_ggb .section}
+## Q：ThriftServer 进程正常，但链接出现异常，报错 “Connection refused telnet emr-header-1 10001” 无法连接 {#section_o55_2yd_ggb .section}
 
 A：
 
