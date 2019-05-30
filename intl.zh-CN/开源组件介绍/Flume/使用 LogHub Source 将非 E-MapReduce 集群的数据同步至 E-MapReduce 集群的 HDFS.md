@@ -72,7 +72,7 @@ E-MapReduce 从 3.20.0 版本开始对 EMR-Flume 加入了 Log Service Source。
 
 在 Console 页面启动 Flume agent 的具体操作参见 [Flume 使用说明](intl.zh-CN/开源组件介绍/Flume/Flume 使用说明.md#)。成功启动后，可以看到配置的 HDFS 路径下按照 record timestamp 存储的日志数据。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/190546/155859723346306_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/190546/155918490746306_zh-CN.png)
 
 查看 Log Service 上的消费组状态：
 
