@@ -33,5 +33,5 @@ Click **Disable Auto Scaling**. The task nodes that have been added through Auto
 
 You can only choose one scaling rule \(Scale by Time or Scale by Rule\) for Auto Scaling.
 
-If you switch the scaling type, the original scaling rules are reserved but invalid and not to be triggered. Nodes that have been added for scaling out are not to be removed unless the rule for scaling in is triggered. \[DO NOT TRANSLATE\]
+If you switch the scaling type, the original scaling rules are reserved but invalid and not to be triggered. Nodes that have been added for scaling out are not to be removed unless the rule for scaling in is triggered.
 
