@@ -1,7 +1,5 @@
 # DescribeClusterResourcePoolSchedulerType {#concept_qpj_lmf_2gb .concept}
 
-\[DO NOT TRANSLATE\]
-
 ## Request parameters {#section_p5v_ffb_kfb .section}
 
 |Name|Type|Required|Example|Description|
@@ -22,7 +20,7 @@
 
 -   Sample requests
 
-    ```
+    ``` {#codeblock_d4u_w5s_ktb}
     /? Action=DescribeClusterResourcePoolSchedulerType
     &ClusterId=C-EBD62A703A430E23
     &RegionId=cn-hangzhou 
@@ -34,16 +32,16 @@
 
     JSON format
 
-    ```
+    ``` {#codeblock_wis_8j2_9ss}
     {
-    	"code":"200",
-    	"data":{
-    		"CurrentSchedulerType":"CAPACITY_SCHEDULER",
-    		"RequestId":"51517046-1327-45CF-9C70-AEA03A5BE025",
-    		"SupportSchedulerType":"CAPACITY_SCHEDULER,FAIR_SCHEDULER"
-    	},
-    	"requestId":"51517046-1327-45CF-9C70-AEA03A5BE025",
-    	"successResponse":true
+        "code":"200",
+        "data":{
+            "CurrentSchedulerType":"CAPACITY_SCHEDULER",
+            "RequestId":"51517046-1327-45CF-9C70-AEA03A5BE025",
+            "SupportSchedulerType":"CAPACITY_SCHEDULER,FAIR_SCHEDULER"
+        },
+        "requestId":"51517046-1327-45CF-9C70-AEA03A5BE025",
+        "successResponse":true
     }
     ```
 
@@ -51,12 +49,12 @@
 
     JSON format
 
-    ```
+    ``` {#codeblock_6f6_3uk_xhw}
     {
-    	"code":"User.OtherUserResource.NotAllow",
-    	"message":"It is not allowed to operate other user's resource",
-    	"requestId":"A544317F-4A60-4532-AC96-191B9D80420AF",
-    	"successResponse":false
+        "code":"User.OtherUserResource.NotAllow",
+        "message":"It is not allowed to operate other user's resource",
+        "requestId":"A544317F-4A60-4532-AC96-191B9D80420AF",
+        "successResponse":false
     }
     ```
 
