@@ -10,7 +10,7 @@ EMR has supported Apache Flume since V3.16.0 and has supported default monitorin
 
     Running Flume on Gateway nodes avoids the impact on EMR Hadoop clusters. Basic data flows that are streamed through Flume agents installed on Gateway nodes are shown in the following figure.
 
-    ![Basic data flows](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120368/155807476838178_en-US.png)
+    ![Basic data flows](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120368/155929524538178_en-US.png)
 
 
 ## Prepare the environment {#section_mjt_c5n_4gb .section}
@@ -23,7 +23,7 @@ You can use EMR to automatically create a Hadoop cluster. For more information, 
 
 -   Click Create Cluster, click Flume for the cluster type, and select Flume from **Optional Services**.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120368/155807476838191_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120368/155929524538191_en-US.png)
 
 -   Create a Gateway node and associate it to the Hadoop cluster created in the previous step.
 
@@ -31,21 +31,21 @@ You can use EMR to automatically create a Hadoop cluster. For more information, 
 
 -   Run Flume
 
-    -   The default path of Flume configuration files is /etc/ecm/flume-conf. See [How to use Flume](../../../../reseller.en-US/Open Source Components /Flume/How to use Flume.md#) for modifying the configuration file flume.properties for Flume agents. After the modification, use the following command to run a Flume agent.
+    -   The default path of Flume configuration files is /etc/ecm/flume-conf. See [Use Flume](../../../../reseller.en-US/Open Source Components /Flume/Configure Flume.md#) for modifying the configuration file flume.properties for Flume agents. After the modification, use the following command to run a Flume agent.
 
-        ```
+        ``` {#codeblock_zdh_7vq_6mk}
         nohup flume-ng agent -n a1 -f flume.properties &
         ```
 
     -   You can use the `-c` flag or the `--conf` flag to replace the default configuration file with a custom file. For example:
 
-        ```
+        ``` {#codeblock_wzy_vuu_nho}
         nohup flume-ng agent -n a1 -f flume.properties -c path-to-flume-conf &
         ```
 
-    **Note:** For more information, see [How to use Flume](../../../../reseller.en-US/Open Source Components /Flume/How to use Flume.md#). You need to add the zookeeperQuorum configuration item to the flume.properties configuration file when the Flume agents installed on Gateways use sinks to write data to HBase. For example:
+    **Note:** For more information, see [Use Flume](../../../../reseller.en-US/Open Source Components /Flume/Configure Flume.md#). You need to add the zookeeperQuorum configuration item to the flume.properties configuration file when the Flume agents installed on Gateways use sinks to write data to HBase. For example:
 
-    ```
+    ``` {#codeblock_cl1_i2z_m13}
     a1.sinks.k1.zookeeperQuorum=emr-header-1.cluster-46349:2181
     ```
 
@@ -55,7 +55,7 @@ You can use EMR to automatically create a Hadoop cluster. For more information, 
 
     Monitoring data of Flume agents is displayed in the cluster console by default. On the Clusters and Services page, click **FLUME** to jump to the cluster console as shown in the following figure.
 
-    ![The FLUME service page](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120368/155807476838198_en-US.png)
+    ![The FLUME service page](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/120368/155929524538198_en-US.png)
 
     **Note:** 
 
