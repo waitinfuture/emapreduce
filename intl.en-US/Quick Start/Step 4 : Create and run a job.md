@@ -41,5 +41,5 @@ The **ossref://** prefix also indicates that the data path points to an OSS path
 
 In this example, the **ossref://xxxxxx/xxx.jar** parameter represents the JAR package of job resources. This JAR package is stored on OSS. When this path is executed in the code, the JAR package will automatically download to the cluster and be executed. The two **oss://xxxx** and the two values following the JAR package are processed by the main class in the JAR package as parameters.
 
-**Notice**The **ossref**cannot be used to download large amounts of data. Otherwise, an error may occur.
+**Note:** The **ossref**cannot be used to download large amounts of data. Otherwise, an error may occur.
 
