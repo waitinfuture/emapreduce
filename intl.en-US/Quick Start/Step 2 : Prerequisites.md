@@ -19,13 +19,13 @@ Make sure that the following prerequisites are met before you create an E-MapRed
 
         **Note:** If the following dialog box appears, click **Continue to manage AccessKey**.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17837/155927270210452_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17837/155927274510452_en-US.png)
 
     4.  Click **Create AccessKey**.
     5.  The AccessKey has been created.
 3.  Authorize default system role to the E-MapReduce service account.
 
-    When you activate the E-MapReduce service, a default system role named AliyunEMRDefaultRole must be granted to the E-MapReduce service account. Once assigned, E-MapReduce can call the relevant services \(such as ECS and OSS\), create clusters, save logs, and perform other related tasks.For more information, see[Role authorization](../../../../reseller.en-US/Cluster Planning and Configurations/Cluster planning/Role authorization.md#).
+    When you activate the E-MapReduce service, a default system role named AliyunEMRDefaultRole must be granted to the E-MapReduce service account. Once assigned, E-MapReduce can call the relevant services \(such as ECS and OSS\), create clusters, save logs, and perform other related tasks.For more information, see [Role authorization](../../../../reseller.en-US/Cluster Planning and Configurations/Cluster planning/Role authorization.md#).
 
 4.  Activate Alibaba Cloud OSS
 
