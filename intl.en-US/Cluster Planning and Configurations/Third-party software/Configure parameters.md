@@ -11,27 +11,27 @@ Perform the following steps to modify the parameters for existing components.
 3.  Click a cluster ID to jump to the Clusters and Services page as needed.
 4.  In the Services list, click the component you want to modify parameters. For example, **HDFS**.
 
-    ![Services](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/119950/155730808638139_en-US.png)
+    ![Services](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/119950/155928423238139_en-US.png)
 
 5.  Click the **Configurations** tab to jump to the Service Configuration page.
 
-    ![Configure the service](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/119950/155730808638140_en-US.png)
+    ![Configure the service](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/119950/155928423238140_en-US.png)
 
 6.  You can select configuration types and configuration files in the **Quick Configuration** area.
 7.  Locate the parameter you want to modify and set the value of the parameter. If you cannot find the parameter you want to modify, click **Custom Configuration** to add a configuration item.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/119950/155730808638141_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/119950/155928423338141_en-US.png)
 
     -   Key: parameter name
     -   Value: parameter value
     -   Description: parameter description
-8.  Click **Save**. ****\[DO NOT TRANSLATE\]
+8.  Click **Save**.
 
 Refer to the [Deploy configurations](#section_gkw_dnm_4gb) section for making your parameter modification take effect.
 
 ## Deploy configurations {#section_gkw_dnm_4gb .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/119950/155730808638143_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/119950/155928423338143_en-US.png)
 
 -   Deploy client configurations
     1.  After modifying a client configuration parameter, click **Deploy Client Config** and the **Run Action** dialog box is displayed.
