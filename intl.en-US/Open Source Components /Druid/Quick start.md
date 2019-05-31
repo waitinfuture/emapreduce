@@ -33,7 +33,7 @@ Select Druid as the cluster type when you create a cluster. You can select HDFS 
     -   Choose to install HDFS when you create a cluster. Then the system is automatically configured. \(After HDFS is installed, you can choose not to use it, disable it, or use it for testing purposes only.\)
     -   Create hdfs-site.xml in the configuration directory of Druid /etc/ecm/druid-conf/druid/\_common/, the content is as follows, and then copy the file to the same directory of all nodes:
 
-        ```
+        ``` {#codeblock_7wh_dmu_1o8}
         <? xml version="1.0" ? >
           <configuration>
             <property> 
@@ -80,7 +80,7 @@ Select Druid as the cluster type when you create a cluster. You can select HDFS 
 
     **Note:** For direct memory, make sure that:
 
-    ```
+    ``` {#codeblock_erh_p8g_md1}
     -XX:MaxDirectMemorySize is greater than or equal to druid.processing.buffer.sizeBytes * (druid.processing.numMergeBuffers + druid.processing.numThreads + 1).
     ```
 
@@ -110,7 +110,7 @@ EMR provides three methods to access Druid Web pages:
     2.  Put core-site.xml, hdfs-site.xml, yarn-site.xml, mapred-site.xml of /etc/ecm/hadoop-conf of the Hadoop cluster in the /etc/ecm/duird-conf/druid/\_common directory on each node of the Druid cluster. \(If you select the built-in Hadoop when you create the cluster, several soft links in this directory will map to the configuration of the Hadoop service of E-MapReduce. Remove these soft links first.\)
     3.  Write the hosts of the Hadoop cluster to the hosts list on the Druid cluster. Note that the hostname of the Hadoop cluster should be in the form of a long name, such as emr-header-1.cluster-xxxxxxxx. You are advised to put the hosts of Hadoop behind the hosts of the Druid cluster, such as:
 
-        ```
+        ``` {#codeblock_fy7_ug6_zsi}
         ...
         10.157.201.36   emr-as.cn-hangzhou.aliyuncs.com
         10.157.64.5     eas.cn-hangzhou.emr.aliyuncs.com
@@ -138,7 +138,7 @@ EMR provides three methods to access Druid Web pages:
 
     Druid comes with an example named wikiticker, which is located in the $\{DRUID\_HOME\}/quickstart/tutorial path. $\{DRUID\_HOME\}is set to /usr/lib/druid-current by default. Each line of the wikiticke document \(wikiticker-2015-09-12-sampled.json.gz\) is a record. Each record is a json object. The format is as follows:
 
-    ```
+    ``` {#codeblock_kwv_avf_gyw}
     ```json
     {
         "time": "2015-09-12T00:46:58.771Z",
@@ -169,7 +169,7 @@ EMR provides three methods to access Druid Web pages:
 
     1.  Decompress the compressed file and place it in a directory of HDFS \(such as: hdfs://emr-header-1.cluster-5678:9000/druid\). Run the following command on the Hadoop Cluster.
 
-        ```
+        ``` {#codeblock_izd_iz5_qok}
         ### If you are operating on a standalone Hadoop cluster, copy a druid.keytab to Hadoop cluster after the mutual trust is established between the two clusters, and run the kinit command.
          kinit -kt /etc/ecm/druid-conf/druid.keytab druid
          ###
@@ -183,7 +183,7 @@ EMR provides three methods to access Druid Web pages:
         -   Make sure that you have created a Linux account named druid on each node of the Hadoop cluster.
     2.  Use the following configurations to prepare a file for data indexing. The file path is set to $\{DRUID\_HOME\}/quickstart/tutorial/wikiticker-index.json.
 
-        ```
+        ``` {#codeblock_qvu_0fb_6mn}
         {
              "type" : "index_hadoop",
              "spec" : {
@@ -283,7 +283,7 @@ EMR provides three methods to access Druid Web pages:
         -   hadoopDependencyCoordinates develops the version of Hadoop client.
     3.  Run the batch index command on the Druid cluster.
 
-        ```
+        ``` {#codeblock_4yl_mor_f17}
         cd ${DRUID_HOME}
          curl --negotiate -u:druid -b ~/cookies -c ~/cookies -XPOST -H 'Content-Type:application/json' -d @quickstart/wikiticker-index.json http://emr-header-1.cluster-1234:18090/druid/indexer/v1/task
         ```
@@ -298,7 +298,7 @@ EMR provides three methods to access Druid Web pages:
 
         Druid has its own query syntax. You need to prepare a json-formatted query file that describes how you want to query. A topN query to the wikiticker data is as follows $\{DRUID\_HOME\}/quickstart/wikiticker-top-pages.json\):
 
-        ```
+        ``` {#codeblock_xgb_nas_use}
         {
              "queryType" : "topN",
              "dataSource" : "wikiticker",
@@ -319,7 +319,7 @@ EMR provides three methods to access Druid Web pages:
 
         You can check the results of the query by running the following command:
 
-        ```
+        ``` {#codeblock_o2q_txe_67k}
         cd ${DRUID_HOME}
          curl --negotiate -u:druid -b ~/cookies -c ~/cookies -XPOST -H 'Content-Type:application/json' -d @quickstart/wikiticker-top-pages.json 'http://emr-header-1.cluster-1234:18082/druid/v2/?pretty'
         ```
@@ -348,10 +348,10 @@ When indexing fails, the following troubleshooting steps are typically followed:
     4.  If no errors are found, you need to log on to the Druid cluster, and view the execution logs of Overlord \(at /mnt/disk1/log/druid/overlord—emr-header-1.cluster-xxxx.log\). If it is an HA cluster, check the Overlord that you submitted the job to.
     5.  If the job has been submitted to Middlemanager, but a failure is returned, you need to view the worker that the job is submitted to in Overlord, and log on to the worker node to view the Middlemanager logs in /mnt/disk1/log/druid/middleManager-emr-header-1.cluster-xxxx.log.
 -   For Kafka Indexing Service and SLS Indexing Service
-    1.  First, view the Overlord Web page:Http: // emr-header-1: 18090To check the running status of the Supervisor and check whether payload is valid.
+    1.  First, view the Overlord Web page Http: // emr-header-1: 18090, check the running status of the Supervisor, and check whether payload is valid.
     2.  View the log of the failed task.
     3.  If you cannot identify the cause of failure from the task log, you need to start with the Overlord log to troubleshoot the problem. See the last two steps in the [Batch index](#section_h6s_xqp_ymi) section.
--   For real-time Tranquility index `@` 
+-   For real-time Tranquility index
 
     Check the Tranquility logs to see if the message is received or dropped.
 
