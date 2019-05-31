@@ -70,9 +70,9 @@ Create a Hadoop cluster and select Flume from optional services. For more inform
 
 ## Run Flume Agent {#section_bh6_l36_4xh .section}
 
-For more information, see [How to use Flume](reseller.en-US/Open Source Components /Flume/How to use Flume.md#). After Flume Agent is started, on the configured HDFS path, you can see the logs that are stored in the partitions based on the record timestamps.
+For more information, see [How to use Flume](reseller.en-US/Open Source Components /Flume/Use Flume.md#). After Flume Agent is started, on the configured HDFS path, you can see the logs that are stored in the partitions based on the record timestamps.
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/190546/155918496946306_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/190546/155929393946306_en-US.png)
 
 For information about the status of consumer groups on Log Service, see [View consumer group status](../../../../reseller.en-US/User Guide/Real-time subscription and consumption/Consumption by consumer groups/View consumer group status.md#)
 
