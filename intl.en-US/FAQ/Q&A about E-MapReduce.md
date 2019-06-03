@@ -23,19 +23,19 @@ A: You need to perform the following steps.
 
 1.  On the master node, switch to the hadoop user using the su command
 
-    ```
+    ``` {#codeblock_5k6_f34_q2t}
     su hadoop
     ```
 
 2.  Then you can connect to a core node using SSH without entering a password.
 
-    ```
+    ``` {#codeblock_pz1_lz0_dbz}
     ssh emr-worker-1
     ```
 
 3.  Gain root privileges using the sudo command.
 
-    ```
+    ``` {#codeblock_iy7_vp5_bhe}
     sudo vi /etc/hosts
     ```
 
@@ -76,10 +76,6 @@ A: For security reasons, you cannot use an existing ECS security group as an EMR
 
 A: Check whether the tunnel endpoint is correct. This error occurs when the tunnel endpoint is incorrect.
 
-## \[DO NOT TRANSLATE\] {#section_az5_2v1_pfb .section}
-
-\[DO NOT TRANSLATE\] \[DO NOT TRANSLATE\]
-
 ## Q: Can I view the logs of jobs, which are stored in worker nodes, in the EMR console? {#section_lq2_kv1_pfb .section}
 
 A: Yes. Prerequisites: You have enabled the **Running log** feature when creating the cluster. Path to job logs: **Execution plan list** \> **More** \> **Running log** \> **Running record** \> **View job list** \> **job list** \> **job instance**
@@ -88,7 +84,7 @@ A: Yes. Prerequisites: You have enabled the **Running log** feature when creatin
 
 A: For example:
 
-```
+``` {#codeblock_ffe_37i_tgc}
 CREATE EXTERNAL TABLE storage_log(content STRING) PARTITIONED BY (ds STRING)
     ROW FORMAT DELIMITED
     FIELDS TERMINATED BY '\t'
@@ -102,7 +98,7 @@ CREATE EXTERNAL TABLE storage_log(content STRING) PARTITIONED BY (ds STRING)
 
 This issue occurs because no partition directory is available for Hive to locate. To solve this problem, you can use ALTER TABLE ADD PARTITION to add partitions to the table. For example:
 
-```
+``` {#codeblock_zg7_snr_akb}
 alter table storage_log add partition(ds=123);                                                                                                                                             OK
     Time taken: 0.137 seconds
     hive> select * from storage_log;
@@ -131,7 +127,7 @@ A: An EMR cluster consists of a single master node and multiple slave \(worker\)
 
 A: You have multiple ways to achieve this. The following example describes one way. Modify the mapred-site.xml file. For example:
 
-```
+``` {#codeblock_dfn_62u_sim}
 <property>  
     <name>mapred.child.java.opts</name>  
     <value>-Xmx1024m -Djava.library.path=/usr/local/share/</value>  
@@ -181,7 +177,7 @@ A:
 
 -   High-availability cluster \(service discovery mode\)
 
-    ```
+    ``` {#codeblock_1gn_qe9_xnz}
     
     ! connect jdbc:hive2://emr-header-1:2181,emr-header-2:2181,emr-header-3:2181/;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2;principal=hive/_HOST@EMR.${clusterId). COM
     ```
@@ -190,19 +186,19 @@ A:
 
     Connect to the emr-header-1 node.
 
-    ```
+    ``` {#codeblock_gx8_fz1_tpw}
     ! connect jdbc:hive2://emr-header-1:10000/;principal=hive/emr-header-1@EMR.${clusterId}. COM
     ```
 
     Connect to the emr-header-2 node.
 
-    ```
+    ``` {#codeblock_5gx_wmi_ne9}
     ! connect jdbc:hive2://emr-header-2:10000/;principal=hive/emr-header-2@EMR.${clusterId}. COM
     ```
 
 -   Non-HA cluster
 
-    ```
+    ``` {#codeblock_y32_57l_051}
     ! connect jdbc:hive2://emr-header-1:10000/;principal=hive/emr-header-1@EMR.${clusterId}. COM
     ```
 
