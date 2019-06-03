@@ -20,5 +20,5 @@ The error message returned when there is no ECS quota available in the specified
 
 ## Error message: The specified InstanceType is not authorized for use. {#section_rsk_gz1_pfb .section}
 
-You need to apply to use Pay-As-You-Go high-configuration instances \(instances with more than eight cores\). Click [Here](https://workorder-intl.console.aliyun.com/#/ticket/createIndex) to apply. You can create high-configuration instances after your application is approved. Make sure that you apply for instances that are supported by EMR, including eight-core 16 GB, eight-core 32 GB, and 16-core 64 GB types.
+You need to apply to use Pay-As-You-Go high-configuration instances \(instances with more than eight cores\). Click [here](https://workorder-intl.console.aliyun.com/#/ticket/createIndex) to apply. You can create high-configuration instances after your application is approved. Make sure that you apply for instances that are supported by EMR, including eight-core 16 GB, eight-core 32 GB, and 16-core 64 GB types.
 
