@@ -25,13 +25,13 @@ This process includes two steps:
 ## Prerequisites {#section_krn_vh1_dfb .section}
 
 -   The following steps are performed in a Windows system. You need to ensure that Maven and Java have been installed and configured properly into your system.
--   You can use E-MapReduce to automatically create a Hadoop cluster. For more information, see [Create a cluster](../../../../../reseller.en-US/Quick Start/Create E-MapReduce/Create a cluster.md#).
+-   You can use E-MapReduce to automatically create a Hadoop cluster. For more information, see [Create a cluster](../../../../reseller.en-US/Quick Start/Step 3 : Create a cluster.md#).
     -   EMR Version: EMR-3.12.1
     -   Cluster Type: HADOOP
     -   Software: HDFS2.7.2, YARN2.7.2, Hive2.3.3, Ganglia3.7.2, Spark2.3.1, HUE4.1.0, Zeppelin0.8.0, Tez0.9.1, Sqoop1.4.7, Pig0.14.0, ApacheDS2.0.0, and Knox0.13.0
     -   The network type of this Hadoop cluster is VPC in the China \(Hangzhou\) region. The master instance group is configured with a public IP and an internal network IP. The high availability mode is set to No \(a non-HA mode\). The following figure shows the details.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21330/154874703711874_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21330/155961841111874_en-US.png)
 
 
 ## Procedures {#section_f2w_y31_dfb .section}
@@ -40,13 +40,13 @@ This process includes two steps:
 
     Open git bash in your system and execute the clone command as follows.
 
-    ```
+    ``` {#codeblock_izk_vs1_14z}
     git clone https://github.com/aliyun/aliyun-emapreduce-demo.git
     ```
 
     Execute the `mvn install` command to compile the code.
 
-2.  For more information about how to create a bucket, see [Create a bucket](../../../../../reseller.en-US/Quick Start/Create a bucket.md#).
+2.  For more information about how to create a bucket, see [Create a bucket](../../../../reseller.en-US/Quick Start/Create a bucket.md#).
 
     **Note:** You must create a bucket and an E-MapReduce cluster in the same region.
 
@@ -61,12 +61,12 @@ This process includes two steps:
 
     For more information, see [Edit jobs](../DNemapreduce1876943/EN-US_TP_17962.dita#concept_iny_t1f_z2b). Take a MapReduce job as an example.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21330/154874703711891_en-US.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21330/155961841111891_en-US.jpg)
 
 6.  After you configure a job, click **Run**. The following figure shows the details.
 
-    -   For more information about how to use OSS, see [OSS usage instructions](https://www.alibabacloud.com/help/zh/doc-detail/42799.html?spm=a2c5t.11065259.1996646101.searchclickresult.63fc71f3FgiO9g).
-    -   For more information about how to configure jobs, see the job section of the E-MapReduce User Guide.
+    -   For more information about how to use OSS, see [OSS 参考使用说明](../../../../reseller.en-US/Developer Guide/Preparations/Configure the OSS URI to use E-MapReduce.md#).
+    -   For more information about how to configure jobs, see the *job* section of the E-MapReduce User Guide.
     **Note:** 
 
     -   If the OSS output URI already exists, an error occurs when you execute a job.
