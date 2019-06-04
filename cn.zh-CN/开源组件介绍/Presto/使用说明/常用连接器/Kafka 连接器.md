@@ -1,7 +1,5 @@
 # Kafka 连接器 {#concept_i3n_lfr_zgb .concept}
 
-## 概述 {#section_dvj_1gr_zgb .section}
-
 本连接器将 Kafka 上的 topic 映射为 Presto 中的表。Kafka 中的每条记录都映射为 Presto 表中的消息。
 
 **说明：** 
@@ -16,7 +14,7 @@
 connector.name=kafka
 kafka.table-names=table1,table2
 kafka.nodes=host1:port,host2:port
-
+			
 ```
 
 **说明：** 
@@ -28,14 +26,14 @@ Presto 可以同时连接多个 Kafka 集群，只需要在配置目录中添加
 connector.name=kafka  # 这个表示连接器类型，不能变
 kafka.table-names=tableA,tableB
 kafka.nodes=host1:port,host2:port
-
+			
 ```
 
 Kafka 连接器提供了如下几个属性：
 
 |参数|是否必选|描述|说明|
 |--|----|--|--|
-|kafka.table-names|是|定义本连接器支持的表格列表|这里的文件名可以使用Schema名称进行修饰，形式如`{schema_name}.{table_name}`。也可以不使用 Schema 名称修饰，此时，表格将被映射到`kafka.default-schema`中定义的schema中。|
+|kafka.table-names|是|定义本连接器支持的表格列表|这里的文件名可以使用 Schema 名称进行修饰，形式如`{schema_name}.{table_name}`。也可以不使用 Schema 名称修饰，此时，表格将被映射到`kafka.default-schema`中定义的schema中。|
 |kafka.default-schema| |默认的Schema名称, 默认值为`default`| |
 |kafka.nodes|是|Kafka集群中的节点列表|配置格式形如`hostname:port[,hostname:port...]`。此处可以只配置部分 Kafka 节点，但是，Presto 必须能够连接到 Kafka 集群中的所有节点。否则，可能拿不到部分数据。|
 |kafka.connect-timeout|否|连接器与 Kafka 集群的超时时间，默认为 10 秒|如果 Kafka 集群压力比较大，创建连接可能需要相当长的时间，从而导致 Presto 在执行查询时出现超时的情况。此时，增加当前的配置值是一个不错的选择。|
@@ -86,7 +84,7 @@ Kafka 本身是 Schema-Less 的消息系统，消息的格式需要生产者和�
        ]
     }
 }
-
+			
 ```
 
 |字段|可选性|类型|说明|
@@ -102,7 +100,7 @@ Kafka 本身是 Schema-Less 的消息系统，消息的格式需要生产者和�
 |字段|可选性|类型|说明|
 |--|---|--|--|
 |dataFormat|必选|string|设置一组列的解码器|
-|fields|必选|JSON数组|列定义列表|
+|fields|必选|JSON 数组|列定义列表|
 
 这里的`fields`是一个 JSON 数组，每一个元素为如下的 JOSN 对象：
 
@@ -116,7 +114,7 @@ Kafka 本身是 Schema-Less 的消息系统，消息的格式需要生产者和�
     "hidden": ...,
     "comment": ...
 }
-
+			
 ```
 
 |字段|可选性|类型|说明|
