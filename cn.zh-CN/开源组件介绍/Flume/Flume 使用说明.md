@@ -8,7 +8,7 @@ E-MapReduce 从 3.19.0 版本开始对 EMR-Flume 提供集群管理的功能。�
 
 ## 准备工作 {#section_9eq_o48_6x5 .section}
 
-创建 E-MapReduce Hadoop集群，在可选服务中选择 Flume。具体操作可参考[创建集群](../../../../intl.zh-CN/集群规划与配置/集群配置/创建集群.md#)。
+创建 E-MapReduce Hadoop 集群，在可选服务中选择 Flume。具体操作请参见[创建集群](../../../../intl.zh-CN/集群规划与配置/集群配置/创建集群.md#)。
 
 ## 操作步骤 {#section_xb2_y7i_unv .section}
 
@@ -97,5 +97,5 @@ Flume agent 日志的存放路径为 /mnt/disk1/log/flume/default-agent/flume.lo
 
 集群与服务管理页面提供了 Flume agent 的监控信息。通过在集群与服务管理页面单击 **Flume** 服务进行访问，如下图所示：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/160292/155858083647819_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/160292/155963146547819_zh-CN.png)
 
