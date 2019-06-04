@@ -9,7 +9,7 @@ E-MapReduce（以下简称 EMR） 从 3.16.0 版本开始支持 Apache Flume。�
 
 **说明：** 
 
--   如果创建的是 Hadoop 高安全集群，消费标准 Kafka 集群的数据，参照[兼容 MIT Kerberos 认证](intl.zh-CN/开源组件介绍/Kerberos认证/兼容MIT Kerberos认证.md#)在 Hadoop 集群配置 Kerberos 认证；
+-   如果创建的是 Hadoop 高安全集群，消费标准 Kafka 集群的数据，参照[兼容 MIT Kerberos 认证](intl.zh-CN/开源组件介绍/Kerberos认证/兼容 MIT Kerberos 认证.md#)在 Hadoop 集群配置 Kerberos 认证；
 -   如果创建的是 Kafka 高安全集群，通过 Flume 将数据写入标准 Hadoop 集群，参见 [Kerberos Kafka Source](#section_l1j_3fs_zfb) 部分；
 -   如果创建的 Hadoop 集群和 Kafka 集群都是高安全集群，参照[跨域互信](intl.zh-CN/开源组件介绍/Kerberos认证/跨域互信.md#)进行配置，参见[跨域互信使用 Flume](#section_oft_fjs_zfb)；
 
@@ -17,7 +17,7 @@ E-MapReduce（以下简称 EMR） 从 3.16.0 版本开始支持 Apache Flume。�
 
 -   配置 Flume
 
-    创建配置文件flume.properties，添加如下配置。其中，配置项a1.sources.source1.kafka.bootstrap.servers为 Kafka 集群 broker 的 host 和端口号，a1.sources.source1.kafka.topics为 Flume 消费 Kafka 数据的 topic，a1.sinks.k1.hdfs.path为 Flume 向 HDFS 写入数据的路径：
+    创建配置文件flume.properties，添加如下配置。其中，配置项 a1.sources.source1.kafka.bootstrap.servers 为 Kafka 集群 broker 的 host 和端口号，a1.sources.source1.kafka.topics 为 Flume 消费 Kafka 数据的 topic，a1.sinks.k1.hdfs.path 为 Flume 向 HDFS 写入数据的路径：
 
     ```
     a1.sources = source1
@@ -59,30 +59,30 @@ E-MapReduce（以下简称 EMR） 从 3.16.0 版本开始支持 Apache Flume。�
 
 -   启动服务
 
-    Flume 的默认配置文件放在/etc/ecm/flume-conf下，使用该配置启动 Flume Agent：
+    Flume 的默认配置文件放在 /etc/ecm/flume-conf 下，使用该配置启动 Flume Agent：
 
     ```
     flume-ng agent --name a1 --conf /etc/ecm/flume-conf  --conf-file flume.properties
     ```
 
-    启动 Agent 后，因为使用了/etc/ecm/flume-conf下的log4j.properties，会在当前路径下生成日志logs/flume.log，可根据实际使用对log4j.properties进行配置。
+    启动 Agent 后，因为使用了 /etc/ecm/flume-conf 下的 log4j.properties，会在当前路径下生成日志 logs/flume.log，可根据实际使用对 log4j.properties 进行配置。
 
 -   测试
 
-    在 Kafka 集群使用kafka-console-producer.sh输入测试数据 abc
+    在 Kafka 集群使用 kafka-console-producer.sh 输入测试数据 abc
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/155858085933579_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/155963150733579_zh-CN.png)
 
-    Flume 会在 HDFS 中以当前时间的\(毫秒\)时间戳生成文件 FlumeData.xxxx，查看文件内容，会看到在 Kafka 中输入的数据
+    Flume 会在 HDFS 中以当前时间的\(毫秒\)时间戳生成文件 FlumeData.xxxx，查看文件内容，会看到在 Kafka 中输入的数据。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/155858085933580_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/155963150733580_zh-CN.png)
 
 
 ## Kafka-\>Hive {#section_xmd_bjr_zfb .section}
 
 -   创建 Hive 表
 
-    Flume 使用事务操作将数据写入 Hive，需要在创建 Hive 表时设置transactional属性，如创建 flume\_test 表：
+    Flume 使用事务操作将数据写入 Hive，需要在创建 Hive 表时设置 transactional 属性，如创建 flume\_test 表：
 
     ```
     create table flume_test (id int, content string)
@@ -92,7 +92,7 @@ E-MapReduce（以下简称 EMR） 从 3.16.0 版本开始支持 Apache Flume。�
 
 -   配置 Flume
 
-    创建配置文件flume.properties，添加如下配置。其中，配置项a1.sources.source1.kafka.bootstrap.servers填写 Kafka 集群 broker 的 host 和端口号，a1.sinks.k1.hive.metastore为 Hive metastore URI，配置为hive-site.xml中配置项hive.metastore.uris的值:
+    创建配置文件 flume.properties，添加如下配置。其中，配置项 a1.sources.source1.kafka.bootstrap.servers 填写 Kafka 集群 broker 的 host 和端口号，a1.sinks.k1.hive.metastore 为 Hive metastore URI，配置为 hive-site.xml 中配置项 hive.metastore.uris 的值：
 
     ```
     a1.sources = source1
@@ -131,7 +131,7 @@ E-MapReduce（以下简称 EMR） 从 3.16.0 版本开始支持 Apache Flume。�
 
 -   生成数据
 
-    在 Kafka 集群中使用kafka-console-producer.sh，以逗号为分隔符输入测试数据 1,a
+    在 Kafka 集群中使用kafka-console-producer.sh，以逗号为分隔符输入测试数据 1，a。
 
 -   检测数据写入
 
@@ -143,7 +143,7 @@ E-MapReduce（以下简称 EMR） 从 3.16.0 版本开始支持 Apache Flume。�
     hive.txn.manager – org.apache.hadoop.hive.ql.lockmgr.DbTxnManager
     ```
 
-    配置好后查询 flume\_test 表中的数据![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/155858085933581_en-US.png)
+    配置好后查询 flume\_test 表中的数据![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/155963150733581_en-US.png)
 
 
 ## Kafka-\>HBase {#section_alr_zjr_zfb .section}
@@ -152,11 +152,11 @@ E-MapReduce（以下简称 EMR） 从 3.16.0 版本开始支持 Apache Flume。�
 
     创建 HBase 表 flume\_test 及列簇 column
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/155858085933582_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/155963150733582_zh-CN.png)
 
 -   配置 Flume
 
-    创建配置文件flume.properties，添加如下配置。其中，配置项a1.sources.source1.kafka.bootstrap.servers为 Kafka 集群 broker 的 host 和端口号，a1.sinks.k1.table为 HBase 表名，a1.sinks.k1.columnFamily为列簇名：
+    创建配置文件 flume.properties，添加如下配置。其中，配置项 a1.sources.source1.kafka.bootstrap.servers 为 Kafka 集群 broker 的 host 和端口号，a1.sinks.k1.table 为 HBase 表名，a1.sinks.k1.columnFamily 为列簇名：
 
     ```
     a1.sources = source1
@@ -192,16 +192,16 @@ E-MapReduce（以下简称 EMR） 从 3.16.0 版本开始支持 Apache Flume。�
 
 -   测试
 
-    在 Kafka 集群使用kafka-console-producer.sh生成数据后，就可以在 HBase 查到数据
+    在 Kafka 集群使用 kafka-console-producer.sh 生成数据后，就可以在 HBase 查到数据
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/155858085933583_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/155963150733583_zh-CN.png)
 
 
 ## Kafka-\>OSS {#section_cys_5kr_zfb .section}
 
 -   创建 OSS 路径
 
-    创建 OSS Bucket 及目录，如oss://flume-test/result
+    创建 OSS Bucket 及目录，如 oss://flume-test/result
 
 -   配置 Flume
 
@@ -209,17 +209,17 @@ E-MapReduce（以下简称 EMR） 从 3.16.0 版本开始支持 Apache Flume。�
 
     -   修改 OSS 缓存大小
 
-        将hdfs-site.xml配置文件从/etc/ecm/hadoop-conf拷贝至/etc/ecm/flume-conf，改小配置项smartdata.cache.buffer.size的值，如修改为 1048576。
+        将 hdfs-site.xml 配置文件从 /etc/ecm/hadoop-conf 拷贝至 /etc/ecm/flume-conf，改小配置项 smartdata.cache.buffer.size 的值，例如修改为 1048576。
 
     -   修改 Xmx
 
-        在 Flume 的配置路径/etc/ecm/flume-conf下，复制配置文件flume-env.sh.template并重命名为flume-env.sh，设置 Xmx，如设置为 1 G ：
+        在 Flume 的配置路径 /etc/ecm/flume-conf 下，复制配置文件 flume-env.sh.template 并重命名为 flume-env.sh，设置 Xmx，例如设置为 1 G ：
 
         ```
         export JAVA_OPTS="-Xmx1g"
         ```
 
-    创建配置文件flume.properties，添加如下配置。其中，配置项a1.sources.source1.kafka.bootstrap.servers填写 Kafka 集群 broker 的 host 和端口号，a1.sinks.k1.hdfs.path为 OSS 路径：
+    创建配置文件 flume.properties，添加如下配置。其中，配置项 a1.sources.source1.kafka.bootstrap.servers 填写 Kafka 集群 broker 的 host 和端口号，a1.sinks.k1.hdfs.path 为 OSS 路径：
 
     ```
     a1.sources = source1
@@ -262,17 +262,17 @@ E-MapReduce（以下简称 EMR） 从 3.16.0 版本开始支持 Apache Flume。�
 
 -   测试
 
-    在 Kafka 集群使用kafka-console-producer.sh生成数据后，在 OSS 的oss://flume-test/result路径下会以当前时间的\(毫秒\)时间戳为后缀生成文件FlumeData.xxxx
+    在 Kafka 集群使用 kafka-console-producer.sh 生成数据后，在 OSS 的 oss://flume-test/result 路径下会以当前时间的\(毫秒\)时间戳为后缀生成文件 FlumeData.xxxx。
 
 
 ## Kerberos Kafka source {#section_l1j_3fs_zfb .section}
 
 消费高安全 Kafka 集群的数据时，需要做额外的配置：
 
--   参照[兼容 MIT Kerberos 认证](intl.zh-CN/开源组件介绍/Kerberos认证/兼容MIT Kerberos认证.md#)在 Kafka 集群配置 Kerberos 认证，将生成的 keytab 文件test.keytab拷贝至 Hadoop 集群的/etc/ecm/flume-conf路径下；将 Kafka集群的/etc/ecm/has-conf/krb5.conf文件拷贝至 Hadoop 集群的/etc/ecm/flume-conf路径下。
--   配置flume.properties 
+-   参见[兼容 MIT Kerberos 认证](intl.zh-CN/开源组件介绍/Kerberos认证/兼容 MIT Kerberos 认证.md#)在 Kafka 集群配置 Kerberos 认证，将生成的 keytab 文件 test.keytab 拷贝至 Hadoop 集群的 /etc/ecm/flume-conf 路径下；将 Kafka 集群的 /etc/ecm/has-conf/krb5.conf 文件拷贝至 Hadoop 集群的 /etc/ecm/flume-conf 路径下。
+-   配置 flume.properties 
 
-    在flume.properties中添加如下配置：
+    在 flume.properties 中添加如下配置：
 
     ```
     a1.sources.source1.kafka.consumer.security.protocol = SASL_PLAINTEXT
@@ -281,7 +281,7 @@ E-MapReduce（以下简称 EMR） 从 3.16.0 版本开始支持 Apache Flume。�
     ```
 
 -   配置 Kafka client
-    -   在/etc/ecm/flume-conf下创建文件flume\\\_jaas.conf，内容如下：
+    -   在 /etc/ecm/flume-conf 下创建文件 flume\\\_jaas.conf，内容如下：
 
         ```
         KafkaClient {
@@ -294,11 +294,12 @@ E-MapReduce（以下简称 EMR） 从 3.16.0 版本开始支持 Apache Flume。�
         };
         ```
 
-        其中，$\{realm\}替换为 Kafka 集群的 Kerberos realm。获取方式为，在 Kafka 集群执行命令hostname，得到形式为emr-header-1.cluster-xxx的主机名，如emr-header-1.cluster-123456，最后的数字串 123456 即为 realm
+        其中，$\{realm\} 替换为 Kafka 集群的 Kerberos realm。获取方式为：
 
+        -   在 Kafka 集群执行命令 hostname，得到形式为 emr-header-1.cluster-xxx 的主机名，例如 emr-header-1.cluster-123456，最后的数字串 123456 即为 realm
     -   修改/etc/ecm/flume-conf/flume-env.sh 
 
-        初始情况下，/etc/ecm/flume-conf/下没有flume-env.sh文件，需要拷贝flume-env.sh.template并重命名为flume-env.sh。添加如下内容：
+        初始情况下，/etc/ecm/flume-conf/ 下没有 flume-env.sh 文件，需要拷贝 flume-env.sh.template 并重命名为 flume-env.sh。添加如下内容：
 
         ```
         export JAVA_OPTS="$JAVA_OPTS -Djava.security.krb5.conf=/etc/ecm/flume-conf/krb5.conf"
@@ -307,19 +308,19 @@ E-MapReduce（以下简称 EMR） 从 3.16.0 版本开始支持 Apache Flume。�
 
 -   设置域名
 
-    将 Kafka 集群各节点的长域名和 IP 的绑定信息添加到 Hadoop 集群的/etc/hosts。长域名的形式例如emr-header-1.cluster-123456
+    将 Kafka 集群各节点的长域名和 IP 的绑定信息添加到 Hadoop 集群的/etc/hosts。长域名的形式例如 emr-header-1.cluster-123456。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/155858085933590_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/67072/155963150733590_zh-CN.png)
 
 
 ## 跨域互信使用 Flume {#section_oft_fjs_zfb .section}
 
 在配置了跨域互信后，其他配置如下：
 
--   参照[兼容 MIT Kerberos 认证](intl.zh-CN/开源组件介绍/Kerberos认证/兼容MIT Kerberos认证.md#)在 Kafka 集群配置 Kerberos 认证，将生成的 keytab 文件test.keytab拷贝至 Hadoop 集群的/etc/ecm/flume-conf路径下。
--   配置flume.properties 
+-   参见[兼容 MIT Kerberos 认证](intl.zh-CN/开源组件介绍/Kerberos认证/兼容 MIT Kerberos 认证.md#)在 Kafka 集群配置 Kerberos 认证，将生成的 keytab 文件 test.keytab 拷贝至 Hadoop 集群的 /etc/ecm/flume-conf 路径下。
+-   配置 flume.properties 
 
-    在flume.properties中添加如下配置：
+    在 flume.properties 中添加如下配置：
 
     ```
     a1.sources.source1.kafka.consumer.security.protocol = SASL_PLAINTEXT
@@ -328,7 +329,7 @@ E-MapReduce（以下简称 EMR） 从 3.16.0 版本开始支持 Apache Flume。�
     ```
 
 -   配置 Kafka client
-    -   在/etc/ecm/flume-conf下创建文件flume\\\_jaas.conf，内容如下：
+    -   在 /etc/ecm/flume-conf 下创建文件 flume\\\_jaas.conf，内容如下：
 
 ```
 KafkaClient {
@@ -341,8 +342,9 @@ KafkaClient {
 };
 ```
 
-        其中，$\{realm\}替换为 Kafka 集群的 Kerberos realm。获取方式为，在 Kafka 集群执行命令hostname，得到形式为emr-header-1.cluster-xxx的主机名，如emr-header-1.cluster-123456，最后的数字串 123456 即为 realm。
+        其中，$\{realm\} 替换为 Kafka 集群的 Kerberos realm。获取方式为：
 
+        -   在 Kafka 集群执行命令hostname，得到形式为emr-header-1.cluster-xxx的主机名，如emr-header-1.cluster-123456，最后的数字串 123456 即为 realm。
     -   修改/etc/ecm/flume-conf/flume-env.sh 
 
         初始情况下，/etc/ecm/flume-conf/下没有flume-env.sh文件，需要拷贝flume-env.sh.template并重命名为flume-env.sh。添加如下内容：
