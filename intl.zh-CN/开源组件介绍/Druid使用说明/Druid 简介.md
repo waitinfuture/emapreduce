@@ -6,10 +6,10 @@ Druid 是 Metamarkets 公司（一家为在线媒体或广告公司提供数据�
 
 Druid 具有以下特点：
 
--   亚秒级 OLAP 查询，包括多维过滤、ad-hoc 的属性分组、快速聚合数据等等。
+-   亚秒级 OLAP 查询，包括多维过滤、Ad-hoc 的属性分组、快速聚合数据等等。
 -   实时的数据消费，真正做到数据摄入实时、查询结果实时。
 -   高效的多租户能力，最高可以做到几千用户同时在线查询。
--   扩展性强，支持PB级数据、千亿级事件快速处理，支持每秒数千查询并发。
+-   扩展性强，支持 PB 级数据、千亿级事件快速处理，支持每秒数千查询并发。
 -   极高的高可用保障，支持滚动升级。
 
 ## 应用场景 {#section_lcb_mkd_z2b .section}
@@ -29,7 +29,7 @@ Druid 拥有优秀的架构设计，多个组件协同工作，共同完成数�
 
 下图是 Druid 工作层（数据索引以及查询）包含的组件。
 
-![Druid工作层](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17905/155643648010852_zh-CN.png)
+![Druid工作层](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17905/155963106010852_zh-CN.png)
 
 -   Realtime 组件负责数据的实时摄入。
 -   Broker 阶段负责查询任务的分发以及查询结果的汇总，并将结果返回给用户。
@@ -40,7 +40,7 @@ Druid 拥有优秀的架构设计，多个组件协同工作，共同完成数�
 
 下图是 Druid segments（Druid 索引文件）管理层所涉及的组件。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17905/155643648010853_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17905/155963106010853_zh-CN.png)
 
 -   Zookeeper 负责存储集群的状态以及作为服务发现组件，例如集群的拓扑信息，overlord leader 的选举，indexing task 的管理等等。
 -   Coordinator 负责 segments 的管理，如 segments 下载、删除以及如何在 historical 之间做均衡等等。
