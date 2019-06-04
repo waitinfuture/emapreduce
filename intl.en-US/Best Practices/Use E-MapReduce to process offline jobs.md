@@ -31,7 +31,7 @@ This process includes two steps:
     -   Software: HDFS2.7.2, YARN2.7.2, Hive2.3.3, Ganglia3.7.2, Spark2.3.1, HUE4.1.0, Zeppelin0.8.0, Tez0.9.1, Sqoop1.4.7, Pig0.14.0, ApacheDS2.0.0, and Knox0.13.0
     -   The network type of this Hadoop cluster is VPC in the China \(Hangzhou\) region. The master instance group is configured with a public IP and an internal network IP. The high availability mode is set to No \(a non-HA mode\). The following figure shows the details.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21330/155961841111874_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21330/155961849611874_en-US.png)
 
 
 ## Procedures {#section_f2w_y31_dfb .section}
@@ -61,11 +61,11 @@ This process includes two steps:
 
     For more information, see [Edit jobs](../DNemapreduce1876943/EN-US_TP_17962.dita#concept_iny_t1f_z2b). Take a MapReduce job as an example.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21330/155961841111891_en-US.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21330/155961849611891_en-US.jpg)
 
 6.  After you configure a job, click **Run**. The following figure shows the details.
 
-    -   For more information about how to use OSS, see [OSS 参考使用说明](../../../../reseller.en-US/Developer Guide/Preparations/Configure the OSS URI to use E-MapReduce.md#).
+    -   For more information about how to use OSS, see [Configure the OSS URI to use E-MapReduce](../../../../reseller.en-US/Developer Guide/Preparations/Configure the OSS URI to use E-MapReduce.md#).
     -   For more information about how to configure jobs, see the *job* section of the E-MapReduce User Guide.
     **Note:** 
 
