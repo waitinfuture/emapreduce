@@ -6,7 +6,7 @@
 
 ## 准备工作 {#section_wgp_pww_y2b .section}
 
-在集群建立出来之后，需要打通 SSH 隧道，详细步骤请参见[SSH 登录集群](../../../../intl.zh-CN/集群规划与配置/集群配置/SSH 登录集群.md#)。
+在集群建立出来之后，需要打通 SSH 隧道，详细步骤请参见 [SSH 登录集群](../../../../intl.zh-CN/集群规划与配置/集群配置/SSH 登录集群.md#)。
 
 这里以 MAC 环境为例，使用 Chrome 浏览器实现端口转发（假设集群 Master 节点公网 IP 为 **xx.xx.xx.xx**）：
 
@@ -48,13 +48,13 @@
 
 在进行端口转发的 Chrome 浏览器中访问：xx.xx.xx.xx:11000/oozie，localhost:11000/oozie 或者内网 ip:11000/oozie。
 
-## 提交workflow作业 {#section_pnw_qyw_y2b .section}
+## 提交 Workflow 作业 {#section_pnw_qyw_y2b .section}
 
 运行 Oozie 需要先安装 Oozie 的 [shareLib](https://oozie.apache.org/docs/4.2.0/WorkflowFunctionalSpec.html#ShareLib)。
 
 在 E-MapReduce 集群中，默认给 Oozie 用户安装了 sharelib，即如果使用 Oozie 用户来提交 workflow 作业，则不需要再进行 sharelib 的安装。
 
-由于开启 HA的集群和没有开启 HA 的集群，访问 NameNode 和 ResourceManager 的方式不同，在提交 oozie workflow job 的时候，job.properties 文件中需要指定不同的 NameNode 和 JobTracker （ResourceManager）。具体如下：
+由于开启 HA 的集群和没有开启 HA 的集群，访问 NameNode 和 ResourceManager 的方式不同，在提交 oozie workflow job 的时候，job.properties 文件中需要指定不同的 NameNode 和 JobTracker （ResourceManager）。具体如下：
 
 -   非 HA 集群
 
@@ -71,10 +71,10 @@
     ```
 
 
-下面操作示例中，已经针对是否是 HA 集群配置好了，即样例代码不需要任何修改即可以直接运行。关于 workflow 文件的具体格式，请参考 Oozie 官方文档：[https://oozie.apache.org/docs/4.2.0/](https://oozie.apache.org/docs/4.2.0/%E3%80%82).
+下面操作示例中，已经针对是否是 HA 集群配置好了，即样例代码不需要任何修改即可以直接运行。关于 workflow 文件的具体格式，请参见 [Oozie 官方文档](https://oozie.apache.org/docs/)。
 
 -   **在非 HA 集群上提交 workflow 作业** 
-    1.  登录集群的主 master 节点。
+    1.  登录集群的主 Master 节点。
 
         ```
         ssh root@master公网Ip
