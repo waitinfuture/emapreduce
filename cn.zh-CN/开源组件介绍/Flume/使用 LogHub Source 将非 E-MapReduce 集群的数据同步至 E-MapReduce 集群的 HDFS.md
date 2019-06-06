@@ -1,6 +1,6 @@
 # 使用 LogHub Source 将非 E-MapReduce 集群的数据同步至 E-MapReduce 集群的 HDFS {#concept_227958 .concept}
 
-本文介绍使用 EMR-Flume 实时同步 Log Service 的数据至 EMR 集群的 HDFS，并根据 record timestamp 将数据存入 HDFS 相应的 partition 中。
+本文介绍使用 EMR-Flume 实时同步 Log Service 的数据至 EMR 集群的 HDFS，并根据数据记录的时间戳将数据存入 HDFS 相应的分区中。
 
 ## 背景信息 {#section_lan_bd8_e9r .section}
 
@@ -70,9 +70,9 @@ E-MapReduce 从 3.20.0 版本开始对 EMR-Flume 加入了 Log Service Source。
 
 ## 运行 Flume agent {#section_bh6_l36_4xh .section}
 
-在 Console 页面启动 Flume agent 的具体操作参见 [Flume 使用说明](intl.zh-CN/开源组件介绍/Flume/Flume 使用说明.md#)。成功启动后，可以看到配置的 HDFS 路径下按照 record timestamp 存储的日志数据。
+在 阿里云 E-Mapreduce 控制台页面启动 Flume agent 的具体操作参见 [Flume 使用说明](intl.zh-CN/开源组件介绍/Flume/Flume 使用说明.md#)。成功启动后，可以看到配置的 HDFS 路径下按照 record timestamp 存储的日志数据。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/190546/155859723346306_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/190546/155980209446306_zh-CN.png)
 
-查看 Log Service 上的消费组状态：
+查看 Log Service 上的消费组状态，详细步骤请参见[消费组状态](../../../../intl.zh-CN/用户指南/实时消费/消费组消费/消费组状态.md#)：
 
