@@ -18,8 +18,8 @@ You can call this operation to view the details of an EMR version.
 |EmrMainVersion| | |The details of the EMR version.|
 |RegionId|String|cn-hangzhou|The region ID.|
 |EmrVersion|String|EMR-3.15.0|The version.|
-|EcmVersion|Boolean|true|
-|ImageId|String|m-546h5ytodhmtrohm54ortb|The ID of the image.|
+|EmrVersion|Boolean|true| |
+|ImageId|String| |The ID of the image.|
 |Display|Boolean|True|Indicates whether the version is open to the public.|
 |StackName|String|EMR|The name of the software stack.|
 |StackVersion|String|0|A reserved parameter.|
