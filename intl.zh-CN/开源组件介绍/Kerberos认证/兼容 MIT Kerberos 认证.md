@@ -17,7 +17,7 @@ EMR 集群中 Kerberos 服务端启动在 master 节点，涉及一些管理操�
         ```
 
     -   添加 principal
-        -   登录集群 emr-header-1 节点，切到 root 账号。
+        -   登录集群 emr-header-1 节点（必须是 header-1，HA 不能在 header-2 上操作），切换到 root 账号。
         -   进入 Kerberos 的 admin 工具。
         -   ``` {#codeblock_x3a_buk_vib}
   sh /usr/lib/has-current/bin/hadmin-local.sh /etc/ecm/has-conf -k /etc/ecm/has-conf/admin.keytab
@@ -27,6 +27,8 @@ EMR 集群中 Kerberos 服务端启动在 master 节点，涉及一些管理操�
 ```
 
     -   导出 keytab 文件
+
+        登录集群 emr-header-1（必须是 header-1，HA 不能在header-2操作），导入 keytab 文件。
 
         使用 Kerberos 的 admin 工具可以导出 principal 对应的 keytab 文件。
 
@@ -65,7 +67,7 @@ EMR 集群中 Kerberos 服务端启动在 master 节点，涉及一些管理操�
 
             **说明：** MITKerberos 工具使用实例
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17935/155963236611126_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17935/156041837311126_zh-CN.png)
 
     -   执行 hdfs 命令
 
