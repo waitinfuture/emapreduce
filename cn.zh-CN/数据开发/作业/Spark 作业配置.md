@@ -11,7 +11,7 @@
 5.  填写作业名称，作业描述。
 6.  选择 Spark 作业类型，表示创建的作业是一个 Spark 作业。Spark 作业在 E-MapReduce 后台使用以下的方式提交：
 
-    ```
+    ``` {#codeblock_1fz_e6n_80z}
     spark-submit [options] --class [MainClass] xxx.jar args
     ```
 
@@ -30,17 +30,17 @@
 
             -   在命令行下完整的提交命令是：
 
-                ```
+                ``` {#codeblock_sbn_4vj_6m9}
                 spark-submit --master yarn-client --driver-memory 7G --executor-memory 5G --executor-cores 1 --num-executors 32 --class com.aliyun.emr.checklist.benchmark.SparkWordCount emr-checklist_2.10-0.1.0.jar oss://emr/checklist/data/wc oss://emr/checklist/data/wc-counts 32
                 ```
 
             -   在 E-MapReduce 作业的**作业内容**输入框中只需要填写：
 
-                ```
+                ``` {#codeblock_614_k1h_s15}
                 --master yarn-client --driver-memory 7G --executor-memory 5G --executor-cores 1 --num-executors 32 --class com.aliyun.emr.checklist.benchmark.SparkWordCount ossref://emr/checklist/jars/emr-checklist_2.10-0.1.0.jar oss://emr/checklist/data/wc oss://emr/checklist/data/wc-counts 32
                 ```
 
-            **说明：** 作业 Jar 包保存在 OSS 中，引用这个 Jar 包的方式是 ossref://emr/checklist/jars/emr-checklist\_2.10-0.1.0.jar。您可以单击**选择 OSS 路径**，从 OSS 中进行浏览和选择，系统会自动补齐 OSS 上 Spark 脚本的绝对路径。请务必将默认的 oss 协议切换成 ossref 协议。
+            **说明：** 作业 jar 包保存在 OSS 中，引用这个 jar 包的方式是 ossref://emr/checklist/jars/emr-checklist\_2.10-0.1.0.jar。您可以单击**选择OSS路径**，从 OSS 中进行浏览和选择，系统会自动补齐 OSS 上 Spark 脚本的绝对路径。请务必将默认的 OSS 协议切换成 ossref 协议。
 
     -   创建 pyspark 作业
 
@@ -50,7 +50,7 @@
         -   类型：Spark
         -   应用参数：
 
-            ```
+            ``` {#codeblock_jb5_wa3_0jv}
             --master yarn-client --driver-memory 7g --num-executors 10 --executor-memory 5g --executor-cores 1  ossref://emr/checklist/python/kmeans.py oss://emr/checklist/data/kddb 5 32
             ```
 
