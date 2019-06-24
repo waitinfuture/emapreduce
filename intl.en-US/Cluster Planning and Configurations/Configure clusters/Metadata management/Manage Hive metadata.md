@@ -4,7 +4,7 @@ E-MapReduce has supported unified metadata management since V2.4.0. Before V2.4.
 
 ## Overview {#section_fkz_hyk_z2b .section}
 
-![Hive metadatabases](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/155928819811067_en-US.png)
+![Hive metadatabases](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/156135848711067_en-US.png)
 
 With unified metadata management, the following features are supported.
 
@@ -50,13 +50,13 @@ Before unified metadata management is supported, metadata is stored in the local
 
 -   Operate tables
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/155928819811078_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/156135848811078_en-US.png)
 
     Create a table: currently, only creating external tables and partition tables is supported. The separators can be common characters such as commas and spaces, special characters such as TAB, ^A, ^B, and ^C, and custom separators.
 
 -   Table details
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/155928819811079_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/156135848811079_en-US.png)
 
     View partitions: For partition tables, you can go to **Table Details** \> **Partitions** to view the partition lists. A maximum of 10,000 partitions can be displayed.
 
@@ -67,7 +67,7 @@ Before unified metadata management is supported, metadata is stored in the local
     -   The location of a database or table must be in a directory under the OSS bucket, rather than the OSS bucket.
 -   Metadatabase information
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/155928819811080_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/156135848811080_en-US.png)
 
     On the metatabase information page, you can view the usage and restrictions of the current RDS instance. Submit a ticket if you need to modify the information.
 
@@ -84,7 +84,7 @@ Before unified metadata management is supported, metadata is stored in the local
     4.      5.  Log on to the [Alibaba Cloud E-MapReduce console](https://partners-intl.console.aliyun.com/#/emr). Click the **Cluster Management** tab to go to the Cluster Management page.
     6.  Click the cluster ID to go to the Clusters and Services page. On the Services list, click **Hive** \> **Configure** to go to the Hive configuration page. Locate the values of the following configuration items. For earlier versions of EMR clusters that do not support configuration management, locate the configuration items in the $HIVE\_CONF\_DIR/hive-site.xml file.
 
-        ```
+        ``` {#codeblock_gdg_zjf_bvi}
         javax.jdo.option.ConnectionUserName //the database username;
         javax.jdo.option.ConnectionPassword //the database password;
         javax.jdo.option.ConnectionURL //the database connection URL and database name;
@@ -92,7 +92,7 @@ Before unified metadata management is supported, metadata is stored in the local
 
     7.  Run the following command to log on to the master node of the cluster using [SSH](reseller.en-US/Cluster Planning and Configurations/Configure clusters/Connect to a cluster using SSH.md#).
 
-        ```
+        ``` {#codeblock_k65_327_7zv}
         mysqldump　-t　hivemeta -h <unified metadatabase connection URL >　-u <unified metadatabase username>　-p　>　/tmp/metastore.sql
         ```
 
@@ -102,15 +102,15 @@ Before unified metadata management is supported, metadata is stored in the local
     9.  On the Hive configuration page, set the connection URL, username, and password of the RDS instance for the metadatabase. For earlier versions of EMR clusters that do not support configuration management, locate the configuration items in the $HIVE\_CONF\_DIR/hive-site.xml file.
     10. On the master node, set the connection URL, username, and password of the RDS instance for the metadatabase in the hive-site.xml file. Run the init schema command.
 
-        ```
+        ``` {#codeblock_e7h_kcl_jxw}
         cd /usr/lib/hive-current/bin
         ./schematool -initSchema -dbType mysql
         ```
 
     11. Import the exported metadata to the RDS instance. Use the CLI to log on to MySQL.
 
-        ```
-        mysql -h {rds的url} -u {RDS username} -p
+        ``` {#codeblock_whx_jp0_09f}
+        mysql -h {The url of rds} -u {RDS username} -p
         ```
 
         In the MySQL CLI, run the source /tmp/metastore.sql file.
@@ -137,23 +137,23 @@ Before unified metadata management is supported, metadata is stored in the local
 
     Log on to the master node of the cluster using the command line, and find the address, username, and password for accessing the Hive metadatabase in $HIVE\_CONF\_DIR/hive-site.xml.
 
-    ```
+    ``` {#codeblock_v6n_gmd_gsy}
     javax.jdo.option.ConnectionUserName //the database username;
     javax.jdo.option.ConnectionPassword //the database password;
     javax.jdo.option.ConnectionURL //the database connection URL and database name;
     ```
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/155928819811097_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/156135848811097_en-US.png)
 
     Connect to the Hive metadatabase on the master node.
 
-    ```
+    ``` {#codeblock_q7d_f4j_a6t}
     mysql -h ${DBConnectionURL} -u ${ConnectionUserName} -p [Press Enter]
     [Enter the password]${ConnectionPassword}
     ```
 
     After logging on to the Hive metadatabase, change its location to an existing OSS path in the region:
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/155928819911102_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/156135848811102_en-US.png)
 
 
