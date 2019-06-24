@@ -67,7 +67,7 @@ EMR 集群中 Kerberos 服务端启动在 master 节点，涉及一些管理操�
 
             **说明：** MITKerberos 工具使用实例
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17935/156041837311126_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17935/156135062011126_zh-CN.png)
 
     -   执行 hdfs 命令
 
