@@ -1,10 +1,10 @@
 # Edit a job {#concept_iny_t1f_z2b .concept}
 
-In a project, you can create Shell, Hive, Spark, SparkSQL, MapReduce, Sqoop, Pig, and Spark Streaming jobs.
+In a project, you can create Shell, Hive, Hive SQL, Spark, SparkSQL, MapReduce, Sqoop, Pig, Spark Streaming, and Flink jobs.
 
 ## Create a job {#section_ibf_v1f_z2b .section}
 
-1.  Log on to the [Alibaba Cloud E-MapReduce console](https://emr.console.aliyun.com/console).
+1.  Log on to the [Alibaba Cloud E-MapReduce console](https://partners-intl.console.aliyun.com/#/emr).
 2.  Click the Data Platform tab to enter the Projects page.
 3.  Click **Workflows** in the Actions column. Click **Edit Job** in the left-side navigation pane to go to the Edit Job page.
 4.  In the left-side navigation pane, right-click a folder as required and select **Create Job** from the drop-down list.
@@ -19,7 +19,7 @@ In a project, you can create Shell, Hive, Spark, SparkSQL, MapReduce, Sqoop, Pig
 
 ## Develop a job {#section_zgm_x1f_z2b .section}
 
-For more information, see the [EN-US\_TP\_17867.md\#](intl.en-US/Data Development/Jobs/Configure a Hadoop MapReduce job.md#) section in *EMR User Guide* .
+For more information, see the [Configure a Hadoop MapReduce job](reseller.en-US/Data Development/Jobs/Configure a Hadoop MapReduce job.md#) section in *EMR User Guide* .
 
 **Note:** If you choose ossref:// as the OSS path prefix, the file that is stored in the OSS path is downloaded to the local machine and the local path is added to the value of the Classpath parameter.
 
@@ -63,7 +63,7 @@ For more information, see the [EN-US\_TP\_17867.md\#](intl.en-US/Data Developmen
 
         For example, the content in a Shell job is `echo ${ENV_ABC}`. You set `ENV_ABC=12345` for the environment variable. A result of 12345 is returned by using the echo command. If the content of the job is `java -jar abc.jar` and the content of the abc.jar file is as follows:
 
-        ```
+        ``` {#codeblock_pml_96n_jvt}
         public static void main(String[] args) {System.out.println(System.getEnv("ENV_ABC"));}
         ```
 
@@ -71,7 +71,7 @@ For more information, see the [EN-US\_TP\_17867.md\#](intl.en-US/Data Developmen
 
         Configuring the environment variable has the same effect of executing the following script.
 
-        ```
+        ``` {#codeblock_rk0_7f3_5y2}
         export ENV_ABC=12345
         java -jar abc.jar
         ```
@@ -112,10 +112,10 @@ After you execute a job, you can view the running logs on the Records tab page a
 
     For streaming jobs such as Spark Streaming jobs, we recommend that you enable log rolling to avoid insufficient disk capacity caused by many logs of long-running jobs. Perform the following steps.
 
-    1.  In the [E-MapReduce console](https://emr.console.aliyun.com/), choose **Data Development** \> **Project ID** \> **Edit Job** \> **Job Settings** \> **Advanced Settings**.
+    1.  In the [E-MapReduce console](https://partners-intl.console.aliyun.com/#/emr), choose **Data Development** \> **Project ID** \> **Edit Job** \> **Job Settings** \> **Advanced Settings**.
     2.  In the Environment Variables section, click the plus sign \(**+**\) to add the following environment variable.
 
-        ```
+        ``` {#codeblock_z1m_b6u_8ho}
         FLOW_ENABLE_LOG_ROLLING = true
         ```
 
