@@ -8,15 +8,15 @@ When you need to transfer data from external databases to your EMR cluster, make
 
     We recommend that you use an EMR cluster deployed in the classic network to access a classic network RDS instance. You can set internal and public IP addresses for classic network RDS instances. Sqoop synchronizes data by running map tasks on the master node and worker nodes. However, only the master node of a classic network EMR cluster can access the public network. You need to access the internal IP address of the RDS instance for Sqoop. Make sure that the internal IP address of the EMR cluster is in the whitelist of the RDS instance.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/328059/156093726748260_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/328059/156170616648260_en-US.png)
 
     For more information about how to create a classic network EMR cluster, see [Create a cluster](../../../../reseller.en-US/Cluster Planning and Configurations/Configure clusters/Create a cluster.md#).
 
 -   VPC
 
-    If the RDS is in a VPC network, you must specify a VPC network for the EMR cluster. We recommend that you use the same VPC for your EMR cluster and the RDS instance to save time for configuring a network connection. Otherwise, use [Express Connect](https://help.aliyun.com/product/27782.html) to configure a network connection.
+    If the RDS is in a VPC network, you must specify a VPC network for the EMR cluster. We recommend that you use the same VPC for your EMR cluster and the RDS instance to save time for configuring a network connection. Otherwise, use [Express Connect](https://www.alibabacloud.com/help/zh/product/27782.html) to configure a network connection.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/328059/156093726748269_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/328059/156170616648269_en-US.png)
 
 
 ## User-created database hosted on ECS {#section_5lw_w9o_j3p .section}
@@ -40,6 +40,6 @@ You can assign an EIP address to your EMR cluster and access the public IP addre
 
 -   Express Connect
 
-    If the on-premises database is not allowed to be accessed over the public network, create an EMR cluster in a VPC and use Express Connect to connect the on-premises IDC and the VPC. For more information about Express Connect, see [Express Connect](https://help.aliyun.com/product/27782.html).
+    If the on-premises database is not allowed to be accessed over the public network, create an EMR cluster in a VPC and use Express Connect to connect the on-premises IDC and the VPC. For more information about Express Connect, see [Express Connect](https://www.alibabacloud.com/help/zh/product/27782.html).
 
 
