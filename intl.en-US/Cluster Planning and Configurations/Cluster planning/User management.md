@@ -15,7 +15,9 @@ User management allows you to manage the accounts required to create services on
 2.  In the **Add Knox User** dialog box, enter a password to use for logon and click **OK**.
 3.  Refresh the **User Management** page. When **Synchronized** is displayed in the **Knox Account** column, you have successfully added the Knox account.
 
-    You can then sign in to Knox using the **User Name** and the password set in [Step 2](#).
+    You can then sign in to Knox using the **User Name** and the password set in the preceding step.
+
+    For more information about how to use Knox, see [../../../../dita-oss-bucket/SP\_159/DNEMAPREDUCE19100417/EN-US\_TP\_17921.md\#](../../../../reseller.en-US/Open Source Components /Knox.md#).
 
 
 ## Delete a Knox account {#section_vqv_tpl_z2b .section}
