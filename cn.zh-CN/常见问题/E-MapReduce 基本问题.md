@@ -23,19 +23,19 @@ A：按照如下步骤：
 
 1.  首先在 Master 节点上切换到 Hadoop 账号：
 
-    ```
+    ``` {#codeblock_t71_xwl_0qi}
     su hadoop
     ```
 
 2.  然后即可免密码 SSH 登录到对应的 Core 节点：
 
-    ```
+    ``` {#codeblock_juc_e6u_0tk}
     ssh emr-worker-1
     ```
 
 3.  通过 sudo可以获得 root 权限：
 
-    ```
+    ``` {#codeblock_4ji_q8r_tsg}
     sudo vi /etc/hosts
     ```
 
@@ -88,7 +88,7 @@ A：可以。前置条件：是创建集群时打开**运行日志**选项。查
 
 A：例如：
 
-```
+``` {#codeblock_0un_mqi_lbn}
 CREATE EXTERNAL TABLE storage_log(content STRING) PARTITIONED BY (ds STRING)
     ROW FORMAT DELIMITED
     FIELDS TERMINATED BY '\t'
@@ -102,7 +102,7 @@ CREATE EXTERNAL TABLE storage_log(content STRING) PARTITIONED BY (ds STRING)
 
 实际上 Hive 并不会自动关联指定目录的 partitions 目录，您需要手动操作，例如：
 
-```
+``` {#codeblock_984_jyn_3yj}
 alter table storage_log add partition(ds=123);                                                                                                                                             OK
     Time taken: 0.137 seconds
     hive> select * from storage_log;
@@ -131,7 +131,7 @@ A：E-MapReduce 中包含一个 Master 节点和多个 Slave（或者 Worker）�
 
 A：方法有很多，这里给出一种方式。修改 mapred-site.xml 文件，例如：
 
-```
+``` {#codeblock_9rx_y28_20n}
 <property>  
     <name>mapred.child.java.opts</name>  
     <value>-Xmx1024m -Djava.library.path=/usr/local/share/</value>  
@@ -181,7 +181,7 @@ A：
 
 -   HA 集群（Discovery 模式）\)
 
-    ```
+    ``` {#codeblock_3r6_xut_96e}
     
     !connect jdbc:hive2://emr-header-1:2181,emr-header-2:2181,emr-header-3:2181/;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2;principal=hive/_HOST@EMR.${clusterId).COM
     ```
@@ -190,19 +190,19 @@ A：
 
     连 emr-header-1
 
-    ```
+    ``` {#codeblock_x2u_ik6_5my}
     !connect jdbc:hive2://emr-header-1:10000/;principal=hive/emr-header-1@EMR.${clusterId}.COM
     ```
 
     连 emr-header-2
 
-    ```
+    ``` {#codeblock_8fh_6y5_oz4}
     !connect jdbc:hive2://emr-header-2:10000/;principal=hive/emr-header-2@EMR.${clusterId}.COM
     ```
 
 -   非 HA 集群
 
-    ```
+    ``` {#codeblock_d5t_r2o_bos}
     !connect jdbc:hive2://emr-header-1:10000/;principal=hive/emr-header-1@EMR.${clusterId}.COM
     ```
 
@@ -211,9 +211,13 @@ A：
 
 A：
 
-可以查看 /mnt/disk1/log/spark 日志
+可以查看 /mnt/disk1/log/spark 日志。
 
 该问题是由于 thrift server oom，需要调大内存，调大 spark.driver.memory 值即可。
 
-。
+## Q：如何查看 E-MapReduce 服务的日志？ {#section_p2w_tac_lcr .section}
+
+A：
+
+登录 master 节点在 /mnt/disk1/log 中查看对应服务的日志。
 
