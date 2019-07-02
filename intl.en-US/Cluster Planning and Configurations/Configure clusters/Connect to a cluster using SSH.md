@@ -27,11 +27,11 @@ Environment variables have been configured on the instances. Frequently-used env
 
 You can reference the variables in the script. We recommend that you do not modify the values of the variables to avoid unexpected errors in the EMR cluster.
 
-## Connect to the master node { .section}
+## Connect to the master node {#section_2wn_p5g_77q .section}
 
 1.  Run the following command to connect to the master node using SSH. Check the public IP address of the master node in the Host section on the [Cluster list and details](reseller.en-US/Cluster Planning and Configurations/Configure clusters/Cluster list and details.md#) page.
 
-    ```
+    ``` {#codeblock_kvn_7ux_7f7}
     ssh root@ip.of.master
     ```
 
@@ -44,17 +44,17 @@ Typically, you need to connect to the cluster for management and operations. You
 1.  Connect to the master node as the root user by using a password.
 2.  Switch to the Hadoop user or the HDFS user.
 
-## Use SSH on Linux { .section}
+## Use SSH on Linux {#section_338_lnr_sg9 .section}
 
 1.  Send the private key file to your local system.
 
-    ```
+    ``` {#codeblock_7wk_r24_qn9}
     sz ~/.ssh/id_rsa
     ```
 
 2.  Go back to your local machine and connect to the master node again.
 
-    ```
+    ``` {#codeblock_nsw_zzh_72b}
     ssh -i private_key_path/id_rsa hadoop@120.26.221.130
     ```
 
@@ -89,7 +89,7 @@ You have multiple methods to connect to the master node using SSH without a pass
 
 ## View the Web UIs of Hadoop, Spark, and Ganglia {#section_plk_45g_1fb .section}
 
-**Note:** Make sure that you have completed the [SSH password-less logon](reseller.en-US/Cluster Planning and Configurations/Configure clusters/Connect to a cluster using SSH.md#section_xz1_c5g_1fb) procedure.
+**Note:** Make sure that you have completed the preceding [Connect to the master node using SSH without a password](#section_eqh_5tg_1fb) procedure.
 
 For security reasons, the ports of Web UIs for monitoring Hadoop, Spark, and Ganglia in an EMR cluster are closed. If you want to access these Web UIs, you need to create SSH tunnels and enable port forwarding. The methods are shown as follows:
 
@@ -101,13 +101,13 @@ For security reasons, the ports of Web UIs for monitoring Hadoop, Spark, and Gan
 
         Create an SSH tunnel to allow communication between your local machine and a dynamic port on the master node in the EMR cluster.
 
-        ```
+        ``` {#codeblock_f2z_yoo_sl4}
         ssh -i /path/id_xxx -ND 8157 hadoop@masterNodeIP
         ```
 
     -   Use a username and password:
 
-        ```
+        ``` {#codeblock_pfh_jiv_0zv}
         ssh -ND 8157 hadoop@masterNodeIP
         ```
 
@@ -119,7 +119,7 @@ For security reasons, the ports of Web UIs for monitoring Hadoop, Spark, and Gan
 
         We recommend that you use the Chrome browser. You can run the following command to access a Web UI.
 
-        ```
+        ``` {#codeblock_czi_3tj_mwn}
         chrome --proxy-server="socks5://localhost:8157" --host-resolver-rules="MAP * 0.0.0.0 , EXCLUDE localhost" --user-data-dir=/tmp/
         ```
 
@@ -142,7 +142,7 @@ For security reasons, the ports of Web UIs for monitoring Hadoop, Spark, and Gan
             3.  Click **New Profile**. In the Profile name field, enter "SSH tunnel." Click PAC Profile for the type of the profile.
             4.  In the PAC Script editor, enter the following code.
 
-                ```
+                ``` {#codeblock_781_y86_fdh}
                 function regExpMatch(url, pattern) {    
                   try { return new RegExp(pattern).test(url); } catch(ex) { return false; }    
                 }
@@ -161,12 +161,12 @@ For security reasons, the ports of Web UIs for monitoring Hadoop, Spark, and Gan
             5.  In the left-side navigation pane, click **Apply changes** to complete the configurations.
             6.  Start a CLI. Choose one of the following methods and run the corresponding command.
 
-                ```
+                ``` {#codeblock_h8l_emp_vot}
                 //Method a: Use a private key
                 ssh -i /path/id_xxx -ND 8157 hadoop@masterNodeIP
                 ```
 
-                ```
+                ``` {#codeblock_9bc_2ju_3c1}
                 //Method b: Use a username and password
                 ssh -ND 8157 hadoop@masterNodeIP
                 ```
@@ -180,7 +180,7 @@ For security reasons, the ports of Web UIs for monitoring Hadoop, Spark, and Gan
 1.  Assume that you use Chrome or Firefox. Click [Download FoxyProxy Standard](http://foxyproxy.mozdev.org/downloads.html).
 2.  After the installation is complete, restart your browser, open a text editor, and then enter the following code.
 
-    ```
+    ``` {#codeblock_tdh_kl1_2ht}
     <? xml version="1.0" encoding="UTF-8"? >
     <foxyproxy>
     <proxies>
@@ -210,13 +210,13 @@ For security reasons, the ports of Web UIs for monitoring Hadoop, Spark, and Gan
 
     -   Use a private key:
 
-        ```
+        ``` {#codeblock_3ya_t3l_7wu}
         ssh -i /path/id_rsa -N -L 8157:masterNodeIP:8088 hadoop@masterNodeIP
         ```
 
     -   Use a username and password:
 
-        ```
+        ``` {#codeblock_jxr_g81_aaf}
         ssh -N -L 8157:masterNodeIP:8088 hadoop@masterNodeIP 
         ```
 
