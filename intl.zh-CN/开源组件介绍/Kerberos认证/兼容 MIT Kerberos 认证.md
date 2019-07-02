@@ -67,7 +67,13 @@ EMR 集群中 Kerberos 服务端启动在 master 节点，涉及一些管理操�
 
             **说明：** MITKerberos 工具使用实例
 
-            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17935/156135062011126_zh-CN.png)
+            ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17935/156203404711126_zh-CN.png)
+
+    -   导入环境变量生效，执行：
+
+        ``` {#codeblock_746_etk_i99}
+        export HADOOP_CONF_DIR=/etc/has/hadoop-conf
+        ```
 
     -   执行 hdfs 命令
 
