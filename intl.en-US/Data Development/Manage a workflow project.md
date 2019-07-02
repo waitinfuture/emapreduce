@@ -4,12 +4,13 @@ After creating an E-MapReduce cluster, you can create workflow projects so that 
 
 ## Create a project {#section_bdl_sz2_z2b .section}
 
-1.  At the top of the page, click the Data Platform tab to enter the **Projects** page.
+1.  Log on to the [Alibaba Cloud E-MapReduce console](https://partners-intl.console.aliyun.com/#/emr) .
+2.  At the top of the page, click the Data Platform tab to enter the **Projects** page.
 
     Under the master account, you can view all ofits projects and RAM useraccounts. RAM users can only view projects if they have development permissions. The granting of project development permissions must be configured in the master account. For more information about authorization, see [User management](#section_qvv_yz2_z2b) below.
 
-2.  In the upper-right corner, click **New Project**. The **New Project** dialog box is displayed.
-3.  Enter the project name and description and click **Create**.
+3.  In the upper-right corner, click **New Project**. The **New Project** dialog box is displayed.
+4.  Enter the project name and description and click **Create**.
 
     **Note:** You can only create a project with the master account. **New Project**is only visible to the administrator of the master account.
 
