@@ -42,7 +42,7 @@ After creating a new project, you need to associate it with a cluster so that th
     **Note:** You can only associate cluster with the master account. The **Cluster Settings** tab is only visible to the administrator of the masteraccount.
 
 
-To set both the queue and user to submit jobs to the cluster, click **Modify Configuration** in the Operation column. Theconfiguration items are as follows:
+To set both the queue and user to submit jobs to the cluster, click **Modify Configuration** in the Operation column. The configuration items are as follows:
 
 -   Default Submit Job User: Sets the default Hadoop user who submits the job to the selected cluster in the project. The default value is hadoop. There can only be one default user.
 -   Default Submit Job Queue: Sets the default queue that the jobs are submitted to in the project. If you leave this blank, the job will be submitted to the default queue.
