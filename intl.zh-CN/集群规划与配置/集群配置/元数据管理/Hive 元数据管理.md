@@ -4,7 +4,7 @@
 
 ## 介绍 {#section_fkz_hyk_z2b .section}
 
-![hive元数据库](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/155849127511067_zh-CN.png)
+![hive元数据库](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/156282841011067_zh-CN.png)
 
 有了统一的元数据管理之后，就可以实现：
 
@@ -50,13 +50,13 @@
 
 -   表操作
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/155849127511078_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/156282841011078_zh-CN.png)
 
     表创建：当前仅支持外部表创建和分区表创建。分隔符不仅支持普通的逗号、空格等字符，还支持四种特殊字符：TAB、^A、^B 和 ^C，或者自定义分隔符。
 
 -   表详情
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/155849127511079_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/156282841111079_zh-CN.png)
 
     分区查看：对于分区表，可以在**表详情** \> **分区信息**页面查看分区列表，最多显示 10000 个分区。
 
@@ -67,7 +67,7 @@
     -   数据库和表的 location 都不能选择整个 OSS bucket，需要选择到 OSS bucket 下面的目录。
 -   元数据库信息
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/155849127511080_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/156282841111080_zh-CN.png)
 
     可以在元数据库信息页查看当前 RDS 的用量和使用限制，如需修改，请提交工单联系我们。
 
@@ -82,40 +82,40 @@
     2.  在 RDS 中创建一个 Database，命名为 hivemeta，同时创建一个用户，把 hivemeta 的读写权限赋给这个用户;
     3.  导出统一元数据库的内容（只导出数据，不用导表结构），为了保证数据的一致性，在执行这一步操作之前，最好将 hive 的 metastore 服务停掉，保证导出期间不会有新的 meta 数据变化。
     4.  登录[阿里云 E-MapReduce 控制台](https://emr.console.aliyun.com/)，单击上方**集群管理**页签进入集群管理页面。
-    5.      6.  单击对应集群 ID 进入集群与服务管理页面，在服务列表中依次单击**Hive** \> **配置**进入 Hive 管理页面，找到以下几个配置项的值（如果是不支持配置管理的老版本集群，在 $HIVE\_CONF\_DIR/hive-site.xml 中查找）：
+    5.  单击对应集群 ID 进入集群与服务管理页面，在服务列表中依次单击**Hive** \> **配置**进入 Hive 管理页面，找到以下几个配置项的值（如果是不支持配置管理的老版本集群，在 $HIVE\_CONF\_DIR/hive-site.xml 中查找）：
 
-        ```
+        ``` {#codeblock_i6l_rof_1ij}
         javax.jdo.option.ConnectionUserName //对应数据库用户名;
         javax.jdo.option.ConnectionPassword //对应数据库访问密码;
         javax.jdo.option.ConnectionURL //对应数据库访问地址和库名;
         ```
 
-    7.  使用 [SSH](intl.zh-CN/集群规划与配置/集群配置/SSH 登录集群.md#) 方式登录到集群 master 节点，执行以下命令：
+    6.  使用 [SSH](intl.zh-CN/集群规划与配置/集群配置/SSH 登录集群.md#) 方式登录到集群 master 节点，执行以下命令：
 
-        ```
+        ``` {#codeblock_kji_70e_5hx}
         mysqldump　-t　hivemeta -h <统一元数据库地址>　-u <统一元数据库用户名>　-p　>　/tmp/metastore.sql
         ```
 
         密码就是上面提到的配置中的对应数据库访问密码。
 
-    8.  修改集群 master 节点（如果是 HA 集群则两个 master 都需要）上的/usr/local/emr/emr-agent/run/meta\_db\_info.json，将文件中的use\_local\_meta\_db 设置为 false，meta 数据库信的链接地址、用户名和密码设置成 RDS 的信息。
-    9.  在 Hive 管理页面，把 meta 数据库信的链接地址、用户名和密码换成新 RDS 的信息；如果是不支持配置管理的老版本集群，修改 $HIVE\_CONF\_DIR/hive-site.xml 中的对应的配置为需要连接的数据库。
-    10. 在一台 master 节点上，把hive-site.xml中的 meta 数据库链接地址、用户名和密码换成 RDS 的信息，然后执行 init schema:
+    7.  修改集群 master 节点（如果是 HA 集群则两个 master 都需要）上的/usr/local/emr/emr-agent/run/meta\_db\_info.json，将文件中的use\_local\_meta\_db 设置为 false，meta 数据库信的链接地址、用户名和密码设置成 RDS 的信息。
+    8.  在 Hive 管理页面，把 meta 数据库信的链接地址、用户名和密码换成新 RDS 的信息；如果是不支持配置管理的老版本集群，修改 $HIVE\_CONF\_DIR/hive-site.xml 中的对应的配置为需要连接的数据库。
+    9.  在一台 master 节点上，把hive-site.xml中的 meta 数据库链接地址、用户名和密码换成 RDS 的信息，然后执行 init schema:
 
-        ```
+        ``` {#codeblock_j2g_ght_76c}
         cd /usr/lib/hive-current/bin
         ./schematool -initSchema -dbType mysql
         ```
 
-    11. 将之前导出来的 meta 数据导入 RDS。命令行登陆 mysql ：
+    10. 将之前导出来的 meta 数据导入 RDS。命令行登陆 mysql ：
 
-        ```
+        ``` {#codeblock_smf_0mj_iw9}
         mysql -h {rds的url} -u {rds的用户名} -p
         ```
 
         进入 mysql 的命令行之后，执行source /tmp/metastore.sql 正常情况可以完全导入，不会报错。
 
-    12. 在集群与服务管理，重启 Hive 所有组件，单击 **RESTART ALL COMPONENTS**。 验证 Hive功能是否正常，可以在 master 节点上，执行hive cli，查看数据是否与之前一致。
+    11. 在集群与服务管理，重启 Hive 所有组件，单击 **RESTART ALL COMPONENTS**。 验证 Hive功能是否正常，可以在 master 节点上，执行hive cli，查看数据是否与之前一致。
 
 ## 常见问题 {#section_jkt_hdl_z2b .section}
 
@@ -137,23 +137,23 @@
 
     首先，通过命令行登录到集群 master 节点上，找到 hive meta db 的访问地址和用户名密码信息，在$HIVE\_CONF\_DIR/hive-site.xml中，找到对应属性。
 
-    ```
+    ``` {#codeblock_0tj_9x0_z3m}
     javax.jdo.option.ConnectionUserName //对应数据库用户名;
     javax.jdo.option.ConnectionPassword //对应数据库访问密码;
     javax.jdo.option.ConnectionURL //对应数据库访问地址和库名;
     ```
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/155849127511097_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/156282841111097_zh-CN.png)
 
     在集群 master 节点上登录 hive meta db:
 
-    ```
+    ``` {#codeblock_ncr_qtd_r6w}
     mysql -h ${DBConnectionURL} -u ${ConnectionUserName} -p [回车]
     [输入密码]${ConnectionPassword}
     ```
 
     登录上 hive meta db 之后，修改对应 hive database 的 location 为该 region 真实存在的 OSS 路径即可：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/155849127511102_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17932/156282841111102_zh-CN.png)
 
 
