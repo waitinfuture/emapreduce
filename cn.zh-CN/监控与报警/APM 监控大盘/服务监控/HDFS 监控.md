@@ -4,11 +4,11 @@
 
 HDFS 监控概览页面展示 HDFS 服务相关状态的概览情况，包括 HDFS 核心指标数据图表、HDFS 服务相关的异常和告警、HDFS overview 信息、HDFS DataNodevolume failures、HDFS Namenode 状态列表和 HDFS DataNode 状态列表。
 
-![HDFS 监控概览页](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156214120538590_zh-CN.png)
+![HDFS 监控概览页](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156289805738590_zh-CN.png)
 
 -   HDFS 基础指标数据图表
 
-    ![HDFS 基础指标数据图表](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156214120538591_zh-CN.png)
+    ![HDFS 基础指标数据图表](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156289805738591_zh-CN.png)
 
     -   告警数据
 
@@ -28,13 +28,13 @@ HDFS 监控概览页面展示 HDFS 服务相关状态的概览情况，包括 HD
 
 -   HDFS 相关告警
 
-    ![HDFS 相关告警](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156214120538593_zh-CN.png)
+    ![HDFS 相关告警](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156289805738593_zh-CN.png)
 
     展示该集群当天的与HDFS服务相关的严重异常事件。
 
 -   HDFS Overview 信息
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156214120638594_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156289805838594_zh-CN.png)
 
     显示的内容包括：
 
@@ -54,19 +54,19 @@ HDFS 监控概览页面展示 HDFS 服务相关状态的概览情况，包括 HD
     -   **Total Datanode Volume Failure**：总的 Datanode Volume Failure 数目
     HDFS Overview信息支持 回放 功能，可以在排查问题时候回放到历史的时间节点。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156214120638595_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156289805838595_zh-CN.png)
 
 -   HDFS Datanode Volume Failures 信息
 
     Datanode Volume Failures 列出具体的 Volume Failure 的列表信息。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156214120638596_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156289805838596_zh-CN.png)
 
 -   HDFS NameNode 状态列表
 
     NameNode 状态列表，列出了当前 NameNode 以及当前的状态，包括：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156214120738597_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156289805938597_zh-CN.png)
 
     -   主机名称
 
@@ -129,25 +129,25 @@ HDFS 监控概览页面展示 HDFS 服务相关状态的概览情况，包括 HD
     -   Block Pool Used：当前 DataNode 上 block pool 的使用量，支持前端页面排序。
     -   Failed Volumes：当前 DataNode上 failed volume 数量，支持前端页面排序。
     -   Version：HDFS 部署版本信息。
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156214120738598_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156289805938598_zh-CN.png)
 
     DataNode 状态列表支持分页和选择每页显示条目的数量：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156214120738599_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156289805938599_zh-CN.png)
 
-    DataNode 状态列表同时支持搜索固定主机名和 回放 功能：![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156214120738600_zh-CN.png)HDFS 的 NameNode Journal Status 和 NameNode Storage 监控功能正在开发中。
+    DataNode 状态列表同时支持搜索固定主机名和 回放 功能：![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156289805938600_zh-CN.png)
 
 
 ## HDFS NameNode 监控详情页 {#section_f41_pg4_qgb .section}
 
 在 HDFS 监控概览页，单击 NameNode 状态列表的主机名，可以进入对应 NameNode 监控详情页面：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156214120838601_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156289805938601_zh-CN.png)
 
 -   NameNode 进程 JVM 指标
     -   NameNode 进程 JVM GC 不同内存分区统计情况
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156214120838603_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156289806038603_zh-CN.png)
 
         -   S0：存活区 0（Survivor 0）容量使用百分比
         -   S1：存活区 1（Survivor 1）容量使用百分比
@@ -157,7 +157,7 @@ HDFS 监控概览页面展示 HDFS 服务相关状态的概览情况，包括 HD
         -   CCS：压缩类区域（Compressed class space ）容量使用百分比
         图表支持自定义选择时间颗粒度和时间范围。
 
-    -   NameNode 进程 GC 时间统计![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156214120838607_zh-CN.png) 
+    -   NameNode 进程 GC 时间统计![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156289806038607_zh-CN.png) 
 
         -   YGCT：Young GC 累计时间
         -   FGCT：Full GC 累计时间
@@ -166,7 +166,7 @@ HDFS 监控概览页面展示 HDFS 服务相关状态的概览情况，包括 HD
 
     -   NameNode 进程 GC 次数统计
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156214120838608_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156289806038608_zh-CN.png)
 
         -   YCG\_count: Young GC 累计次数
         -   FGC\_count: Full GC 累计次数
@@ -174,7 +174,7 @@ HDFS 监控概览页面展示 HDFS 服务相关状态的概览情况，包括 HD
 
     -   NameNode 进程 heap memory 统计
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156214120938609_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156289806138609_zh-CN.png)
 
         -   Heap Memory Max
         -   Heap Memory Init
@@ -182,7 +182,7 @@ HDFS 监控概览页面展示 HDFS 服务相关状态的概览情况，包括 HD
         -   Heap Memory Init
         图表支持自定义选择时间颗粒度和时间范围。
 
-    -   NameNode 进程 non-heap memory 统计![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156214120938610_zh-CN.png) 
+    -   NameNode 进程 non-heap memory 统计![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156289806138610_zh-CN.png) 
 
         -   Non Heap Memory Init
         -   Non Heap Memory Committed
@@ -191,7 +191,7 @@ HDFS 监控概览页面展示 HDFS 服务相关状态的概览情况，包括 HD
 
 -   NameNode 进程文件描述符统计信息
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156214120938611_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156289806138611_zh-CN.png)
 
     -   Max File Descriptor：进程可以使用的最大文件描述符数目
     -   Open File Descriptor：进程已经占用的文件描述符数目
@@ -199,9 +199,9 @@ HDFS 监控概览页面展示 HDFS 服务相关状态的概览情况，包括 HD
 
 -   NameNode 进程RPC性能指标
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156214120938614_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156289806138614_zh-CN.png)
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156214121038615_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156289806138615_zh-CN.png)
 
     -   Call Queue Length： Current length of the call queue，当前 namenode RPC 端口上的RPC调用队列长度，可以反应RPC的请求处理的堆积情况；
     -   Received Bytes： Total number of received bytes，当前 namenode RPC 端口上总的接收数据量大小；
@@ -211,7 +211,7 @@ HDFS 监控概览页面展示 HDFS 服务相关状态的概览情况，包括 HD
     -   Average Processing Time：Average Processing time in milliseconds，RPC 请求的平均处理时间；
 -   NameNode 进程启停操作历史
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156214121038616_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156289806238616_zh-CN.png)
 
     所有通过 EMR 控制台对进程的启动、停止操作以及进程由于异常退出被 EMR agent 自动拉起的记录，都会在这里列出。
 
@@ -223,18 +223,18 @@ HDFS 监控概览页面展示 HDFS 服务相关状态的概览情况，包括 HD
     -   PPID：本次操作产生的进程的父进程 ID，对于停止操作无该信息。
     -   启动参数：本次操作产生的进程的详细启动参数，对于停止操作无该信息。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156214121038617_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156289806238617_zh-CN.png)
 
 
 ## HDFS DataNode 监控详情页 {#section_y53_s1p_qgb .section}
 
 在 HDFS 监控概览页，单击 DataNode 状态列表的主机名，可以进入对应 DataNode 监控详情页面：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156214121038618_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156289806238618_zh-CN.png)
 
 -   DataNode 核心指标
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156214121038619_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156289806338619_zh-CN.png)
 
     -   Bytes Read/Written: DataNode 从上次启动之后数据的读写量
     -   Block Operation Count: DataNode 的 block 操作数统计
@@ -263,7 +263,7 @@ HDFS 监控概览页面展示 HDFS 服务相关状态的概览情况，包括 HD
         -   Send Data Packet Transfer Average Time: Average transfer time of sending packets in nanoseconds
 -   DataNode 进程启停历史
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156214121138620_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/123379/156289806338620_zh-CN.png)
 
     表格具体含义，参考 [NameNode 进程启停操作历史说明](#NameNode_history)。
 
