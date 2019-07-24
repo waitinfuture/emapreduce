@@ -60,16 +60,3 @@ kafka.schema.record.namespace = "${SCHEMA_RECORD_NAMESPACE}");
     对于 Kafka 数据源，当指定表的 schema 信息后，系统会自动从 Kafka Schema Registry 服务中检索对应 topic 的 schema 定义，并且和表定义的 schema 信息进行校验，包括字段名和字段类型。建议您在SQL的声明中保持和外部数据存储schema定义一致，包括字段名称和字段类型。
 
 
-## 数据源 {#section_kor_00x_fce .section}
-
-以下列出了 EMR 支持的数据源：
-
-|数据源|建表带 schema|建表不带 schema|
-|---|----------|-----------|
-|Kafka|✅|✅|
-|Loghub|✅|✅|
-|TableStore| |✅|
-|HBase| |✅|
-|JDBC| |✅|
-|Druid| |✅|
-
