@@ -2,7 +2,7 @@
 
 This topic describes the deployment details for the components on different instance nodes in an EMR cluster.
 
-When you create an EMR cluster, components are deployed on instance nodes based on the [instance node types](reseller.en-US/Cluster Planning and Configurations/Cluster planning/Instance types.md#). For example, the NameNode component of Hadoop HDFS is deployed on the master instance node. For large-scale clusters, you can use bootstrap actions to complete custom deployment and allocation. For example, a stand-alone ZooKeeper cluster uses an Alibaba Cloud RDS instance as the Hive metastore. The following tables describe the service components that run on different instance nodes.
+When you create an EMR cluster, components are deployed on instance nodes based on the [instance node types](intl.en-US/Cluster Planning and Configurations/Cluster planning/Instance types.md#). For example, the NameNode component of Hadoop HDFS is deployed on the master instance node. For large-scale clusters, you can use bootstrap actions to complete custom deployment and allocation. For example, a stand-alone ZooKeeper cluster uses an Alibaba Cloud RDS instance as the Hive metastore. The following tables describe the service components that run on different instance nodes.
 
 ## Hadoop cluster {#section_a58_4ri_e6v .section}
 
@@ -110,7 +110,7 @@ Deployment details for service components that run on a Hadoop cluster
 
 ## Druid cluster {#section_pu9_mq6_3co .section}
 
-Deployment details for service components on a Druid cluster
+Deployment details for service components on an E-MapReduce Druid cluster
 
 -   Required services
 
