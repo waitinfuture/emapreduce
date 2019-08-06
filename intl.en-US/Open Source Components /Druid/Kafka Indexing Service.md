@@ -84,7 +84,7 @@ See the introduction in [Tranquility](intl.en-US/Open Source Components /Druid/T
     curl --negotiate -u:druid -b ~/cookies -c ~/cookies -XPOST -H 'Content-Type: application/json' -d @metrics-kafka.json http://emr-header-1.cluster-1234:18090/druid/indexer/v1/supervisor
     ```
 
-    The `—negotiate`, `-u`, `-b`, and `-c`options are for high-security mode Apache Druid clusters.
+    The `—negotiate`, `-u`, `-b`, and `-c`options are for high-security mode Druid clusters.
 
 4.  Enable a console producer on the Kafka cluster.
 
@@ -132,13 +132,13 @@ See the introduction in [Tranquility](intl.en-US/Open Source Components /Druid/T
      }
     ```
 
-7.  Execute the query on the master node of the Apache Druid cluster.
+7.  Execute the query on the master node of the Druid cluster.
 
     ``` {#codeblock_vyz_2id_tu0}
     curl --negotiate -u:Druid -b ~/cookies -c ~/cookies -XPOST -H 'Content-Type: application/json' -d @metrics-search.json http://emr-header-1.cluster-1234:8082/druid/v2/?pretty
     ```
 
-    The `—negotiate`, `-u`, `-b`, and `-c`options are for high-security mode Apache Druid clusters.
+    The `—negotiate`, `-u`, `-b`, and `-c`options are for high-security mode Druid clusters.
 
 8.  You will see a query result similar to the following:
 
