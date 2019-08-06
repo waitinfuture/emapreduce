@@ -1,37 +1,37 @@
 # Quick start {#concept_tfd_fld_z2b .concept}
 
-E-MapReduce V3.11.0 and later versions support Druid as a cluster type.
+E-MapReduce V3.11.0 and later versions support E-MapReduce Druid as a cluster type.
 
-The use of Druid as a separate cluster type \(instead of adding Druid service to the Hadoop cluster\) is mainly based on the following reasons:
+The use of E-MapReduce Druid as a separate cluster type \(instead of adding E-MapReduce Druid service to the Hadoop cluster\) is mainly based on the following reasons:
 
--   Druid can be used independently of Hadoop.
--   Druid has high memory requirements when there is a large amount of data, especially for Broker and Historical nodes. Druid is not controlled by Yarn and will compete for resources during multi-service operation.
--   As the infrastructure, the node number of a Hadoop cluster can be relatively large, whereas a Druid cluster can be relatively small. The work is more flexible if they work together.
+-   E-MapReduce Druid can be used independently of Hadoop.
+-   E-MapReduce Druid has high memory requirements when there is a large amount of data, especially for Broker and Historical nodes. E-MapReduce Druid is not controlled by Yarn and will compete for resources during multi-service operation.
+-   As the infrastructure, the node number of a Hadoop cluster can be relatively large, whereas anE-MapReduce Druid E-MapReduce Druid cluster can be relatively small. The work is more flexible if they work together.
 
-## Create a Druid cluster {#section_a2v_3ld_z2b .section}
+## Create an Druid cluster {#section_a2v_3ld_z2b .section}
 
-Select Druid as the cluster type when you create a cluster. You can select HDFS and Yarn when creating a Druid cluster. The HDFS and Yarn in the Druid cluster are for testing only, as described at the beginning of this guide. We recommend that you use a dedicated Hadoop cluster as the production environment.
+Select Druid as the cluster type when you create a cluster. You can select HDFS and Yarn when creating anE-MapReduce Druid E-MapReduce Druid cluster. The HDFS and Yarn in the Druid cluster are for testing only, as described at the beginning of this guide. We recommend that you use a dedicated Hadoop cluster as the production environment.
 
 ## Configure a cluster {#section_ngn_jld_z2b .section}
 
--   Configure the cluster to use HDFS as the deep storage of Druid
+-   Configure the cluster to use HDFS as the deep storage of E-MapReduce Druid
 
-    For a standalone Druid cluster, you may need to store your index data in the HDFS of another Hadoop cluster. Therefore, you need to complete related settings for the connectivity between the two clusters \(for details, see [Interaction with Hadoop clusters](#hadoop)\). Then you need to configure the following items on the configuration page of Druid and restart the service. The configuration items are in common.runtime of the configuration page.
+    For a standalone E-MapReduce Druid cluster, you may need to store your index data in the HDFS of another Hadoop cluster. Therefore, you need to complete related settings for the connectivity between the two clusters \(for details, see [Interaction with Hadoop clusters](#hadoop)\). Then you need to configure the following items on the configuration page of E-MapReduce Druid and restart the service. The configuration items are in common.runtime of the configuration page.
 
     -   druid.storage.type: hdfs
     -   druid.storage.storageDirectory: \(the hdfs directory must be a full one, such as hdfs://emr-header-1.cluster-xxxxxxxx:9000/druid/segments.\)
     **Note:** If the Hadoop cluster is an HA cluster, you must change emr-header-1.cluster-xxxxx:9000 to emr-cluster, or change port 9000 to port 8020.
 
--   Use OSS as the deep storage of Druid
+-   Use OSS as the deep storage of E-MapReduce Druid
 
-    E-MapReduce Druid supports the use of OSS as deep storage. Due to the AccessKey-free capability of E-MapReduce, Druid can automatically get access to OSS without the need to configure the AccessKey. Because the OSS function of HDFS enables Druid to have access to OSS, druid.storage.type still needs to be configured as HDFS during the configuration process.
+    E-MapReduce Druid supports the use of OSS as deep storage. Due to the AccessKey-free capability of E-MapReduce, E-MapReduce Druid can automatically get access to OSS without the need to configure the AccessKey. Because the OSS function of HDFS enables E-MapReduce Druid to have access to OSS, druid.storage.type still needs to be configured as HDFS during the configuration process.
 
     -   druid.storage.type: hdfs
     -   druid.storage.storageDirectory: \(for example, oss://emr-druid-cn-hangzhou/segments）
-    Because the OSS function of HDFS enables Druid to have access to OSS, you need to select one of the following two scenarios:
+    Because the OSS function of HDFS enables E-MapReduce Druid to have access to OSS, you need to select one of the following two scenarios:
 
     -   Choose to install HDFS when you create a cluster. Then the system is automatically configured. \(After HDFS is installed, you can choose not to use it, disable it, or use it for testing purposes only.\)
-    -   Create hdfs-site.xml in the configuration directory of Druid /etc/ecm/druid-conf/druid/\_common/, the content is as follows, and then copy the file to the same directory of all nodes:
+    -   Create hdfs-site.xml in the configuration directory of E-MapReduce Druid /etc/ecm/druid-conf/druid/\_common/, the content is as follows, and then copy the file to the same directory of all nodes:
 
         ``` {#codeblock_7wh_dmu_1o8}
         <? xml version="1.0" ? >
@@ -53,17 +53,17 @@ Select Druid as the cluster type when you create a cluster. You can select HDFS 
 
         The fs.oss.buffer.dirs can be set to multiple paths.
 
--   Use RDS to save Druid metadata
+-   Use RDS to save E-MapReduce Druid metadata
 
-    Use the MySQL database on header-1 node to save Druid metadata. You can also use the Alibaba Cloud RDS to save the metadata.
+    Use the MySQL database on header-1 node to save E-MapReduce Druid metadata. You can also use the Alibaba Cloud RDS to save the metadata.
 
     The following uses RDS MySQL as an example to demonstrate the configuration. Before you configure it, make sure that:
 
     -   The RDS MySQL instance has been created.
-    -   A separate account has been created for Druid to access RDS MySQL \(root is not recommended \). This example uses account name druid and password druidpw.
+    -   A separate account has been created for E-MapReduce Druid to access RDS MySQL \(root is not recommended \). This example uses account name druid and password druidpw.
     -   Create a separate MySQL database for Druid metadata. Suppose the database is called druiddb.
-    -   Make sure that account Druid has permission to access druiddb.
-    In the E-MapReduce console, click Manage behind the Druid cluster you want to configure. Click the Druid service, and then select the **Configuration** tab to find the common.runtime configuration file. Click **Custom Configuration** to add the following three configuration items:
+    -   Make sure that account druid has permission to access druiddb.
+    In the E-MapReduce console, click Manage behind the E-MapReduce Druid cluster you want to configure. Click the Druid service, and then select the **Configuration** tab to find the common.runtime configuration file. Click **Custom Configuration** to add the following three configuration items:
 
     -   druid.metadata.storage.connector.connectURI, where the value is: jdbc:mysql://rm-xxxxx.mysql.rds.aliyuncs.com:3306/druiddb
     -   druid.metadata.storage.connector.user, where the value is druid.
@@ -85,30 +85,30 @@ Select Druid as the cluster type when you create a cluster. You can select HDFS 
     ```
 
 
-## Visit the Druid web page {#section_g1s_rsf_9nz .section}
+## Visit the E-MapReduce Druid web page {#section_g1s_rsf_9nz .section}
 
-Druid comes with two Web pages:
+E-MapReduce Druid comes with two Web pages:
 
 -   Overlord: http://emr-header-1.cluster-1234:18090 is used to view the running status of tasks.
 -   Coordinator: http://emr-header-1.cluster-1234:18081 is used to view the storage status of segments.
 
-EMR provides three methods to access Druid Web pages:
+EMR provides three methods to access E-MapReduce Druid Web pages:
 
 -   On the cluster management page, click **Access Link and port**, locate the Druid overlord or Druid coordinator link, and click the link to enter \(recommended method, EMR-3.20.0, and later versions \).
--   Use [SSH tunneling](../../../../reseller.en-US/Cluster Planning and Configurations/Configure clusters/Connect to a cluster using SSH.md#) to create an SSH tunnel and enable proxy browser access.
+-   Use [SSH tunneling](../../../../intl.en-US/Cluster Planning and Configurations/Configure clusters/Connect to a cluster using SSH.md#) to create an SSH tunnel and enable proxy browser access.
 -   Access through public IP + Port, as shown in figureHttp: // 123.123.123.123: 18090\(Not recommended. use security group settings to properly control cluster access through the public network \).
 
 ## Batch index {#section_wdw_2md_z2b .section}
 
 -   Interaction with Hadoop clusters
 
-    If you select HDFS and Yarn \(with their own Hadoop clusters\) when creating Druid clusters, the system will automatically configure the interaction between HDFS and Yarn. The following example shows how to configure the interaction between a standalone Druid cluster and a standalone Hadoop cluster. It is assumed that the Druid cluster ID is 1234, and the Hadoop cluster ID is 5678. In addition, read through and follow the instructions strictly. The clusters may not work as expected because of slightly improper operation.
+    If you select HDFS and Yarn \(with their own Hadoop clusters\) when creating E-MapReduce Druid clusters, the system will automatically configure the interaction between HDFS and Yarn. The following example shows how to configure the interaction between a standalone E-MapReduce Druid cluster and a standalone Hadoop cluster. It is assumed that the E-MapReduce Druid cluster ID is 1234, and the Hadoop cluster ID is 5678. In addition, read through and follow the instructions strictly. The clusters may not work as expected because of slightly improper operation.
 
     For the interaction with standard-mode Hadoop clusters, perform the following operations:
 
     1.  Ensure the communication between the two clusters. \(Each cluster is associated with a different security group,and access rules are configured for the two security groups.\)
-    2.  Put core-site.xml, hdfs-site.xml, yarn-site.xml, mapred-site.xml of /etc/ecm/hadoop-conf of the Hadoop cluster in the /etc/ecm/duird-conf/druid/\_common directory on each node of the Druid cluster. \(If you select the built-in Hadoop when you create the cluster, several soft links in this directory will map to the configuration of the Hadoop service of E-MapReduce. Remove these soft links first.\)
-    3.  Write the hosts of the Hadoop cluster to the hosts list on the Druid cluster. Note that the hostname of the Hadoop cluster should be in the form of a long name, such as emr-header-1.cluster-xxxxxxxx. You are advised to put the hosts of Hadoop behind the hosts of the Druid cluster, such as:
+    2.  Put core-site.xml, hdfs-site.xml, yarn-site.xml, mapred-site.xml of /etc/ecm/hadoop-conf of the Hadoop cluster in the /etc/ecm/duird-conf/druid/\_common directory on each node of the E-MapReduce Druid cluster. \(If you select the built-in Hadoop when you create the cluster, several soft links in this directory will map to the configuration of the Hadoop service of E-MapReduce. Remove these soft links first.\)
+    3.  Write the hosts of the Hadoop cluster to the hosts list on the E-MapReduce Druid cluster. Note that the hostname of the Hadoop cluster should be in the form of a long name, such as emr-header-1.cluster-xxxxxxxx. You are advised to put the hosts of Hadoop behind the hosts of the E-MapReduce Druid cluster, such as:
 
         ``` {#codeblock_fy7_ug6_zsi}
         ...
@@ -126,14 +126,14 @@ EMR provides three methods to access Druid Web pages:
     For Hadoop clusters in high-security mode, perform the following operations:
 
     1.  Ensure the communication between the two clusters. \(Each cluster is associated with a different security group,and access rules are configured for the two security groups.\)
-    2.  Put core-site.xml, hdfs-site.xml, yarn-site.xml, mapred-site.xml of /etc/ecm/hadoop-conf of the Hadoop cluster in the /etc/ecm/duird-conf/druid/\_common directory on each node of the Druid cluster. \(If you select the built-in Hadoop when creating a cluster, several soft links in this directory will point to the configuration with Hadoop. Remove these soft links first.\) Modify hadoop.security.authentication.use.has in core-site.xml to false. \(This configuration is completed on the client to enable AccessKey authentication for users. If Kerberos authentication is used, disable AccessKey authentication.\)
-    3.  Write the hosts of the Hadoop cluster to the hosts list of each node on the Druid cluster. Note that the hostname of the Hadoop cluster should be in the form of a long name, such as emr-header-1.cluster-xxxxxxxx. You are advised to put the hosts of Hadoop behind the hosts of the Druid cluster.
-    4.  Set Kerberos cross-domain mutual trust between the two clusters. For more information, see [EN-US\_TP\_17939.md\#](reseller.en-US/Open Source Components /Kerberos authentication/Cross-region access.md#).
-    5.  Create a local Druid account \(useradd-m-g hadoop\) on all nodes of the Hadoop cluster, or set druid.auth.authenticator.kerberos.authtomate to create a mapping rule for the Kerberos account to the local account. \(For specific pre-release rules, see [here](http://druid.io/docs/0.11.0/development/extensions-core/druid-kerberos.html).\) This method is recommended because it is easy to operate without errors.
+    2.  Put core-site.xml, hdfs-site.xml, yarn-site.xml, mapred-site.xml of /etc/ecm/hadoop-conf of the Hadoop cluster in the /etc/ecm/duird-conf/druid/\_common directory on each node of the E-MapReduce Druid cluster. \(If you select the built-in Hadoop when creating a cluster, several soft links in this directory will point to the configuration with Hadoop. Remove these soft links first.\) Modify hadoop.security.authentication.use.has in core-site.xml to false. \(This configuration is completed on the client to enable AccessKey authentication for users. If Kerberos authentication is used, disable AccessKey authentication.\)
+    3.  Write the hosts of the Hadoop cluster to the hosts list of each node on the E-MapReduce Druid cluster. Note that the hostname of the Hadoop cluster should be in the form of a long name, such as emr-header-1.cluster-xxxxxxxx. You are advised to put the hosts of Hadoop behind the hosts of the E-MapReduce Druid cluster.
+    4.  Set Kerberos cross-domain mutual trust between the two clusters. For more information, see [EN-US\_TP\_17939.md\#](intl.en-US/Open Source Components /Kerberos authentication/Cross-region access.md#).
+    5.  Create a local druid account \(useradd-m-g hadoop\) on all nodes of the Hadoop cluster, or set druid.auth.authenticator.kerberos.authtomate to create a mapping rule for the Kerberos account to the local account. \(For specific pre-release rules, see [here](http://druid.io/docs/0.11.0/development/extensions-core/druid-kerberos.html).\) This method is recommended because it is easy to operate without errors.
 
         **Note:** In Hadoop cluster of the high-security mode , all Hadoop commands must be run from a local account. By default, this local account needs to have the same name as the principal. Yarn also supports mapping a principal to a local account.
 
-    6.  Restart the Druid service.
+    6.  Restart the E-MapReduce DruidDruid service.
 -   Use Hadoop to index batch data
 
     Druid comes with an example named wikiticker, which is located in the $\{DRUID\_HOME\}/quickstart/tutorial path. $\{DRUID\_HOME\}is set to /usr/lib/druid-current by default. Each line of the wikiticke document \(wikiticker-2015-09-12-sampled.json.gz\) is a record. Each record is a json object. The format is as follows:
@@ -281,22 +281,22 @@ EMR provides three methods to access Druid Web pages:
         -   tuningConfig.type is set to hadoop.
         -   tuningConfig.jobProperties sets the classloader of the mapreduce job.
         -   hadoopDependencyCoordinates develops the version of Hadoop client.
-    3.  Run the batch index command on the Druid cluster.
+    3.  Run the batch index command on the E-MapReduce Druid cluster.
 
         ``` {#codeblock_4yl_mor_f17}
         cd ${DRUID_HOME}
          curl --negotiate -u:druid -b ~/cookies -c ~/cookies -XPOST -H 'Content-Type:application/json' -d @quickstart/wikiticker-index.json http://emr-header-1.cluster-1234:18090/druid/indexer/v1/task
         ```
 
-        The `- -negotiate`, `-u`, `-b`, and `-c` options are for secure Druid clsters. The Overlord port number is 18090 by default.
+        The `- -negotiate`, `-u`, `-b`, and `-c` options are for secure E-MapReduce Druid clusters. The Overlord port number is 18090 by default.
 
     4.  View the running state of the jobs.
 
         Enter http://emr-header-1.cluster-1234:18090/console.html in your browser's address bar to view the running status of jobs.
 
-    5.  Query the data based on Druid syntax.
+    5.  Query the data based on E-MapReduce Druid syntax.
 
-        Druid has its own query syntax. You need to prepare a json-formatted query file that describes how you want to query. A topN query to the wikiticker data is as follows $\{DRUID\_HOME\}/quickstart/wikiticker-top-pages.json\):
+        E-MapReduce Druid has its own query syntax. You need to prepare a json-formatted query file that describes how you want to query. A topN query to the wikiticker data is as follows $\{DRUID\_HOME\}/quickstart/wikiticker-top-pages.json\):
 
         ``` {#codeblock_xgb_nas_use}
         {
@@ -324,18 +324,18 @@ EMR provides three methods to access Druid Web pages:
          curl --negotiate -u:druid -b ~/cookies -c ~/cookies -XPOST -H 'Content-Type:application/json' -d @quickstart/wikiticker-top-pages.json 'http://emr-header-1.cluster-1234:18082/druid/v2/?pretty'
         ```
 
-        Note that the items such as`- -negotiate`、`-u`、`-b`、`-c` are for Druid clusters in the high-security mode. You can check the results of a specific query in normal cases.
+        Note that the items such as`- -negotiate`、`-u`、`-b`、`-c` are for E-MapReduce Druid clusters in the high-security mode. You can check the results of a specific query in normal cases.
 
 
 ## Real-time index {#section_5z3_hci_c8z .section}
 
-For Indexing data from a Kafka cluster to a Druid cluster in real time, we recommend that you use the Kafka Indexing Service extension to ensure high reliability and support exactly-once semantics. See the Use Druid Kafka Indexing Service to consume Kafka data in real time section in [Kafka Indexing Service](reseller.en-US/Open Source Components /Druid/Kafka Indexing Service.md#).
+For Indexing data from a Kafka cluster to an E-MapReduce Druid cluster in real time, we recommend that you use the Kafka Indexing Service extension to ensure high reliability and support exactly-once semantics. See the Use Druid Kafka Indexing Service to consume Kafka data in real time section in [Kafka Indexing Service](intl.en-US/Open Source Components /Druid/Kafka Indexing Service.md#).
 
-If your data is real-time accessed by Alibaba Cloud log Service \(SLS\) and you want to use Druid to index the data in real time, we provide the SLS Indexing Service extension. Using SLS Indexing Service avoids the overhead of creating and maintaining a Kafka cluster. SLS Indexing Service provides high-reliability and exactly-once semantics like Kafka Indexing Service. Here, you can use SLS as a Kafka.
+If your data is real-time accessed by Alibaba Cloud log Service \(SLS\) and you want to use E-MapReduce Druid to index the data in real time, we provide the SLS Indexing Service extension. Using SLS Indexing Service avoids the overhead of creating and maintaining a Kafka cluster. SLS Indexing Service provides high-reliability and exactly-once semantics like Kafka Indexing Service. Here, you can use SLS as a Kafka.
 
-For other methods, such as Flink, Storm, and Spark Streaming, we recommend that you use the Tranquility client to push data to the Druid cluster. For details, see [EN-US\_TP\_17908.md\#](reseller.en-US/Open Source Components /Druid/Tranquility.md#).
+For other methods, such as Flink, Storm, and Spark Streaming, we recommend that you use the Tranquility client to push data to the E-MapReduce Druid cluster. For details, see [SLS-Indexing-Service](intl.en-US/Open Source Components /Druid/LOG Indexing Service.md#).
 
-Kafka Indexing Service and SLS Indexing Service are similar. They pull data from the data source to the Druid cluster in pull mode, and provide high reliability and exactly-once semantics; tranquility pushes data to Druid for indexing. Tranquility does not provide Exactly-once semantics. Therefore, if you have such requirements, you must resolve them yourself.
+Kafka Indexing Service and SLS Indexing Service are similar. They pull data from the data source to the E-MapReduce Druid cluster in pull mode, and provide high reliability and exactly-once semantics; tranquility pushes data to E-MapReduce Druid for indexing. Tranquility does not provide Exactly-once semantics. Therefore, if you have such requirements, you must resolve them yourself.
 
 ## Analyze the indexing failure {#section_h6s_xqp_ymi .section}
 
@@ -345,10 +345,10 @@ When indexing fails, the following troubleshooting steps are typically followed:
     1.  If curl returns an error directly, or no value returns, check the input file format. Or add a -v parameter to curl to observe the value returned from the REST API.
     2.  Observe the execution of the jobs on the Overlord page. If it fails, view the logs on the page.
     3.  In many cases, logs are not generated. In the case of a Hadoop job, open the Yarn page to check whether there is an index job generated, and view the job execution log.
-    4.  If no errors are found, you need to log on to the Druid cluster, and view the execution logs of Overlord \(at /mnt/disk1/log/druid/overlord—emr-header-1.cluster-xxxx.log\). If it is an HA cluster, check the Overlord that you submitted the job to.
+    4.  If no errors are found, you need to log on to the E-MapReduce Druid cluster, and view the execution logs of Overlord \(at /mnt/disk1/log/druid/overlord—emr-header-1.cluster-xxxx.log\). If it is an HA cluster, check the Overlord that you submitted the job to.
     5.  If the job has been submitted to Middlemanager, but a failure is returned, you need to view the worker that the job is submitted to in Overlord, and log on to the worker node to view the Middlemanager logs in /mnt/disk1/log/druid/middleManager-emr-header-1.cluster-xxxx.log.
 -   For Kafka Indexing Service and SLS Indexing Service
-    1.  First, view the Overlord Web page Http: // emr-header-1: 18090, check the running status of the Supervisor, and check whether payload is valid.
+    1.  First, view the Overlord Web page Http://emr-header-1:18090, check the running status of the Supervisor, and check whether payload is valid.
     2.  View the log of the failed task.
     3.  If you cannot identify the cause of failure from the task log, you need to start with the Overlord log to troubleshoot the problem. See the last two steps in the [Batch index](#section_h6s_xqp_ymi) section.
 -   For real-time Tranquility index
