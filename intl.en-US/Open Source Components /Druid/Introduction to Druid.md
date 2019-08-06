@@ -1,10 +1,10 @@
 # Introduction to Druid {#concept_csl_jkd_z2b .concept}
 
-Druid is a column-oriented, open-source, distributed data storeused to query and analyze issues in large datasets in real time.
+Apache Druid is a column-oriented, open-source, distributed data storeused to query and analyze issues in large datasets in real time. Apache Druid was later donated to the Apache Software Foundation, and officially became an Apache Software Foundation project.
 
 ## Basic features {#section_jcb_mkd_z2b .section}
 
-Druid has the following features:
+Apache Druid has the following features:
 
 -   Sub-second OLAP queries, including multi-dimensional filtering, ad-hoc attribute grouping, and fast data aggregation.
 -   Real-time data consumption, collection, and querying.
@@ -14,7 +14,7 @@ Druid has the following features:
 
 ## Usage scenarios {#section_lcb_mkd_z2b .section}
 
-Real-time data analysis is the most typical usage scenario for Druid and covers a wide range of areas, including:
+Real-time data analysis is the most typical usage scenario for Apache Druid and covers a wide range of areas, including:
 
 -   Real-time indicator monitoring
 -   Model recommendations
@@ -25,11 +25,11 @@ These scenariosinvolve large amounts of data, and the requirement for time delay
 
 ## Architecture {#section_ncb_mkd_z2b .section}
 
-Druid has an excellent architectural design with multiple components working together to complete a series of processes, such as data collection, indexing, storage, and querying.
+Apache Druid has an excellent architectural design with multiple components working together to complete a series of processes, such as data collection, indexing, storage, and querying.
 
 The following figure shows the components contained in the Druid working-layer \(for data indexing and data querying\).
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17905/155643648710852_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17905/156507630610852_en-US.png)
 
 -   The real-time component is responsible for the real-time data collection.
 -   In the broker phase, query tasks are distributed, and the results are collected and returned to you.
@@ -40,15 +40,15 @@ The following figure shows the components contained in the Druid working-layer \
 
 The following figure shows the components involved in the management layer of Druid segments \(Druid index file\).
 
-![Druid segments](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17905/155643648710853_en-US.png)
+![Druid segments](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17905/156507630610853_en-US.png)
 
 -   The ZooKeeper component is responsible for storing the status of the cluster and discovering components, such as the topology information of the cluster, election of the Overlord leader, and management of the indexing task.
 -   The Coordinator component is responsible for managing segments, such as the downloading and deletion of the segments and balancing them with historical components.
 -   The Metadata storage component is responsible for storing the meta-information of segments and managing all kinds of persistent or temporary data in the cluster, such as configuration information and audit information.
 
-## Product advantages {#section_o4g_wkd_z2b .section}
+## E-MapReduce Enhanced Druid {#section_o4g_wkd_z2b .section}
 
-E-MapReduce Druid has improved a lot based on open-source Druid, including integration with E-MapReduce and the peripheral Alibaba Cloud ecosystem, easy monitoring and operation support, and easy-to-use product interfaces. You can use it immediately after purchase. It does not need 24/7 operation and maintenance.
+E-MapReduce Druid has improved a lot based on Apache Druid, including integration with E-MapReduce and the peripheral Alibaba Cloud ecosystem, easy monitoring and operation support, and easy-to-use product interfaces. You can use it immediately after purchase. It does not need 24/7 operation and maintenance.
 
 E-MapReduce Druid supports the following features:
 
