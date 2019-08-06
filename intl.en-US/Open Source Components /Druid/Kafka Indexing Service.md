@@ -1,14 +1,14 @@
 # Kafka Indexing Service {#concept_qzt_cqd_z2b .concept}
 
-This section describes how to use Druid Kafka Indexing Service in E-MapReduce to ingest Kafka data in real time.
+This section describes how to use Apache Druid Kafka Indexing Service in E-MapReduce to ingest Kafka data in real time.
 
-The Kafka Indexing Service is an extension launched by Druid to ingest Kafka data in real time using Druid's indexing service. The extension enables supervisors in Overlord which start some indexing tasks in Middlemanager. These tasks connect to the Kafka cluster to ingest the topic data and complete the index creation. You need to prepare a data ingestion format file and manually start the supervisor through the RESTful API.
+The Kafka Indexing Service is an extension launched by Apache Druid to ingest Kafka data in real time using Apache Druid's indexing service. The extension enables supervisors in Overlord which start some indexing tasks in Middlemanager. These tasks connect to the Kafka cluster to ingest the topic data and complete the index creation. You need to prepare a data ingestion format file and manually start the supervisor through the RESTful API.
 
 ## Interaction with the Kafka cluster {#section_kmb_4td_z2b .section}
 
 See the introduction in [Tranquility](intl.en-US/Open Source Components /Druid/Tranquility.md#).
 
-## Use Druid's Kafka Indexing Service to ingest Kafka data in real time {#section_fdk_4td_z2b .section}
+## Use Apache Druid's Kafka Indexing Service to ingest Kafka data in real time {#section_fdk_4td_z2b .section}
 
 1.  Run the following command on the Kafka cluster \(or gateway\) to create a topic named metrics.
 
@@ -84,7 +84,7 @@ See the introduction in [Tranquility](intl.en-US/Open Source Components /Druid/T
     curl --negotiate -u:druid -b ~/cookies -c ~/cookies -XPOST -H 'Content-Type: application/json' -d @metrics-kafka.json http://emr-header-1.cluster-1234:18090/druid/indexer/v1/supervisor
     ```
 
-    The `—negotiate`, `-u`, `-b`, and `-c`options are for high-security mode Druid clusters.
+    The `—negotiate`, `-u`, `-b`, and `-c`options are for high-security mode Apache Druid clusters.
 
 4.  Enable a console producer on the Kafka cluster.
 
@@ -132,13 +132,13 @@ See the introduction in [Tranquility](intl.en-US/Open Source Components /Druid/T
      }
     ```
 
-7.  Execute the query on the master node of the Druid cluster.
+7.  Execute the query on the master node of the Apache Druid cluster.
 
     ``` {#codeblock_vyz_2id_tu0}
     curl --negotiate -u:Druid -b ~/cookies -c ~/cookies -XPOST -H 'Content-Type: application/json' -d @metrics-search.json http://emr-header-1.cluster-1234:8082/druid/v2/?pretty
     ```
 
-    The `—negotiate`, `-u`, `-b`, and `-c`options are for high-security mode Druid clusters.
+    The `—negotiate`, `-u`, `-b`, and `-c`options are for high-security mode Apache Druid clusters.
 
 8.  You will see a query result similar to the following:
 
