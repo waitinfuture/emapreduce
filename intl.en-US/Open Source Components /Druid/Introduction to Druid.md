@@ -1,6 +1,6 @@
 # Introduction to Druid {#concept_csl_jkd_z2b .concept}
 
-Apache Druid is a column-oriented, open-source, distributed data storeused to query and analyze issues in large datasets in real time. Apache Druid was later donated to the Apache Software Foundation, and officially became an Apache Software Foundation project.
+Apache Druid is a column-oriented, open-source, distributed data storeused to query and analyze issues in large datasets in real time. Apache Druid was developed by Metamarkets, and then donated to the Apache Software Foundation in the spring of 2019.
 
 ## Basic features {#section_jcb_mkd_z2b .section}
 
@@ -29,7 +29,7 @@ Apache Druid has an excellent architectural design with multiple components work
 
 The following figure shows the components contained in the Druid working-layer \(for data indexing and data querying\).
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17905/156507630610852_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17905/156507793010852_en-US.png)
 
 -   The real-time component is responsible for the real-time data collection.
 -   In the broker phase, query tasks are distributed, and the results are collected and returned to you.
@@ -40,7 +40,7 @@ The following figure shows the components contained in the Druid working-layer \
 
 The following figure shows the components involved in the management layer of Druid segments \(Druid index file\).
 
-![Druid segments](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17905/156507630610853_en-US.png)
+![Druid segments](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17905/156507793010853_en-US.png)
 
 -   The ZooKeeper component is responsible for storing the status of the cluster and discovering components, such as the topology information of the cluster, election of the Overlord leader, and management of the indexing task.
 -   The Coordinator component is responsible for managing segments, such as the downloading and deletion of the segments and balancing them with historical components.
