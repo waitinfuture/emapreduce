@@ -2,9 +2,9 @@
 
 本节介绍如何使用阿里云E-MapReduce部署Hadoop集群和Kafka集群，并运行Spark Streaming作业消费Kafka数据。
 
--   已注册阿里云账号，详情请参见[注册云账号](http://help.aliyun.com/knowledge_detail/5974387.html)。
+-   已注册阿里云账号，详情请参见[注册云账号](https://www.alibabacloud.com/help/doc-detail/50482.htm)。
 -   已开通E-MapReduce服务。
--   已完成云账号的授权，详情请参见[角色授权](../../../../cn.zh-CN/集群规划与配置/集群规划/角色授权.md#)。
+-   已完成云账号的授权，详情请参见[角色授权](../../../../intl.zh-CN/集群规划与配置/集群规划/角色授权.md#)。
 
 在开发过程中，通常会遇到消费Kafka数据的场景。在阿里云E-MapReduce中，您可通过运行Spark Streaming作业来消费Kafka数据。
 
@@ -13,13 +13,13 @@
 推荐您将Hadoop集群和Kafka集群创建在同一个安全组下。如果Hadoop集群和Kafka集群不在同一个安全组下，则两者的网络默认是不互通的，您需要对两者的安全组分别进行相关配置，以使两者的网络互通。
 
 1.  登录[阿里云 E-MapReduce 控制台](https://emr.console.aliyun.com)。
-2.  创建Hadoop集群，详情请参见[创建集群](../../../../cn.zh-CN/快速入门/步骤三：创建集群.md#)。 
+2.  创建Hadoop集群，详情请参见[创建集群](../../../../intl.zh-CN/快速入门/步骤三：创建集群.md#)。 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514221852748_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514334652748_zh-CN.png)
 
-3.  创建Kafka集群，详情请参见[创建集群](../../../../cn.zh-CN/快速入门/步骤三：创建集群.md#)。 
+3.  创建Kafka集群，详情请参见[创建集群](../../../../intl.zh-CN/快速入门/步骤三：创建集群.md#)。 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514221852756_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514334652756_zh-CN.png)
 
 
 ## 步骤二 获取JAR包并上传到Hadoop集群 {#section_d13_kc1_fqp .section}
@@ -38,7 +38,7 @@
 
 ## 步骤三 在Kafka集群上创建Topic {#section_pbz_vsa_646 .section}
 
-您可直接在E-MapReduce上以可视化的方式来创建Topic（详情请参见[Kafka 元数据管理](../../../../cn.zh-CN/集群规划与配置/集群配置/元数据管理/Kafka 元数据管理.md#)），也可登录Kafka集群的**emr-header-1**主机后以命令行的方式来创建Topic。本例以命令行方式创建一个分区数为10、副本数为2、名称为test的Topic。
+您可直接在E-MapReduce上以可视化的方式来创建Topic（详情请参见[Kafka 元数据管理](../../../../intl.zh-CN/集群规划与配置/集群配置/元数据管理/Kafka 元数据管理.md#)），也可登录Kafka集群的**emr-header-1**主机后以命令行的方式来创建Topic。本例以命令行方式创建一个分区数为10、副本数为2、名称为test的Topic。
 
 1.  返回到[阿里云 E-MapReduce 控制台](https://emr.console.aliyun.com)。
 2.  在集群管理页面，单击Kafka集群的**集群ID**，进入Kafka集群。
@@ -91,7 +91,7 @@
 
 3.  在Kafka登录窗口的命令行中不断输入文本，则在Hadoop集群登录窗口中实时显示文本的统计信息。 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514221952840_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514334652840_zh-CN.png)
 
 
 ## 步骤六 查看Spark Streaming作业的进展 {#section_isq_ew4_y5q .section}
@@ -99,10 +99,10 @@
 Spark Streaming作业开始运行后，您可在E-MapReduce上查看作业的状态。
 
 1.  返回到[阿里云 E-MapReduce 控制台](https://emr.console.aliyun.com)。
-2.  在Hadoop集群的**访问链接与端口**页面中，单击**Spark History Server UI**后的链接，查看Spark Streaming作业的状态。详情请参见[访问链接与端口](https://help.aliyun.com/document_detail/48712.html)。。。 
+2.  在Hadoop集群的**访问链接与端口**页面中，单击**Spark History Server UI**后的链接，查看Spark Streaming作业的状态。详情请参见[访问链接与端口](https://www.alibabacloud.com/help/doc-detail/89065.htm)。 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514221952852_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514334752852_zh-CN.png)
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514221952855_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514334752855_zh-CN.png)
 
 

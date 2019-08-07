@@ -15,11 +15,11 @@ We recommend that you specify the same security group for the Hadoop cluster as 
 1.  Log on to the [Alibaba Cloud EMR console](https://partners-intl.console.aliyun.com/#/emr).
 2.  Create a Hadoop cluster. For more information, see [Create a cluster](../../../../reseller.en-US/Quick Start/Step 3: Create a cluster.md#). 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514324252748_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514336652748_en-US.png)
 
 3.  Create a Kafka cluster. For more information, see [Create a cluster](../../../../reseller.en-US/Quick Start/Step 3: Create a cluster.md#). 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514324252756_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514336752756_en-US.png)
 
 
 ## Step 2: Download a JAR file and upload it to the Hadoop cluster {#section_d13_kc1_fqp .section}
@@ -91,17 +91,17 @@ When you perform this step, ensure that the Spark Streaming job is running. Afte
 
 3.  When you enter words in the Kafka logon window, the number of words is displayed and updated in the Hadoop logon window in real time. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514324252840_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514336752840_en-US.png)
 
 
 ## Step 6: View the progress of the Spark Streaming job {#section_isq_ew4_y5q .section}
 
 After you run a Spark Streaming job, you can view the status of the job in the EMR console.
 
-1.  On the **Connect Strings** page, click the link next to the **Spark History Server UI** service name to view the status of the Spark Streaming job. For more information, see [Access links and ports](https://partners-intl.aliyun.com/help/doc-detail/89065.htm) 
+1.  On the **Connect Strings** page, click the link next to the **Spark History Server UI** service name to view the status of the Spark Streaming job. For more information, see [Access links and ports](https://partners-intl.aliyun.com/help/doc-detail/89065.htm). 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514324352852_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514336752852_en-US.png)
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514324352855_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514336852855_en-US.png)
 
 
