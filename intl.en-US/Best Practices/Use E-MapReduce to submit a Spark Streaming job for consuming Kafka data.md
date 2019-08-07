@@ -2,9 +2,9 @@
 
 This topic describes how to create a Hadoop cluster and Kafka cluster by using E-MapReduce \(EMR\) and run a Spark Streaming job to consume Kafka data.
 
--   You have registered an Alibaba Cloud account. For more information, see [Create an Alibaba Cloud account](https://www.alibabacloud.com/help/doc-detail/50482.htm).
+-   You have registered an Alibaba Cloud account. For more information, see [Create an Alibaba Cloud account](https://partners-intl.aliyun.com/help/doc-detail/50482.htm).
 -   You have activated EMR.
--   You have authorized the Alibaba Cloud account. For more information, see [Role authorization](../../../../intl.en-US/Cluster Planning and Configurations/Cluster planning/Role authorization.md#).
+-   You have authorized the Alibaba Cloud account. For more information, see [Role authorization](../../../../reseller.en-US/Cluster Planning and Configurations/Cluster planning/Role authorization.md#).
 
 You always consume Kafka data in practical applications. In EMR, you can run a Spark Streaming job to consume Kafka data.
 
@@ -12,14 +12,14 @@ You always consume Kafka data in practical applications. In EMR, you can run a S
 
 We recommend that you specify the same security group for the Hadoop cluster as that of the Kafka cluster when creating the two clusters. If the clusters are linked to different security groups, the two clusters are not accessible by each other. You must modify the required settings of the security groups to allow mutual access.
 
-1.  Log on to the [Alibaba Cloud EMR console](https://emr.console.aliyun.com).
-2.  Create a Hadoop cluster. For more information, see [Create a cluster](../../../../intl.en-US/Quick Start/Step 3: Create a cluster.md#). 
+1.  Log on to the [Alibaba Cloud EMR console](https://partners-intl.console.aliyun.com/#/emr).
+2.  Create a Hadoop cluster. For more information, see [Create a cluster](../../../../reseller.en-US/Quick Start/Step 3: Create a cluster.md#). 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514223152748_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514324252748_en-US.png)
 
-3.  Create a Kafka cluster. For more information, see [Create a cluster](../../../../intl.en-US/Quick Start/Step 3: Create a cluster.md#). 
+3.  Create a Kafka cluster. For more information, see [Create a cluster](../../../../reseller.en-US/Quick Start/Step 3: Create a cluster.md#). 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514223152756_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514324252756_en-US.png)
 
 
 ## Step 2: Download a JAR file and upload it to the Hadoop cluster {#section_d13_kc1_fqp .section}
@@ -27,7 +27,7 @@ We recommend that you specify the same security group for the Hadoop cluster as 
 In this example, the [Demo](https://github.com/aliyun/aliyun-emapreduce-demo) project is customized and compiled to create a new JAR file. You need to upload the JAR file to the **emr-header-1** instance of the Hadoop cluster.
 
 1.  Download the JAR file from [this link](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/126974/cn_zh/1563960119361/examples-1.2.0-shaded-2.jar.zip).
-2.  Log on to the [Alibaba Cloud EMR console](https://emr.console.aliyun.com).
+2.  Log on to the [Alibaba Cloud EMR console](https://partners-intl.console.aliyun.com/#/emr).
 3.  On the Cluster Management tab, click the **Cluster ID** of the target cluster to enter the Hadoop cluster.
 4.  In the left-side navigation pane, select **Instances** and view the **IP address** of the **emr-header-1** instance in the Hadoop cluster.
 5.  Log on to the **emr-header-1** instance by using SSH.
@@ -38,9 +38,9 @@ In this example, the [Demo](https://github.com/aliyun/aliyun-emapreduce-demo) pr
 
 ## Step 3: Create a topic on the Kafka cluster {#section_pbz_vsa_646 .section}
 
-You can create a topic in the EMR console. For more information, see [Manage Kafka metadata](../../../../intl.en-US/Cluster Planning and Configurations/Configure clusters/Metadata management/Manage Kafka metadata.md#). You can also log on to the **emr-header-1** instance and create a topic by using the CLI. In this example, you can create a topic named test with 10 partitions, 2 replicas.
+You can create a topic in the EMR console. For more information, see [Manage Kafka metadata](../../../../reseller.en-US/Cluster Planning and Configurations/Configure clusters/Metadata management/Manage Kafka metadata.md#). You can also log on to the **emr-header-1** instance and create a topic by using the CLI. In this example, you can create a topic named test with 10 partitions, 2 replicas.
 
-1.  Go to the [Alibaba Cloud EMR console](https://emr.console.aliyun.com).
+1.  Go to the [Alibaba Cloud EMR console](https://partners-intl.console.aliyun.com/#/emr).
 2.  On the Cluster Management tab, click the **Cluster ID** of the target Kafka cluster to open the Details page of the cluster.
 3.  In the left-side navigation pane, select **Instances** and view the **IP address** of the **emr-header-1** instance in the Kafka cluster.
 4.  Open a new shell in the SSH client and log on to the **emr-header-1** instance in the new shell.
@@ -91,19 +91,17 @@ When you perform this step, ensure that the Spark Streaming job is running. Afte
 
 3.  When you enter words in the Kafka logon window, the number of words is displayed and updated in the Hadoop logon window in real time. 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514223252840_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514324252840_en-US.png)
 
 
 ## Step 6: View the progress of the Spark Streaming job {#section_isq_ew4_y5q .section}
 
 After you run a Spark Streaming job, you can view the status of the job in the EMR console.
 
-1.  Go to the [EMR console](https://emr.console.aliyun.com).
-2.  Go to the [EMR console](https://partners-intl.console.aliyun.com/#/emr).
-3.  On the **Connect Strings** page, click the link next to the **Spark History Server UI** service name to view the status of the Spark Streaming job. For more information, see .[Access links and ports](https://www.alibabacloud.com/help/doc-detail/89065.htm). 
+1.  On the **Connect Strings** page, click the link next to the **Spark History Server UI** service name to view the status of the Spark Streaming job. For more information, see [Access links and ports](https://partners-intl.aliyun.com/help/doc-detail/89065.htm) 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514223252852_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514324352852_en-US.png)
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514223252855_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514324352855_en-US.png)
 
 
