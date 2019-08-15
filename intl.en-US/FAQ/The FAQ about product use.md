@@ -40,7 +40,7 @@ For more information, see the Connecting to a core node section in the [Create a
 
 A: You need to use an EIP to connect to the uniform meta database. If you have not enabled the uniform meta database feature, it is safe to release the EIP.
 
-![](images/38270_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/122115/156583971938270_en-US.png)
 
 ## Q: Do services start automatically when nodes are powered on? Do services restart automatically after stopping unexpectedly? {#section_btx_krp_pgb .section}
 
@@ -108,15 +108,15 @@ Both EMR and MaxCompute are used for big data processing. EMR is a big data plat
 
 A: On the Clusters and Services page, click Hive and click **Configuration** to view the password.
 
-```
+``` {#codeblock_wth_8w4_6n3}
 javax.jdo.option.ConnectionURL
 ```
 
-```
+``` {#codeblock_au5_uu2_akt}
 javax.jdo.option.ConnectionUserName
 ```
 
-```
+``` {#codeblock_umh_om2_gj6}
 javax.jdo.option.ConnectionPassword
 ```
 
@@ -163,7 +163,7 @@ A: Earlier versions of EMR do not support modifying software configurations in t
 1.  Log on to the master node of your cluster.
 2.  Go to the directory of configuration templates.
 
-    ```
+    ``` {#codeblock_eys_dtp_b9y}
     cd /var/lib/ecm-agent/cache/ecm/service/
     ```
 
