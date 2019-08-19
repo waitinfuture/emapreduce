@@ -1,12 +1,12 @@
 # MetaService {#concept_wj5_fpt_1fb .concept}
 
-MetaService allows you to access Alibaba Cloud resources in the E-MapReduce cluster without using an AccessKey \(AK\).
+E-MapReduce supports MetaService. MetaService allows you to access Alibaba Cloud resources from E-MapReduce clusters without providing the AccessKey.
 
-## Default roles {#section_xwf_3pt_1fb .section}
+## Default application role {#section_xwf_3pt_1fb .section}
 
-When creating a cluster, you must authorize an application role \(AliyunEmrEcsDefaultRole\) to E-MapReduce. After you do so, you can perform operations on E-MapReduce to access Alibaba Cloud resources without using an AK. By default, the following permission policies are granted to AliyunEmrEcsDefaultRole:
+You can grant the default application role AliyunEmrEcsDefaultRole to E-MapReduce when creating an E-MapReduce cluster. Then, your E-MapReduce jobs can access Alibaba Cloud resources without explicitly providing the AccessKey. By default, the following permissions are granted to AliyunEmrEcsDefaultRole:
 
-```
+``` {#codeblock_t59_2h5_moi}
 {
   "Version": "1",
   "Statement": [
@@ -26,41 +26,41 @@ When creating a cluster, you must authorize an application role \(AliyunEmrEcsDe
 }
 ```
 
-By default, operations based on MetaService can only access OSS data. If you want to use MetaService to access other Alibaba Cloud resources, such as LogService, you must grant permissions to AliyunEmrEcsDefaultRole. Perform the preceding operations on the [RAM console](https://partners-intl.aliyun.com/login-required#/ram/role/list).
+That is, MetaService-based jobs can access only Object Storage Service \(OSS\) data by default. To allow MetaService-based jobs to access other Alibaba Cloud resources, such as Log Service data, you must grant the required permissions to AliyunEmrEcsDefaultRole. You can grant the default application role to E-MapReduce and configure the permissions of the role in the [Resource Access Management \(RAM\) console](https://partners-intl.aliyun.com/login-required#/ram/role/list).
 
-**Note:** MetaService only supports AK-free operations on OSS, LogService, and MNS data. Modify and delete the default role with caution. Otherwise, you may fail to create or perform operations on clusters.
+**Note:** Currently, MetaService allows you to access only the data of OSS, Log Service, and Message Service \(MNS\) without providing the AccessKey. Edit or delete the default application role with caution. If the role is edited or deleted by mistake, you may fail to create clusters or run jobs.
 
-## Custom application roles {#section_nwz_mpt_1fb .section}
+## Custom application role {#section_nwz_mpt_1fb .section}
 
-When creating a cluster, you can use a default role or create your own application role. In most cases, you only need to use or modify the default role. For more information about how to create and authorize a role to E-MapReduce, see [RAM](https://partners-intl.aliyun.com/help/product/28625.htm?).
+The default application role can meet most business requirements. You can directly use it or edit it as required. E-MapReduce also allows you to use a custom application role. That is, when creating a cluster, you can use the default application role or select a custom application role. For more information about how to create a role and grant it to a service, see [RAM documentation](https://partners-intl.aliyun.com/help/product/28625.htm?).
 
-## Access to MetaService {#section_djk_npt_1fb .section}
+## Access MetaService {#section_djk_npt_1fb .section}
 
-MetaService is an HTTP service that can be accessed directly to obtain metadata. For example, by using the curl http://localhost:10011/cluster-region command, you can obtain the region where the current cluster is located.
+MetaService is a Hypertext Transfer Protocol \(HTTP\). You can access MetaService to obtain metadata information. For example, you can obtain the region where the current cluster resides by running the curl http://localhost:10011/cluster-region command.
 
-MetaService supports the following types of information:
+Currently, you can use MetaService to obtain the following information:
 
 -   Region: /cluster-region
 -   Role name: /cluster-role-name
--   AccessKeyId: /role-access-key-id
--   AccessKeySecret: /role-access-key-secret
--   SecurityToken: /role-security-token
+-   AccessKey ID: /role-access-key-id
+-   AccessKey secret: /role-access-key-secret
+-   Security token: /role-security-token
 -   Network type: /cluster-network-type
 
 ## Use MetaService {#section_bm5_npt_1fb .section}
 
-You can use MetaService to access Alibaba Cloud resources without using an AK. This has the following advantages:
+Your jobs can use MetaService to access Alibaba Cloud resources without providing the AccessKey, which brings the following benefits:
 
--   Reduces the risk of an AK leak. The use of RAM also minimizes security risks, as only the required permissions are granted to the role.
--   Improves user experience. For instance, when you access OSS resources interactively, you no longer need to write a long string of OSS paths.
+-   Reduces the risk of an AccessKey leakage. The use of a RAM role can minimize the security risk. You can grant only the required permissions to a role. This minimizes the permissions that are granted.
+-   Improves user experience. MetaService is especially useful when you access OSS resources because it shortens the OSS path that you need to enter.
 
-The usage methods are as follows:
+The following examples show how to use MetaService.
 
-```
-I. Using the Hadoop command line to display OSS data
+``` {#codeblock_gnz_8jd_c02}
+I. Hadoop
     Previously, we used: hadoop fs -ls oss://ZaH******As1s:Ba23N**************sdaBj2@bucket.oss-cn-hangzhou-internal.aliyuncs.com/a/b/c
     Now, we use: hadoop fs -ls oss://bucket/a/b/c
-II. Using Hive to create a table
+II. Hive
     Previously, we used:
         CREATE EXTERNAL TABLE test_table(id INT, name string)
         ROW FORMAT DELIMITED

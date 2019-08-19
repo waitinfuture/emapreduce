@@ -6,7 +6,7 @@ E-MapReduce 环境下提供 MetaService 服务。基于此服务，您可以在 
 
 默认地，您在创建集群时将需要向 E-MapReduce 服务授权一个应用角色（AliyunEmrEcsDefaultRole）。授权之后，您在 E-MapReduce 上的作业将可以无需显式输入 AK 来访问阿里云资源。AliyunEmrEcsDefaultRole 默认授予以下权限策略：
 
-```
+``` {#codeblock_t59_2h5_moi}
 {
   "Version": "1",
   "Statement": [
@@ -56,7 +56,7 @@ MetaService 是一个 HTTP 服务，您可以直接访问这个 HTTP 服务来�
 
 下面示例几种使用方式：
 
-```
+``` {#codeblock_gnz_8jd_c02}
 I. Hadoop 命令行查看 OSS 数据
     旧方式： hadoop fs -ls oss://ZaH******As1s:Ba23N**************sdaBj2@bucket.oss-cn-hangzhou-internal.aliyuncs.com/a/b/c
     新方式： hadoop fs -ls oss://bucket/a/b/c
