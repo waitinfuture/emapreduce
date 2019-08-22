@@ -3,11 +3,11 @@
 本文介绍Streaming SQL作业配置的操作步骤。
 
 -   已创建好项目，详情请参见[项目管理](cn.zh-CN/数据开发/项目管理.md#)。
--   已准备好作业要处理的数据以及作业所需的资源。
+-   已获取Spark Streaming SQL的依赖库，详情请参见下面的**背景信息**。
 
 Streaming SQL的详细信息请参见[Spark Streaming SQL](../../../../cn.zh-CN/开发指南/Spark Streaming SQL/前言.md#)。
 
-在Streaming SQL作业配置过程中，您需要设置依赖库。以下列出了Spark Streaming SQL提供的数据源依赖包的版本信息和使用说明，原则上请使用最新版本。
+在Streaming SQL作业配置过程中，您需要设置依赖库。以下列出了Spark Streaming SQL提供的数据源依赖包的版本信息和使用说明，原则上需要使用最新版本。
 
 |库名称|版本|发布日期|引用字符串|详细信息|
 |---|--|----|-----|----|
@@ -26,17 +26,8 @@ Streaming SQL的详细信息请参见[Spark Streaming SQL](../../../../cn.zh-CN/
 
     **说明：** 通过右键单击文件夹，您还可以进行创建子文件夹、重命名文件夹和删除文件夹操作。
 
-5.  在弹出的新建作业对话框中，输入**作业名称**和**作业描述**，并从**作业类型**列表中选择**Streaming SQL**。![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1410430/156646018356337_zh-CN.png)
+5.  在弹出的新建作业对话框中，输入**作业名称**和**作业描述**，并从**作业类型**列表中选择**Streaming SQL**。![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1410430/156646072456337_zh-CN.png)
 
- 
-
-    Streaming SQL作业在E-MapReduce后台使用以下的方式提交：
-
-    ``` {#codeblock_dfb_ffh_pej}
-    streaming-sql -f {SQL_SCRIPT}
-    ```
-
-    **说明：** `SQL_SCRIPT`中保存着作业编辑器中填写的SQL语句。
 
 6.  单击**确定**，完成Streaming SQL的作业创建。 作业创建完成后，自动进入该作业，您可根据实际需要配置作业的代码。
 
@@ -44,7 +35,7 @@ Streaming SQL的详细信息请参见[Spark Streaming SQL](../../../../cn.zh-CN/
 
 在E-MapReduce后台，Streaming SQL作业的提交方式是`streaming-sql -f {SQL_SCRIPT}`，其中`SQL_SCRIPT`中保存的即是Streaming SQL作业的代码，即Hive SQL语句。
 
-1.  在作业内容文本框中输入Hive SQL语句。 
+1.  创建作业完成后，在作业内容文本框中输入Hive SQL语句。 
 
     Hive SQL语句示例：
 
@@ -68,7 +59,7 @@ Streaming SQL的详细信息请参见[Spark Streaming SQL](../../../../cn.zh-CN/
     WHERE ${condition}
     ```
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1410430/156646018356344_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1410430/156646072456344_zh-CN.png)
 
 
 ## 步骤三：配置依赖库和失败策略 {#section_sa5_tmj_fdd .section}
