@@ -33,13 +33,13 @@ This topic describes how to configure spark-submit parameters in E-MapReduce.
 
 After a cluster has been created, you can submit a job. First, you need to create a job in E-MapReduce with the following configuration:
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17980/154752320113107_en-US.png)
+![Job configuration](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17980/156643829113107_en-US.png)
 
 The job in the preceding figure directly uses the official Spark example package, so you do not need to upload your own JAR package.
 
 The parameters are listed as follows:
 
-```
+``` {#codeblock_a66_c6h_n0t}
 --class org.apache.spark.examples.SparkPi --master yarn --deploy-mode client --driver-memory 4g --num-executors 2 --executor-memory 2g --executor-cores 2 /opt/apps/spark-1.6.0-bin-hadoop2.6/lib/spark-examples*.jar 10
 ```
 
@@ -53,7 +53,7 @@ The details of the parameters are described as follows:
 | |yarn-cluster|Equivalent to setting the master parameter to yarn and the deploy-mode parameter to cluster. You do not need to set the deploy-mode parameter separately here.|
 |deploy-mode|client|The client mode indicates that the AM runs on the master node. You must set the preceding master parameter to yarn at the same time when setting this parameter.|
 | |cluster|The cluster mode indicates that the AM runs randomly on one of the worker nodes. However, if you set this parameter, you must also set the preceding master parameter to yarn.|
-|driver-memory|4g|The memory used by the driver cannot exceed the total number of cores of a single machine.|
+|driver-memory|4g|The memory used by the driver cannot exceed the total memory of a single machine.|
 |num-executors|2|The number of executors to be created.|
 |executor-memory|2g|The maximum memory used by each executor cannot exceed the maximum available memory of a single machine.|
 |executor-cores|2|The number of threads used by each executor, which is also the maximum number of tasks that can be executed concurrently by each executor.|
@@ -62,7 +62,7 @@ The details of the parameters are described as follows:
 
 The resources used by jobs running in different modes and settings are shown in the following table:
 
--   **Resource calculation for the yarn-client mode**
+-   **Resource calculation for the yarn-client mode** 
 
     |Node|Resource type|Resource amount \(the result is calculated based on the preceding examples\)|
     |----|-------------|----------------------------------------------------------------------------|
@@ -90,7 +90,7 @@ The resources used by jobs running in different modes and settings are shown in 
 
     If you have a large job in the yarn-client mode and want to use more resources of the cluster, see the following configurations:
 
-    ```
+    ``` {#codeblock_4my_9a9_841}
     --master yarn-client --driver-memory 5g –-num-executors 20 --executor-memory 4g --executor-cores 4
     ```
 
@@ -110,15 +110,15 @@ The resources used by jobs running in different modes and settings are shown in 
         -   mem: 20\*5 GB \(4 GB + 375 MB, rounded up to 5 GB\) = 100 GB
     We can see that the total resources allocated to the job have not exceeded the total resources for the cluster. Following this rule, you have multiple available configurations, such as:
 
-    ```
+    ``` {#codeblock_sog_ijl_s5r}
     --master yarn-client --driver-memory 5g --num-executors 40 --executor-memory 1g --executor-cores 2
     ```
 
-    ```
+    ``` {#codeblock_ihb_6qq_8cs}
     --master yarn-client --driver-memory 5g --num-executors 15 --executor-memory 4g --executor-cores 4
     ```
 
-    ```
+    ``` {#codeblock_9vp_8e1_oce}
     --master yarn-client --driver-memory 5g --num-executors 10 --executor-memory 9g --executor-cores 6
     ```
 
@@ -130,7 +130,7 @@ The resources used by jobs running in different modes and settings are shown in 
 
     In the yarn-cluster mode, the driver program runs on worker nodes. Resources in the resource pool of worker nodes are used. If you want to use more resources of this cluster, use the following configurations:
 
-    ```
+    ``` {#codeblock_a78_r3a_fzq}
     --master yarn-cluster --driver-memory 5g --num-executors 15 --executor-memory 4g --executor-cores 4
     ```
 

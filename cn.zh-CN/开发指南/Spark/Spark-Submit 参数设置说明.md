@@ -33,13 +33,13 @@
 
 创建集群后，您可以提交作业。首先，您需要在 E-MapReduce 中创建一个作业，配置如下：
 
-![作业配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17980/155539393113107_zh-CN.png)
+![作业配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17980/156643828313107_zh-CN.png)
 
 上图所示的作业，直接使用了 Spark 官方的 example 包，所以不需要自己上传 jar 包。
 
 参数列表如下所示：
 
-```
+``` {#codeblock_2j9_pc1_p1s}
 --class org.apache.spark.examples.SparkPi --master yarn --deploy-mode client --driver-memory 4g --num-executors 2 --executor-memory 2g --executor-cores 2 /opt/apps/spark-1.6.0-bin-hadoop2.6/lib/spark-examples*.jar 10
 ```
 
@@ -53,7 +53,7 @@
 | |yarn-cluster|等同于 –-master yarn —deploy-mode cluster， 此时不需要指定deploy-mode。|
 |deploy-mode|client|client 模式表示作业的 AM 会放在 Master 节点上运行。要注意的是，如果设置这个参数，那么需要同时指定上面 master 为 yarn。|
 | |cluster|cluster 模式表示 AM 会随机的在 worker 节点中的任意一台上启动运行。要注意的是，如果设置这个参数，那么需要同时指定上面 master 为yarn。|
-|driver-memory|4g|driver 使用的内存，不可超过单机的 core 总数。|
+|driver-memory|4g|driver 使用的内存，不可超过单机的总内存。|
 |num-executors|2|创建多少个 executor。|
 |executor-memory|2g|各个 executor 使用的最大内存，不可超过单机的最大可使用内存。|
 |executor-cores|2|各个 executor 使用的并发线程数目，也即每个 executor 最大可并发执行的 Task 数目。|
@@ -90,7 +90,7 @@
 
     若您有了一个大作业，使用 yarn-client 模式，想要多用一些这个集群的资源，请参见如下配置：
 
-    ```
+    ``` {#codeblock_rbc_wug_sdx}
     --master yarn-client --driver-memory 5g –-num-executors 20 --executor-memory 4g --executor-cores 4
     ```
 
@@ -110,15 +110,15 @@
         -   mem: 20\*5G \(4G + 375M 向上取整为 5G\) = 100G
     可以看到总的资源没有超过集群的总资源，那么遵循这个原则，您还可以有很多种配置，例如：
 
-    ```
+    ``` {#codeblock_za8_mxi_sqt}
     --master yarn-client --driver-memory 5g --num-executors 40 --executor-memory 1g --executor-cores 2
     ```
 
-    ```
+    ``` {#codeblock_kgy_h37_nki}
     --master yarn-client --driver-memory 5g --num-executors 15 --executor-memory 4g --executor-cores 4
     ```
 
-    ```
+    ``` {#codeblock_nf9_w2t_g9y}
     --master yarn-client --driver-memory 5g --num-executors 10 --executor-memory 9g --executor-cores 6
     ```
 
@@ -130,7 +130,7 @@
 
     当使用 yarn-cluster 模式后，Driver 程序会被放到 worker 节点上。资源会占用到 worker 的资源池里面，这时若想要多用一些这个集群的资源，请参加如下配置：
 
-    ```
+    ``` {#codeblock_tje_cf9_hcq}
     --master yarn-cluster --driver-memory 5g --num-executors 15 --executor-memory 4g --executor-cores 4
     ```
 
