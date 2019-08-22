@@ -26,18 +26,18 @@ Streaming SQL的详细信息请参见[Spark Streaming SQL](../../../../cn.zh-CN/
 
     **说明：** 通过右键单击文件夹，您还可以进行创建子文件夹、重命名文件夹和删除文件夹操作。
 
-5.  在弹出的新建作业对话框中，输入**作业名称**和**作业描述**，并从**作业类型**列表中选择**Streaming SQL**。![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1410430/156646072456337_zh-CN.png)
+5.  在弹出的新建作业对话框中，输入**作业名称**和**作业描述**，并从**作业类型**列表中选择**Streaming SQL**。![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1410430/156646902956337_zh-CN.png)
 
 
 6.  单击**确定**，完成Streaming SQL的作业创建。 作业创建完成后，自动进入该作业，您可根据实际需要配置作业的代码。
 
-## 步骤二：配置作业Hive SQL语句 {#section_a4b_tzg_roy .section}
+## 步骤二：配置作业的Streaming SQL语句 {#section_a4b_tzg_roy .section}
 
-在E-MapReduce后台，Streaming SQL作业的提交方式是`streaming-sql -f {SQL_SCRIPT}`，其中`SQL_SCRIPT`中保存的即是Streaming SQL作业的代码，即Hive SQL语句。
+在E-MapReduce后台，Streaming SQL作业的提交方式是`streaming-sql -f {SQL_SCRIPT}`，其中`SQL_SCRIPT`中保存的即是Streaming SQL作业的代码，即Streaming SQL语句。
 
-1.  创建作业完成后，在作业内容文本框中输入Hive SQL语句。 
+1.  创建作业完成后，在作业内容文本框中输入Streaming SQL语句。 
 
-    Hive SQL语句示例：
+    Streaming SQL语句示例：
 
     ``` {#codeblock_h5c_qkn_eba}
     --- 创建SLS数据表 
@@ -59,7 +59,7 @@ Streaming SQL的详细信息请参见[Spark Streaming SQL](../../../../cn.zh-CN/
     WHERE ${condition}
     ```
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1410430/156646072456344_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1410430/156646902956344_zh-CN.png)
 
 
 ## 步骤三：配置依赖库和失败策略 {#section_sa5_tmj_fdd .section}
