@@ -1,22 +1,47 @@
-# OSS ACL {#concept_jrw_vnl_z2b .concept}
+# Isolate OSS data of different users {#concept_jrw_vnl_z2b .concept}
 
-This article introduces how to use RAM Access control to isolate the data of different sub-account.
+This topic describes how to use Resource Access Management \(RAM\) to isolate Object Storage Service \(OSS\) data of different users.
 
-## Procedure {#section_nbm_14l_z2b .section}
+## Prerequisite {#section_xk8_xsb_b6x .section}
 
-E-MapReduce supports using RAMto isolate the data of different sub-accounts. To do so, complete the following steps:
+An Alibaba Cloud account is created.
 
-1.  Log on to the [Alibaba Cloud RAM console](https://partners-intl.aliyun.com/login-required#/ram).
-2.  Create a sub-account in RAM. For more information, see [Create aRAMuser](../../../../reseller.en-US/Quick Start/(Old Version) Quick Start/Create a RAM user.md#).
-3.  In the navigation pane on the left, click **Policies** to enter the policy management page.
-4.  Click **Custom Policy**.
-5.  In the upper-right corner, click **Create Authorization Policy**. Follow the steps there to create a policy. You can create as many policies as the number of authorization control setsthat you need.
+## Background {#section_dcf_jpl_z2b .section}
 
-    In this example, it is assumed that you need the following two sets of data control policies:
+E-MapReduce allows you to use RAM to isolate data of different users.
 
-    -   Bucketnameof the testing environment: test-bucket. The corresponding policy is as follows:
+## Step 1: Log on to the RAM console {#section_wen_dqp_m4b .section}
 
-``` {#codeblock_fme_mij_1ma}
+1.  Log on to the [RAM console](https://ram.console.aliyun.com/) by using an Alibaba Cloud account.
+
+## Step 2: Create a RAM user {#section_scp_1y3_lp2 .section}
+
+1.  In the left-side navigation pane, click **Identities**, and click **Users**.
+2.  Click **Create User**.
+
+    **Note:** To create multiple RAM users at a time, click **Add User**.
+
+3.  Specify the **Logon Name** and **Display Name** parameters.
+4.  Under **Access Mode**, select **Console Password Logon** or **Programmatic Access**.
+
+    **Note:** We recommend that you select only one access mode for the RAM users to ensure the security of your Alibaba Cloud account. This prevents RAM users who have terminated their employment contracts with the company from accessing Alibaba Cloud resources.
+
+5.  Click **OK**.
+
+## Step 3: Create permission policies {#section_fzt_gus_48m .section}
+
+In addition to providing the default permission policies, RAM allows you to customize permission policies for flexible authorization. You can create multiple permission policies based on your needs.
+
+1.  In the left-side navigation pane, click **Permissions**, and click **Policies**.
+2.  On the page that appears, click **Create Policy**.
+3.  On the Create Custom Policy page, specify the **Policy Name** and **Note** parameters.
+4.  Select **Script** in **Configuration Mode**.
+
+    For more information about how to configure a permission policy in **script** mode, see the [permission policy syntax and structure](../../intl.en-US/User Guide/Policies/Policy language/Policy structure and grammar.md#). In the following example, two permission policies are created in script mode:
+
+    |Test environment \(test-bucket\)|Production environment \(prod-bucket\)|
+    |--------------------------------|--------------------------------------|
+    |     ``` {#codeblock_h5z_9ni_e3u}
 {
 "Version": "1",
 "Statement": [
@@ -44,56 +69,70 @@ E-MapReduce supports using RAMto isolate the data of different sub-accounts. To 
 }
 ]
 }
-```
+    ```
 
-    -   Bucketname of the production environment: prod-bucket. The corresponding policy is as follows:
+ |     ``` {#codeblock_1g5_77a_u0x}
+{
+"Version": "1",
+"Statement": [
+{
+"Effect": "Allow",
+"Action": [
+  "oss:ListBuckets"
+],
+"Resource": [
+  "acs:oss:*:*:*"
+]
+},
+{
+"Effect": "Allow",
+"Action": [
+  "oss:Listobjects",
+  "oss:GetObject",
+  "oss:PutObject"
+],
+"Resource": [
+  "acs:oss:*:*:prod-bucket",
+  "acs:oss:*:*:prod-bucket/*"
+]
+}
+]
+}
+    ```
 
-        ``` {#codeblock_v69_066_6t2}
-        {
-        "Version": "1",
-        "Statement": [
-        {
-        "Effect": "Allow",
-        "Action": [
-          "oss:ListBuckets"
-        ],
-        "Resource": [
-          "acs:oss:*:*:*"
-        ]
-        },
-        {
-        "Effect": "Allow",
-        "Action": [
-          "oss:Listobjects",
-          "oss:GetObject",
-          "oss:PutObject"
-        ],
-        "Resource": [
-          "acs:oss:*:*:prod-bucket",
-          "acs:oss:*:*:prod-bucket/*"
-        ]
-        }
-        ]
-        }
-        ```
+ |
 
-6.  Click **Users**.
-7.  Find the sub-account item which the policy is given to and click **Manage**.
-8.  In the navigation pane on the left, click **User Authorization Policy**.
-9.  In the upper-right corner, click **Edit Authorization Policy**.
-10. Select and add authorization policies.
-11. Click **OK** to complete the policy authorization of the sub-account.
-12. In the upper-right corner, click **User Details** to enter the user details page of the sub-account.
-13. Click **Start Console Logon** in the console logon management bar to initialize the authorization of the sub-account logon console.
+    After the preceding permission policies are granted to a RAM user, the RAM user is subject to the following restrictions in the E-MapReduce console:
 
-## Complete and use {#section_dcf_jpl_z2b .section}
+    -   All buckets are displayed on the OSS selection page for creating clusters, jobs, and execution plans, but only the authorized buckets can be accessed.
+    -   Only the contents of the authorized buckets are accessible.
+    -   Only the authorized buckets can be read and written. An error is returned if the RAM user performs read or write operation on unauthorized buckets.
+5.  Click **OK**.
 
-Once you have completed all of the preceding steps, you can use the sub-account to log on to E-MapReduce. Note thefollowing limitations:
+## Step 4: Grant permissions to the RAM user {#section_p68_c2w_zjf .section}
 
--   All buckets are displayed in the OSS interface for clusters, operations, and plan executions. However, you can only enter the authorized bucket.
+1.  In the left-side navigation pane, click **Identities**, and click **Users**.
+2.  In the **User Logon Name/Display Name** column, find the target RAM user.
+3.  Click **Add Permissions**. On the page that appears, the principle is automatically filled in.
+4.  In the **Policy Name** column, select the target policies by clicking the corresponding rows.
 
--   Only the content under the authorized bucket is displayed.
+    **Note:** You can click **X** in the section on the right side of the page to delete the selected policy.
 
--   The authorized bucket can only be read and written. Otherwise, an error is reported.
+5.  Click **OK**.
+6.  Click **Finished**.
 
+## \(Optional\) Step 5: Authorize the RAM user to log on to the Alibaba Cloud console {#section_nhy_pqf_2ad .section}
+
+If the console logon permission is not granted to the RAM user when the RAM user is created, you can grant the permission to the RAM user as follows:
+
+1.  In the left-side navigation pane, click **Identities**, and click **Users**.
+2.  In the **User Logon Name/Display Name** column, click the username of the target RAM user.
+3.  In the **Console Logon Management** section of the **Authentication** tab, click **Modify Logon Settings**.
+4.  Under **Console Password Logon**, select **Enabled**.
+5.  Click **OK**.
+
+## Step 6: Log on to the E-MapReduce console as the RAM user {#section_eoq_vld_2k3 .section}
+
+1.  Log on to the [Alibaba Cloud console](https://signin.alibabacloud.com/login.htm) as the RAM user.
+2.  After logging on to the console, select **E-MapReduce**.
 
