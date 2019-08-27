@@ -1,6 +1,19 @@
 # E-MapReduce本地盘实例大规模数据集测试 {#concept_1846343 .concept}
 
- 
+本文介绍如何使用阿里云E-MapReduce搭建本地盘机型集群节点，并进行大数据基准性能测试。
 
-详情请参见[E-MapReduce本地盘实例大规模数据集测试最佳实践](https://www.aliyun.com/acts/best-practice/preview?spm=5176.13138632.3fap8xbb8.4.30e42d39PCAxUm&id=52141&title=%E5%9F%BA%E4%BA%8EEMR%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E4%BE%8B%E6%9C%AC%E5%9C%B0%E7%9B%98%E8%BF%9B%E8%A1%8C%E5%A4%A7%E8%A7%84%E6%A8%A1%E6%95%B0%E6%8D%AE%E9%9B%86%E6%B5%8B%E8%AF%95%E5%AE%9E%E8%B7%B5%E6%96%B9%E6%A1%88)。
+## 应用范围 {#section_r3g_yxq_mb6 .section}
+
+-   需要使用阿里云E-MapReduce+本地盘进行大数据业务前进行性能测试的用户。
+-   需要将线下自建大数据集群迁移到阿里云云上E-MapReduce+本地盘进行大数据分析和性能对比测试的用户。
+
+## 最佳实践概述 {#section_pct_t7m_to7 .section}
+
+为了满足大数据场景下的存储需求，阿里云在云上推出了本地盘D1机型。本地盘D1机型使用本地盘而非云盘作为存储，解决了之前使用云盘的多份冗余数据导致的高成本问题。同时，在使用本地盘D1机型时，数据的传输不需要全部通过网络，因此该场景提供了与磁盘相同的吞吐能力，可发挥Hadoop就近计算的优势。
+
+阿里云E-MapReduce产品针对本地盘机型，推出了一整套的自动化运维方案，帮助阿里云用户方便可靠地使用本地盘机型。该运维方案即能让用户无须关心整个运维过程，又能保证数据高可靠和服务高可用。
+
+大数据基准测试用于公平、客观评测不同大数据产品/平台的功能和性能，对用户选择合适的大数据平台产品具有重要的参考价值，TPC-DS逐渐成为了业界公认的大数据系统测试基准。
+
+本文以阿里云E-MapReduce+D1本地盘方案模拟TPC-DS测试的演示方案，来展示如何使用阿里云大数据集群进行性能测试。详情请参见[E-MapReduce本地盘实例大规模数据集测试最佳实践](https://www.aliyun.com/acts/best-practice/preview?spm=5176.13138632.3fap8xbb8.4.30e42d39PCAxUm&id=52141&title=%E5%9F%BA%E4%BA%8EEMR%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%9E%E4%BE%8B%E6%9C%AC%E5%9C%B0%E7%9B%98%E8%BF%9B%E8%A1%8C%E5%A4%A7%E8%A7%84%E6%A8%A1%E6%95%B0%E6%8D%AE%E9%9B%86%E6%B5%8B%E8%AF%95%E5%AE%9E%E8%B7%B5%E6%96%B9%E6%A1%88)。
 
