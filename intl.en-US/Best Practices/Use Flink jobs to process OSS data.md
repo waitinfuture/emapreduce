@@ -48,7 +48,7 @@ Download EMR sample code [aliyun-emapreduce-demo](https://github.com/aliyun/aliy
 3.  Open the new project, select the Edit Job tab, and create a job with the type of **Flink**.
 4.  After the new Flink job is created, specify the **content** of the job. 
 
-    ![Content of the Flink job](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1082642/156695828253103_en-US.png)
+    ![Content of the Flink job](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1082642/156695843853103_en-US.png)
 
     The **job content** is a snippet of code. An example is shown as follows.
 
@@ -67,10 +67,10 @@ Download EMR sample code [aliyun-emapreduce-demo](https://github.com/aliyun/aliy
 
     When the job is running, the Log window appears. After the job is complete, the file content is obtained from an OSS bucket and output to logs. At this point, the Flink job that runs on an EMR cluster to consume OSS data is complete.
 
-    ![View the results of the Flink job](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1082642/156695828353150_en-US.png)
+    ![View the results of the Flink job](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1082642/156695843853150_en-US.png)
 
 
-## Step 5: View the logs and details of the job {#section_xcd_kdu_25t .section}
+## Step 5: View the logs and details of the job \(Optional\) {#section_xcd_kdu_25t .section}
 
 You can view the logs and details of the job to identify the cause of a job failure and details of the job.
 
@@ -79,7 +79,7 @@ You can view the logs and details of the job to identify the cause of a job fail
 
         After submitting a job in the console, you can open the Details page of a job listed on the Records tab. On the Details page, you can view the results of the job.
 
-        ![View the logs of the Flink job](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1082642/156695828353291_en-US.png)
+        ![View the logs of the Flink job](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1082642/156695843853291_en-US.png)
 
     -   You can log on to the header node of a Hadoop cluster by using SSH to view logs.
 
@@ -93,13 +93,13 @@ You can view the logs and details of the job to identify the cause of a job fail
 
     1.  On the **Connect Strings** tab of the Hadoop cluster, click the link next to **Yarn UI** to open the Hadoop console. 
 
-        ![Connect string of YARN UI](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1082642/156695828353382_en-US.png)
+        ![Connect string of YARN UI](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1082642/156695843853382_en-US.png)
 
     2.  In the Hadoop console, click the **ID** of the job to view the details of the job. 
 
-        ![Flink job list in the Hadoop console](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1082642/156695828353394_en-US.png)
+        ![Flink job list in the Hadoop console](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1082642/156695843853394_en-US.png)
 
-        ![Flink job details in the Hadoop console](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1082642/156695828353402_en-US.png)
+        ![Flink job details in the Hadoop console](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1082642/156695843853402_en-US.png)
 
     3.  If you need to view a list of running Flink jobs, you can click the link next to **Tracking URL** on the Details page. The Flink Dashboard page that appears displays the list of running Flink jobs. 
 
