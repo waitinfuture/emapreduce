@@ -33,7 +33,7 @@
 
 创建集群后，您可以提交作业。首先，您需要在 E-MapReduce 中创建一个作业，配置如下：
 
-![作业配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17980/156643828313107_zh-CN.png)
+![作业配置](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17980/156740518413107_zh-CN.png)
 
 上图所示的作业，直接使用了 Spark 官方的 example 包，所以不需要自己上传 jar 包。
 
