@@ -4,11 +4,11 @@ E-MapReduce \(EMR\) allows you to expand disks for EMR clusters. You can expand 
 
 ## Overview {#section_vmm_j0a_4ty .section}
 
-According to the version of EMR that you are using and the type of disks that you need to expand, choose one of the following method to expand disks:
+According to the version of EMR that you are using and the type of disks that you need to expand, choose one of the following methods to expand disks:
 
 -   Data disk
-    -   EMR V3.11.0 and later: You can expand data disks in the EMR console. The current EMR console does not supporting shrinking data disks.
-    -   EMR V3.11.0 and earlier: You can expand data disks in the Elastic Compute Service \(ECS\) console.
+    -   EMR V3.11.0 and later: You can expand data disks in the EMR console. The current EMR console does not support shrinking data disks.
+    -   Versions earlier than EMR V3.11.0: You can expand data disks in the Elastic Compute Service \(ECS\) console.
 -   System disk
     -   All EMR versions: You can expand the system disk in the ECS console.
 
@@ -23,7 +23,7 @@ The current EMR console only supports expanding data disks. For more information
 3.  In the left-side navigation pane, choose Cluster Overview, and then choose **Change Configuration** \> **Disk Expansion** in the upper-right corner of the page.
 4.  In the Disk Expansion dialog box, set the parameters.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/156740529032531_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/156747739132531_en-US.png)
 
     The required parameters are described as follows:
 
@@ -41,13 +41,13 @@ The current EMR console only supports expanding data disks. For more information
 
     After you expand the disks, the **The disk is expanded. Restart the node group for the change to take effect.** message is displayed at the bottom of the Cluster Overview page for the instance group.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/156740529034253_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/156747739134253_en-US.png)
 
     **Note:** You must restart the cluster for the disk expansion to take effect. This operation restarts the ECS instances in the cluster. During the restart process, the big data services are unavailable. Make sure that the restart operation does not adversely affect your businesses before you restart the cluster.
 
 6.  Click **The disk is expanded. Restart the node group for the change to take effect.** to configure the restart settings.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/156740529034254_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/156747739134254_en-US.png)
 
     The cluster restart settings are described as follows:
 
@@ -64,7 +64,7 @@ The current EMR console only supports expanding data disks. For more information
 
     During the restart process, the instance group displays **Restarting server group...**. If the node group is successfully restarted, the **Restarting server group...** message disappears. You can go to the Cluster Overview page to verify the disk expansion result.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/156740529034255_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/156747739134255_en-US.png)
 
 
 ## Expand data disks \(EMR V3.11.0 and earlier\) {#section_rws_wx4_y2b .section}
