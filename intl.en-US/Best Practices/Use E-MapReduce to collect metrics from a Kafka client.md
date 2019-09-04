@@ -16,9 +16,7 @@ Kafka provides a collection of metrics that are used to measure the performance 
 
     You can customize Kafka metrics. In addition, you need a data store to keep these metrics for later use and analysis. You can store metrics to Kafka without using a third-party data store as Kafka itself is a data store. In addition, Kafka can be easily integrated with other services. You can collect metrics from a client as the following figure shows:
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21764/155773443412649_en-US.png)
-
-    E-MapReduce provides a sample emr-kafka-client-metrics. You can download the source code from the link: [source code](https://github.com/aliyun/aliyun-emapreduce-sdk/tree/master-2.x/external/emr-kafka).
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21764/156756734112649_en-US.png)
 
 
 ## Prerequisites {#section_f4s_yzr_ngb .section}
@@ -37,7 +35,7 @@ Kafka provides a collection of metrics that are used to measure the performance 
     -   Software: Kafka-Manager \(1.3.3.16\), Kafka \(2.11-1.0.1\), ZooKeeper \(3.4.12\), and Ganglia \(3.7.2\)
     -   The network type of this Kafka cluster is VPC in the China \(Hangzhou\) region. The master instance group is configured with a public IP and an internal network IP. The following figure shows the details.
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21764/155773443412651_en-US.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21764/156756734112651_en-US.png)
 
 -   Configure metrics
 
@@ -55,25 +53,25 @@ Kafka provides a collection of metrics that are used to measure the performance 
 
 1.  Download the latest emr-kafka-client-metrics package.
 
-    ```
+    ``` {#codeblock_mle_b0i_zi5}
     wget http://central.maven.org/maven2/com/aliyun/emr/emr-kafka-client-metrics/1.4.3/emr-kafka-client-metrics-1.4.3.jar
     ```
 
 2.  Create a test topic.
 
-    ```
+    ``` {#codeblock_sle_j44_l21}
     kafka-topics.sh --zookeeper emr-header-1:2181/kafka-1.0.1 --partitions 10 --replication-factor 2 --topic test-metrics  --create
     ```
 
 3.  Copy theemr-kafka-client-metrics package to the lib directory of a Kafka client.
 
-    ```
+    ``` {#codeblock_pu4_dye_aom}
     cp emr-kafka-client-metrics-1.4.3.jar /usr/lib/kafka-current/libs/
     ```
 
 4.  Write data to a test topic. You can write the configurations of a Kafka Producer to the local client.conf file.
 
-    ```
+    ``` {#codeblock_t3b_ajc_3o2}
     ## client.conf:
     metric.reporters=org.apache.kafka.clients.reporter.EMRClientMetricsReporter
     emr.metrics.reporter.bootstrap.servers=emr-worker-1:9092
@@ -86,14 +84,14 @@ Kafka provides a collection of metrics that are used to measure the performance 
 
 5.  View the current metrics from a client. The default metrics topic is \_emr-client-metrics.
 
-    ```
+    ``` {#codeblock_9yi_cz5_eqp}
     Kafka-console-consumer.sh -- Topic _ emr-client-metrics -- Bootstrap-server emr-worker-1: 9092 
     --from-beginning
     ```
 
     The returned message is shown as follows.
 
-    ```
+    ``` {#codeblock_tr0_9iq_ay7}
     {prefix=kafka.producer, client.ip=192.168.xxx.xxx, client.process=25536@emr-header-1.cluster-xxxx, 
     attribute=request-rate, value=894.4685104965012, timestamp=1533805225045, group=producer-metrics, 
     tag.client-id=producer-1}
