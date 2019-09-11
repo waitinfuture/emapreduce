@@ -1,6 +1,6 @@
 # ListClusterSupportService {#doc_api_Emr_ListClusterSupportService .reference}
 
-调用ListClusterSupportService接口查看集群支持的服务列表。
+调用ListClusterSupportService接口，查看集群支持的服务列表。
 
 ## 调试 {#api_explorer .section}
 
@@ -33,7 +33,10 @@
 |RequestId|String|EA5FB7F2-BDDA-49C8-B9ED-9C4D3F5D27E8|请求的ID。
 
  |
-|SupportServiceList| | |支持的服务列表信息
+|SupportServiceList| | |支持的服务列表信息。
+
+ |
+|SupportService| | |支持的服务列表信息。
 
  |
 |ServiceDisplayName|String|Hive|服务展示名称。
@@ -71,7 +74,6 @@ http(s)://[Endpoint]/?Action=ListClusterSupportService
 
 ``` {#xml_return_success_demo}
 <ListClusterSupportServiceResponse>
-	  <code>200</code>
 	  <data>
 		    <pageNumber>3.22.0.1.0-cl</pageNumber>
 		    <requestId>EA5FB7F2-BDDA-49C8-B9ED-9C4D3F5D27E8</requestId>
@@ -416,12 +418,11 @@ http(s)://[Endpoint]/?Action=ListClusterSupportService
 			}
 		]
 	},
-	"code":"200",
 	"success":true
 }
 ```
 
 ## 错误码 { .section}
 
-访问[错误中心](https://error-center.alibabacloud.com/status/product/Emr)查看更多错误码。
+访问[错误中心](https://error-center.aliyun.com/status/product/Emr)查看更多错误码。
 
