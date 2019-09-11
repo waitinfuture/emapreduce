@@ -1,6 +1,6 @@
 # ListFlowNodeInstance {#doc_api_Emr_ListFlowNodeInstance .reference}
 
-调用 ListFlowNodeInstance 接口查询工作流节点实例列表
+调用 ListFlowNodeInstance 接口，查询工作流节点实例列表
 
 查询工作流节点实例列表
 
@@ -45,6 +45,9 @@
 |名称|类型|示例值|描述|
 |--|--|---|--|
 |FlowNodeInstances| | |节点实例列表。
+
+ |
+|FlowNodeInstance| | |节点实例列表。
 
  |
 |ClusterId|String|C-A6C9F4F1E9E\*\*\*\*|集群ID。
@@ -135,22 +138,32 @@
 |StartTime|Long|1540796237000|开始运行时间。
 
  |
-|Status|String|OK|状态: PREP\(等待启动\),SUBMITTING\(提交中\),RUNNING\(运行中\),DONE\(已完成\),OK\(执行成功\),FAILED\(执行失败\),KILLED\(已终止\),KILL\_FAILED\(终止失败\),START\_RETRY\(开始重试\)
+|Status|String|OK|状态:
+
+ -   PREP（等待启动）。
+-   SUBMITTING（提交中）。
+-   RUNNING（运行中）。
+-   DONE（已完成）。
+-   OK（执行成功）。
+-   FAILED（执行失败）。
+-   KILLED（已终止）。
+-   KILL\_FAILED（终止失败）。
+-   START\_RETRY（开始重试）。
 
  |
-|Type|String|JOB|节点类型
+|Type|String|JOB|节点类型。
 
  |
-|PageNumber|Integer|1|页码
+|PageNumber|Integer|1|页码。
 
  |
-|PageSize|Integer|20|每页数量
+|PageSize|Integer|20|每页数量。
 
  |
-|RequestId|String|83B256D4-4E95-454B-AD08-799DF31D5556|请求ID
+|RequestId|String|83B256D4-4E95-454B-AD08-799DF31D5556|请求ID。
 
  |
-|Total|Integer|12|总数
+|Total|Integer|12|总数。
 
  |
 
@@ -176,8 +189,8 @@ http(s)://[Endpoint]/?Action=ListFlowNodeInstance
 	  <RequestId>BCF52B64-007F-4883-BAEA-0499106D07C2</RequestId>
 	  <PageNumber>1</PageNumber>
 	  <Total>1</Total>
-	  <NodeInstances>
-		    <NodeInstance>
+	  <FlowNodeInstances>
+		    <FlowNodeInstance>
 			      <FailAct>STOP</FailAct>
 			      <Status>OK</Status>
 			      <EndTime>1542957514000</EndTime>
@@ -199,8 +212,8 @@ http(s)://[Endpoint]/?Action=ListFlowNodeInstance
 			      <Id>FJI-F4FC53D7207E4BEF</Id>
 			      <HostName>emr-header-2.cluster-500160670</HostName>
 			      <JobId>FJ-31BD66C7BC502815</JobId>
-		    </NodeInstance>
-	  </NodeInstances>
+		    </FlowNodeInstance>
+	  </FlowNodeInstances>
 	</ListFlowNodeInstanceResponse>
 ```
 
@@ -209,9 +222,8 @@ http(s)://[Endpoint]/?Action=ListFlowNodeInstance
 ``` {#json_return_success_demo}
 {
 	"PageNumber":1,
-	"PageSize":10,
-	"NodeInstances":{
-		"NodeInstance":[
+	"FlowNodeInstances":{
+		"FlowNodeInstance":[
 			{
 				"FailAct":"STOP",
 				"Retries":0,
@@ -237,6 +249,7 @@ http(s)://[Endpoint]/?Action=ListFlowNodeInstance
 			}
 		]
 	},
+	"PageSize":10,
 	"RequestId":"BCF52B64-007F-4883-BAEA-0499106D07C2",
 	"Total":1
 }
@@ -244,5 +257,5 @@ http(s)://[Endpoint]/?Action=ListFlowNodeInstance
 
 ## 错误码 { .section}
 
-访问[错误中心](https://error-center.alibabacloud.com/status/product/Emr)查看更多错误码。
+访问[错误中心](https://error-center.aliyun.com/status/product/Emr)查看更多错误码。
 
