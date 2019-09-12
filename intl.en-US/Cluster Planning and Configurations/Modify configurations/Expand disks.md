@@ -12,7 +12,7 @@ According to the version of EMR that you are using and the type of disks that yo
 -   System disk
     -   All EMR versions: You can expand the system disk in the ECS console.
 
-## Expand data disks \(Versions earlier than EMR V3.11.0\) {#section_bp2_hjc_wfb .section}
+## Expand data disks \(EMR V3.11.0 and later\) {#section_bp2_hjc_wfb .section}
 
 The current EMR console only supports expanding data disks. For more information about how to expand the system disk, see [Expand the system disk](#section_nzr_sy4_y2b).
 
@@ -23,7 +23,7 @@ The current EMR console only supports expanding data disks. For more information
 3.  In the left-side navigation pane, choose Cluster Overview, and then choose **Change Configuration** \> **Disk Expansion** in the upper-right corner of the page.
 4.  In the Disk Expansion dialog box, set the parameters.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/156764769432531_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/156825910632531_en-US.png)
 
     The required parameters are described as follows:
 
@@ -41,13 +41,13 @@ The current EMR console only supports expanding data disks. For more information
 
     After you expand the disks, the **The disk is expanded. Restart the node group for the change to take effect.** message is displayed at the bottom of the Cluster Overview page for the instance group.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/156764769434253_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/156825910634253_en-US.png)
 
     **Note:** You must restart the cluster for the disk expansion to take effect. This operation restarts the ECS instances in the cluster. During the restart process, the big data services are unavailable. Make sure that the restart operation does not adversely affect your businesses before you restart the cluster.
 
 6.  Click **The disk is expanded. Restart the node group for the change to take effect.** to configure the restart settings.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/156764769434254_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/156825910634254_en-US.png)
 
     The cluster restart settings are described as follows:
 
@@ -64,10 +64,10 @@ The current EMR console only supports expanding data disks. For more information
 
     During the restart process, the instance group displays **Restarting server group...**. If the node group is successfully restarted, the **Restarting server group...** message disappears. You can go to the Cluster Overview page to verify the disk expansion result.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/156764769534255_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/17864/156825910634255_en-US.png)
 
 
-## Expand data disks \(EMR V3.11.0 and earlier\) {#section_rws_wx4_y2b .section}
+## Expand data disks \(Versions earlier than EMR V3.11.0\) {#section_rws_wx4_y2b .section}
 
 **Note:** You must expand the disks of all nodes in a cluster to make sure that the nodes have the same disk size.
 
@@ -112,7 +112,7 @@ The current EMR console only supports expanding data disks. For more information
 
     **Note:** Your cluster may not be able to meet all the requirements for expanding disks online. In this case, you can expand disks offline.
 
-6.  After the disks are expanded, you have to expand the partitions and file systems of the disks. For more information, see [Extend the file system of the Linux system disk](../../../../reseller.en-US/Block Storage/Block storage/Resize cloud disks/Extend the file system of the Linux system disk.md#).
+6.  After the disks are expanded, you have to expand the partitions and file systems of the disks. For more information, see [Resize partitions and file systems of Linux system disks](../../../../reseller.en-US/Block Storage/Block storage/Resize cloud disks/Resize partitions and file systems of Linux system disks.md#).
 
     **Note:** 
 
