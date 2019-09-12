@@ -734,70 +734,60 @@ http(s)://[Endpoint]/?Action=ListClusterInstalledService
 			"serviceActionList":[
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"CONFIGURE",
 					"actionName":"CONFIGURE",
 					"displayName":"CONFIGURE All Components",
 					"serviceName":"HDFS"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"START",
 					"actionName":"START",
 					"displayName":"START All Components",
 					"serviceName":"HDFS"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"STOP",
 					"actionName":"STOP",
 					"displayName":"STOP All Components",
 					"serviceName":"HDFS"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART All Components",
 					"serviceName":"HDFS"
 				},
 				{
 					"componentName":"DataNode",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART DataNode",
 					"serviceName":"HDFS"
 				},
 				{
 					"componentName":"HttpFS",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART HttpFS",
 					"serviceName":"HDFS"
 				},
 				{
 					"componentName":"JournalNode",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART JournalNode",
 					"serviceName":"HDFS"
 				},
 				{
 					"componentName":"KMS",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART KMS",
 					"serviceName":"HDFS"
 				},
 				{
 					"componentName":"NameNode",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART NameNode",
 					"serviceName":"HDFS"
 				},
 				{
 					"componentName":"ZKFC",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART ZKFC",
 					"serviceName":"HDFS"
@@ -805,7 +795,6 @@ http(s)://[Endpoint]/?Action=ListClusterInstalledService
 				{
 					"componentName":"NameNode",
 					"command":"rebalance",
-					"bizActionName":"CUSTOM_COMMAND",
 					"actionName":"CUSTOM_COMMAND",
 					"displayName":"rebalance",
 					"serviceName":"HDFS"
@@ -813,7 +802,6 @@ http(s)://[Endpoint]/?Action=ListClusterInstalledService
 				{
 					"componentName":"NameNode",
 					"command":"stop_rebalance",
-					"bizActionName":"CUSTOM_COMMAND",
 					"actionName":"CUSTOM_COMMAND",
 					"displayName":"stop_rebalance",
 					"serviceName":"HDFS"
@@ -831,63 +819,54 @@ http(s)://[Endpoint]/?Action=ListClusterInstalledService
 			"serviceActionList":[
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"CONFIGURE",
 					"actionName":"CONFIGURE",
 					"displayName":"CONFIGURE All Components",
 					"serviceName":"YARN"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"START",
 					"actionName":"START",
 					"displayName":"START All Components",
 					"serviceName":"YARN"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"STOP",
 					"actionName":"STOP",
 					"displayName":"STOP All Components",
 					"serviceName":"YARN"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART All Components",
 					"serviceName":"YARN"
 				},
 				{
 					"componentName":"JobHistory",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART JobHistory",
 					"serviceName":"YARN"
 				},
 				{
 					"componentName":"NodeManager",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART NodeManager",
 					"serviceName":"YARN"
 				},
 				{
 					"componentName":"ResourceManager",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART ResourceManager",
 					"serviceName":"YARN"
 				},
 				{
 					"componentName":"TimeLineServer",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART App Timeline Server",
 					"serviceName":"YARN"
 				},
 				{
 					"componentName":"WebAppProxyServer",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART WebAppProxyServer",
 					"serviceName":"YARN"
@@ -895,7 +874,6 @@ http(s)://[Endpoint]/?Action=ListClusterInstalledService
 				{
 					"componentName":"ResourceManager",
 					"command":"refreshQueues",
-					"bizActionName":"CUSTOM_COMMAND",
 					"actionName":"CUSTOM_COMMAND",
 					"displayName":"refreshQueues",
 					"serviceName":"YARN"
@@ -903,7 +881,6 @@ http(s)://[Endpoint]/?Action=ListClusterInstalledService
 				{
 					"componentName":"NodeManager",
 					"command":"enableCGroups",
-					"bizActionName":"CUSTOM_COMMAND",
 					"actionName":"CUSTOM_COMMAND",
 					"displayName":"enableCGroups",
 					"serviceName":"YARN"
@@ -911,7 +888,6 @@ http(s)://[Endpoint]/?Action=ListClusterInstalledService
 				{
 					"componentName":"NodeManager",
 					"command":"disableCGroups",
-					"bizActionName":"CUSTOM_COMMAND",
 					"actionName":"CUSTOM_COMMAND",
 					"displayName":"disableCGroups",
 					"serviceName":"YARN"
@@ -929,42 +905,36 @@ http(s)://[Endpoint]/?Action=ListClusterInstalledService
 			"serviceActionList":[
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"CONFIGURE",
 					"actionName":"CONFIGURE",
 					"displayName":"CONFIGURE All Components",
 					"serviceName":"HIVE"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"START",
 					"actionName":"START",
 					"displayName":"START All Components",
 					"serviceName":"HIVE"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"STOP",
 					"actionName":"STOP",
 					"displayName":"STOP All Components",
 					"serviceName":"HIVE"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART All Components",
 					"serviceName":"HIVE"
 				},
 				{
 					"componentName":"HiveMetaStore",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART Hive MetaStore",
 					"serviceName":"HIVE"
 				},
 				{
 					"componentName":"HiveServer",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART HiveServer2",
 					"serviceName":"HIVE"
@@ -982,49 +952,42 @@ http(s)://[Endpoint]/?Action=ListClusterInstalledService
 			"serviceActionList":[
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"CONFIGURE",
 					"actionName":"CONFIGURE",
 					"displayName":"CONFIGURE All Components",
 					"serviceName":"GANGLIA"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"START",
 					"actionName":"START",
 					"displayName":"START All Components",
 					"serviceName":"GANGLIA"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"STOP",
 					"actionName":"STOP",
 					"displayName":"STOP All Components",
 					"serviceName":"GANGLIA"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART All Components",
 					"serviceName":"GANGLIA"
 				},
 				{
 					"componentName":"GMETAD",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART Gmetad",
 					"serviceName":"GANGLIA"
 				},
 				{
 					"componentName":"GMOND",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART Gmond",
 					"serviceName":"GANGLIA"
 				},
 				{
 					"componentName":"HTTPD",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART Httpd",
 					"serviceName":"GANGLIA"
@@ -1042,35 +1005,30 @@ http(s)://[Endpoint]/?Action=ListClusterInstalledService
 			"serviceActionList":[
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"CONFIGURE",
 					"actionName":"CONFIGURE",
 					"displayName":"CONFIGURE All Components",
 					"serviceName":"ZOOKEEPER"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"START",
 					"actionName":"START",
 					"displayName":"START All Components",
 					"serviceName":"ZOOKEEPER"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"STOP",
 					"actionName":"STOP",
 					"displayName":"STOP All Components",
 					"serviceName":"ZOOKEEPER"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART All Components",
 					"serviceName":"ZOOKEEPER"
 				},
 				{
 					"componentName":"ZOOKEEPER",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART ZooKeeper",
 					"serviceName":"ZOOKEEPER"
@@ -1088,42 +1046,36 @@ http(s)://[Endpoint]/?Action=ListClusterInstalledService
 			"serviceActionList":[
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"CONFIGURE",
 					"actionName":"CONFIGURE",
 					"displayName":"CONFIGURE All Components",
 					"serviceName":"SPARK"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"START",
 					"actionName":"START",
 					"displayName":"START All Components",
 					"serviceName":"SPARK"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"STOP",
 					"actionName":"STOP",
 					"displayName":"STOP All Components",
 					"serviceName":"SPARK"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART All Components",
 					"serviceName":"SPARK"
 				},
 				{
 					"componentName":"SparkHistory",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART SparkHistory",
 					"serviceName":"SPARK"
 				},
 				{
 					"componentName":"SparkThriftServer",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART ThriftServer",
 					"serviceName":"SPARK"
@@ -1141,35 +1093,30 @@ http(s)://[Endpoint]/?Action=ListClusterInstalledService
 			"serviceActionList":[
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"CONFIGURE",
 					"actionName":"CONFIGURE",
 					"displayName":"CONFIGURE All Components",
 					"serviceName":"HUE"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"START",
 					"actionName":"START",
 					"displayName":"START All Components",
 					"serviceName":"HUE"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"STOP",
 					"actionName":"STOP",
 					"displayName":"STOP All Components",
 					"serviceName":"HUE"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART All Components",
 					"serviceName":"HUE"
 				},
 				{
 					"componentName":"Hue",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART Hue",
 					"serviceName":"HUE"
@@ -1187,35 +1134,30 @@ http(s)://[Endpoint]/?Action=ListClusterInstalledService
 			"serviceActionList":[
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"CONFIGURE",
 					"actionName":"CONFIGURE",
 					"displayName":"CONFIGURE All Components",
 					"serviceName":"ZEPPELIN"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"START",
 					"actionName":"START",
 					"displayName":"START All Components",
 					"serviceName":"ZEPPELIN"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"STOP",
 					"actionName":"STOP",
 					"displayName":"STOP All Components",
 					"serviceName":"ZEPPELIN"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART All Components",
 					"serviceName":"ZEPPELIN"
 				},
 				{
 					"componentName":"Zeppelin",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART Zeppelin",
 					"serviceName":"ZEPPELIN"
@@ -1233,42 +1175,36 @@ http(s)://[Endpoint]/?Action=ListClusterInstalledService
 			"serviceActionList":[
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"CONFIGURE",
 					"actionName":"CONFIGURE",
 					"displayName":"CONFIGURE All Components",
 					"serviceName":"TEZ"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"START",
 					"actionName":"START",
 					"displayName":"START All Components",
 					"serviceName":"TEZ"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"STOP",
 					"actionName":"STOP",
 					"displayName":"STOP All Components",
 					"serviceName":"TEZ"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART All Components",
 					"serviceName":"TEZ"
 				},
 				{
 					"componentName":"TezInit",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART Tez Client",
 					"serviceName":"TEZ"
 				},
 				{
 					"componentName":"Tomcat",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART Tomcat",
 					"serviceName":"TEZ"
@@ -1286,7 +1222,6 @@ http(s)://[Endpoint]/?Action=ListClusterInstalledService
 			"serviceActionList":[
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"CONFIGURE",
 					"actionName":"CONFIGURE",
 					"displayName":"CONFIGURE All Components",
 					"serviceName":"SQOOP"
@@ -1304,7 +1239,6 @@ http(s)://[Endpoint]/?Action=ListClusterInstalledService
 			"serviceActionList":[
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"CONFIGURE",
 					"actionName":"CONFIGURE",
 					"displayName":"CONFIGURE All Components",
 					"serviceName":"PIG"
@@ -1322,35 +1256,30 @@ http(s)://[Endpoint]/?Action=ListClusterInstalledService
 			"serviceActionList":[
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"CONFIGURE",
 					"actionName":"CONFIGURE",
 					"displayName":"CONFIGURE All Components",
 					"serviceName":"KNOX"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"START",
 					"actionName":"START",
 					"displayName":"START All Components",
 					"serviceName":"KNOX"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"STOP",
 					"actionName":"STOP",
 					"displayName":"STOP All Components",
 					"serviceName":"KNOX"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART All Components",
 					"serviceName":"KNOX"
 				},
 				{
 					"componentName":"KNOX",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART Knox",
 					"serviceName":"KNOX"
@@ -1368,35 +1297,30 @@ http(s)://[Endpoint]/?Action=ListClusterInstalledService
 			"serviceActionList":[
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"CONFIGURE",
 					"actionName":"CONFIGURE",
 					"displayName":"CONFIGURE All Components",
 					"serviceName":"APACHEDS"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"START",
 					"actionName":"START",
 					"displayName":"START All Components",
 					"serviceName":"APACHEDS"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"STOP",
 					"actionName":"STOP",
 					"displayName":"STOP All Components",
 					"serviceName":"APACHEDS"
 				},
 				{
 					"componentName":"ALL COMPONENTS",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART All Components",
 					"serviceName":"APACHEDS"
 				},
 				{
 					"componentName":"ApacheDS",
-					"bizActionName":"RESTART",
 					"actionName":"RESTART",
 					"displayName":"RESTART ApacheDS",
 					"serviceName":"APACHEDS"
