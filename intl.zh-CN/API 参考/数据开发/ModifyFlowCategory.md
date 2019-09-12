@@ -1,6 +1,6 @@
 # ModifyFlowCategory {#doc_api_Emr_ModifyFlowCategory .reference}
 
-调用ModifyFlowCategory接口重命名目录。
+调用ModifyFlowCategory接口，重命名目录。
 
 ## 调试 {#api_explorer .section}
 
@@ -60,13 +60,11 @@ http(s)://[Endpoint]/?Action=ModifyFlowCategory
 
 ``` {#xml_return_success_demo}
 <ModifyFlowCategoryResponse>
-  <code>200</code>
 	  <data>
 		    <RequestId>CEA9AFD2-B340-41F4-A661-8916CBF07C32</RequestId>
 		    <Data>true</Data>
 	  </data>
 	  <requestId>CEA9AFD2-B340-41F4-A661-8916CBF07C32</requestId>
-	  <successResponse>true</successResponse>
 </ModifyFlowCategoryResponse>
 ```
 
@@ -74,13 +72,11 @@ http(s)://[Endpoint]/?Action=ModifyFlowCategory
 
 ``` {#json_return_success_demo}
 {
-	"successResponse":true,
 	"requestId":"CEA9AFD2-B340-41F4-A661-8916CBF07C32",
 	"data":{
 		"Data":true,
 		"RequestId":"CEA9AFD2-B340-41F4-A661-8916CBF07C32"
-	},
-	"code":"200"
+	}
 }
 ```
 
