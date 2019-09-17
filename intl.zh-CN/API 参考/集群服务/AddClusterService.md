@@ -80,5 +80,5 @@ http(s)://[Endpoint]/?Action=AddClusterService
 |403|Job.RegionId.Not.Match|Specified job does not exist in this region\[%s\]!|指定作业不在此Region中，请填写正确的参数|
 |500|InternalError|The request processing has failed due to some unknown error.|内部错误，请提工单|
 
-访问[错误中心](https://error-center.alibabacloud.com/status/product/Emr)查看更多错误码。
+访问[错误中心](https://error-center.aliyun.com/status/product/Emr)查看更多错误码。
 
