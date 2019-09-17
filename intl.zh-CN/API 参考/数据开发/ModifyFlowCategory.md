@@ -60,11 +60,8 @@ http(s)://[Endpoint]/?Action=ModifyFlowCategory
 
 ``` {#xml_return_success_demo}
 <ModifyFlowCategoryResponse>
-	  <data>
-		    <RequestId>CEA9AFD2-B340-41F4-A661-8916CBF07C32</RequestId>
-		    <Data>true</Data>
-	  </data>
-	  <requestId>CEA9AFD2-B340-41F4-A661-8916CBF07C32</requestId>
+	  <RequestId>CEA9AFD2-B340-41F4-A661-8916CBF07C32</RequestId>
+	  <Data>true</Data>
 </ModifyFlowCategoryResponse>
 ```
 
@@ -72,11 +69,8 @@ http(s)://[Endpoint]/?Action=ModifyFlowCategory
 
 ``` {#json_return_success_demo}
 {
-	"requestId":"CEA9AFD2-B340-41F4-A661-8916CBF07C32",
-	"data":{
-		"Data":true,
-		"RequestId":"CEA9AFD2-B340-41F4-A661-8916CBF07C32"
-	}
+	"Data":true,
+	"RequestId":"CEA9AFD2-B340-41F4-A661-8916CBF07C32"
 }
 ```
 
