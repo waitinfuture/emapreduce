@@ -9,7 +9,7 @@
 1.  登录[阿里云 E-MapReduce 控制台](https://emr.console.aliyun.com)。
 2.  创建Hadoop集群，详情请参见[创建集群](../../../../cn.zh-CN/快速入门/步骤三：创建集群.md#)。 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156879436052748_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156879445352748_zh-CN.png)
 
 
 ## 步骤二 获取JAR包并上传到Hadoop集群 {#section_93e_bey_e3k .section}
@@ -28,7 +28,7 @@
 
     -   X.X.X表示JAR包的具体版本号；x.x.x-x.x.x表示文件目录，具体需要根据实际集群中的版本来修改这个JAR包。例如目录是3.1.1-1.1.6的， 那么就是JAR包是hive-exec-3.1.1.jar。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1643732/156879436060923_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1643732/156879445360923_zh-CN.png)
 
     -   登录Hadoop集群的emr-header-1主机的步骤，可参见[步骤二的子步骤2](#step_yxi_yke_s9h) ~ [步骤二的子步骤4](#step_7dt_7ua_jkn)。
 2.  在集群管理页面，单击已创建的Hadoop集群的集群ID，进入集群与服务管理页面。
@@ -52,16 +52,16 @@
 
 1.  返回[阿里云 E-MapReduce 控制台](https://emr.console.aliyun.com)。
 2.  在集群管理页面，单击已创建的Hadoop集群的集群ID，进入集群与服务管理页面。
-3.  在服务列表中，单击服务名称是Hive所在行的![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1643732/156879436160751_zh-CN.png)图标，并在弹出框中单击**重启所有组件**。 
+3.  在服务列表中，单击服务名称是Hive所在行的![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1643732/156879445460751_zh-CN.png)图标，并在弹出框中单击**重启所有组件**。 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1643732/156879436160752_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1643732/156879445460752_zh-CN.png)
 
 
 ## 步骤四 配置Table存储 {#section_9oa_1xs_pxl .section}
 
 1.  在TableStore上创建表格，具体请参见[创建数据表](../../../../cn.zh-CN/快速入门/创建数据表.md#)。 创建好后如下截图：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1643732/156879436160922_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1643732/156879445460922_zh-CN.png)
 
 
 ## 步骤五 处理TableStore数据 {#section_4f9_60u_icm .section}
