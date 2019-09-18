@@ -15,11 +15,11 @@
 1.  登录[阿里云 E-MapReduce 控制台](https://emr.console.aliyun.com)。
 2.  创建Hadoop集群，详情请参见[创建集群](../../../../intl.zh-CN/快速入门/步骤三：创建集群.md#)。 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514334652748_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156879432752748_zh-CN.png)
 
 3.  创建Kafka集群，详情请参见[创建集群](../../../../intl.zh-CN/快速入门/步骤三：创建集群.md#)。 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514334652756_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156879432752756_zh-CN.png)
 
 
 ## 步骤二 获取JAR包并上传到Hadoop集群 {#section_d13_kc1_fqp .section}
@@ -86,12 +86,12 @@
 2.  在Kafka集群的登录窗口中，通过如下命令来运行生产者（producer）。 
 
     ``` {#codeblock_60n_8m8_azb}
-    /bin/kafka-console-producer.sh --topic test --broker-list emr-worker-1:9092
+    /usr/lib/kafka-current/ /bin/kafka-console-producer.sh --topic test --broker-list emr-worker-1:9092
     ```
 
 3.  在Kafka登录窗口的命令行中不断输入文本，则在Hadoop集群登录窗口中实时显示文本的统计信息。 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514334652840_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156879432752840_zh-CN.png)
 
 
 ## 步骤六 查看Spark Streaming作业的进展 {#section_isq_ew4_y5q .section}
@@ -101,8 +101,8 @@ Spark Streaming作业开始运行后，您可在E-MapReduce上查看作业的状
 1.  返回到[阿里云 E-MapReduce 控制台](https://emr.console.aliyun.com)。
 2.  在Hadoop集群的**访问链接与端口**页面中，单击**Spark History Server UI**后的链接，查看Spark Streaming作业的状态。详情请参见[访问链接与端口](https://www.alibabacloud.com/help/doc-detail/89065.htm)。 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514334752852_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156879432852852_zh-CN.png)
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156514334752855_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1068351/156879432852855_zh-CN.png)
 
 
