@@ -2,7 +2,8 @@
 
 本节介绍如何通过JDBC连接HiveServer2来访问Hive数据，适用于无法通过Hive Client和HDFS访问Hive数据的场景。
 
-已对Hive进行了权限等配置，详情请参见[Hive 配置](../../../../cn.zh-CN/开源组件介绍/组件授权/RANGER/Hive 配置.md#)。
+-   已对Hive进行了权限等配置，详情请参见[Hive 配置](../../../../cn.zh-CN/开源组件介绍/组件授权/RANGER/Hive 配置.md#)。
+-   HiveServer2默认不进行用户和密码校验，如果需要用户和密码认证，请预先进行用户认证配置，详情请参见[如何将HiveServer2的认证方式设置为LDAP](../../../../cn.zh-CN/常见问题/如何将HiveServer2的认证方式设置为LDAP.md#)。
 
 本节介绍以下两种JDBC连接HiveServer2的方法：
 
@@ -36,8 +37,6 @@
     ```
 
 4.  输入用户名和密码。 
-
-    **说明：** 本例使用**root**用户进行登录，默认免密即可登录。如果需要密码认证，您需要进行HiveServer2用户认证配置，详情请参见[如何将HiveServer2的认证方式设置为LDAP](../../../../cn.zh-CN/常见问题/如何将HiveServer2的认证方式设置为LDAP.md#)。
 
     ``` {#codeblock_i6p_ne9_af7}
     Enter username for jdbc:hive2://emr-header-1:10000: root
@@ -119,7 +118,7 @@
             }
     
             Connection con = DriverManager.getConnection(
-                    "jdbc:hive2://emr-header-1:10000", "root", "");   //代码打包后，运行环境需要在hosts文件中把emr-header-1映射到E-MapReduce集群的公网IP地址（或内网IP地址）。
+                    "jdbc:hive2://emr-header-1:10000", "root", "");   //代码打包后，运行jar包的环境需要在hosts文件中把emr-header-1映射到E-MapReduce集群的公网IP地址（或内网IP地址）。
     
             Statement stmt = con.createStatement();
     
