@@ -34,6 +34,6 @@ Spark SQL can use command lines or workflows to process data in data sources.
     -   If you want to execute a streaming job for a long time without exiting Spark SQL, you can run the nohup command to ignore the HUP \(hangup\) signal.
 -   Workflow
 
-    For more information, see [Configure Streaming SQL jobs](https://help.aliyun.com/document_detail/130938.html?spm=a2c4g.11186623.6.650.75193d65uhcCkf).
+    For more information, see [Configure Streaming SQL jobs](../../../../intl.en-US/Data Development/Jobs/Configure Streaming SQL jobs.md#).
 
 
