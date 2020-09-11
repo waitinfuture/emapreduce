@@ -1,8 +1,6 @@
 # Kafka配置
 
-本文介绍如何将Kafka集成到Ranger，以及如何配置权限。
-
-已创建集群，详情请参见[创建集群](/cn.zh-CN/集群管理/集群配置/创建集群.md)。
+本文介绍HBase如何集成到Kafka，以及如何配置权限。
 
 ## Kafka集成Ranger
 
@@ -26,7 +24,7 @@
 
 2.  Ranger UI页面添加Kafka Service。
 
-    1.  进入Ranger UI页面，详情请参见[概述](/cn.zh-CN/集群类型/Hadoop集群/Ranger/概述.md)。
+    1.  进入Ranger UI页面，详情请参见[概述](/intl.zh-CN/集群类型/Hadoop集群/Ranger/Ranger 简介.md)。
 
     2.  在Ranger UI页面，添加Kafka Service。
 
@@ -43,7 +41,7 @@
         |**Password**|可自定义。|
         |**Zookeeper Connect String**|填写格式**emr-header-1:2181/kafka-x.xx**。 **说明：** 其中`kafka-x.xx`根据Kafka实际版本填写。 |
 
-    4.  单击**Add**。
+    4.  单击**add**。
 
 3.  重启Kafka Broker。
 
@@ -82,11 +80,11 @@
     |**Select User**|指定添加此策略的用户。|
     |**Permissions**|单击![add_permissions](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/3014027951/p81288.png)，选择**Publish**。|
 
-    单击**Select Group**下方的![add_permissions](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/3014027951/p81288.png)，可以对多个Group进行授权。
+    单击**Select Group**下方的![add_permissions](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/3014027951/p81288.png)，可对多个Group进行授权。
 
-4.  单击**Add**。
+4.  单击**add**。
 
-    添加Policy后，实现对**test**的授权。test用户即可以对名为**test**的topic执行写入操作。
+    添加Policy后，实现对**test**的授权。test用户即可以对**test**的topic进行写入操作。
 
     **说明：** 添加、删除或修改Policy后，需要等待约一分钟至授权生效。
 
