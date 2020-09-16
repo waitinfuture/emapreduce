@@ -12,7 +12,7 @@
 |--|--|----|---|--|
 |Action|String|是|ReleaseClusterHostGroup|系统规定参数。对于您自行拼凑HTTP或HTTPS URL发起的API请求，该参数为必选参数。取值：ReleaseClusterHostGroup。 |
 |ClusterId|String|是|C-D7958B72E59B\*\*\*\*|集群ID。 |
-|HostGroupId|String|是|G-EF460256A55F\*\*\*\*|机器组ID。 |
+|HostGroupId|String|是|G-EF460256A55F\*\*\*\*|机器组ID，可以通过ListClusterHostGroup获取。 |
 |RegionId|String|是|cn-hangzhou|地域ID。 |
 |InstanceIdList|String|否|\["i-bp1bm7y86rscdx1a\*\*\*\*"\]|ECS实例ID列表。 |
 
@@ -29,7 +29,7 @@
 ```
 http(s)://[Endpoint]/?Action=ReleaseClusterHostGroup
 &ClusterId=C-D7958B72E59B****
-&HostGroupId=G-EF460256A55F97A5
+&HostGroupId=G-EF460256A55F****
 &RegionId=cn-hangzhou
 &<公共请求参数>
 ```
@@ -45,6 +45,8 @@ http(s)://[Endpoint]/?Action=ReleaseClusterHostGroup
 `JSON` 格式
 
 ```
-{"RequestId":"991B3409-6C8D-48CB-903C-3B9C166E17A8"}
+{
+    "RequestId":"991B3409-6C8D-48CB-903C-3B9C166E17A8"
+    }
 ```
 
