@@ -1,220 +1,417 @@
-# ListClusterHost {#concept_fgn_wmq_dgb .concept}
+# ListClusterHost
 
-You can call this operation to view the information of cluster hosts including configurations of disks, vCPUs, and memory.
+You can call this operation to ListClusterHost a cluster, including disks, CPU, and memory configurations.
 
-## Request parameters {#section_pdw_lv4_dgb .section}
+## Debugging
+
+[OpenAPI Explorer automatically calculates the signature value. For your convenience, we recommend that you call this operation in OpenAPI Explorer. OpenAPI Explorer dynamically generates the sample code of the operation for different SDKs.](https://api.aliyun.com/#product=Emr&api=ListClusterHost&type=RPC&version=2016-04-08)
+
+## Request parameters
 
 |Parameter|Type|Required|Example|Description|
 |---------|----|--------|-------|-----------|
-|ClusterId|String|Yes|C-D7CA98AAA96A\*\*\*\*|The ID of the cluster.|
-|RegionId|String|Yes|cn-hangzhou|The region ID.|
-|AccessKeyId|String|Yes|LTAI8ljWyu7y\*\*\*\*|The AccessKey ID.|
-|ComponentName|String|No|HiveServer2|The name of the component.|
-|GroupType|String|No|MASTER|The type of the host group.|
-|HostInstanceId|String|No|i-bp11vdyh3l6xvmnl\*\*\*\*|The ID of the ECS instance.|
-|HostName|String|No|emr-header-1|The name of the instance.|
-|PageNumber|Integer|No|1|The page number. The minimum value is 1.|
-|PageSize|Integer|No|10|The number of records that are displayed on each page.|
-|PrivateIp|String|No|192.168.25.220|The internal IP address of the host.|
-|PublicIp|String|No|47.110.77.16|The public IP address of the host.|
-|StatusList.N|RepeatList|No|\["NORMAL"\]|The status of the instances.|
+|Action|String|Yes|ListClusterHost|The operation that you want to perform. For API requests using the HTTP or HTTPS URL, this parameter is required. Set the value to ListClusterHost. |
+|ClusterId|String|Yes|C-D7CA98AAA96A\*\*\*\*|The ID of the ApsaraDB for POLARDB cluster. |
+|RegionId|String|Yes|cn-hangzhou|The ID of the region. |
+|HostInstanceId|String|No|i-bp11vdyh3l6xvmnl\*\*\*\*|The ID of the Elastic Compute Service \(ECS\) instance. |
+|HostGroupId|String|No|G-A5EA210E15FC\*\*\*\*|The ID of the host group. |
+|HostName|String|No|emr-header-1|The hostname of the created ECS instances. |
+|PrivateIp|String|No|192.\*\*\*. \*\*\*. \*\*\*|The internal IP address of the host. |
+|PublicIp|String|No|47.\*\*\*. \*\*\*. \*\*\*|The public IP address of the host. |
+|GroupType|String|No|MASTER|Machine group type:
 
-## Response parameters {#section_vdw_lv4_dgb .section}
+-   MASTER
+-   CORE |
+|ComponentName|String|No|HiveServer2|The name of the component. |
+|StatusList.N|RepeatList|No|\["NORMAL"\]|Host status list:
+
+-   NORMAL
+-   ABNORMAL
+-   RESIZING
+-   INITIALIZING
+-   RELEASED |
+|PageNumber|Integer|No|1|The number of the page to return. Pages start from page 1. |
+|PageSize|Integer|No|10|The number of entries returned per page. |
+
+## Response parameters
 
 |Parameter|Type|Example|Description|
 |---------|----|-------|-----------|
-|RequestId|String|0A46EB54-0D98-4BFA-B712-1A474925E9D4|The ID of the request.|
-|PageNumber|Integer|1|The page number. The minimum value is 1.|
-|PageSize|Integer|10|The number of records that are displayed on each page.|
-|Total|Integer|12|The total number of records.|
-|HostList| | |The list of hosts.|
-|HostName|String|emr-header-1|The name of the host.|
-|PublicIp|String|47.110.77.16|The public IP address of the host.|
-|PrivateIp|String|192.168.25.220|The internal IP address of the host.|
-|Role|String|MASTER|The role of the host in the cluster.|
-|InstanceType|String|ecs.mn4.xlarge|The instance type of the host.|
-|Cpu|Integer|4|The number of vCPUs.|
-|Memory|Integer|16|The memory size. Unit: gibibytes.|
-|Status|String|NORMAL|The status of the host.|
-|Type|String|VM|The type of the host.|
-|HostInstanceId|String|i-bp1cfwf2cwgji7ds\*\*\*\*|The instance ID of the host.|
-|SerialNumber|String|3c2a5078-778d-4c18-87e4-1a38fbcbc306|The serial number of the host.|
-|ChargeType|String|PostPaid|The billing method.|
-|ExpiredTime|Long|32493801600000|The expiration time of the host.|
-|DiskList| | |The list of disks.|
-|DiskId|String|d-bp1aq78lhbig6ielbur8|The ID of the disk.|
-|Type|String|data|The role of the disk.|
-|DiskType|String|CLOUD\_EFFICIENCY|The type of the disk.|
-|DiskSize|Integer|80|The capacity of the disk.|
+|HostList|Array of Host| |The information about the hosts. |
+|Host| | | |
+|ChargeType|String|PostPaid|The billing method of the host. |
+|Cpu|Integer|4|The number of vCPUs. |
+|CreateTime|String|1599635156000|The time when the disk was created. |
+|DiskList|Array of Disk| |The list of disks. |
+|Disk| | | |
+|Device|String|/dev/xvde|The name of the disk. |
+|DiskId|String|d-bp1aq78lhbig6iel\*\*\*\*|The ID of the disk. |
+|DiskSize|Integer|80|The disk capacity. |
+|DiskType|String|CLOUD\_ESSD|The type of disks. Valid values:
 
-## Examples {#section_ydw_lv4_dgb .section}
+-   CLOUD\_ESSD
+-   CLOUD\_SSD
+-   CLOUD
+-   CLOUD\_EFFCIENCY |
+|Type|String|data|Specifies whether the disk is a data disk or system disk. |
+|EmrExpiredTime|String|N/A|The time when the EMR cluster expires. A reserved field. |
+|ExpiredTime|Long|32493801600000|The time when the host expires. |
+|HostGroupId|String|G-A5EA210E15FC\*\*\*\*|The ID of the host group. |
+|HostInstanceId|String|i-bp1cfwf2cwgji7ds\*\*\*\*|The ID of the ECS instance. |
+|HostName|String|emr-header-1|The hostname of the created ECS instances. |
+|InstanceStatus|String|NORMAL|The status of the ECS instance. |
+|InstanceType|String|ecs.mn4.xlarge|The instance type of the host. |
+|Memory|Integer|16|The memory size of the host. Unit: GB. |
+|PrivateIp|String|192.\*\*\*. \*\*\*\*. \*\*\*|The internal IP address of the host. |
+|PublicIp|String|47.\*\*\*. \*\*\*. \*\*\*|The public IP address of the host. |
+|Role|String|MASTER|The role of the host in the cluster.
 
--   Sample requests
+-   MASTER
+-   CORE |
+|SerialNumber|String|3c2a5078-778d-4c18-87e4-1a38fbcb\*\*\*\*|The serial number of the host. |
+|Status|String|NORMAL|The status of the ECS instance. |
+|SupportIpV6|Boolean|false|Specifies whether the IPv6 protocol is supported. |
+|Type|String|VM|The type of the host. |
+|ZoneId|String|cn-hangzhou-i|The ID of the region where your project resides. |
+|PageNumber|Integer|1|The page number of the returned page. |
+|PageSize|Integer|10|The maximum number of exceptions on each page. |
+|RequestId|String|50F7151C-915D-4576-A291-833E8D193853|The ID of the instance. |
+|Total|Integer|12|The total number of hosts that you have queried. |
 
-    ``` {#codeblock_quf_suz_da3}
-    /? ClusterId=C-D7CA98AAA96A7998
-    &RegionId=cn-hangzhou
-    &AccessKeyId=LTAI8ljWyu7y****
-    &ComponentName=
-    &GroupType=
-    &HostInstanceId=
-    &HostName=emr-header-1
-    &PageNumber=1
-    &PageSize=10
-    &PrivateIp=192.168.25.220
-    &PublicIp=47.110.77.16
-    &StatusList. 1=["NORMAL"]
-    &<Common request parameters>
-    ```
+## Examples
 
--   Successful response examples
+Sample requests
 
-    JSON format
+```
+http(s)://[Endpoint]/? Action=ListClusterHost
+&ClusterId=C-D7CA98AAA96A****
+&RegionId=cn-hangzhou
+&<Common request parameters>
+```
 
-    ``` {#codeblock_lmb_kty_3ah}
-    {
-        "hostList":[
+Sample success responses
+
+`XML` format
+
+```
+<RequestId>50F7151C-915D-4576-A291-833E8D193853</RequestId>
+<PageSize>10</PageSize>
+<PageNumber>1</PageNumber>
+<Total>3</Total>
+<HostList>
+    <Host>
+        <Status>NORMAL</Status>
+        <ZoneId>cn-hangzhou-i</ZoneId>
+        <PublicIp/>
+        <Memory>16</Memory>
+        <CreateTime>1599635156000</CreateTime>
+        <Cpu>4</Cpu>
+        <HostInstanceId>i-bp1bqta9j2d7x7tc****</HostInstanceId>
+        <Role>CORE</Role>
+        <SerialNumber>bfad582f-a6bc-40b7-868e-60940b0be9ae</SerialNumber>
+        <PrivateIp>192. **. **. **</PrivateIp>
+        <ChargeType>PostPaid</ChargeType>
+        <ExpiredTime>32493801600000</ExpiredTime>
+        <DiskList>
+            <Disk>
+                <DiskType>CLOUD_ESSD</DiskType>
+                <Type>data</Type>
+                <Device>/dev/xvde</Device>
+                <DiskSize>80</DiskSize>
+                <DiskId>d-bp17scdtdsb4r5qx****</DiskId>
+            </Disk>
+            <Disk>
+                <DiskType>CLOUD_ESSD</DiskType>
+                <Type>data</Type>
+                <Device>/dev/xvdd</Device>
+                <DiskSize>80</DiskSize>
+                <DiskId>d-bp1620snh1vzd8bo****</DiskId>
+            </Disk>
+            <Disk>
+                <DiskType>CLOUD_ESSD</DiskType>
+                <Type>data</Type>
+                <Device>/dev/xvdc</Device>
+                <DiskSize>80</DiskSize>
+                <DiskId>d-bp1i3puwiaha37ru****</DiskId>
+            </Disk>
+            <Disk>
+                <DiskType>CLOUD_ESSD</DiskType>
+                <Type>data</Type>
+                <Device>/dev/xvdb</Device>
+                <DiskSize>80</DiskSize>
+                <DiskId>d-bp14h6m9spidesdt****</DiskId>
+            </Disk>
+            <Disk>
+                <DiskType>CLOUD_ESSD</DiskType>
+                <Type>system</Type>
+                <Device>/dev/xvda</Device>
+                <DiskSize>120</DiskSize>
+                <DiskId>d-bp1hwhh5o7ctrr4w****</DiskId>
+            </Disk>
+        </DiskList>
+        <SupportIpV6>false</SupportIpV6>
+        <InstanceType>ecs.g6.xlarge</InstanceType>
+        <HostName>emr-worker-2</HostName>
+    </Host>
+    <Host>
+        <Status>RELEASED</Status>
+        <ZoneId>cn-hangzhou-i</ZoneId>
+        <PublicIp>118. **. **. **</PublicIp>
+        <Memory>16</Memory>
+        <CreateTime>1599635156000</CreateTime>
+        <Cpu>4</Cpu>
+        <HostInstanceId>i-bp19n1ipsgm5s2sa****</HostInstanceId>
+        <SerialNumber>1b513c42-520f-4f2c-b72d-5c3aa90e5707</SerialNumber>
+        <PrivateIp>192. **. **. **</PrivateIp>
+        <ChargeType>PostPaid</ChargeType>
+        <ExpiredTime>1600229040000</ExpiredTime>
+        <DiskList>
+            <Disk>
+                <DiskType>CLOUD_ESSD</DiskType>
+                <Type>data</Type>
+                <Device>/dev/xvdb</Device>
+                <DiskSize>80</DiskSize>
+                <DiskId>d-bp1f2uxmm5grkjut****</DiskId>
+            </Disk>
+            <Disk>
+                <DiskType>CLOUD_ESSD</DiskType>
+                <Type>system</Type>
+                <Device>/dev/xvda</Device>
+                <DiskSize>120</DiskSize>
+                <DiskId>d-bp17ku663b9lp7ew****</DiskId>
+            </Disk>
+        </DiskList>
+        <SupportIpV6>false</SupportIpV6>
+        <InstanceType>ecs.g6.xlarge</InstanceType>
+        <HostName>emr-header-1</HostName>
+    </Host>
+    <Host>
+        <Status>NORMAL</Status>
+        <ZoneId>cn-hangzhou-i</ZoneId>
+        <PublicIp/>
+        <Memory>16</Memory>
+        <CreateTime>1599635155000</CreateTime>
+        <Cpu>4</Cpu>
+        <HostInstanceId>i-bp1c0gr9i4an9xyr****</HostInstanceId>
+        <Role>CORE</Role>
+        <SerialNumber>ff2215b2-f518-4f1d-aa52-e99759f67778</SerialNumber>
+        <PrivateIp>192. **. **. **</PrivateIp>
+        <ChargeType>PostPaid</ChargeType>
+        <ExpiredTime>32493801600000</ExpiredTime>
+        <DiskList>
+            <Disk>
+                <DiskType>CLOUD_ESSD</DiskType>
+                <Type>data</Type>
+                <Device>/dev/xvde</Device>
+                <DiskSize>80</DiskSize>
+                <DiskId>d-bp1df0bh75y58zrk****</DiskId>
+            </Disk>
+            <Disk>
+                <DiskType>CLOUD_ESSD</DiskType>
+                <Type>data</Type>
+                <Device>/dev/xvdd</Device>
+                <DiskSize>80</DiskSize>
+                <DiskId>d-bp11vuvirj8qq9nm****</DiskId>
+            </Disk>
+            <Disk>
+                <DiskType>CLOUD_ESSD</DiskType>
+                <Type>data</Type>
+                <Device>/dev/xvdc</Device>
+                <DiskSize>80</DiskSize>
+                <DiskId>d-bp172aj8y4g8ni9f****</DiskId>
+            </Disk>
+            <Disk>
+                <DiskType>CLOUD_ESSD</DiskType>
+                <Type>data</Type>
+                <Device>/dev/xvdb</Device>
+                <DiskSize>80</DiskSize>
+                <DiskId>d-bp18zvy13uv36umu****</DiskId>
+            </Disk>
+            <Disk>
+                <DiskType>CLOUD_ESSD</DiskType>
+                <Type>system</Type>
+                <Device>/dev/xvda</Device>
+                <DiskSize>120</DiskSize>
+                <DiskId>d-bp14wvtlcfpswp4t****</DiskId>
+            </Disk>
+        </DiskList>
+        <SupportIpV6>false</SupportIpV6>
+        <InstanceType>ecs.g6.xlarge</InstanceType>
+        <HostName>emr-worker-1</HostName>
+    </Host>
+</HostList>
+```
+
+`JSON` format
+
+```
+{
+    "RequestId": "50F7151C-915D-4576-A291-833E8D193853",
+    "PageSize": 10,
+    "PageNumber": 1,
+    "Total": 3,
+    "HostList": {
+        "Host": [
             {
-                "chargeType":"PostPaid",
-                "cpu":4,
-                "diskList":[
-                    {
-                        "diskId":"d-bp1d2duao4slg805dmg8",
-                        "diskSize":80,
-                        "diskType":"CLOUD_EFFICIENCY",
-                        "type":"data"
-                    },
-                    {
-                        "diskId":"d-bp1974rijbh940n5ih4q",
-                        "diskSize":120,
-                        "diskType":"CLOUD_EFFICIENCY",
-                        "type":"system"
-                    }
-                ],
-                "expiredTime":32493801600000,
-                "hostInstanceId":"i-bp1cfwf2cwgji7ds****",
-                "hostName":"emr-header-1",
-                "instanceType":"ecs.mn4.xlarge",
-                "memory":16,
-                "privateIp":"192.168.25.220",
-                "publicIp":"47.110.77.16",
-                "role":"MASTER",
-                "serialNumber":"3c2a5078-778d-4c18-87e4-1a38fbcbc306",
-                "status":"NORMAL"
+                "Status": "NORMAL",
+                "ZoneId": "cn-hangzhou-i",
+                "PublicIp": "",
+                "Memory": 16,
+                "CreateTime": 1599635156000,
+                "Cpu": 4,
+                "HostInstanceId": "i-bp1bqta9j2d7x7tc****",
+                "Role": "CORE",
+                "SerialNumber": "bfad582f-a6bc-40b7-868e-60940b0be9ae",
+                "PrivateIp": "192. **. **. **",
+                "ChargeType": "PostPaid",
+                "ExpiredTime": 32493801600000,
+                "DiskList": {
+                    "Disk": [
+                        {
+                            "DiskType": "CLOUD_ESSD",
+                            "Type": "data",
+                            "Device": "/dev/xvde",
+                            "DiskSize": 80,
+                            "DiskId": "d-bp17scdtdsb4r5qx****"
+                        },
+                        {
+                            "DiskType": "CLOUD_ESSD",
+                            "Type": "data",
+                            "Device": "/dev/xvdd",
+                            "DiskSize": 80,
+                            "DiskId": "d-bp1620snh1vzd8bo****"
+                        },
+                        {
+                            "DiskType": "CLOUD_ESSD",
+                            "Type": "data",
+                            "Device": "/dev/xvdc",
+                            "DiskSize": 80,
+                            "DiskId": "d-bp1i3puwiaha37ru****"
+                        },
+                        {
+                            "DiskType": "CLOUD_ESSD",
+                            "Type": "data",
+                            "Device": "/dev/xvdb",
+                            "DiskSize": 80,
+                            "DiskId": "d-bp14h6m9spidesdt****"
+                        },
+                        {
+                            "DiskType": "CLOUD_ESSD",
+                            "Type": "system",
+                            "Device": "/dev/xvda",
+                            "DiskSize": 120,
+                            "DiskId": "d-bp1hwhh5o7ctrr4w****"
+                        }
+                    ]
+                },
+                "SupportIpV6": false,
+                "InstanceType": "ecs.g6.xlarge",
+                "HostName": "emr-worker-2"
             },
             {
-                "chargeType":"PostPaid",
-                "cpu":4,
-                "diskList":[
-                    {
-                        "diskId":"d-bp1aq78lhbig6ielbur8",
-                        "diskSize":80,
-                        "diskType":"CLOUD_EFFICIENCY",
-                        "type":"data"
-                    },
-                    {
-                        "diskId":"d-bp1iply35zhdge3nbqxf",
-                        "diskSize":80,
-                        "diskType":"CLOUD_EFFICIENCY",
-                        "type":"data"
-                    },
-                    {
-                        "diskId":"d-bp19gcyyon6nx2lahx9x",
-                        "diskSize":80,
-                        "diskType":"CLOUD_EFFICIENCY",
-                        "type":"data"
-                    },
-                    {
-                        "diskId":"d-bp1974rijbh940n5ih4r",
-                        "diskSize":80,
-                        "diskType":"CLOUD_EFFICIENCY",
-                        "type":"data"
-                    },
-                    {
-                        "diskId":"d-bp1558hztv9c3q3gl7nn",
-                        "diskSize":80,
-                        "diskType":"CLOUD_EFFICIENCY",
-                        "type":"system"
-                    }
-                ],
-                "expiredTime":32493801600000,
-                "hostInstanceId":"i-bp18sb2w8oj9p6yf****",
-                "hostName":"emr-worker-1",
-                "instanceType":"ecs.n4.xlarge",
-                "memory":8,
-                "privateIp":"192.168.25.221",
-                "publicIp":"",
-                "role":"CORE",
-                "serialNumber":"d4dbd488-8684-4742-b178-5565ef38c6f9",
-                "status":"NORMAL"
+                "Status": "RELEASED",
+                "ZoneId": "cn-hangzhou-i",
+                "PublicIp": "118. **. **. **",
+                "Memory": 16,
+                "CreateTime": 1599635156000,
+                "Cpu": 4,
+                "HostInstanceId": "i-bp19n1ipsgm5s2sa****",
+                "SerialNumber": "1b513c42-520f-4f2c-b72d-5c3aa90e5707",
+                "PrivateIp": "192. **. **. **",
+                "ChargeType": "PostPaid",
+                "ExpiredTime": 1600229040000,
+                "DiskList": {
+                    "Disk": [
+                        {
+                            "DiskType": "CLOUD_ESSD",
+                            "Type": "data",
+                            "Device": "/dev/xvdb",
+                            "DiskSize": 80,
+                            "DiskId": "d-bp1f2uxmm5grkjut****"
+                        },
+                        {
+                            "DiskType": "CLOUD_ESSD",
+                            "Type": "system",
+                            "Device": "/dev/xvda",
+                            "DiskSize": 120,
+                            "DiskId": "d-bp17ku663b9lp7ew****"
+                        }
+                    ]
+                },
+                "SupportIpV6": false,
+                "InstanceType": "ecs.g6.xlarge",
+                "HostName": "emr-header-1"
             },
             {
-                "chargeType":"PostPaid",
-                "cpu":4,
-                "diskList":[
-                    {
-                        "diskId":"d-bp19gcyyon6nx2lahx9y",
-                        "diskSize":80,
-                        "diskType":"CLOUD_EFFICIENCY",
-                        "type":"data"
-                    },
-                    {
-                        "diskId":"d-bp1314ka4c7qmhpadwhf",
-                        "diskSize":80,
-                        "diskType":"CLOUD_EFFICIENCY",
-                        "type":"data"
-                    },
-                    {
-                        "diskId":"d-bp1558hztv9c3q3gl7no",
-                        "diskSize":80,
-                        "diskType":"CLOUD_EFFICIENCY",
-                        "type":"data"
-                    },
-                    {
-                        "diskId":"d-bp1e82xlhob2n2e7q5rd",
-                        "diskSize":80,
-                        "diskType":"CLOUD_EFFICIENCY",
-                        "type":"data"
-                    },
-                    {
-                        "diskId":"d-bp1gpdc9x4o051udcmd3",
-                        "diskSize":80,
-                        "diskType":"CLOUD_EFFICIENCY",
-                        "type":"system"
-                    }
-                ],
-                "expiredTime":32493801600000,
-                "hostInstanceId":"i-bp14rtl1gqupopgm****",
-                "hostName":"emr-worker-2",
-                "instanceType":"ecs.n4.xlarge",
-                "memory":8,
-                "privateIp":"192.168.25.222",
-                "publicIp":"",
-                "role":"CORE",
-                "serialNumber":"e8d25d43-2df6-4054-9861-53d1c12d08cb",
-                "status":"NORMAL"
+                "Status": "NORMAL",
+                "ZoneId": "cn-hangzhou-i",
+                "PublicIp": "",
+                "Memory": 16,
+                "CreateTime": 1599635155000,
+                "Cpu": 4,
+                "HostInstanceId": "i-bp1c0gr9i4an9xyr****",
+                "Role": "CORE",
+                "SerialNumber": "ff2215b2-f518-4f1d-aa52-e99759f67778",
+                "PrivateIp": "192. **. **. **",
+                "ChargeType": "PostPaid",
+                "ExpiredTime": 32493801600000,
+                "DiskList": {
+                    "Disk": [
+                        {
+                            "DiskType": "CLOUD_ESSD",
+                            "Type": "data",
+                            "Device": "/dev/xvde",
+                            "DiskSize": 80,
+                            "DiskId": "d-bp1df0bh75y58zrk****"
+                        },
+                        {
+                            "DiskType": "CLOUD_ESSD",
+                            "Type": "data",
+                            "Device": "/dev/xvdd",
+                            "DiskSize": 80,
+                            "DiskId": "d-bp11vuvirj8qq9nm****"
+                        },
+                        {
+                            "DiskType": "CLOUD_ESSD",
+                            "Type": "data",
+                            "Device": "/dev/xvdc",
+                            "DiskSize": 80,
+                            "DiskId": "d-bp172aj8y4g8ni9f****"
+                        },
+                        {
+                            "DiskType": "CLOUD_ESSD",
+                            "Type": "data",
+                            "Device": "/dev/xvdb",
+                            "DiskSize": 80,
+                            "DiskId": "d-bp18zvy13uv36umu****"
+                        },
+                        {
+                            "DiskType": "CLOUD_ESSD",
+                            "Type": "system",
+                            "Device": "/dev/xvda",
+                            "DiskSize": 120,
+                            "DiskId": "d-bp14wvtlcfpswp4t****"
+                        }
+                    ]
+                },
+                "SupportIpV6": false,
+                "InstanceType": "ecs.g6.xlarge",
+                "HostName": "emr-worker-1"
             }
-        ],
-        "pageNumber":1,
-        "pageSize":10,
-        "requestId":"0A46EB54-0D98-4BFA-B712-1A474925E9D4",
-        "total":3
+        ]
     }
-    ```
+}
+```
 
--   Error response examples
+## Error codes
 
-    JSON format
+|HttpCode|Error codes|Error message|Description|
+|--------|-----------|-------------|-----------|
+|403|Params.Illegal|The specified parameters are wrongly formed..|The error message returned because the format of the specified parameters is invalid.|
+|403|User.OtherUserResource.NotAllow|It is not allowed to operate other user's resource|The error message returned because you are not authorized to manage the resources of other users.|
+|403|Invalid.Cluster.Status|Invalid cluster status %s in status list|The error message returned because the specified cluster status is invalid.|
+|403|Invalid.Cluster.Type|Invalid cluster type %s in cluster type list|The error message returned because the type of the specified cluster is invalid.|
+|500|InternalError|The request processing has failed due to some unknown error.|The error message returned because the request processing has failed due to an internal error. Submit a ticket.|
 
-    ``` {#codeblock_td7_s2d_6s6}
-    {
-        "code":"RAM.Permission.NotAllow",
-        "message":"It is not allow to execute this operation,please use RAM to authorize!",
-        "requestId":"9AEDC439-1F63-491D-B8C6-9737C372BF3A",
-        "successResponse":false
-    }
-    ```
-
-
-## Error codes {#section_a2w_lv4_dgb .section}
+For a list of error codes, visit the [API Error Center](https://error-center.alibabacloud.com/status/product/Emr).
 
