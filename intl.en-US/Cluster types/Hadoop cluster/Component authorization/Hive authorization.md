@@ -1,6 +1,6 @@
 # Hive authorization
 
-Hive has two authorization modes: one based on storageand the other based on SQL standards. For more information, see Hive's [Authorization guide](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Authorization).
+Hive has two authorization modes: one based on storageand the other based on SQL standards.
 
 **Note:** Both means of authorization can be configured at the same time without conflict.
 
