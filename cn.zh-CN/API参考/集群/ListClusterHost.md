@@ -11,8 +11,8 @@
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
 |Action|String|是|ListClusterHost|系统规定参数。对于您自行拼凑HTTP或HTTPS URL发起的API请求，该参数为必选参数。取值：ListClusterHost。 |
-|ClusterId|String|是|C-D7CA98AAA96A\*\*\*\*|集群ID。 |
-|RegionId|String|是|cn-hangzhou|地域ID。 |
+|ClusterId|String|是|C-D7CA98AAA96A\*\*\*\*|集群ID。您可以调用[ListClusters](~~28147~~)接口查看集群的ID。 |
+|RegionId|String|是|cn-hangzhou|地域ID。您可以通过[DescribeRegions](~~25609~~)接口查看最新的阿里云地域列表。 |
 |HostInstanceId|String|否|i-bp11vdyh3l6xvmnl\*\*\*\*|ECS实例ID。 |
 |HostGroupId|String|否|G-A5EA210E15FC\*\*\*\*|机器组ID。 |
 |HostName|String|否|emr-header-1|主机名。 |
@@ -20,16 +20,17 @@
 |PublicIp|String|否|47.\*\*\*.\*\*\*.\*\*\*|主机公网IP。 |
 |GroupType|String|否|MASTER|机器组类型：
 
- -   MASTER
--   CORE |
+ -   MASTER：主实例节点
+-   CORE：核心实例节点
+-   TASK：计算实例节点 |
 |ComponentName|String|否|HiveServer2|安装了指定组件名称的主机。 |
 |StatusList.N|RepeatList|否|\["NORMAL"\]|主机状态列表：
 
- -   NORMAL
--   ABNORMAL
--   RESIZING
--   INITIALIZING
--   RELEASED |
+ -   NORMAL：正常
+-   ABNORMAL：异常
+-   RESIZING：配置中
+-   INITIALIZING：初始化中
+-   RELEASED：已释放 |
 |PageNumber|Integer|否|1|分页页数，从1开始。 |
 |PageSize|Integer|否|10|分页大小。 |
 
@@ -39,7 +40,10 @@
 |--|--|---|--|
 |HostList|Array of Host| |主机列表。 |
 |Host| | | |
-|ChargeType|String|PostPaid|付费类型。 |
+|ChargeType|String|PostPaid|付费类型：
+
+ -   PostPaid：按量付费集群
+-   PrePaid：包年包月集群 |
 |Cpu|Integer|4|CPU核心数。 |
 |CreateTime|String|1599635156000|创建时间。 |
 |DiskList|Array of Disk| |磁盘列表。 |
@@ -49,10 +53,10 @@
 |DiskSize|Integer|80|磁盘容量。 |
 |DiskType|String|CLOUD\_ESSD|磁盘类型：
 
- -   CLOUD\_ESSD
--   CLOUD\_SSD
--   CLOUD
--   CLOUD\_EFFCIENCY |
+ -   CLOUD\_ESSD：ESSD云盘
+-   CLOUD\_SSD：SSD云盘
+-   CLOUD：云盘
+-   CLOUD\_EFFCIENCY：高效云盘 |
 |Type|String|data|磁盘对应的角色类型。 |
 |EmrExpiredTime|String|无|E-MapReduce超时时间。保留字段。 |
 |ExpiredTime|Long|32493801600000|主机过期时间。 |
@@ -66,10 +70,17 @@
 |PublicIp|String|47.\*\*\*.\*\*\*.\*\*\*|主机公网IP。 |
 |Role|String|MASTER|主机在集群中的角色：
 
- -   MASTER
--   CORE |
+ -   MASTER：主实例节点
+-   CORE：核心实例节点
+-   TASK：计算实例节点 |
 |SerialNumber|String|3c2a5078-778d-4c18-87e4-1a38fbcb\*\*\*\*|主机序列号。 |
-|Status|String|NORMAL|主机状态。 |
+|Status|String|NORMAL|主机状态：
+
+ -   NORMAL：正常
+-   ABNORMAL：异常
+-   RESIZING：配置中
+-   INITIALIZING：初始化中
+-   RELEASED：已释放 |
 |SupportIpV6|Boolean|false|是否支持IPv6。 |
 |Type|String|VM|主机类型。 |
 |ZoneId|String|cn-hangzhou-i|区域ID。 |
