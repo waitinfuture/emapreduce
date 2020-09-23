@@ -11,27 +11,28 @@ You can call this operation to ListClusterHost a cluster, including disks, CPU, 
 |Parameter|Type|Required|Example|Description|
 |---------|----|--------|-------|-----------|
 |Action|String|Yes|ListClusterHost|The operation that you want to perform. For API requests using the HTTP or HTTPS URL, this parameter is required. Set the value to ListClusterHost. |
-|ClusterId|String|Yes|C-D7CA98AAA96A\*\*\*\*|The ID of the ApsaraDB for POLARDB cluster. |
-|RegionId|String|Yes|cn-hangzhou|The ID of the region. |
-|HostInstanceId|String|No|i-bp11vdyh3l6xvmnl\*\*\*\*|The ID of the Elastic Compute Service \(ECS\) instance. |
-|HostGroupId|String|No|G-A5EA210E15FC\*\*\*\*|The ID of the host group. |
-|HostName|String|No|emr-header-1|The hostname of the created ECS instances. |
-|PrivateIp|String|No|192.\*\*\*. \*\*\*. \*\*\*|The internal IP address of the host. |
-|PublicIp|String|No|47.\*\*\*. \*\*\*. \*\*\*|The public IP address of the host. |
-|GroupType|String|No|MASTER|Machine group type:
+|ClusterId|String|Yes|C-D7CA98AAA96A\*\*\*\*|The ID of the PolarDB cluster. You can call [ListClusters](~~28147~~) to view the cluster ID. |
+|RegionId|String|Yes|cn-hangzhou|The region ID of the resource. You can use [DescribeRegions](~~25609~~) to view the latest list of Alibaba Cloud regions. |
+|HostInstanceId|String|\[DNT\]No|i-bp11vdyh3l6xvmnl\*\*\*\*|The ID of the Elastic Compute Service \(ECS\) instance. |
+|HostGroupId|String|\[DNT\]No|G-A5EA210E15FC\*\*\*\*|The ID of the host group. |
+|HostName|String|\[DNT\]No|emr-header-1|The hostname of the created ECS instances. |
+|PrivateIp|String|\[DNT\]No|192.\*\*\*. \*\*\*. \*\*\*|The internal IP address of the host. |
+|PublicIp|String|\[DNT\]No|47.\*\*\*. \*\*\*. \*\*\*|The public IP address of the host. |
+|GroupType|String|\[DNT\]No|MASTER|Machine group type:
 
--   MASTER
--   CORE |
-|ComponentName|String|No|HiveServer2|The name of the component. |
+-   MASTER: MASTER instance node
+-   CORE: The CORE instance node
+-   TASK: compute instance node |
+|ComponentName|String|\[DNT\]No|HiveServer2|The name of the component. |
 |StatusList.N|RepeatList|No|\["NORMAL"\]|Host status list:
 
--   NORMAL
--   ABNORMAL
--   RESIZING
--   INITIALIZING
--   RELEASED |
-|PageNumber|Integer|No|1|The number of the page to return. Pages start from page 1. |
-|PageSize|Integer|No|10|The number of entries returned per page. |
+-   NORMAL: The API group is normal.
+-   ABNORMAL: ABNORMAL
+-   RESIZING: being configured
+-   INITIALIZING: the instance is being initialized.
+-   RELEASED: the instance is RELEASED. |
+|PageNumber|Integer|Optional|1|The number of the page to return. Pages start from page 1. |
+|PageSize|Integer|Optional|10|The number of entries to return on each page. |
 
 ## Response parameters
 
@@ -39,9 +40,12 @@ You can call this operation to ListClusterHost a cluster, including disks, CPU, 
 |---------|----|-------|-----------|
 |HostList|Array of Host| |The information about the hosts. |
 |Host| | | |
-|ChargeType|String|PostPaid|The billing method of the host. |
+|ChargeType|String|PostPaid|The billing method of the instance. Valid values:
+
+-   PostPaid: pay-as-you-go cluster
+-   PrePaid: subscription cluster |
 |Cpu|Integer|4|The number of vCPUs. |
-|CreateTime|String|1599635156000|The time when the disk was created. |
+|CreateTime|String|1599635156000|The time when the auto provisioning group was created. |
 |DiskList|Array of Disk| |The list of disks. |
 |Disk| | | |
 |Device|String|/dev/xvde|The name of the disk. |
@@ -49,10 +53,10 @@ You can call this operation to ListClusterHost a cluster, including disks, CPU, 
 |DiskSize|Integer|80|The disk capacity. |
 |DiskType|String|CLOUD\_ESSD|The type of disks. Valid values:
 
--   CLOUD\_ESSD
--   CLOUD\_SSD
--   CLOUD
--   CLOUD\_EFFCIENCY |
+-   CLOUD\_ESSD: Enhanced SSD
+-   CLOUD\_SSD:SSD disk
+-   CLOUD: CLOUD Disk
+-   CLOUD\_EFFCIENCY: Ultra disk |
 |Type|String|data|Specifies whether the disk is a data disk or system disk. |
 |EmrExpiredTime|String|N/A|The time when the EMR cluster expires. A reserved field. |
 |ExpiredTime|Long|32493801600000|The time when the host expires. |
@@ -66,10 +70,17 @@ You can call this operation to ListClusterHost a cluster, including disks, CPU, 
 |PublicIp|String|47.\*\*\*. \*\*\*. \*\*\*|The public IP address of the host. |
 |Role|String|MASTER|The role of the host in the cluster.
 
--   MASTER
--   CORE |
+-   MASTER: MASTER instance node
+-   CORE: The CORE instance node
+-   TASK: compute instance node |
 |SerialNumber|String|3c2a5078-778d-4c18-87e4-1a38fbcb\*\*\*\*|The serial number of the host. |
-|Status|String|NORMAL|The status of the ECS instance. |
+|Status|String|NORMAL|Host Status:
+
+-   NORMAL: The API group is normal.
+-   ABNORMAL: ABNORMAL
+-   RESIZING: being configured
+-   INITIALIZING: the instance is being initialized.
+-   RELEASED: the instance is RELEASED. |
 |SupportIpV6|Boolean|false|Specifies whether the IPv6 protocol is supported. |
 |Type|String|VM|The type of the host. |
 |ZoneId|String|cn-hangzhou-i|The ID of the region where your project resides. |
@@ -405,8 +416,8 @@ Sample success responses
 
 ## Error codes
 
-|HttpCode|Error codes|Error message|Description|
-|--------|-----------|-------------|-----------|
+|HttpCode|Error code|Error message|Description|
+|--------|----------|-------------|-----------|
 |403|Params.Illegal|The specified parameters are wrongly formed..|The error message returned because the format of the specified parameters is invalid.|
 |403|User.OtherUserResource.NotAllow|It is not allowed to operate other user's resource|The error message returned because you are not authorized to manage the resources of other users.|
 |403|Invalid.Cluster.Status|Invalid cluster status %s in status list|The error message returned because the specified cluster status is invalid.|
