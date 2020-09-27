@@ -132,7 +132,7 @@ spark-submit --class MaxComputeSample examples-1.0-SNAPSHOT-shaded.jar <accessKe
         |envType|The environment type. A value of 0 indicates the public network, and 1 indicates the internal network.
 
 If the sample is run on a local server, set this parameter to 0. If the program is run in E-MapReduce, set this parameter to 1. |
-        |project|The name of the project. For more information, see [Install and configure a client]().|
+        |project|The name of the project. For more information, see [MaxCompute glossary](https://help.aliyun.com/document_detail/odps/summary/glossary.html?spm=5176.docodps/quick_start/prerequisite.6.88.A5zVKu).|
         |numPartition|The number of RDD partitions of the input data file.|
 
     -   MNSSample:
