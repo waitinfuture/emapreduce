@@ -11,7 +11,7 @@ You can call this operation to query ListClusterInstalledService that have been 
 |Parameter|Type|Required|Example|Description|
 |---------|----|--------|-------|-----------|
 |Action|String|Required|ListClusterInstalledService|The operation that you want to perform. For API requests using the HTTP or HTTPS URL, this parameter is required. Set this parameter to ListClusterInstalledService. |
-|ClusterId|String|Required|C-0EF9B0EC8564\*\*\*\*|The ID of the ApsaraDB for POLARDB cluster. |
+|ClusterId|String|Required|C-0EF9B0EC8564\*\*\*\*|The ID of the ApsaraDB for PolarDB cluster. |
 |RegionId|String|Required|cn-hangzhou|The ID of the region where your project resides. |
 |PageNumber|Integer|Optional|1|The page number of the returned page. |
 |PageSize|Integer|Optional|30|The number of entries returned on each page. |
