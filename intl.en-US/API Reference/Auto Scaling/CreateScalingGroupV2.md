@@ -1,6 +1,6 @@
 # CreateScalingGroupV2
 
-Call CreateScalingGroupV 2 to create a scaling group.
+Call CreateScalingGroupV2 to create a scaling group.
 
 ## Debugging
 
