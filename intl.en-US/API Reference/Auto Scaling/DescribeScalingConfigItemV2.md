@@ -11,7 +11,7 @@ Call DescribeScalingConfigItemV2 to obtain the scaling configuration items detai
 |Parameter|Type|Required|Example|Description|
 |---------|----|--------|-------|-----------|
 |Action|String|Required|DescribeScalingConfigItemV2|The operation that you want to perform. For API requests using the HTTP or HTTPS URL, this parameter is required. Value: DescribeScalingConfigItemV2. |
-|ConfigItemType|String|Required|SCALING\_RULE|Configuration items types
+|ConfigItemType|String|Required|SCALING\_RULE|The type of the configuration parameters. Valid values:
 
 -   SCALING\_RULE: scaling rules
 -   SCALING\_STRATEGY: scaling policy |
@@ -24,14 +24,14 @@ Call DescribeScalingConfigItemV2 to obtain the scaling configuration items detai
 
 |Parameter|Type|Example|Description|
 |---------|----|-------|-----------|
-|ConfigItemInformation|String|\{"ruleName": "triggered by load", "adjustmentType": "QUANTITY\_CHANGE\_IN\_CAPACITY", "coolDownTime": 100, "ruleParam": \{ "metricName": "YarnFreeCores", "period": 10, "statistics": "xxx", "comparisonOperator": ""\\u003e\\u003d ", " threshold ": 10, " evaluationCount ": 1 \}, " adjustmentValue ": 1, "ruleType": "BY\_LOAD", "configItemType": "SCALING\_RULE"\}|Configuration Items information. The information varies with the configuration items type.
+|ConfigItemInformation|String|\{"ruleName": "triggered by load", "adjustmentType": "QUANTITY\_CHANGE\_IN\_CAPACITY", "coolDownTime": 100, "ruleParam": \{ "metricName": "YarnFreeCores", "period": 10, "statistics": "xxx", "comparisonOperator": ""\\u003e\\u003d ", " threshold ": 10, " evaluationCount ": 1 \}, " adjustmentValue ": 1, "ruleType": "BY\_LOAD", "configItemType": "SCALING\_RULE"\}|Configuration Items information. The information varies with the configuration items type. Valid values:
 
 -   SCALING\_RULE:
     -   Trigger by load`: { "ruleName": "Trigger by load", "adjustmentType": "QUANTITY_CHANGE_IN_CAPACITY", "coolDownTime": 100, "ruleParam": { "metricName": "YarnFreeCores", "period": 10, "statistics": "xxx", "comparisonOperator": ""\u003e\u003d ", " threshold ": 10, " evaluationCount ": 1 }, "adjustmentValue": 1, "ruleType": "BY_LOAD", "configItemType": "SCALING_RULE"}`
     -   Scheduled node`: { "ruleName": "scheduled node", "adjustmentType": "QUANTITY_CHANGE_IN_CAPACITY", "Cooldown": 100, "ruleParam": { "recurrenceType": "Daily", "recurrenceValue": "1", "recurrenceEndTime": "2007-22t03:" 01Z ", " launchTime ": " 2020-07-22T03:07Z ", " launchExpirationTime ": 0 }, " adjustmentValue": 1, "ruleType": "SCHEDULED", "configItemType": "SCALING_RULE"}`
     -   `Set-`point execution`{"ruleName": "specified execution", "adjustmentType": "QUANTITY_CHANGE_IN_CAPACITY", "coolDownTime": 100, "ruleParam": { "launchTime": "2020-07-22T03:09Z", "launchExpirationTime": 1 }, "adjustmentValue": 1, "ruleType:" "BY_TIME_ONCE", "configItemType": "SCALING_RULE"}`
 -   SCALING\_STRATEGY:`{"spotStrategy": "NoSpot", "spotPriceLimits": 0.01, "instanceTypeList":[],"sysDiskCategory": "cloud_essd", "sysDiskSize": { "value": 40.0, "unit": "GIGABYTE" }, "dataDiskCategory": "cloud_essd", "dataDiskSize": { "value": 40.0," unit": "GIGABYTE" }, "dataDiskCount": 4, "scalingMaxSize": 1, "scalingMinSize": 1, "defaultCoolDownTime": 0, "scalingTimeoutPolice": { "timeoutPolicy": "ROLLBACK" }, "nodeOfflineMode": "NORMAL", "nodeOfflineModeParam": { "timeoutMs": 0 }, "triggerMode":" Scheduled", "multiAvailablePolicy": "PRIORITY", "multiAvailablePolicyParam": { "onDemandBaseCapacity": 0, "onDemandPercentageAboveBaseCapacity": 0, "spotInstanceRemedy": 0, "spotInstance": false }, "configItemType": "SCALING_STRATEGY"}` |
-|ConfigItemType|String|SCALING\_RULE|Configuration items types
+|ConfigItemType|String|SCALING\_RULE|The type of the configuration parameters. Valid values:
 
 -   Scaling\_ruby: a scaling rule.
 -   SCALING\_STRATEGY: scaling policy |
@@ -76,7 +76,7 @@ Sample success responses
 }
 ```
 
-## Error codes
+## Error code
 
 |HttpCode|Error code|Error message|Description|
 |--------|----------|-------------|-----------|
