@@ -8,7 +8,7 @@
 
 本文以MAC环境为例，使用Chrome浏览器实现端口转发。
 
-1.  登录Master节点，详情请参见[使用SSH连接主节点]() 。
+1.  登录Master节点，详情请参见[SSH登录集群](/intl.zh-CN/集群管理/集群配置/SSH登录集群.md) 。
 
     ```
     ssh root@xx.xx.xx.xx
@@ -77,7 +77,7 @@
 2.  提交Workflow作业。
 
     -   在非HA集群上提交Workflow作业
-        1.  登录集群的主Master节点，详情请参见[使用SSH连接主节点]()。
+        1.  登录集群的主Master节点，详情请参见[SSH登录集群](/intl.zh-CN/集群管理/集群配置/SSH登录集群.md)。
 
             ```
             ssh root@主Master公网IP地址
@@ -115,7 +115,7 @@
             您可以看查看提交的Oozie Workflow Job。
 
     -   在HA集群上提交Workflow作业
-        1.  登录集群的主Master节点，详情请参见[使用SSH连接主节点]()。
+        1.  登录集群的主Master节点，详情请参见[SSH登录集群](/intl.zh-CN/集群管理/集群配置/SSH登录集群.md)。
 
             ```
             ssh root@主Master公网IP地址
