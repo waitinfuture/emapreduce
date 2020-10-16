@@ -66,7 +66,7 @@ python scripts/create_config_from_excel.py --model_type multi_tower --excel_path
     -   embedding\_dim：embedding的大小
     -   default\_value：缺失值填充
     -   weights：如果type是tags，则可以指定weights。weights和tags必须要有相同的列
-    -   boundaries：连续值离散化的区间。例如: 10,20,30，将会离散成区间\(-inf, 10\), \[10, 20\), \[20, 30\), \[30, inf\)。
+    -   boundaries：连续值离散化的区间。例如：10,20,30，将会离散成区间\(-inf, 10\), \[10, 20\), \[20, 30\), \[30, inf\)。
 
 **说明：** 配置boundaries时，通常也需要配置embedding\_dim。
 
