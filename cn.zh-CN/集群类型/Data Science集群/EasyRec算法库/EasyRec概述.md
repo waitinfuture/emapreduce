@@ -44,7 +44,7 @@ el_submit -t tensorflow-ps -a easy_rec_train -f dwd_avazu_ctr_deepmodel.config -
 
 ```
 # bash
-el_submit -t standalone -a easy_rec_eval -f dwd_avazu_ctr_deepmodel.config -m local -wn 1 -wc 6 -wm 20000 -c "python -m easy_rec.python.train_eval --pipeline_config_path dwd_avazu_ctr_deepmodel.config"
+el_submit -t standalone -a easy_rec_eval -f dwd_avazu_ctr_deepmodel.config -m local -wn 1 -wc 6 -wm 20000 -c "python -m easy_rec.python.eval --pipeline_config_path dwd_avazu_ctr_deepmodel.config"
 ```
 
 ## 导出文件
