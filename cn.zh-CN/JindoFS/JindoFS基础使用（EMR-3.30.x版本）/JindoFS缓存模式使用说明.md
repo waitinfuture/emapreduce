@@ -144,8 +144,19 @@ JindoFS后端基于OSS，可以提供海量的存储，但是本地盘的容量�
         |**fs.jfs.cache.oss.accessKeySecret**|表示存储后端OSS的AccessKey Secret。|
         |**fs.jfs.cache.oss.endpoint**|表示存储后端OSS的endpoint。|
 
+        **说明：** 兼容EMR-3.30.0之前版本的配置项。
+
 -   JFS Scheme
     1.  在**集群服务** \> **SmartData**的**配置**页面，单击**namespace**页签。
+    2.  修改**jfs.namespaces**为**test**。
+    3.  单击**自定义配置**，在**新增配置项**对话框中增加以下参数，单击**确定**。
+
+        |参数|参数说明|
+        |--|----|
+        |**jfs.namespaces.test.oss.uri**|表示test命名空间的后端存储。示例：oss://<oss\_bucket.endpoint\>/<oss\_dir\>。 endpoint信息直接配置在oss.uri中。 |
+        |**jfs.namespaces.test.oss.access.key**|表示存储后端OSS的AccessKey ID。|
+        |**jfs.namespaces.test.oss.access.secret**|表示存储后端OSS的AccessKey Secret。|
+
 
 ## 高级配置
 
