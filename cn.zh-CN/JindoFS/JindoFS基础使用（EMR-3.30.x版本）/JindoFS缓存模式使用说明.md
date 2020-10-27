@@ -55,12 +55,20 @@ OSS Scheme保留了原有OSS文件系统的使用习惯，即直接通过`oss://
 
         |参数|参数说明|示例|
         |--|----|--|
-        |jfs.namespaces.test.oss.uri|表示test命名空间的后端存储。|oss://<oss\_bucket\>/<oss\_dir\>/ **说明：** 该配置必须配置到OSS bucket下的具体目录，也可以直接使用根目录。 |
+        |jfs.namespaces.test.oss.uri|表示test命名空间的后端存储。|oss://<oss\_bucket\>/<oss\_dir\>/**说明：** 该配置必须配置到OSS Bucket下的具体目录，也可以直接使用根目录。 |
         |jfs.namespaces.test.mode|表示test命名空间为缓存模式。|cache|
 
-4.  单击右上角的**保存**。
+4.  单击**确定**。
 
-5.  单击右上角的**操作** \> **重启 Jindo Namespace Service**。
+5.  保存配置。
+
+    1.  单击右上角的**保存**。
+
+    2.  在**确认修改**对话框中，输入执行原因，开启**自动更新配置**。
+
+    3.  单击**确定**。
+
+6.  单击右上角的**操作** \> **重启 Jindo Namespace Service**。
 
     重启后即可通过`jfs://test/<path_of_file>`的形式访问JindoFS上的文件。
 
@@ -71,12 +79,20 @@ OSS Scheme保留了原有OSS文件系统的使用习惯，即直接通过`oss://
 
 1.  在**集群服务** \> **SmartData**的**配置**页面，单击**client**页签。
 
-2.  修改**jfs.cache.data-cache.enable**为**1**，表示启用缓存。
+2.  修改**jfs.cache.data-cache.enable**为**true**，表示启用缓存模式。
 
-    此配置为客户端配置，不需要重启SmartData服务。
+    此配置无需重启SmartData服务。
+
+3.  保存配置。
+
+    1.  单击右上角的**保存**。
+
+    2.  在**确认修改**对话框中，输入执行原因，开启**自动更新配置**。
+
+    3.  单击**确定**。
 
 
-缓存启用后，Jindo服务会自动管理本地缓存备份，通过水位清理本地缓存，请您根据需求配置一定的比例用于缓存，详情请参见[磁盘空间水位控制](/cn.zh-CN/JindoFS/JindoFS基础使用（EMR-3.27.x版本）/JindoFS块存储模式使用说明.md)。
+缓存模式启用后，Jindo服务会自动管理本地缓存备份，通过水位清理本地缓存，请您根据需求配置一定的比例用于缓存，详情请参见[磁盘空间水位控制](/cn.zh-CN/JindoFS/JindoFS基础使用（EMR-3.27.x版本）/JindoFS块存储模式使用说明.md)。
 
 ## 磁盘空间水位控制
 
@@ -114,9 +130,9 @@ JindoFS后端基于OSS，可以提供海量的存储，但是本地盘的容量�
     4.  在**确认**对话框中，单击**确定**。
 
 
-## 访问OSS bucket
+## 访问OSS Bucket
 
-在EMR集群中访问同账号、同区域的OSS bucket时，默认支持免密访问，即无需配置任何AccessKey即可访问。如果访问非以上情况的OSS bucket需要配置相应的AccessKey ID、AccessKey Secret以及Endpoint，针对两种使用方式相应的配置分别如下：
+在EMR集群中访问同账号、同区域的OSS Bucket时，默认支持免密访问，即无需配置任何AccessKey即可访问。如果访问非以上情况的OSS Bucket需要配置相应的AccessKey ID、AccessKey Secret以及Endpoint，针对两种使用方式相应的配置分别如下：
 
 -   OSS Scheme
     1.  在**集群服务** \> **SmartData**的**配置**页面，单击**smartdata-site**页签。
@@ -124,21 +140,12 @@ JindoFS后端基于OSS，可以提供海量的存储，但是本地盘的容量�
 
         |参数|参数说明|
         |--|----|
-        |**fs.jfs.cache.oss-accessKeyId**|表示存储后端OSS的AccessKey ID。|
-        |**fs.jfs.cache.oss-accessKeySecret**|表示存储后端OSS的AccessKey Secret。|
-        |**fs.jfs.cache.oss-endpoint**|表示存储后端OSS的endpoint。|
+        |**fs.jfs.cache.oss.accessKeyId**|表示存储后端OSS的AccessKey ID。|
+        |**fs.jfs.cache.oss.accessKeySecret**|表示存储后端OSS的AccessKey Secret。|
+        |**fs.jfs.cache.oss.endpoint**|表示存储后端OSS的endpoint。|
 
 -   JFS Scheme
     1.  在**集群服务** \> **SmartData**的**配置**页面，单击**namespace**页签。
-    2.  修改**jfs.namespaces**为**test**。
-    3.  单击**自定义配置**，在**新增配置项**对话框中增加以下参数，单击**确定**。
-
-        |参数|参数说明|
-        |--|----|
-        |**jfs.namespaces.test.oss.uri**|表示test命名空间的后端存储。示例：oss://<oss\_bucket.endpoint\>/<oss\_dir\>。 endpoint信息直接配置在oss.uri中。 |
-        |**jfs.namespaces.test.oss.access.key**|表示存储后端OSS的AccessKey ID。|
-        |**jfs.namespaces.test.oss.access.secret**|表示存储后端OSS的AccessKey Secret。|
-
 
 ## 高级配置
 
@@ -155,8 +162,7 @@ Cache模式还包含一些高级配置，用于性能调优，以下配置均为
 
     |参数|参数说明|
     |--|----|
-    |**fs.jfs.cache.copy.simple.max.byte**|rename过程使用普通copy接口的文件大小上限（小于阈值的使用普通 copy接口，大于阈值的使用multipart copy接口以提高copy效率）。 **说明：** 如果确认已开通OSS fast copy功能，参数值设为**-1**，表示所有大小均使用普通copy接口，从而有效利用fast copy获得最优的rename性能。 |
-    |**fs.jfs.cache.write.buffer.size**|文件写入流的buffer大小，参数值必须为2的幂次，最大为8MB，如果作业同时打开的写入流较多导致内存使用过大，可以适当调小此参数。默认值：1048576。|
-    |**fs.oss.committer.magic.enabled**|启用Jindo Job Committer，避免Job Committer的rename操作，来提升性能。默认值：true。 **说明：** 针对Cache模式下，由于OSS这类对象存储rename操作性能较差的问题，推出了Jindo Job Committer。 |
+    |**fs.jfs.cache.write.buffer.size**|文件写入流的buffer大小，参数值必须为2的幂次，最大为 8MB，如果作业同时打开的写入流较多导致内存使用过大，可以适当调小此参数。默认值：1048576。|
+    |**fs.oss.committer.magic.enabled**|启用Jindo Job Committer，避免Job Committer的rename操作，来提升性能。默认值：true。 **说明：** 针对Cache模式下，这类OSS对象存储rename操作性能较差的问题，推出了Jindo Job Committer。 |
 
 
