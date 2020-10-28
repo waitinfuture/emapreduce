@@ -1,35 +1,44 @@
 # Knox
 
-The following section provides an overview of how to use Knox in a E-MapReduce cluster.
+This topic describes how to use Knox in EMR.
 
-## Background
-
-E-MapReduce supports [Apache Knox](https://knox.apache.org/). If you select a Knox-supported image to create a cluster, you can access the Web UI from the public network to use services such as YARN, HDFS, and SparkHistory.
+An EMR cluster is created, and Knox is selected from the optional services during the cluster creation. For more information, see [Create a cluster](/intl.en-US/Cluster Management/Configure clusters/Create a cluster.md).
 
 ## Preparations
 
--   Enable Knox access using a public IP address
+-   Configure security group access
 
-    1.  The service port of Knox on E-MapReduce is 8443. In the cluster details, find the ECS security group in which the cluster is located.
-    2.  Change the corresponding security group in the ECS console and add a rule in **Internet inbound** to enable port 8443.
+    1.  Obtain the public IP address of your on-premises machine.
+
+        For security purposes, we recommend that you only allow access from the current public IP address when you configure a security group policy. To obtain your current public IP address, visit [ip.taobao.com](http://ip.taobao.com/). You can view your public IP address in the lower-left corner.
+
+    2.  Enable port 8443:
+        1.  In the **Network Info** section of the **Cluster Overview** page, take note of the network type of the cluster and click the ID of the security group.
+        2.  Click **Add Security Group Rule**.
+        3.  Set **Port Range** to **8443/8443**.
+        4.  Set **Authorization Object** to the public IP address obtained in [Step a](#step_01).
+        5.  Click **OK**.
     **Note:**
 
-    -   For security reasons, the authorization object must be your limited IP address range. 0.0.0.0/0 is forbidden.
-    -   After port 8443 of the security group is enabled, all nodes \(including non-E-MapReduce ECS nodes\) in the security group enable port 8443 at the ingress of the public network.
--   Set a Knox user
+    -   To prevent attacks from external users, you are not allowed to set **Authorization Object** to **0.0.0.0/0**.
+    -   If no public IP address is assigned to the cluster during cluster creation, you can add a public IP address to the cluster in the ECS console. After the IP address is added, go back to the EMR console. In the left-side navigation pane of the Cluster Overview page, click **Instances**. In the upper-right corner of the Instances page, click **Update Instance Info** to immediately synchronize instance information.
+    -   After the public IP address is assigned, you must [submit a ticket](https://workorder-intl.console.aliyun.com/#/ticket/createIndex) to bind the domain name with the public IP address.
+-   Set a Knox account
 
-    Accessing Knox requires a username and password for authentication. The authentication is based on LDAP. You can use your own LDAP service or the LDAP service of Apache Directory Server in the cluster.
+    When you access Knox, you must enter your username and password. The authentication is based on LDAP. You can use the LDAP service of Apache Directory Server in the cluster or your own LDAP service.
 
-    -   Use the LDAP service in the cluster
+    -   Use the LDAP service of Apache Directory Server in the cluster
 
-        Method one\(recommended\):
+        Method 1 \(recommended\):
 
-        Add a Knox account in the [User Management](/intl.en-US/Cluster Management/Cluster planning/Manage users.md) page.
+        Add a Knox account on the Users page. For more information, see [Manage users](/intl.en-US/Cluster Management/Cluster planning/Manage users.md).
 
-        Method two:
+        Method 2:
 
-        1.  Log on to the cluster through SSH. For more information, see [Connect to clusters using SSH](/intl.en-US/Cluster Management/Configure clusters/Log on to a cluster by using SSH.md).
-        2.  Prepare your user data. Here,Tom is used as the user name. In the file, replace all emr-guest with Tom and cn:EMR GUEST with cn:Tom, and set userPassword to your password.
+        1.  Log on to the cluster in SSH mode. For more information, see [Connect to the master node of an EMR cluster in SSH mode](/intl.en-US/Cluster Management/Configure clusters/Connect to a cluster/Connect to the master node of an EMR cluster in SSH mode.md).
+        2.  Prepare your username, such as Tom.
+
+            Run the following commands to open the users.ldif file:
 
             ```
             su knox
@@ -37,9 +46,9 @@ E-MapReduce supports [Apache Knox](https://knox.apache.org/). If you select a Kn
             vi users.ldif
             ```
 
-            **Note:** For security reasons, before you export your user data to LDAP, change the password of users.ldif by changing userPassword to your password.
+            In the file, replace all `emr-guest` with `Tom` and `EMR GUEST` with `Tom`, and set setPassword to the password of your username.
 
-        3.  Export to LDAP.
+        3.  Run the following commands to import user data to LDAP:
 
             ```
             su knox
@@ -48,42 +57,62 @@ E-MapReduce supports [Apache Knox](https://knox.apache.org/). If you select a Kn
             ```
 
     -   Use your own LDAP service
-        1.  Enter the cluster configuration management page. In the cluster-topo configuration, set main.ldapRealm.userDnTemplate to your user DN template and main.ldapRealm.contextFactory.url to your LDAP server domain name and port. Then, save the settings and restart Knox.
+        1.  Go to the **Configure** tab of the Knox service. Click the **cluster-topo** tab in the Service Configuration section.
+        2.  Configure the parameters in the **xml-direct-to-file-content** field.
 
-            ![](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/7197837951/p11122.png)
+            |Parameter|Description|
+            |---------|-----------|
+            |`main.ldapRealm.userDnTemplate`|Specifies a distinguished name \(DN\) template.|
+            |`main.ldapRealm.contextFactory.url`|Specifies the domain name and port number of your LDAP server.|
 
-        2.  Your LDAP service does not typically run in the cluster. You must enable the Knox port to access the LDAP service in the public network, such as port 10389. For more information, see the preceding steps for enabling port 8443. Then, select **Internet outbound**.
+            ![cluster-topo](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/2511883061/p134502.png)
 
-            **Note:** For security reasons, the authorization object must be the public IP address of your Knox cluster. 0.0.0.0/0\*\* is forbidden.
+        3.  In the upper-right corner of the Service Configuration section, click **Save**.
+        4.  In the **Confirm Changes** dialog box, configure the parameters and click **OK**.
+        5.  Select **Restart Knox** from the **Actions** drop-down list in the upper-right corner.
+        6.  In the **Cluster Activities** dialog box, configure the parameters and click **OK**.
+
+            In the **Confirm** message, click **OK**.
+
+        7.  Enable the Knox port, such as port 10389, to access the LDAP service over the Internet.
+
+            The steps to enable this port are similar to those to enable port 8443. Note that you must set Rule Direction to **Outbound**.
 
 
-## Access Knox
+## Access the Knox web UI
 
--   Access using theE-MapReduce shortcut link
-    1.  Log on to the [E-MapReduce console](https://emr.console.aliyun.com/).
-    2.  Click the ID link of the target cluster.
-    3.  In the navigation pane on the left, click **Clusters and Services**.
-    4.  Click the relevant services on the E-MapReduceservicespage, such as HDFS and YARN.
-    5.  In the upper-right corner, click **Quick Link**.
--   Access using the public IP address of the cluster
-    1.  Check the public IP address in the cluster details.
-    2.  Access the URLs of the relevant services in the browser.
-        -   HDFS UI: https://\{cluster\_access\_ip\}:8443/gateway/cluster-topo/hdfs/.
-        -   YARN UI: https://\{cluster\_access\_ip\}:8443/gateway/cluster-topo/yarn/.
-        -   SparkHistory UI: https://\{cluster\_access\_ip\}:8443/gateway/cluster-topo/sparkhistory/.
-        -   Ganglia UI: https://\{cluster\_access\_ip\}:8443/gateway/cluster-topo/ganglia/.
-        -   Storm UI: https://\{cluster\_access\_ip\}:8443/gateway/cluster-topo/storm/.
-        -   Oozie UI: https://\{cluster\_access\_ip\}:8443/gateway/cluster-topo/oozie/.
-    3.  **website is not security** is displayed in your browser because the Knox service uses a self-signed certificate. Confirm that the accessed IP address is the same as that of your cluster and the port is 8443. Click **advance** \> **continue**.
-    4.  Enter the username and password set in LDAP in the logon dialog box.
+You can use your Knox account to access the web UIs of other services, such as HDFS, YARN, Spark, and Ganglia.
 
-## Access control lists
+-   Access a service in the EMR console
+    1.  Log on to the [Alibaba Cloud EMR console](https://emr.console.aliyun.com/).
+    2.  In the top navigation bar, select the region where your cluster resides. Select the resource group as required. By default, all resources of the account appear.
+    3.  Click the **Cluster Management** tab.
+    4.  On the **Cluster Management** page, find the cluster whose services you want to access, and click **Details** in the Actions column.
+    5.  In the left-side navigation pane of the Cluster Overview page, click **Connect Strings**.
+    6.  On the **Public Connect Strings** page, click the URL of the service that you want to access.
+-   Access a service by using the public IP address of the cluster from your browser
+    1.  On the **Cluster Overview** page, obtain the public IP address of your cluster.
+    2.  In the address bar of the browser, enter the URL of the service that you want to access and press Enter.
+        -   HDFS: https://\{Public IP address of the cluster\}:8443/gateway/cluster-topo/hdfs/
+        -   Yarn: https://\{Public IP address of the cluster\}:8443/gateway/cluster-topo/yarn/
+        -   Spark History: https://\{Public IP address of the cluster\}:8443/gateway/cluster-topo/sparkhistory/
+        -   Ganglia: https://\{Public IP address of the cluster\}:8443/gateway/cluster-topo/ganglia/
+        -   Storm: https://\{Public IP address of the cluster\}:8443/gateway/cluster-topo/storm/
+        -   Oozie: https://\{Public IP address of the cluster\}:8443/gateway/cluster-topo/oozie/
 
-Knox provides service-level permission management to limit service access to specific users, user groups, or IP addresses. See [Apache Knox Authorization](https://knox.apache.org/books/knox-0-13-0/user-guide.html?spm=a2c4g.11186623.2.14.459af364CUTH7M#Authorization).
+## Access control
 
--   Example
-    -   Scenario: The YARN UI only allows access by user Tom.
-    -   Steps: Enter the cluster configuration management page. In the cluster-topo configuration, add access control list \(ACL\) code between the`<gateway>...</gateway>` labels.
+Knox offers service-level access control. You can manage access permissions on a specific service by user, user group, or IP address. For more information, see [Apache Knox authorization](https://knox.apache.org/books/knox-0-13-0/user-guide.html?spm=a2c4g.11186623.2.14.459af364CUTH7M#Authorization).
+
+Example:
+
+-   Scenario: Authorize only user Tom to access the YARN web UI.
+-   Procedure:
+
+    1.  Go to the **Configure** tab of the Knox service. Click the **cluster-topo** tab in the Service Configuration section.
+    2.  Configure the parameters in the **xml-direct-to-file-content** field.
+
+        Add the following access control code between the `<gateway> and </gateway>` labels.
 
         ```
         <provider>
@@ -97,8 +126,13 @@ Knox provides service-level permission management to limit service access to spe
         </provider>
         ```
 
--   Notes
+    3.  In the upper-right corner of the Service Configuration section, click **Save**.
+    4.  In the **Confirm Changes** dialog box, configure the parameters and click **OK**.
+    5.  Select **Restart Knox** from the **Actions** drop-down list in the upper-right corner.
+    6.  In the **Cluster Activities** dialog box, configure the parameters and click **OK**.
 
-    Knox provides RESTful APIs for operating a range of services, including adding or deleting HDFS files. For security reasons, make sure that when you enable port 8443 of the security group in the ECS console, the authorization object is your limited IP address range. 0.0.0.0/0 is forbidden. Do not use the LDAP username and password in the Knox installation directory to access Knox.
+        In the **Confirm** message, click **OK**.
+
+    **Warning:** Knox allows you to use the RESTful API of a service to perform related operations on the service. For example, you can use the RESTful API of HDFS to add files to or remove files from HDFS. To ensure security, you are not allowed to use the LDAP username and password saved in the Knox software directory to access a service.
 
 
