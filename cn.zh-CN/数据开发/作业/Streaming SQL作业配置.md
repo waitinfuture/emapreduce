@@ -1,46 +1,49 @@
-# Streaming SQL作业配置 {#task_1780555 .task}
+# Streaming SQL作业配置
 
 本文介绍Streaming SQL作业配置的操作步骤。
 
--   已创建好项目，详情请参见[项目管理](cn.zh-CN/数据开发/项目管理.md#)。
--   已获取Spark Streaming SQL的依赖库，详情请参见下面的**背景信息**。
+-   已创建项目，详情请参见[项目管理](/cn.zh-CN/数据开发/项目管理.md)。
+-   已获取作业所需的资源和数据文件。例如，JAR包、数据文件名称以及两者的保存路径。
 
-Streaming SQL的详细信息请参见[Spark Streaming SQL](../../../../cn.zh-CN/开发指南/Spark Streaming SQL/前言.md#)。
+Streaming SQL的详细信息请参见[Spark Streaming SQL](/cn.zh-CN/开发指南/Spark Streaming SQL/简介.md)。
 
-在Streaming SQL作业配置过程中，您需要设置依赖库。以下列出了Spark Streaming SQL提供的数据源依赖包的版本信息和使用说明，原则上需要使用最新版本。
+在Streaming SQL作业配置过程中，您需要设置依赖库。以下列出了Spark Streaming SQL提供的数据源依赖包的版本信息和使用说明，建议使用最新版本。
 
 |库名称|版本|发布日期|引用字符串|详细信息|
 |---|--|----|-----|----|
-|datasources-bundle|1.7.0|2019/07/29|sharedlibs:streamingsql:datasources-bundle:1.7.0|支持数据源：Kafka、Loghub、Druid、TableStore、HBase和JDBC|
+|datasources-bundle|2.0.0（推荐）|2020/02/26|sharedlibs:streamingsql:datasources-bundle:2.0.0|支持数据源：Kafka、Loghub、Druid、TableStore、HBase、JDBC、Datahub、Redis、Kudu和DTS。|
+|1.9.0|2019/11/20|sharedlibs:streamingsql:datasources-bundle:1.9.0|支持数据源：Kafka、Loghub、Druid、TableStore、HBase、JDBC、Datahub、Redis和Kudu。|
+|1.8.0|2019/10/17|sharedlibs:streamingsql:datasources-bundle:1.8.0|支持数据源：Kafka、Loghub、Druid、TableStore、HBase、JDBC、Datahub和Redis。|
+|1.7.0|2019/07/29|sharedlibs:streamingsql:datasources-bundle:1.7.0|支持数据源：Kafka、Loghub、Druid、TableStore、HBase和JDBC。|
 
--   引用字符串在数据开发的**作业设置** \> **流任务设置** \> **依赖库**中使用。
--   以上所注明支持的数据源，特指数据源支持了流式读写。
--   如果需要了解更详细的使用方法，请参见[数据源](../../../../cn.zh-CN/开发指南/Spark Streaming SQL/数据源/数据源支持概述.md#)。
+如果需要了解更详细的使用方法，请参见[数据源](/cn.zh-CN/开发指南/Spark Streaming SQL/数据源/数据源支持概述.md)。
 
-## 步骤一：创建Streaming SQL作业 {#section_6te_poy_yrb .section}
+## 操作步骤
 
-1.  通过主账号登录[阿里云 E-MapReduce 控制台](https://emr.console.aliyun.com/)，进入集群列表页面。
-2.  单击上方的数据开发页签，进入项目列表页面。
-3.  单击对应项目右侧的**工作流设计**，然后在左侧导航栏中单击**作业编辑**。
-4.  在作业编辑页面左侧，右键单击作业所属的文件夹并选择**新建作业**。 
+1.  新建作业。
 
-    **说明：** 通过右键单击文件夹，您还可以进行创建子文件夹、重命名文件夹和删除文件夹操作。
+    1.  通过主账号登录[阿里云E-MapReduce控制台](https://emr.console.aliyun.com)。
 
-5.  在弹出的新建作业对话框中，输入**作业名称**和**作业描述**，并从**作业类型**列表中选择**Streaming SQL**。![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1410430/156646902956337_zh-CN.png)
+    2.  在顶部菜单栏处，根据实际情况选择地域（Region）和资源组。
 
+    3.  单击上方的数据开发页签。
 
-6.  单击**确定**，完成Streaming SQL的作业创建。 作业创建完成后，自动进入该作业，您可根据实际需要配置作业的代码。
+    4.  在**项目列表**页面，单击对应项目所在行的**作业编辑**。
 
-## 步骤二：配置作业的Streaming SQL语句 {#section_a4b_tzg_roy .section}
+    5.  在**作业编辑**区域，在需要操作的文件夹上，右键选择**新建作业**。
 
-在E-MapReduce后台，Streaming SQL作业的提交方式是`streaming-sql -f {SQL_SCRIPT}`，其中`SQL_SCRIPT`中保存的即是Streaming SQL作业的代码，即Streaming SQL语句。
+        **说明：** 您还可以通过在文件夹上单击右键，执行新建子文件夹、重命名文件夹和删除文件夹操作。
 
-1.  创建作业完成后，在作业内容文本框中输入Streaming SQL语句。 
+    6.  输入**作业名称**、**作业描述**，在**作业类型**下拉列表中选择**Streaming SQL**作业类型。
 
-    Streaming SQL语句示例：
+    7.  单击**确定**。
 
-    ``` {#codeblock_h5c_qkn_eba}
-    --- 创建SLS数据表 
+2.  在**作业内容**中，填写提交该作业需要提供的命令行参数。
+
+    示例如下。
+
+    ```
+    --- 创建SLS数据表。 
     CREATE TABLE IF NOT EXISTS ${slsTableName} 
        USING loghub 
        OPTIONS ( 
@@ -50,7 +53,7 @@ Streaming SQL的详细信息请参见[Spark Streaming SQL](../../../../cn.zh-CN/
             access.key.secret = '${accessKeySecret}', 
             endpoint = '${endpoint}'
        ); 
-    --- 将数据导入HDFS 
+    --- 导入数据至HDFS。
     INSERT INTO 
         ${hdfsTableName} 
     SELECT 
@@ -59,24 +62,26 @@ Streaming SQL的详细信息请参见[Spark Streaming SQL](../../../../cn.zh-CN/
     WHERE ${condition}
     ```
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1410430/156646902956344_zh-CN.png)
+    **说明：** 此类型的作业是通过`streaming-sql -f {sql_script}`提交的。`sql_script`中保存着作业编辑器中填写的SQL语句。
+
+3.  配置依赖库和失败策略。
+
+    1.  单击右上方的**作业设置**。
+
+    2.  分别在**流任务设置**和**共享库**页面，配置作业的依赖库和失败策略。
+
+        |区域|配置项|说明|
+        |--|---|--|
+        |**失败处理策略**|**当前语句执行失败时**|当前语句执行失败时，支持如下策略：         -   **继续执行下一条语句**：如果查询语句执行失败， 继续执行下一条语句。
+        -   **终止当前作业**：如果查询语句执行失败， 终止当前作业。 |
+        |**依赖库**|**库列表**|执行作业需要依赖一些数据源相关的库文件。E-MapReduce将这些库以依赖库的形式发布在调度服务的仓库中，在创建作业时需要指定使用哪个版本的依赖库。您只需设置相应的依赖库版本，例如sharedlibs:streamingsql:datasources-bundle:2.0.0。 |
+
+4.  单击**保存**，作业配置即定义完成。
 
 
-## 步骤三：配置依赖库和失败策略 {#section_sa5_tmj_fdd .section}
+## 问题反馈
 
-依赖库：Streaming SQL作业需要依赖一些数据源相关的库文件。E-MapReduce将这些库以依赖库的形式发布在调度服务的仓库中，在创建作业时需要指定使用哪个版本的依赖库。
+如果您在使用阿里云E-MapReduce过程中有任何疑问，欢迎您扫描下面的二维码加入钉钉群进行反馈。
 
-失败策略：当前语句执行失败时的执行策略。
-
-1.  完成作业代码配置后，单击右上方的**作业设置**，然后选择**流任务设置**。
-2.  在流任务设置页面配置作业的依赖库和失败策略。 
-
-    |区域|配置项|说明|
-    |--|---|--|
-    |**失败处理策略**|**当前语句执行失败时**|当前语句执行失败时，支持如下策略：     -   **继续执行下一条语句**：如果查询语句执行失败， 继续执行下一条语句。
-    -   **终止当前作业**：如果查询语句执行失败， 终止当前作业。
- |
-    |**依赖库**|**库列表**|您只需设置相应的依赖库版本，例如sharedlibs:streamingsql:datasources-bundle:1.7.0。|
-
-3.  单击**保存**，Streaming SQL作业配置即定义完成。
+![emr_dingding](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/2440659951/p81620.png)
 
