@@ -29,14 +29,32 @@ CSV文件不需要有文件头，输入数据列之间使用英文逗号（,）�
 
 配置文件示例：[dwd\_avazu\_ctr\_deepmodel.config](https://pai-vision-data-hz.oss-cn-zhangjiakou.aliyuncs.com/easy-rec/dwd_avazu_ctr_deepmodel.config)。详细配置请参见[配置文件](#section_tmt_m1x_o7w)。
 
-使用`el_submit`提交训练任务。
+使用`el_submit`提交训练任务。语法如下。
+
+```
+el_submit [-h] [-t APP_TYPE] [-a APP_NAME] [-m MODE] [-m_arg MODE_ARG]
+
+[-interact INTERACT] [-x EXIT]
+
+[-enable_tensorboard ENABLE_TENSORBOARD]
+
+[-log_tensorboard LOG_TENSORBOARD] [-conf CONF] [-f FILES]
+
+[-pn PS_NUM] [-pc PS_CPU] [-pm PS_MEMORY] [-wn WORKER_NUM]
+
+[-wc WORKER_CPU] [-wg WORKER_GPU] [-wm WORKER_MEMORY]
+
+[-wnpg WNPG] [-ppn PPN] [-c COMMAND [COMMAND ...]]
+```
+
+**说明：** `el_submit`相关的参数信息，请参见[el\_submit参数](#section_vnz_60g_vx0)。
+
+作业提交示例如下。
 
 ```
 # bash
 el_submit -t tensorflow-ps -a easy_rec_train -f dwd_avazu_ctr_deepmodel.config -m local -pn 1 -pc 4 -pm 20000 -wn 3 -wc 6 -wm 20000 -c "python -m easy_rec.python.train_eval --pipeline_config_path dwd_avazu_ctr_deepmodel.config --continue_train"
 ```
-
-**说明：** `el_submit`相关的参数信息，请参见[TensorFlow](/cn.zh-CN/集群类型/Hadoop集群/TensorFlow.md)。
 
 ## 评估文件
 
@@ -256,6 +274,34 @@ el_submit -t standalone -a easy_rec_eval -f dwd_avazu_ctr_deepmodel.config -m lo
     }
     ```
 
+
+## el\_submit参数
+
+|参数|说明|
+|--|--|
+|`-t APP_TYPE`|提交的任务类型： -   Tensorflow-ps模式，采用Parameter Server方式通信，该方式为原生TensorFlow PS模式。
+-   Tensorflow-mpi模式，采用Horovod进行通信。
+-   Standalone模式，您可以调度任务到YARN集群中启动单机任务。 |
+|`–a APP_NAME`|作业名称。|
+|`–m MODE`|运行环境：-   Local，使用的是emr-worker节点上的Python运行环境。如果您需要使用第三方Python包，请手动在所有节点上安装第三方Python包。
+-   Docker，使用的是emr-worker节点上的Docker运行环境，TensorFlow运行在Docker Container内。
+-   Virtual-env，您上传的Python环境。您可以在Python环境中安装不同于emr-worker节点的Python库。 |
+|`-m_arg MODE_ARG`|补充参数。此参数和`MODE`配合使用，如果运行环境是Docker，则设置为Docker镜像名称。如果运行环境是Virtual-env，则设置为Python环境文件名称。 |
+|`–x Exit`|当所有emr-worker节点成功完成训练后，PS节点自动退出。|
+|`-enable_tensorboard`|是否在启动训练任务时启动TensorBoard。|
+|`-log_tensorboard`|指定HDFS中TensorBoard日志的位置。如果训练时启动了TensorBoard，则需要指定TensorBoard日志位置。|
+|`-conf CONF Hadoop conf`|位置。|
+|`–f FILES`|运行TensorFlow所有依赖的文件和文件夹，包含执行脚本。如果执行Virtual-env文件，您可以放置所有依赖到一个文件夹中，脚本会自动按照文件夹层次关系上传到HDFS中。|
+|`-pn TensorFlow`|启动的参数服务器个数。|
+|`-pc`|每个参数服务器申请的CPU核数。|
+|`-pm`|每个参数服务器申请的内存大小。|
+|`-wn TensorFlow`|启动的emr-worker节点个数。|
+|`-wc`|每个emr-worker节点申请的CPU核数。|
+|`-wg`|每个emr-worker节点申请的GPU核数。|
+|`-wm`|每个emr-worker节点申请的内存个数。|
+|`-c COMMAND`|执行的命令。例如`pythoncensus.py`。|
+|`-wnpg`|每个GPU核上同时运行的Worker数量（针对tensorflow-ps模式）。|
+|`-ppn`|每个GPU核上同时运行的Worker数量（针对horovod模式）。|
 
 ## 相关内容
 
