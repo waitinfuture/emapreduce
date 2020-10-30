@@ -6,7 +6,7 @@ keyword: [Hue, use Hue]
 
 This topic describes how to configure and access the Hue service in EMR. Hue allows you to interact with a Hadoop cluster for data analysis and processing from your browser.
 
--   A security group rule is configured. For more information, see [该topic中文需要重写，后续重新提翻](/intl.en-US/Cluster Management/Configure clusters/Security groups.md).
+-   A security group rule is configured. For more information.
 
     **Note:** When you set the authorization object in the security group rule, enter only the CIDR blocks or IP addresses that need to access Hue. Do not enter the CIDR block 0.0.0.0/0.
 
