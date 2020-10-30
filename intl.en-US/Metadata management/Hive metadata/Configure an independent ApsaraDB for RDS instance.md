@@ -52,11 +52,13 @@ Configure parameters listed in the following table in the **Basic Settings** ste
 
 ## Initialize the metastore service
 
-1.  2.  In the top navigation bar, select the region where your cluster resides. Select the resource group as required. By default, all resources of the account appear.
+1.  Log on to the [EMR console](https://emr.console.aliyun.com/).
+
+2.  In the top navigation bar, select the region where your cluster residesand select a resource group based on your business requirements.
 
 3.  Click the **Cluster Management** tab.
 
-4.  On the **Cluster Management** page that appears, find the target cluster and click **Details** in the Actions column.
+4.  On the **Cluster Management** page, find your cluster and click **Details** in the Actions column.
 
 5.  In the **Software Info** section of the **Cluster Overview** page that appears, check the Hive version and initialize the metastore service of Hive.
 
@@ -100,6 +102,6 @@ Configure parameters listed in the following table in the **Basic Settings** ste
 
     If an exception is reported during initialization, check the configurations of RDS for MySQL security groups, and make sure that a security group whitelist is enabled for EMR clusters.
 
-    ![Initialization failure](../images/p93353.png)
+    ![Initialization failure](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/7523204061/p93353.png)
 
 
