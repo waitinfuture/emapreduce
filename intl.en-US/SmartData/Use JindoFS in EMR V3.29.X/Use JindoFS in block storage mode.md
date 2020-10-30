@@ -13,7 +13,9 @@ The block storage mode of JindoFS has the following features:
 
 1.  Go to the SmartData service.
 
-    1.      2.  In the top navigation bar, select the region where your cluster resides. Select the resource group as required. By default, all resources of the account appear.
+    1.  Log on to the [EMR console](https://emr.console.aliyun.com/).
+
+    2.  In the top navigation bar, select the region where your cluster resides. Select the resource group as required. By default, all resources of the account appear.
 
     3.  Click the **Cluster Management** tab.
 
