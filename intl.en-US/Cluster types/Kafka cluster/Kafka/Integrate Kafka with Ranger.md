@@ -18,7 +18,11 @@ This topic describes how to integrate Kafka with Ranger and how to configure rel
 
         ![Enable Kafka PLUGIN](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/5114027951/p11548.png)
 
-    6.  2.  Add the Kafka service on the web UI of Ranger.
+    6.  In the Cluster Activities dialog box that appears, set related parameters and click **OK**.
+
+        Click **History** in the upper-right corner to view the task progress.
+
+2.  Add the Kafka service on the web UI of Ranger.
 
     1.  Log on to Ranger. For more information, see [Overview](/intl.en-US/Cluster types/Hadoop cluster/Ranger/Overview.md).
 
@@ -45,7 +49,11 @@ This topic describes how to integrate Kafka with Ranger and how to configure rel
 
     2.  Select **Restart Kafka Broker** from the **Actions** drop-down list in the upper-right corner.
 
-    3.  
+    3.  In the Cluster Activities dialog box that appears, set related parameters and click **OK**.
+
+        Click **History** in the upper-right corner to view the task progress.
+
+
 ## Permission configuration example
 
 After Kafka is integrated with Ranger, you can configure Kafka permissions in Ranger.
