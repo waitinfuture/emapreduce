@@ -95,7 +95,7 @@ E-MapReduce Druid comes with two Web pages:
 EMR provides three methods to access E-MapReduce Druid Web pages:
 
 -   On the cluster management page, click **Access Link and port**, locate the Druid overlord or Druid coordinator link, and click the link to enter \(recommended method, EMR-3.20.0, and later versions \).
--   Use [SSH tunneling](/intl.en-US/Cluster Management/Configure clusters/Log on to a cluster by using SSH.md) to create an SSH tunnel and enable proxy browser access.
+-   Use [Create an SSH tunnel to access web UIs of open source components](/intl.en-US/Cluster Management/Configure clusters/Connect to a cluster/Create an SSH tunnel to access web UIs of open source components.md) to create an SSH tunnel and enable proxy browser access.
 -   Access through public IP + Port, as shown in figureHttp: // 123.123.123.123: 18090\(Not recommended. use security group settings to properly control cluster access through the public network \).
 
 ## Batch index
