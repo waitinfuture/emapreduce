@@ -6,7 +6,7 @@
 -   已安装JDK 1.8。
 -   根据您使用的Hadoop版本，下载jindo-distcp-<version\>.jar。
     -   Hadoop 2.7及后续版本，请下载[jindo-distcp-3.0.0.jar](https://smartdata-binary.oss-cn-shanghai.aliyuncs.com/Jindo-distcp-3.0/Hadoop2.7New/jindo-distcp-3.0.0.jar)。
-    -   Hadoop 3.x系列版本，请下载[jindo-distcp-3.0.0.jar](https://smartdata-binary.oss-cn-shanghai.aliyuncs.com/Jindo-distcp-3.0/Hadoop3.x/jindo-distcp-3.0.0.jar)。
+    -   Hadoop 3.x系列版本，请下载[jindo-distcp-3.0.0.jar](https://smartdata-binary.oss-cn-shanghai.aliyuncs.com/Jindo-distcp-3.0/Hadoop3.xNew/jindo-distcp-3.0.0.jar)。
 
 ## 场景预览
 
