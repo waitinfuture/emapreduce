@@ -202,6 +202,7 @@ el_submit -t standalone -a easy_rec_eval -f dwd_avazu_ctr_deepmodel.config -m lo
       }
       # 使用SyncReplicasOptimizer进行分布式训练（同步模式）。
       sync_replicas: true
+      num_steps:10000
     }
     ```
 
