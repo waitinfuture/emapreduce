@@ -2,7 +2,7 @@
 
 本文介绍如何将Kafka集成到Ranger，以及如何配置权限。
 
-已创建集群，详情请参见[创建集群](/cn.zh-CN/集群管理/集群配置/创建集群.md)。
+已创建集群，并选择了Ranger服务，详情请参见[创建集群](/cn.zh-CN/集群管理/集群配置/创建集群.md)。
 
 ## Kafka集成Ranger
 
@@ -64,13 +64,15 @@
 
 以test用户为例，添加Publish权限。
 
-1.  单击配置好的**emr-kafka**。
+1.  进入Ranger UI页面，详情请参见[概述](/cn.zh-CN/集群类型/Hadoop集群/Ranger/概述.md)。
 
-    ![click_emr_kafka](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/3014027951/p81278.png)
+2.  在Ranger UI页面，单击配置好的**emr-kafka**。
 
-2.  单击右上角的**Add New Policy**。
+    ![click_emr_kafka](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/7187593061/p81278.png)
 
-3.  填写参数。
+3.  单击右上角的**Add New Policy**。
+
+4.  填写参数。
 
     ![add_Policy](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/3014027951/p81282.png)
 
@@ -84,7 +86,7 @@
 
     单击**Select Group**下方的![add_permissions](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/3014027951/p81288.png)，可以对多个Group进行授权。
 
-4.  单击**Add**。
+5.  单击**Add**。
 
     添加Policy后，实现对**test**的授权。test用户即可以对名为**test**的topic执行写入操作。
 
