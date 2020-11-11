@@ -88,9 +88,24 @@ el_submit -t standalone -a easy_rec_eval -f dwd_avazu_ctr_deepmodel.config -m lo
 ## 配置文件
 
 -   数据准备
-    -   训练表train\_input\_path：hdfs:///user/easy\_rec/data/dwd\_avazu\_ctr\_deepmodel\_train.csv。
-    -   测试数据eval\_input\_path：hdfs:///user/easy\_rec/data/dwd\_avazu\_ctr\_deepmodel\_test.csv。
-    -   模型保存路径：hdfs:///user/easy\_rec/experiment/。
+    -   训练表
+
+        ```
+        train_input_path: "hdfs://127.0.0.1:9000/user/easy_rec/data/dwd_avazu_ctr_deepmodel_train.csv"
+        ```
+
+    -   测试数据
+
+        ```
+        eval_input_path: "hdfs://127.0.0.1:9000/user/easy_rec/data/dwd_avazu_ctr_deepmodel_test.csv"
+        ```
+
+    -   模型保存路径
+
+        ```
+        model_dir: "hdfs://127.0.0.1:9000/user/easy_rec/experiment"
+        ```
+
 -   数据相关的描述
 
     ```
