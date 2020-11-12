@@ -75,8 +75,8 @@ You can view job logs in the EMR console. If you log on to the master node to su
 
 ## How do I view logs on OSS?
 
-1.  Log on to the EMR console. Go to the Workflows page. In the left-side navigation pane, click the workflow whose logs you want to view. Click the **Records** tab.
-2.  On the **Records** tab, find the execution record that you want to view, and click **Details** in the Action column. On the **Job Instance Info** tab of the page that appears, obtain the ID of the cluster where the job is run.
+1.  Log on to the EMR console and click the Data Platform tab. Find the project, and click Workflows in the Action column. In the left-side navigation pane of the page that appears, click the workflow whose logs you want to view. Click the **Records** tab in the lower part of the page.
+2.  On the **Records** tab, find the workflow instance that you want to view, and click **Details** in the Action column. On the **Job Instance Info** tab of the page that appears, obtain the ID of the cluster where the job is run.
 3.  Go to the OSS://mybucket/emr/spark directory and find the folder named after the cluster ID.
 4.  Go to the OSS://mybucket/emr/spark/clusterID/jobs directory, which contains folders named after job IDs. Each directory stores the operational logs of a job.
 
@@ -88,7 +88,7 @@ Solution: Enter a valid MaxCompute Tunnel endpoint.
 
 ## What do I do if a TPS conflict occurs when multiple consumer IDs consume the same topic?
 
-Cause: This topic may have been created during public preview or in other environments. This causes consumption data inconsistency among multiple consumer groups. Solution: . Specify the topic and consumer IDs in the ticket.
+Cause: This topic may have been created during public preview or in other environments. This causes consumption data inconsistency among multiple consumer groups. Solution: [submit a ticket](https://workorder-intl.console.aliyun.com/#/ticket/createIndex). Specify the topic and consumer IDs in the ticket.
 
 ## Can I view the job logs stored in core nodes?
 
@@ -193,7 +193,6 @@ Cause: The DECIMAL data type has different representations in the different Parq
 -   HA cluster \(service discovery mode\)
 
     ```
-    
     ! connect jdbc:hive2://emr-header-1:2181,emr-header-2:2181,emr-header-3:2181/;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2;principal=hive/_HOST@EMR.${clusterId).COM
     ```
 
@@ -276,7 +275,7 @@ Solution:
 
 -   For a Hive job, set `io.compression.codec.snappy.native` to true.
 -   For a MapReduce job, set `Dio.compression.codec.snappy.native` to true.
--   For a Spark job, set `Dio.compression.codec.snappy.native` to true.
+-   For a Spark job, set `spark.hadoop.io.compression.codec.snappy.native` to true.
 
 ## How do I fix the error "Exception in thread main java.lang.RuntimeException: java.lang.ClassNotFoundException: Class com.aliyun.fs.oss.nat.NativeOssFileSystem not found"?
 
@@ -316,6 +315,8 @@ Solution:
     -   If it is, change its value to true to periodically clear the logs of completed jobs.
     -   If it is not, click the **spark-defaults** tab. Click **Custom Configuration** in the upper-right corner. In the dialog box that appears, add the **spark\_history\_fs\_cleaner\_enabled** parameter and set it to true.
 2.  Select **Restart All Components** from the **Actions** drop-down list in the upper-right corner.
+3.  In the **Cluster Activities** dialog box, specify the related parameters and click **OK**.
+4.  In the **Confirm** message, click **OK**.
 
 ## Why does a job run slowly?
 
@@ -329,7 +330,7 @@ Solution:
 
 ## Why does AppMaster take a long time to start a task?
 
-Cause: If there are too many tasks or Spark executors, AppMaster may take a long time to start a task. The running duration of a single task is short, but the overhead for scheduling jobs is large.
+Cause: If the number of tasks or Spark executors is large, AppMaster may take a long time to start a task. The running duration of a single task is short, but the overhead for scheduling jobs is large.
 
 Solution:
 
@@ -350,9 +351,9 @@ EMR provides three types of real-time computing services: Spark Streaming, Storm
 
 Problem description:
 
-1.  The Test\_Table table in ApsaraDB for RDS contains a timestamp field, as shown in the following figure.
+1.  The Test\_Table table in ApsaraDB for RDS contains a timestamp field.
 
-    ![data source](../images/p62051.png)
+    ![data source](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/3021860061/p62051.png)
 
 2.  The following command is used to import data in the Test\_Table table to EMR HDFS:
 
@@ -392,7 +393,7 @@ sqoop import \
 
 The query results are normal.
 
-![Result](../images/p62069.png)
+![Result](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/3021860061/p62069.png)
 
 ## How do I modify the spark-env configurations of the Spark service?
 
@@ -420,7 +421,8 @@ You can run a script in a Hive job and use the `-hivevar` option to pass job par
          select * from demo where rating=${rating};
         ```
 
-2.  3.  In the top navigation bar, select the region where your cluster resides. Select the resource group as required. By default, all resources of the account appear.
+2.  Log on to the [EMR console](https://emr.console.aliyun.com/).
+3.  In the top navigation bar, select the region where your cluster residesand select a resource group based on your business requirements.
 4.  Click the Data Platform tab.
 5.  In the **Projects** section, click **Edit Job** in the Actions column of a project.
 6.  In the **Edit Job** pane on the left, right-click the folder on which you want to perform operations and select **Create Job**.
@@ -445,10 +447,11 @@ You can run a script in a Hive job and use the `-hivevar` option to pass job par
 
 ## How do I set the authentication method of HiveServer2 to LDAP?
 
-1.  2.  In the top navigation bar, select the region where your cluster resides. Select the resource group as required. By default, all resources of the account appear.
+1.  Log on to the [EMR console](https://emr.console.aliyun.com/).
+2.  In the top navigation bar, select the region where your cluster residesand select a resource group based on your business requirements.
 3.  Click the **Cluster Management** tab.
 4.  Find the cluster whose HiveServer2 authentication method you want to change and click **Details** in the **Actions** column.
-5.  In the left-side navigation pane, click **Cluster Service** and then **Hive**.
+5.  In the left-side navigation pane, choose **Cluster Service** \> **Hive**.
 6.  Set the authentication method of HiveServer2 to LDAP and restart HiveServer2.
     1.  Click the **Configure** tab. In the **Service Configuration** section, click the **hiveserver2-site** tab.
 
@@ -461,8 +464,8 @@ You can run a script in a Hive job and use the `-hivevar` option to pass job par
         |Parameter|Value|Description|
         |---------|-----|-----------|
         |**hive.server2.authentication**|LDAP|The authentication method.|
-        |**hive.server2.authentication.ldap.url**|Format: ldap://$\{emr-header-1-hostname\}:10389|Replace $\{emr-header-1-hostname\} with your hostname. You can run the `hostname` command on the emr-header-1 node of your cluster to obtain the hostname. For more information about how to log on to the emr-header-1 node, see [t1894064.md\#]().|
-        |**hive.server2.authentication.ldap.baseDN**|**ou=people,o=emr**|N/A.|
+        |**hive.server2.authentication.ldap.url**|Format: ldap://$\{emr-header-1-hostname\}:10389|Replace $\{emr-header-1-hostname\} with your hostname. You can run the `hostname` command on the emr-header-1 node of your cluster to obtain the hostname. For more information about how to log on to the emr-header-1 node, see [Connect to the master node of an EMR cluster in SSH mode](/intl.en-US/Cluster Management/Configure clusters/Connect to a cluster/Connect to the master node of an EMR cluster in SSH mode.md).|
+        |**hive.server2.authentication.ldap.baseDN**|**ou=people,o=emr**|None.|
 
     3.  Click **Save** in the upper-right corner.
     4.  In the **Confirm Changes** dialog box, configure the parameters and click **OK**.
@@ -471,7 +474,7 @@ You can run a script in a Hive job and use the `-hivevar` option to pass job par
     7.  In the **Confirm** message, click **OK**.
 7.  Add an account to the LDAP service.
 
-    In an EMR cluster, OpenLDAP is a component of the LDAP service. OpenLDAP is used to manage Knox accounts by default. HiveServer2 can reuse the Knox accounts for LDAP authentication. For more information about how to add an account, see [Manage users](/intl.en-US/Cluster Management/Cluster planning/Manage users.md).
+    In an EMR cluster, OpenLDAP is a component of the LDAP service. OpenLDAP is used to manage Knox accounts by default. HiveServer2 can reuse the Knox accounts for LDAP authentication. For more information about how to add an account, see [Manage users](/intl.en-US/Cluster Management/Cluster planning/Manage user accounts.md).
 
     In this example, the **emr-guest** account is added.
 
@@ -569,9 +572,9 @@ You can submit a Spark job only in Spark on YARN mode. The standalone mode is no
     cd /var/lib/ecm-agent/cache/ecm/service/HUE/4.4.0.3.1/package/templates/
     ```
 
-    ![hue templates](../images/p133413.png)
+    ![hue templates](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/4021860061/p133413.png)
 
-    Use the `Hue` service as an example.
+    Use the `HUE` service as an example.
 
     -   `HUE` is the name of the service directory.
     -   `4.4.0.3.1` is the Hue version.
