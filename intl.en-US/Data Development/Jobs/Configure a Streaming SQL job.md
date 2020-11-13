@@ -2,38 +2,43 @@
 
 This topic describes how to configure a Streaming SQL job.
 
--   A project is created. For more information, see [Manage projects](/intl.en-US/Data Development/Manage a workflow project.md).
--   The information about required resources and data files to be processed is obtained, such as the JAR file name, data file name, and storage paths of the files.
+-   A project is created. For more information, see [Manage projects](/intl.en-US/Data Development/Manage projects.md).
+-   Resources and data files required for a job are obtained, such as JAR packages, names of the data files, and storage paths of both the JAR packages and data files.
 
-For more information about Streaming SQL, see [Common keywords](/intl.en-US/Developer Guide/Spark Streaming SQL/Common keywords.md).
+For more information about Streaming SQL, see [Spark Streaming SQL](/intl.en-US/Developer Guide/Spark Streaming SQL/Common keywords.md).
 
-When configuring a Streaming SQL job, you need to specify dependent libraries. The following table lists some recent versions and other details about the dependent library provided by Spark Streaming SQL. You need to use the latest version of the dependent library.
+When you configure a Streaming SQL job, you must specify dependency libraries. The following table describes the recent versions and other details about the dependency library provided by Spark Streaming SQL. We recommend that you use the latest version of the dependency library.
 
-|Library|Version|Released at|Reference string|Description|
-|-------|-------|-----------|----------------|-----------|
-|datasources-bundle|1.9.0|November 20, 2019|sharedlibs:streamingsql:datasources-bundle:1.9.0|Supported data sources include Kafka, Loghub, Druid, TableStore, HBase, Java Database Connectivity \(JDBC\), Datahub, Redis, and Kudu.|
-|1.8.0|October 17, 2019|sharedlibs:streamingsql:datasources-bundle:1.8.0|Supported data sources include Kafka, Loghub, Druid, TableStore, HBase, JDBC, Datahub, and Redis.|
-|1.7.0|July 29, 2019|sharedlibs:streamingsql:datasources-bundle:1.7.0|Supported data sources include Kafka, LogHub, Druid, Table Store, HBase, and JDBC.|
+|Dependency library|Supported version|Release date|Reference string|Description|
+|------------------|-----------------|------------|----------------|-----------|
+|datasources-bundle|2.0.0 \(recommended\)|2020/02/26|sharedlibs:streamingsql:datasources-bundle:2.0.0|Supported data sources include Kafka, LogHub, Druid, Tablestore, HBase, JDBC, DataHub, Redis, Kudu, and DTS.|
+|1.9.0|2019/11/20|sharedlibs:streamingsql:datasources-bundle:1.9.0|Supported data sources include Kafka, LogHub, Druid, Tablestore, HBase, JDBC, DataHub, Redis, and Kudu.|
+|1.8.0|2019/10/17|sharedlibs:streamingsql:datasources-bundle:1.8.0|Supported data sources include Kafka, LogHub, Druid, Tablestore, HBase, JDBC, DataHub, and Redis.|
+|1.7.0|2019/07/29|sharedlibs:streamingsql:datasources-bundle:1.7.0|Supported data sources include Kafka, LogHub, Druid, Tablestore, HBase, and JDBC.|
 
--   Copy the reference string to the **Dependent Libraries** section of the **Streaming Task Settings** tab in the **Job Settings** dialog box in Data Platform of the E-MapReduce console.
--   All the data sources in the preceding table support stream reads and writes.
--   For more information, see [Data sources](/intl.en-US/Developer Guide/Spark Streaming SQL/Data source/Overview.md).
+For more information, see [Overview](/intl.en-US/Developer Guide/Spark Streaming SQL/Data source/Overview.md).
 
-1.  Log on to the [E-MapReduce console](https://emr.console.aliyun.com/) by using an Alibaba Cloud account.
+## Procedure
 
-2.  Click the Data Platform tab.
+1.  Create a job.
 
-3.  In the **Projects** section, click **Edit Job** in the Actions column of the target project.
+    1.  Log on to the [Alibaba Cloud EMR console](https://emr.console.aliyun.com) by using your Alibaba Cloud account.
 
-4.  Right-click the folder where you want to create a job, and select **Create Job**.
+    2.  In the top navigation bar, select the region where your cluster residesand select a resource group based on your business requirements.
 
-    **Note:** You can also right-click the folder to create a subfolder, rename the folder, or delete the folder.
+    3.  Click the Data Platform tab.
 
-5.  In the dialog box that appears, set the **Name** and **Description** parameters, and select Streaming SQL from the Job Type drop-down list.
+    4.  In the **Projects** section of the page that appears, find your project and click **Edit Job** in the Actions column.
 
-6.  Click **OK**.
+    5.  In the **Edit Job** pane on the left, right-click the folder on which you want to perform operations and select **Create Job**.
 
-7.  Specify the command line arguments required to submit the job in the **Content** field.
+        **Note:** You can also right-click the folder to create a subfolder, rename the folder, or delete the folder.
+
+    6.  In the Create Job dialog box, specify **Name** and **Description**, and select **Streaming SQL** from the **Job Type** drop-down list.
+
+    7.  Click **OK**.
+
+2.  Specify the command line parameters required to submit the job in the **Content** field.
 
     Example:
 
@@ -48,31 +53,29 @@ When configuring a Streaming SQL job, you need to specify dependent libraries. T
             access.key.secret = '${accessKeySecret}', 
             endpoint = '${endpoint}'
        ); 
-    --- Import data to HDFS. 
+    --- Import data to HDFS.
     INSERT INTO 
         ${hdfsTableName} 
     SELECT 
         col1, col2 
-    FROM ${slsTableName} 
+    FROM  ${slsTableName} 
     WHERE ${condition}
     ```
 
-    **Note:** The command used to submit a Streaming SQL job is `streaming-sql -f {sql_script}`. `sql_script` refers to the code for executing the Streaming SQL job, namely, Streaming SQL statements.
+    **Note:** The command used to submit a Streaming SQL job is `streaming-sql -f {sql_script}`. The SQL statements that you enter in the job editor are saved in `sql_script`.
 
-8.  Configure dependent libraries and actions on failures.
+3.  Configure dependency libraries and actions on failures.
 
-    1.  Click **Job Settings** in the upper-right corner. In the dialog box that appears, click the **Streaming Task Settings** tab.
+    1.  Click **Job Settings** in the upper-right corner of the job page.
 
-    2.  Specify the dependent libraries and actions on failures on the Streaming Task Settings tab.
+    2.  Specify the dependency libraries and actions on failures on the **Streaming Task Settings** and Shared Libraries tabs.
 
         |Section|Parameter|Description|
         |-------|---------|-----------|
-        |**Actions on Failures**|**Action on Current Statement Failure**|The action to perform when E-MapReduce fails to execute a statement. You can choose to perform either of the following actions:         -   **Execute Next Statement**: execute the next statement.
-        -   **Terminate Job**: terminate the job. |
-        |**Dependent Libraries**|**Libraries**|The data source libraries on which Streaming SQL jobs depend. E-MapReduce publishes these libraries to the repository of the scheduling center as dependent libraries. When you create a job, you need to specify dependent libraries for the job.
+        |**Actions on Failures**|**Action on Current Statement Failure**|The action to perform when EMR fails to execute a statement. You can perform one of the following actions:         -   **Execute Next Statement**: Execute the next statement.
+        -   **Terminate Job**: Terminate the job. |
+        |**Dependent Libraries**|**Libraries**|The data source libraries on which Streaming SQL jobs depend. EMR publishes the libraries to the repository of the scheduling center as dependency libraries. You must specify dependency libraries when you create a job.To specify a dependency library, enter its reference string, such as sharedlibs:streamingsql:datasources-bundle:2.0.0. |
 
-To specify a dependent library, enter its reference string, such as sharedlibs:streamingsql:datasources-bundle:1.9.0. |
-
-9.  Click **Save**.
+4.  Click **Save**.
 
 
