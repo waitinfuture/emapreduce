@@ -1,38 +1,51 @@
-# Configure a Spark SQL job {#concept_vck_cjp_y2b .concept}
+# Configure a Spark SQL job
 
 This topic describes how to configure a Spark SQL job.
 
-**Note:** Spark SQL uses yarn-client mode to submit jobs by default.
+A project is created. For more information, see [Manage projects](/intl.en-US/Data Development/Manage projects.md).
 
-## Procedure {#section_ws2_gjp_y2b .section}
+**Note:** By default, a Spark SQL job is submitted in yarn-client mode.
 
-1.  Log on to the [Alibaba Cloud E-MapReduce console](https://partners-intl.console.aliyun.com/#/emr) and go to the Cluster Management page.
-2.  Click the Data Platform tab to go to the Projects page.
-3.  Click **Workflows** in the Actions column of the project. Click **Edit Job** in the left-side navigation pane to go to the Edit Job page.
-4.  Right-click the folder based on which you want to create a job and click **Create Job**.
-5.  Enter a name and description for the job.
-6.  Select SparkSQL from the Jop Type drop-down list. Spark SQL jobs are submitted in the background of EMR by using the following command.
+## Procedure
+
+1.  Log on to the [Alibaba Cloud EMR console](https://emr.console.aliyun.com) by using your Alibaba Cloud account.
+
+2.  In the top navigation bar, select the region where your cluster residesand select a resource group based on your business requirements.
+
+3.  Click the **Data Platform** tab.
+
+4.  In the **Projects** section of the page that appears, find the project you want to edit and click **Edit Job** in the Actions column.
+
+5.  In the **Edit Job** pane on the left, right-click the folder on which you want to perform operations and select **Create Job**.
+
+6.  In the Create Job dialog box, specify **Name** and **Description**, and select **SparkSQL** from the **Job Type** drop-down list.
+
+    You can use the following command syntax to submit a Spark SQL job:
 
     ```
-    spark-sql [options] [cli option]spark-sql [options] -e {SQL_CONTENT}                    
+    spark-sql [options] [cli options] {SQL_CONTENT}                
     ```
 
-    -   options: click Job Settings, click the Advanced Settings tab, and then click the plus \(+\) icon in the Environment Variables section to add the SPARK\_CLI\_PARAMS parameter. For example, set the value of SPARK\_CLI\_PARAMS to --executor-memory 1g --executor-cores.
-    -   SQL\_CONTENT: the SQL statements that you enter in the job editor.
+    Parameter description:
+
+    -   `options`: the setting of the SPARK\_CLI\_PARAMS parameter that you configure by performing the following operations: Click **Job Settings** in the upper-right corner of the job page. In the Job Settings panel, click the **Advanced Settings** tab. Click the ![add](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/2982628951/p74998.png) icon in the **Environment Variables** section and add the setting of the SPARK\_CLI\_PARAMS parameter, for example, `SPARK_CLI_PARAMS="--executor-memory 1g --executor-cores`.
+    -   `cli options`: For example, `-e <quoted-query-string>` indicates that the SQL statements within quotation marks are executed. `-f <filename>` indicates that the SQL statements in the file are executed.
+    -   `SQL_CONTENT`: the SQL statements that you enter.
 7.  Click **OK**.
 
-    **Note:** You can also right-click a folder and create a subfolder, rename the folder, and delete the folder.
+8.  Enter the Spark SQL statements in the **Content** field.
 
-8.  In the **Contents** field, enter Spark SQL statements. For example:
+    Example:
 
-    ``` {#codeblock_81y_h6g_sly}
+    ```
     -- SQL statement example
     -- The size of SQL statements cannot exceed 64 KB.
     show databases;
     show tables;
-    -- LIMIT 2000 is automatically used for the SELECT command.
+    -- LIMIT 2000 is automatically used for the SELECT statement.
     select * from test1;
     ```
 
-9.  Click **Save** to complete the configuration of the Spark SQL job.
+9.  Click **Save**.
+
 
