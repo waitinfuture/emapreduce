@@ -1,37 +1,48 @@
-# Configure a Hive SQL job {#task_261440 .task}
+# Configure a Hive SQL job
 
 This topic describes how to configure a Hive SQL job.
 
-1.  Log on to the [Alibaba Cloud E-MapReduce console](https://emr.console.aliyun.com/) by using an Alibaba Cloud account.
-2.  Click the Data Platform tab to go to the Projects page.
-3.  Click **Workflows** in the Actions column of the project. Click **Edit Jobs** in the left-side navigation pane to go to the Edit Jobs page.
-4.  Right-click the folder based on which you want to create a job and click **Create Job**.
-5.  Enter a name and description. Select HiveSQL from the Job Type drop-down list. Hive SQL jobs are submitted by using the following command in the background of EMR. 
+A project is created. For more information, see [Manage projects](/intl.en-US/Data Development/Manage projects.md).
 
-    ``` {#codeblock_uyi_ftd_qo1}
+## Procedure
+
+1.  Log on to the [Alibaba Cloud EMR console](https://emr.console.aliyun.com) by using your Alibaba Cloud account.
+
+2.  In the top navigation bar, select the region where your cluster residesand select a resource group based on your business requirements.
+
+3.  Click the **Data Platform** tab.
+
+4.  In the **Projects** section of the page that appears, find the project you want to edit and click **Edit Job** in the Actions column.
+
+5.  In the **Edit Job** pane on the left, right-click the folder on which you want to perform operations and select **Create Job**.
+
+6.  In the Create Job dialog box, specify **Name** and **Description**, and select **HiveSQL** from the **Job Type** drop-down list.
+
+    This option indicates that a Hive SQL job will be created. You can use the following command syntax to submit a Hive SQL job:
+
+    ```
     hive -e {SQL CONTENT}
     ```
 
-    SQL CONTENT refers to the SQL statements that you enter in the job editor.
+    `SQL CONTENT` refers to the SQL statements that you enter in the job editor.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/215990/155860199746634_en-US.png)
+    ![HiveSQL](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/1982628951/p46634.png)
 
-6.  Click **OK**. 
+7.  Click **OK**.
 
-    **Note:** You can also right-click the folder to create a subfolder, rename the folder, and delete the folder.
+8.  Enter Hive SQL statements in the **Content** field.
 
-7.  In the **Content** field, enter Hive SQL statements. For example: 
-
-    ``` {#codeblock_4o1_7s1_rc7}
+    ```
     -- SQL statement example
     -- The size of SQL statements cannot exceed 64 KB.
     show databases;
     show tables;
-    -- LIMIT 2000 is automatically used for the SELECT command.
+    -- LIMIT 2000 is automatically used for the SELECT statement.
     select * from test1;
     ```
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/215990/155860199746635_en-US.png)
+    ![HiveSQL_content](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/en-US/1982628951/p46635.png)
 
-8.  Click **Save** to complete the configuration.
+9.  Click **Save**.
+
 
