@@ -23,8 +23,6 @@ Data Science集群内置Python 3的Tensorflow 1.15.0版本，可以直接使用�
 
     切换TensorFlow版本压缩包：[install\_tf\_header.tar.gz](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/183066/cn_zh/1605595674996/install_tf_header.tar.gz)
 
-    -   [111111](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/183066/cn_zh/1605866486890/digits_model.py)
-    -   [datascience\_tar](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/183066/cn_zh/1605865543697/install_app_onds.sh.tar.gz)
 2.  使用文件传输工具，上传install\_tf\_header.tar.gz至Data Science集群Master节点的任意目录下。
 
     **说明：** 本文上传至/root目录。
@@ -66,7 +64,7 @@ Data Science集群内置Python 3的Tensorflow 1.15.0版本，可以直接使用�
 
 1.  下载安装Python的压缩包。
 
-    安装Python的压缩包：[install\_app\_onds.tar.gz](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/183066/cn_zh/1605595697817/install_app_onds.tar.gz)[test](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/183066/cn_zh/1605614238484/faiss-client-java.tar.gz)[11](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/183066/cn_zh/1605614238484/faiss-client-java.tar.gz)
+    安装Python的压缩包：[install\_app\_onds.tar.gz](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/183066/cn_zh/1605595697817/install_app_onds.tar.gz)
 
 2.  使用文件传输工具，上传install\_app\_onds.tar.gz至Data Science集群Master节点的任意目录下。
 
