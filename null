@@ -1,219 +1,45 @@
-# Kafka authorization
+---
+keyword: [E-MapReduce文档最新动态, EMR文档最新动态]
+---
 
-If Kafka authentication \(for example, Kerberos authentication or another simple authorization based on a username and password\) is disabled, users can access services with forged identities, even if Kafka authorization is enabled. Therefore, we recommend that you create a high-securityKafka cluster.
+# 文档最新动态
 
-**Note:** The permission configurations detailed in this section are for high-security E-MapReduce clusters only\(Kafka is started in Kerberos\). For more information, see [Introduction to Kerberos](/intl.en-US/Cluster types/Hadoop cluster/Kerberos/Introduction to Kerberos.md).
+本文为您介绍E-MapReduce文档的最新动态，包括新增功能及功能变更。
 
-## Add configurations
+E-MapReduce的版本更新和重要功能发布记录请参见[版本概述](/cn.zh-CN/发行版本/版本概述.md)。
 
-1.  On the **Cluster Management** page, click **View Details**next to the Kafka cluster.
-2.  In the navigation pane on the left, click the **Clusters and Services** tab, and click **Kafka** in the service list.
-3.  At the top of the page, click the **Configuration** tab.
-4.  In the upper-right corner of the Service Configuration list, click **Custom Configuration** and add the following parameters:
+## 2020年9月更新记录
 
-|Key|Value|Description|
-|---|-----|-----------|
-|authorizer.class.name|kafka.security.auth.SimpleAclAuthorizer|N/A|
-|super.users|User:kafka|User:kafka is required. Other users can be added and separated by semicolons \(;\).|
+|时间|特性|类别|描述|产品文档|
+|:-|:-|:-|:-|:---|
+|2020.09.1|新增功能|最佳实践|介绍如何使用阿里云E-MapReduce创建的Hadoop和Kafka集群，运行PyFlink作业以消费Kafka数据。|[通过PyFlink作业处理Kafka数据](/cn.zh-CN/最佳实践/数据开发/通过PyFlink作业处理Kafka数据.md)|
+|2020.09.4|集群类型|新增功能|介绍如何使用Alink调度作业。|[Alink调度](/cn.zh-CN/集群类型/Data Science集群/Alink调度.md)|
+|2020.09.4|集群类型|新增功能|Easyrec是一个易集成、易扩展、功能强大且具有可视化管理的推荐系统，用于推荐业务。|[EasyRec概述](/cn.zh-CN/集群类型/Data Science集群/EasyRec算法库/EasyRec概述.md)|
+|2020.09.7|JindoFS|新增功能|介绍如何使用Jindo AuditLog。|[Jindo AuditLog使用说明](/cn.zh-CN/SmartData/SmartData基础使用（EMR-3.29.x版本）/Jindo AuditLog使用说明.md)|
 
-**Note:** zookeeper.set.acl is used to set the permissions for Kafka to operate data in ZooKeeper. It is already set to true in the E-MapReduce cluster, so you do not need to add this configuration here. With the configuration set to true, only users named Kafka who have passed the Kerberos authentication can run the kafka-topics.sh command in the Kerberos environment. Kafka-topics.sh can read, write, and modify data in ZooKeeper.
+## 2020年8月更新记录
 
-## Restart a Kafka cluster
+|时间|特性|类别|描述|产品文档|
+|:-|:-|:-|:-|:---|
+|2020.08.11|集群类型|新增功能|介绍如何使用AutoML。|[AutoML](/cn.zh-CN/集群类型/Data Science集群/AutoML.md)|
 
-1.  On the **Cluster Management** page, click **View Details**next to the Kafka cluster you want to operate in the Operation column.
-2.  In the navigation pane on the left, click the **Clusters and Services** tab, and click **Actions**to the right of Kafka on the service list.
-3.  In the drop-down menu, select **RESTART All Components**. Enter the record information and click **OK**.
+## 2020年7月更新记录
 
-## Authorization \(ACL\)
+|时间|特性|类别|描述|产品文档|
+|:-|:-|:-|:-|:---|
+|2020.07.24|新增功能|新增功能|介绍如何配置Impala SQL作业。|[Impala SQL作业配置](/cn.zh-CN/数据开发/作业/Impala SQL作业配置.md)|
+|2020.07.13|数据开发|优化|介绍如何配置Flink（VVR）类型的作业。|[Flink（VVR）作业配置](/cn.zh-CN/数据开发/作业/Flink（VVR）作业配置.md)|
+|2020.07.09|开发指南|体验优化|更新spark.hadoop.fs.oss.impl参数的默认值。|-   [参数说明](/cn.zh-CN/开发指南/Spark/参数说明.md)
+-   [参数说明](/cn.zh-CN/开发指南/Hadoop/参数说明.md) |
+|2020.07.02|OpenAPI|新接口|介绍如何使用API进行EMR集群节点缩容。|[ReleaseClusterHostGroup](/cn.zh-CN/API参考/集群/ReleaseClusterHostGroup.md)|
 
--   Basic concepts
+## 2020年6月更新记录
 
-    Definition in official Kafka documentation:
-
-    ```
-    Kafka ACLs are defined in the general format of "Principal P is [Allowed/Denied] Operation O From Host H On Resource R"
-    ```
-
-    This indicates that the ACL process relates to Principal, Allowed/Denied, Operation Host, and Resource.
-
-    -   Principal: username
-
-        |Security protocol|Value|
-        |-----------------|-----|
-        |PLAINTEXT|ANONYMOUS|
-        |SSL|ANONYMOUS|
-        |SASL\_PLAINTEXT|If the mechanism is PLAIN, the user name is specified by client\_jaas.conf. If the mechanism is GSSAPI, the username is principal specified by client\_jaas.conf.|
-        |SASL\_SSL| |
-
-    -   Allowed/Denied
-    -   Operation: Operations include Read, Write, Create, DeleteAlter, Describe, ClusterAction, AlterConfigs, DescribeConfigs, IdempotentWrite, and All.
-    -   Host: The target machine.
-    -   Resource: Resource objects, including Topic, Group, Cluster, and TransactionalId.
-    For detailed mapping relationships between operations and resources, such as the supporting relationships between resources and the authorization of operations, see [KIP-11 - Authorization Interface](https://cwiki.apache.org/confluence/display/KAFKA/KIP-11+-+Authorization+Interface).
-
--   Authorization command
-
-    Perform authorization using the kafka-acls.sh script \(/usr/lib/kafka-current/bin/kafka-acls.sh\).For more information about how to use this script to authorize Kafka, run the `kafka-acls.sh --help` command.
-
-
-## Procedure
-
-Complete the following operations on the master node of the high-security Kafka cluster you created in E-MapReduce.
-
-1.  Create a user named test.
-
-    `useradd test`
-
-2.  Create a topic.
-
-    zookeeper.set.acl is set to true, and kafka-topics.sh must be run under a Kafka account. The Kafka account must pass Kerberos authentication.
-
-    ```
-    #The Kerberos authentication information related to the kafka account is set in kafka_client_jaas.conf.
-    export KAFKA_HEAP_OPTS="-Djava.security.auth.login.config=/etc/ecm/kafka-conf/kafka_client_jaas.conf" 
-    # Change the ZooKeeper address to the actual address (run hostnamed to acquire) of your Kafka cluster.
-    kafka-topics.sh --create --zookeeper emr-header-1:2181/kafka-1.0.0 --replication-factor 3 --partitions 1 --topic test
-    ```
-
-3.  Run kafka-console-producer.sh with the test user.
-    1.  Create a keytab file for the test user to authenticate ZooKeeper and Kafka.
-
-        ```
-        su root
-        sh /usr/lib/has-current/bin/hadmin-local.sh /etc/ecm/has-conf -k /etc/ecm/has-conf/admin.keytab
-        HadminLocalTool.local: # Press Enter to display the usage instructions on some commands.
-        HadminLocalTool.local: addprinc # Enter a command and press Enter to display the usage instructions on the command.
-        HadminLocalTool.local: addprinc -pw 123456 test # Add a principal for the test user and set the password to 123456.
-        HadminLocalTool.local: ktadd -k /home/test/test.keytab test # Export the keytab file for later use.
-        ```
-
-    2.  Add a kafka\_client\_test.conf file.
-
-        Put the file in /home/test/kafka\_client\_test.conf. The content of the file is as follows:
-
-        ```
-        KafkaClient {
-        com.sun.security.auth.module.Krb5LoginModule required
-        useKeyTab=true
-        storeKey=true
-        serviceName="kafka"
-        keyTab="/home/test/test.keytab"
-        principal="test";
-        };
-        // Zookeeper client authentication
-        Client {
-        com.sun.security.auth.module.Krb5LoginModule required
-        useKeyTab=true
-        useTicketCache=false
-        serviceName="zookeeper"
-        keyTab="/home/test/test.keytab"
-        principal="test";
-        };
-        ```
-
-    3.  Add producer.conf.
-
-        Put the file in `/home/test/producer.conf`. The content of the file is as follows:
-
-        ```
-        security.protocol=SASL_PLAINTEXT
-        sasl.mechanism=GSSAPI
-        ```
-
-    4.  Run kafka-console-producer.sh.
-
-        ```
-        su test
-        export KAFKA_HEAP_OPTS="-Djava.security.auth.login.config=/home/test/kafka_client_test.conf"
-        kafka-console-producer.sh --producer.config /home/test/producer.conf --topic test --broker-list emr-worker-1:9092
-        ```
-
-        Because no ACL is set, an error is reported after the preceding command is run:
-
-        ```
-        org.apache.kafka.common.errors.TopicAuthorizationException: Not authorized to access topics: [test]
-        ```
-
-    5.  Set an ACL.
-
-        Similarly, the `kafka-acls.sh` command must be run under the Kafka account.
-
-        ```
-        su kafka
-        export KAFKA_OPTS="-Djava.security.auth.login.config=/etc/ecm/kafka-conf/kafka_client_jaas.conf" 
-        kafka-acls.sh --authorizer-properties zookeeper.connect=emr-header-1:2181/kafka-1.0.0 --add --allow-principal User:test --operation Write --topic test
-        ```
-
-    6.  Run kafka-console-producer.sh again.
-
-        ```
-        su test
-        export KAFKA_HEAP_OPTS="-Djava.security.auth.login.config=/home/test/kafka_client_test.conf"
-        kafka-console-producer.sh --producer.config /home/test/producer.conf --topic test --broker-list emr-worker-1:9092
-        ```
-
-        Normal output is as follows:
-
-        ```
-        [2018-02-28 22:25:36,178] INFO Kafka commitId : aaa7af6d4a11b29d (org.apache.kafka.common.utils.AppInfoParser)
-        >alibaba
-        >E-MapReduce
-        >
-        ```
-
-4.  Run `kafka-console-consumer.sh` with the test user.
-
-    After kafka-console-producer.sh is successfully run and data is written to the topic, you can run `kafka-console-consumer.sh` to perform a consumption test.
-
-    1.  Add consumer.conf.
-
-        Put the file in /home/test/consumer.conf. The content of the file is as follows:
-
-        ```
-        security.protocol=SASL_PLAINTEXT
-        sasl.mechanism=GSSAPI
-        ```
-
-    2.  Run kafka-console-consumer.sh.
-
-        ```
-        su test
-        # Kafka_client_test.conf is used in the same way as kafka-console-producer.sh.
-        export KAFKA_HEAP_OPTS="-Djava.security.auth.login.config=/home/test/kafka_client_test.conf"
-        kafka-console-consumer.sh --consumer.config consumer.conf  --topic test --bootstrap-server emr-worker-1:9092 --group test-group  --from-beginning
-        ```
-
-        Because no permissions are set, an error is reported:
-
-        ```
-        org.apache.kafka.common.errors.GroupAuthorizationException: Not authorized to access group: test-group
-        ```
-
-    3.  Set an ACL.
-
-        ```
-        su kafka
-        export KAFKA_HEAP_OPTS="-Djava.security.auth.login.config=/etc/ecm/kafka-conf/kafka_client_jaas.conf" 
-        # test-group permission
-        kafka-acls.sh --authorizer-properties zookeeper.connect=emr-header-1:2181/kafka-1.0.0 --add --allow-principal User:test --operation Read --group test-group
-        # topic permission
-        kafka-acls.sh --authorizer-properties zookeeper.connect=emr-header-1:2181/kafka-1.0.0 --add --allow-principal User:test --operation Read --topic test
-        ```
-
-    4.  Run `kafka-console-consumer.sh` again.
-
-        ```
-        su test
-        # Kafka_client_test.conf is used in the same way as kafka-console-producer.sh.
-        export KAFKA_HEAP_OPTS="-Djava.security.auth.login.config=/home/test/kafka_client_test.conf"
-        kafka-console-consumer.sh --consumer.config consumer.conf  --topic test --bootstrap-server emr-worker-1:9092 --group test-group  --from-beginning
-        ```
-
-        Normal output is as follows:
-
-        ```
-        alibaba
-        E-MapReduce
-        ```
-
+|时间|特性|类别|描述|产品文档|
+|:-|:-|:-|:-|:---|
+|2020.06.17|新增功能|新增功能|介绍如何在E-MapReduce控制台上配置及使用Alink、Faiss-Server和TensorFlow。|-   [概述](/cn.zh-CN/集群类型/Data Science集群/概述.md)
+-   [PAI-Alink](/cn.zh-CN/集群类型/Data Science集群/PAI-Alink.md)
+-   [Faiss-Server](/cn.zh-CN/集群类型/Data Science集群/Faiss-Server.md)
+-   [TensorFlow](/cn.zh-CN/集群类型/Data Science集群/TensorFlow.md)
+-   [部署TensorFlow模型至PAI EAS](/cn.zh-CN/集群类型/Data Science集群/部署TensorFlow模型至PAI EAS.md) |
 
