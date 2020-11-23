@@ -5,7 +5,7 @@
 -   已创建好项目，详情请参见[项目管理](/intl.zh-CN/数据开发/项目管理.md)。
 -   已获取作业所需的资源，以及作业要处理的数据文件，例如，JAR包、数据文件名称，以及两者的保存路径。
 
-Streaming SQL的详细信息请参见[Spark Streaming SQL]()。
+Streaming SQL的详细信息请参见[简介]()。
 
 在Streaming SQL作业配置过程中，您需要设置依赖库。以下列出了Spark Streaming SQL提供的数据源依赖包的版本信息和使用说明，原则上需要使用最新版本。
 
@@ -19,15 +19,11 @@ Streaming SQL的详细信息请参见[Spark Streaming SQL]()。
 -   以上所注明支持的数据源，特指数据源支持了流式读写。
 -   如果需要了解更详细的使用方法，请参见[数据源](/intl.zh-CN/开发指南/Spark Streaming SQL/数据源/数据源支持概述.md)。
 
-## 操作步骤
+1.  输入**作业名称**、**作业描述**，选择Streaming SQL作业类型。
 
-1.  已通过主账号登录[阿里云E-MapReduce控制台](https://emr.console.aliyun.com)。
+2.  单击**确定**。
 
-2.  输入**作业名称**、**作业描述**，选择Streaming SQL作业类型。
-
-3.  单击**确定**。
-
-4.  在**作业内容**中，填写提交该作业需要提供的命令行参数。
+3.  在**作业内容**中，填写提交该作业需要提供的命令行参数。
 
     示例如下：
 
@@ -53,7 +49,7 @@ Streaming SQL的详细信息请参见[Spark Streaming SQL]()。
 
     **说明：** 这种类型的作业，其运行实际是通过`streaming-sql -f {sql_script}`提交的作业，其中`sql_script`中保存的即是Streaming SQL作业的代码，即Streaming SQL语句。
 
-5.  配置依赖库和失败策略。
+4.  配置依赖库和失败策略。
 
     1.  单击右上方的**作业设置**，然后选择**流任务设置**。
 
@@ -65,8 +61,8 @@ Streaming SQL的详细信息请参见[Spark Streaming SQL]()。
         -   **终止当前作业**：如果查询语句执行失败， 终止当前作业。 |
         |**依赖库**|**库列表**|Streaming SQL作业需要依赖一些数据源相关的库文件。E-MapReduce将这些库以依赖库的形式发布在调度服务的仓库中，在创建作业时需要指定使用哪个版本的依赖库。
 
- 您只需设置相应的依赖库版本，例如sharedlibs:streamingsql:datasources-bundle:1.9.0。 |
+您只需设置相应的依赖库版本，例如sharedlibs:streamingsql:datasources-bundle:1.9.0。 |
 
-6.  单击**保存**，作业配置即定义完成。
+5.  单击**保存**，作业配置即定义完成。
 
 
