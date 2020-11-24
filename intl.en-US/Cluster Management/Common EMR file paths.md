@@ -1,6 +1,6 @@
 # Common EMR file paths
 
-This topic describes the paths of frequently used files in EMR. You can log on to the master node of your cluster to view the file paths.
+This topic describes the paths of frequently used files in E-MapReduce \(EMR\). You can log on to the master node of your cluster to view the file paths.
 
 ## Big data software
 
@@ -29,8 +29,8 @@ YARN_PID_DIR=/usr/lib/hadoop-current/pids
 HADOOP_PID_DIR=/usr/lib/hadoop-current/pids
 HADOOP_MAPRED_PID_DIR=/usr/lib/hadoop-current/pids
 JAVA_LIBRARY_PATH=/usr/lib/hadoop-current/lib/native:
-PATH=/usr/lib/sqoop-current/bin:/usr/lib/spark-current/bin:/usr/lib/hive-current/hcatalog/bin:/usr/                                                                                                  lib/hive-current/bin:/usr/lib/flume-current/bin:/usr/lib/flink-current/bin:/usr/lib/datafactory-cur                                                                                                  rent/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/usr/lib/b2monitor-current//bin:/usr/lib                                                                                                  /b2smartdata-current//bin:/usr/lib/b2jindosdk-current//bin:/usr/lib/flow-agent-current/bin:/usr/lib                                                                                                  /hadoop-current/bin:/usr/lib/hadoop-current/sbin:/usr/lib/hadoop-current/bin:/usr/lib/hadoop-curren                                                                                                  t/sbin:/root/bin
-HADOOP_CLASSPATH=/usr/lib/hadoop-current/lib/*:/usr/lib/tez-current/*:/usr/lib/tez-current/lib/*:/e                                                                                                  tc/ecm/tez-conf:/opt/apps/extra-jars/*:/usr/lib/spark-current/yarn/spark-2.4.5-yarn-shuffle.jar
+PATH=/usr/lib/sqoop-current/bin:/usr/lib/spark-current/bin:/usr/lib/hive-current/hcatalog/bin:/usr/lib/hive-current/bin:/usr/lib/datafactory-current/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/usr/lib/b2monitor-current//bin:/usr/lib/b2smartdata-current//bin:/usr/lib/b2jindosdk-current//bin:/usr/lib/flow-agent-current/bin:/usr/lib/hadoop-current/bin:/usr/lib/hadoop-current/sbin:/usr/lib/hadoop-current/bin:/usr/lib/hadoop-current/sbin:/root/bin
+HADOOP_CLASSPATH=/usr/lib/hadoop-current/lib/*:/usr/lib/tez-current/*:/usr/lib/tez-current/lib/*:/etc/ecm/tez-conf:/opt/apps/extra-jars/*:/usr/lib/spark-current/yarn/spark-2.4.5-yarn-shuffle.jar
 HADOOP_CONF_DIR=/etc/ecm/hadoop-conf
 YARN_LOG_DIR=/var/log/hadoop-yarn
 HADOOP_MAPRED_LOG_DIR=/var/log/hadoop-mapred
@@ -43,7 +43,7 @@ Component logs are stored in the /mnt/disk1/log/xxx directory. Examples:
 -   YARN ResourceManager logs: /mnt/disk1/log/hadoop-yarn in the master node
 -   YARN NodeManager logs: /mnt/disk1/log/hadoop-yarn in a core node
 -   HDFS NameNode logs: /mnt/disk1/log/hadoop-hdfs in the master node
--   HDFS DataNode logs: /mnt/disk1/log/hadoop-yarn in the core node
+-   HDFS DataNode logs: /mnt/disk1/log/hadoop-yarn in a core node
 -   Hive logs: /mnt/disk1/log/hive in the master node
 
 ## Configuration files
