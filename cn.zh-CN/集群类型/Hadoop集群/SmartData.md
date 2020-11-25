@@ -1,6 +1,6 @@
 # SmartData
 
-E-MapReduce（简称EMR） SmartData组件是EMR Jindo引擎的主要存储部分，为EMR各个计算引擎提供统一的存储优化、缓存优化、计算缓存加速优化和多个存储功能扩展。SmartData主要包括JindoFS、JindoTable、JindoCube和相关工具集，例如迁移工具Jindo DistCp。
+E-MapReduce（简称EMR）的SmartData组件是EMR Jindo引擎的主要存储部分，为EMR各个计算引擎提供统一的存储优化、缓存优化、计算缓存加速优化和多个存储功能扩展。SmartData主要包括JindoFS、JindoTable、JindoCube和相关工具集，例如迁移工具Jindo DistCp。
 
 SmartData详细使用，请查看相应文档：
 
