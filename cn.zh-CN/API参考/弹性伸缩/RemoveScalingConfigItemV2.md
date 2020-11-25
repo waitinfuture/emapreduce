@@ -11,7 +11,7 @@
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
 |Action|String|是|RemoveScalingConfigItemV2|系统规定参数。对于您自行拼凑HTTP或HTTPS URL发起的API请求，该参数为必选参数。取值：RemoveScalingConfigItemV2。 |
-|ConfigItemBizId|String|是|SCB-12313ABC1\*\*\*\*|配置项ID。你可以调用[ListScalingConfigItemV2](~~184368~~)查看配置项ID。 |
+|ConfigItemBizId|String|是|SRB-54CCB030511A\*\*\*\*|配置项ID。你可以调用[ListScalingConfigItemV2](~~184368~~)查看配置项ID。 |
 |ConfigItemType|String|是|SCALING\_RULE|配置项类型：
 
  -   SCALING\_RULE：伸缩规则
@@ -26,8 +26,8 @@
 |--|--|---|--|
 |Data|Boolean|true|返回结果。取值如下：
 
- -   true：成功
--   false：失败 |
+ -   true：删除配置项成功
+-   false：删除配置项失败 |
 |RequestId|String|7B804810-3C11-4927-B116-1D1A98A60BDD|请求ID。 |
 
 ## 示例
@@ -36,7 +36,7 @@
 
 ```
 http(s)://[Endpoint]/?Action=RemoveScalingConfigItemV2
-&ConfigItemBizId=SCB-12313ABC1****
+&ConfigItemBizId=SRB-54CCB030511A****
 &ConfigItemType=SCALING_RULE
 &RegionId=cn-hangzhou
 &ScalingGroupBizId=SGB-32242E323****
