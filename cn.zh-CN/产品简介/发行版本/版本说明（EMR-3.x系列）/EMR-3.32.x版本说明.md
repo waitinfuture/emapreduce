@@ -10,7 +10,7 @@ EMR-3.32.0 2020年11月23日
 
 |服务|变更点|
 |--|---|
-|SmartData|升级至3.1.0版本。详情请参见[SmartData 3.1.0版本简介]() |
+|SmartData|升级至3.1.0版本。详情请参见[SmartData 3.1.0版本简介](/cn.zh-CN/SmartData/SmartData基础使用（EMR-3.32.x版本）/SmartData 3.1.0版本简介.md)。 |
 |Alluxio|-   支持Alluxio 2.4.0版本。
 -   默认的参数配置，可以根据集群节点大小调整。
 -   默认使用EMR集群内的HDFS作为底层的UnderFS，开箱即用。
