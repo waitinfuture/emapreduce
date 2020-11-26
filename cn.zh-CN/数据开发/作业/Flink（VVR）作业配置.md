@@ -2,6 +2,12 @@
 
 EMR-3.27.x及之前版本使用Flink社区开源版本，EMR-3.27.x之后版本使用完全兼容开源Flink的企业版（VVR）。本文介绍如何配置Flink（VVR）类型的作业。
 
+-   已创建Hadoop集群，详情请参见[创建集群](/cn.zh-CN/集群管理/集群配置/创建集群.md)。
+
+    **说明：** 如果您创建的是Dataflow集群，目前仅支持在Flink-Vvp控制台创建Flink SQL和Flink DataStream两种作业，详情如下：
+
+    -   [作业开发（Flink SQL）](/cn.zh-CN/集群类型/Dataflow集群/Flink-Vvp/Flink SQL作业/作业开发.md)
+    -   [作业开发（Flink DataStream）](/cn.zh-CN/集群类型/Dataflow集群/Flink-Vvp/Flink Datastream作业/作业开发.md)
 -   已创建项目，详情请参见[项目管理](/cn.zh-CN/数据开发/项目管理.md)。
 -   已获取作业所需的资源，以及作业需要处理的数据文件，例如，JAR包、数据文件名称及其保存路径。
 
@@ -31,7 +37,7 @@ Flink中Checkpoint和StateBackend的基础配置同样适用于GeminiStateBacken
 |**state.backend.gemini.timer-service.factory**|默认值为HEAP，表示timer-service state的存储位置，包括： -   HEAP
 -   GEMINI |
 
-**说明：** 参数配置方法请参见[组件参数配置](/cn.zh-CN/集群管理/第三方软件/组件参数配置.md)。
+**说明：** 参数配置方法请参见[组件参数配置](/cn.zh-CN/集群管理/集群配置/组件参数配置.md)。
 
 ## 操作步骤
 
@@ -39,7 +45,7 @@ Flink中Checkpoint和StateBackend的基础配置同样适用于GeminiStateBacken
 
 2.  在顶部菜单栏处，根据实际情况选择地域（Region）和资源组。
 
-3.  单击上方的**数据开发**页签.。
+3.  单击上方的**数据开发**页签。
 
 4.  在**项目列表**页面，单击待编辑项目所在行的**作业编辑**。
 
@@ -81,5 +87,5 @@ Flink中Checkpoint和StateBackend的基础配置同样适用于GeminiStateBacken
 
 如果您在使用阿里云E-MapReduce过程中有任何疑问，欢迎您扫描下面的二维码加入钉钉群进行反馈。
 
-![emr_dingding](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/2440659951/p81620.png)
+![emr_dingding](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/2440659951/p81620.png)
 
