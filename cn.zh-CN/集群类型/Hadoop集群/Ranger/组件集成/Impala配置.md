@@ -20,7 +20,7 @@ Impala集成Ranger后，支持通过Impala-shell、Hue和JDBC方式在访问Hive
 
     3.  在Ranger集群服务页面，单击右上角的**操作** \> **启用Impala**。
 
-        ![Impala_ranger](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/3769623061/p175357.png)
+        ![Impala_ranger](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/3769623061/p175357.png)
 
     4.  在**执行集群操作**对话框设置相关参数，然后单击**确定**。在**确认**对话框，单击**确定**。
 
@@ -39,7 +39,7 @@ Impala集成Ranger后，支持通过Impala-shell、Hue和JDBC方式在访问Hive
 
 ## 权限配置示例
 
-**说明：** Ranger中Impala暂不支持Hive Row-level Filter功能。
+**说明：** Ranger中Impala暂不支持Hive Row-level Filter及Role权限功能。
 
 例如：给用户foo授予表testdb.test的a列Select权限。
 
@@ -47,13 +47,13 @@ Impala集成Ranger后，支持通过Impala-shell、Hue和JDBC方式在访问Hive
 
 2.  在Ranger UI页面，单击配置好的**emr-hive**。
 
-    ![权限配置示例](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/3370108951/p11509.png)
+    ![权限配置示例](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/3370108951/p11509.png)
 
 3.  单击右上角的**Add New Policy**。
 
 4.  配置权限。
 
-    ![配置相关权限](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/2814027951/p11510.png)
+    ![配置相关权限](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/2814027951/p11510.png)
 
     |参数|说明|
     |--|--|
