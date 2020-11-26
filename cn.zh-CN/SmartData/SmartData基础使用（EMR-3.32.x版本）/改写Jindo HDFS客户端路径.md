@@ -67,7 +67,9 @@ hdfs://emr-cluster/<osspath\>
 
     -   非HA集群
 
-hdfs://emr-header-1:9000/<osspath\> |
+hdfs://<your\_hostname\>:9000/<osspath\>
+
+**说明：** <your\_hostname\>您可以通过SSH登录主节点，执行`hostname`命令获取，SSH登录主节点详情请参见[使用SSH连接主节点](/cn.zh-CN/集群管理/集群配置/连接集群/使用SSH连接主节点.md)。 |
     |fs.jindo.shim.path-rewrite.<RULE-NAME\>.target|您实际访问的路径。|oss://<your\_bucket\>/<testpath\>|
 
     RULE-NAME需要您自定义。
@@ -100,5 +102,5 @@ hadoop fs -ls /
 
 通过如下信息，看到osspath已经挂载在根目录下。
 
-![demo](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/8333816061/p184665.png)
+![demo](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/5275926061/p184665.png)
 
