@@ -16,12 +16,12 @@ SmartData 3.1.0版本使用时，限制信息如下：
 SmartData（3.1.0）版本与SmartData（3.0.0）版本的内容差异点如下：
 
 -   新增内容
-    -   [改写Jindo HDFS客户端路径]()
-    -   [JindoFS数据管理策略]()
-    -   [JindoTable表或分区的访问热度收集]()
+    -   [改写Jindo HDFS客户端路径](/cn.zh-CN/SmartData/SmartData基础使用（EMR-3.32.x版本）/改写Jindo HDFS客户端路径.md)
+    -   [JindoFS数据管理策略](/cn.zh-CN/SmartData/SmartData基础使用（EMR-3.32.x版本）/JindoFS数据管理策略.md)
+    -   [JindoTable表或分区的访问热度收集](/cn.zh-CN/SmartData/SmartData基础使用（EMR-3.32.x版本）/JindoTable表或分区的访问热度收集.md)
 -   优化内容
-    -   [Credential Provider使用说明]()
-    -   [支持Flink可恢复性写入JindoFS或OSS（SmartData 3.1.0版本）]()
+    -   [Credential Provider使用说明](/cn.zh-CN/SmartData/SmartData基础使用（EMR-3.32.x版本）/Credential Provider使用说明.md)
+    -   [支持Flink可恢复性写入JindoFS或OSS（SmartData 3.1.0版本）](/cn.zh-CN/SmartData/JindoFS 生态/支持Flink可恢复性写入JindoFS或OSS（SmartData 3.1.0版本）.md)
 
 ## 功能变更
 
@@ -41,7 +41,7 @@ SmartData（3.1.0）版本与SmartData（3.0.0）版本的内容差异点如下�
 -   增强了`hadoop fs -stat`命令，支持显示atime和privilege等。
 -   增加了Jindo HDFS客户端路径改写功能，以减少集群迁移时修改路径的工作量。
 
-    详情请参见[改写Jindo HDFS客户端路径]()。
+    详情请参见[改写Jindo HDFS客户端路径](/cn.zh-CN/SmartData/SmartData基础使用（EMR-3.32.x版本）/改写Jindo HDFS客户端路径.md)。
 
 
 ## JindoFS缓存优化
@@ -67,9 +67,9 @@ SmartData（3.1.0）版本与SmartData（3.0.0）版本的内容差异点如下�
 ## JindoFS生态支持
 
 -   Flink流式作业可恢复性地写入JindoFS，支持Block与Cache两种模式。结合可重发的数据源（例如Kafka），可以实现Exactly\_Once语义。
--   Flink实现熵注入功能。您可以通过流式作业写入OSS或JindoFS时（Block与Cache两种模式均可），支持写入路径的 熵注入 \(entropy injection\) 功能，即可以用随机字符串匹配替换路径中的特定部分。该功能有利于提高写入效率。
+-   Flink实现熵注入功能。流式作业写入OSS或JindoFS时（Block与Cache两种模式均可），支持写入路径的熵注入（entropy injection）功能，即可以使用随机字符串匹配替换路径中的特定部分。该功能有利于提高写入效率。
 
-    详情请参见[支持Flink可恢复性写入JindoFS或OSS（SmartData 3.1.0版本）]()。
+    详情请参见[支持Flink可恢复性写入JindoFS或OSS（SmartData 3.1.0版本）](/cn.zh-CN/SmartData/JindoFS 生态/支持Flink可恢复性写入JindoFS或OSS（SmartData 3.1.0版本）.md)。
 
 -   支持JindoFS Tensorflow Connector，通过实现Tensorflow Filesystem，支持原生的Tensorflow IO接口。支持Tensorflow 1.15及后续版本和Tensorflow 2.3后续版本。
 
