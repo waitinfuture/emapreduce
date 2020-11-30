@@ -2,7 +2,6 @@
 
 在流式数据处理过程中，E-MapReduce经常需要在Kafka与其他系统间进行数据同步或者在Kafka集群间进行数据迁移。本文向您介绍如何在E-MapReduce上通过Kafka Connect快速的实现Kafka集群间的数据迁移。
 
--   已注册云账号，详情请参见[t12832.md\#]()。
 -   已开通E-MapReduce服务。
 -   已完成云账号的授权，详情请参见[角色授权](/intl.zh-CN/集群管理/集群规划/角色授权.md)。
 
