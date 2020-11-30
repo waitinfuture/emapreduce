@@ -2,7 +2,6 @@
 
 本文介绍如何使用阿里云E-MapReduce创建的Hadoop和Kafka集群，运行Spark Streaming作业以消费Kafka数据。
 
--   已注册阿里云账号，详情请参见[t12832.md\#]()。
 -   已开通E-MapReduce服务。
 -   已完成云账号的授权，详情请参见[角色授权](/intl.zh-CN/集群管理/集群规划/角色授权.md)。
 -   本地安装了PuTTY和文件传输工具（SSH Secure File Transfer Client）。
@@ -77,13 +76,13 @@
     /usr/lib/kafka-current/bin/kafka-console-producer.sh --topic test --broker-list emr-worker-1:9092
     ```
 
-2.  如果在Kafka集群的登录窗口中输入文本，则在Hadoop集群的登录窗口中，会实时显示文本的统计信息。
+2.  在Kafka集群的登录窗口中输入文本，在Hadoop集群的登录窗口中，会实时显示文本的统计信息。
 
-    Kafka集群登录窗口输入如下信息。
+    例如，在Kafka集群的登录窗口输入如下信息。
 
     ![Kafka ssh](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/9932598951/p135102.png)
 
-    Hadoop集群登录窗口会输出如下信息。
+    Hadoop集群的登录窗口会输出如下信息。
 
     ![hadoop ssh](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/9932598951/p135103.png)
 
