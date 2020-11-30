@@ -24,7 +24,7 @@ OSS存储类型的详细介绍，请参见[存储类型介绍](/cn.zh-CN/开发�
     jindo jfs -setStoragePolicy [-R] <StoragePolicy>(AR/IA/COLD/WARM/HOT) <path> ...
     ```
 
-    其中，涉及参数如下
+    其中，涉及参数如下：
 
     -   `[-R]`：递归设置该路径下的所有路径。
     -   `<path>`：设置Storage Policy的路径名称。
@@ -51,7 +51,7 @@ JindoFS提供了Compression Policy功能，可以针对数据块进行压缩后�
     jindo jfs -setCompressionPolicy [-R] <CompressionPolicy>(NONE/ZSTD) <path> ...
     ```
 
-    其中，涉及参数如下
+    其中，涉及参数如下：
 
     -   `[-R]`：递归设置该路径下的所有路径。
     -   `<path>`：设置Compression Policy的路径名称。
