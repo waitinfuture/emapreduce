@@ -27,7 +27,7 @@ Kafka Connect分为Standalone和Distributed两种运行模式。在Standalone模
         如果源Kafka集群和目的kafka集群不在同一个安全组下，则两者的网络默认是不互通的，您需要对两者的安全组分别进行相关配置，以使两者的网络互通。
 
     -   创建目的Kafka集群后，需要扩容Task节点，详情请参见[新增机器组](/cn.zh-CN/集群管理/变更配置/新增机器组.md)。
-    ![创建Kafka集群](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/1042598951/p52756.png)
+    ![创建Kafka集群](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/1042598951/p52756.png)
 
 
 ## 步骤二：准备待迁移数据Topic
@@ -42,7 +42,7 @@ Kafka Connect分为Standalone和Distributed两种运行模式。在Standalone模
     kafka-topics.sh --create --zookeeper emr-header-1:2181 --replication-factor 2 --partitions 10 --topic connect
     ```
 
-    ![创建Topic](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/1042598951/p53860.png)
+    ![创建Topic](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/1042598951/p53860.png)
 
     **说明：** 完成上述操作后，请保留该登录窗口，后续仍将使用。
 
@@ -53,7 +53,7 @@ Kafka Connect分为Standalone和Distributed两种运行模式。在Standalone模
 
 1.  自定义Kafka Connect配置。
 
-    进入[阿里云E-MapReduce控制台](https://emr.console.aliyun.com/)目的Kafka集群**Kafka**服务的**配置**页面，在**connect-distributed.properties**中自定义**offset.storage.topic**、**config.storage.topic**和**status.storage.topic**三个配置项，详情请参见[组件参数配置](/cn.zh-CN/集群管理/第三方软件/组件参数配置.md)。
+    进入[阿里云E-MapReduce控制台](https://emr.console.aliyun.com/)目的Kafka集群**Kafka**服务的**配置**页面，在**connect-distributed.properties**中自定义**offset.storage.topic**、**config.storage.topic**和**status.storage.topic**三个配置项，详情请参见[组件参数配置](/cn.zh-CN/集群管理/集群配置/组件参数配置.md)。
 
     Kafka Connect会将offsets、configs和任务状态保存在Topic中，Topic名对应**offset.storage.topic**、**config.storage.topic**和**status.storage.topic**三个配置项。Kafka Connect会自动使用默认的partition和replication factor创建这三个Topic，其中partition和repication factor配置项保存在/etc/ecm/kafka-conf/connect-distributed.properties文件中。
 
@@ -61,7 +61,7 @@ Kafka Connect分为Standalone和Distributed两种运行模式。在Standalone模
 
 3.  切换至Task节点（本例为**emr-worker-3**）。
 
-    ![task](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/9289930061/p167634.png)
+    ![task](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/9289930061/p167634.png)
 
 4.  以root用户运行如下命令创建一个Kafka Connect。
 
@@ -93,7 +93,7 @@ Kafka Connect分为Standalone和Distributed两种运行模式。在Standalone模
     curl emr-worker-3:8083/connectors
     ```
 
-    ![查看所有Kafka Connect](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/1042598951/p53871.png)
+    ![查看所有Kafka Connect](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/1042598951/p53871.png)
 
 3.  以root用户运行如下命令查看本例创建的Kafka Connect（本例为**connect-test**）的状态。
 
@@ -101,7 +101,7 @@ Kafka Connect分为Standalone和Distributed两种运行模式。在Standalone模
     curl emr-worker-3:8083/connectors/connect-test/status
     ```
 
-    ![查看connect-test状态](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/1042598951/p53874.png)
+    ![查看connect-test状态](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/1042598951/p53874.png)
 
     确保Kafka Connect（本例为**connect-test**）的状态为**RUNNING**。
 
@@ -111,7 +111,7 @@ Kafka Connect分为Standalone和Distributed两种运行模式。在Standalone模
     curl emr-worker-3:8083/connectors/connect-test/tasks
     ```
 
-    ![查看Task节点信息](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/2042598951/p53876.png)
+    ![查看Task节点信息](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/2042598951/p53876.png)
 
     确保Task节点的返回信息中无错误信息。
 
@@ -130,7 +130,7 @@ Kafka Connect分为Standalone和Distributed两种运行模式。在Standalone模
 
     当提示如下信息，则表示已经成功生成待迁移数据。
 
-    ![生成待同步数据](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/9737280061/p53877.png)
+    ![生成待同步数据](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/9737280061/p53877.png)
 
 
 ## 步骤六：查看数据迁移结果
@@ -145,7 +145,7 @@ Kafka Connect分为Standalone和Distributed两种运行模式。在Standalone模
     kafka-consumer-perf-test.sh --topic connect.replica --broker-list emr-header-1:9092 --messages 100000
     ```
 
-    ![查看数据同步结果](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/2042598951/p53881.png)
+    ![查看数据同步结果](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/2042598951/p53881.png)
 
     从上述返回结果可以看出，在源Kafka集群发送的100000条数据已经迁移到了目的Kafka集群。
 
