@@ -30,16 +30,111 @@
 
     2.  在**新增配置项**对话框中，新增如下配置。
 
-        |参数|描述|
-        |--|--|
-        |**fs.jfs.cache.oss.credentials.provider**|配置com.aliyun.emr.fs.auth.AliyunCredentialsProvider的实现类，多个类时使用英文逗号（, ）隔开，按照先后顺序读取Credential直至读到有效的Credential。例如，`com.aliyun.emr.fs.auth.TemporaryAliyunCredentialsProvider , com.aliyun.emr.fs.auth.SimpleAliyunCredentialsProvider,com, aliyun.emr.fs.auth.EnvironmentVariableCredentialsProvider`。Provider详情请参见[Provider类型](#section_22g_f7n_0cb)。 |
+        -   全局方式配置（所有bucket使用同一种方式）
+
+            |参数|描述|
+            |--|--|
+            |**fs.jfs.cache.oss.credentials.provider**|配置com.aliyun.emr.fs.auth.AliyunCredentialsProvider的实现类，多个类时使用英文逗号（, ）隔开，按照先后顺序读取Credential直至读到有效的Credential。例如，`com.aliyun.emr.fs.auth.TemporaryAliyunCredentialsProvider , com.aliyun.emr.fs.auth.SimpleAliyunCredentialsProvider,com, aliyun.emr.fs.auth.EnvironmentVariableCredentialsProvider`。Provider详情请参见[Provider类型](#section_22g_f7n_0cb)。 |
+
+        -   按照bucket配置
+
+            |参数|描述|
+            |--|--|
+            |**fs.jfs.cache.oss.bucket.XXX.credentials.provider**|配置com.aliyun.emr.fs.auth.AliyunCredentialsProvider的实现类，多个类时使用英文逗号（, ）隔开，按照先后顺序读取Credential直至读到有效的Credential。例如，`com.aliyun.emr.fs.auth.TemporaryAliyunCredentialsProvider , com.aliyun.emr.fs.auth.SimpleAliyunCredentialsProvider,com, aliyun.emr.fs.auth.EnvironmentVariableCredentialsProvider`。Provider详情请参见[Provider类型](#section_22g_f7n_0cb)。
+
+**说明：** XXX为OSS bucket名称。 |
+
+
+## Provider类型
+
+您可以根据情况，选择不同的Credential Provider，支持如下Provider：
+
+-   全局方式配置
+    -   TemporaryAliyunCredentialsProvider
+
+        适合使用有时效性的AccessKey和SecurityToken访问OSS的情况。
+
+        |参数|参数说明|
+        |--|----|
+        |**fs.jfs.cache.oss.credentials.provider**|**com.aliyun.emr.fs.auth.TemporaryAliyunCredentialsProvider**|
+        |**fs.jfs.cache.oss.accessKeyId**|OSS的AccessKey Id。|
+        |**fs.jfs.cache.oss.accessKeySecret**|OSS的AccessKey Secret。|
+        |**fs.jfs.cache.oss.securityToken**|OSS的SecurityToken（临时安全令牌）。|
+
+    -   SimpleAliyunCredentialsProvider
+
+        适合使用长期有效的AccessKey访问OSS的情况。
+
+        |参数|参数说明|
+        |--|----|
+        |**fs.jfs.cache.oss.credentials.provider**|**com.aliyun.emr.fs.auth.SimpleAliyunCredentialsProvider**|
+        |**fs.jfs.cache.oss.accessKeyId**|OSS的AccessKey Id。|
+        |**fs.jfs.cache.oss.accessKeySecret**|OSS的AccessKey Secret。|
+
+    -   EnvironmentVariableCredentialsProvider
+
+        该方式需要在环境变量中配置以下参数。
+
+        |参数|参数说明|
+        |--|----|
+        |**fs.jfs.cache.oss.credentials.provider**|**com.aliyun.emr.fs.auth.EnvironmentVariableCredentialsProvider**|
+        |**ALIYUN\_ACCESS\_KEY\_ID**|OSS的AccessKey Id。|
+        |**ALIYUN\_ACCESS\_KEY\_SECRET**|OSS的AccessKey Secret。|
+        |**ALIYUN\_SECURITY\_TOKEN**|OSS的SecurityToken（临时安全令牌）。**说明：** 仅配置有时效Token时需要。 |
+
+    -   InstanceProfileCredentialsProvider
+
+        该方式无需配置AccessKey，可以免密方式访问OSS。
+
+        |参数|参数说明|
+        |--|----|
+        |**fs.jfs.cache.oss.credentials.provider**|**com.aliyun.emr.fs.auth.InstanceProfileCredentialsProvider**|
+
+-   按照bucket配置
+    -   TemporaryAliyunCredentialsProvider
+
+        适合使用有时效性的AccessKey和SecurityToken访问OSS的情况。
+
+        |参数|参数说明|
+        |--|----|
+        |**fs.jfs.cache.oss.bucket.XXX.credentials.provider**|**com.aliyun.emr.fs.auth.TemporaryAliyunCredentialsProvider**|
+        |**fs.jfs.cache.oss.bucket.XXX.accessKeyId**|OSS bucket的AccessKey Id。|
+        |**fs.jfs.cache.oss.bucket.XXX.accessKeySecret**|OSS bucket的AccessKey Secret。|
+        |**fs.jfs.cache.oss.bucket.XXX.securityToken**|OSS bucket的SecurityToken（临时安全令牌）。|
+
+    -   SimpleAliyunCredentialsProvider
+
+        适合使用长期有效的AccessKey访问OSS的情况。
+
+        |参数|参数说明|
+        |--|----|
+        |**fs.jfs.cache.oss.bucket.XXX.credentials.provider**|**com.aliyun.emr.fs.auth.SimpleAliyunCredentialsProvider**|
+        |**fs.jfs.cache.oss.bucket.XXX.accessKeyId**|OSS bucket的AccessKey Id。|
+        |**fs.jfs.cache.oss.bucket.XXX.accessKeySecret**|OSS bucket的AccessKey Secret。|
+
+    -   EnvironmentVariableCredentialsProvider
+
+        该方式需要在环境变量中配置以下参数。
+
+        |参数|参数说明|
+        |--|----|
+        |**fs.jfs.cache.oss.bucket.XXX.credentials.provider**|**com.aliyun.emr.fs.auth.EnvironmentVariableCredentialsProvider**|
+        |**ALIYUN\_ACCESS\_KEY\_ID**|OSS bucket的AccessKey Id。|
+        |**ALIYUN\_ACCESS\_KEY\_SECRET**|OSS bucket的AccessKey Secret。|
+        |**ALIYUN\_SECURITY\_TOKEN**|OSS bucket的SecurityToken（临时安全令牌）。**说明：** 仅配置有时效Token时需要。 |
+
+    -   InstanceProfileCredentialsProvider
+
+        该方式无需配置AccessKey，可以免密方式访问OSS。
+
+        |参数|参数说明|
+        |--|----|
+        |**fs.jfs.cache.oss.bucket.XXX.credentials.provider**|**com.aliyun.emr.fs.auth.InstanceProfileCredentialsProvider**|
 
 
 ## 使用Hadoop Credential Providers存储AccessKey信息
 
 **说明：** Hadoop Credential Provider详情的使用方法，请参见[CredentialProvider API Guide](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/CredentialProviderAPI.html)。
-
-**fs.jfs.cache.oss.accessKeyId**、**fs.jfs.cache.oss.accessKeySecret**和**fs.jfs.cache.oss.securityToken**可以存储至Hadoop Credential Providers。
 
 使用Hadoop提供的命令，存储AccessKey和SecurityToken信息至Credential文件中。命令格式如下。
 
@@ -47,7 +142,7 @@
 hadoop credential <subcommand> [options]
 ```
 
-例如，存储AccessKey和Token信息至JECKS文件中，除了使用文件权限保护该文件外，您也可以指定密码加密存储信息，如果不指定密码则使用默认字符串加密。
+例如，使用全局配置方式，存储AccessKey和Token信息至JECKS文件中，除了使用文件权限保护该文件外，您也可以指定密码加密存储信息，如果不指定密码则使用默认字符串加密。
 
 ```
 hadoop credential create fs.jfs.cache.oss.accessKeyId -value AAA -provider jceks://file/root/oss.jceks
@@ -60,49 +155,4 @@ hadoop credential create fs.jfs.cache.oss.securityToken -value  CCC -provider jc
 |参数|描述|
 |--|--|
 |**fs.jfs.cache.oss.security.credential.provider.path**|配置存储AccessKey的Credential文件。例如，jceks://file/$\{user.home\}/oss.jceks为HOME下的oss.jceks文件。 |
-
-## Provider类型
-
-您可以根据情况，选择不同的Credential Provider，支持如下Provider：
-
--   TemporaryAliyunCredentialsProvider
-
-    适合使用有时效性的AccessKey和SecurityToken访问OSS的情况。
-
-    |参数|参数说明|
-    |--|----|
-    |**fs.jfs.cache.oss.credentials.provider**|**com.aliyun.emr.fs.auth.TemporaryAliyunCredentialsProvider**|
-    |**fs.jfs.cache.oss.accessKeyId**|OSS的AccessKey Id。|
-    |**fs.jfs.cache.oss.accessKeySecret**|OSS的AccessKey Secret。|
-    |**fs.jfs.cache.oss.securityToken**|OSS的SecurityToken（临时安全令牌）。|
-
--   SimpleAliyunCredentialsProvider
-
-    适合使用长期有效的AccessKey访问OSS的情况。
-
-    |参数|参数说明|
-    |--|----|
-    |**fs.jfs.cache.oss.credentials.provider**|**com.aliyun.emr.fs.auth.SimpleAliyunCredentialsProvider**|
-    |**fs.jfs.cache.oss.accessKeyId**|OSS的AccessKey Id。|
-    |**fs.jfs.cache.oss.accessKeySecret**|OSS的AccessKey Secret。|
-
--   EnvironmentVariableCredentialsProvider
-
-    该方式需要在环境变量中配置以下参数。
-
-    |参数|参数说明|
-    |--|----|
-    |**fs.jfs.cache.oss.credentials.provider**|**com.aliyun.emr.fs.auth.EnvironmentVariableCredentialsProvider**|
-    |**ALIYUN\_ACCESS\_KEY\_ID**|OSS的AccessKey Id。|
-    |**ALIYUN\_ACCESS\_KEY\_SECRET**|OSS的AccessKey Secret。|
-    |**ALIYUN\_SECURITY\_TOKEN**|OSS的SecurityToken（临时安全令牌）。**说明：** 仅配置有时效Token时需要。 |
-
--   InstanceProfileCredentialsProvider
-
-    该方式无需配置AccessKey，可以免密方式访问OSS。
-
-    |参数|参数说明|
-    |--|----|
-    |**fs.jfs.cache.oss.credentials.provider**|**com.aliyun.emr.fs.auth.InstanceProfileCredentialsProvider**|
-
 
