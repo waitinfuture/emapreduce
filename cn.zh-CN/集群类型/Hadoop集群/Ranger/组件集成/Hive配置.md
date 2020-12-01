@@ -56,15 +56,15 @@
 
     6.  单击右侧的**操作**下拉菜单，选择**启用Hive**。
 
-        ![start_hive](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/7693027951/p81452.png)
+        ![start_hive](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/7693027951/p81452.png)
 
     7.  在**执行集群操作**对话框设置相关参数，然后单击**确定**。在**确认**对话框，单击**确定**。
 
         单击右上角**查看操作历史**查看任务进度，等待任务完成。
 
-        ![查看操作历史](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/7693027951/p11502.png)
+        ![查看操作历史](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/7693027951/p11502.png)
 
-        **说明：** 重启Hive后，HiveServer2场景下，您需要使用Ranger进行权限配置。HiveClient场景下，您需要借助HDFS权限进行控制。开启HDFS的权限请参见[HDFS配置](/cn.zh-CN/集群类型/Hadoop集群/Ranger/组件集成/HDFS配置.md)。
+        **说明：** Ranger启用Hive后，HiveServer2场景下，您需要使用Ranger进行权限配置。HiveClient场景下，您需要借助HDFS权限进行控制。开启HDFS的权限请参见[HDFS配置](/cn.zh-CN/集群类型/Hadoop集群/Ranger/组件集成/HDFS配置.md)。
 
 2.  Ranger UI添加Hive Service。
 
@@ -72,11 +72,11 @@
 
     2.  在Ranger UI页面，添加Hive Service。
 
-        ![Ranger UI](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/8693027951/p11506.png)
+        ![Ranger UI](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/8693027951/p11506.png)
 
     3.  配置参数。
 
-        ![添加Hive Service](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/8693027951/p11507.png)
+        ![添加Hive Service](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/8693027951/p11507.png)
 
         |参数|说明|
         |--|--|
@@ -113,13 +113,13 @@
 
 2.  在Ranger UI页面，单击配置好的**emr-hive**。
 
-    ![权限配置示例](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/3370108951/p11509.png)
+    ![权限配置示例](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/3370108951/p11509.png)
 
 3.  单击右上角的**Add New Policy**。
 
 4.  配置权限。
 
-    ![配置相关权限](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/2814027951/p11510.png)
+    ![配置相关权限](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/2814027951/p11510.png)
 
     |参数|说明|
     |--|--|
