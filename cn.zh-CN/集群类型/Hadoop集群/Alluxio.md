@@ -4,7 +4,7 @@ Alluxio是一个面向基于云的数据分析和人工智能的开源的数据�
 
 在大数据生态系统中，Alluxio位于数据驱动框架或应用（例如Apache Spark、Presto、TensorFlow、Apache Flink和Apache Hive等）和各种持久化存储系统（例如HDFS和阿里云OSS）之间，使得上层的计算应用可以通过统一的客户端API和全局命名空间访问包括HDFS和OSS在内的持久化存储系统。
 
-![Alluxio](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/0015176061/p185231.png)
+![Alluxio](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/1217096061/p185231.png)
 
 ## 优势
 
