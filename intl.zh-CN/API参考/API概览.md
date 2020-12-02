@@ -26,10 +26,10 @@ E-MapReduce提供以下API接口。
 |[ModifyClusterTemplate](/intl.zh-CN/API参考/集群/ModifyClusterTemplate.md)|调用ModifyClusterTemplate接口，修改集群模版。|
 |[DescribeClusterBasicInfo](/intl.zh-CN/API参考/集群/DescribeClusterBasicInfo.md)|调用DescribeClusterBasicInfo接口，查询已创建的集群实例。|
 |[ListClusterHostGroup](/intl.zh-CN/API参考/集群/ListClusterHostGroup.md)|调用ListClusterHostGroup接口，查询集群机器组列表。|
-|[TagResources](/intl.zh-CN/API参考/标签/TagResources.md)|调用TagResources接口，为指定的EMR集群列表统一创建并绑定标签。|
-|[ListTagResources](/intl.zh-CN/API参考/标签/ListTagResources.md)|调用ListTagResources接口，查询一个或多个EMR集群已经绑定的标签列表。|
-|[UntagResources](/intl.zh-CN/API参考/标签/UntagResources.md)|调用UntagResources接口，为指定的ECS资源列表统一解绑标签。解绑后，如果该标签没有绑定其他任何资源，会被自动删除。|
-|[JoinResourceGroup](/intl.zh-CN/API参考/集群/JoinResourceGroup.md)|调用JoinResourceGroup接口，将一个EMR相关资源加入一个资源组。|
+|[创建并绑定标签](/intl.zh-CN/API参考/标签/TagResources.md)|调用TagResources接口，为指定的EMR集群列表统一创建并绑定标签。|
+|[查询标签列表](/intl.zh-CN/API参考/标签/ListTagResources.md)|调用ListTagResources接口，查询一个或多个EMR集群已经绑定的标签列表。|
+|[解绑标签](/intl.zh-CN/API参考/标签/UntagResources.md)|调用UntagResources接口，为指定的ECS资源列表统一解绑标签。解绑后，如果该标签没有绑定其他任何资源，会被自动删除。|
+|[加入资源组](/intl.zh-CN/API参考/集群/JoinResourceGroup.md)|调用JoinResourceGroup接口，将一个EMR相关资源加入一个资源组。|
 |[ReleaseClusterHostGroup](/intl.zh-CN/API参考/集群/ReleaseClusterHostGroup.md)|调用ReleaseClusterHostGroup接口，进行EMR集群节点缩容。|
 
 ## 集群服务
@@ -51,7 +51,7 @@ E-MapReduce提供以下API接口。
 |[ListClusterOperationTask](/intl.zh-CN/API参考/集群服务/ListClusterOperationTask.md)|调用ListClusterOperationTask接口，查询指定的操作历史中主机对应的任务列表信息。|
 |[ListClusterOperationHost](/intl.zh-CN/API参考/集群服务/ListClusterOperationHost.md)|调用ListClusterOperationHost接口，查询操作历史的操作机器列表。|
 |[ListClusterOperationHostTask](/intl.zh-CN/API参考/集群服务/ListClusterOperationHostTask.md)|调用ListClusterOperationHostTask接口，查询指定的操作历史中主机对应的任务列表信息。|
-|[ListClusterInstalledService](/intl.zh-CN/API参考/集群服务/ListClusterInstalledService.md)|调用ListClusterInstalledService接口，查询集群当前已安装的服务列表信息。|
+|[查询集群已安装服务列表](/intl.zh-CN/API参考/集群服务/ListClusterInstalledService.md)|调用ListClusterInstalledService接口，查询集群当前已安装的服务列表信息。|
 |[ListClusterService](/intl.zh-CN/API参考/集群服务/ListClusterService.md)|调用ListClusterService接口，查询集群的服务列表信息。|
 |[ListClusterServiceComponentHealthInfo](/intl.zh-CN/API参考/集群服务/ListClusterServiceComponentHealthInfo.md)|调用ListClusterServiceComponentHealthInfo接口，获取集群指定服务对应的组件健康信息列表。|
 |[ListClusterServiceConfigHistory](/intl.zh-CN/API参考/集群服务/ListClusterServiceConfigHistory.md)|调用ListClusterServiceConfigHistory接口，查询集群指定服务的配置修改历史信息的接口。|
@@ -67,25 +67,25 @@ E-MapReduce提供以下API接口。
 
 |API|描述|
 |---|--|
-|[TagResources](/intl.zh-CN/API参考/标签/TagResources.md)|调用TagResources接口，为指定的EMR集群列表统一创建并绑定标签。|
-|[ListTagResources](/intl.zh-CN/API参考/标签/ListTagResources.md)|调用ListTagResources接口，查询一个或多个EMR集群已经绑定的标签列表。|
-|[UntagResources](/intl.zh-CN/API参考/标签/UntagResources.md)|调用UntagResources接口，为指定的EMR集群列统一解绑标签。|
+|[创建并绑定标签](/intl.zh-CN/API参考/标签/TagResources.md)|调用TagResources接口，为指定的EMR集群列表统一创建并绑定标签。|
+|[查询标签列表](/intl.zh-CN/API参考/标签/ListTagResources.md)|调用ListTagResources接口，查询一个或多个EMR集群已经绑定的标签列表。|
+|[解绑标签](/intl.zh-CN/API参考/标签/UntagResources.md)|调用UntagResources接口，为指定的EMR集群列统一解绑标签。|
 
 ## 弹性伸缩
 
 |API|描述|
 |---|--|
-|[CreateScalingGroupV2](/intl.zh-CN/API参考/弹性伸缩/CreateScalingGroupV2.md)|调用CreateScalingGroupV2接口，创建伸缩组。|
-|[AddScalingConfigItemV2](/intl.zh-CN/API参考/弹性伸缩/AddScalingConfigItemV2.md)|调用AddScalingConfigItemV2接口，新建弹性伸缩配置项。|
+|[创建伸缩组](/intl.zh-CN/API参考/弹性伸缩/CreateScalingGroupV2.md)|调用CreateScalingGroupV2接口，创建伸缩组。|
+|[新建弹性伸缩配置项](/intl.zh-CN/API参考/弹性伸缩/AddScalingConfigItemV2.md)|调用AddScalingConfigItemV2接口，新建弹性伸缩配置项。|
 |[修改伸缩组](/intl.zh-CN/API参考/弹性伸缩/ModifyScalingGroupV2.md)|调用ModifyScalingGroupV2接口，修改伸缩组基础信息。|
-|[ListScalingGroupV2](/intl.zh-CN/API参考/弹性伸缩/ListScalingGroupV2.md)|调用ListScalingGroupV2接口，查看伸缩组列表。|
-|[ListScalingConfigItemV2](/intl.zh-CN/API参考/弹性伸缩/ListScalingConfigItemV2.md)|调用ListScalingConfigItemV2接口，查看伸缩配置项列表。|
-|[ListScalingActivityV2](/intl.zh-CN/API参考/弹性伸缩/ListScalingActivityV2.md)|调用ListScalingActivityV2接口，查看伸缩活动列表。|
-|[DescribeScalingConfigItemV2](/intl.zh-CN/API参考/弹性伸缩/DescribeScalingConfigItemV2.md)|调用DescribeScalingConfigItemV2接口，获取伸缩配置项详情。|
+|[查看伸缩组](/intl.zh-CN/API参考/弹性伸缩/ListScalingGroupV2.md)|调用ListScalingGroupV2接口，查看伸缩组列表。|
+|[查看伸缩配置项](/intl.zh-CN/API参考/弹性伸缩/ListScalingConfigItemV2.md)|调用ListScalingConfigItemV2接口，查看伸缩配置项列表。|
+|[查看伸缩活动](/intl.zh-CN/API参考/弹性伸缩/ListScalingActivityV2.md)|调用ListScalingActivityV2接口，查看伸缩活动列表。|
+|[查询伸缩配置项详情](/intl.zh-CN/API参考/弹性伸缩/DescribeScalingConfigItemV2.md)|调用DescribeScalingConfigItemV2接口，获取伸缩配置项详情。|
 |[DescribeScalingGroupInstanceV2](/intl.zh-CN/API参考/弹性伸缩/DescribeScalingGroupInstanceV2.md)|调用DescribeScalingGroupInstanceV2接口，获取一个正在运行中的伸缩组实例详情。|
-|[DescribeScalingGroupV2](/intl.zh-CN/API参考/弹性伸缩/DescribeScalingGroupV2.md)|调用DescribeScalingGroupV2接口，获取伸缩组详情。|
+|[查询伸缩组详情](/intl.zh-CN/API参考/弹性伸缩/DescribeScalingGroupV2.md)|调用DescribeScalingGroupV2接口，获取伸缩组详情。|
 |[RunScalingActionV2](/intl.zh-CN/API参考/弹性伸缩/RunScalingActionV2.md)|调用RunScalingActionV2接口，执行伸缩组示例控制动作。|
-|[RemoveScalingConfigItemV2](/intl.zh-CN/API参考/弹性伸缩/RemoveScalingConfigItemV2.md)|调用RemoveScalingConfigItemV2接口，删除伸缩配置项。|
+|[删除弹性伸缩配置项](/intl.zh-CN/API参考/弹性伸缩/RemoveScalingConfigItemV2.md)|调用RemoveScalingConfigItemV2接口，删除伸缩配置项。|
 
 ## 数据开发
 
