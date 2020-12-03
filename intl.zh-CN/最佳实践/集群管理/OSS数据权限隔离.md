@@ -8,7 +8,9 @@ E-MapReduce支持使用RAM来隔离不同子账号的数据。
 
 ## 操作步骤
 
-1.  2.  创建RAM用户。
+1.  云账号登录[RAM控制台](https://ram.console.aliyun.com/)。
+
+2.  创建RAM用户。
 
     1.  在左侧导航栏中，单击**人员管理** \> **用户**。
 
