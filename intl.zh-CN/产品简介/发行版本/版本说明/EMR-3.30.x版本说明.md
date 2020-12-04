@@ -10,7 +10,7 @@ EMR-3.30.0 2020年10月26日
 
 |服务|变更点|
 |--|---|
-|SmartData|升级至3.0.0。详情请参见[SmartData 3.0.0版本简介]() |
+|SmartData|升级至3.0.0。|
 |Spark|-   支持阿里云DLF（Data Lake Formation）元数据。
 -   升级HAS依赖至2.0.1。
 -   修复Streaming SQL反引号问题。
