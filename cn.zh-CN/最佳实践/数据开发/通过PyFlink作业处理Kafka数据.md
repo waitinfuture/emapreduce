@@ -238,17 +238,7 @@ python3 produce_data.py
         run -m yarn-cluster -py ossref://emr-logs2/test/job.py -j ossref://emr-logs2/test/lib.jar
         ```
 
-6.  设置作业的提交节点。
-
-    本示例提交节点为**在Header/Gateway节点提交**。
-
-    1.  在创建的作业页面，单击右上角的**作业设置**。
-
-    2.  在**作业设置**对话框中，单击**高级设置**页签。
-
-    3.  在**提交节点**下拉列表中，选择**在Header/Gateway节点提交**。
-
-7.  运行PyFlink作业。
+6.  运行PyFlink作业。
 
     1.  单击右上角的**保存**。
 
@@ -279,7 +269,7 @@ python3 produce_data.py
 
     ![application_info](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/8042598951/p148503.png)
 
-3.  单击**Tracking URL**后面的链接，进入**Apache Flink Dashboard**。
+3.  单击**Tracking URL**后面的链接，进入**Apache Flink Dashboard**页面。
 
     您可以查看详情的作业信息。
 
